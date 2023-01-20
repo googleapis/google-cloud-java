@@ -243,7 +243,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARTITION_KEY_FIELD_NUMBER = 1;
-  private int partitionKey_;
+  private int partitionKey_ = 0;
   /**
    *
    *
@@ -272,9 +272,8 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.PartitionSpec.PartitionKey getPartitionKey() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.PartitionSpec.PartitionKey result =
-        com.google.cloud.asset.v1.PartitionSpec.PartitionKey.valueOf(partitionKey_);
+        com.google.cloud.asset.v1.PartitionSpec.PartitionKey.forNumber(partitionKey_);
     return result == null
         ? com.google.cloud.asset.v1.PartitionSpec.PartitionKey.UNRECOGNIZED
         : result;
@@ -480,8 +479,8 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       partitionKey_ = 0;
-
       return this;
     }
 
@@ -509,9 +508,18 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.PartitionSpec buildPartial() {
       com.google.cloud.asset.v1.PartitionSpec result =
           new com.google.cloud.asset.v1.PartitionSpec(this);
-      result.partitionKey_ = partitionKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.PartitionSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.partitionKey_ = partitionKey_;
+      }
     }
 
     @java.lang.Override
@@ -591,7 +599,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 partitionKey_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -610,6 +618,8 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int partitionKey_ = 0;
     /**
@@ -640,8 +650,8 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPartitionKeyValue(int value) {
-
       partitionKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,9 +668,8 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.PartitionSpec.PartitionKey getPartitionKey() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.PartitionSpec.PartitionKey result =
-          com.google.cloud.asset.v1.PartitionSpec.PartitionKey.valueOf(partitionKey_);
+          com.google.cloud.asset.v1.PartitionSpec.PartitionKey.forNumber(partitionKey_);
       return result == null
           ? com.google.cloud.asset.v1.PartitionSpec.PartitionKey.UNRECOGNIZED
           : result;
@@ -681,7 +690,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       partitionKey_ = value.getNumber();
       onChanged();
       return this;
@@ -698,7 +707,7 @@ public final class PartitionSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPartitionKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       partitionKey_ = 0;
       onChanged();
       return this;

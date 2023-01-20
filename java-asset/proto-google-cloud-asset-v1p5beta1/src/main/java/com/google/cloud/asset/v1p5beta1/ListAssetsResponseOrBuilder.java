@@ -114,7 +114,8 @@ public interface ListAssetsResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. Set to empty if there are no
+   * Token to retrieve the next page of results. It expires 72 hours after the
+   * page token for the first page is generated. Set to empty if there are no
    * remaining results.
    * </pre>
    *
@@ -127,7 +128,8 @@ public interface ListAssetsResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results. Set to empty if there are no
+   * Token to retrieve the next page of results. It expires 72 hours after the
+   * page token for the first page is generated. Set to empty if there are no
    * remaining results.
    * </pre>
    *

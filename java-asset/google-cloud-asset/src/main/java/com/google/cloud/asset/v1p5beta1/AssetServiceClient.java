@@ -25,6 +25,7 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.asset.v1p5beta1.stub.AssetServiceStub;
 import com.google.cloud.asset.v1p5beta1.stub.AssetServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -47,16 +48,26 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ListAssetsRequest request =
- *       ListAssetsRequest.newBuilder()
- *           .setParent("parent-995424086")
- *           .setReadTime(Timestamp.newBuilder().build())
- *           .addAllAssetTypes(new ArrayList<String>())
- *           .setContentType(ContentType.forNumber(0))
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
- *           .build();
- *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+ *   ResourceName parent =
+ *       new ResourceName() {
+ *         {@literal @}Override
+ *         public Map<String, String> getFieldValuesMap() {
+ *           Map<String, String> fieldValuesMap = new HashMap<>();
+ *           fieldValuesMap.put("parent", "parent-4715/parent-4715");
+ *           return fieldValuesMap;
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String getFieldValue(String fieldName) {
+ *           return getFieldValuesMap().get(fieldName);
+ *         }
+ *
+ *         {@literal @}Override
+ *         public String toString() {
+ *           return "parent-4715/parent-4715";
+ *         }
+ *       };
+ *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
  * }
@@ -194,9 +205,108 @@ public class AssetServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ResourceName parent =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("parent", "parent-4715/parent-4715");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "parent-4715/parent-4715";
+   *         }
+   *       };
+   *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization or project the assets belong to. Format:
+   *     "organizations/[organization-number]" (such as "organizations/123"),
+   *     "projects/[project-id]" (such as "projects/my-project-id"), or "projects/[project-number]"
+   *     (such as "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(ResourceName parent) {
+    ListAssetsRequest request =
+        ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String parent =
+   *       new ResourceName() {
+   *         {@literal @}Override
+   *         public Map<String, String> getFieldValuesMap() {
+   *           Map<String, String> fieldValuesMap = new HashMap<>();
+   *           fieldValuesMap.put("parent", "parent-995424086");
+   *           return fieldValuesMap;
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String getFieldValue(String fieldName) {
+   *           return getFieldValuesMap().get(fieldName);
+   *         }
+   *
+   *         {@literal @}Override
+   *         public String toString() {
+   *           return "parent-995424086";
+   *         }
+   *       }.toString();
+   *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Name of the organization or project the assets belong to. Format:
+   *     "organizations/[organization-number]" (such as "organizations/123"),
+   *     "projects/[project-id]" (such as "projects/my-project-id"), or "projects/[project-number]"
+   *     (such as "projects/12345").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAssetsPagedResponse listAssets(String parent) {
+    ListAssetsRequest request = ListAssetsRequest.newBuilder().setParent(parent).build();
+    return listAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists assets with time and resource types and returns paged results in response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent("ListAssetsRequest-221586066".toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -231,7 +341,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent("ListAssetsRequest-221586066".toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))
@@ -265,7 +375,7 @@ public class AssetServiceClient implements BackgroundResource {
    * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
    *   ListAssetsRequest request =
    *       ListAssetsRequest.newBuilder()
-   *           .setParent("parent-995424086")
+   *           .setParent("ListAssetsRequest-221586066".toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
    *           .setContentType(ContentType.forNumber(0))

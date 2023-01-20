@@ -372,6 +372,7 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsResultBuilder_ != null) {
         gcsResultBuilder_.clear();
       }
@@ -404,16 +405,24 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p7beta1.OutputResult buildPartial() {
       com.google.cloud.asset.v1p7beta1.OutputResult result =
           new com.google.cloud.asset.v1p7beta1.OutputResult(this);
-      if (resultCase_ == 1) {
-        if (gcsResultBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = gcsResultBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.resultCase_ = resultCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p7beta1.OutputResult result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1p7beta1.OutputResult result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 1 && gcsResultBuilder_ != null) {
+        result.result_ = gcsResultBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,6 +543,8 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1p7beta1.GcsOutputResult,
@@ -741,7 +752,6 @@ public final class OutputResult extends com.google.protobuf.GeneratedMessageV3
       }
       resultCase_ = 1;
       onChanged();
-      ;
       return gcsResultBuilder_;
     }
 

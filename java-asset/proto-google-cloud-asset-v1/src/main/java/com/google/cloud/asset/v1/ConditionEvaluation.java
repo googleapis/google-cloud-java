@@ -253,7 +253,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EVALUATION_VALUE_FIELD_NUMBER = 1;
-  private int evaluationValue_;
+  private int evaluationValue_ = 0;
   /**
    *
    *
@@ -282,9 +282,8 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue getEvaluationValue() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue result =
-        com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.valueOf(evaluationValue_);
+        com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.forNumber(evaluationValue_);
     return result == null
         ? com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.UNRECOGNIZED
         : result;
@@ -493,8 +492,8 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       evaluationValue_ = 0;
-
       return this;
     }
 
@@ -522,9 +521,18 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.ConditionEvaluation buildPartial() {
       com.google.cloud.asset.v1.ConditionEvaluation result =
           new com.google.cloud.asset.v1.ConditionEvaluation(this);
-      result.evaluationValue_ = evaluationValue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.ConditionEvaluation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.evaluationValue_ = evaluationValue_;
+      }
     }
 
     @java.lang.Override
@@ -604,7 +612,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 evaluationValue_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -623,6 +631,8 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int evaluationValue_ = 0;
     /**
@@ -653,8 +663,8 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setEvaluationValueValue(int value) {
-
       evaluationValue_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -671,9 +681,8 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue getEvaluationValue() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue result =
-          com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.valueOf(evaluationValue_);
+          com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.forNumber(evaluationValue_);
       return result == null
           ? com.google.cloud.asset.v1.ConditionEvaluation.EvaluationValue.UNRECOGNIZED
           : result;
@@ -695,7 +704,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       evaluationValue_ = value.getNumber();
       onChanged();
       return this;
@@ -712,7 +721,7 @@ public final class ConditionEvaluation extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEvaluationValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       evaluationValue_ = 0;
       onChanged();
       return this;

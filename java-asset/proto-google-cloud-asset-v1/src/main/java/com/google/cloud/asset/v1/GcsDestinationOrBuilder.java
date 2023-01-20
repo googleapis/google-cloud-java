@@ -27,7 +27,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -46,7 +46,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -65,7 +65,7 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -85,8 +85,8 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -105,8 +105,8 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -125,8 +125,8 @@ public interface GcsDestinationOrBuilder
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/&lt;asset type&gt;/&lt;shard number&gt; and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is

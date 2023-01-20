@@ -373,6 +373,7 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pubsubDestinationBuilder_ != null) {
         pubsubDestinationBuilder_.clear();
       }
@@ -405,16 +406,24 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1p2beta1.FeedOutputConfig buildPartial() {
       com.google.cloud.asset.v1p2beta1.FeedOutputConfig result =
           new com.google.cloud.asset.v1p2beta1.FeedOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (pubsubDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = pubsubDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p2beta1.FeedOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1p2beta1.FeedOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && pubsubDestinationBuilder_ != null) {
+        result.destination_ = pubsubDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +546,8 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1p2beta1.PubsubDestination,
@@ -748,7 +759,6 @@ public final class FeedOutputConfig extends com.google.protobuf.GeneratedMessage
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return pubsubDestinationBuilder_;
     }
 

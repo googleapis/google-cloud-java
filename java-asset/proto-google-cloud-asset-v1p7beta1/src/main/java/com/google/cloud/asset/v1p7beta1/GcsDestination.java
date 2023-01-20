@@ -117,7 +117,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -135,7 +135,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -166,7 +166,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * The URI of the Cloud Storage object. It's the same URI that is used by
    * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
    * Editing Object
    * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -199,8 +199,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -221,8 +221,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -256,8 +256,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The uri prefix of all generated Cloud Storage objects. Example:
-   * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+   * The URI prefix of all generated Cloud Storage objects. Example:
+   * "gs://bucket_name/object_name_prefix". Each object URI is in format:
    * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
    * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
    * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -511,6 +511,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       objectUriCase_ = 0;
       objectUri_ = null;
       return this;
@@ -540,15 +541,21 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p7beta1.GcsDestination buildPartial() {
       com.google.cloud.asset.v1p7beta1.GcsDestination result =
           new com.google.cloud.asset.v1p7beta1.GcsDestination(this);
-      if (objectUriCase_ == 1) {
-        result.objectUri_ = objectUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (objectUriCase_ == 2) {
-        result.objectUri_ = objectUri_;
-      }
-      result.objectUriCase_ = objectUriCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p7beta1.GcsDestination result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1p7beta1.GcsDestination result) {
+      result.objectUriCase_ = objectUriCase_;
+      result.objectUri_ = this.objectUri_;
     }
 
     @java.lang.Override
@@ -688,11 +695,13 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -711,7 +720,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -743,7 +752,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -775,7 +784,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -800,7 +809,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -823,7 +832,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * The URI of the Cloud Storage object. It's the same URI that is used by
      * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
@@ -850,8 +859,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -873,8 +882,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -909,8 +918,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -945,8 +954,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -974,8 +983,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is
@@ -1001,8 +1010,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The uri prefix of all generated Cloud Storage objects. Example:
-     * "gs://bucket_name/object_name_prefix". Each object uri is in format:
+     * The URI prefix of all generated Cloud Storage objects. Example:
+     * "gs://bucket_name/object_name_prefix". Each object URI is in format:
      * "gs://bucket_name/object_name_prefix/{ASSET_TYPE}/{SHARD_NUMBER} and only
      * contains assets for that type. &lt;shard number&gt; starts from 0. Example:
      * "gs://bucket_name/object_name_prefix/compute.googleapis.com/Disk/0" is

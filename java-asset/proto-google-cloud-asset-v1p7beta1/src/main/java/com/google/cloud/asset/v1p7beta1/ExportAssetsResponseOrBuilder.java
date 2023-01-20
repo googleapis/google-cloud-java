@@ -98,10 +98,10 @@ public interface ExportAssetsResponseOrBuilder
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
-   * exported to. The uris can be different from what [output_config] has
+   * set of actual Cloud Storage object URIs where the assets are
+   * exported to. The URIs can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single Cloud Storage object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p7beta1.OutputResult output_result = 3;</code>
@@ -114,10 +114,10 @@ public interface ExportAssetsResponseOrBuilder
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
-   * exported to. The uris can be different from what [output_config] has
+   * set of actual Cloud Storage object URIs where the assets are
+   * exported to. The URIs can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single Cloud Storage object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p7beta1.OutputResult output_result = 3;</code>
@@ -130,10 +130,10 @@ public interface ExportAssetsResponseOrBuilder
    *
    * <pre>
    * Output result indicating where the assets were exported to. For example, a
-   * set of actual Google Cloud Storage object uris where the assets are
-   * exported to. The uris can be different from what [output_config] has
+   * set of actual Cloud Storage object URIs where the assets are
+   * exported to. The URIs can be different from what [output_config] has
    * specified, as the service will split the output object into multiple ones
-   * once it exceeds a single Google Cloud Storage object limit.
+   * once it exceeds a single Cloud Storage object limit.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p7beta1.OutputResult output_result = 3;</code>

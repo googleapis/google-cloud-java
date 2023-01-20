@@ -115,13 +115,15 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
    * <pre>
-   * The user friendly display name of the analysis. E.g. IAM, Organization
-   * Policy etc.
+   * The user friendly display name of the analysis. E.g. IAM, organization
+   * policy etc.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -144,8 +146,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The user friendly display name of the analysis. E.g. IAM, Organization
-   * Policy etc.
+   * The user friendly display name of the analysis. E.g. IAM, organization
+   * policy etc.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -502,8 +504,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       if (analysisBuilder_ != null) {
         analysisBuilder_.clear();
       }
@@ -539,24 +541,30 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.MoveAnalysis buildPartial() {
       com.google.cloud.asset.v1.MoveAnalysis result =
           new com.google.cloud.asset.v1.MoveAnalysis(this);
-      result.displayName_ = displayName_;
-      if (resultCase_ == 2) {
-        if (analysisBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = analysisBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resultCase_ == 3) {
-        if (errorBuilder_ == null) {
-          result.result_ = result_;
-        } else {
-          result.result_ = errorBuilder_.build();
-        }
-      }
-      result.resultCase_ = resultCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.MoveAnalysis result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1.MoveAnalysis result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 2 && analysisBuilder_ != null) {
+        result.result_ = analysisBuilder_.build();
+      }
+      if (resultCase_ == 3 && errorBuilder_ != null) {
+        result.result_ = errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -606,6 +614,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.asset.v1.MoveAnalysis.getDefaultInstance()) return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getResultCase()) {
@@ -653,7 +662,7 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -699,13 +708,15 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object displayName_ = "";
     /**
      *
      *
      * <pre>
-     * The user friendly display name of the analysis. E.g. IAM, Organization
-     * Policy etc.
+     * The user friendly display name of the analysis. E.g. IAM, organization
+     * policy etc.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -727,8 +738,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user friendly display name of the analysis. E.g. IAM, Organization
-     * Policy etc.
+     * The user friendly display name of the analysis. E.g. IAM, organization
+     * policy etc.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -750,8 +761,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user friendly display name of the analysis. E.g. IAM, Organization
-     * Policy etc.
+     * The user friendly display name of the analysis. E.g. IAM, organization
+     * policy etc.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -763,8 +774,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,8 +783,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user friendly display name of the analysis. E.g. IAM, Organization
-     * Policy etc.
+     * The user friendly display name of the analysis. E.g. IAM, organization
+     * policy etc.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -781,8 +792,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -790,8 +801,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The user friendly display name of the analysis. E.g. IAM, Organization
-     * Policy etc.
+     * The user friendly display name of the analysis. E.g. IAM, organization
+     * policy etc.
      * </pre>
      *
      * <code>string display_name = 1;</code>
@@ -804,8 +815,8 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1016,7 +1027,6 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       resultCase_ = 2;
       onChanged();
-      ;
       return analysisBuilder_;
     }
 
@@ -1217,7 +1227,6 @@ public final class MoveAnalysis extends com.google.protobuf.GeneratedMessageV3
       }
       resultCase_ = 3;
       onChanged();
-      ;
       return errorBuilder_;
     }
 

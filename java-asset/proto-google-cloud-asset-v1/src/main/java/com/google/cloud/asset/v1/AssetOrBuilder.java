@@ -164,9 +164,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -184,9 +184,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -204,9 +204,9 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -456,7 +456,7 @@ public interface AssetOrBuilder
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=166
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Deprecated
@@ -475,7 +475,7 @@ public interface AssetOrBuilder
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=166
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return The relatedAssets.
    */
   @java.lang.Deprecated

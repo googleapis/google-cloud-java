@@ -60,6 +60,8 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FEEDS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Feed> feeds_;
   /**
    *
@@ -318,6 +320,7 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (feedsBuilder_ == null) {
         feeds_ = java.util.Collections.emptyList();
       } else {
@@ -352,7 +355,15 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1.ListFeedsResponse buildPartial() {
       com.google.cloud.asset.v1.ListFeedsResponse result =
           new com.google.cloud.asset.v1.ListFeedsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.ListFeedsResponse result) {
       if (feedsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           feeds_ = java.util.Collections.unmodifiableList(feeds_);
@@ -362,8 +373,10 @@ public final class ListFeedsResponse extends com.google.protobuf.GeneratedMessag
       } else {
         result.feeds_ = feedsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.ListFeedsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

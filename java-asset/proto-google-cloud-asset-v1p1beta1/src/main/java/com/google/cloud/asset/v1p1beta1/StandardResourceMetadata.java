@@ -86,7 +86,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -194,7 +198,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int PROJECT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -245,7 +251,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -294,7 +302,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -345,6 +355,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList additionalAttributes_;
   /**
    *
@@ -414,7 +426,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int LOCATION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -477,6 +491,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -493,7 +508,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -517,7 +533,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -532,7 +549,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -540,7 +558,10 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -551,7 +572,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -571,13 +593,16 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
   }
 
   public static final int NETWORK_TAGS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList networkTags_;
   /**
    *
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -594,7 +619,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -611,7 +637,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -629,7 +656,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -956,23 +984,18 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assetType_ = "";
-
       project_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       location_ = "";
-
       internalGetMutableLabels().clear();
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1000,27 +1023,52 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1p1beta1.StandardResourceMetadata buildPartial() {
       com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result =
           new com.google.cloud.asset.v1p1beta1.StandardResourceMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.assetType_ = assetType_;
-      result.project_ = project_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.additionalAttributes_ = additionalAttributes_;
-      result.location_ = location_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.networkTags_ = networkTags_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        additionalAttributes_ = additionalAttributes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.additionalAttributes_ = additionalAttributes_;
+      if (((bitField0_ & 0x00000100) != 0)) {
+        networkTags_ = networkTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.networkTags_ = networkTags_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p1beta1.StandardResourceMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1071,28 +1119,33 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.additionalAttributes_.isEmpty()) {
         if (additionalAttributes_.isEmpty()) {
           additionalAttributes_ = other.additionalAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAdditionalAttributesIsMutable();
           additionalAttributes_.addAll(other.additionalAttributes_);
@@ -1101,13 +1154,15 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -1143,31 +1198,31 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 82:
@@ -1180,7 +1235,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
             case 90:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 90
             case 98:
@@ -1192,6 +1247,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 98
             case 106:
@@ -1293,8 +1349,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1314,8 +1370,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1340,8 +1396,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1410,8 +1466,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1428,8 +1484,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1451,8 +1507,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1521,8 +1577,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1539,8 +1595,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1562,8 +1618,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1629,8 +1685,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1646,8 +1702,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1668,8 +1724,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1738,8 +1794,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1756,8 +1812,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1779,8 +1835,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1789,9 +1845,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAdditionalAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         additionalAttributes_ = new com.google.protobuf.LazyStringArrayList(additionalAttributes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1942,7 +1998,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      */
     public Builder clearAdditionalAttributes() {
       additionalAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2035,8 +2091,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2053,8 +2109,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2076,8 +2132,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2093,14 +2149,14 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2111,7 +2167,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2135,7 +2192,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2150,7 +2208,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2158,8 +2217,10 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2170,7 +2231,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2190,6 +2252,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2197,7 +2260,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2214,13 +2278,15 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2234,15 +2300,16 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2251,6 +2318,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2258,9 +2326,9 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -2268,7 +2336,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2285,7 +2354,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2302,7 +2372,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2320,7 +2391,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2338,7 +2410,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2363,7 +2436,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2387,7 +2461,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2408,7 +2483,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>
@@ -2419,7 +2495,7 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2428,7 +2504,8 @@ public final class StandardResourceMetadata extends com.google.protobuf.Generate
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information.
      * </pre>

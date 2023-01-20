@@ -155,7 +155,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object fullResourceName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fullResourceName_ = "";
     /**
      *
      *
@@ -413,8 +415,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fullResourceName_ = "";
-
         return this;
       }
 
@@ -444,9 +446,19 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector(this);
-        result.fullResourceName_ = fullResourceName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fullResourceName_ = fullResourceName_;
+        }
       }
 
       @java.lang.Override
@@ -502,6 +514,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getFullResourceName().isEmpty()) {
           fullResourceName_ = other.fullResourceName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -533,7 +546,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   fullResourceName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -552,6 +565,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object fullResourceName_ = "";
       /**
@@ -623,8 +638,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,8 +658,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearFullResourceName() {
-
         fullResourceName_ = getDefaultInstance().getFullResourceName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -668,8 +683,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         fullResourceName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -841,7 +856,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int IDENTITY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object identity_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object identity_ = "";
     /**
      *
      *
@@ -1111,8 +1128,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         identity_ = "";
-
         return this;
       }
 
@@ -1142,9 +1159,19 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector(this);
-        result.identity_ = identity_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.identity_ = identity_;
+        }
       }
 
       @java.lang.Override
@@ -1200,6 +1227,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (!other.getIdentity().isEmpty()) {
           identity_ = other.identity_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1231,7 +1259,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
               case 10:
                 {
                   identity_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1250,6 +1278,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object identity_ = "";
       /**
@@ -1339,8 +1369,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
         identity_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1365,8 +1395,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearIdentity() {
-
         identity_ = getDefaultInstance().getIdentity();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1396,8 +1426,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         identity_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1631,6 +1661,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int ROLES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList roles_;
     /**
      *
@@ -1692,6 +1724,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int PERMISSIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList permissions_;
     /**
      *
@@ -1981,6 +2015,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2013,7 +2048,16 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           roles_ = roles_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -2024,8 +2068,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.permissions_ = permissions_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2571,9 +2618,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. If true, the identities section of the result will expand any
      * Google groups appearing in an IAM policy binding.
-     * If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
-     * identity in the result will be determined by the selector, and this flag
-     * is not allowed to set.
+     * If
+     * [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]
+     * is specified, the identity in the result will be determined by the
+     * selector, and this flag is not allowed to set.
      * If true, the default max expansion per group is 1000 for
      * AssetService.AnalyzeIamPolicy][].
      * Default is false.
@@ -2591,9 +2639,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * <pre>
      * Optional. If true, the access section of result will expand any roles
      * appearing in IAM policy bindings to include their permissions.
-     * If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
-     * section of the result will be determined by the selector, and this flag
-     * is not allowed to set.
+     * If
+     * [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]
+     * is specified, the access section of the result will be determined by the
+     * selector, and this flag is not allowed to set.
      * Default is false.
      * </pre>
      *
@@ -2607,22 +2656,24 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
-     * specified, the resource section of the result will expand any resource
-     * attached to an IAM policy to include resources lower in the resource
-     * hierarchy.
+     * Optional. If true and
+     * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+     * is not specified, the resource section of the result will expand any
+     * resource attached to an IAM policy to include resources lower in the
+     * resource hierarchy.
      * For example, if the request analyzes for which resources user A has
-     * permission P, and the results include an IAM policy with P on a GCP
-     * folder, the results will also include resources in that folder with
+     * permission P, and the results include an IAM policy with P on a Google
+     * Cloud folder, the results will also include resources in that folder with
      * permission P.
-     * If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,
-     * the resource section of the result will expand the specified resource to
-     * include resources lower in the resource hierarchy. Only project or
-     * lower resources are supported. Folder and organization resource cannot be
-     * used together with this option.
+     * If true and
+     * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+     * is specified, the resource section of the result will expand the
+     * specified resource to include resources lower in the resource hierarchy.
+     * Only project or lower resources are supported. Folder and organization
+     * resources cannot be used together with this option.
      * For example, if the request analyzes for which users have permission P on
-     * a GCP project with this option enabled, the results will include all
-     * users who have permission P on that project or any lower resource.
+     * a Google Cloud project with this option enabled, the results will include
+     * all users who have permission P on that project or any lower resource.
      * If true, the default max expansion per resource is 1000 for
      * AssetService.AnalyzeIamPolicy][] and 100000 for
      * AssetService.AnalyzeIamPolicyLongrunning][].
@@ -2639,9 +2690,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true, the result will output the relevant parent/child relationships
-     * between resources.
-     * Default is false.
+     * Optional. If true, the result will output the relevant parent/child
+     * relationships between resources. Default is false.
      * </pre>
      *
      * <code>bool output_resource_edges = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2654,9 +2704,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true, the result will output the relevant membership relationships
-     * between groups and other groups, and between groups and principals.
-     * Default is false.
+     * Optional. If true, the result will output the relevant membership
+     * relationships between groups and other groups, and between groups and
+     * principals. Default is false.
      * </pre>
      *
      * <code>bool output_group_edges = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2669,24 +2719,27 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. If true, the response will include access analysis from identities to
-     * resources via service account impersonation. This is a very expensive
-     * operation, because many derived queries will be executed. We highly
-     * recommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc
-     * instead.
+     * Optional. If true, the response will include access analysis from
+     * identities to resources via service account impersonation. This is a very
+     * expensive operation, because many derived queries will be executed. We
+     * highly recommend you use
+     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
+     * RPC instead.
      * For example, if the request analyzes for which resources user A has
      * permission P, and there's an IAM policy states user A has
      * iam.serviceAccounts.getAccessToken permission to a service account SA,
      * and there's another IAM policy states service account SA has permission P
-     * to a GCP folder F, then user A potentially has access to the GCP folder
-     * F. And those advanced analysis results will be included in
+     * to a Google Cloud folder F, then user A potentially has access to the
+     * Google Cloud folder F. And those advanced analysis results will be
+     * included in
      * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
      * Another example, if the request analyzes for who has
-     * permission P to a GCP folder F, and there's an IAM policy states user A
-     * has iam.serviceAccounts.actAs permission to a service account SA, and
-     * there's another IAM policy states service account SA has permission P to
-     * the GCP folder F, then user A potentially has access to the GCP folder
-     * F. And those advanced analysis results will be included in
+     * permission P to a Google Cloud folder F, and there's an IAM policy states
+     * user A has iam.serviceAccounts.actAs permission to a service account SA,
+     * and there's another IAM policy states service account SA has permission P
+     * to the Google Cloud folder F, then user A potentially has access to the
+     * Google Cloud folder F. And those advanced analysis results will be
+     * included in
      * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
      * Only the following permissions are considered in this analysis:
      * * `iam.serviceAccounts.actAs`
@@ -2754,16 +2807,17 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int EXPAND_GROUPS_FIELD_NUMBER = 1;
-    private boolean expandGroups_;
+    private boolean expandGroups_ = false;
     /**
      *
      *
      * <pre>
      * Optional. If true, the identities section of the result will expand any
      * Google groups appearing in an IAM policy binding.
-     * If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
-     * identity in the result will be determined by the selector, and this flag
-     * is not allowed to set.
+     * If
+     * [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]
+     * is specified, the identity in the result will be determined by the
+     * selector, and this flag is not allowed to set.
      * If true, the default max expansion per group is 1000 for
      * AssetService.AnalyzeIamPolicy][].
      * Default is false.
@@ -2779,16 +2833,17 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int EXPAND_ROLES_FIELD_NUMBER = 2;
-    private boolean expandRoles_;
+    private boolean expandRoles_ = false;
     /**
      *
      *
      * <pre>
      * Optional. If true, the access section of result will expand any roles
      * appearing in IAM policy bindings to include their permissions.
-     * If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
-     * section of the result will be determined by the selector, and this flag
-     * is not allowed to set.
+     * If
+     * [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]
+     * is specified, the access section of the result will be determined by the
+     * selector, and this flag is not allowed to set.
      * Default is false.
      * </pre>
      *
@@ -2802,27 +2857,29 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int EXPAND_RESOURCES_FIELD_NUMBER = 3;
-    private boolean expandResources_;
+    private boolean expandResources_ = false;
     /**
      *
      *
      * <pre>
-     * Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
-     * specified, the resource section of the result will expand any resource
-     * attached to an IAM policy to include resources lower in the resource
-     * hierarchy.
+     * Optional. If true and
+     * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+     * is not specified, the resource section of the result will expand any
+     * resource attached to an IAM policy to include resources lower in the
+     * resource hierarchy.
      * For example, if the request analyzes for which resources user A has
-     * permission P, and the results include an IAM policy with P on a GCP
-     * folder, the results will also include resources in that folder with
+     * permission P, and the results include an IAM policy with P on a Google
+     * Cloud folder, the results will also include resources in that folder with
      * permission P.
-     * If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,
-     * the resource section of the result will expand the specified resource to
-     * include resources lower in the resource hierarchy. Only project or
-     * lower resources are supported. Folder and organization resource cannot be
-     * used together with this option.
+     * If true and
+     * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+     * is specified, the resource section of the result will expand the
+     * specified resource to include resources lower in the resource hierarchy.
+     * Only project or lower resources are supported. Folder and organization
+     * resources cannot be used together with this option.
      * For example, if the request analyzes for which users have permission P on
-     * a GCP project with this option enabled, the results will include all
-     * users who have permission P on that project or any lower resource.
+     * a Google Cloud project with this option enabled, the results will include
+     * all users who have permission P on that project or any lower resource.
      * If true, the default max expansion per resource is 1000 for
      * AssetService.AnalyzeIamPolicy][] and 100000 for
      * AssetService.AnalyzeIamPolicyLongrunning][].
@@ -2839,14 +2896,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int OUTPUT_RESOURCE_EDGES_FIELD_NUMBER = 4;
-    private boolean outputResourceEdges_;
+    private boolean outputResourceEdges_ = false;
     /**
      *
      *
      * <pre>
-     * Optional. If true, the result will output the relevant parent/child relationships
-     * between resources.
-     * Default is false.
+     * Optional. If true, the result will output the relevant parent/child
+     * relationships between resources. Default is false.
      * </pre>
      *
      * <code>bool output_resource_edges = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2859,14 +2915,14 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int OUTPUT_GROUP_EDGES_FIELD_NUMBER = 5;
-    private boolean outputGroupEdges_;
+    private boolean outputGroupEdges_ = false;
     /**
      *
      *
      * <pre>
-     * Optional. If true, the result will output the relevant membership relationships
-     * between groups and other groups, and between groups and principals.
-     * Default is false.
+     * Optional. If true, the result will output the relevant membership
+     * relationships between groups and other groups, and between groups and
+     * principals. Default is false.
      * </pre>
      *
      * <code>bool output_group_edges = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2879,29 +2935,32 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     }
 
     public static final int ANALYZE_SERVICE_ACCOUNT_IMPERSONATION_FIELD_NUMBER = 6;
-    private boolean analyzeServiceAccountImpersonation_;
+    private boolean analyzeServiceAccountImpersonation_ = false;
     /**
      *
      *
      * <pre>
-     * Optional. If true, the response will include access analysis from identities to
-     * resources via service account impersonation. This is a very expensive
-     * operation, because many derived queries will be executed. We highly
-     * recommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc
-     * instead.
+     * Optional. If true, the response will include access analysis from
+     * identities to resources via service account impersonation. This is a very
+     * expensive operation, because many derived queries will be executed. We
+     * highly recommend you use
+     * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
+     * RPC instead.
      * For example, if the request analyzes for which resources user A has
      * permission P, and there's an IAM policy states user A has
      * iam.serviceAccounts.getAccessToken permission to a service account SA,
      * and there's another IAM policy states service account SA has permission P
-     * to a GCP folder F, then user A potentially has access to the GCP folder
-     * F. And those advanced analysis results will be included in
+     * to a Google Cloud folder F, then user A potentially has access to the
+     * Google Cloud folder F. And those advanced analysis results will be
+     * included in
      * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
      * Another example, if the request analyzes for who has
-     * permission P to a GCP folder F, and there's an IAM policy states user A
-     * has iam.serviceAccounts.actAs permission to a service account SA, and
-     * there's another IAM policy states service account SA has permission P to
-     * the GCP folder F, then user A potentially has access to the GCP folder
-     * F. And those advanced analysis results will be included in
+     * permission P to a Google Cloud folder F, and there's an IAM policy states
+     * user A has iam.serviceAccounts.actAs permission to a service account SA,
+     * and there's another IAM policy states service account SA has permission P
+     * to the Google Cloud folder F, then user A potentially has access to the
+     * Google Cloud folder F. And those advanced analysis results will be
+     * included in
      * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
      * Only the following permissions are considered in this analysis:
      * * `iam.serviceAccounts.actAs`
@@ -3174,18 +3233,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         expandGroups_ = false;
-
         expandRoles_ = false;
-
         expandResources_ = false;
-
         outputResourceEdges_ = false;
-
         outputGroupEdges_ = false;
-
         analyzeServiceAccountImpersonation_ = false;
-
         return this;
       }
 
@@ -3213,14 +3267,33 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options(this);
-        result.expandGroups_ = expandGroups_;
-        result.expandRoles_ = expandRoles_;
-        result.expandResources_ = expandResources_;
-        result.outputResourceEdges_ = outputResourceEdges_;
-        result.outputGroupEdges_ = outputGroupEdges_;
-        result.analyzeServiceAccountImpersonation_ = analyzeServiceAccountImpersonation_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expandGroups_ = expandGroups_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expandRoles_ = expandRoles_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.expandResources_ = expandResources_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.outputResourceEdges_ = outputResourceEdges_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.outputGroupEdges_ = outputGroupEdges_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.analyzeServiceAccountImpersonation_ = analyzeServiceAccountImpersonation_;
+        }
       }
 
       @java.lang.Override
@@ -3318,37 +3391,37 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
               case 8:
                 {
                   expandGroups_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   expandRoles_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   expandResources_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   outputResourceEdges_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 40:
                 {
                   outputGroupEdges_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 40
               case 48:
                 {
                   analyzeServiceAccountImpersonation_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 48
               default:
@@ -3368,6 +3441,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return this;
       }
 
+      private int bitField0_;
+
       private boolean expandGroups_;
       /**
        *
@@ -3375,9 +3450,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the identities section of the result will expand any
        * Google groups appearing in an IAM policy binding.
-       * If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
-       * identity in the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]
+       * is specified, the identity in the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * If true, the default max expansion per group is 1000 for
        * AssetService.AnalyzeIamPolicy][].
        * Default is false.
@@ -3397,9 +3473,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the identities section of the result will expand any
        * Google groups appearing in an IAM policy binding.
-       * If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
-       * identity in the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]
+       * is specified, the identity in the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * If true, the default max expansion per group is 1000 for
        * AssetService.AnalyzeIamPolicy][].
        * Default is false.
@@ -3413,6 +3490,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setExpandGroups(boolean value) {
 
         expandGroups_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3422,9 +3500,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the identities section of the result will expand any
        * Google groups appearing in an IAM policy binding.
-       * If [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector] is specified, the
-       * identity in the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.identity_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.identity_selector]
+       * is specified, the identity in the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * If true, the default max expansion per group is 1000 for
        * AssetService.AnalyzeIamPolicy][].
        * Default is false.
@@ -3435,7 +3514,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearExpandGroups() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         expandGroups_ = false;
         onChanged();
         return this;
@@ -3448,9 +3527,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the access section of result will expand any roles
        * appearing in IAM policy bindings to include their permissions.
-       * If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
-       * section of the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]
+       * is specified, the access section of the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * Default is false.
        * </pre>
        *
@@ -3468,9 +3548,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the access section of result will expand any roles
        * appearing in IAM policy bindings to include their permissions.
-       * If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
-       * section of the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]
+       * is specified, the access section of the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * Default is false.
        * </pre>
        *
@@ -3482,6 +3563,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setExpandRoles(boolean value) {
 
         expandRoles_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3491,9 +3573,10 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * <pre>
        * Optional. If true, the access section of result will expand any roles
        * appearing in IAM policy bindings to include their permissions.
-       * If [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector] is specified, the access
-       * section of the result will be determined by the selector, and this flag
-       * is not allowed to set.
+       * If
+       * [IamPolicyAnalysisQuery.access_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.access_selector]
+       * is specified, the access section of the result will be determined by the
+       * selector, and this flag is not allowed to set.
        * Default is false.
        * </pre>
        *
@@ -3502,7 +3585,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearExpandRoles() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         expandRoles_ = false;
         onChanged();
         return this;
@@ -3513,22 +3596,24 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
-       * specified, the resource section of the result will expand any resource
-       * attached to an IAM policy to include resources lower in the resource
-       * hierarchy.
+       * Optional. If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is not specified, the resource section of the result will expand any
+       * resource attached to an IAM policy to include resources lower in the
+       * resource hierarchy.
        * For example, if the request analyzes for which resources user A has
-       * permission P, and the results include an IAM policy with P on a GCP
-       * folder, the results will also include resources in that folder with
+       * permission P, and the results include an IAM policy with P on a Google
+       * Cloud folder, the results will also include resources in that folder with
        * permission P.
-       * If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,
-       * the resource section of the result will expand the specified resource to
-       * include resources lower in the resource hierarchy. Only project or
-       * lower resources are supported. Folder and organization resource cannot be
-       * used together with this option.
+       * If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is specified, the resource section of the result will expand the
+       * specified resource to include resources lower in the resource hierarchy.
+       * Only project or lower resources are supported. Folder and organization
+       * resources cannot be used together with this option.
        * For example, if the request analyzes for which users have permission P on
-       * a GCP project with this option enabled, the results will include all
-       * users who have permission P on that project or any lower resource.
+       * a Google Cloud project with this option enabled, the results will include
+       * all users who have permission P on that project or any lower resource.
        * If true, the default max expansion per resource is 1000 for
        * AssetService.AnalyzeIamPolicy][] and 100000 for
        * AssetService.AnalyzeIamPolicyLongrunning][].
@@ -3547,22 +3632,24 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
-       * specified, the resource section of the result will expand any resource
-       * attached to an IAM policy to include resources lower in the resource
-       * hierarchy.
+       * Optional. If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is not specified, the resource section of the result will expand any
+       * resource attached to an IAM policy to include resources lower in the
+       * resource hierarchy.
        * For example, if the request analyzes for which resources user A has
-       * permission P, and the results include an IAM policy with P on a GCP
-       * folder, the results will also include resources in that folder with
+       * permission P, and the results include an IAM policy with P on a Google
+       * Cloud folder, the results will also include resources in that folder with
        * permission P.
-       * If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,
-       * the resource section of the result will expand the specified resource to
-       * include resources lower in the resource hierarchy. Only project or
-       * lower resources are supported. Folder and organization resource cannot be
-       * used together with this option.
+       * If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is specified, the resource section of the result will expand the
+       * specified resource to include resources lower in the resource hierarchy.
+       * Only project or lower resources are supported. Folder and organization
+       * resources cannot be used together with this option.
        * For example, if the request analyzes for which users have permission P on
-       * a GCP project with this option enabled, the results will include all
-       * users who have permission P on that project or any lower resource.
+       * a Google Cloud project with this option enabled, the results will include
+       * all users who have permission P on that project or any lower resource.
        * If true, the default max expansion per resource is 1000 for
        * AssetService.AnalyzeIamPolicy][] and 100000 for
        * AssetService.AnalyzeIamPolicyLongrunning][].
@@ -3577,6 +3664,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setExpandResources(boolean value) {
 
         expandResources_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3584,22 +3672,24 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is not
-       * specified, the resource section of the result will expand any resource
-       * attached to an IAM policy to include resources lower in the resource
-       * hierarchy.
+       * Optional. If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is not specified, the resource section of the result will expand any
+       * resource attached to an IAM policy to include resources lower in the
+       * resource hierarchy.
        * For example, if the request analyzes for which resources user A has
-       * permission P, and the results include an IAM policy with P on a GCP
-       * folder, the results will also include resources in that folder with
+       * permission P, and the results include an IAM policy with P on a Google
+       * Cloud folder, the results will also include resources in that folder with
        * permission P.
-       * If true and [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector] is specified,
-       * the resource section of the result will expand the specified resource to
-       * include resources lower in the resource hierarchy. Only project or
-       * lower resources are supported. Folder and organization resource cannot be
-       * used together with this option.
+       * If true and
+       * [IamPolicyAnalysisQuery.resource_selector][google.cloud.asset.v1.IamPolicyAnalysisQuery.resource_selector]
+       * is specified, the resource section of the result will expand the
+       * specified resource to include resources lower in the resource hierarchy.
+       * Only project or lower resources are supported. Folder and organization
+       * resources cannot be used together with this option.
        * For example, if the request analyzes for which users have permission P on
-       * a GCP project with this option enabled, the results will include all
-       * users who have permission P on that project or any lower resource.
+       * a Google Cloud project with this option enabled, the results will include
+       * all users who have permission P on that project or any lower resource.
        * If true, the default max expansion per resource is 1000 for
        * AssetService.AnalyzeIamPolicy][] and 100000 for
        * AssetService.AnalyzeIamPolicyLongrunning][].
@@ -3611,7 +3701,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearExpandResources() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         expandResources_ = false;
         onChanged();
         return this;
@@ -3622,9 +3712,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant parent/child relationships
-       * between resources.
-       * Default is false.
+       * Optional. If true, the result will output the relevant parent/child
+       * relationships between resources. Default is false.
        * </pre>
        *
        * <code>bool output_resource_edges = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3639,9 +3728,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant parent/child relationships
-       * between resources.
-       * Default is false.
+       * Optional. If true, the result will output the relevant parent/child
+       * relationships between resources. Default is false.
        * </pre>
        *
        * <code>bool output_resource_edges = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3652,6 +3740,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setOutputResourceEdges(boolean value) {
 
         outputResourceEdges_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3659,9 +3748,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant parent/child relationships
-       * between resources.
-       * Default is false.
+       * Optional. If true, the result will output the relevant parent/child
+       * relationships between resources. Default is false.
        * </pre>
        *
        * <code>bool output_resource_edges = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3669,7 +3757,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearOutputResourceEdges() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         outputResourceEdges_ = false;
         onChanged();
         return this;
@@ -3680,9 +3768,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant membership relationships
-       * between groups and other groups, and between groups and principals.
-       * Default is false.
+       * Optional. If true, the result will output the relevant membership
+       * relationships between groups and other groups, and between groups and
+       * principals. Default is false.
        * </pre>
        *
        * <code>bool output_group_edges = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3697,9 +3785,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant membership relationships
-       * between groups and other groups, and between groups and principals.
-       * Default is false.
+       * Optional. If true, the result will output the relevant membership
+       * relationships between groups and other groups, and between groups and
+       * principals. Default is false.
        * </pre>
        *
        * <code>bool output_group_edges = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3710,6 +3798,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setOutputGroupEdges(boolean value) {
 
         outputGroupEdges_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3717,9 +3806,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the result will output the relevant membership relationships
-       * between groups and other groups, and between groups and principals.
-       * Default is false.
+       * Optional. If true, the result will output the relevant membership
+       * relationships between groups and other groups, and between groups and
+       * principals. Default is false.
        * </pre>
        *
        * <code>bool output_group_edges = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3727,7 +3816,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearOutputGroupEdges() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         outputGroupEdges_ = false;
         onChanged();
         return this;
@@ -3738,24 +3827,27 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the response will include access analysis from identities to
-       * resources via service account impersonation. This is a very expensive
-       * operation, because many derived queries will be executed. We highly
-       * recommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc
-       * instead.
+       * Optional. If true, the response will include access analysis from
+       * identities to resources via service account impersonation. This is a very
+       * expensive operation, because many derived queries will be executed. We
+       * highly recommend you use
+       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
+       * RPC instead.
        * For example, if the request analyzes for which resources user A has
        * permission P, and there's an IAM policy states user A has
        * iam.serviceAccounts.getAccessToken permission to a service account SA,
        * and there's another IAM policy states service account SA has permission P
-       * to a GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * to a Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Another example, if the request analyzes for who has
-       * permission P to a GCP folder F, and there's an IAM policy states user A
-       * has iam.serviceAccounts.actAs permission to a service account SA, and
-       * there's another IAM policy states service account SA has permission P to
-       * the GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * permission P to a Google Cloud folder F, and there's an IAM policy states
+       * user A has iam.serviceAccounts.actAs permission to a service account SA,
+       * and there's another IAM policy states service account SA has permission P
+       * to the Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Only the following permissions are considered in this analysis:
        * * `iam.serviceAccounts.actAs`
@@ -3781,24 +3873,27 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the response will include access analysis from identities to
-       * resources via service account impersonation. This is a very expensive
-       * operation, because many derived queries will be executed. We highly
-       * recommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc
-       * instead.
+       * Optional. If true, the response will include access analysis from
+       * identities to resources via service account impersonation. This is a very
+       * expensive operation, because many derived queries will be executed. We
+       * highly recommend you use
+       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
+       * RPC instead.
        * For example, if the request analyzes for which resources user A has
        * permission P, and there's an IAM policy states user A has
        * iam.serviceAccounts.getAccessToken permission to a service account SA,
        * and there's another IAM policy states service account SA has permission P
-       * to a GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * to a Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Another example, if the request analyzes for who has
-       * permission P to a GCP folder F, and there's an IAM policy states user A
-       * has iam.serviceAccounts.actAs permission to a service account SA, and
-       * there's another IAM policy states service account SA has permission P to
-       * the GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * permission P to a Google Cloud folder F, and there's an IAM policy states
+       * user A has iam.serviceAccounts.actAs permission to a service account SA,
+       * and there's another IAM policy states service account SA has permission P
+       * to the Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Only the following permissions are considered in this analysis:
        * * `iam.serviceAccounts.actAs`
@@ -3820,6 +3915,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public Builder setAnalyzeServiceAccountImpersonation(boolean value) {
 
         analyzeServiceAccountImpersonation_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3827,24 +3923,27 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        *
        *
        * <pre>
-       * Optional. If true, the response will include access analysis from identities to
-       * resources via service account impersonation. This is a very expensive
-       * operation, because many derived queries will be executed. We highly
-       * recommend you use [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning] rpc
-       * instead.
+       * Optional. If true, the response will include access analysis from
+       * identities to resources via service account impersonation. This is a very
+       * expensive operation, because many derived queries will be executed. We
+       * highly recommend you use
+       * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning]
+       * RPC instead.
        * For example, if the request analyzes for which resources user A has
        * permission P, and there's an IAM policy states user A has
        * iam.serviceAccounts.getAccessToken permission to a service account SA,
        * and there's another IAM policy states service account SA has permission P
-       * to a GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * to a Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Another example, if the request analyzes for who has
-       * permission P to a GCP folder F, and there's an IAM policy states user A
-       * has iam.serviceAccounts.actAs permission to a service account SA, and
-       * there's another IAM policy states service account SA has permission P to
-       * the GCP folder F, then user A potentially has access to the GCP folder
-       * F. And those advanced analysis results will be included in
+       * permission P to a Google Cloud folder F, and there's an IAM policy states
+       * user A has iam.serviceAccounts.actAs permission to a service account SA,
+       * and there's another IAM policy states service account SA has permission P
+       * to the Google Cloud folder F, then user A potentially has access to the
+       * Google Cloud folder F. And those advanced analysis results will be
+       * included in
        * [AnalyzeIamPolicyResponse.service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis].
        * Only the following permissions are considered in this analysis:
        * * `iam.serviceAccounts.actAs`
@@ -3863,7 +3962,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearAnalyzeServiceAccountImpersonation() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         analyzeServiceAccountImpersonation_ = false;
         onChanged();
         return this;
@@ -4347,6 +4446,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (accessTimeBuilder_ != null) {
           accessTimeBuilder_.clear();
         }
@@ -4381,16 +4481,26 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext(this);
-        if (timeContextCase_ == 1) {
-          if (accessTimeBuilder_ == null) {
-            result.timeContext_ = timeContext_;
-          } else {
-            result.timeContext_ = accessTimeBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.timeContextCase_ = timeContextCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext result) {
+        result.timeContextCase_ = timeContextCase_;
+        result.timeContext_ = this.timeContext_;
+        if (timeContextCase_ == 1 && accessTimeBuilder_ != null) {
+          result.timeContext_ = accessTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4517,6 +4627,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp,
@@ -4739,7 +4851,6 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         }
         timeContextCase_ = 1;
         onChanged();
-        ;
         return accessTimeBuilder_;
       }
 
@@ -4811,13 +4922,15 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object scope_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scope_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The relative name of the root asset. Only resources and IAM policies within
-   * the scope will be analyzed.
+   * Required. The relative name of the root asset. Only resources and IAM
+   * policies within the scope will be analyzed.
    * This can only be an organization number (such as "organizations/123"), a
    * folder number (such as "folders/123"), a project ID (such as
    * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -4847,8 +4960,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The relative name of the root asset. Only resources and IAM policies within
-   * the scope will be analyzed.
+   * Required. The relative name of the root asset. Only resources and IAM
+   * policies within the scope will be analyzed.
    * This can only be an organization number (such as "organizations/123"), a
    * folder number (such as "folders/123"), a project ID (such as
    * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -4927,7 +5040,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelectorOrBuilder
       getResourceSelectorOrBuilder() {
-    return getResourceSelector();
+    return resourceSelector_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.getDefaultInstance()
+        : resourceSelector_;
   }
 
   public static final int IDENTITY_SELECTOR_FIELD_NUMBER = 3;
@@ -4982,7 +5097,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelectorOrBuilder
       getIdentitySelectorOrBuilder() {
-    return getIdentitySelector();
+    return identitySelector_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.getDefaultInstance()
+        : identitySelector_;
   }
 
   public static final int ACCESS_SELECTOR_FIELD_NUMBER = 4;
@@ -5037,7 +5154,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelectorOrBuilder
       getAccessSelectorOrBuilder() {
-    return getAccessSelector();
+    return accessSelector_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.getDefaultInstance()
+        : accessSelector_;
   }
 
   public static final int OPTIONS_FIELD_NUMBER = 5;
@@ -5091,7 +5210,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.OptionsOrBuilder getOptionsOrBuilder() {
-    return getOptions();
+    return options_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.getDefaultInstance()
+        : options_;
   }
 
   public static final int CONDITION_CONTEXT_FIELD_NUMBER = 6;
@@ -5146,7 +5267,9 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContextOrBuilder
       getConditionContextOrBuilder() {
-    return getConditionContext();
+    return conditionContext_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.getDefaultInstance()
+        : conditionContext_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -5416,36 +5539,31 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = "";
-
-      if (resourceSelectorBuilder_ == null) {
-        resourceSelector_ = null;
-      } else {
-        resourceSelector_ = null;
+      resourceSelector_ = null;
+      if (resourceSelectorBuilder_ != null) {
+        resourceSelectorBuilder_.dispose();
         resourceSelectorBuilder_ = null;
       }
-      if (identitySelectorBuilder_ == null) {
-        identitySelector_ = null;
-      } else {
-        identitySelector_ = null;
+      identitySelector_ = null;
+      if (identitySelectorBuilder_ != null) {
+        identitySelectorBuilder_.dispose();
         identitySelectorBuilder_ = null;
       }
-      if (accessSelectorBuilder_ == null) {
-        accessSelector_ = null;
-      } else {
-        accessSelector_ = null;
+      accessSelector_ = null;
+      if (accessSelectorBuilder_ != null) {
+        accessSelectorBuilder_.dispose();
         accessSelectorBuilder_ = null;
       }
-      if (optionsBuilder_ == null) {
-        options_ = null;
-      } else {
-        options_ = null;
+      options_ = null;
+      if (optionsBuilder_ != null) {
+        optionsBuilder_.dispose();
         optionsBuilder_ = null;
       }
-      if (conditionContextBuilder_ == null) {
-        conditionContext_ = null;
-      } else {
-        conditionContext_ = null;
+      conditionContext_ = null;
+      if (conditionContextBuilder_ != null) {
+        conditionContextBuilder_.dispose();
         conditionContextBuilder_ = null;
       }
       return this;
@@ -5475,34 +5593,37 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery buildPartial() {
       com.google.cloud.asset.v1.IamPolicyAnalysisQuery result =
           new com.google.cloud.asset.v1.IamPolicyAnalysisQuery(this);
-      result.scope_ = scope_;
-      if (resourceSelectorBuilder_ == null) {
-        result.resourceSelector_ = resourceSelector_;
-      } else {
-        result.resourceSelector_ = resourceSelectorBuilder_.build();
-      }
-      if (identitySelectorBuilder_ == null) {
-        result.identitySelector_ = identitySelector_;
-      } else {
-        result.identitySelector_ = identitySelectorBuilder_.build();
-      }
-      if (accessSelectorBuilder_ == null) {
-        result.accessSelector_ = accessSelector_;
-      } else {
-        result.accessSelector_ = accessSelectorBuilder_.build();
-      }
-      if (optionsBuilder_ == null) {
-        result.options_ = options_;
-      } else {
-        result.options_ = optionsBuilder_.build();
-      }
-      if (conditionContextBuilder_ == null) {
-        result.conditionContext_ = conditionContext_;
-      } else {
-        result.conditionContext_ = conditionContextBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.IamPolicyAnalysisQuery result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceSelector_ =
+            resourceSelectorBuilder_ == null ? resourceSelector_ : resourceSelectorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.identitySelector_ =
+            identitySelectorBuilder_ == null ? identitySelector_ : identitySelectorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.accessSelector_ =
+            accessSelectorBuilder_ == null ? accessSelector_ : accessSelectorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.options_ = optionsBuilder_ == null ? options_ : optionsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.conditionContext_ =
+            conditionContextBuilder_ == null ? conditionContext_ : conditionContextBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5553,6 +5674,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResourceSelector()) {
@@ -5599,40 +5721,40 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
             case 10:
               {
                 scope_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getResourceSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getIdentitySelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getAccessSelectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getConditionContextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -5652,13 +5774,15 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object scope_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The relative name of the root asset. Only resources and IAM policies within
-     * the scope will be analyzed.
+     * Required. The relative name of the root asset. Only resources and IAM
+     * policies within the scope will be analyzed.
      * This can only be an organization number (such as "organizations/123"), a
      * folder number (such as "folders/123"), a project ID (such as
      * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -5687,8 +5811,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The relative name of the root asset. Only resources and IAM policies within
-     * the scope will be analyzed.
+     * Required. The relative name of the root asset. Only resources and IAM
+     * policies within the scope will be analyzed.
      * This can only be an organization number (such as "organizations/123"), a
      * folder number (such as "folders/123"), a project ID (such as
      * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -5717,8 +5841,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The relative name of the root asset. Only resources and IAM policies within
-     * the scope will be analyzed.
+     * Required. The relative name of the root asset. Only resources and IAM
+     * policies within the scope will be analyzed.
      * This can only be an organization number (such as "organizations/123"), a
      * folder number (such as "folders/123"), a project ID (such as
      * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -5737,8 +5861,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5746,8 +5870,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The relative name of the root asset. Only resources and IAM policies within
-     * the scope will be analyzed.
+     * Required. The relative name of the root asset. Only resources and IAM
+     * policies within the scope will be analyzed.
      * This can only be an organization number (such as "organizations/123"), a
      * folder number (such as "folders/123"), a project ID (such as
      * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -5762,8 +5886,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
       scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -5771,8 +5895,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The relative name of the root asset. Only resources and IAM policies within
-     * the scope will be analyzed.
+     * Required. The relative name of the root asset. Only resources and IAM
+     * policies within the scope will be analyzed.
      * This can only be an organization number (such as "organizations/123"), a
      * folder number (such as "folders/123"), a project ID (such as
      * "projects/my-project-id"), or a project number (such as "projects/12345").
@@ -5792,8 +5916,8 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -5818,7 +5942,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the resourceSelector field is set.
      */
     public boolean hasResourceSelector() {
-      return resourceSelectorBuilder_ != null || resourceSelector_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -5860,11 +5984,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         resourceSelector_ = value;
-        onChanged();
       } else {
         resourceSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5882,11 +6006,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.Builder builderForValue) {
       if (resourceSelectorBuilder_ == null) {
         resourceSelector_ = builderForValue.build();
-        onChanged();
       } else {
         resourceSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5903,20 +6027,20 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public Builder mergeResourceSelector(
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector value) {
       if (resourceSelectorBuilder_ == null) {
-        if (resourceSelector_ != null) {
-          resourceSelector_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.newBuilder(
-                      resourceSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resourceSelector_ != null
+            && resourceSelector_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector
+                    .getDefaultInstance()) {
+          getResourceSelectorBuilder().mergeFrom(value);
         } else {
           resourceSelector_ = value;
         }
-        onChanged();
       } else {
         resourceSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -5931,14 +6055,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearResourceSelector() {
-      if (resourceSelectorBuilder_ == null) {
-        resourceSelector_ = null;
-        onChanged();
-      } else {
-        resourceSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resourceSelector_ = null;
+      if (resourceSelectorBuilder_ != null) {
+        resourceSelectorBuilder_.dispose();
         resourceSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5954,7 +6077,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ResourceSelector.Builder
         getResourceSelectorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceSelectorFieldBuilder().getBuilder();
     }
@@ -6027,7 +6150,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the identitySelector field is set.
      */
     public boolean hasIdentitySelector() {
-      return identitySelectorBuilder_ != null || identitySelector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -6069,11 +6192,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         identitySelector_ = value;
-        onChanged();
       } else {
         identitySelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -6091,11 +6214,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.Builder builderForValue) {
       if (identitySelectorBuilder_ == null) {
         identitySelector_ = builderForValue.build();
-        onChanged();
       } else {
         identitySelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -6112,20 +6235,20 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public Builder mergeIdentitySelector(
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector value) {
       if (identitySelectorBuilder_ == null) {
-        if (identitySelector_ != null) {
-          identitySelector_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.newBuilder(
-                      identitySelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && identitySelector_ != null
+            && identitySelector_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector
+                    .getDefaultInstance()) {
+          getIdentitySelectorBuilder().mergeFrom(value);
         } else {
           identitySelector_ = value;
         }
-        onChanged();
       } else {
         identitySelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -6140,14 +6263,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearIdentitySelector() {
-      if (identitySelectorBuilder_ == null) {
-        identitySelector_ = null;
-        onChanged();
-      } else {
-        identitySelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      identitySelector_ = null;
+      if (identitySelectorBuilder_ != null) {
+        identitySelectorBuilder_.dispose();
         identitySelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6163,7 +6285,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.IdentitySelector.Builder
         getIdentitySelectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getIdentitySelectorFieldBuilder().getBuilder();
     }
@@ -6236,7 +6358,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the accessSelector field is set.
      */
     public boolean hasAccessSelector() {
-      return accessSelectorBuilder_ != null || accessSelector_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -6278,11 +6400,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         accessSelector_ = value;
-        onChanged();
       } else {
         accessSelectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6300,11 +6422,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.Builder builderForValue) {
       if (accessSelectorBuilder_ == null) {
         accessSelector_ = builderForValue.build();
-        onChanged();
       } else {
         accessSelectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6321,20 +6443,20 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public Builder mergeAccessSelector(
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector value) {
       if (accessSelectorBuilder_ == null) {
-        if (accessSelector_ != null) {
-          accessSelector_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.newBuilder(
-                      accessSelector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && accessSelector_ != null
+            && accessSelector_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector
+                    .getDefaultInstance()) {
+          getAccessSelectorBuilder().mergeFrom(value);
         } else {
           accessSelector_ = value;
         }
-        onChanged();
       } else {
         accessSelectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -6349,14 +6471,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearAccessSelector() {
-      if (accessSelectorBuilder_ == null) {
-        accessSelector_ = null;
-        onChanged();
-      } else {
-        accessSelector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      accessSelector_ = null;
+      if (accessSelectorBuilder_ != null) {
+        accessSelectorBuilder_.dispose();
         accessSelectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6372,7 +6493,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.AccessSelector.Builder
         getAccessSelectorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAccessSelectorFieldBuilder().getBuilder();
     }
@@ -6445,7 +6566,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the options field is set.
      */
     public boolean hasOptions() {
-      return optionsBuilder_ != null || options_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -6486,11 +6607,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         options_ = value;
-        onChanged();
       } else {
         optionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6508,11 +6629,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.Builder builderForValue) {
       if (optionsBuilder_ == null) {
         options_ = builderForValue.build();
-        onChanged();
       } else {
         optionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6528,19 +6649,19 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     public Builder mergeOptions(com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options value) {
       if (optionsBuilder_ == null) {
-        if (options_ != null) {
-          options_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.newBuilder(options_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && options_ != null
+            && options_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.getDefaultInstance()) {
+          getOptionsBuilder().mergeFrom(value);
         } else {
           options_ = value;
         }
-        onChanged();
       } else {
         optionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -6555,14 +6676,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearOptions() {
-      if (optionsBuilder_ == null) {
-        options_ = null;
-        onChanged();
-      } else {
-        options_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      options_ = null;
+      if (optionsBuilder_ != null) {
+        optionsBuilder_.dispose();
         optionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6577,7 +6697,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Options.Builder getOptionsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getOptionsFieldBuilder().getBuilder();
     }
@@ -6649,7 +6769,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * @return Whether the conditionContext field is set.
      */
     public boolean hasConditionContext() {
-      return conditionContextBuilder_ != null || conditionContext_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -6691,11 +6811,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         conditionContext_ = value;
-        onChanged();
       } else {
         conditionContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -6713,11 +6833,11 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder builderForValue) {
       if (conditionContextBuilder_ == null) {
         conditionContext_ = builderForValue.build();
-        onChanged();
       } else {
         conditionContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -6734,20 +6854,20 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
     public Builder mergeConditionContext(
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext value) {
       if (conditionContextBuilder_ == null) {
-        if (conditionContext_ != null) {
-          conditionContext_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.newBuilder(
-                      conditionContext_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && conditionContext_ != null
+            && conditionContext_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext
+                    .getDefaultInstance()) {
+          getConditionContextBuilder().mergeFrom(value);
         } else {
           conditionContext_ = value;
         }
-        onChanged();
       } else {
         conditionContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -6762,14 +6882,13 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearConditionContext() {
-      if (conditionContextBuilder_ == null) {
-        conditionContext_ = null;
-        onChanged();
-      } else {
-        conditionContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      conditionContext_ = null;
+      if (conditionContextBuilder_ != null) {
+        conditionContextBuilder_.dispose();
         conditionContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6785,7 +6904,7 @@ public final class IamPolicyAnalysisQuery extends com.google.protobuf.GeneratedM
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.ConditionContext.Builder
         getConditionContextBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConditionContextFieldBuilder().getBuilder();
     }

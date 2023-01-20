@@ -111,10 +111,12 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int ASSETS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.Asset> assets_;
   /**
    *
@@ -184,7 +186,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -458,10 +462,10 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      bitField0_ = 0;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       if (assetsBuilder_ == null) {
@@ -470,9 +474,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         assets_ = null;
         assetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = "";
-
       return this;
     }
 
@@ -500,24 +503,34 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.ListAssetsResponse buildPartial() {
       com.google.cloud.asset.v1.ListAssetsResponse result =
           new com.google.cloud.asset.v1.ListAssetsResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.ListAssetsResponse result) {
       if (assetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           assets_ = java.util.Collections.unmodifiableList(assets_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.assets_ = assets_;
       } else {
         result.assets_ = assetsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.ListAssetsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -572,7 +585,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         if (!other.assets_.isEmpty()) {
           if (assets_.isEmpty()) {
             assets_ = other.assets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAssetsIsMutable();
             assets_.addAll(other.assets_);
@@ -585,7 +598,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
             assetsBuilder_.dispose();
             assetsBuilder_ = null;
             assets_ = other.assets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             assetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAssetsFieldBuilder()
@@ -597,6 +610,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -628,7 +642,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -646,7 +660,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -686,7 +700,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -721,11 +735,11 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +754,11 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -758,17 +772,18 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,14 +796,13 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -801,7 +815,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp read_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -851,9 +865,9 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureAssetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assets_ = new java.util.ArrayList<com.google.cloud.asset.v1.Asset>(assets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1066,7 +1080,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
     public Builder clearAssets() {
       if (assetsBuilder_ == null) {
         assets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         assetsBuilder_.clear();
@@ -1187,7 +1201,7 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.asset.v1.Asset,
                 com.google.cloud.asset.v1.Asset.Builder,
                 com.google.cloud.asset.v1.AssetOrBuilder>(
-                assets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                assets_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         assets_ = null;
       }
       return assetsBuilder_;
@@ -1260,8 +1274,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1279,8 +1293,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1303,8 +1317,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

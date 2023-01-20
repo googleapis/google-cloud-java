@@ -27,13 +27,14 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.asset.v1p5beta1.stub.HttpJsonAssetServiceStub;
 import com.google.common.collect.Lists;
-import com.google.protobuf.Timestamp;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -87,17 +88,27 @@ public class AssetServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    ListAssetsRequest request =
-        ListAssetsRequest.newBuilder()
-            .setParent("parent-4715/parent-4715")
-            .setReadTime(Timestamp.newBuilder().build())
-            .addAllAssetTypes(new ArrayList<String>())
-            .setContentType(ContentType.forNumber(0))
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
+    ResourceName parent =
+        new ResourceName() {
+          @Override
+          public Map<String, String> getFieldValuesMap() {
+            Map<String, String> fieldValuesMap = new HashMap<>();
+            fieldValuesMap.put("parent", "parent-4715/parent-4715");
+            return fieldValuesMap;
+          }
 
-    ListAssetsPagedResponse pagedListResponse = client.listAssets(request);
+          @Override
+          public String getFieldValue(String fieldName) {
+            return getFieldValuesMap().get(fieldName);
+          }
+
+          @Override
+          public String toString() {
+            return "parent-4715/parent-4715";
+          }
+        };
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
 
     List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -127,16 +138,76 @@ public class AssetServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      ListAssetsRequest request =
-          ListAssetsRequest.newBuilder()
-              .setParent("parent-4715/parent-4715")
-              .setReadTime(Timestamp.newBuilder().build())
-              .addAllAssetTypes(new ArrayList<String>())
-              .setContentType(ContentType.forNumber(0))
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.listAssets(request);
+      ResourceName parent =
+          new ResourceName() {
+            @Override
+            public Map<String, String> getFieldValuesMap() {
+              Map<String, String> fieldValuesMap = new HashMap<>();
+              fieldValuesMap.put("parent", "parent-4715/parent-4715");
+              return fieldValuesMap;
+            }
+
+            @Override
+            public String getFieldValue(String fieldName) {
+              return getFieldValuesMap().get(fieldName);
+            }
+
+            @Override
+            public String toString() {
+              return "parent-4715/parent-4715";
+            }
+          };
+      client.listAssets(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAssetsTest2() throws Exception {
+    Asset responsesElement = Asset.newBuilder().build();
+    ListAssetsResponse expectedResponse =
+        ListAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAssets(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "parent-4715/parent-4715";
+
+    ListAssetsPagedResponse pagedListResponse = client.listAssets(parent);
+
+    List<Asset> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAssetsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAssetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "parent-4715/parent-4715";
+      client.listAssets(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

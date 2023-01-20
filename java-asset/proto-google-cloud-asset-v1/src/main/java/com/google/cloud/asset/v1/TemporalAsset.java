@@ -314,11 +314,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.TimeWindowOrBuilder getWindowOrBuilder() {
-    return getWindow();
+    return window_ == null ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance() : window_;
   }
 
   public static final int DELETED_FIELD_NUMBER = 2;
-  private boolean deleted_;
+  private boolean deleted_ = false;
   /**
    *
    *
@@ -378,11 +378,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.AssetOrBuilder getAssetOrBuilder() {
-    return getAsset();
+    return asset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : asset_;
   }
 
   public static final int PRIOR_ASSET_STATE_FIELD_NUMBER = 4;
-  private int priorAssetState_;
+  private int priorAssetState_ = 0;
   /**
    *
    *
@@ -411,9 +411,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.TemporalAsset.PriorAssetState getPriorAssetState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.TemporalAsset.PriorAssetState result =
-        com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.valueOf(priorAssetState_);
+        com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.forNumber(priorAssetState_);
     return result == null
         ? com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.UNRECOGNIZED
         : result;
@@ -465,7 +464,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.AssetOrBuilder getPriorAssetOrBuilder() {
-    return getPriorAsset();
+    return priorAsset_ == null ? com.google.cloud.asset.v1.Asset.getDefaultInstance() : priorAsset_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -720,26 +719,22 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (windowBuilder_ == null) {
-        window_ = null;
-      } else {
-        window_ = null;
+      bitField0_ = 0;
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
       deleted_ = false;
-
-      if (assetBuilder_ == null) {
-        asset_ = null;
-      } else {
-        asset_ = null;
+      asset_ = null;
+      if (assetBuilder_ != null) {
+        assetBuilder_.dispose();
         assetBuilder_ = null;
       }
       priorAssetState_ = 0;
-
-      if (priorAssetBuilder_ == null) {
-        priorAsset_ = null;
-      } else {
-        priorAsset_ = null;
+      priorAsset_ = null;
+      if (priorAssetBuilder_ != null) {
+        priorAssetBuilder_.dispose();
         priorAssetBuilder_ = null;
       }
       return this;
@@ -769,25 +764,30 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.TemporalAsset buildPartial() {
       com.google.cloud.asset.v1.TemporalAsset result =
           new com.google.cloud.asset.v1.TemporalAsset(this);
-      if (windowBuilder_ == null) {
-        result.window_ = window_;
-      } else {
-        result.window_ = windowBuilder_.build();
-      }
-      result.deleted_ = deleted_;
-      if (assetBuilder_ == null) {
-        result.asset_ = asset_;
-      } else {
-        result.asset_ = assetBuilder_.build();
-      }
-      result.priorAssetState_ = priorAssetState_;
-      if (priorAssetBuilder_ == null) {
-        result.priorAsset_ = priorAsset_;
-      } else {
-        result.priorAsset_ = priorAssetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.TemporalAsset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.window_ = windowBuilder_ == null ? window_ : windowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deleted_ = deleted_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.asset_ = assetBuilder_ == null ? asset_ : assetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.priorAssetState_ = priorAssetState_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.priorAsset_ = priorAssetBuilder_ == null ? priorAsset_ : priorAssetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -879,31 +879,31 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 deleted_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getAssetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 priorAssetState_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getPriorAssetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -923,6 +923,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.asset.v1.TimeWindow window_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1.TimeWindow,
@@ -941,7 +943,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the window field is set.
      */
     public boolean hasWindow() {
-      return windowBuilder_ != null || window_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -978,11 +980,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         window_ = value;
-        onChanged();
       } else {
         windowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -997,11 +999,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public Builder setWindow(com.google.cloud.asset.v1.TimeWindow.Builder builderForValue) {
       if (windowBuilder_ == null) {
         window_ = builderForValue.build();
-        onChanged();
       } else {
         windowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1015,19 +1017,18 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWindow(com.google.cloud.asset.v1.TimeWindow value) {
       if (windowBuilder_ == null) {
-        if (window_ != null) {
-          window_ =
-              com.google.cloud.asset.v1.TimeWindow.newBuilder(window_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && window_ != null
+            && window_ != com.google.cloud.asset.v1.TimeWindow.getDefaultInstance()) {
+          getWindowBuilder().mergeFrom(value);
         } else {
           window_ = value;
         }
-        onChanged();
       } else {
         windowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1040,14 +1041,13 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
      */
     public Builder clearWindow() {
-      if (windowBuilder_ == null) {
-        window_ = null;
-        onChanged();
-      } else {
-        window_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      window_ = null;
+      if (windowBuilder_ != null) {
+        windowBuilder_.dispose();
         windowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1060,7 +1060,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.TimeWindow window = 1;</code>
      */
     public com.google.cloud.asset.v1.TimeWindow.Builder getWindowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
@@ -1139,6 +1139,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleted(boolean value) {
 
       deleted_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1154,7 +1155,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeleted() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       deleted_ = false;
       onChanged();
       return this;
@@ -1178,7 +1179,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the asset field is set.
      */
     public boolean hasAsset() {
-      return assetBuilder_ != null || asset_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1213,11 +1214,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         asset_ = value;
-        onChanged();
       } else {
         assetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1232,11 +1233,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public Builder setAsset(com.google.cloud.asset.v1.Asset.Builder builderForValue) {
       if (assetBuilder_ == null) {
         asset_ = builderForValue.build();
-        onChanged();
       } else {
         assetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1250,17 +1251,18 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAsset(com.google.cloud.asset.v1.Asset value) {
       if (assetBuilder_ == null) {
-        if (asset_ != null) {
-          asset_ =
-              com.google.cloud.asset.v1.Asset.newBuilder(asset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && asset_ != null
+            && asset_ != com.google.cloud.asset.v1.Asset.getDefaultInstance()) {
+          getAssetBuilder().mergeFrom(value);
         } else {
           asset_ = value;
         }
-        onChanged();
       } else {
         assetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1273,14 +1275,13 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
      */
     public Builder clearAsset() {
-      if (assetBuilder_ == null) {
-        asset_ = null;
-        onChanged();
-      } else {
-        asset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      asset_ = null;
+      if (assetBuilder_ != null) {
+        assetBuilder_.dispose();
         assetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1293,7 +1294,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Asset asset = 3;</code>
      */
     public com.google.cloud.asset.v1.Asset.Builder getAssetBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
@@ -1368,8 +1369,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPriorAssetStateValue(int value) {
-
       priorAssetState_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1386,9 +1387,8 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.TemporalAsset.PriorAssetState getPriorAssetState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.TemporalAsset.PriorAssetState result =
-          com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.valueOf(priorAssetState_);
+          com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.forNumber(priorAssetState_);
       return result == null
           ? com.google.cloud.asset.v1.TemporalAsset.PriorAssetState.UNRECOGNIZED
           : result;
@@ -1410,7 +1410,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       priorAssetState_ = value.getNumber();
       onChanged();
       return this;
@@ -1427,7 +1427,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriorAssetState() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       priorAssetState_ = 0;
       onChanged();
       return this;
@@ -1452,7 +1452,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the priorAsset field is set.
      */
     public boolean hasPriorAsset() {
-      return priorAssetBuilder_ != null || priorAsset_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1491,11 +1491,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         priorAsset_ = value;
-        onChanged();
       } else {
         priorAssetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1511,11 +1511,11 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriorAsset(com.google.cloud.asset.v1.Asset.Builder builderForValue) {
       if (priorAssetBuilder_ == null) {
         priorAsset_ = builderForValue.build();
-        onChanged();
       } else {
         priorAssetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1530,19 +1530,18 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePriorAsset(com.google.cloud.asset.v1.Asset value) {
       if (priorAssetBuilder_ == null) {
-        if (priorAsset_ != null) {
-          priorAsset_ =
-              com.google.cloud.asset.v1.Asset.newBuilder(priorAsset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && priorAsset_ != null
+            && priorAsset_ != com.google.cloud.asset.v1.Asset.getDefaultInstance()) {
+          getPriorAssetBuilder().mergeFrom(value);
         } else {
           priorAsset_ = value;
         }
-        onChanged();
       } else {
         priorAssetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1556,14 +1555,13 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
      */
     public Builder clearPriorAsset() {
-      if (priorAssetBuilder_ == null) {
-        priorAsset_ = null;
-        onChanged();
-      } else {
-        priorAsset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      priorAsset_ = null;
+      if (priorAssetBuilder_ != null) {
+        priorAssetBuilder_.dispose();
         priorAssetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1577,7 +1575,7 @@ public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Asset prior_asset = 5;</code>
      */
     public com.google.cloud.asset.v1.Asset.Builder getPriorAssetBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPriorAssetFieldBuilder().getBuilder();
     }

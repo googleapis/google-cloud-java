@@ -27,7 +27,8 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The [full resource
+   * The
+   * [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * of the resource associated with this IAM policy.
    * </pre>
@@ -41,7 +42,8 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The [full resource
+   * The
+   * [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * of the resource associated with this IAM policy.
    * </pre>
@@ -56,11 +58,12 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of `projects/{project_number}`. If an IAM policy is set on a resource
+   * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+   * project field will indicate the project that contains the resource. If an
+   * IAM policy is set on a folder or orgnization, the project field will be
+   * empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -72,11 +75,12 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of `projects/{project_number}`. If an IAM policy is set on a resource
+   * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+   * project field will indicate the project that contains the resource. If an
+   * IAM policy is set on a folder or orgnization, the project field will be
+   * empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -89,9 +93,9 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -104,9 +108,9 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -119,9 +123,9 @@ public interface IamPolicySearchResultOrBuilder
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -134,7 +138,7 @@ public interface IamPolicySearchResultOrBuilder
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -147,7 +151,7 @@ public interface IamPolicySearchResultOrBuilder
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -160,7 +164,7 @@ public interface IamPolicySearchResultOrBuilder
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>

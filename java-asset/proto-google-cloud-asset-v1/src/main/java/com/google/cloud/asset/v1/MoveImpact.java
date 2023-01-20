@@ -68,7 +68,9 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DETAIL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object detail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object detail_ = "";
   /**
    *
    *
@@ -311,8 +313,8 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       detail_ = "";
-
       return this;
     }
 
@@ -339,9 +341,18 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.asset.v1.MoveImpact buildPartial() {
       com.google.cloud.asset.v1.MoveImpact result = new com.google.cloud.asset.v1.MoveImpact(this);
-      result.detail_ = detail_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.MoveImpact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.detail_ = detail_;
+      }
     }
 
     @java.lang.Override
@@ -391,6 +402,7 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.asset.v1.MoveImpact.getDefaultInstance()) return this;
       if (!other.getDetail().isEmpty()) {
         detail_ = other.detail_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -422,7 +434,7 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 detail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -441,6 +453,8 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object detail_ = "";
     /**
@@ -503,8 +517,8 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       detail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -520,8 +534,8 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDetail() {
-
       detail_ = getDefaultInstance().getDetail();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -542,8 +556,8 @@ public final class MoveImpact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       detail_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

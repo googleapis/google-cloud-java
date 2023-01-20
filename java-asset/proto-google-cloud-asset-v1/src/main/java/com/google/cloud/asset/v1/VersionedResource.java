@@ -69,7 +69,9 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -195,7 +197,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.protobuf.Struct.getDefaultInstance() : resource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -410,12 +412,11 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       return this;
@@ -445,14 +446,21 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1.VersionedResource buildPartial() {
       com.google.cloud.asset.v1.VersionedResource result =
           new com.google.cloud.asset.v1.VersionedResource(this);
-      result.version_ = version_;
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.VersionedResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -502,6 +510,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.asset.v1.VersionedResource.getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResource()) {
@@ -536,13 +545,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -561,6 +570,8 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -635,8 +646,8 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -656,8 +667,8 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -682,8 +693,8 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,7 +726,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -768,11 +779,11 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,11 +807,11 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
     public Builder setResource(com.google.protobuf.Struct.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -823,17 +834,18 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeResource(com.google.protobuf.Struct value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.protobuf.Struct.newBuilder(resource_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resource_ != null
+            && resource_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -855,14 +867,13 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Struct resource = 2;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -884,7 +895,7 @@ public final class VersionedResource extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Struct resource = 2;</code>
      */
     public com.google.protobuf.Struct.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

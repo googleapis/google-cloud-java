@@ -29,11 +29,13 @@ public interface ListAssetsRequestOrBuilder
    * <pre>
    * Required. Name of the organization or project the assets belong to. Format:
    * "organizations/[organization-number]" (such as "organizations/123"),
-   * "projects/[project-number]" (such as "projects/my-project-id"), or
-   * "projects/[project-id]" (such as "projects/12345").
+   * "projects/[project-id]" (such as "projects/my-project-id"), or
+   * "projects/[project-number]" (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -44,11 +46,13 @@ public interface ListAssetsRequestOrBuilder
    * <pre>
    * Required. Name of the organization or project the assets belong to. Format:
    * "organizations/[organization-number]" (such as "organizations/123"),
-   * "projects/[project-number]" (such as "projects/my-project-id"), or
-   * "projects/[project-id]" (such as "projects/12345").
+   * "projects/[project-id]" (such as "projects/my-project-id"), or
+   * "projects/[project-number]" (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -59,10 +63,10 @@ public interface ListAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -75,10 +79,10 @@ public interface ListAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -91,10 +95,10 @@ public interface ListAssetsRequestOrBuilder
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -105,10 +109,19 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -121,10 +134,19 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -137,10 +159,19 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -154,10 +185,19 @@ public interface ListAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *

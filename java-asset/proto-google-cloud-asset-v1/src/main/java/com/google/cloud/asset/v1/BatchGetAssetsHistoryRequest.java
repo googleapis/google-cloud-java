@@ -71,7 +71,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -128,6 +130,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   }
 
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList assetNames_;
   /**
    *
@@ -209,7 +213,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
   }
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
-  private int contentType_;
+  private int contentType_ = 0;
   /**
    *
    *
@@ -242,9 +246,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.ContentType getContentType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.ContentType result =
-        com.google.cloud.asset.v1.ContentType.valueOf(contentType_);
+        com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
     return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
   }
 
@@ -314,10 +317,14 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.TimeWindowOrBuilder getReadTimeWindowOrBuilder() {
-    return getReadTimeWindow();
+    return readTimeWindow_ == null
+        ? com.google.cloud.asset.v1.TimeWindow.getDefaultInstance()
+        : readTimeWindow_;
   }
 
   public static final int RELATIONSHIP_TYPES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList relationshipTypes_;
   /**
    *
@@ -693,20 +700,18 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       contentType_ = 0;
-
-      if (readTimeWindowBuilder_ == null) {
-        readTimeWindow_ = null;
-      } else {
-        readTimeWindow_ = null;
+      readTimeWindow_ = null;
+      if (readTimeWindowBuilder_ != null) {
+        readTimeWindowBuilder_.dispose();
         readTimeWindowBuilder_ = null;
       }
       relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -734,26 +739,40 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest buildPartial() {
       com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result =
           new com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.assetNames_ = assetNames_;
-      result.contentType_ = contentType_;
-      if (readTimeWindowBuilder_ == null) {
-        result.readTimeWindow_ = readTimeWindow_;
-      } else {
-        result.readTimeWindow_ = readTimeWindowBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.relationshipTypes_ = relationshipTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        assetNames_ = assetNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.assetNames_ = assetNames_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.relationshipTypes_ = relationshipTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contentType_ = contentType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.readTimeWindow_ =
+            readTimeWindowBuilder_ == null ? readTimeWindow_ : readTimeWindowBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -804,12 +823,13 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -825,7 +845,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (!other.relationshipTypes_.isEmpty()) {
         if (relationshipTypes_.isEmpty()) {
           relationshipTypes_ = other.relationshipTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureRelationshipTypesIsMutable();
           relationshipTypes_.addAll(other.relationshipTypes_);
@@ -861,7 +881,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -874,13 +894,13 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
             case 24:
               {
                 contentType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getReadTimeWindowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -982,8 +1002,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1003,8 +1023,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1029,8 +1049,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1039,9 +1059,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1216,7 +1236,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      */
     public Builder clearAssetNames() {
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1281,8 +1301,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
-
       contentType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1301,9 +1321,8 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.ContentType getContentType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.ContentType result =
-          com.google.cloud.asset.v1.ContentType.valueOf(contentType_);
+          com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
       return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
     }
     /**
@@ -1324,7 +1343,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       contentType_ = value.getNumber();
       onChanged();
       return this;
@@ -1343,7 +1362,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearContentType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       contentType_ = 0;
       onChanged();
       return this;
@@ -1374,7 +1393,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * @return Whether the readTimeWindow field is set.
      */
     public boolean hasReadTimeWindow() {
-      return readTimeWindowBuilder_ != null || readTimeWindow_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1425,11 +1444,11 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         readTimeWindow_ = value;
-        onChanged();
       } else {
         readTimeWindowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1451,11 +1470,11 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
     public Builder setReadTimeWindow(com.google.cloud.asset.v1.TimeWindow.Builder builderForValue) {
       if (readTimeWindowBuilder_ == null) {
         readTimeWindow_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeWindowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1476,19 +1495,18 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      */
     public Builder mergeReadTimeWindow(com.google.cloud.asset.v1.TimeWindow value) {
       if (readTimeWindowBuilder_ == null) {
-        if (readTimeWindow_ != null) {
-          readTimeWindow_ =
-              com.google.cloud.asset.v1.TimeWindow.newBuilder(readTimeWindow_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && readTimeWindow_ != null
+            && readTimeWindow_ != com.google.cloud.asset.v1.TimeWindow.getDefaultInstance()) {
+          getReadTimeWindowBuilder().mergeFrom(value);
         } else {
           readTimeWindow_ = value;
         }
-        onChanged();
       } else {
         readTimeWindowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1508,14 +1526,13 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearReadTimeWindow() {
-      if (readTimeWindowBuilder_ == null) {
-        readTimeWindow_ = null;
-        onChanged();
-      } else {
-        readTimeWindow_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      readTimeWindow_ = null;
+      if (readTimeWindowBuilder_ != null) {
+        readTimeWindowBuilder_.dispose();
         readTimeWindowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1535,7 +1552,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.cloud.asset.v1.TimeWindow.Builder getReadTimeWindowBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getReadTimeWindowFieldBuilder().getBuilder();
     }
@@ -1601,9 +1618,9 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRelationshipTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         relationshipTypes_ = new com.google.protobuf.LazyStringArrayList(relationshipTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1866,7 +1883,7 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      */
     public Builder clearRelationshipTypes() {
       relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }

@@ -68,6 +68,8 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
   }
 
   public static final int ASSETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.TemporalAsset> assets_;
   /**
    *
@@ -336,6 +338,7 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (assetsBuilder_ == null) {
         assets_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,16 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
     public com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse buildPartial() {
       com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse result =
           new com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse result) {
       if (assetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           assets_ = java.util.Collections.unmodifiableList(assets_);
@@ -380,8 +392,10 @@ public final class BatchGetAssetsHistoryResponse extends com.google.protobuf.Gen
       } else {
         result.assets_ = assetsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

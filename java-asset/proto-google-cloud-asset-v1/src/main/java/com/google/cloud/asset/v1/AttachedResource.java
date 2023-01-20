@@ -70,7 +70,9 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -127,6 +129,8 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int VERSIONED_RESOURCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_;
   /**
    *
@@ -416,15 +420,15 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       assetType_ = "";
-
       if (versionedResourcesBuilder_ == null) {
         versionedResources_ = java.util.Collections.emptyList();
       } else {
         versionedResources_ = null;
         versionedResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -452,19 +456,31 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1.AttachedResource buildPartial() {
       com.google.cloud.asset.v1.AttachedResource result =
           new com.google.cloud.asset.v1.AttachedResource(this);
-      int from_bitField0_ = bitField0_;
-      result.assetType_ = assetType_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.AttachedResource result) {
       if (versionedResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.versionedResources_ = versionedResources_;
       } else {
         result.versionedResources_ = versionedResourcesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.AttachedResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.assetType_ = assetType_;
+      }
     }
 
     @java.lang.Override
@@ -514,13 +530,14 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.asset.v1.AttachedResource.getDefaultInstance()) return this;
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (versionedResourcesBuilder_ == null) {
         if (!other.versionedResources_.isEmpty()) {
           if (versionedResources_.isEmpty()) {
             versionedResources_ = other.versionedResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureVersionedResourcesIsMutable();
             versionedResources_.addAll(other.versionedResources_);
@@ -533,7 +550,7 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
             versionedResourcesBuilder_.dispose();
             versionedResourcesBuilder_ = null;
             versionedResources_ = other.versionedResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             versionedResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionedResourcesFieldBuilder()
@@ -572,7 +589,7 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -680,8 +697,8 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,8 +718,8 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -727,8 +744,8 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,11 +754,11 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureVersionedResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         versionedResources_ =
             new java.util.ArrayList<com.google.cloud.asset.v1.VersionedResource>(
                 versionedResources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -981,7 +998,7 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
     public Builder clearVersionedResources() {
       if (versionedResourcesBuilder_ == null) {
         versionedResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         versionedResourcesBuilder_.clear();
@@ -1121,7 +1138,7 @@ public final class AttachedResource extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.asset.v1.VersionedResource.Builder,
                 com.google.cloud.asset.v1.VersionedResourceOrBuilder>(
                 versionedResources_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         versionedResources_ = null;

@@ -185,12 +185,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the resources under a scope,
-     * even if they don't have .get permission of all the resources. Callers
-     * should have cloud.assets.SearchAllResources permission on the requested
-     * scope, otherwise it will be rejected.
+     * Searches all the resources within a given accessible Resource Manager scope
+     * (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the resources within a scope, even
+     * if they don't have `.get` permission of all the resources. Callers should
+     * have `cloud.assets.SearchAllResources` permission on the requested scope,
+     * otherwise the request will be rejected.
      * </pre>
      */
     public void searchAllResources(
@@ -205,12 +205,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the IAM policies under a scope,
-     * even if they don't have .getIamPolicy permission of all the IAM policies.
-     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
-     * requested scope, otherwise it will be rejected.
+     * Searches all the IAM policies within a given accessible Resource Manager
+     * scope (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the IAM policies within a scope,
+     * even if they don't have `.getIamPolicy` permission of all the IAM policies.
+     * Callers should have `cloud.assets.SearchAllIamPolicies` permission on the
+     * requested scope, otherwise the request will be rejected.
      * </pre>
      */
     public void searchAllIamPolicies(
@@ -264,12 +264,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the resources under a scope,
-     * even if they don't have .get permission of all the resources. Callers
-     * should have cloud.assets.SearchAllResources permission on the requested
-     * scope, otherwise it will be rejected.
+     * Searches all the resources within a given accessible Resource Manager scope
+     * (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the resources within a scope, even
+     * if they don't have `.get` permission of all the resources. Callers should
+     * have `cloud.assets.SearchAllResources` permission on the requested scope,
+     * otherwise the request will be rejected.
      * </pre>
      */
     public void searchAllResources(
@@ -286,12 +286,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the IAM policies under a scope,
-     * even if they don't have .getIamPolicy permission of all the IAM policies.
-     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
-     * requested scope, otherwise it will be rejected.
+     * Searches all the IAM policies within a given accessible Resource Manager
+     * scope (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the IAM policies within a scope,
+     * even if they don't have `.getIamPolicy` permission of all the IAM policies.
+     * Callers should have `cloud.assets.SearchAllIamPolicies` permission on the
+     * requested scope, otherwise the request will be rejected.
      * </pre>
      */
     public void searchAllIamPolicies(
@@ -328,12 +328,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the resources under a scope,
-     * even if they don't have .get permission of all the resources. Callers
-     * should have cloud.assets.SearchAllResources permission on the requested
-     * scope, otherwise it will be rejected.
+     * Searches all the resources within a given accessible Resource Manager scope
+     * (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the resources within a scope, even
+     * if they don't have `.get` permission of all the resources. Callers should
+     * have `cloud.assets.SearchAllResources` permission on the requested scope,
+     * otherwise the request will be rejected.
      * </pre>
      */
     public com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse searchAllResources(
@@ -346,12 +346,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the IAM policies under a scope,
-     * even if they don't have .getIamPolicy permission of all the IAM policies.
-     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
-     * requested scope, otherwise it will be rejected.
+     * Searches all the IAM policies within a given accessible Resource Manager
+     * scope (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the IAM policies within a scope,
+     * even if they don't have `.getIamPolicy` permission of all the IAM policies.
+     * Callers should have `cloud.assets.SearchAllIamPolicies` permission on the
+     * requested scope, otherwise the request will be rejected.
      * </pre>
      */
     public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse searchAllIamPolicies(
@@ -384,12 +384,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the resources under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the resources under a scope,
-     * even if they don't have .get permission of all the resources. Callers
-     * should have cloud.assets.SearchAllResources permission on the requested
-     * scope, otherwise it will be rejected.
+     * Searches all the resources within a given accessible Resource Manager scope
+     * (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the resources within a scope, even
+     * if they don't have `.get` permission of all the resources. Callers should
+     * have `cloud.assets.SearchAllResources` permission on the requested scope,
+     * otherwise the request will be rejected.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -403,12 +403,12 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all the IAM policies under a given accessible CRM scope
-     * (project/folder/organization). This RPC gives callers
-     * especially admins the ability to search all the IAM policies under a scope,
-     * even if they don't have .getIamPolicy permission of all the IAM policies.
-     * Callers should have cloud.assets.SearchAllIamPolicies permission on the
-     * requested scope, otherwise it will be rejected.
+     * Searches all the IAM policies within a given accessible Resource Manager
+     * scope (project/folder/organization). This RPC gives callers especially
+     * administrators the ability to search all the IAM policies within a scope,
+     * even if they don't have `.getIamPolicy` permission of all the IAM policies.
+     * Callers should have `cloud.assets.SearchAllIamPolicies` permission on the
+     * requested scope, otherwise the request will be rejected.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

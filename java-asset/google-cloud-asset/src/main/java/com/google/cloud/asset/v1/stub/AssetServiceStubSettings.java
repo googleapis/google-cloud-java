@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -57,6 +60,12 @@ import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse;
 import com.google.cloud.asset.v1.Asset;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
@@ -184,6 +193,19 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
   private final UnaryCallSettings<
           BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesSettings;
+  private final PagedCallSettings<
+          AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesSettings;
+  private final PagedCallSettings<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersSettings;
+  private final PagedCallSettings<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsSettings;
 
   private static final PagedListDescriptor<ListAssetsRequest, ListAssetsResponse, Asset>
       LIST_ASSETS_PAGE_STR_DESC =
@@ -342,6 +364,149 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             }
           };
 
+  private static final PagedListDescriptor<
+          AnalyzeOrgPoliciesRequest,
+          AnalyzeOrgPoliciesResponse,
+          AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+      ANALYZE_ORG_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AnalyzeOrgPoliciesRequest,
+              AnalyzeOrgPoliciesResponse,
+              AnalyzeOrgPoliciesResponse.OrgPolicyResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AnalyzeOrgPoliciesRequest injectToken(
+                AnalyzeOrgPoliciesRequest payload, String token) {
+              return AnalyzeOrgPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public AnalyzeOrgPoliciesRequest injectPageSize(
+                AnalyzeOrgPoliciesRequest payload, int pageSize) {
+              return AnalyzeOrgPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(AnalyzeOrgPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AnalyzeOrgPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AnalyzeOrgPoliciesResponse.OrgPolicyResult> extractResources(
+                AnalyzeOrgPoliciesResponse payload) {
+              return payload.getOrgPolicyResultsList() == null
+                  ? ImmutableList.<AnalyzeOrgPoliciesResponse.OrgPolicyResult>of()
+                  : payload.getOrgPolicyResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+      ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AnalyzeOrgPolicyGovernedContainersRequest,
+              AnalyzeOrgPolicyGovernedContainersResponse,
+              AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AnalyzeOrgPolicyGovernedContainersRequest injectToken(
+                AnalyzeOrgPolicyGovernedContainersRequest payload, String token) {
+              return AnalyzeOrgPolicyGovernedContainersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AnalyzeOrgPolicyGovernedContainersRequest injectPageSize(
+                AnalyzeOrgPolicyGovernedContainersRequest payload, int pageSize) {
+              return AnalyzeOrgPolicyGovernedContainersRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AnalyzeOrgPolicyGovernedContainersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AnalyzeOrgPolicyGovernedContainersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+                extractResources(AnalyzeOrgPolicyGovernedContainersResponse payload) {
+              return payload.getGovernedContainersList() == null
+                  ? ImmutableList.<AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>of()
+                  : payload.getGovernedContainersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+      ANALYZE_ORG_POLICY_GOVERNED_ASSETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AnalyzeOrgPolicyGovernedAssetsRequest,
+              AnalyzeOrgPolicyGovernedAssetsResponse,
+              AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AnalyzeOrgPolicyGovernedAssetsRequest injectToken(
+                AnalyzeOrgPolicyGovernedAssetsRequest payload, String token) {
+              return AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AnalyzeOrgPolicyGovernedAssetsRequest injectPageSize(
+                AnalyzeOrgPolicyGovernedAssetsRequest payload, int pageSize) {
+              return AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AnalyzeOrgPolicyGovernedAssetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(AnalyzeOrgPolicyGovernedAssetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset> extractResources(
+                AnalyzeOrgPolicyGovernedAssetsResponse payload) {
+              return payload.getGovernedAssetsList() == null
+                  ? ImmutableList.<AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>of()
+                  : payload.getGovernedAssetsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       LIST_ASSETS_PAGE_STR_FACT =
@@ -423,6 +588,97 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
                       PageContext.create(
                           callable, LIST_SAVED_QUERIES_PAGE_STR_DESC, request, context);
               return ListSavedQueriesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+      ANALYZE_ORG_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AnalyzeOrgPoliciesRequest,
+              AnalyzeOrgPoliciesResponse,
+              AnalyzeOrgPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<AnalyzeOrgPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse> callable,
+                AnalyzeOrgPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<AnalyzeOrgPoliciesResponse> futureResponse) {
+              PageContext<
+                      AnalyzeOrgPoliciesRequest,
+                      AnalyzeOrgPoliciesResponse,
+                      AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+                  pageContext =
+                      PageContext.create(
+                          callable, ANALYZE_ORG_POLICIES_PAGE_STR_DESC, request, context);
+              return AnalyzeOrgPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AnalyzeOrgPolicyGovernedContainersRequest,
+              AnalyzeOrgPolicyGovernedContainersResponse,
+              AnalyzeOrgPolicyGovernedContainersPagedResponse>() {
+            @Override
+            public ApiFuture<AnalyzeOrgPolicyGovernedContainersPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            AnalyzeOrgPolicyGovernedContainersRequest,
+                            AnalyzeOrgPolicyGovernedContainersResponse>
+                        callable,
+                    AnalyzeOrgPolicyGovernedContainersRequest request,
+                    ApiCallContext context,
+                    ApiFuture<AnalyzeOrgPolicyGovernedContainersResponse> futureResponse) {
+              PageContext<
+                      AnalyzeOrgPolicyGovernedContainersRequest,
+                      AnalyzeOrgPolicyGovernedContainersResponse,
+                      AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return AnalyzeOrgPolicyGovernedContainersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      ANALYZE_ORG_POLICY_GOVERNED_ASSETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AnalyzeOrgPolicyGovernedAssetsRequest,
+              AnalyzeOrgPolicyGovernedAssetsResponse,
+              AnalyzeOrgPolicyGovernedAssetsPagedResponse>() {
+            @Override
+            public ApiFuture<AnalyzeOrgPolicyGovernedAssetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AnalyzeOrgPolicyGovernedAssetsRequest,
+                        AnalyzeOrgPolicyGovernedAssetsResponse>
+                    callable,
+                AnalyzeOrgPolicyGovernedAssetsRequest request,
+                ApiCallContext context,
+                ApiFuture<AnalyzeOrgPolicyGovernedAssetsResponse> futureResponse) {
+              PageContext<
+                      AnalyzeOrgPolicyGovernedAssetsRequest,
+                      AnalyzeOrgPolicyGovernedAssetsResponse,
+                      AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          ANALYZE_ORG_POLICY_GOVERNED_ASSETS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return AnalyzeOrgPolicyGovernedAssetsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -553,6 +809,31 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesSettings() {
     return batchGetEffectiveIamPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicies. */
+  public PagedCallSettings<
+          AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesSettings() {
+    return analyzeOrgPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicyGovernedContainers. */
+  public PagedCallSettings<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersSettings() {
+    return analyzeOrgPolicyGovernedContainersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicyGovernedAssets. */
+  public PagedCallSettings<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsSettings() {
+    return analyzeOrgPolicyGovernedAssetsSettings;
   }
 
   public AssetServiceStub createStub() throws IOException {
@@ -686,6 +967,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     deleteSavedQuerySettings = settingsBuilder.deleteSavedQuerySettings().build();
     batchGetEffectiveIamPoliciesSettings =
         settingsBuilder.batchGetEffectiveIamPoliciesSettings().build();
+    analyzeOrgPoliciesSettings = settingsBuilder.analyzeOrgPoliciesSettings().build();
+    analyzeOrgPolicyGovernedContainersSettings =
+        settingsBuilder.analyzeOrgPolicyGovernedContainersSettings().build();
+    analyzeOrgPolicyGovernedAssetsSettings =
+        settingsBuilder.analyzeOrgPolicyGovernedAssetsSettings().build();
   }
 
   /** Builder for AssetServiceStubSettings. */
@@ -740,6 +1026,19 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
     private final UnaryCallSettings.Builder<
             BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesSettings;
+    private final PagedCallSettings.Builder<
+            AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+        analyzeOrgPoliciesSettings;
+    private final PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedContainersRequest,
+            AnalyzeOrgPolicyGovernedContainersResponse,
+            AnalyzeOrgPolicyGovernedContainersPagedResponse>
+        analyzeOrgPolicyGovernedContainersSettings;
+    private final PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedAssetsRequest,
+            AnalyzeOrgPolicyGovernedAssetsResponse,
+            AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+        analyzeOrgPolicyGovernedAssetsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -872,6 +1171,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       updateSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSavedQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchGetEffectiveIamPoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      analyzeOrgPoliciesSettings = PagedCallSettings.newBuilder(ANALYZE_ORG_POLICIES_PAGE_STR_FACT);
+      analyzeOrgPolicyGovernedContainersSettings =
+          PagedCallSettings.newBuilder(ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS_PAGE_STR_FACT);
+      analyzeOrgPolicyGovernedAssetsSettings =
+          PagedCallSettings.newBuilder(ANALYZE_ORG_POLICY_GOVERNED_ASSETS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -894,7 +1198,10 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               listSavedQueriesSettings,
               updateSavedQuerySettings,
               deleteSavedQuerySettings,
-              batchGetEffectiveIamPoliciesSettings);
+              batchGetEffectiveIamPoliciesSettings,
+              analyzeOrgPoliciesSettings,
+              analyzeOrgPolicyGovernedContainersSettings,
+              analyzeOrgPolicyGovernedAssetsSettings);
       initDefaults(this);
     }
 
@@ -926,6 +1233,11 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
       deleteSavedQuerySettings = settings.deleteSavedQuerySettings.toBuilder();
       batchGetEffectiveIamPoliciesSettings =
           settings.batchGetEffectiveIamPoliciesSettings.toBuilder();
+      analyzeOrgPoliciesSettings = settings.analyzeOrgPoliciesSettings.toBuilder();
+      analyzeOrgPolicyGovernedContainersSettings =
+          settings.analyzeOrgPolicyGovernedContainersSettings.toBuilder();
+      analyzeOrgPolicyGovernedAssetsSettings =
+          settings.analyzeOrgPolicyGovernedAssetsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -948,7 +1260,10 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
               listSavedQueriesSettings,
               updateSavedQuerySettings,
               deleteSavedQuerySettings,
-              batchGetEffectiveIamPoliciesSettings);
+              batchGetEffectiveIamPoliciesSettings,
+              analyzeOrgPoliciesSettings,
+              analyzeOrgPolicyGovernedContainersSettings,
+              analyzeOrgPolicyGovernedAssetsSettings);
     }
 
     private static Builder createDefault() {
@@ -1077,6 +1392,21 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
           .batchGetEffectiveIamPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .analyzeOrgPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .analyzeOrgPolicyGovernedContainersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .analyzeOrgPolicyGovernedAssetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .exportAssetsOperationSettings()
@@ -1283,6 +1613,33 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
             BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesSettings() {
       return batchGetEffectiveIamPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeOrgPolicies. */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+        analyzeOrgPoliciesSettings() {
+      return analyzeOrgPoliciesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to analyzeOrgPolicyGovernedContainers.
+     */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedContainersRequest,
+            AnalyzeOrgPolicyGovernedContainersResponse,
+            AnalyzeOrgPolicyGovernedContainersPagedResponse>
+        analyzeOrgPolicyGovernedContainersSettings() {
+      return analyzeOrgPolicyGovernedContainersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeOrgPolicyGovernedAssets. */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedAssetsRequest,
+            AnalyzeOrgPolicyGovernedAssetsResponse,
+            AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+        analyzeOrgPolicyGovernedAssetsSettings() {
+      return analyzeOrgPolicyGovernedAssetsSettings;
     }
 
     @Override

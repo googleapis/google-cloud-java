@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+ * A response message for
+ * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyResponse}
@@ -111,8 +112,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -122,8 +124,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -133,8 +136,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -144,8 +148,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -156,8 +161,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -169,8 +175,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-     * fully explored to answer the query.
+     * Represents whether all entries in the
+     * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+     * have been fully explored to answer the query.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -327,17 +334,22 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder getAnalysisQueryOrBuilder() {
-      return getAnalysisQuery();
+      return analysisQuery_ == null
+          ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
+          : analysisQuery_;
     }
 
     public static final int ANALYSIS_RESULTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisResult> analysisResults_;
     /**
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -351,8 +363,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -366,8 +379,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -380,8 +394,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -394,8 +409,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-     * empty if no result is found.
+     * A list of
+     * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+     * that matches the analysis query, or empty if no result is found.
      * </pre>
      *
      * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -407,13 +423,14 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     }
 
     public static final int FULLY_EXPLORED_FIELD_NUMBER = 3;
-    private boolean fullyExplored_;
+    private boolean fullyExplored_ = false;
     /**
      *
      *
      * <pre>
-     * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-     * fully explored to answer the query.
+     * Represents whether all entries in the
+     * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+     * have been fully explored to answer the query.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -426,6 +443,8 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     }
 
     public static final int NON_CRITICAL_ERRORS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.asset.v1.IamPolicyAnalysisState> nonCriticalErrors_;
     /**
      *
@@ -736,10 +755,10 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (analysisQueryBuilder_ == null) {
-          analysisQuery_ = null;
-        } else {
-          analysisQuery_ = null;
+        bitField0_ = 0;
+        analysisQuery_ = null;
+        if (analysisQueryBuilder_ != null) {
+          analysisQueryBuilder_.dispose();
           analysisQueryBuilder_ = null;
         }
         if (analysisResultsBuilder_ == null) {
@@ -748,16 +767,15 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           analysisResults_ = null;
           analysisResultsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         fullyExplored_ = false;
-
         if (nonCriticalErrorsBuilder_ == null) {
           nonCriticalErrors_ = java.util.Collections.emptyList();
         } else {
           nonCriticalErrors_ = null;
           nonCriticalErrorsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -788,33 +806,46 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis buildPartial() {
         com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis result =
             new com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis(this);
-        int from_bitField0_ = bitField0_;
-        if (analysisQueryBuilder_ == null) {
-          result.analysisQuery_ = analysisQuery_;
-        } else {
-          result.analysisQuery_ = analysisQueryBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis result) {
         if (analysisResultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             analysisResults_ = java.util.Collections.unmodifiableList(analysisResults_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.analysisResults_ = analysisResults_;
         } else {
           result.analysisResults_ = analysisResultsBuilder_.build();
         }
-        result.fullyExplored_ = fullyExplored_;
         if (nonCriticalErrorsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             nonCriticalErrors_ = java.util.Collections.unmodifiableList(nonCriticalErrors_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.nonCriticalErrors_ = nonCriticalErrors_;
         } else {
           result.nonCriticalErrors_ = nonCriticalErrorsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.analysisQuery_ =
+              analysisQueryBuilder_ == null ? analysisQuery_ : analysisQueryBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fullyExplored_ = fullyExplored_;
+        }
       }
 
       @java.lang.Override
@@ -875,7 +906,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           if (!other.analysisResults_.isEmpty()) {
             if (analysisResults_.isEmpty()) {
               analysisResults_ = other.analysisResults_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAnalysisResultsIsMutable();
               analysisResults_.addAll(other.analysisResults_);
@@ -888,7 +919,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               analysisResultsBuilder_.dispose();
               analysisResultsBuilder_ = null;
               analysisResults_ = other.analysisResults_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               analysisResultsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getAnalysisResultsFieldBuilder()
@@ -905,7 +936,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           if (!other.nonCriticalErrors_.isEmpty()) {
             if (nonCriticalErrors_.isEmpty()) {
               nonCriticalErrors_ = other.nonCriticalErrors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureNonCriticalErrorsIsMutable();
               nonCriticalErrors_.addAll(other.nonCriticalErrors_);
@@ -918,7 +949,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               nonCriticalErrorsBuilder_.dispose();
               nonCriticalErrorsBuilder_ = null;
               nonCriticalErrors_ = other.nonCriticalErrors_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               nonCriticalErrorsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getNonCriticalErrorsFieldBuilder()
@@ -957,7 +988,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               case 10:
                 {
                   input.readMessage(getAnalysisQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -977,7 +1008,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
               case 24:
                 {
                   fullyExplored_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 42:
@@ -1031,7 +1062,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        * @return Whether the analysisQuery field is set.
        */
       public boolean hasAnalysisQuery() {
-        return analysisQueryBuilder_ != null || analysisQuery_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1068,11 +1099,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             throw new NullPointerException();
           }
           analysisQuery_ = value;
-          onChanged();
         } else {
           analysisQueryBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1088,11 +1119,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder builderForValue) {
         if (analysisQueryBuilder_ == null) {
           analysisQuery_ = builderForValue.build();
-          onChanged();
         } else {
           analysisQueryBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1106,19 +1137,19 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        */
       public Builder mergeAnalysisQuery(com.google.cloud.asset.v1.IamPolicyAnalysisQuery value) {
         if (analysisQueryBuilder_ == null) {
-          if (analysisQuery_ != null) {
-            analysisQuery_ =
-                com.google.cloud.asset.v1.IamPolicyAnalysisQuery.newBuilder(analysisQuery_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && analysisQuery_ != null
+              && analysisQuery_
+                  != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()) {
+            getAnalysisQueryBuilder().mergeFrom(value);
           } else {
             analysisQuery_ = value;
           }
-          onChanged();
         } else {
           analysisQueryBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1131,14 +1162,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery analysis_query = 1;</code>
        */
       public Builder clearAnalysisQuery() {
-        if (analysisQueryBuilder_ == null) {
-          analysisQuery_ = null;
-          onChanged();
-        } else {
-          analysisQuery_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        analysisQuery_ = null;
+        if (analysisQueryBuilder_ != null) {
+          analysisQueryBuilder_.dispose();
           analysisQueryBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1151,7 +1181,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        * <code>.google.cloud.asset.v1.IamPolicyAnalysisQuery analysis_query = 1;</code>
        */
       public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder getAnalysisQueryBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAnalysisQueryFieldBuilder().getBuilder();
       }
@@ -1203,11 +1233,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           java.util.Collections.emptyList();
 
       private void ensureAnalysisResultsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           analysisResults_ =
               new java.util.ArrayList<com.google.cloud.asset.v1.IamPolicyAnalysisResult>(
                   analysisResults_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -1221,8 +1251,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1239,8 +1270,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1256,8 +1288,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1273,8 +1306,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1297,8 +1331,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1318,8 +1353,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1341,8 +1377,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1365,8 +1402,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1386,8 +1424,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1407,8 +1446,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1428,8 +1468,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1437,7 +1478,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public Builder clearAnalysisResults() {
         if (analysisResultsBuilder_ == null) {
           analysisResults_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           analysisResultsBuilder_.clear();
@@ -1448,8 +1489,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1468,8 +1510,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1482,8 +1525,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1500,8 +1544,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1518,8 +1563,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1532,8 +1578,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1548,8 +1595,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * A list of [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult] that matches the analysis query, or
-       * empty if no result is found.
+       * A list of
+       * [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult]
+       * that matches the analysis query, or empty if no result is found.
        * </pre>
        *
        * <code>repeated .google.cloud.asset.v1.IamPolicyAnalysisResult analysis_results = 2;</code>
@@ -1571,7 +1619,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
                   com.google.cloud.asset.v1.IamPolicyAnalysisResult.Builder,
                   com.google.cloud.asset.v1.IamPolicyAnalysisResultOrBuilder>(
                   analysisResults_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           analysisResults_ = null;
@@ -1584,8 +1632,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -1600,8 +1649,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -1612,6 +1662,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public Builder setFullyExplored(boolean value) {
 
         fullyExplored_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1619,8 +1670,9 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * Represents whether all entries in the [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results] have been
-       * fully explored to answer the query.
+       * Represents whether all entries in the
+       * [analysis_results][google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.analysis_results]
+       * have been fully explored to answer the query.
        * </pre>
        *
        * <code>bool fully_explored = 3;</code>
@@ -1628,7 +1680,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
        * @return This builder for chaining.
        */
       public Builder clearFullyExplored() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         fullyExplored_ = false;
         onChanged();
         return this;
@@ -1638,11 +1690,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           java.util.Collections.emptyList();
 
       private void ensureNonCriticalErrorsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           nonCriticalErrors_ =
               new java.util.ArrayList<com.google.cloud.asset.v1.IamPolicyAnalysisState>(
                   nonCriticalErrors_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1872,7 +1924,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
       public Builder clearNonCriticalErrors() {
         if (nonCriticalErrorsBuilder_ == null) {
           nonCriticalErrors_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           nonCriticalErrorsBuilder_.clear();
@@ -2007,7 +2059,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
                   com.google.cloud.asset.v1.IamPolicyAnalysisState.Builder,
                   com.google.cloud.asset.v1.IamPolicyAnalysisStateOrBuilder>(
                   nonCriticalErrors_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           nonCriticalErrors_ = null;
@@ -2131,10 +2183,14 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder
       getMainAnalysisOrBuilder() {
-    return getMainAnalysis();
+    return mainAnalysis_ == null
+        ? com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.getDefaultInstance()
+        : mainAnalysis_;
   }
 
   public static final int SERVICE_ACCOUNT_IMPERSONATION_ANALYSIS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>
       serviceAccountImpersonationAnalysis_;
   /**
@@ -2229,14 +2285,16 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
   }
 
   public static final int FULLY_EXPLORED_FIELD_NUMBER = 3;
-  private boolean fullyExplored_;
+  private boolean fullyExplored_ = false;
   /**
    *
    *
    * <pre>
-   * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-   * answer the query in the request.
+   * Represents whether all entries in the
+   * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+   * and
+   * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+   * have been fully explored to answer the query in the request.
    * </pre>
    *
    * <code>bool fully_explored = 3;</code>
@@ -2439,7 +2497,8 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A response message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+   * A response message for
+   * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyResponse}
@@ -2473,10 +2532,10 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (mainAnalysisBuilder_ == null) {
-        mainAnalysis_ = null;
-      } else {
-        mainAnalysis_ = null;
+      bitField0_ = 0;
+      mainAnalysis_ = null;
+      if (mainAnalysisBuilder_ != null) {
+        mainAnalysisBuilder_.dispose();
         mainAnalysisBuilder_ = null;
       }
       if (serviceAccountImpersonationAnalysisBuilder_ == null) {
@@ -2485,9 +2544,8 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         serviceAccountImpersonationAnalysis_ = null;
         serviceAccountImpersonationAnalysisBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       fullyExplored_ = false;
-
       return this;
     }
 
@@ -2515,26 +2573,38 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse buildPartial() {
       com.google.cloud.asset.v1.AnalyzeIamPolicyResponse result =
           new com.google.cloud.asset.v1.AnalyzeIamPolicyResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (mainAnalysisBuilder_ == null) {
-        result.mainAnalysis_ = mainAnalysis_;
-      } else {
-        result.mainAnalysis_ = mainAnalysisBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyResponse result) {
       if (serviceAccountImpersonationAnalysisBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           serviceAccountImpersonationAnalysis_ =
               java.util.Collections.unmodifiableList(serviceAccountImpersonationAnalysis_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.serviceAccountImpersonationAnalysis_ = serviceAccountImpersonationAnalysis_;
       } else {
         result.serviceAccountImpersonationAnalysis_ =
             serviceAccountImpersonationAnalysisBuilder_.build();
       }
-      result.fullyExplored_ = fullyExplored_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.AnalyzeIamPolicyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mainAnalysis_ =
+            mainAnalysisBuilder_ == null ? mainAnalysis_ : mainAnalysisBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fullyExplored_ = fullyExplored_;
+      }
     }
 
     @java.lang.Override
@@ -2590,7 +2660,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         if (!other.serviceAccountImpersonationAnalysis_.isEmpty()) {
           if (serviceAccountImpersonationAnalysis_.isEmpty()) {
             serviceAccountImpersonationAnalysis_ = other.serviceAccountImpersonationAnalysis_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureServiceAccountImpersonationAnalysisIsMutable();
             serviceAccountImpersonationAnalysis_.addAll(other.serviceAccountImpersonationAnalysis_);
@@ -2603,7 +2673,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             serviceAccountImpersonationAnalysisBuilder_.dispose();
             serviceAccountImpersonationAnalysisBuilder_ = null;
             serviceAccountImpersonationAnalysis_ = other.serviceAccountImpersonationAnalysis_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             serviceAccountImpersonationAnalysisBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceAccountImpersonationAnalysisFieldBuilder()
@@ -2646,7 +2716,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getMainAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -2667,7 +2737,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             case 24:
               {
                 fullyExplored_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -2708,7 +2778,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * @return Whether the mainAnalysis field is set.
      */
     public boolean hasMainAnalysis() {
-      return mainAnalysisBuilder_ != null || mainAnalysis_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2749,11 +2819,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         mainAnalysis_ = value;
-        onChanged();
       } else {
         mainAnalysisBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2771,11 +2841,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
             builderForValue) {
       if (mainAnalysisBuilder_ == null) {
         mainAnalysis_ = builderForValue.build();
-        onChanged();
       } else {
         mainAnalysisBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2791,20 +2861,20 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public Builder mergeMainAnalysis(
         com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis value) {
       if (mainAnalysisBuilder_ == null) {
-        if (mainAnalysis_ != null) {
-          mainAnalysis_ =
-              com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.newBuilder(
-                      mainAnalysis_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && mainAnalysis_ != null
+            && mainAnalysis_
+                != com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
+                    .getDefaultInstance()) {
+          getMainAnalysisBuilder().mergeFrom(value);
         } else {
           mainAnalysis_ = value;
         }
-        onChanged();
       } else {
         mainAnalysisBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2818,14 +2888,13 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearMainAnalysis() {
-      if (mainAnalysisBuilder_ == null) {
-        mainAnalysis_ = null;
-        onChanged();
-      } else {
-        mainAnalysis_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      mainAnalysis_ = null;
+      if (mainAnalysisBuilder_ != null) {
+        mainAnalysisBuilder_.dispose();
         mainAnalysisBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2840,7 +2909,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      */
     public com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.Builder
         getMainAnalysisBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMainAnalysisFieldBuilder().getBuilder();
     }
@@ -2896,12 +2965,12 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
         serviceAccountImpersonationAnalysis_ = java.util.Collections.emptyList();
 
     private void ensureServiceAccountImpersonationAnalysisIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         serviceAccountImpersonationAnalysis_ =
             new java.util.ArrayList<
                 com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>(
                 serviceAccountImpersonationAnalysis_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3174,7 +3243,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public Builder clearServiceAccountImpersonationAnalysis() {
       if (serviceAccountImpersonationAnalysisBuilder_ == null) {
         serviceAccountImpersonationAnalysis_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         serviceAccountImpersonationAnalysisBuilder_.clear();
@@ -3336,7 +3405,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
                 com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis.Builder,
                 com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder>(
                 serviceAccountImpersonationAnalysis_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         serviceAccountImpersonationAnalysis_ = null;
@@ -3349,9 +3418,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -3366,9 +3437,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -3379,6 +3452,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
     public Builder setFullyExplored(boolean value) {
 
       fullyExplored_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3386,9 +3460,11 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Represents whether all entries in the [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis] and
-     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis] have been fully explored to
-     * answer the query in the request.
+     * Represents whether all entries in the
+     * [main_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.main_analysis]
+     * and
+     * [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
+     * have been fully explored to answer the query in the request.
      * </pre>
      *
      * <code>bool fully_explored = 3;</code>
@@ -3396,7 +3472,7 @@ public final class AnalyzeIamPolicyResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearFullyExplored() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       fullyExplored_ = false;
       onChanged();
       return this;

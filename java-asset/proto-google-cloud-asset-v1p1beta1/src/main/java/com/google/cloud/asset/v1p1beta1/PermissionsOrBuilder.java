@@ -27,7 +27,7 @@ public interface PermissionsOrBuilder
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -39,7 +39,7 @@ public interface PermissionsOrBuilder
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -51,7 +51,7 @@ public interface PermissionsOrBuilder
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -64,7 +64,7 @@ public interface PermissionsOrBuilder
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>

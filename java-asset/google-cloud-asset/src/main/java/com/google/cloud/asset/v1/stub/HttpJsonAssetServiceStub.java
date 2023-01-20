@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -43,6 +46,12 @@ import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
@@ -862,6 +871,139 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.asset.v1.AssetService/AnalyzeOrgPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnalyzeOrgPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{scope=*/*}:analyzeOrgPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "scope", request.getScope());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "constraint", request.getConstraint());
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            if (request.hasPageSize()) {
+                              serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            }
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnalyzeOrgPoliciesResponse>newBuilder()
+                      .setDefaultInstance(AnalyzeOrgPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersMethodDescriptor =
+          ApiMethodDescriptor
+              .<AnalyzeOrgPolicyGovernedContainersRequest,
+                  AnalyzeOrgPolicyGovernedContainersResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.asset.v1.AssetService/AnalyzeOrgPolicyGovernedContainers")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AnalyzeOrgPolicyGovernedContainersRequest>newBuilder()
+                      .setPath(
+                          "/v1/{scope=*/*}:analyzeOrgPolicyGovernedContainers",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPolicyGovernedContainersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "scope", request.getScope());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPolicyGovernedContainersRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "constraint", request.getConstraint());
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            if (request.hasPageSize()) {
+                              serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            }
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<AnalyzeOrgPolicyGovernedContainersResponse>newBuilder()
+                      .setDefaultInstance(
+                          AnalyzeOrgPolicyGovernedContainersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsMethodDescriptor =
+          ApiMethodDescriptor
+              .<AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.asset.v1.AssetService/AnalyzeOrgPolicyGovernedAssets")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnalyzeOrgPolicyGovernedAssetsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{scope=*/*}:analyzeOrgPolicyGovernedAssets",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPolicyGovernedAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "scope", request.getScope());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnalyzeOrgPolicyGovernedAssetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "constraint", request.getConstraint());
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            if (request.hasPageSize()) {
+                              serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            }
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnalyzeOrgPolicyGovernedAssetsResponse>newBuilder()
+                      .setDefaultInstance(
+                          AnalyzeOrgPolicyGovernedAssetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
@@ -904,6 +1046,23 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<
           BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesCallable;
+  private final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable;
+  private final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -1061,6 +1220,31 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
                 .setMethodDescriptor(batchGetEffectiveIamPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+        analyzeOrgPoliciesTransportSettings =
+            HttpJsonCallSettings.<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>newBuilder()
+                .setMethodDescriptor(analyzeOrgPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+        analyzeOrgPolicyGovernedContainersTransportSettings =
+            HttpJsonCallSettings
+                .<AnalyzeOrgPolicyGovernedContainersRequest,
+                    AnalyzeOrgPolicyGovernedContainersResponse>
+                    newBuilder()
+                .setMethodDescriptor(analyzeOrgPolicyGovernedContainersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+        analyzeOrgPolicyGovernedAssetsTransportSettings =
+            HttpJsonCallSettings
+                .<AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+                    newBuilder()
+                .setMethodDescriptor(analyzeOrgPolicyGovernedAssetsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.exportAssetsCallable =
         callableFactory.createUnaryCallable(
@@ -1160,6 +1344,36 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
             batchGetEffectiveIamPoliciesTransportSettings,
             settings.batchGetEffectiveIamPoliciesSettings(),
             clientContext);
+    this.analyzeOrgPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPoliciesTransportSettings,
+            settings.analyzeOrgPoliciesSettings(),
+            clientContext);
+    this.analyzeOrgPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPoliciesTransportSettings,
+            settings.analyzeOrgPoliciesSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedContainersCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPolicyGovernedContainersTransportSettings,
+            settings.analyzeOrgPolicyGovernedContainersSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedContainersPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPolicyGovernedContainersTransportSettings,
+            settings.analyzeOrgPolicyGovernedContainersSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedAssetsCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPolicyGovernedAssetsTransportSettings,
+            settings.analyzeOrgPolicyGovernedAssetsSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedAssetsPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPolicyGovernedAssetsTransportSettings,
+            settings.analyzeOrgPolicyGovernedAssetsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1188,6 +1402,9 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
     methodDescriptors.add(updateSavedQueryMethodDescriptor);
     methodDescriptors.add(deleteSavedQueryMethodDescriptor);
     methodDescriptors.add(batchGetEffectiveIamPoliciesMethodDescriptor);
+    methodDescriptors.add(analyzeOrgPoliciesMethodDescriptor);
+    methodDescriptors.add(analyzeOrgPolicyGovernedContainersMethodDescriptor);
+    methodDescriptors.add(analyzeOrgPolicyGovernedAssetsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1338,6 +1555,47 @@ public class HttpJsonAssetServiceStub extends AssetServiceStub {
   public UnaryCallable<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesCallable() {
     return batchGetEffectiveIamPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable() {
+    return analyzeOrgPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable() {
+    return analyzeOrgPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable() {
+    return analyzeOrgPolicyGovernedContainersCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable() {
+    return analyzeOrgPolicyGovernedContainersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable() {
+    return analyzeOrgPolicyGovernedAssetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable() {
+    return analyzeOrgPolicyGovernedAssetsPagedCallable;
   }
 
   @Override

@@ -68,6 +68,8 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RELATED_RESOURCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.RelatedResource> relatedResources_;
   /**
    *
@@ -336,6 +338,7 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (relatedResourcesBuilder_ == null) {
         relatedResources_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,15 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1.RelatedResources buildPartial() {
       com.google.cloud.asset.v1.RelatedResources result =
           new com.google.cloud.asset.v1.RelatedResources(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.RelatedResources result) {
       if (relatedResourcesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           relatedResources_ = java.util.Collections.unmodifiableList(relatedResources_);
@@ -380,8 +391,10 @@ public final class RelatedResources extends com.google.protobuf.GeneratedMessage
       } else {
         result.relatedResources_ = relatedResourcesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.RelatedResources result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

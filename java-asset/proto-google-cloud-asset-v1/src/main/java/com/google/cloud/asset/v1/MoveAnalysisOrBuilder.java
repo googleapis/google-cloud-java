@@ -27,8 +27,8 @@ public interface MoveAnalysisOrBuilder
    *
    *
    * <pre>
-   * The user friendly display name of the analysis. E.g. IAM, Organization
-   * Policy etc.
+   * The user friendly display name of the analysis. E.g. IAM, organization
+   * policy etc.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -40,8 +40,8 @@ public interface MoveAnalysisOrBuilder
    *
    *
    * <pre>
-   * The user friendly display name of the analysis. E.g. IAM, Organization
-   * Policy etc.
+   * The user friendly display name of the analysis. E.g. IAM, organization
+   * policy etc.
    * </pre>
    *
    * <code>string display_name = 1;</code>

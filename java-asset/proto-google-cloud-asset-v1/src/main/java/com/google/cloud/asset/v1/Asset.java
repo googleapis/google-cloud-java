@@ -26,7 +26,7 @@ package com.google.cloud.asset.v1;
  * [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
  * a resource outside the Google Cloud resource hierarchy (such as Google
- * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+ * Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy),
  * or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
  * See [Supported asset
  * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
@@ -173,11 +173,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -234,7 +236,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -331,7 +335,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.ResourceOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.cloud.asset.v1.Resource.getDefaultInstance() : resource_;
   }
 
   public static final int IAM_POLICY_FIELD_NUMBER = 4;
@@ -340,9 +344,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -363,9 +367,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -386,9 +390,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
@@ -401,10 +405,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getIamPolicyOrBuilder() {
-    return getIamPolicy();
+    return iamPolicy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : iamPolicy_;
   }
 
   public static final int ORG_POLICY_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.orgpolicy.v1.Policy> orgPolicy_;
   /**
    *
@@ -704,7 +710,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.osconfig.v1.InventoryOrBuilder getOsInventoryOrBuilder() {
-    return getOsInventory();
+    return osInventory_ == null
+        ? com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()
+        : osInventory_;
   }
 
   public static final int RELATED_ASSETS_FIELD_NUMBER = 13;
@@ -723,7 +731,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=166
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return Whether the relatedAssets field is set.
    */
   @java.lang.Override
@@ -745,7 +753,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=166
+   *     google/cloud/asset/v1/assets.proto;l=167
    * @return The relatedAssets.
    */
   @java.lang.Override
@@ -771,7 +779,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder() {
-    return getRelatedAssets();
+    return relatedAssets_ == null
+        ? com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance()
+        : relatedAssets_;
   }
 
   public static final int RELATED_ASSET_FIELD_NUMBER = 15;
@@ -819,10 +829,14 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.RelatedAssetOrBuilder getRelatedAssetOrBuilder() {
-    return getRelatedAsset();
+    return relatedAsset_ == null
+        ? com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()
+        : relatedAsset_;
   }
 
   public static final int ANCESTORS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ancestors_;
   /**
    *
@@ -1250,7 +1264,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * a resource outside the Google Cloud resource hierarchy (such as Google
-   * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy),
+   * Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy),
    * or a relationship (e.g. an INSTANCE_TO_INSTANCEGROUP relationship).
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
@@ -1287,26 +1301,22 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      bitField0_ = 0;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       name_ = "";
-
       assetType_ = "";
-
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-      if (iamPolicyBuilder_ == null) {
-        iamPolicy_ = null;
-      } else {
-        iamPolicy_ = null;
+      iamPolicy_ = null;
+      if (iamPolicyBuilder_ != null) {
+        iamPolicyBuilder_.dispose();
         iamPolicyBuilder_ = null;
       }
       if (orgPolicyBuilder_ == null) {
@@ -1315,7 +1325,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         orgPolicy_ = null;
         orgPolicyBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (accessPolicyBuilder_ != null) {
         accessPolicyBuilder_.clear();
       }
@@ -1325,26 +1335,23 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (servicePerimeterBuilder_ != null) {
         servicePerimeterBuilder_.clear();
       }
-      if (osInventoryBuilder_ == null) {
-        osInventory_ = null;
-      } else {
-        osInventory_ = null;
+      osInventory_ = null;
+      if (osInventoryBuilder_ != null) {
+        osInventoryBuilder_.dispose();
         osInventoryBuilder_ = null;
       }
-      if (relatedAssetsBuilder_ == null) {
-        relatedAssets_ = null;
-      } else {
-        relatedAssets_ = null;
+      relatedAssets_ = null;
+      if (relatedAssetsBuilder_ != null) {
+        relatedAssetsBuilder_.dispose();
         relatedAssetsBuilder_ = null;
       }
-      if (relatedAssetBuilder_ == null) {
-        relatedAsset_ = null;
-      } else {
-        relatedAsset_ = null;
+      relatedAsset_ = null;
+      if (relatedAssetBuilder_ != null) {
+        relatedAssetBuilder_.dispose();
         relatedAssetBuilder_ = null;
       }
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       accessContextPolicyCase_ = 0;
       accessContextPolicy_ = null;
       return this;
@@ -1373,77 +1380,75 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.asset.v1.Asset buildPartial() {
       com.google.cloud.asset.v1.Asset result = new com.google.cloud.asset.v1.Asset(this);
-      int from_bitField0_ = bitField0_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.assetType_ = assetType_;
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
-      }
-      if (iamPolicyBuilder_ == null) {
-        result.iamPolicy_ = iamPolicy_;
-      } else {
-        result.iamPolicy_ = iamPolicyBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.Asset result) {
       if (orgPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           orgPolicy_ = java.util.Collections.unmodifiableList(orgPolicy_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.orgPolicy_ = orgPolicy_;
       } else {
         result.orgPolicy_ = orgPolicyBuilder_.build();
       }
-      if (accessContextPolicyCase_ == 7) {
-        if (accessPolicyBuilder_ == null) {
-          result.accessContextPolicy_ = accessContextPolicy_;
-        } else {
-          result.accessContextPolicy_ = accessPolicyBuilder_.build();
-        }
-      }
-      if (accessContextPolicyCase_ == 8) {
-        if (accessLevelBuilder_ == null) {
-          result.accessContextPolicy_ = accessContextPolicy_;
-        } else {
-          result.accessContextPolicy_ = accessLevelBuilder_.build();
-        }
-      }
-      if (accessContextPolicyCase_ == 9) {
-        if (servicePerimeterBuilder_ == null) {
-          result.accessContextPolicy_ = accessContextPolicy_;
-        } else {
-          result.accessContextPolicy_ = servicePerimeterBuilder_.build();
-        }
-      }
-      if (osInventoryBuilder_ == null) {
-        result.osInventory_ = osInventory_;
-      } else {
-        result.osInventory_ = osInventoryBuilder_.build();
-      }
-      if (relatedAssetsBuilder_ == null) {
-        result.relatedAssets_ = relatedAssets_;
-      } else {
-        result.relatedAssets_ = relatedAssetsBuilder_.build();
-      }
-      if (relatedAssetBuilder_ == null) {
-        result.relatedAsset_ = relatedAsset_;
-      } else {
-        result.relatedAsset_ = relatedAssetBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00001000);
       }
       result.ancestors_ = ancestors_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.Asset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.iamPolicy_ = iamPolicyBuilder_ == null ? iamPolicy_ : iamPolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.osInventory_ =
+            osInventoryBuilder_ == null ? osInventory_ : osInventoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.relatedAssets_ =
+            relatedAssetsBuilder_ == null ? relatedAssets_ : relatedAssetsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.relatedAsset_ =
+            relatedAssetBuilder_ == null ? relatedAsset_ : relatedAssetBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1.Asset result) {
       result.accessContextPolicyCase_ = accessContextPolicyCase_;
-      onBuilt();
-      return result;
+      result.accessContextPolicy_ = this.accessContextPolicy_;
+      if (accessContextPolicyCase_ == 7 && accessPolicyBuilder_ != null) {
+        result.accessContextPolicy_ = accessPolicyBuilder_.build();
+      }
+      if (accessContextPolicyCase_ == 8 && accessLevelBuilder_ != null) {
+        result.accessContextPolicy_ = accessLevelBuilder_.build();
+      }
+      if (accessContextPolicyCase_ == 9 && servicePerimeterBuilder_ != null) {
+        result.accessContextPolicy_ = servicePerimeterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1496,10 +1501,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasResource()) {
@@ -1512,7 +1519,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (!other.orgPolicy_.isEmpty()) {
           if (orgPolicy_.isEmpty()) {
             orgPolicy_ = other.orgPolicy_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureOrgPolicyIsMutable();
             orgPolicy_.addAll(other.orgPolicy_);
@@ -1525,7 +1532,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             orgPolicyBuilder_.dispose();
             orgPolicyBuilder_ = null;
             orgPolicy_ = other.orgPolicy_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             orgPolicyBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOrgPolicyFieldBuilder()
@@ -1547,7 +1554,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
           ancestors_ = other.ancestors_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
@@ -1604,25 +1611,25 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getIamPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 50:
@@ -1667,25 +1674,25 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getOsInventoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getRelatedAssetsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 122:
               {
                 input.readMessage(getRelatedAssetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             default:
@@ -1740,7 +1747,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1779,11 +1786,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1799,11 +1806,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1818,17 +1825,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1842,14 +1850,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1863,7 +1870,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1986,8 +1993,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2007,8 +2014,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2033,8 +2040,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2109,8 +2116,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2129,8 +2136,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2154,8 +2161,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2178,7 +2185,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2215,11 +2222,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2234,11 +2241,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder setResource(com.google.cloud.asset.v1.Resource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2252,19 +2259,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResource(com.google.cloud.asset.v1.Resource value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.cloud.asset.v1.Resource.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && resource_ != null
+            && resource_ != com.google.cloud.asset.v1.Resource.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2277,14 +2283,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2297,7 +2302,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.Resource resource = 3;</code>
      */
     public com.google.cloud.asset.v1.Resource.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
@@ -2355,9 +2360,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2371,15 +2376,15 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iamPolicy field is set.
      */
     public boolean hasIamPolicy() {
-      return iamPolicyBuilder_ != null || iamPolicy_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2403,9 +2408,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2422,20 +2427,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         iamPolicy_ = value;
-        onChanged();
       } else {
         iamPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2449,20 +2454,20 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder setIamPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
       if (iamPolicyBuilder_ == null) {
         iamPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         iamPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2475,26 +2480,27 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIamPolicy(com.google.iam.v1.Policy value) {
       if (iamPolicyBuilder_ == null) {
-        if (iamPolicy_ != null) {
-          iamPolicy_ =
-              com.google.iam.v1.Policy.newBuilder(iamPolicy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && iamPolicy_ != null
+            && iamPolicy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+          getIamPolicyBuilder().mergeFrom(value);
         } else {
           iamPolicy_ = value;
         }
-        onChanged();
       } else {
         iamPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2506,23 +2512,22 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
      */
     public Builder clearIamPolicy() {
-      if (iamPolicyBuilder_ == null) {
-        iamPolicy_ = null;
-        onChanged();
-      } else {
-        iamPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      iamPolicy_ = null;
+      if (iamPolicyBuilder_ != null) {
+        iamPolicyBuilder_.dispose();
         iamPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2534,7 +2539,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
      */
     public com.google.iam.v1.Policy.Builder getIamPolicyBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getIamPolicyFieldBuilder().getBuilder();
     }
@@ -2542,9 +2547,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2566,9 +2571,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A representation of the Cloud IAM policy set on a Google Cloud resource.
-     * There can be a maximum of one Cloud IAM policy set on any given resource.
-     * In addition, Cloud IAM policies inherit their granted access scope from any
+     * A representation of the IAM policy set on a Google Cloud resource.
+     * There can be a maximum of one IAM policy set on any given resource.
+     * In addition, IAM policies inherit their granted access scope from any
      * policies set on parent resources in the resource hierarchy. Therefore, the
      * effectively policy is the union of both the policy set on this resource
      * and each policy set on all of the resource's ancestry resource levels in
@@ -2600,9 +2605,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOrgPolicyIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         orgPolicy_ = new java.util.ArrayList<com.google.cloud.orgpolicy.v1.Policy>(orgPolicy_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2850,7 +2855,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder clearOrgPolicy() {
       if (orgPolicyBuilder_ == null) {
         orgPolicy_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         orgPolicyBuilder_.clear();
@@ -2992,7 +2997,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.orgpolicy.v1.Policy,
                 com.google.cloud.orgpolicy.v1.Policy.Builder,
                 com.google.cloud.orgpolicy.v1.PolicyOrBuilder>(
-                orgPolicy_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                orgPolicy_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         orgPolicy_ = null;
       }
       return orgPolicyBuilder_;
@@ -3219,7 +3224,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       accessContextPolicyCase_ = 7;
       onChanged();
-      ;
       return accessPolicyBuilder_;
     }
 
@@ -3442,7 +3446,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       accessContextPolicyCase_ = 8;
       onChanged();
-      ;
       return accessLevelBuilder_;
     }
 
@@ -3671,7 +3674,6 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       accessContextPolicyCase_ = 9;
       onChanged();
-      ;
       return servicePerimeterBuilder_;
     }
 
@@ -3695,7 +3697,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the osInventory field is set.
      */
     public boolean hasOsInventory() {
-      return osInventoryBuilder_ != null || osInventory_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3736,11 +3738,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         osInventory_ = value;
-        onChanged();
       } else {
         osInventoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3757,11 +3759,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder setOsInventory(com.google.cloud.osconfig.v1.Inventory.Builder builderForValue) {
       if (osInventoryBuilder_ == null) {
         osInventory_ = builderForValue.build();
-        onChanged();
       } else {
         osInventoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3777,19 +3779,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOsInventory(com.google.cloud.osconfig.v1.Inventory value) {
       if (osInventoryBuilder_ == null) {
-        if (osInventory_ != null) {
-          osInventory_ =
-              com.google.cloud.osconfig.v1.Inventory.newBuilder(osInventory_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && osInventory_ != null
+            && osInventory_ != com.google.cloud.osconfig.v1.Inventory.getDefaultInstance()) {
+          getOsInventoryBuilder().mergeFrom(value);
         } else {
           osInventory_ = value;
         }
-        onChanged();
       } else {
         osInventoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3804,14 +3805,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
      */
     public Builder clearOsInventory() {
-      if (osInventoryBuilder_ == null) {
-        osInventory_ = null;
-        onChanged();
-      } else {
-        osInventory_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      osInventory_ = null;
+      if (osInventoryBuilder_ != null) {
+        osInventoryBuilder_.dispose();
         osInventoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3826,7 +3826,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.osconfig.v1.Inventory os_inventory = 12;</code>
      */
     public com.google.cloud.osconfig.v1.Inventory.Builder getOsInventoryBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getOsInventoryFieldBuilder().getBuilder();
     }
@@ -3898,12 +3898,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=166
+     *     google/cloud/asset/v1/assets.proto;l=167
      * @return Whether the relatedAssets field is set.
      */
     @java.lang.Deprecated
     public boolean hasRelatedAssets() {
-      return relatedAssetsBuilder_ != null || relatedAssets_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3919,7 +3919,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.Asset.related_assets is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=166
+     *     google/cloud/asset/v1/assets.proto;l=167
      * @return The relatedAssets.
      */
     @java.lang.Deprecated
@@ -3952,11 +3952,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         relatedAssets_ = value;
-        onChanged();
       } else {
         relatedAssetsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3977,11 +3977,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.asset.v1.RelatedAssets.Builder builderForValue) {
       if (relatedAssetsBuilder_ == null) {
         relatedAssets_ = builderForValue.build();
-        onChanged();
       } else {
         relatedAssetsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4000,19 +4000,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder mergeRelatedAssets(com.google.cloud.asset.v1.RelatedAssets value) {
       if (relatedAssetsBuilder_ == null) {
-        if (relatedAssets_ != null) {
-          relatedAssets_ =
-              com.google.cloud.asset.v1.RelatedAssets.newBuilder(relatedAssets_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && relatedAssets_ != null
+            && relatedAssets_ != com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance()) {
+          getRelatedAssetsBuilder().mergeFrom(value);
         } else {
           relatedAssets_ = value;
         }
-        onChanged();
       } else {
         relatedAssetsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -4030,14 +4029,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearRelatedAssets() {
-      if (relatedAssetsBuilder_ == null) {
-        relatedAssets_ = null;
-        onChanged();
-      } else {
-        relatedAssets_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      relatedAssets_ = null;
+      if (relatedAssetsBuilder_ != null) {
+        relatedAssetsBuilder_.dispose();
         relatedAssetsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4055,7 +4053,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public com.google.cloud.asset.v1.RelatedAssets.Builder getRelatedAssetsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRelatedAssetsFieldBuilder().getBuilder();
     }
@@ -4130,7 +4128,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the relatedAsset field is set.
      */
     public boolean hasRelatedAsset() {
-      return relatedAssetBuilder_ != null || relatedAsset_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4167,11 +4165,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         relatedAsset_ = value;
-        onChanged();
       } else {
         relatedAssetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4186,11 +4184,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     public Builder setRelatedAsset(com.google.cloud.asset.v1.RelatedAsset.Builder builderForValue) {
       if (relatedAssetBuilder_ == null) {
         relatedAsset_ = builderForValue.build();
-        onChanged();
       } else {
         relatedAssetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4204,19 +4202,18 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRelatedAsset(com.google.cloud.asset.v1.RelatedAsset value) {
       if (relatedAssetBuilder_ == null) {
-        if (relatedAsset_ != null) {
-          relatedAsset_ =
-              com.google.cloud.asset.v1.RelatedAsset.newBuilder(relatedAsset_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && relatedAsset_ != null
+            && relatedAsset_ != com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()) {
+          getRelatedAssetBuilder().mergeFrom(value);
         } else {
           relatedAsset_ = value;
         }
-        onChanged();
       } else {
         relatedAssetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4229,14 +4226,13 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
      */
     public Builder clearRelatedAsset() {
-      if (relatedAssetBuilder_ == null) {
-        relatedAsset_ = null;
-        onChanged();
-      } else {
-        relatedAsset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      relatedAsset_ = null;
+      if (relatedAssetBuilder_ != null) {
+        relatedAssetBuilder_.dispose();
         relatedAssetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4249,7 +4245,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.asset.v1.RelatedAsset related_asset = 15;</code>
      */
     public com.google.cloud.asset.v1.RelatedAsset.Builder getRelatedAssetBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getRelatedAssetFieldBuilder().getBuilder();
     }
@@ -4301,9 +4297,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAncestorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -4486,7 +4482,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAncestors() {
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }

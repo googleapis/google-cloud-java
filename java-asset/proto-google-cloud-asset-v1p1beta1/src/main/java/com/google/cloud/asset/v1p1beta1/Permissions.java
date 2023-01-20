@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p1beta1;
  *
  *
  * <pre>
- * IAM permissions
+ * IAM permissions.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p1beta1.Permissions}
@@ -68,12 +68,14 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PERMISSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList permissions_;
   /**
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -87,7 +89,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -101,7 +103,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -116,7 +118,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of permissions. A sample permission string: "compute.disk.get".
+   * A list of permissions. Example permission string: "compute.disk.get".
    * </pre>
    *
    * <code>repeated string permissions = 1;</code>
@@ -298,7 +300,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * IAM permissions
+   * IAM permissions.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p1beta1.Permissions}
@@ -332,6 +334,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -361,14 +364,24 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p1beta1.Permissions buildPartial() {
       com.google.cloud.asset.v1p1beta1.Permissions result =
           new com.google.cloud.asset.v1p1beta1.Permissions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1p1beta1.Permissions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         permissions_ = permissions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.permissions_ = permissions_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p1beta1.Permissions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -491,7 +504,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -505,7 +518,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -519,7 +532,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -534,7 +547,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -549,7 +562,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -571,7 +584,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -592,7 +605,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -610,7 +623,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>
@@ -627,7 +640,7 @@ public final class Permissions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of permissions. A sample permission string: "compute.disk.get".
+     * A list of permissions. Example permission string: "compute.disk.get".
      * </pre>
      *
      * <code>repeated string permissions = 1;</code>

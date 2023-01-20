@@ -76,7 +76,9 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
   }
 
   public static final int TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
   }
 
   public static final int SOURCE_RESOURCE_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceResourceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceResourceType_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
   }
 
   public static final int TARGET_RESOURCE_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetResourceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetResourceType_ = "";
   /**
    *
    *
@@ -225,7 +231,9 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
   }
 
   public static final int ACTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object action_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object action_ = "";
   /**
    *
    *
@@ -501,14 +509,11 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       sourceResourceType_ = "";
-
       targetResourceType_ = "";
-
       action_ = "";
-
       return this;
     }
 
@@ -536,12 +541,27 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
     public com.google.cloud.asset.v1.RelationshipAttributes buildPartial() {
       com.google.cloud.asset.v1.RelationshipAttributes result =
           new com.google.cloud.asset.v1.RelationshipAttributes(this);
-      result.type_ = type_;
-      result.sourceResourceType_ = sourceResourceType_;
-      result.targetResourceType_ = targetResourceType_;
-      result.action_ = action_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.RelationshipAttributes result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceResourceType_ = sourceResourceType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetResourceType_ = targetResourceType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.action_ = action_;
+      }
     }
 
     @java.lang.Override
@@ -592,18 +612,22 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSourceResourceType().isEmpty()) {
         sourceResourceType_ = other.sourceResourceType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTargetResourceType().isEmpty()) {
         targetResourceType_ = other.targetResourceType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -635,25 +659,25 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
             case 10:
               {
                 sourceResourceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 targetResourceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 action_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -672,6 +696,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -737,8 +763,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -755,8 +781,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -778,8 +804,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -845,8 +871,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceResourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -862,8 +888,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSourceResourceType() {
-
       sourceResourceType_ = getDefaultInstance().getSourceResourceType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -884,8 +910,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceResourceType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -951,8 +977,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetResourceType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -968,8 +994,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearTargetResourceType() {
-
       targetResourceType_ = getDefaultInstance().getTargetResourceType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -990,8 +1016,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetResourceType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,8 +1083,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       action_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1074,8 +1100,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
       action_ = getDefaultInstance().getAction();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1096,8 +1122,8 @@ public final class RelationshipAttributes extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       action_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

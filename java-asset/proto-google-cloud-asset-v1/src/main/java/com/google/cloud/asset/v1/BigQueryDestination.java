@@ -69,7 +69,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DATASET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object dataset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataset_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TABLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object table_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object table_ = "";
   /**
    *
    *
@@ -185,7 +189,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FORCE_FIELD_NUMBER = 3;
-  private boolean force_;
+  private boolean force_ = false;
   /**
    *
    *
@@ -292,11 +296,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.PartitionSpecOrBuilder getPartitionSpecOrBuilder() {
-    return getPartitionSpec();
+    return partitionSpec_ == null
+        ? com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()
+        : partitionSpec_;
   }
 
   public static final int SEPARATE_TABLES_PER_ASSET_TYPE_FIELD_NUMBER = 5;
-  private boolean separateTablesPerAssetType_;
+  private boolean separateTablesPerAssetType_ = false;
   /**
    *
    *
@@ -574,20 +580,16 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataset_ = "";
-
       table_ = "";
-
       force_ = false;
-
-      if (partitionSpecBuilder_ == null) {
-        partitionSpec_ = null;
-      } else {
-        partitionSpec_ = null;
+      partitionSpec_ = null;
+      if (partitionSpecBuilder_ != null) {
+        partitionSpecBuilder_.dispose();
         partitionSpecBuilder_ = null;
       }
       separateTablesPerAssetType_ = false;
-
       return this;
     }
 
@@ -615,17 +617,31 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public com.google.cloud.asset.v1.BigQueryDestination buildPartial() {
       com.google.cloud.asset.v1.BigQueryDestination result =
           new com.google.cloud.asset.v1.BigQueryDestination(this);
-      result.dataset_ = dataset_;
-      result.table_ = table_;
-      result.force_ = force_;
-      if (partitionSpecBuilder_ == null) {
-        result.partitionSpec_ = partitionSpec_;
-      } else {
-        result.partitionSpec_ = partitionSpecBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.separateTablesPerAssetType_ = separateTablesPerAssetType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.BigQueryDestination result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dataset_ = dataset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.table_ = table_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.force_ = force_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.partitionSpec_ =
+            partitionSpecBuilder_ == null ? partitionSpec_ : partitionSpecBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.separateTablesPerAssetType_ = separateTablesPerAssetType_;
+      }
     }
 
     @java.lang.Override
@@ -675,10 +691,12 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.asset.v1.BigQueryDestination.getDefaultInstance()) return this;
       if (!other.getDataset().isEmpty()) {
         dataset_ = other.dataset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTable().isEmpty()) {
         table_ = other.table_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getForce() != false) {
@@ -719,31 +737,31 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 dataset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 table_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 force_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(getPartitionSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 separateTablesPerAssetType_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -762,6 +780,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object dataset_ = "";
     /**
@@ -845,8 +865,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -869,8 +889,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDataset() {
-
       dataset_ = getDefaultInstance().getDataset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -898,8 +918,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dataset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -971,8 +991,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       table_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -990,8 +1010,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTable() {
-
       table_ = getDefaultInstance().getTable();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1014,8 +1034,8 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       table_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1057,6 +1077,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public Builder setForce(boolean value) {
 
       force_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1075,7 +1096,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearForce() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       force_ = false;
       onChanged();
       return this;
@@ -1113,7 +1134,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * @return Whether the partitionSpec field is set.
      */
     public boolean hasPartitionSpec() {
-      return partitionSpecBuilder_ != null || partitionSpec_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1178,11 +1199,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         partitionSpec_ = value;
-        onChanged();
       } else {
         partitionSpecBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1212,11 +1233,11 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
         com.google.cloud.asset.v1.PartitionSpec.Builder builderForValue) {
       if (partitionSpecBuilder_ == null) {
         partitionSpec_ = builderForValue.build();
-        onChanged();
       } else {
         partitionSpecBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1244,19 +1265,18 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePartitionSpec(com.google.cloud.asset.v1.PartitionSpec value) {
       if (partitionSpecBuilder_ == null) {
-        if (partitionSpec_ != null) {
-          partitionSpec_ =
-              com.google.cloud.asset.v1.PartitionSpec.newBuilder(partitionSpec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && partitionSpec_ != null
+            && partitionSpec_ != com.google.cloud.asset.v1.PartitionSpec.getDefaultInstance()) {
+          getPartitionSpecBuilder().mergeFrom(value);
         } else {
           partitionSpec_ = value;
         }
-        onChanged();
       } else {
         partitionSpecBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1283,14 +1303,13 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
      */
     public Builder clearPartitionSpec() {
-      if (partitionSpecBuilder_ == null) {
-        partitionSpec_ = null;
-        onChanged();
-      } else {
-        partitionSpec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      partitionSpec_ = null;
+      if (partitionSpecBuilder_ != null) {
+        partitionSpecBuilder_.dispose();
         partitionSpecBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1317,7 +1336,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.asset.v1.PartitionSpec partition_spec = 4;</code>
      */
     public com.google.cloud.asset.v1.PartitionSpec.Builder getPartitionSpecBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPartitionSpecFieldBuilder().getBuilder();
     }
@@ -1470,6 +1489,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
     public Builder setSeparateTablesPerAssetType(boolean value) {
 
       separateTablesPerAssetType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1508,7 +1528,7 @@ public final class BigQueryDestination extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSeparateTablesPerAssetType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       separateTablesPerAssetType_ = false;
       onChanged();
       return this;

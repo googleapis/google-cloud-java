@@ -70,7 +70,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -109,13 +109,14 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.rpc.Code getCode() {
-    @SuppressWarnings("deprecation")
-    com.google.rpc.Code result = com.google.rpc.Code.valueOf(code_);
+    com.google.rpc.Code result = com.google.rpc.Code.forNumber(code_);
     return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
   }
 
   public static final int CAUSE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cause_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cause_ = "";
   /**
    *
    *
@@ -370,10 +371,9 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       cause_ = "";
-
       return this;
     }
 
@@ -401,10 +401,21 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
     public com.google.cloud.asset.v1.IamPolicyAnalysisState buildPartial() {
       com.google.cloud.asset.v1.IamPolicyAnalysisState result =
           new com.google.cloud.asset.v1.IamPolicyAnalysisState(this);
-      result.code_ = code_;
-      result.cause_ = cause_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.IamPolicyAnalysisState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cause_ = cause_;
+      }
     }
 
     @java.lang.Override
@@ -458,6 +469,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       }
       if (!other.getCause().isEmpty()) {
         cause_ = other.cause_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -489,13 +501,13 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 cause_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -514,6 +526,8 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -554,8 +568,8 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -577,8 +591,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.rpc.Code getCode() {
-      @SuppressWarnings("deprecation")
-      com.google.rpc.Code result = com.google.rpc.Code.valueOf(code_);
+      com.google.rpc.Code result = com.google.rpc.Code.forNumber(code_);
       return result == null ? com.google.rpc.Code.UNRECOGNIZED : result;
     }
     /**
@@ -602,7 +615,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -624,7 +637,7 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;
@@ -691,8 +704,8 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       cause_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -708,8 +721,8 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCause() {
-
       cause_ = getDefaultInstance().getCause();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -730,8 +743,8 @@ public final class IamPolicyAnalysisState extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cause_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

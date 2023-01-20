@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A request message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
+ * A request message for
+ * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest}
@@ -119,11 +120,15 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder getAnalysisQueryOrBuilder() {
-    return getAnalysisQuery();
+    return analysisQuery_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
+        : analysisQuery_;
   }
 
   public static final int SAVED_ANALYSIS_QUERY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object savedAnalysisQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedAnalysisQuery_ = "";
   /**
    *
    *
@@ -201,7 +206,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -218,7 +224,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -237,7 +244,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Output configuration indicating where the results will be output to.
+   * Required. Output configuration indicating where the results will be output
+   * to.
    * </pre>
    *
    * <code>
@@ -247,7 +255,9 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -442,7 +452,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
    *
    *
    * <pre>
-   * A request message for [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
+   * A request message for
+   * [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest}
@@ -476,18 +487,16 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (analysisQueryBuilder_ == null) {
-        analysisQuery_ = null;
-      } else {
-        analysisQuery_ = null;
+      bitField0_ = 0;
+      analysisQuery_ = null;
+      if (analysisQueryBuilder_ != null) {
+        analysisQueryBuilder_.dispose();
         analysisQueryBuilder_ = null;
       }
       savedAnalysisQuery_ = "";
-
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -518,19 +527,27 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     public com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest buildPartial() {
       com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest result =
           new com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest(this);
-      if (analysisQueryBuilder_ == null) {
-        result.analysisQuery_ = analysisQuery_;
-      } else {
-        result.analysisQuery_ = analysisQueryBuilder_.build();
-      }
-      result.savedAnalysisQuery_ = savedAnalysisQuery_;
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.analysisQuery_ =
+            analysisQueryBuilder_ == null ? analysisQuery_ : analysisQueryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.savedAnalysisQuery_ = savedAnalysisQuery_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -585,6 +602,7 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       }
       if (!other.getSavedAnalysisQuery().isEmpty()) {
         savedAnalysisQuery_ = other.savedAnalysisQuery_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasOutputConfig()) {
@@ -619,19 +637,19 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
             case 10:
               {
                 input.readMessage(getAnalysisQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 savedAnalysisQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -650,6 +668,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.asset.v1.IamPolicyAnalysisQuery analysisQuery_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -671,7 +691,7 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * @return Whether the analysisQuery field is set.
      */
     public boolean hasAnalysisQuery() {
-      return analysisQueryBuilder_ != null || analysisQuery_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -712,11 +732,11 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
           throw new NullPointerException();
         }
         analysisQuery_ = value;
-        onChanged();
       } else {
         analysisQueryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -734,11 +754,11 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder builderForValue) {
       if (analysisQueryBuilder_ == null) {
         analysisQuery_ = builderForValue.build();
-        onChanged();
       } else {
         analysisQueryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -754,19 +774,19 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      */
     public Builder mergeAnalysisQuery(com.google.cloud.asset.v1.IamPolicyAnalysisQuery value) {
       if (analysisQueryBuilder_ == null) {
-        if (analysisQuery_ != null) {
-          analysisQuery_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.newBuilder(analysisQuery_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && analysisQuery_ != null
+            && analysisQuery_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()) {
+          getAnalysisQueryBuilder().mergeFrom(value);
         } else {
           analysisQuery_ = value;
         }
-        onChanged();
       } else {
         analysisQueryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -781,14 +801,13 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * </code>
      */
     public Builder clearAnalysisQuery() {
-      if (analysisQueryBuilder_ == null) {
-        analysisQuery_ = null;
-        onChanged();
-      } else {
-        analysisQuery_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      analysisQuery_ = null;
+      if (analysisQueryBuilder_ != null) {
+        analysisQueryBuilder_.dispose();
         analysisQueryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -803,7 +822,7 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * </code>
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder getAnalysisQueryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAnalysisQueryFieldBuilder().getBuilder();
     }
@@ -952,8 +971,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       savedAnalysisQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,8 +1000,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearSavedAnalysisQuery() {
-
       savedAnalysisQuery_ = getDefaultInstance().getSavedAnalysisQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1015,8 +1034,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       savedAnalysisQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1031,7 +1050,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1041,13 +1061,14 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1069,7 +1090,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1082,18 +1104,19 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1104,18 +1127,19 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
         com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1125,26 +1149,27 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
     public Builder mergeOutputConfig(
         com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1152,21 +1177,21 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1175,7 +1200,7 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.Builder
         getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }
@@ -1183,7 +1208,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>
@@ -1204,7 +1230,8 @@ public final class AnalyzeIamPolicyLongrunningRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Output configuration indicating where the results will be output to.
+     * Required. Output configuration indicating where the results will be output
+     * to.
      * </pre>
      *
      * <code>

@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -31,6 +34,12 @@ import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
@@ -201,6 +210,45 @@ public abstract class AssetServiceStub implements BackgroundResource {
       batchGetEffectiveIamPoliciesCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchGetEffectiveIamPoliciesCallable()");
+  }
+
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeOrgPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: analyzeOrgPoliciesCallable()");
+  }
+
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeOrgPolicyGovernedContainersPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeOrgPolicyGovernedContainersCallable()");
+  }
+
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeOrgPolicyGovernedAssetsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: analyzeOrgPolicyGovernedAssetsCallable()");
   }
 
   @Override

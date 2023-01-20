@@ -920,6 +920,160 @@ public final class AssetServiceGrpc {
     return getBatchGetEffectiveIamPoliciesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+      getAnalyzeOrgPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeOrgPolicies",
+      requestType = com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest.class,
+      responseType = com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+      getAnalyzeOrgPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest,
+            com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+        getAnalyzeOrgPoliciesMethod;
+    if ((getAnalyzeOrgPoliciesMethod = AssetServiceGrpc.getAnalyzeOrgPoliciesMethod) == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeOrgPoliciesMethod = AssetServiceGrpc.getAnalyzeOrgPoliciesMethod) == null) {
+          AssetServiceGrpc.getAnalyzeOrgPoliciesMethod =
+              getAnalyzeOrgPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest,
+                          com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnalyzeOrgPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier("AnalyzeOrgPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeOrgPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+      getAnalyzeOrgPolicyGovernedContainersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeOrgPolicyGovernedContainers",
+      requestType = com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest.class,
+      responseType = com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+      getAnalyzeOrgPolicyGovernedContainersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest,
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+        getAnalyzeOrgPolicyGovernedContainersMethod;
+    if ((getAnalyzeOrgPolicyGovernedContainersMethod =
+            AssetServiceGrpc.getAnalyzeOrgPolicyGovernedContainersMethod)
+        == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeOrgPolicyGovernedContainersMethod =
+                AssetServiceGrpc.getAnalyzeOrgPolicyGovernedContainersMethod)
+            == null) {
+          AssetServiceGrpc.getAnalyzeOrgPolicyGovernedContainersMethod =
+              getAnalyzeOrgPolicyGovernedContainersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest,
+                          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "AnalyzeOrgPolicyGovernedContainers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier(
+                              "AnalyzeOrgPolicyGovernedContainers"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeOrgPolicyGovernedContainersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+      getAnalyzeOrgPolicyGovernedAssetsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnalyzeOrgPolicyGovernedAssets",
+      requestType = com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest.class,
+      responseType = com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest,
+          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+      getAnalyzeOrgPolicyGovernedAssetsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest,
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+        getAnalyzeOrgPolicyGovernedAssetsMethod;
+    if ((getAnalyzeOrgPolicyGovernedAssetsMethod =
+            AssetServiceGrpc.getAnalyzeOrgPolicyGovernedAssetsMethod)
+        == null) {
+      synchronized (AssetServiceGrpc.class) {
+        if ((getAnalyzeOrgPolicyGovernedAssetsMethod =
+                AssetServiceGrpc.getAnalyzeOrgPolicyGovernedAssetsMethod)
+            == null) {
+          AssetServiceGrpc.getAnalyzeOrgPolicyGovernedAssetsMethod =
+              getAnalyzeOrgPolicyGovernedAssetsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest,
+                          com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AnalyzeOrgPolicyGovernedAssets"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssetServiceMethodDescriptorSupplier(
+                              "AnalyzeOrgPolicyGovernedAssets"))
+                      .build();
+        }
+      }
+    }
+    return getAnalyzeOrgPolicyGovernedAssetsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssetServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssetServiceStub> factory =
@@ -977,13 +1131,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset Protobuf as
-     * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API,
-     * which allows you to keep track of the export. We recommend intervals of at
-     * least 2 seconds with exponential retry to poll the export operation result.
-     * For regular-size resource parent, the export operation usually finishes
-     * within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -1099,8 +1254,8 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all Cloud resources within the specified scope, such as a project,
-     * folder, or organization. The caller must be granted the
+     * Searches all Google Cloud resources within the specified scope, such as a
+     * project, folder, or organization. The caller must be granted the
      * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
@@ -1155,11 +1310,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -1299,6 +1455,70 @@ public final class AssetServiceGrpc {
           getBatchGetEffectiveIamPoliciesMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies under a scope.
+     * </pre>
+     */
+    public void analyzeOrgPolicies(
+        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeOrgPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed containers (projects, folders or
+     * organization) under a scope.
+     * </pre>
+     */
+    public void analyzeOrgPolicyGovernedContainers(
+        com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeOrgPolicyGovernedContainersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed assets (Google Cloud resources or
+     * policies) under a scope. This RPC supports custom constraints and the
+     * following 10 canned constraints:
+     * * storage.uniformBucketLevelAccess
+     * * iam.disableServiceAccountKeyCreation
+     * * iam.allowedPolicyMemberDomains
+     * * compute.vmExternalIpAccess
+     * * appengine.enforceServiceAccountActAsCheck
+     * * gcp.resourceLocations
+     * * compute.trustedImageProjects
+     * * compute.skipDefaultNetworkCreation
+     * * compute.requireOsLogin
+     * * compute.disableNestedVirtualization
+     * This RPC only returns either resources of types supported by [searchable
+     * asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * or IAM policies.
+     * </pre>
+     */
+    public void analyzeOrgPolicyGovernedAssets(
+        com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnalyzeOrgPolicyGovernedAssetsMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -1429,6 +1649,27 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest,
                       com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>(
                       this, METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES)))
+          .addMethod(
+              getAnalyzeOrgPoliciesMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest,
+                      com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>(
+                      this, METHODID_ANALYZE_ORG_POLICIES)))
+          .addMethod(
+              getAnalyzeOrgPolicyGovernedContainersMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest,
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>(
+                      this, METHODID_ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS)))
+          .addMethod(
+              getAnalyzeOrgPolicyGovernedAssetsMethod(),
+              io.grpc.stub.ServerCalls.asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest,
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>(
+                      this, METHODID_ANALYZE_ORG_POLICY_GOVERNED_ASSETS)))
           .build();
     }
   }
@@ -1458,13 +1699,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset Protobuf as
-     * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API,
-     * which allows you to keep track of the export. We recommend intervals of at
-     * least 2 seconds with exponential retry to poll the export operation result.
-     * For regular-size resource parent, the export operation usually finishes
-     * within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public void exportAssets(
@@ -1590,8 +1832,8 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all Cloud resources within the specified scope, such as a project,
-     * folder, or organization. The caller must be granted the
+     * Searches all Google Cloud resources within the specified scope, such as a
+     * project, folder, or organization. The caller must be granted the
      * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
@@ -1652,11 +1894,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public void analyzeIamPolicyLongrunning(
@@ -1813,6 +2056,76 @@ public final class AssetServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies under a scope.
+     * </pre>
+     */
+    public void analyzeOrgPolicies(
+        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed containers (projects, folders or
+     * organization) under a scope.
+     * </pre>
+     */
+    public void analyzeOrgPolicyGovernedContainers(
+        com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPolicyGovernedContainersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed assets (Google Cloud resources or
+     * policies) under a scope. This RPC supports custom constraints and the
+     * following 10 canned constraints:
+     * * storage.uniformBucketLevelAccess
+     * * iam.disableServiceAccountKeyCreation
+     * * iam.allowedPolicyMemberDomains
+     * * compute.vmExternalIpAccess
+     * * appengine.enforceServiceAccountActAsCheck
+     * * gcp.resourceLocations
+     * * compute.trustedImageProjects
+     * * compute.skipDefaultNetworkCreation
+     * * compute.requireOsLogin
+     * * compute.disableNestedVirtualization
+     * This RPC only returns either resources of types supported by [searchable
+     * asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * or IAM policies.
+     * </pre>
+     */
+    public void analyzeOrgPolicyGovernedAssets(
+        com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPolicyGovernedAssetsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1841,13 +2154,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset Protobuf as
-     * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API,
-     * which allows you to keep track of the export. We recommend intervals of at
-     * least 2 seconds with exponential retry to poll the export operation result.
-     * For regular-size resource parent, the export operation usually finishes
-     * within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public com.google.longrunning.Operation exportAssets(
@@ -1959,8 +2273,8 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all Cloud resources within the specified scope, such as a project,
-     * folder, or organization. The caller must be granted the
+     * Searches all Google Cloud resources within the specified scope, such as a
+     * project, folder, or organization. The caller must be granted the
      * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
@@ -2009,11 +2323,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public com.google.longrunning.Operation analyzeIamPolicyLongrunning(
@@ -2140,6 +2455,64 @@ public final class AssetServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchGetEffectiveIamPoliciesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies under a scope.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse analyzeOrgPolicies(
+        com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed containers (projects, folders or
+     * organization) under a scope.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse
+        analyzeOrgPolicyGovernedContainers(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPolicyGovernedContainersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed assets (Google Cloud resources or
+     * policies) under a scope. This RPC supports custom constraints and the
+     * following 10 canned constraints:
+     * * storage.uniformBucketLevelAccess
+     * * iam.disableServiceAccountKeyCreation
+     * * iam.allowedPolicyMemberDomains
+     * * compute.vmExternalIpAccess
+     * * appengine.enforceServiceAccountActAsCheck
+     * * gcp.resourceLocations
+     * * compute.trustedImageProjects
+     * * compute.skipDefaultNetworkCreation
+     * * compute.requireOsLogin
+     * * compute.disableNestedVirtualization
+     * This RPC only returns either resources of types supported by [searchable
+     * asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * or IAM policies.
+     * </pre>
+     */
+    public com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse
+        analyzeOrgPolicyGovernedAssets(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnalyzeOrgPolicyGovernedAssetsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2168,13 +2541,14 @@ public final class AssetServiceGrpc {
      * Exports assets with time and resource types to a given Cloud Storage
      * location/BigQuery table. For Cloud Storage location destinations, the
      * output format is newline-delimited JSON. Each line represents a
-     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON format; for BigQuery table
-     * destinations, the output table stores the fields in asset Protobuf as
-     * columns. This API implements the [google.longrunning.Operation][google.longrunning.Operation] API,
-     * which allows you to keep track of the export. We recommend intervals of at
-     * least 2 seconds with exponential retry to poll the export operation result.
-     * For regular-size resource parent, the export operation usually finishes
-     * within 5 minutes.
+     * [google.cloud.asset.v1.Asset][google.cloud.asset.v1.Asset] in the JSON
+     * format; for BigQuery table destinations, the output table stores the fields
+     * in asset Protobuf as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API, which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2289,8 +2663,8 @@ public final class AssetServiceGrpc {
      *
      *
      * <pre>
-     * Searches all Cloud resources within the specified scope, such as a project,
-     * folder, or organization. The caller must be granted the
+     * Searches all Google Cloud resources within the specified scope, such as a
+     * project, folder, or organization. The caller must be granted the
      * `cloudasset.assets.searchAllResources` permission on the desired scope,
      * otherwise the request will be rejected.
      * </pre>
@@ -2342,11 +2716,12 @@ public final class AssetServiceGrpc {
      * accesses on which resources, and writes the analysis results to a Google
      * Cloud Storage or a BigQuery destination. For Cloud Storage destination, the
      * output format is the JSON format that represents a
-     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse]. This method implements the
-     * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
-     * status. We recommend intervals of at least 2 seconds with exponential
-     * backoff retry to poll the operation result. The metadata contains the
-     * metadata for the long-running operation.
+     * [AnalyzeIamPolicyResponse][google.cloud.asset.v1.AnalyzeIamPolicyResponse].
+     * This method implements the
+     * [google.longrunning.Operation][google.longrunning.Operation], which allows
+     * you to track the operation status. We recommend intervals of at least 2
+     * seconds with exponential backoff retry to poll the operation result. The
+     * metadata contains the metadata for the long-running operation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -2478,6 +2853,69 @@ public final class AssetServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchGetEffectiveIamPoliciesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies under a scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>
+        analyzeOrgPolicies(com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed containers (projects, folders or
+     * organization) under a scope.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>
+        analyzeOrgPolicyGovernedContainers(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPolicyGovernedContainersMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Analyzes organization policies governed assets (Google Cloud resources or
+     * policies) under a scope. This RPC supports custom constraints and the
+     * following 10 canned constraints:
+     * * storage.uniformBucketLevelAccess
+     * * iam.disableServiceAccountKeyCreation
+     * * iam.allowedPolicyMemberDomains
+     * * compute.vmExternalIpAccess
+     * * appengine.enforceServiceAccountActAsCheck
+     * * gcp.resourceLocations
+     * * compute.trustedImageProjects
+     * * compute.skipDefaultNetworkCreation
+     * * compute.requireOsLogin
+     * * compute.disableNestedVirtualization
+     * This RPC only returns either resources of types supported by [searchable
+     * asset
+     * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+     * or IAM policies.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>
+        analyzeOrgPolicyGovernedAssets(
+            com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnalyzeOrgPolicyGovernedAssetsMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_EXPORT_ASSETS = 0;
@@ -2500,6 +2938,9 @@ public final class AssetServiceGrpc {
   private static final int METHODID_UPDATE_SAVED_QUERY = 17;
   private static final int METHODID_DELETE_SAVED_QUERY = 18;
   private static final int METHODID_BATCH_GET_EFFECTIVE_IAM_POLICIES = 19;
+  private static final int METHODID_ANALYZE_ORG_POLICIES = 20;
+  private static final int METHODID_ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS = 21;
+  private static final int METHODID_ANALYZE_ORG_POLICY_GOVERNED_ASSETS = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2629,6 +3070,26 @@ public final class AssetServiceGrpc {
                       com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesResponse>)
                   responseObserver);
           break;
+        case METHODID_ANALYZE_ORG_POLICIES:
+          serviceImpl.analyzeOrgPolicies(
+              (com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ANALYZE_ORG_POLICY_GOVERNED_CONTAINERS:
+          serviceImpl.analyzeOrgPolicyGovernedContainers(
+              (com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ANALYZE_ORG_POLICY_GOVERNED_ASSETS:
+          serviceImpl.analyzeOrgPolicyGovernedAssets(
+              (com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2713,6 +3174,9 @@ public final class AssetServiceGrpc {
                       .addMethod(getUpdateSavedQueryMethod())
                       .addMethod(getDeleteSavedQueryMethod())
                       .addMethod(getBatchGetEffectiveIamPoliciesMethod())
+                      .addMethod(getAnalyzeOrgPoliciesMethod())
+                      .addMethod(getAnalyzeOrgPolicyGovernedContainersMethod())
+                      .addMethod(getAnalyzeOrgPolicyGovernedAssetsMethod())
                       .build();
         }
       }

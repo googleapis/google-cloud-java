@@ -70,17 +70,19 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object scope_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scope_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the resources
-   * within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the
+   * resources within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
-   * * Folder number(such as "folders/1234")
+   * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
-   * * Project id (such as "projects/abc")
+   * * Project ID (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -103,12 +105,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The relative name of an asset. The search is limited to the resources
-   * within the `scope`. The allowed value must be:
+   * Required. The relative name of an asset. The search is limited to the
+   * resources within the `scope`. The allowed value must be:
    * * Organization number (such as "organizations/123")
-   * * Folder number(such as "folders/1234")
+   * * Folder number (such as "folders/1234")
    * * Project number (such as "projects/12345")
-   * * Project id (such as "projects/abc")
+   * * Project ID (such as "projects/abc")
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -129,13 +131,14 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. The query statement.
-   * Examples:
+   * Optional. The query statement. Examples:
    * * "policy:myuser&#64;mydomain.com"
    * * "policy:(myuser&#64;mydomain.com viewer)"
    * </pre>
@@ -160,8 +163,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. The query statement.
-   * Examples:
+   * Optional. The query statement. Examples:
    * * "policy:myuser&#64;mydomain.com"
    * * "policy:(myuser&#64;mydomain.com viewer)"
    * </pre>
@@ -184,15 +186,16 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
    * <pre>
-   * Optional. The page size for search result pagination. Page size is capped at 500 even
-   * if a larger value is given. If set to zero, server will pick an appropriate
-   * default. Returned results may be fewer than requested. When this happens,
-   * there could be more results as long as `next_page_token` is returned.
+   * Optional. The page size for search result pagination. Page size is capped
+   * at 500 even if a larger value is given. If set to zero, server will pick an
+   * appropriate default. Returned results may be fewer than requested. When
+   * this happens, there could be more results as long as `next_page_token` is
+   * returned.
    * </pre>
    *
    * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -205,15 +208,17 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of all other method parameters must be
-   * identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding
+   * call to this method. `page_token` must be the value of `next_page_token`
+   * from the previous response. The values of all other method parameters must
+   * be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -236,10 +241,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Optional. If present, retrieve the next batch of results from the preceding call to
-   * this method. `page_token` must be the value of `next_page_token` from the
-   * previous response. The values of all other method parameters must be
-   * identical to those in the previous call.
+   * Optional. If present, retrieve the next batch of results from the preceding
+   * call to this method. `page_token` must be the value of `next_page_token`
+   * from the previous response. The values of all other method parameters must
+   * be identical to those in the previous call.
    * </pre>
    *
    * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -484,14 +489,11 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = "";
-
       query_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -520,12 +522,28 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest buildPartial() {
       com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest result =
           new com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest(this);
-      result.scope_ = scope_;
-      result.query_ = query_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -577,10 +595,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         return this;
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -588,6 +608,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -619,25 +640,25 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
             case 10:
               {
                 scope_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -657,17 +678,19 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object scope_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the resources
-     * within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the
+     * resources within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
-     * * Folder number(such as "folders/1234")
+     * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
-     * * Project id (such as "projects/abc")
+     * * Project ID (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -689,12 +712,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the resources
-     * within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the
+     * resources within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
-     * * Folder number(such as "folders/1234")
+     * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
-     * * Project id (such as "projects/abc")
+     * * Project ID (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -716,12 +739,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the resources
-     * within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the
+     * resources within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
-     * * Folder number(such as "folders/1234")
+     * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
-     * * Project id (such as "projects/abc")
+     * * Project ID (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -733,8 +756,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -742,12 +765,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the resources
-     * within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the
+     * resources within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
-     * * Folder number(such as "folders/1234")
+     * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
-     * * Project id (such as "projects/abc")
+     * * Project ID (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -755,8 +778,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
       scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -764,12 +787,12 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The relative name of an asset. The search is limited to the resources
-     * within the `scope`. The allowed value must be:
+     * Required. The relative name of an asset. The search is limited to the
+     * resources within the `scope`. The allowed value must be:
      * * Organization number (such as "organizations/123")
-     * * Folder number(such as "folders/1234")
+     * * Folder number (such as "folders/1234")
      * * Project number (such as "projects/12345")
-     * * Project id (such as "projects/abc")
+     * * Project ID (such as "projects/abc")
      * </pre>
      *
      * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -782,8 +805,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -793,8 +816,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The query statement.
-     * Examples:
+     * Optional. The query statement. Examples:
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -818,8 +840,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The query statement.
-     * Examples:
+     * Optional. The query statement. Examples:
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -843,8 +864,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The query statement.
-     * Examples:
+     * Optional. The query statement. Examples:
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -858,8 +878,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -867,8 +887,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The query statement.
-     * Examples:
+     * Optional. The query statement. Examples:
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -878,8 +897,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -887,8 +906,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The query statement.
-     * Examples:
+     * Optional. The query statement. Examples:
      * * "policy:myuser&#64;mydomain.com"
      * * "policy:(myuser&#64;mydomain.com viewer)"
      * </pre>
@@ -903,8 +921,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -914,10 +932,11 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped at 500 even
-     * if a larger value is given. If set to zero, server will pick an appropriate
-     * default. Returned results may be fewer than requested. When this happens,
-     * there could be more results as long as `next_page_token` is returned.
+     * Optional. The page size for search result pagination. Page size is capped
+     * at 500 even if a larger value is given. If set to zero, server will pick an
+     * appropriate default. Returned results may be fewer than requested. When
+     * this happens, there could be more results as long as `next_page_token` is
+     * returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -932,10 +951,11 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped at 500 even
-     * if a larger value is given. If set to zero, server will pick an appropriate
-     * default. Returned results may be fewer than requested. When this happens,
-     * there could be more results as long as `next_page_token` is returned.
+     * Optional. The page size for search result pagination. Page size is capped
+     * at 500 even if a larger value is given. If set to zero, server will pick an
+     * appropriate default. Returned results may be fewer than requested. When
+     * this happens, there could be more results as long as `next_page_token` is
+     * returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -946,6 +966,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -953,10 +974,11 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. The page size for search result pagination. Page size is capped at 500 even
-     * if a larger value is given. If set to zero, server will pick an appropriate
-     * default. Returned results may be fewer than requested. When this happens,
-     * there could be more results as long as `next_page_token` is returned.
+     * Optional. The page size for search result pagination. Page size is capped
+     * at 500 even if a larger value is given. If set to zero, server will pick an
+     * appropriate default. Returned results may be fewer than requested. When
+     * this happens, there could be more results as long as `next_page_token` is
+     * returned.
      * </pre>
      *
      * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -964,7 +986,7 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -975,10 +997,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of all other method parameters must be
-     * identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding
+     * call to this method. `page_token` must be the value of `next_page_token`
+     * from the previous response. The values of all other method parameters must
+     * be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1000,10 +1022,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of all other method parameters must be
-     * identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding
+     * call to this method. `page_token` must be the value of `next_page_token`
+     * from the previous response. The values of all other method parameters must
+     * be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1025,10 +1047,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of all other method parameters must be
-     * identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding
+     * call to this method. `page_token` must be the value of `next_page_token`
+     * from the previous response. The values of all other method parameters must
+     * be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1040,8 +1062,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1049,10 +1071,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of all other method parameters must be
-     * identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding
+     * call to this method. `page_token` must be the value of `next_page_token`
+     * from the previous response. The values of all other method parameters must
+     * be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1060,8 +1082,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1069,10 +1091,10 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Optional. If present, retrieve the next batch of results from the preceding call to
-     * this method. `page_token` must be the value of `next_page_token` from the
-     * previous response. The values of all other method parameters must be
-     * identical to those in the previous call.
+     * Optional. If present, retrieve the next batch of results from the preceding
+     * call to this method. `page_token` must be the value of `next_page_token`
+     * from the previous response. The values of all other method parameters must
+     * be identical to those in the previous call.
      * </pre>
      *
      * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1085,8 +1107,8 @@ public final class SearchAllIamPoliciesRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

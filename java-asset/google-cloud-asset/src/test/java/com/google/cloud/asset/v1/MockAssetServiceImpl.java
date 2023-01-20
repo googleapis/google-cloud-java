@@ -479,4 +479,70 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void analyzeOrgPolicies(
+      AnalyzeOrgPoliciesRequest request,
+      StreamObserver<AnalyzeOrgPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalyzeOrgPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnalyzeOrgPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnalyzeOrgPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalyzeOrgPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void analyzeOrgPolicyGovernedContainers(
+      AnalyzeOrgPolicyGovernedContainersRequest request,
+      StreamObserver<AnalyzeOrgPolicyGovernedContainersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalyzeOrgPolicyGovernedContainersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnalyzeOrgPolicyGovernedContainersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedContainers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalyzeOrgPolicyGovernedContainersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void analyzeOrgPolicyGovernedAssets(
+      AnalyzeOrgPolicyGovernedAssetsRequest request,
+      StreamObserver<AnalyzeOrgPolicyGovernedAssetsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnalyzeOrgPolicyGovernedAssetsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnalyzeOrgPolicyGovernedAssetsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnalyzeOrgPolicyGovernedAssets, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnalyzeOrgPolicyGovernedAssetsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

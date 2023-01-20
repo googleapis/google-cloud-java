@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -208,6 +211,32 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
           BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesSettings() {
     return ((AssetServiceStubSettings) getStubSettings()).batchGetEffectiveIamPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicies. */
+  public PagedCallSettings<
+          AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeOrgPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicyGovernedContainers. */
+  public PagedCallSettings<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersSettings() {
+    return ((AssetServiceStubSettings) getStubSettings())
+        .analyzeOrgPolicyGovernedContainersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to analyzeOrgPolicyGovernedAssets. */
+  public PagedCallSettings<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsSettings() {
+    return ((AssetServiceStubSettings) getStubSettings()).analyzeOrgPolicyGovernedAssetsSettings();
   }
 
   public static final AssetServiceSettings create(AssetServiceStubSettings stub)
@@ -457,6 +486,33 @@ public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
             BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesSettings() {
       return getStubSettingsBuilder().batchGetEffectiveIamPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeOrgPolicies. */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse, AnalyzeOrgPoliciesPagedResponse>
+        analyzeOrgPoliciesSettings() {
+      return getStubSettingsBuilder().analyzeOrgPoliciesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to analyzeOrgPolicyGovernedContainers.
+     */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedContainersRequest,
+            AnalyzeOrgPolicyGovernedContainersResponse,
+            AnalyzeOrgPolicyGovernedContainersPagedResponse>
+        analyzeOrgPolicyGovernedContainersSettings() {
+      return getStubSettingsBuilder().analyzeOrgPolicyGovernedContainersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to analyzeOrgPolicyGovernedAssets. */
+    public PagedCallSettings.Builder<
+            AnalyzeOrgPolicyGovernedAssetsRequest,
+            AnalyzeOrgPolicyGovernedAssetsResponse,
+            AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+        analyzeOrgPolicyGovernedAssetsSettings() {
+      return getStubSettingsBuilder().analyzeOrgPolicyGovernedAssetsSettings();
     }
 
     @Override

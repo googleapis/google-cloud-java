@@ -69,6 +69,8 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BLOCKERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.MoveImpact> blockers_;
   /**
    *
@@ -143,6 +145,8 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int WARNINGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.MoveImpact> warnings_;
   /**
    *
@@ -431,6 +435,7 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (blockersBuilder_ == null) {
         blockers_ = java.util.Collections.emptyList();
       } else {
@@ -472,7 +477,15 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.MoveAnalysisResult buildPartial() {
       com.google.cloud.asset.v1.MoveAnalysisResult result =
           new com.google.cloud.asset.v1.MoveAnalysisResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.MoveAnalysisResult result) {
       if (blockersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           blockers_ = java.util.Collections.unmodifiableList(blockers_);
@@ -491,8 +504,10 @@ public final class MoveAnalysisResult extends com.google.protobuf.GeneratedMessa
       } else {
         result.warnings_ = warningsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.MoveAnalysisResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1.stub;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -35,6 +38,12 @@ import com.google.cloud.asset.v1.AnalyzeIamPolicyRequest;
 import com.google.cloud.asset.v1.AnalyzeIamPolicyResponse;
 import com.google.cloud.asset.v1.AnalyzeMoveRequest;
 import com.google.cloud.asset.v1.AnalyzeMoveResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPoliciesResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedAssetsResponse;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersRequest;
+import com.google.cloud.asset.v1.AnalyzeOrgPolicyGovernedContainersResponse;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryRequest;
 import com.google.cloud.asset.v1.BatchGetAssetsHistoryResponse;
 import com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest;
@@ -279,6 +288,51 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(BatchGetEffectiveIamPoliciesResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesMethodDescriptor =
+          MethodDescriptor.<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.asset.v1.AssetService/AnalyzeOrgPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeOrgPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AnalyzeOrgPoliciesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersMethodDescriptor =
+          MethodDescriptor
+              .<AnalyzeOrgPolicyGovernedContainersRequest,
+                  AnalyzeOrgPolicyGovernedContainersResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.asset.v1.AssetService/AnalyzeOrgPolicyGovernedContainers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      AnalyzeOrgPolicyGovernedContainersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      AnalyzeOrgPolicyGovernedContainersResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsMethodDescriptor =
+          MethodDescriptor
+              .<AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.asset.v1.AssetService/AnalyzeOrgPolicyGovernedAssets")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AnalyzeOrgPolicyGovernedAssetsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      AnalyzeOrgPolicyGovernedAssetsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;
   private final OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable;
@@ -321,6 +375,23 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   private final UnaryCallable<
           BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesCallable;
+  private final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable;
+  private final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable;
+  private final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -578,6 +649,45 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+        analyzeOrgPoliciesTransportSettings =
+            GrpcCallSettings.<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>newBuilder()
+                .setMethodDescriptor(analyzeOrgPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+        analyzeOrgPolicyGovernedContainersTransportSettings =
+            GrpcCallSettings
+                .<AnalyzeOrgPolicyGovernedContainersRequest,
+                    AnalyzeOrgPolicyGovernedContainersResponse>
+                    newBuilder()
+                .setMethodDescriptor(analyzeOrgPolicyGovernedContainersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+        analyzeOrgPolicyGovernedAssetsTransportSettings =
+            GrpcCallSettings
+                .<AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+                    newBuilder()
+                .setMethodDescriptor(analyzeOrgPolicyGovernedAssetsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("scope", String.valueOf(request.getScope()));
+                      return params.build();
+                    })
+                .build();
 
     this.exportAssetsCallable =
         callableFactory.createUnaryCallable(
@@ -676,6 +786,36 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
         callableFactory.createUnaryCallable(
             batchGetEffectiveIamPoliciesTransportSettings,
             settings.batchGetEffectiveIamPoliciesSettings(),
+            clientContext);
+    this.analyzeOrgPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPoliciesTransportSettings,
+            settings.analyzeOrgPoliciesSettings(),
+            clientContext);
+    this.analyzeOrgPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPoliciesTransportSettings,
+            settings.analyzeOrgPoliciesSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedContainersCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPolicyGovernedContainersTransportSettings,
+            settings.analyzeOrgPolicyGovernedContainersSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedContainersPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPolicyGovernedContainersTransportSettings,
+            settings.analyzeOrgPolicyGovernedContainersSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedAssetsCallable =
+        callableFactory.createUnaryCallable(
+            analyzeOrgPolicyGovernedAssetsTransportSettings,
+            settings.analyzeOrgPolicyGovernedAssetsSettings(),
+            clientContext);
+    this.analyzeOrgPolicyGovernedAssetsPagedCallable =
+        callableFactory.createPagedCallable(
+            analyzeOrgPolicyGovernedAssetsTransportSettings,
+            settings.analyzeOrgPolicyGovernedAssetsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -829,6 +969,47 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
   public UnaryCallable<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
       batchGetEffectiveIamPoliciesCallable() {
     return batchGetEffectiveIamPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable() {
+    return analyzeOrgPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable() {
+    return analyzeOrgPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable() {
+    return analyzeOrgPolicyGovernedContainersCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable() {
+    return analyzeOrgPolicyGovernedContainersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable() {
+    return analyzeOrgPolicyGovernedAssetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable() {
+    return analyzeOrgPolicyGovernedAssetsPagedCallable;
   }
 
   @Override

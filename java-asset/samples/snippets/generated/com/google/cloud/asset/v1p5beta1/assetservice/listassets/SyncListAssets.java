@@ -39,7 +39,7 @@ public class SyncListAssets {
     try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
       ListAssetsRequest request =
           ListAssetsRequest.newBuilder()
-              .setParent("parent-995424086")
+              .setParent("ListAssetsRequest-221586066".toString())
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
               .setContentType(ContentType.forNumber(0))

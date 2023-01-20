@@ -22,7 +22,7 @@ package com.google.cloud.asset.v1p1beta1;
  *
  *
  * <pre>
- * The result for a IAM Policy search.
+ * The result for an IAM policy search.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1p1beta1.IamPolicySearchResult}
@@ -78,7 +78,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -93,7 +93,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -112,7 +112,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -128,7 +128,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -137,7 +137,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, .google.cloud.asset.v1p1beta1.Permissions&gt; matched_permissions = 1;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
         java.lang.String key,
@@ -148,7 +147,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -234,6 +233,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
                           com.google.cloud.asset.v1p1beta1.Permissions.getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
         matchedPermissions_;
@@ -256,7 +256,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -284,7 +284,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -303,7 +303,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -313,8 +313,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
-        java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
+    public /* nullable */ com.google.cloud.asset.v1p1beta1.Permissions
+        getMatchedPermissionsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -327,7 +330,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * The map from roles to their included permission matching the permission
-     * query (e.g. containing `policy.role.permissions:`). A sample role string:
+     * query (e.g. containing `policy.role.permissions:`). Example role string:
      * "roles/compute.instanceAdmin". The roles can also be found in the
      * returned `policy` bindings. Note that the map is populated only if
      * requesting with a permission query.
@@ -585,6 +588,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableMatchedPermissions().clear();
         return this;
       }
@@ -615,11 +619,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation buildPartial() {
         com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation result =
             new com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation(this);
-        int from_bitField0_ = bitField0_;
-        result.matchedPermissions_ = internalGetMatchedPermissions();
-        result.matchedPermissions_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.matchedPermissions_ = internalGetMatchedPermissions();
+          result.matchedPermissions_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -674,6 +687,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             == com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
                 .getDefaultInstance()) return this;
         internalGetMutableMatchedPermissions().mergeFrom(other.internalGetMatchedPermissions());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -711,6 +725,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
                   internalGetMutableMatchedPermissions()
                       .getMutableMap()
                       .put(matchedPermissions__.getKey(), matchedPermissions__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -749,8 +764,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       private com.google.protobuf.MapField<
               java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
           internalGetMutableMatchedPermissions() {
-        onChanged();
-        ;
         if (matchedPermissions_ == null) {
           matchedPermissions_ =
               com.google.protobuf.MapField.newMapField(
@@ -759,6 +772,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         if (!matchedPermissions_.isMutable()) {
           matchedPermissions_ = matchedPermissions_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return matchedPermissions_;
       }
 
@@ -770,7 +785,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -798,7 +813,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -817,7 +832,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -827,8 +842,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.asset.v1p1beta1.Permissions getMatchedPermissionsOrDefault(
-          java.lang.String key, com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
+      public /* nullable */ com.google.cloud.asset.v1p1beta1.Permissions
+          getMatchedPermissionsOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.asset.v1p1beta1.Permissions defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -841,7 +859,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -865,6 +883,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
 
       public Builder clearMatchedPermissions() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableMatchedPermissions().getMutableMap().clear();
         return this;
       }
@@ -873,7 +892,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -893,6 +912,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions>
           getMutableMatchedPermissions() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableMatchedPermissions().getMutableMap();
       }
       /**
@@ -900,7 +920,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -917,8 +937,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMatchedPermissions().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -926,7 +946,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        *
        * <pre>
        * The map from roles to their included permission matching the permission
-       * query (e.g. containing `policy.role.permissions:`). A sample role string:
+       * query (e.g. containing `policy.role.permissions:`). Example role string:
        * "roles/compute.instanceAdmin". The roles can also be found in the
        * returned `policy` bindings. Note that the map is populated only if
        * requesting with a permission query.
@@ -938,6 +958,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public Builder putAllMatchedPermissions(
           java.util.Map<java.lang.String, com.google.cloud.asset.v1p1beta1.Permissions> values) {
         internalGetMutableMatchedPermissions().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1009,12 +1030,15 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
    * <pre>
-   * The [full resource
+   * The
+   * [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * of the resource associated with this IAM policy.
    * </pre>
@@ -1039,7 +1063,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The [full resource
+   * The
+   * [full resource
    * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * of the resource associated with this IAM policy.
    * </pre>
@@ -1062,16 +1087,19 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of `projects/{project_number}`. If an IAM policy is set on a resource
+   * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+   * project field will indicate the project that contains the resource. If an
+   * IAM policy is set on a folder or orgnization, the project field will be
+   * empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -1094,11 +1122,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, the project field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of `projects/{project_number}`. If an IAM policy is set on a resource
+   * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+   * project field will indicate the project that contains the resource. If an
+   * IAM policy is set on a folder or orgnization, the project field will be
+   * empty.
    * </pre>
    *
    * <code>string project = 3;</code>
@@ -1124,9 +1153,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -1142,9 +1171,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -1160,9 +1189,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The IAM policy directly set on the given resource. Note that the original
+   * The IAM policy attached to the specified resource. Note that the original
    * IAM policy can contain multiple bindings. This only contains the bindings
-   * that match the given query. For queries that don't contain a constrain on
+   * that match the given query. For queries that don't contain a constraint on
    * policies (e.g. an empty query), this contains all the bindings.
    * </pre>
    *
@@ -1170,7 +1199,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
 
   public static final int EXPLANATION_FIELD_NUMBER = 5;
@@ -1180,7 +1209,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -1196,7 +1225,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -1214,7 +1243,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Explanation about the IAM policy search result. It contains additional
-   * information to explain why the search result matches the query.
+   * information that explains why the search result matches the query.
    * </pre>
    *
    * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -1222,7 +1251,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.ExplanationOrBuilder
       getExplanationOrBuilder() {
-    return getExplanation();
+    return explanation_ == null
+        ? com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.getDefaultInstance()
+        : explanation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1426,7 +1457,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The result for a IAM Policy search.
+   * The result for an IAM policy search.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1p1beta1.IamPolicySearchResult}
@@ -1460,20 +1491,17 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resource_ = "";
-
       project_ = "";
-
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (explanationBuilder_ == null) {
-        explanation_ = null;
-      } else {
-        explanation_ = null;
+      explanation_ = null;
+      if (explanationBuilder_ != null) {
+        explanationBuilder_.dispose();
         explanationBuilder_ = null;
       }
       return this;
@@ -1503,20 +1531,28 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult buildPartial() {
       com.google.cloud.asset.v1p1beta1.IamPolicySearchResult result =
           new com.google.cloud.asset.v1p1beta1.IamPolicySearchResult(this);
-      result.resource_ = resource_;
-      result.project_ = project_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      if (explanationBuilder_ == null) {
-        result.explanation_ = explanation_;
-      } else {
-        result.explanation_ = explanationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p1beta1.IamPolicySearchResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.explanation_ =
+            explanationBuilder_ == null ? explanation_ : explanationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1567,10 +1603,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -1608,25 +1646,25 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getExplanationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1646,12 +1684,15 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object resource_ = "";
     /**
      *
      *
      * <pre>
-     * The [full resource
+     * The
+     * [full resource
      * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * of the resource associated with this IAM policy.
      * </pre>
@@ -1675,7 +1716,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The [full resource
+     * The
+     * [full resource
      * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * of the resource associated with this IAM policy.
      * </pre>
@@ -1699,7 +1741,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The [full resource
+     * The
+     * [full resource
      * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * of the resource associated with this IAM policy.
      * </pre>
@@ -1713,8 +1756,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1722,7 +1765,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The [full resource
+     * The
+     * [full resource
      * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * of the resource associated with this IAM policy.
      * </pre>
@@ -1732,8 +1776,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1741,7 +1785,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The [full resource
+     * The
+     * [full resource
      * name](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * of the resource associated with this IAM policy.
      * </pre>
@@ -1756,8 +1801,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1767,11 +1812,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of `projects/{project_number}`. If an IAM policy is set on a resource
+     * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+     * project field will indicate the project that contains the resource. If an
+     * IAM policy is set on a folder or orgnization, the project field will be
+     * empty.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1793,11 +1839,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of `projects/{project_number}`. If an IAM policy is set on a resource
+     * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+     * project field will indicate the project that contains the resource. If an
+     * IAM policy is set on a folder or orgnization, the project field will be
+     * empty.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1819,11 +1866,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of `projects/{project_number}`. If an IAM policy is set on a resource
+     * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+     * project field will indicate the project that contains the resource. If an
+     * IAM policy is set on a folder or orgnization, the project field will be
+     * empty.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1835,8 +1883,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1844,11 +1892,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of `projects/{project_number}`. If an IAM policy is set on a resource
+     * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+     * project field will indicate the project that contains the resource. If an
+     * IAM policy is set on a folder or orgnization, the project field will be
+     * empty.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1856,8 +1905,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1865,11 +1914,12 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * `projects/{project_number}`. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, the project field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of `projects/{project_number}`. If an IAM policy is set on a resource
+     * -- such as a Compute Engine instance or a Cloud Storage bucket -- the
+     * project field will indicate the project that contains the resource. If an
+     * IAM policy is set on a folder or orgnization, the project field will be
+     * empty.
      * </pre>
      *
      * <code>string project = 3;</code>
@@ -1882,8 +1932,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1898,9 +1948,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -1909,15 +1959,15 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -1936,9 +1986,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -1950,20 +2000,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -1972,20 +2022,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public Builder setPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -1993,55 +2043,56 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      */
     public Builder mergePolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ = com.google.iam.v1.Policy.newBuilder(policy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && policy_ != null
+            && policy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
      * <code>.google.iam.v1.Policy policy = 4;</code>
      */
     public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -2049,9 +2100,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -2068,9 +2119,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The IAM policy directly set on the given resource. Note that the original
+     * The IAM policy attached to the specified resource. Note that the original
      * IAM policy can contain multiple bindings. This only contains the bindings
-     * that match the given query. For queries that don't contain a constrain on
+     * that match the given query. For queries that don't contain a constraint on
      * policies (e.g. an empty query), this contains all the bindings.
      * </pre>
      *
@@ -2103,7 +2154,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2111,14 +2162,14 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return Whether the explanation field is set.
      */
     public boolean hasExplanation() {
-      return explanationBuilder_ != null || explanation_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2140,7 +2191,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2152,11 +2203,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         explanation_ = value;
-        onChanged();
       } else {
         explanationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2164,7 +2215,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2174,11 +2225,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (explanationBuilder_ == null) {
         explanation_ = builderForValue.build();
-        onChanged();
       } else {
         explanationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2186,7 +2237,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2194,20 +2245,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public Builder mergeExplanation(
         com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation value) {
       if (explanationBuilder_ == null) {
-        if (explanation_ != null) {
-          explanation_ =
-              com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.newBuilder(
-                      explanation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && explanation_ != null
+            && explanation_
+                != com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation
+                    .getDefaultInstance()) {
+          getExplanationBuilder().mergeFrom(value);
         } else {
           explanation_ = value;
         }
-        onChanged();
       } else {
         explanationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2215,20 +2266,19 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
      */
     public Builder clearExplanation() {
-      if (explanationBuilder_ == null) {
-        explanation_ = null;
-        onChanged();
-      } else {
-        explanation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      explanation_ = null;
+      if (explanationBuilder_ != null) {
+        explanationBuilder_.dispose();
         explanationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2236,14 +2286,14 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
      */
     public com.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation.Builder
         getExplanationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExplanationFieldBuilder().getBuilder();
     }
@@ -2252,7 +2302,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>
@@ -2273,7 +2323,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Explanation about the IAM policy search result. It contains additional
-     * information to explain why the search result matches the query.
+     * information that explains why the search result matches the query.
      * </pre>
      *
      * <code>.google.cloud.asset.v1p1beta1.IamPolicySearchResult.Explanation explanation = 5;</code>

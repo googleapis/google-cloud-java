@@ -156,7 +156,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * map&lt;string, .google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions&gt; matched_permissions = 1;
      * </code>
      */
-
     /* nullable */
     com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrDefault(
@@ -348,6 +347,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
 
       public static final int PERMISSIONS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList permissions_;
       /**
        *
@@ -626,6 +627,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           return this;
@@ -659,14 +661,26 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             buildPartial() {
           com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result =
               new com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             permissions_ = permissions_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.permissions_ = permissions_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -1039,6 +1053,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
                               .getDefaultInstance());
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
             java.lang.String,
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
@@ -1133,9 +1148,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
+    public /* nullable */ com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
         getMatchedPermissionsOrDefault(
             java.lang.String key,
+            /* nullable */
             com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -1416,6 +1432,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableMatchedPermissions().clear();
         return this;
       }
@@ -1445,11 +1462,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation buildPartial() {
         com.google.cloud.asset.v1.IamPolicySearchResult.Explanation result =
             new com.google.cloud.asset.v1.IamPolicySearchResult.Explanation(this);
-        int from_bitField0_ = bitField0_;
-        result.matchedPermissions_ = internalGetMatchedPermissions();
-        result.matchedPermissions_.makeImmutable();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicySearchResult.Explanation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.matchedPermissions_ = internalGetMatchedPermissions();
+          result.matchedPermissions_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1502,6 +1528,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             == com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.getDefaultInstance())
           return this;
         internalGetMutableMatchedPermissions().mergeFrom(other.internalGetMatchedPermissions());
+        bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1540,6 +1567,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
                   internalGetMutableMatchedPermissions()
                       .getMutableMap()
                       .put(matchedPermissions__.getKey(), matchedPermissions__.getValue());
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1581,8 +1609,6 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
               java.lang.String,
               com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
           internalGetMutableMatchedPermissions() {
-        onChanged();
-        ;
         if (matchedPermissions_ == null) {
           matchedPermissions_ =
               com.google.protobuf.MapField.newMapField(
@@ -1591,6 +1617,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         if (!matchedPermissions_.isMutable()) {
           matchedPermissions_ = matchedPermissions_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return matchedPermissions_;
       }
 
@@ -1672,9 +1700,10 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
        * </code>
        */
       @java.lang.Override
-      public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
+      public /* nullable */ com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
           getMatchedPermissionsOrDefault(
               java.lang.String key,
+              /* nullable */
               com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions
                   defaultValue) {
         if (key == null) {
@@ -1720,6 +1749,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
 
       public Builder clearMatchedPermissions() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableMatchedPermissions().getMutableMap().clear();
         return this;
       }
@@ -1753,6 +1783,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
               java.lang.String,
               com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
           getMutableMatchedPermissions() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableMatchedPermissions().getMutableMap();
       }
       /**
@@ -1781,8 +1812,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableMatchedPermissions().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1808,6 +1839,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
                   com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Permissions>
               values) {
         internalGetMutableMatchedPermissions().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1877,7 +1909,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -1940,7 +1974,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -1995,16 +2031,18 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PROJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, this field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+   * (like VM instance, Cloud Storage bucket), the project field will indicate
+   * the project that contains the resource. If an IAM policy is set on a folder
+   * or orgnization, this field will be empty.
    * To search against the `project`:
    * * specify the `scope` field as this project in your search request.
    * </pre>
@@ -2029,11 +2067,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The project that the associated GCP resource belongs to, in the form of
-   * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-   * instance, Cloud Storage bucket), the project field will indicate the
-   * project that contains the resource. If an IAM policy is set on a folder or
-   * orgnization, this field will be empty.
+   * The project that the associated Google Cloud resource belongs to, in the
+   * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+   * (like VM instance, Cloud Storage bucket), the project field will indicate
+   * the project that contains the resource. If an IAM policy is set on a folder
+   * or orgnization, this field will be empty.
    * To search against the `project`:
    * * specify the `scope` field as this project in your search request.
    * </pre>
@@ -2056,6 +2094,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FOLDERS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList folders_;
   /**
    *
@@ -2141,7 +2181,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ORGANIZATION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object organization_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organization_ = "";
   /**
    *
    *
@@ -2277,7 +2319,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.iam.v1.PolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.google.iam.v1.Policy.getDefaultInstance() : policy_;
   }
 
   public static final int EXPLANATION_FIELD_NUMBER = 4;
@@ -2329,7 +2371,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicySearchResult.ExplanationOrBuilder
       getExplanationOrBuilder() {
-    return getExplanation();
+    return explanation_ == null
+        ? com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.getDefaultInstance()
+        : explanation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2600,26 +2644,21 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resource_ = "";
-
       assetType_ = "";
-
       project_ = "";
-
       folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       organization_ = "";
-
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (explanationBuilder_ == null) {
-        explanation_ = null;
-      } else {
-        explanation_ = null;
+      explanation_ = null;
+      if (explanationBuilder_ != null) {
+        explanationBuilder_.dispose();
         explanationBuilder_ = null;
       }
       return this;
@@ -2649,28 +2688,44 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public com.google.cloud.asset.v1.IamPolicySearchResult buildPartial() {
       com.google.cloud.asset.v1.IamPolicySearchResult result =
           new com.google.cloud.asset.v1.IamPolicySearchResult(this);
-      int from_bitField0_ = bitField0_;
-      result.resource_ = resource_;
-      result.assetType_ = assetType_;
-      result.project_ = project_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.folders_ = folders_;
-      result.organization_ = organization_;
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      if (explanationBuilder_ == null) {
-        result.explanation_ = explanation_;
-      } else {
-        result.explanation_ = explanationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1.IamPolicySearchResult result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        folders_ = folders_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.folders_ = folders_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.IamPolicySearchResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.organization_ = organization_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.explanation_ =
+            explanationBuilder_ == null ? explanation_ : explanationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2721,20 +2776,23 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -2743,6 +2801,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       }
       if (!other.getOrganization().isEmpty()) {
         organization_ = other.organization_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -2780,31 +2839,31 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getExplanationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
@@ -2817,7 +2876,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
             case 58:
               {
                 organization_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             default:
@@ -2921,8 +2980,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2945,8 +3004,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2974,8 +3033,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3050,8 +3109,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3070,8 +3129,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3095,8 +3154,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3106,11 +3165,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, this field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+     * (like VM instance, Cloud Storage bucket), the project field will indicate
+     * the project that contains the resource. If an IAM policy is set on a folder
+     * or orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -3134,11 +3193,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, this field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+     * (like VM instance, Cloud Storage bucket), the project field will indicate
+     * the project that contains the resource. If an IAM policy is set on a folder
+     * or orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -3162,11 +3221,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, this field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+     * (like VM instance, Cloud Storage bucket), the project field will indicate
+     * the project that contains the resource. If an IAM policy is set on a folder
+     * or orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -3180,8 +3239,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3189,11 +3248,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, this field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+     * (like VM instance, Cloud Storage bucket), the project field will indicate
+     * the project that contains the resource. If an IAM policy is set on a folder
+     * or orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -3203,8 +3262,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3212,11 +3271,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The project that the associated GCP resource belongs to, in the form of
-     * projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource (like VM
-     * instance, Cloud Storage bucket), the project field will indicate the
-     * project that contains the resource. If an IAM policy is set on a folder or
-     * orgnization, this field will be empty.
+     * The project that the associated Google Cloud resource belongs to, in the
+     * form of projects/{PROJECT_NUMBER}. If an IAM policy is set on a resource
+     * (like VM instance, Cloud Storage bucket), the project field will indicate
+     * the project that contains the resource. If an IAM policy is set on a folder
+     * or orgnization, this field will be empty.
      * To search against the `project`:
      * * specify the `scope` field as this project in your search request.
      * </pre>
@@ -3231,8 +3290,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3241,9 +3300,9 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3426,7 +3485,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      */
     public Builder clearFolders() {
       folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3538,8 +3597,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       organization_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3561,8 +3620,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOrganization() {
-
       organization_ = getDefaultInstance().getOrganization();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3589,8 +3648,8 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       organization_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3624,7 +3683,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3681,11 +3740,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3711,11 +3770,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public Builder setPolicy(com.google.iam.v1.Policy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3740,16 +3799,18 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      */
     public Builder mergePolicy(com.google.iam.v1.Policy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ = com.google.iam.v1.Policy.newBuilder(policy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && policy_ != null
+            && policy_ != com.google.iam.v1.Policy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3773,14 +3834,13 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <code>.google.iam.v1.Policy policy = 3;</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3804,7 +3864,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <code>.google.iam.v1.Policy policy = 3;</code>
      */
     public com.google.iam.v1.Policy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -3890,7 +3950,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * @return Whether the explanation field is set.
      */
     public boolean hasExplanation() {
-      return explanationBuilder_ != null || explanation_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3930,11 +3990,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         explanation_ = value;
-        onChanged();
       } else {
         explanationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3951,11 +4011,11 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
         com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Builder builderForValue) {
       if (explanationBuilder_ == null) {
         explanation_ = builderForValue.build();
-        onChanged();
       } else {
         explanationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3971,19 +4031,20 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
     public Builder mergeExplanation(
         com.google.cloud.asset.v1.IamPolicySearchResult.Explanation value) {
       if (explanationBuilder_ == null) {
-        if (explanation_ != null) {
-          explanation_ =
-              com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.newBuilder(explanation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && explanation_ != null
+            && explanation_
+                != com.google.cloud.asset.v1.IamPolicySearchResult.Explanation
+                    .getDefaultInstance()) {
+          getExplanationBuilder().mergeFrom(value);
         } else {
           explanation_ = value;
         }
-        onChanged();
       } else {
         explanationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3997,14 +4058,13 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.asset.v1.IamPolicySearchResult.Explanation explanation = 4;</code>
      */
     public Builder clearExplanation() {
-      if (explanationBuilder_ == null) {
-        explanation_ = null;
-        onChanged();
-      } else {
-        explanation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      explanation_ = null;
+      if (explanationBuilder_ != null) {
+        explanationBuilder_.dispose();
         explanationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4019,7 +4079,7 @@ public final class IamPolicySearchResult extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.asset.v1.IamPolicySearchResult.Explanation.Builder
         getExplanationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getExplanationFieldBuilder().getBuilder();
     }

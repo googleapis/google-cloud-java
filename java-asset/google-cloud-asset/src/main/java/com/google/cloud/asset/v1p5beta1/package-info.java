@@ -30,16 +30,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
- *   ListAssetsRequest request =
- *       ListAssetsRequest.newBuilder()
- *           .setParent("parent-995424086")
- *           .setReadTime(Timestamp.newBuilder().build())
- *           .addAllAssetTypes(new ArrayList<String>())
- *           .setContentType(ContentType.forNumber(0))
- *           .setPageSize(883849137)
- *           .setPageToken("pageToken873572522")
- *           .build();
- *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+ *   ResourceName parent = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   for (Asset element : assetServiceClient.listAssets(parent).iterateAll()) {
  *     // doThingsWith(element);
  *   }
  * }

@@ -19,6 +19,15 @@
             "AnalyzeMove": {
               "methods": ["analyzeMove", "analyzeMoveCallable"]
             },
+            "AnalyzeOrgPolicies": {
+              "methods": ["analyzeOrgPolicies", "analyzeOrgPolicies", "analyzeOrgPoliciesPagedCallable", "analyzeOrgPoliciesCallable"]
+            },
+            "AnalyzeOrgPolicyGovernedAssets": {
+              "methods": ["analyzeOrgPolicyGovernedAssets", "analyzeOrgPolicyGovernedAssets", "analyzeOrgPolicyGovernedAssetsPagedCallable", "analyzeOrgPolicyGovernedAssetsCallable"]
+            },
+            "AnalyzeOrgPolicyGovernedContainers": {
+              "methods": ["analyzeOrgPolicyGovernedContainers", "analyzeOrgPolicyGovernedContainers", "analyzeOrgPolicyGovernedContainersPagedCallable", "analyzeOrgPolicyGovernedContainersCallable"]
+            },
             "BatchGetAssetsHistory": {
               "methods": ["batchGetAssetsHistory", "batchGetAssetsHistoryCallable"]
             },

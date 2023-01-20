@@ -152,7 +152,7 @@ public interface ResourceOrBuilder
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -173,7 +173,7 @@ public interface ResourceOrBuilder
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`

@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+ * A request message for
+ * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -118,11 +119,15 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.IamPolicyAnalysisQueryOrBuilder getAnalysisQueryOrBuilder() {
-    return getAnalysisQuery();
+    return analysisQuery_ == null
+        ? com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()
+        : analysisQuery_;
   }
 
   public static final int SAVED_ANALYSIS_QUERY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object savedAnalysisQuery_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedAnalysisQuery_ = "";
   /**
    *
    *
@@ -200,7 +205,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -224,7 +230,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -250,7 +257,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Optional. Amount of time executable has to complete.  See JSON representation of
+   * Optional. Amount of time executable has to complete.  See JSON
+   * representation of
    * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
    * If this field is set with a value less than the RPC deadline, and the
    * execution of your query hasn't finished in the specified
@@ -266,7 +274,9 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getExecutionTimeoutOrBuilder() {
-    return getExecutionTimeout();
+    return executionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : executionTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -460,7 +470,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A request message for [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
+   * A request message for
+   * [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1.AssetService.AnalyzeIamPolicy].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyRequest}
@@ -494,18 +505,16 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (analysisQueryBuilder_ == null) {
-        analysisQuery_ = null;
-      } else {
-        analysisQuery_ = null;
+      bitField0_ = 0;
+      analysisQuery_ = null;
+      if (analysisQueryBuilder_ != null) {
+        analysisQueryBuilder_.dispose();
         analysisQueryBuilder_ = null;
       }
       savedAnalysisQuery_ = "";
-
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-      } else {
-        executionTimeout_ = null;
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
       return this;
@@ -535,19 +544,26 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     public com.google.cloud.asset.v1.AnalyzeIamPolicyRequest buildPartial() {
       com.google.cloud.asset.v1.AnalyzeIamPolicyRequest result =
           new com.google.cloud.asset.v1.AnalyzeIamPolicyRequest(this);
-      if (analysisQueryBuilder_ == null) {
-        result.analysisQuery_ = analysisQuery_;
-      } else {
-        result.analysisQuery_ = analysisQueryBuilder_.build();
-      }
-      result.savedAnalysisQuery_ = savedAnalysisQuery_;
-      if (executionTimeoutBuilder_ == null) {
-        result.executionTimeout_ = executionTimeout_;
-      } else {
-        result.executionTimeout_ = executionTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.AnalyzeIamPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.analysisQuery_ =
+            analysisQueryBuilder_ == null ? analysisQuery_ : analysisQueryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.savedAnalysisQuery_ = savedAnalysisQuery_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.executionTimeout_ =
+            executionTimeoutBuilder_ == null ? executionTimeout_ : executionTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -601,6 +617,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       }
       if (!other.getSavedAnalysisQuery().isEmpty()) {
         savedAnalysisQuery_ = other.savedAnalysisQuery_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasExecutionTimeout()) {
@@ -635,20 +652,20 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getAnalysisQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getExecutionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 savedAnalysisQuery_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -667,6 +684,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.asset.v1.IamPolicyAnalysisQuery analysisQuery_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -688,7 +707,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * @return Whether the analysisQuery field is set.
      */
     public boolean hasAnalysisQuery() {
-      return analysisQueryBuilder_ != null || analysisQuery_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -729,11 +748,11 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         analysisQuery_ = value;
-        onChanged();
       } else {
         analysisQueryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -751,11 +770,11 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder builderForValue) {
       if (analysisQueryBuilder_ == null) {
         analysisQuery_ = builderForValue.build();
-        onChanged();
       } else {
         analysisQueryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -771,19 +790,19 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAnalysisQuery(com.google.cloud.asset.v1.IamPolicyAnalysisQuery value) {
       if (analysisQueryBuilder_ == null) {
-        if (analysisQuery_ != null) {
-          analysisQuery_ =
-              com.google.cloud.asset.v1.IamPolicyAnalysisQuery.newBuilder(analysisQuery_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && analysisQuery_ != null
+            && analysisQuery_
+                != com.google.cloud.asset.v1.IamPolicyAnalysisQuery.getDefaultInstance()) {
+          getAnalysisQueryBuilder().mergeFrom(value);
         } else {
           analysisQuery_ = value;
         }
-        onChanged();
       } else {
         analysisQueryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -798,14 +817,13 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAnalysisQuery() {
-      if (analysisQueryBuilder_ == null) {
-        analysisQuery_ = null;
-        onChanged();
-      } else {
-        analysisQuery_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      analysisQuery_ = null;
+      if (analysisQueryBuilder_ != null) {
+        analysisQueryBuilder_.dispose();
         analysisQueryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -820,7 +838,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.asset.v1.IamPolicyAnalysisQuery.Builder getAnalysisQueryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAnalysisQueryFieldBuilder().getBuilder();
     }
@@ -969,8 +987,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       savedAnalysisQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -998,8 +1016,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSavedAnalysisQuery() {
-
       savedAnalysisQuery_ = getDefaultInstance().getSavedAnalysisQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1032,8 +1050,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       savedAnalysisQuery_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,7 +1066,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1065,13 +1084,14 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * @return Whether the executionTimeout field is set.
      */
     public boolean hasExecutionTimeout() {
-      return executionTimeoutBuilder_ != null || executionTimeout_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1100,7 +1120,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1120,18 +1141,19 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         executionTimeout_ = value;
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1148,18 +1170,19 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
     public Builder setExecutionTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (executionTimeoutBuilder_ == null) {
         executionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         executionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1175,26 +1198,26 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      */
     public Builder mergeExecutionTimeout(com.google.protobuf.Duration value) {
       if (executionTimeoutBuilder_ == null) {
-        if (executionTimeout_ != null) {
-          executionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(executionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && executionTimeout_ != null
+            && executionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getExecutionTimeoutBuilder().mergeFrom(value);
         } else {
           executionTimeout_ = value;
         }
-        onChanged();
       } else {
         executionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1209,21 +1232,21 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearExecutionTimeout() {
-      if (executionTimeoutBuilder_ == null) {
-        executionTimeout_ = null;
-        onChanged();
-      } else {
-        executionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      executionTimeout_ = null;
+      if (executionTimeoutBuilder_ != null) {
+        executionTimeoutBuilder_.dispose();
         executionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1238,7 +1261,7 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.protobuf.Duration.Builder getExecutionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getExecutionTimeoutFieldBuilder().getBuilder();
     }
@@ -1246,7 +1269,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified
@@ -1273,7 +1297,8 @@ public final class AnalyzeIamPolicyRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Optional. Amount of time executable has to complete.  See JSON representation of
+     * Optional. Amount of time executable has to complete.  See JSON
+     * representation of
      * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json).
      * If this field is set with a value less than the RPC deadline, and the
      * execution of your query hasn't finished in the specified

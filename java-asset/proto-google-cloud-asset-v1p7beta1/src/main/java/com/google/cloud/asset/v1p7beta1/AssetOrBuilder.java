@@ -164,15 +164,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -184,15 +184,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -204,15 +204,15 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * A representation of the Cloud IAM policy set on a Google Cloud resource.
-   * There can be a maximum of one Cloud IAM policy set on any given resource.
-   * In addition, Cloud IAM policies inherit their granted access scope from any
+   * A representation of the IAM policy set on a Google Cloud resource.
+   * There can be a maximum of one IAM policy set on any given resource.
+   * In addition, IAM policies inherit their granted access scope from any
    * policies set on parent resources in the resource hierarchy. Therefore, the
    * effectively policy is the union of both the policy set on this resource
    * and each policy set on all of the resource's ancestry resource levels in
    * the hierarchy. See
-   * [this topic](https://cloud.google.com/iam/docs/policies#inheritance) for
-   * more information.
+   * [this topic](https://cloud.google.com/iam/help/allow-policies/inheritance)
+   * for more information.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>

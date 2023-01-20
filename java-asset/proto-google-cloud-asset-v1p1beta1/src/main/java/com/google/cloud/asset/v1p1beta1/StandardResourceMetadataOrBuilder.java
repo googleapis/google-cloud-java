@@ -252,7 +252,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -264,7 +265,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -279,7 +281,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -291,14 +294,14 @@ public interface StandardResourceMetadataOrBuilder
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -308,7 +311,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -322,7 +326,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -337,7 +342,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -352,7 +358,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>
@@ -368,7 +375,8 @@ public interface StandardResourceMetadataOrBuilder
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](lhttps://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information.
    * </pre>

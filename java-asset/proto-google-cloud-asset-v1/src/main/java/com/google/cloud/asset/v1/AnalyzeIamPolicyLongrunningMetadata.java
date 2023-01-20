@@ -23,7 +23,7 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * Represents the metadata of the longrunning operation for the
- * AnalyzeIamPolicyLongrunning rpc.
+ * AnalyzeIamPolicyLongrunning RPC.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata}
@@ -114,7 +114,7 @@ public final class AnalyzeIamPolicyLongrunningMetadata
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -287,7 +287,7 @@ public final class AnalyzeIamPolicyLongrunningMetadata
    *
    * <pre>
    * Represents the metadata of the longrunning operation for the
-   * AnalyzeIamPolicyLongrunning rpc.
+   * AnalyzeIamPolicyLongrunning RPC.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata}
@@ -321,10 +321,10 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -355,13 +355,19 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     public com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata buildPartial() {
       com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata result =
           new com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata(this);
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -443,7 +449,7 @@ public final class AnalyzeIamPolicyLongrunningMetadata
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -462,6 +468,8 @@ public final class AnalyzeIamPolicyLongrunningMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -483,7 +491,7 @@ public final class AnalyzeIamPolicyLongrunningMetadata
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -524,11 +532,11 @@ public final class AnalyzeIamPolicyLongrunningMetadata
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -545,11 +553,11 @@ public final class AnalyzeIamPolicyLongrunningMetadata
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,17 +573,18 @@ public final class AnalyzeIamPolicyLongrunningMetadata
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -590,14 +599,13 @@ public final class AnalyzeIamPolicyLongrunningMetadata
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -612,7 +620,7 @@ public final class AnalyzeIamPolicyLongrunningMetadata
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

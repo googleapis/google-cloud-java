@@ -75,7 +75,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -134,6 +136,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList assetNames_;
   /**
    *
@@ -219,6 +223,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList assetTypes_;
   /**
    *
@@ -300,7 +306,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
-  private int contentType_;
+  private int contentType_ = 0;
   /**
    *
    *
@@ -331,9 +337,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.ContentType getContentType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.ContentType result =
-        com.google.cloud.asset.v1.ContentType.valueOf(contentType_);
+        com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
     return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
   }
 
@@ -391,7 +396,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.FeedOutputConfigOrBuilder getFeedOutputConfigOrBuilder() {
-    return getFeedOutputConfig();
+    return feedOutputConfig_ == null
+        ? com.google.cloud.asset.v1.FeedOutputConfig.getDefaultInstance()
+        : feedOutputConfig_;
   }
 
   public static final int CONDITION_FIELD_NUMBER = 6;
@@ -467,10 +474,12 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.ExprOrBuilder getConditionOrBuilder() {
-    return getCondition();
+    return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
 
   public static final int RELATIONSHIP_TYPES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList relationshipTypes_;
   /**
    *
@@ -876,28 +885,25 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       contentType_ = 0;
-
-      if (feedOutputConfigBuilder_ == null) {
-        feedOutputConfig_ = null;
-      } else {
-        feedOutputConfig_ = null;
+      feedOutputConfig_ = null;
+      if (feedOutputConfigBuilder_ != null) {
+        feedOutputConfigBuilder_.dispose();
         feedOutputConfigBuilder_ = null;
       }
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-      } else {
-        condition_ = null;
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
       relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -924,36 +930,47 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.asset.v1.Feed buildPartial() {
       com.google.cloud.asset.v1.Feed result = new com.google.cloud.asset.v1.Feed(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        assetNames_ = assetNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.assetNames_ = assetNames_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.assetTypes_ = assetTypes_;
-      result.contentType_ = contentType_;
-      if (feedOutputConfigBuilder_ == null) {
-        result.feedOutputConfig_ = feedOutputConfig_;
-      } else {
-        result.feedOutputConfig_ = feedOutputConfigBuilder_.build();
-      }
-      if (conditionBuilder_ == null) {
-        result.condition_ = condition_;
-      } else {
-        result.condition_ = conditionBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.relationshipTypes_ = relationshipTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.Feed result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        assetNames_ = assetNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.assetNames_ = assetNames_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        assetTypes_ = assetTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.assetTypes_ = assetTypes_;
+      if (((bitField0_ & 0x00000040) != 0)) {
+        relationshipTypes_ = relationshipTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.relationshipTypes_ = relationshipTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.Feed result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contentType_ = contentType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.feedOutputConfig_ =
+            feedOutputConfigBuilder_ == null ? feedOutputConfig_ : feedOutputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1003,12 +1020,13 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.asset.v1.Feed.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.assetNames_.isEmpty()) {
         if (assetNames_.isEmpty()) {
           assetNames_ = other.assetNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureAssetNamesIsMutable();
           assetNames_.addAll(other.assetNames_);
@@ -1018,7 +1036,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -1037,7 +1055,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (!other.relationshipTypes_.isEmpty()) {
         if (relationshipTypes_.isEmpty()) {
           relationshipTypes_ = other.relationshipTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureRelationshipTypesIsMutable();
           relationshipTypes_.addAll(other.relationshipTypes_);
@@ -1073,7 +1091,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1093,20 +1111,20 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 contentType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getFeedOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1211,8 +1229,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1233,8 +1251,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1260,8 +1278,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1270,9 +1288,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1455,7 +1473,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAssetNames() {
       assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1492,9 +1510,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1669,7 +1687,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAssetTypes() {
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1732,8 +1750,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
-
       contentType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1751,9 +1769,8 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.ContentType getContentType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.ContentType result =
-          com.google.cloud.asset.v1.ContentType.valueOf(contentType_);
+          com.google.cloud.asset.v1.ContentType.forNumber(contentType_);
       return result == null ? com.google.cloud.asset.v1.ContentType.UNRECOGNIZED : result;
     }
     /**
@@ -1773,7 +1790,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       contentType_ = value.getNumber();
       onChanged();
       return this;
@@ -1791,7 +1808,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContentType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       contentType_ = 0;
       onChanged();
       return this;
@@ -1818,7 +1835,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the feedOutputConfig field is set.
      */
     public boolean hasFeedOutputConfig() {
-      return feedOutputConfigBuilder_ != null || feedOutputConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1861,11 +1878,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         feedOutputConfig_ = value;
-        onChanged();
       } else {
         feedOutputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1884,11 +1901,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.asset.v1.FeedOutputConfig.Builder builderForValue) {
       if (feedOutputConfigBuilder_ == null) {
         feedOutputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         feedOutputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1905,19 +1922,19 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFeedOutputConfig(com.google.cloud.asset.v1.FeedOutputConfig value) {
       if (feedOutputConfigBuilder_ == null) {
-        if (feedOutputConfig_ != null) {
-          feedOutputConfig_ =
-              com.google.cloud.asset.v1.FeedOutputConfig.newBuilder(feedOutputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && feedOutputConfig_ != null
+            && feedOutputConfig_
+                != com.google.cloud.asset.v1.FeedOutputConfig.getDefaultInstance()) {
+          getFeedOutputConfigBuilder().mergeFrom(value);
         } else {
           feedOutputConfig_ = value;
         }
-        onChanged();
       } else {
         feedOutputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1933,14 +1950,13 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFeedOutputConfig() {
-      if (feedOutputConfigBuilder_ == null) {
-        feedOutputConfig_ = null;
-        onChanged();
-      } else {
-        feedOutputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      feedOutputConfig_ = null;
+      if (feedOutputConfigBuilder_ != null) {
+        feedOutputConfigBuilder_.dispose();
         feedOutputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1956,7 +1972,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.asset.v1.FeedOutputConfig.Builder getFeedOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getFeedOutputConfigFieldBuilder().getBuilder();
     }
@@ -2036,7 +2052,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return conditionBuilder_ != null || condition_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2091,11 +2107,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         condition_ = value;
-        onChanged();
       } else {
         conditionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2120,11 +2136,11 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
     public Builder setCondition(com.google.type.Expr.Builder builderForValue) {
       if (conditionBuilder_ == null) {
         condition_ = builderForValue.build();
-        onChanged();
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2148,16 +2164,18 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCondition(com.google.type.Expr value) {
       if (conditionBuilder_ == null) {
-        if (condition_ != null) {
-          condition_ = com.google.type.Expr.newBuilder(condition_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && condition_ != null
+            && condition_ != com.google.type.Expr.getDefaultInstance()) {
+          getConditionBuilder().mergeFrom(value);
         } else {
           condition_ = value;
         }
-        onChanged();
       } else {
         conditionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2180,14 +2198,13 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Expr condition = 6;</code>
      */
     public Builder clearCondition() {
-      if (conditionBuilder_ == null) {
-        condition_ = null;
-        onChanged();
-      } else {
-        condition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
         conditionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2210,7 +2227,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Expr condition = 6;</code>
      */
     public com.google.type.Expr.Builder getConditionBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
@@ -2276,9 +2293,9 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRelationshipTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         relationshipTypes_ = new com.google.protobuf.LazyStringArrayList(relationshipTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2533,7 +2550,7 @@ public final class Feed extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRelationshipTypes() {
       relationshipTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

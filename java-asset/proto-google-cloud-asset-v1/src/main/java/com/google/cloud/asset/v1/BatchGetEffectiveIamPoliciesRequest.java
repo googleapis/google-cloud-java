@@ -22,7 +22,8 @@ package com.google.cloud.asset.v1;
  *
  *
  * <pre>
- * A request message for [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
+ * A request message for
+ * [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest}
@@ -71,7 +72,9 @@ public final class BatchGetEffectiveIamPoliciesRequest
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object scope_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object scope_ = "";
   /**
    *
    *
@@ -138,6 +141,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
   }
 
   public static final int NAMES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList names_;
   /**
    *
@@ -402,7 +407,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
    *
    *
    * <pre>
-   * A request message for [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
+   * A request message for
+   * [AssetService.BatchGetEffectiveIamPolicies][google.cloud.asset.v1.AssetService.BatchGetEffectiveIamPolicies].
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest}
@@ -436,10 +442,10 @@ public final class BatchGetEffectiveIamPoliciesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = "";
-
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -468,15 +474,29 @@ public final class BatchGetEffectiveIamPoliciesRequest
     public com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest buildPartial() {
       com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest result =
           new com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.scope_ = scope_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        names_ = names_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.names_ = names_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        names_ = names_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.names_ = names_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.asset.v1.BatchGetEffectiveIamPoliciesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
     }
 
     @java.lang.Override
@@ -528,12 +548,13 @@ public final class BatchGetEffectiveIamPoliciesRequest
         return this;
       if (!other.getScope().isEmpty()) {
         scope_ = other.scope_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.names_.isEmpty()) {
         if (names_.isEmpty()) {
           names_ = other.names_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureNamesIsMutable();
           names_.addAll(other.names_);
@@ -569,7 +590,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
             case 10:
               {
                 scope_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -686,8 +707,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -712,8 +733,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
       scope_ = getDefaultInstance().getScope();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +764,8 @@ public final class BatchGetEffectiveIamPoliciesRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -753,9 +774,9 @@ public final class BatchGetEffectiveIamPoliciesRequest
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         names_ = new com.google.protobuf.LazyStringArrayList(names_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -938,7 +959,7 @@ public final class BatchGetEffectiveIamPoliciesRequest
      */
     public Builder clearNames() {
       names_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

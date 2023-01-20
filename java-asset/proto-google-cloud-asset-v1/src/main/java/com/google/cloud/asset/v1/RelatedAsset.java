@@ -26,7 +26,7 @@ package com.google.cloud.asset.v1;
  * ancestors. An asset can be any resource in the Google Cloud [resource
  * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
  * a resource outside the Google Cloud resource hierarchy (such as Google
- * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+ * Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy).
  * See [Supported asset
  * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
  * for more information.
@@ -78,7 +78,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object asset_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object asset_ = "";
   /**
    *
    *
@@ -135,7 +137,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -190,6 +194,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANCESTORS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ancestors_;
   /**
    *
@@ -267,7 +273,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RELATIONSHIP_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object relationshipType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object relationshipType_ = "";
   /**
    *
    *
@@ -517,7 +525,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
    * ancestors. An asset can be any resource in the Google Cloud [resource
    * hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy),
    * a resource outside the Google Cloud resource hierarchy (such as Google
-   * Kubernetes Engine clusters and objects), or a policy (e.g. Cloud IAM policy).
+   * Kubernetes Engine clusters and objects), or a policy (e.g. IAM policy).
    * See [Supported asset
    * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
    * for more information.
@@ -554,14 +562,12 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       asset_ = "";
-
       assetType_ = "";
-
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       relationshipType_ = "";
-
       return this;
     }
 
@@ -589,17 +595,33 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1.RelatedAsset buildPartial() {
       com.google.cloud.asset.v1.RelatedAsset result =
           new com.google.cloud.asset.v1.RelatedAsset(this);
-      int from_bitField0_ = bitField0_;
-      result.asset_ = asset_;
-      result.assetType_ = assetType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        ancestors_ = ancestors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.ancestors_ = ancestors_;
-      result.relationshipType_ = relationshipType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.RelatedAsset result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        ancestors_ = ancestors_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.ancestors_ = ancestors_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.RelatedAsset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.asset_ = asset_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.relationshipType_ = relationshipType_;
+      }
     }
 
     @java.lang.Override
@@ -649,16 +671,18 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.asset.v1.RelatedAsset.getDefaultInstance()) return this;
       if (!other.getAsset().isEmpty()) {
         asset_ = other.asset_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
           ancestors_ = other.ancestors_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAncestorsIsMutable();
           ancestors_.addAll(other.ancestors_);
@@ -667,6 +691,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getRelationshipType().isEmpty()) {
         relationshipType_ = other.relationshipType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -698,13 +723,13 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 asset_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -717,7 +742,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 relationshipType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -812,8 +837,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       asset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,8 +858,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAsset() {
-
       asset_ = getDefaultInstance().getAsset();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -859,8 +884,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       asset_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -935,8 +960,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -955,8 +980,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -980,8 +1005,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -990,9 +1015,9 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAncestorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         ancestors_ = new com.google.protobuf.LazyStringArrayList(ancestors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1159,7 +1184,7 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAncestors() {
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1254,8 +1279,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       relationshipType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1272,8 +1297,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRelationshipType() {
-
       relationshipType_ = getDefaultInstance().getRelationshipType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1295,8 +1320,8 @@ public final class RelatedAsset extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       relationshipType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FEED_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object feedId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object feedId_ = "";
   /**
    *
    *
@@ -234,7 +238,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.asset.v1p2beta1.FeedOrBuilder getFeedOrBuilder() {
-    return getFeed();
+    return feed_ == null ? com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance() : feed_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -457,14 +461,12 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       feedId_ = "";
-
-      if (feedBuilder_ == null) {
-        feed_ = null;
-      } else {
-        feed_ = null;
+      feed_ = null;
+      if (feedBuilder_ != null) {
+        feedBuilder_.dispose();
         feedBuilder_ = null;
       }
       return this;
@@ -494,15 +496,24 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1p2beta1.CreateFeedRequest buildPartial() {
       com.google.cloud.asset.v1p2beta1.CreateFeedRequest result =
           new com.google.cloud.asset.v1p2beta1.CreateFeedRequest(this);
-      result.parent_ = parent_;
-      result.feedId_ = feedId_;
-      if (feedBuilder_ == null) {
-        result.feed_ = feed_;
-      } else {
-        result.feed_ = feedBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p2beta1.CreateFeedRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.feedId_ = feedId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.feed_ = feedBuilder_ == null ? feed_ : feedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -553,10 +564,12 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFeedId().isEmpty()) {
         feedId_ = other.feedId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasFeed()) {
@@ -591,19 +604,19 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 feedId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getFeedFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -622,6 +635,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -696,8 +711,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +732,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -743,8 +758,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -813,8 +828,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       feedId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -831,8 +846,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFeedId() {
-
       feedId_ = getDefaultInstance().getFeedId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -854,8 +869,8 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       feedId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,7 +898,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the feed field is set.
      */
     public boolean hasFeed() {
-      return feedBuilder_ != null || feed_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -928,11 +943,11 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         feed_ = value;
-        onChanged();
       } else {
         feedBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -952,11 +967,11 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
     public Builder setFeed(com.google.cloud.asset.v1p2beta1.Feed.Builder builderForValue) {
       if (feedBuilder_ == null) {
         feed_ = builderForValue.build();
-        onChanged();
       } else {
         feedBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -975,19 +990,18 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeFeed(com.google.cloud.asset.v1p2beta1.Feed value) {
       if (feedBuilder_ == null) {
-        if (feed_ != null) {
-          feed_ =
-              com.google.cloud.asset.v1p2beta1.Feed.newBuilder(feed_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && feed_ != null
+            && feed_ != com.google.cloud.asset.v1p2beta1.Feed.getDefaultInstance()) {
+          getFeedBuilder().mergeFrom(value);
         } else {
           feed_ = value;
         }
-        onChanged();
       } else {
         feedBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1005,14 +1019,13 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearFeed() {
-      if (feedBuilder_ == null) {
-        feed_ = null;
-        onChanged();
-      } else {
-        feed_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      feed_ = null;
+      if (feedBuilder_ != null) {
+        feedBuilder_.dispose();
         feedBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1030,7 +1043,7 @@ public final class CreateFeedRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.asset.v1p2beta1.Feed.Builder getFeedBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getFeedFieldBuilder().getBuilder();
     }

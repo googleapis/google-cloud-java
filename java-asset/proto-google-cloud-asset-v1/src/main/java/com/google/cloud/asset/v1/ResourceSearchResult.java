@@ -100,7 +100,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -163,7 +165,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -216,7 +220,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object project_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object project_ = "";
   /**
    *
    *
@@ -277,6 +283,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FOLDERS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList folders_;
   /**
    *
@@ -362,7 +370,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ORGANIZATION_FIELD_NUMBER = 18;
-  private volatile java.lang.Object organization_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object organization_ = "";
   /**
    *
    *
@@ -423,7 +433,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -480,7 +492,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -539,7 +553,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LOCATION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -610,6 +626,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -626,7 +643,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -657,7 +675,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -679,7 +698,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -694,7 +714,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -705,7 +728,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Labels associated with this resource. See [Labelling and grouping GCP
+   * Labels associated with this resource. See [Labelling and grouping Google
+   * Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -732,13 +756,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NETWORK_TAGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList networkTags_;
   /**
    *
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -759,7 +786,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -780,7 +808,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -802,7 +831,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Network tags associated with this resource. Like labels, network tags are a
-   * type of annotations used to group GCP resources. See [Labelling GCP
+   * type of annotations used to group Google Cloud resources. See [Labelling
+   * Google Cloud
    * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
    * for more information. This field is available only when the resource's
    * Protobuf contains it.
@@ -821,7 +851,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KMS_KEY_FIELD_NUMBER = 10;
-  private volatile java.lang.Object kmsKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
   /**
    *
    *
@@ -832,8 +864,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve KMS key information. This field is
-   * available only when the resource's Protobuf contains it and will only be
+   * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+   * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
@@ -845,7 +877,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=434
+   *     google/cloud/asset/v1/assets.proto;l=437
    * @return The kmsKey.
    */
   @java.lang.Override
@@ -871,8 +903,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
    * name.
    * This field only presents for the purpose of backward compatibility. Please
-   * use the `kms_keys` field to retrieve KMS key information. This field is
-   * available only when the resource's Protobuf contains it and will only be
+   * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+   * is available only when the resource's Protobuf contains it and will only be
    * populated for [these resource
    * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
    * for backward compatible purposes.
@@ -884,7 +916,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=434
+   *     google/cloud/asset/v1/assets.proto;l=437
    * @return The bytes for kmsKey.
    */
   @java.lang.Override
@@ -902,6 +934,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int KMS_KEYS_FIELD_NUMBER = 28;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList kmsKeys_;
   /**
    *
@@ -1061,7 +1095,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
@@ -1134,11 +1168,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 13;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -1153,7 +1189,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
    * in [API
    * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-   * If the resource is a project provided by Cloud Resource Manager, its state
+   * If the resource is a project provided by Resource Manager, its state
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -1192,7 +1228,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
    * in [API
    * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-   * If the resource is a project provided by Cloud Resource Manager, its state
+   * If the resource is a project provided by Resource Manager, its state
    * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
    * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
    * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -1228,14 +1264,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding GCP service (e.g., Compute Engine). see [API references and
-   * supported searchable
+   * corresponding Google Cloud service (e.g., Compute Engine). see [API
+   * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the GCP service updates to a new incompatible API
-   * version.
+   * values may change as the Google Cloud service updates to a new incompatible
+   * API version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -1258,14 +1294,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding GCP service (e.g., Compute Engine). see [API references and
-   * supported searchable
+   * corresponding Google Cloud service (e.g., Compute Engine). see [API
+   * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the GCP service updates to a new incompatible API
-   * version.
+   * values may change as the Google Cloud service updates to a new incompatible
+   * API version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -1290,14 +1326,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * vary from one resource type to another. Examples: `projectId` for Project,
    * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
    * metadata fields that are returned by the List or Get APIs provided by the
-   * corresponding GCP service (e.g., Compute Engine). see [API references and
-   * supported searchable
+   * corresponding Google Cloud service (e.g., Compute Engine). see [API
+   * references and supported searchable
    * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
    * to see which fields are included.
    * You can search values of these fields through free text search. However,
    * you should not consume the field programically as the field names and
-   * values may change as the GCP service updates to a new incompatible API
-   * version.
+   * values may change as the Google Cloud service updates to a new incompatible
+   * API version.
    * To search against the `additional_attributes`:
    * * Use a free text query to match the attributes values. Example: to search
    *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -1308,11 +1344,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getAdditionalAttributesOrBuilder() {
-    return getAdditionalAttributes();
+    return additionalAttributes_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : additionalAttributes_;
   }
 
   public static final int PARENT_FULL_RESOURCE_NAME_FIELD_NUMBER = 19;
-  private volatile java.lang.Object parentFullResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentFullResourceName_ = "";
   /**
    *
    *
@@ -1371,6 +1411,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VERSIONED_RESOURCES_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.VersionedResource> versionedResources_;
   /**
    *
@@ -1466,6 +1508,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ATTACHED_RESOURCES_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.AttachedResource> attachedResources_;
   /**
    *
@@ -1576,6 +1620,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                     com.google.cloud.asset.v1.RelatedResources.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
       relationships_;
 
@@ -1653,8 +1698,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
    */
   @java.lang.Override
-  public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
-      java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
+  public /* nullable */ com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.asset.v1.RelatedResources defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1690,6 +1737,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TAG_KEYS_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tagKeys_;
   /**
    *
@@ -1779,6 +1828,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TAG_VALUES_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tagValues_;
   /**
    *
@@ -1876,6 +1927,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TAG_VALUE_IDS_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList tagValueIds_;
   /**
    *
@@ -1961,7 +2014,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_ASSET_TYPE_FIELD_NUMBER = 103;
-  private volatile java.lang.Object parentAssetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentAssetType_ = "";
   /**
    *
    *
@@ -2529,74 +2584,61 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       assetType_ = "";
-
       project_ = "";
-
       folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       organization_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       location_ = "";
-
       internalGetMutableLabels().clear();
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000200);
       kmsKey_ = "";
-
       kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       state_ = "";
-
-      if (additionalAttributesBuilder_ == null) {
-        additionalAttributes_ = null;
-      } else {
-        additionalAttributes_ = null;
+      additionalAttributes_ = null;
+      if (additionalAttributesBuilder_ != null) {
+        additionalAttributesBuilder_.dispose();
         additionalAttributesBuilder_ = null;
       }
       parentFullResourceName_ = "";
-
       if (versionedResourcesBuilder_ == null) {
         versionedResources_ = java.util.Collections.emptyList();
       } else {
         versionedResources_ = null;
         versionedResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00020000);
       if (attachedResourcesBuilder_ == null) {
         attachedResources_ = java.util.Collections.emptyList();
       } else {
         attachedResources_ = null;
         attachedResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableRelationships().clear();
       tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00100000);
       tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00200000);
       tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00400000);
       parentAssetType_ = "";
-
       return this;
     }
 
@@ -2624,87 +2666,120 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public com.google.cloud.asset.v1.ResourceSearchResult buildPartial() {
       com.google.cloud.asset.v1.ResourceSearchResult result =
           new com.google.cloud.asset.v1.ResourceSearchResult(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.assetType_ = assetType_;
-      result.project_ = project_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        folders_ = folders_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.folders_ = folders_;
-      result.organization_ = organization_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.location_ = location_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
-        networkTags_ = networkTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.networkTags_ = networkTags_;
-      result.kmsKey_ = kmsKey_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.ResourceSearchResult result) {
       if (((bitField0_ & 0x00000008) != 0)) {
-        kmsKeys_ = kmsKeys_.getUnmodifiableView();
+        folders_ = folders_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
+      result.folders_ = folders_;
+      if (((bitField0_ & 0x00000200) != 0)) {
+        networkTags_ = networkTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.networkTags_ = networkTags_;
+      if (((bitField0_ & 0x00000800) != 0)) {
+        kmsKeys_ = kmsKeys_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000800);
+      }
       result.kmsKeys_ = kmsKeys_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      if (additionalAttributesBuilder_ == null) {
-        result.additionalAttributes_ = additionalAttributes_;
-      } else {
-        result.additionalAttributes_ = additionalAttributesBuilder_.build();
-      }
-      result.parentFullResourceName_ = parentFullResourceName_;
       if (versionedResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           versionedResources_ = java.util.Collections.unmodifiableList(versionedResources_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.versionedResources_ = versionedResources_;
       } else {
         result.versionedResources_ = versionedResourcesBuilder_.build();
       }
       if (attachedResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00040000) != 0)) {
           attachedResources_ = java.util.Collections.unmodifiableList(attachedResources_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00040000);
         }
         result.attachedResources_ = attachedResources_;
       } else {
         result.attachedResources_ = attachedResourcesBuilder_.build();
       }
-      result.relationships_ = internalGetRelationships();
-      result.relationships_.makeImmutable();
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00100000) != 0)) {
         tagKeys_ = tagKeys_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00100000);
       }
       result.tagKeys_ = tagKeys_;
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00200000) != 0)) {
         tagValues_ = tagValues_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00200000);
       }
       result.tagValues_ = tagValues_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00400000) != 0)) {
         tagValueIds_ = tagValueIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00400000);
       }
       result.tagValueIds_ = tagValueIds_;
-      result.parentAssetType_ = parentAssetType_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.ResourceSearchResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.organization_ = organization_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.additionalAttributes_ =
+            additionalAttributesBuilder_ == null
+                ? additionalAttributes_
+                : additionalAttributesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.parentFullResourceName_ = parentFullResourceName_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.relationships_ = internalGetRelationships();
+        result.relationships_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.parentAssetType_ = parentAssetType_;
+      }
     }
 
     @java.lang.Override
@@ -2754,20 +2829,23 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (other == com.google.cloud.asset.v1.ResourceSearchResult.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.folders_.isEmpty()) {
         if (folders_.isEmpty()) {
           folders_ = other.folders_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureFoldersIsMutable();
           folders_.addAll(other.folders_);
@@ -2776,25 +2854,30 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (!other.getOrganization().isEmpty()) {
         organization_ = other.organization_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       if (!other.networkTags_.isEmpty()) {
         if (networkTags_.isEmpty()) {
           networkTags_ = other.networkTags_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureNetworkTagsIsMutable();
           networkTags_.addAll(other.networkTags_);
@@ -2803,12 +2886,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.kmsKeys_.isEmpty()) {
         if (kmsKeys_.isEmpty()) {
           kmsKeys_ = other.kmsKeys_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           ensureKmsKeysIsMutable();
           kmsKeys_.addAll(other.kmsKeys_);
@@ -2823,6 +2907,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (!other.getState().isEmpty()) {
         state_ = other.state_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasAdditionalAttributes()) {
@@ -2830,13 +2915,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (!other.getParentFullResourceName().isEmpty()) {
         parentFullResourceName_ = other.parentFullResourceName_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (versionedResourcesBuilder_ == null) {
         if (!other.versionedResources_.isEmpty()) {
           if (versionedResources_.isEmpty()) {
             versionedResources_ = other.versionedResources_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureVersionedResourcesIsMutable();
             versionedResources_.addAll(other.versionedResources_);
@@ -2849,7 +2935,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             versionedResourcesBuilder_.dispose();
             versionedResourcesBuilder_ = null;
             versionedResources_ = other.versionedResources_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00020000);
             versionedResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionedResourcesFieldBuilder()
@@ -2863,7 +2949,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         if (!other.attachedResources_.isEmpty()) {
           if (attachedResources_.isEmpty()) {
             attachedResources_ = other.attachedResources_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00040000);
           } else {
             ensureAttachedResourcesIsMutable();
             attachedResources_.addAll(other.attachedResources_);
@@ -2876,7 +2962,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             attachedResourcesBuilder_.dispose();
             attachedResourcesBuilder_ = null;
             attachedResources_ = other.attachedResources_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00040000);
             attachedResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAttachedResourcesFieldBuilder()
@@ -2887,10 +2973,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         }
       }
       internalGetMutableRelationships().mergeFrom(other.internalGetRelationships());
+      bitField0_ |= 0x00080000;
       if (!other.tagKeys_.isEmpty()) {
         if (tagKeys_.isEmpty()) {
           tagKeys_ = other.tagKeys_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00100000);
         } else {
           ensureTagKeysIsMutable();
           tagKeys_.addAll(other.tagKeys_);
@@ -2900,7 +2987,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValues_.isEmpty()) {
         if (tagValues_.isEmpty()) {
           tagValues_ = other.tagValues_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00200000);
         } else {
           ensureTagValuesIsMutable();
           tagValues_.addAll(other.tagValues_);
@@ -2910,7 +2997,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!other.tagValueIds_.isEmpty()) {
         if (tagValueIds_.isEmpty()) {
           tagValueIds_ = other.tagValueIds_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00400000);
         } else {
           ensureTagValueIdsIsMutable();
           tagValueIds_.addAll(other.tagValueIds_);
@@ -2919,6 +3006,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       }
       if (!other.getParentAssetType().isEmpty()) {
         parentAssetType_ = other.parentAssetType_;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2950,37 +3038,37 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 project_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
@@ -2992,6 +3080,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -3005,31 +3094,31 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getAdditionalAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 74
             case 82:
               {
                 kmsKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
               {
                 state_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 130:
@@ -3055,13 +3144,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             case 146:
               {
                 organization_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 146
             case 154:
               {
                 parentFullResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 154
             case 162:
@@ -3088,6 +3177,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 internalGetMutableRelationships()
                     .getMutableMap()
                     .put(relationships__.getKey(), relationships__.getValue());
+                bitField0_ |= 0x00080000;
                 break;
               } // case 170
             case 186:
@@ -3121,7 +3211,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
             case 826:
               {
                 parentAssetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00800000;
                 break;
               } // case 826
             default:
@@ -3225,8 +3315,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3249,8 +3339,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3278,8 +3368,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3351,8 +3441,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3370,8 +3460,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3394,8 +3484,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3479,8 +3569,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3502,8 +3592,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProject() {
-
       project_ = getDefaultInstance().getProject();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3530,8 +3620,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       project_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3540,9 +3630,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureFoldersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         folders_ = new com.google.protobuf.LazyStringArrayList(folders_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -3725,7 +3815,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearFolders() {
       folders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3837,8 +3927,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       organization_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3860,8 +3950,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearOrganization() {
-
       organization_ = getDefaultInstance().getOrganization();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3888,8 +3978,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       organization_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3967,8 +4057,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3988,8 +4078,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4014,8 +4104,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4096,8 +4186,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4118,8 +4208,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4145,8 +4235,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4227,8 +4317,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4249,8 +4339,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4276,8 +4366,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4293,14 +4383,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -4311,7 +4401,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4342,7 +4433,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4364,7 +4456,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4379,8 +4472,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4391,7 +4486,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4418,6 +4514,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4425,7 +4522,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4449,13 +4547,15 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4476,15 +4576,16 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Labels associated with this resource. See [Labelling and grouping GCP
+     * Labels associated with this resource. See [Labelling and grouping Google
+     * Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4500,6 +4601,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -4507,9 +4609,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNetworkTagsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -4517,7 +4619,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4538,7 +4641,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4559,7 +4663,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4581,7 +4686,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4603,7 +4709,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4632,7 +4739,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4660,7 +4768,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4685,7 +4794,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4700,7 +4810,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearNetworkTags() {
       networkTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4709,7 +4819,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Network tags associated with this resource. Like labels, network tags are a
-     * type of annotations used to group GCP resources. See [Labelling GCP
+     * type of annotations used to group Google Cloud resources. See [Labelling
+     * Google Cloud
      * resources](https://cloud.google.com/blog/products/gcp/labelling-and-grouping-your-google-cloud-platform-resources)
      * for more information. This field is available only when the resource's
      * Protobuf contains it.
@@ -4745,8 +4856,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve KMS key information. This field is
-     * available only when the resource's Protobuf contains it and will only be
+     * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+     * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
@@ -4758,7 +4869,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=434
+     *     google/cloud/asset/v1/assets.proto;l=437
      * @return The kmsKey.
      */
     @java.lang.Deprecated
@@ -4783,8 +4894,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve KMS key information. This field is
-     * available only when the resource's Protobuf contains it and will only be
+     * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+     * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
@@ -4796,7 +4907,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=434
+     *     google/cloud/asset/v1/assets.proto;l=437
      * @return The bytes for kmsKey.
      */
     @java.lang.Deprecated
@@ -4821,8 +4932,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve KMS key information. This field is
-     * available only when the resource's Protobuf contains it and will only be
+     * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+     * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
@@ -4834,7 +4945,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=434
+     *     google/cloud/asset/v1/assets.proto;l=437
      * @param value The kmsKey to set.
      * @return This builder for chaining.
      */
@@ -4843,8 +4954,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4858,8 +4969,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve KMS key information. This field is
-     * available only when the resource's Protobuf contains it and will only be
+     * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+     * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
@@ -4871,13 +4982,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=434
+     *     google/cloud/asset/v1/assets.proto;l=437
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearKmsKey() {
-
       kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4891,8 +5002,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions)
      * name.
      * This field only presents for the purpose of backward compatibility. Please
-     * use the `kms_keys` field to retrieve KMS key information. This field is
-     * available only when the resource's Protobuf contains it and will only be
+     * use the `kms_keys` field to retrieve Cloud KMS key information. This field
+     * is available only when the resource's Protobuf contains it and will only be
      * populated for [these resource
      * types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field)
      * for backward compatible purposes.
@@ -4904,7 +5015,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>string kms_key = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-     *     google/cloud/asset/v1/assets.proto;l=434
+     *     google/cloud/asset/v1/assets.proto;l=437
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.
      */
@@ -4914,8 +5025,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKey_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4924,9 +5035,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKmsKeysIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         kmsKeys_ = new com.google.protobuf.LazyStringArrayList(kmsKeys_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000800;
       }
     }
     /**
@@ -5125,7 +5236,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearKmsKeys() {
       kmsKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5186,7 +5297,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -5239,11 +5350,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5266,11 +5377,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5292,17 +5403,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -5323,14 +5435,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5351,7 +5462,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp create_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -5442,7 +5553,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5497,11 +5608,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5525,11 +5636,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5552,17 +5663,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5584,14 +5696,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp update_time = 12;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5613,7 +5724,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Timestamp update_time = 12;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -5694,7 +5805,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by Cloud Resource Manager, its state
+     * If the resource is a project provided by Resource Manager, its state
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -5732,7 +5843,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by Cloud Resource Manager, its state
+     * If the resource is a project provided by Resource Manager, its state
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -5770,7 +5881,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by Cloud Resource Manager, its state
+     * If the resource is a project provided by Resource Manager, its state
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -5788,8 +5899,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       state_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5807,7 +5918,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by Cloud Resource Manager, its state
+     * If the resource is a project provided by Resource Manager, its state
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -5821,8 +5932,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -5840,7 +5951,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. See `status` definition
      * in [API
      * Reference](https://cloud.google.com/compute/docs/reference/rest/v1/instances).
-     * If the resource is a project provided by Cloud Resource Manager, its state
+     * If the resource is a project provided by Resource Manager, its state
      * will include LIFECYCLE_STATE_UNSPECIFIED, ACTIVE, DELETE_REQUESTED and
      * DELETE_IN_PROGRESS. See `lifecycleState` definition in [API
      * Reference](https://cloud.google.com/resource-manager/reference/rest/v1/projects).
@@ -5859,8 +5970,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       state_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5879,14 +5990,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5898,7 +6009,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return Whether the additionalAttributes field is set.
      */
     public boolean hasAdditionalAttributes() {
-      return additionalAttributesBuilder_ != null || additionalAttributes_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -5908,14 +6019,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5943,14 +6054,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5965,11 +6076,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         additionalAttributes_ = value;
-        onChanged();
       } else {
         additionalAttributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -5980,14 +6091,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -5999,11 +6110,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder setAdditionalAttributes(com.google.protobuf.Struct.Builder builderForValue) {
       if (additionalAttributesBuilder_ == null) {
         additionalAttributes_ = builderForValue.build();
-        onChanged();
       } else {
         additionalAttributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -6014,14 +6125,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6032,19 +6143,18 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeAdditionalAttributes(com.google.protobuf.Struct value) {
       if (additionalAttributesBuilder_ == null) {
-        if (additionalAttributes_ != null) {
-          additionalAttributes_ =
-              com.google.protobuf.Struct.newBuilder(additionalAttributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && additionalAttributes_ != null
+            && additionalAttributes_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getAdditionalAttributesBuilder().mergeFrom(value);
         } else {
           additionalAttributes_ = value;
         }
-        onChanged();
       } else {
         additionalAttributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -6055,14 +6165,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6072,14 +6182,13 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Struct additional_attributes = 9;</code>
      */
     public Builder clearAdditionalAttributes() {
-      if (additionalAttributesBuilder_ == null) {
-        additionalAttributes_ = null;
-        onChanged();
-      } else {
-        additionalAttributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      additionalAttributes_ = null;
+      if (additionalAttributesBuilder_ != null) {
+        additionalAttributesBuilder_.dispose();
         additionalAttributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6090,14 +6199,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6107,7 +6216,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.Struct additional_attributes = 9;</code>
      */
     public com.google.protobuf.Struct.Builder getAdditionalAttributesBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getAdditionalAttributesFieldBuilder().getBuilder();
     }
@@ -6119,14 +6228,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6152,14 +6261,14 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * vary from one resource type to another. Examples: `projectId` for Project,
      * `dnsName` for DNS ManagedZone. This field contains a subset of the resource
      * metadata fields that are returned by the List or Get APIs provided by the
-     * corresponding GCP service (e.g., Compute Engine). see [API references and
-     * supported searchable
+     * corresponding Google Cloud service (e.g., Compute Engine). see [API
+     * references and supported searchable
      * attributes](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types)
      * to see which fields are included.
      * You can search values of these fields through free text search. However,
      * you should not consume the field programically as the field names and
-     * values may change as the GCP service updates to a new incompatible API
-     * version.
+     * values may change as the Google Cloud service updates to a new incompatible
+     * API version.
      * To search against the `additional_attributes`:
      * * Use a free text query to match the attributes values. Example: to search
      *   `additional_attributes = { dnsName: "foobar" }`, you can issue a query
@@ -6261,8 +6370,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentFullResourceName_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6283,8 +6392,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParentFullResourceName() {
-
       parentFullResourceName_ = getDefaultInstance().getParentFullResourceName();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6310,8 +6419,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentFullResourceName_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6320,11 +6429,11 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureVersionedResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         versionedResources_ =
             new java.util.ArrayList<com.google.cloud.asset.v1.VersionedResource>(
                 versionedResources_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -6597,7 +6706,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder clearVersionedResources() {
       if (versionedResourcesBuilder_ == null) {
         versionedResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         versionedResourcesBuilder_.clear();
@@ -6758,7 +6867,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 com.google.cloud.asset.v1.VersionedResource.Builder,
                 com.google.cloud.asset.v1.VersionedResourceOrBuilder>(
                 versionedResources_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         versionedResources_ = null;
@@ -6770,10 +6879,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureAttachedResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         attachedResources_ =
             new java.util.ArrayList<com.google.cloud.asset.v1.AttachedResource>(attachedResources_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00040000;
       }
     }
 
@@ -7046,7 +7155,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder clearAttachedResources() {
       if (attachedResourcesBuilder_ == null) {
         attachedResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
       } else {
         attachedResourcesBuilder_.clear();
@@ -7207,7 +7316,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
                 com.google.cloud.asset.v1.AttachedResource.Builder,
                 com.google.cloud.asset.v1.AttachedResourceOrBuilder>(
                 attachedResources_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00040000) != 0),
                 getParentForChildren(),
                 isClean());
         attachedResources_ = null;
@@ -7232,8 +7341,6 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.asset.v1.RelatedResources>
         internalGetMutableRelationships() {
-      onChanged();
-      ;
       if (relationships_ == null) {
         relationships_ =
             com.google.protobuf.MapField.newMapField(RelationshipsDefaultEntryHolder.defaultEntry);
@@ -7241,6 +7348,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (!relationships_.isMutable()) {
         relationships_ = relationships_.copy();
       }
+      bitField0_ |= 0x00080000;
+      onChanged();
       return relationships_;
     }
 
@@ -7309,8 +7418,10 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * <code>map&lt;string, .google.cloud.asset.v1.RelatedResources&gt; relationships = 21;</code>
      */
     @java.lang.Override
-    public com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
-        java.lang.String key, com.google.cloud.asset.v1.RelatedResources defaultValue) {
+    public /* nullable */ com.google.cloud.asset.v1.RelatedResources getRelationshipsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.asset.v1.RelatedResources defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -7347,6 +7458,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     }
 
     public Builder clearRelationships() {
+      bitField0_ = (bitField0_ & ~0x00080000);
       internalGetMutableRelationships().getMutableMap().clear();
       return this;
     }
@@ -7375,6 +7487,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources>
         getMutableRelationships() {
+      bitField0_ |= 0x00080000;
       return internalGetMutableRelationships().getMutableMap();
     }
     /**
@@ -7399,8 +7512,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableRelationships().getMutableMap().put(key, value);
+      bitField0_ |= 0x00080000;
       return this;
     }
     /**
@@ -7420,6 +7533,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
     public Builder putAllRelationships(
         java.util.Map<java.lang.String, com.google.cloud.asset.v1.RelatedResources> values) {
       internalGetMutableRelationships().getMutableMap().putAll(values);
+      bitField0_ |= 0x00080000;
       return this;
     }
 
@@ -7427,9 +7541,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagKeysIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         tagKeys_ = new com.google.protobuf.LazyStringArrayList(tagKeys_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00100000;
       }
     }
     /**
@@ -7620,7 +7734,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTagKeys() {
       tagKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7658,9 +7772,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagValuesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         tagValues_ = new com.google.protobuf.LazyStringArrayList(tagValues_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00200000;
       }
     }
     /**
@@ -7867,7 +7981,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTagValues() {
       tagValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7907,9 +8021,9 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTagValueIdsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00400000) != 0)) {
         tagValueIds_ = new com.google.protobuf.LazyStringArrayList(tagValueIds_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00400000;
       }
     }
     /**
@@ -8092,7 +8206,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      */
     public Builder clearTagValueIds() {
       tagValueIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -8201,8 +8315,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parentAssetType_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -8223,8 +8337,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParentAssetType() {
-
       parentAssetType_ = getDefaultInstance().getParentAssetType();
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -8250,8 +8364,8 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parentAssetType_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }

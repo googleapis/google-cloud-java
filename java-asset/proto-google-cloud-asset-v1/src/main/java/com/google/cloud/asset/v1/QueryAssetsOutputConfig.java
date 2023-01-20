@@ -74,8 +74,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery dataset where the query results will be saved. It has the
-     * format of "projects/{projectId}/datasets/{datasetId}".
+     * Required. The BigQuery dataset where the query results will be saved. It
+     * has the format of "projects/{projectId}/datasets/{datasetId}".
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,8 +87,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery dataset where the query results will be saved. It has the
-     * format of "projects/{projectId}/datasets/{datasetId}".
+     * Required. The BigQuery dataset where the query results will be saved. It
+     * has the format of "projects/{projectId}/datasets/{datasetId}".
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,8 +101,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery table where the query results will be saved. If this table
-     * does not exist, a new table with the given name will be created.
+     * Required. The BigQuery table where the query results will be saved. If
+     * this table does not exist, a new table with the given name will be
+     * created.
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -114,8 +115,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery table where the query results will be saved. If this table
-     * does not exist, a new table with the given name will be created.
+     * Required. The BigQuery table where the query results will be saved. If
+     * this table does not exist, a new table with the given name will be
+     * created.
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -217,13 +219,15 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The BigQuery dataset where the query results will be saved. It has the
-     * format of "projects/{projectId}/datasets/{datasetId}".
+     * Required. The BigQuery dataset where the query results will be saved. It
+     * has the format of "projects/{projectId}/datasets/{datasetId}".
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -246,8 +250,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery dataset where the query results will be saved. It has the
-     * format of "projects/{projectId}/datasets/{datasetId}".
+     * Required. The BigQuery dataset where the query results will be saved. It
+     * has the format of "projects/{projectId}/datasets/{datasetId}".
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -268,13 +272,16 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     }
 
     public static final int TABLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object table_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The BigQuery table where the query results will be saved. If this table
-     * does not exist, a new table with the given name will be created.
+     * Required. The BigQuery table where the query results will be saved. If
+     * this table does not exist, a new table with the given name will be
+     * created.
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -297,8 +304,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The BigQuery table where the query results will be saved. If this table
-     * does not exist, a new table with the given name will be created.
+     * Required. The BigQuery table where the query results will be saved. If
+     * this table does not exist, a new table with the given name will be
+     * created.
      * </pre>
      *
      * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -319,7 +327,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     }
 
     public static final int WRITE_DISPOSITION_FIELD_NUMBER = 3;
-    private volatile java.lang.Object writeDisposition_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object writeDisposition_ = "";
     /**
      *
      *
@@ -604,12 +614,10 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dataset_ = "";
-
         table_ = "";
-
         writeDisposition_ = "";
-
         return this;
       }
 
@@ -640,11 +648,25 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       public com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination buildPartial() {
         com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination result =
             new com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination(this);
-        result.dataset_ = dataset_;
-        result.table_ = table_;
-        result.writeDisposition_ = writeDisposition_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.writeDisposition_ = writeDisposition_;
+        }
       }
 
       @java.lang.Override
@@ -701,14 +723,17 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
                 .getDefaultInstance()) return this;
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTable().isEmpty()) {
           table_ = other.table_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getWriteDisposition().isEmpty()) {
           writeDisposition_ = other.writeDisposition_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -740,19 +765,19 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   table_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   writeDisposition_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -772,13 +797,15 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object dataset_ = "";
       /**
        *
        *
        * <pre>
-       * Required. The BigQuery dataset where the query results will be saved. It has the
-       * format of "projects/{projectId}/datasets/{datasetId}".
+       * Required. The BigQuery dataset where the query results will be saved. It
+       * has the format of "projects/{projectId}/datasets/{datasetId}".
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -800,8 +827,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery dataset where the query results will be saved. It has the
-       * format of "projects/{projectId}/datasets/{datasetId}".
+       * Required. The BigQuery dataset where the query results will be saved. It
+       * has the format of "projects/{projectId}/datasets/{datasetId}".
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -823,8 +850,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery dataset where the query results will be saved. It has the
-       * format of "projects/{projectId}/datasets/{datasetId}".
+       * Required. The BigQuery dataset where the query results will be saved. It
+       * has the format of "projects/{projectId}/datasets/{datasetId}".
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -836,8 +863,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -845,8 +872,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery dataset where the query results will be saved. It has the
-       * format of "projects/{projectId}/datasets/{datasetId}".
+       * Required. The BigQuery dataset where the query results will be saved. It
+       * has the format of "projects/{projectId}/datasets/{datasetId}".
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -854,8 +881,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -863,8 +890,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery dataset where the query results will be saved. It has the
-       * format of "projects/{projectId}/datasets/{datasetId}".
+       * Required. The BigQuery dataset where the query results will be saved. It
+       * has the format of "projects/{projectId}/datasets/{datasetId}".
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -877,8 +904,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -888,8 +915,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery table where the query results will be saved. If this table
-       * does not exist, a new table with the given name will be created.
+       * Required. The BigQuery table where the query results will be saved. If
+       * this table does not exist, a new table with the given name will be
+       * created.
        * </pre>
        *
        * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -911,8 +939,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery table where the query results will be saved. If this table
-       * does not exist, a new table with the given name will be created.
+       * Required. The BigQuery table where the query results will be saved. If
+       * this table does not exist, a new table with the given name will be
+       * created.
        * </pre>
        *
        * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,8 +963,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery table where the query results will be saved. If this table
-       * does not exist, a new table with the given name will be created.
+       * Required. The BigQuery table where the query results will be saved. If
+       * this table does not exist, a new table with the given name will be
+       * created.
        * </pre>
        *
        * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -947,8 +977,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -956,8 +986,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery table where the query results will be saved. If this table
-       * does not exist, a new table with the given name will be created.
+       * Required. The BigQuery table where the query results will be saved. If
+       * this table does not exist, a new table with the given name will be
+       * created.
        * </pre>
        *
        * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -965,8 +996,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearTable() {
-
         table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -974,8 +1005,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * Required. The BigQuery table where the query results will be saved. If this table
-       * does not exist, a new table with the given name will be created.
+       * Required. The BigQuery table where the query results will be saved. If
+       * this table does not exist, a new table with the given name will be
+       * created.
        * </pre>
        *
        * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -988,8 +1020,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         table_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1079,8 +1111,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
         if (value == null) {
           throw new NullPointerException();
         }
-
         writeDisposition_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1104,8 +1136,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearWriteDisposition() {
-
         writeDisposition_ = getDefaultInstance().getWriteDisposition();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1134,8 +1166,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         writeDisposition_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1262,7 +1294,9 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestinationOrBuilder
       getBigqueryDestinationOrBuilder() {
-    return getBigqueryDestination();
+    return bigqueryDestination_ == null
+        ? com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination.getDefaultInstance()
+        : bigqueryDestination_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1467,10 +1501,10 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-      } else {
-        bigqueryDestination_ = null;
+      bitField0_ = 0;
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
       return this;
@@ -1500,13 +1534,21 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     public com.google.cloud.asset.v1.QueryAssetsOutputConfig buildPartial() {
       com.google.cloud.asset.v1.QueryAssetsOutputConfig result =
           new com.google.cloud.asset.v1.QueryAssetsOutputConfig(this);
-      if (bigqueryDestinationBuilder_ == null) {
-        result.bigqueryDestination_ = bigqueryDestination_;
-      } else {
-        result.bigqueryDestination_ = bigqueryDestinationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.QueryAssetsOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.bigqueryDestination_ =
+            bigqueryDestinationBuilder_ == null
+                ? bigqueryDestination_
+                : bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1588,7 +1630,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
               {
                 input.readMessage(
                     getBigqueryDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1607,6 +1649,8 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination
         bigqueryDestination_;
@@ -1629,7 +1673,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * @return Whether the bigqueryDestination field is set.
      */
     public boolean hasBigqueryDestination() {
-      return bigqueryDestinationBuilder_ != null || bigqueryDestination_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1673,11 +1717,11 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         bigqueryDestination_ = value;
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1696,11 +1740,11 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
             builderForValue) {
       if (bigqueryDestinationBuilder_ == null) {
         bigqueryDestination_ = builderForValue.build();
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1717,20 +1761,20 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
     public Builder mergeBigqueryDestination(
         com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination value) {
       if (bigqueryDestinationBuilder_ == null) {
-        if (bigqueryDestination_ != null) {
-          bigqueryDestination_ =
-              com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination.newBuilder(
-                      bigqueryDestination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && bigqueryDestination_ != null
+            && bigqueryDestination_
+                != com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination
+                    .getDefaultInstance()) {
+          getBigqueryDestinationBuilder().mergeFrom(value);
         } else {
           bigqueryDestination_ = value;
         }
-        onChanged();
       } else {
         bigqueryDestinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1745,14 +1789,13 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearBigqueryDestination() {
-      if (bigqueryDestinationBuilder_ == null) {
-        bigqueryDestination_ = null;
-        onChanged();
-      } else {
-        bigqueryDestination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      bigqueryDestination_ = null;
+      if (bigqueryDestinationBuilder_ != null) {
+        bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1768,7 +1811,7 @@ public final class QueryAssetsOutputConfig extends com.google.protobuf.Generated
      */
     public com.google.cloud.asset.v1.QueryAssetsOutputConfig.BigQueryDestination.Builder
         getBigqueryDestinationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }

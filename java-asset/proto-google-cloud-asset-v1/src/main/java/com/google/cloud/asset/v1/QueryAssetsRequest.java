@@ -163,7 +163,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -301,8 +303,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,8 +318,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -344,8 +346,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-   * previous `QueryAssets` call.
+   * Optional. Reference to the query job, which is from the
+   * `QueryAssetsResponse` of previous `QueryAssets` call.
    * </pre>
    *
    * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -370,13 +372,13 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
    * <pre>
-   * Optional. The maximum number of rows to return in the results. Responses are limited
-   * to 10 MB and 1000 rows.
+   * Optional. The maximum number of rows to return in the results. Responses
+   * are limited to 10 MB and 1000 rows.
    * By default, the maximum row count is 1000. When the byte or row count limit
    * is reached, the rest of the query results will be paginated.
    * The field will be ignored when [output_config] is specified.
@@ -392,7 +394,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 5;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -448,10 +452,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
@@ -472,10 +477,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
@@ -496,10 +502,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Specifies the maximum amount of time that the client is willing to wait
-   * for the query to complete. By default, this limit is 5 min for the first
-   * query, and 1 minute for the following queries. If the query is complete,
-   * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+   * Optional. Specifies the maximum amount of time that the client is willing
+   * to wait for the query to complete. By default, this limit is 5 min for the
+   * first query, and 1 minute for the following queries. If the query is
+   * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+   * false.
    * Like BigQuery [jobs.query
    * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
    * The call is not guaranteed to wait for the specified timeout; it typically
@@ -512,7 +519,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int READ_TIME_WINDOW_FIELD_NUMBER = 7;
@@ -520,9 +527,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -539,9 +546,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -561,9 +568,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. [start_time] is required. [start_time] must be less than [end_time]
-   * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-   * Maximum permitted time range is 7 days.
+   * Optional. [start_time] is required. [start_time] must be less than
+   * [end_time] Defaults [end_time] to now if [start_time] is set and
+   * [end_time] isn't. Maximum permitted time range is 7 days.
    * </pre>
    *
    * <code>
@@ -583,7 +590,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -599,7 +607,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -618,7 +627,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Queries cloud assets as they appeared at the specified point in time.
+   * Optional. Queries cloud assets as they appeared at the specified point in
+   * time.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -701,7 +711,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.QueryAssetsOutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1021,16 +1033,13 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       if (readTimeWindowBuilder_ != null) {
@@ -1039,10 +1048,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (readTimeBuilder_ != null) {
         readTimeBuilder_.clear();
       }
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       queryCase_ = 0;
@@ -1076,43 +1084,45 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.QueryAssetsRequest buildPartial() {
       com.google.cloud.asset.v1.QueryAssetsRequest result =
           new com.google.cloud.asset.v1.QueryAssetsRequest(this);
-      result.parent_ = parent_;
-      if (queryCase_ == 2) {
-        result.query_ = query_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (queryCase_ == 3) {
-        result.query_ = query_;
-      }
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
-      if (timeCase_ == 7) {
-        if (readTimeWindowBuilder_ == null) {
-          result.time_ = time_;
-        } else {
-          result.time_ = readTimeWindowBuilder_.build();
-        }
-      }
-      if (timeCase_ == 8) {
-        if (readTimeBuilder_ == null) {
-          result.time_ = time_;
-        } else {
-          result.time_ = readTimeBuilder_.build();
-        }
-      }
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
-      }
-      result.queryCase_ = queryCase_;
-      result.timeCase_ = timeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.QueryAssetsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1.QueryAssetsRequest result) {
+      result.queryCase_ = queryCase_;
+      result.query_ = this.query_;
+      result.timeCase_ = timeCase_;
+      result.time_ = this.time_;
+      if (timeCase_ == 7 && readTimeWindowBuilder_ != null) {
+        result.time_ = readTimeWindowBuilder_.build();
+      }
+      if (timeCase_ == 8 && readTimeBuilder_ != null) {
+        result.time_ = readTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1162,6 +1172,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.asset.v1.QueryAssetsRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -1169,6 +1180,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasTimeout()) {
@@ -1242,7 +1254,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1262,19 +1274,19 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             case 32:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1292,7 +1304,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
             case 74:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1339,6 +1351,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1419,8 +1433,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1442,8 +1456,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1470,8 +1484,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1620,8 +1634,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1636,8 +1650,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1665,8 +1679,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1694,8 +1708,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1716,8 +1730,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1736,8 +1750,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Reference to the query job, which is from the `QueryAssetsResponse` of
-     * previous `QueryAssets` call.
+     * Optional. Reference to the query job, which is from the
+     * `QueryAssetsResponse` of previous `QueryAssets` call.
      * </pre>
      *
      * <code>string job_reference = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1761,8 +1775,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1780,8 +1794,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1795,6 +1809,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1802,8 +1817,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The maximum number of rows to return in the results. Responses are limited
-     * to 10 MB and 1000 rows.
+     * Optional. The maximum number of rows to return in the results. Responses
+     * are limited to 10 MB and 1000 rows.
      * By default, the maximum row count is 1000. When the byte or row count limit
      * is reached, the rest of the query results will be paginated.
      * The field will be ignored when [output_config] is specified.
@@ -1814,7 +1829,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1884,8 +1899,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1902,8 +1917,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1925,8 +1940,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1941,10 +1956,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -1958,16 +1974,17 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -1991,10 +2008,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2011,21 +2029,22 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2039,21 +2058,22 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2066,27 +2086,29 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2098,24 +2120,24 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2127,7 +2149,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Duration timeout = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -2135,10 +2157,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2160,10 +2183,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Specifies the maximum amount of time that the client is willing to wait
-     * for the query to complete. By default, this limit is 5 min for the first
-     * query, and 1 minute for the following queries. If the query is complete,
-     * the `done` field in the `QueryAssetsResponse` is true, otherwise false.
+     * Optional. Specifies the maximum amount of time that the client is willing
+     * to wait for the query to complete. By default, this limit is 5 min for the
+     * first query, and 1 minute for the following queries. If the query is
+     * complete, the `done` field in the `QueryAssetsResponse` is true, otherwise
+     * false.
      * Like BigQuery [jobs.query
      * API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest)
      * The call is not guaranteed to wait for the specified timeout; it typically
@@ -2200,9 +2224,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2219,9 +2243,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2248,9 +2272,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2274,9 +2298,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2297,9 +2321,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2332,9 +2356,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2361,9 +2385,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2377,9 +2401,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2401,9 +2425,9 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. [start_time] is required. [start_time] must be less than [end_time]
-     * Defaults [end_time] to now if [start_time] is set and [end_time] isn't.
-     * Maximum permitted time range is 7 days.
+     * Optional. [start_time] is required. [start_time] must be less than
+     * [end_time] Defaults [end_time] to now if [start_time] is set and
+     * [end_time] isn't. Maximum permitted time range is 7 days.
      * </pre>
      *
      * <code>
@@ -2429,7 +2453,6 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       timeCase_ = 7;
       onChanged();
-      ;
       return readTimeWindowBuilder_;
     }
 
@@ -2442,7 +2465,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2458,7 +2482,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2484,7 +2509,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2507,7 +2533,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2527,7 +2554,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2558,7 +2586,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2584,7 +2613,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2597,7 +2627,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2618,7 +2649,8 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Queries cloud assets as they appeared at the specified point in time.
+     * Optional. Queries cloud assets as they appeared at the specified point in
+     * time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 8 [(.google.api.field_behavior) = OPTIONAL];
@@ -2643,7 +2675,6 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
       }
       timeCase_ = 8;
       onChanged();
-      ;
       return readTimeBuilder_;
     }
 
@@ -2673,7 +2704,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2726,11 +2757,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2754,11 +2785,11 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2780,19 +2811,19 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeOutputConfig(com.google.cloud.asset.v1.QueryAssetsOutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.asset.v1.QueryAssetsOutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && outputConfig_ != null
+            && outputConfig_
+                != com.google.cloud.asset.v1.QueryAssetsOutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2813,14 +2844,13 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2841,7 +2871,7 @@ public final class QueryAssetsRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.asset.v1.QueryAssetsOutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

@@ -113,10 +113,14 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.asset.v1p7beta1.RelationshipAttributesOrBuilder
       getRelationshipAttributesOrBuilder() {
-    return getRelationshipAttributes();
+    return relationshipAttributes_ == null
+        ? com.google.cloud.asset.v1p7beta1.RelationshipAttributes.getDefaultInstance()
+        : relationshipAttributes_;
   }
 
   public static final int ASSETS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1p7beta1.RelatedAsset> assets_;
   /**
    *
@@ -399,10 +403,10 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (relationshipAttributesBuilder_ == null) {
-        relationshipAttributes_ = null;
-      } else {
-        relationshipAttributes_ = null;
+      bitField0_ = 0;
+      relationshipAttributes_ = null;
+      if (relationshipAttributesBuilder_ != null) {
+        relationshipAttributesBuilder_.dispose();
         relationshipAttributesBuilder_ = null;
       }
       if (assetsBuilder_ == null) {
@@ -411,7 +415,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
         assets_ = null;
         assetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -439,23 +443,34 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p7beta1.RelatedAssets buildPartial() {
       com.google.cloud.asset.v1p7beta1.RelatedAssets result =
           new com.google.cloud.asset.v1p7beta1.RelatedAssets(this);
-      int from_bitField0_ = bitField0_;
-      if (relationshipAttributesBuilder_ == null) {
-        result.relationshipAttributes_ = relationshipAttributes_;
-      } else {
-        result.relationshipAttributes_ = relationshipAttributesBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1p7beta1.RelatedAssets result) {
       if (assetsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           assets_ = java.util.Collections.unmodifiableList(assets_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.assets_ = assets_;
       } else {
         result.assets_ = assetsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p7beta1.RelatedAssets result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.relationshipAttributes_ =
+            relationshipAttributesBuilder_ == null
+                ? relationshipAttributes_
+                : relationshipAttributesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -510,7 +525,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
         if (!other.assets_.isEmpty()) {
           if (assets_.isEmpty()) {
             assets_ = other.assets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAssetsIsMutable();
             assets_.addAll(other.assets_);
@@ -523,7 +538,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
             assetsBuilder_.dispose();
             assetsBuilder_ = null;
             assets_ = other.assets_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             assetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAssetsFieldBuilder()
@@ -563,7 +578,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getRelationshipAttributesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -617,7 +632,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the relationshipAttributes field is set.
      */
     public boolean hasRelationshipAttributes() {
-      return relationshipAttributesBuilder_ != null || relationshipAttributes_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -657,11 +672,11 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         relationshipAttributes_ = value;
-        onChanged();
       } else {
         relationshipAttributesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -678,11 +693,11 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.asset.v1p7beta1.RelationshipAttributes.Builder builderForValue) {
       if (relationshipAttributesBuilder_ == null) {
         relationshipAttributes_ = builderForValue.build();
-        onChanged();
       } else {
         relationshipAttributesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -698,20 +713,19 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRelationshipAttributes(
         com.google.cloud.asset.v1p7beta1.RelationshipAttributes value) {
       if (relationshipAttributesBuilder_ == null) {
-        if (relationshipAttributes_ != null) {
-          relationshipAttributes_ =
-              com.google.cloud.asset.v1p7beta1.RelationshipAttributes.newBuilder(
-                      relationshipAttributes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && relationshipAttributes_ != null
+            && relationshipAttributes_
+                != com.google.cloud.asset.v1p7beta1.RelationshipAttributes.getDefaultInstance()) {
+          getRelationshipAttributesBuilder().mergeFrom(value);
         } else {
           relationshipAttributes_ = value;
         }
-        onChanged();
       } else {
         relationshipAttributesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -725,14 +739,13 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRelationshipAttributes() {
-      if (relationshipAttributesBuilder_ == null) {
-        relationshipAttributes_ = null;
-        onChanged();
-      } else {
-        relationshipAttributes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      relationshipAttributes_ = null;
+      if (relationshipAttributesBuilder_ != null) {
+        relationshipAttributesBuilder_.dispose();
         relationshipAttributesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -747,7 +760,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.asset.v1p7beta1.RelationshipAttributes.Builder
         getRelationshipAttributesBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRelationshipAttributesFieldBuilder().getBuilder();
     }
@@ -802,9 +815,9 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureAssetsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         assets_ = new java.util.ArrayList<com.google.cloud.asset.v1p7beta1.RelatedAsset>(assets_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1020,7 +1033,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAssets() {
       if (assetsBuilder_ == null) {
         assets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         assetsBuilder_.clear();
@@ -1142,7 +1155,7 @@ public final class RelatedAssets extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.asset.v1p7beta1.RelatedAsset,
                 com.google.cloud.asset.v1p7beta1.RelatedAsset.Builder,
                 com.google.cloud.asset.v1p7beta1.RelatedAssetOrBuilder>(
-                assets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                assets_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         assets_ = null;
       }
       return assetsBuilder_;

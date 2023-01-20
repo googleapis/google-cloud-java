@@ -71,18 +71,22 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
    * Required. Name of the organization or project the assets belong to. Format:
    * "organizations/[organization-number]" (such as "organizations/123"),
-   * "projects/[project-number]" (such as "projects/my-project-id"), or
-   * "projects/[project-id]" (such as "projects/12345").
+   * "projects/[project-id]" (such as "projects/my-project-id"), or
+   * "projects/[project-number]" (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The parent.
    */
@@ -104,11 +108,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Required. Name of the organization or project the assets belong to. Format:
    * "organizations/[organization-number]" (such as "organizations/123"),
-   * "projects/[project-number]" (such as "projects/my-project-id"), or
-   * "projects/[project-id]" (such as "projects/12345").
+   * "projects/[project-id]" (such as "projects/my-project-id"), or
+   * "projects/[project-number]" (such as "projects/12345").
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for parent.
    */
@@ -132,10 +138,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -151,10 +157,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -170,29 +176,40 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp
-   * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-   * the current time will be used. Due to delays in resource data collection
-   * and indexing, there is a volatile window during which running the same
-   * query may get different results.
+   * between the current time and the current time minus 35 days (inclusive).
+   * If not specified, the current time will be used. Due to delays in resource
+   * data collection and indexing, there is a volatile window during which
+   * running the same query may get different results.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp read_time = 2;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder() {
-    return getReadTime();
+    return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
 
   public static final int ASSET_TYPES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList assetTypes_;
   /**
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -207,10 +224,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -225,10 +251,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -244,10 +279,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A list of asset types of which to take a snapshot for. For  example:
-   * "compute.googleapis.com/Disk". If specified, only matching assets will be
-   * returned. See [Introduction to Cloud Asset
-   * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+   * A list of asset types to take a snapshot for. For example:
+   * "compute.googleapis.com/Disk".
+   * Regular expression is also supported. For example:
+   * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+   * with "compute.googleapis.com".
+   * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+   * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+   * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+   * regular expression syntax. If the regular expression does not match any
+   * supported asset type, an INVALID_ARGUMENT error will be returned.
+   * If specified, only matching assets will be returned, otherwise, it will
+   * snapshot all asset types. See [Introduction to Cloud Asset
+   * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
    * for all supported asset types.
    * </pre>
    *
@@ -261,7 +305,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 4;
-  private int contentType_;
+  private int contentType_ = 0;
   /**
    *
    *
@@ -292,14 +336,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.asset.v1p5beta1.ContentType getContentType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1p5beta1.ContentType result =
-        com.google.cloud.asset.v1p5beta1.ContentType.valueOf(contentType_);
+        com.google.cloud.asset.v1p5beta1.ContentType.forNumber(contentType_);
     return result == null ? com.google.cloud.asset.v1p5beta1.ContentType.UNRECOGNIZED : result;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -318,7 +361,9 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -626,22 +671,18 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-      } else {
-        readTime_ = null;
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       contentType_ = 0;
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -669,23 +710,40 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.asset.v1p5beta1.ListAssetsRequest buildPartial() {
       com.google.cloud.asset.v1p5beta1.ListAssetsRequest result =
           new com.google.cloud.asset.v1p5beta1.ListAssetsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (readTimeBuilder_ == null) {
-        result.readTime_ = readTime_;
-      } else {
-        result.readTime_ = readTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        assetTypes_ = assetTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.assetTypes_ = assetTypes_;
-      result.contentType_ = contentType_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1p5beta1.ListAssetsRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        assetTypes_ = assetTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.assetTypes_ = assetTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p5beta1.ListAssetsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.readTime_ = readTimeBuilder_ == null ? readTime_ : readTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contentType_ = contentType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -736,6 +794,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasReadTime()) {
@@ -744,7 +803,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (!other.assetTypes_.isEmpty()) {
         if (assetTypes_.isEmpty()) {
           assetTypes_ = other.assetTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAssetTypesIsMutable();
           assetTypes_.addAll(other.assetTypes_);
@@ -759,6 +818,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -790,13 +850,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getReadTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -809,19 +869,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 contentType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -850,11 +910,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. Name of the organization or project the assets belong to. Format:
      * "organizations/[organization-number]" (such as "organizations/123"),
-     * "projects/[project-number]" (such as "projects/my-project-id"), or
-     * "projects/[project-id]" (such as "projects/12345").
+     * "projects/[project-id]" (such as "projects/my-project-id"), or
+     * "projects/[project-number]" (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The parent.
      */
@@ -875,11 +937,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. Name of the organization or project the assets belong to. Format:
      * "organizations/[organization-number]" (such as "organizations/123"),
-     * "projects/[project-number]" (such as "projects/my-project-id"), or
-     * "projects/[project-id]" (such as "projects/12345").
+     * "projects/[project-id]" (such as "projects/my-project-id"), or
+     * "projects/[project-number]" (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for parent.
      */
@@ -900,11 +964,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. Name of the organization or project the assets belong to. Format:
      * "organizations/[organization-number]" (such as "organizations/123"),
-     * "projects/[project-number]" (such as "projects/my-project-id"), or
-     * "projects/[project-id]" (such as "projects/12345").
+     * "projects/[project-id]" (such as "projects/my-project-id"), or
+     * "projects/[project-number]" (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The parent to set.
      * @return This builder for chaining.
@@ -913,8 +979,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,17 +990,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. Name of the organization or project the assets belong to. Format:
      * "organizations/[organization-number]" (such as "organizations/123"),
-     * "projects/[project-number]" (such as "projects/my-project-id"), or
-     * "projects/[project-id]" (such as "projects/12345").
+     * "projects/[project-id]" (such as "projects/my-project-id"), or
+     * "projects/[project-number]" (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -944,11 +1012,13 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Required. Name of the organization or project the assets belong to. Format:
      * "organizations/[organization-number]" (such as "organizations/123"),
-     * "projects/[project-number]" (such as "projects/my-project-id"), or
-     * "projects/[project-id]" (such as "projects/12345").
+     * "projects/[project-id]" (such as "projects/my-project-id"), or
+     * "projects/[project-number]" (such as "projects/12345").
      * </pre>
      *
-     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
@@ -958,8 +1028,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -975,10 +1045,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -986,17 +1056,17 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the readTime field is set.
      */
     public boolean hasReadTime() {
-      return readTimeBuilder_ != null || readTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1015,10 +1085,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1029,11 +1099,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         readTime_ = value;
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1041,10 +1111,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1052,11 +1122,11 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
-        onChanged();
       } else {
         readTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1064,27 +1134,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public Builder mergeReadTime(com.google.protobuf.Timestamp value) {
       if (readTimeBuilder_ == null) {
-        if (readTime_ != null) {
-          readTime_ =
-              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && readTime_ != null
+            && readTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getReadTimeBuilder().mergeFrom(value);
         } else {
           readTime_ = value;
         }
-        onChanged();
       } else {
         readTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1092,23 +1163,22 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public Builder clearReadTime() {
-      if (readTimeBuilder_ == null) {
-        readTime_ = null;
-        onChanged();
-      } else {
-        readTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      readTime_ = null;
+      if (readTimeBuilder_ != null) {
+        readTimeBuilder_.dispose();
         readTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1116,16 +1186,16 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
@@ -1134,10 +1204,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1154,10 +1224,10 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Timestamp to take an asset snapshot. This can only be set to a timestamp
-     * between 2018-10-02 UTC (inclusive) and the current time. If not specified,
-     * the current time will be used. Due to delays in resource data collection
-     * and indexing, there is a volatile window during which running the same
-     * query may get different results.
+     * between the current time and the current time minus 35 days (inclusive).
+     * If not specified, the current time will be used. Due to delays in resource
+     * data collection and indexing, there is a volatile window during which
+     * running the same query may get different results.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
@@ -1183,19 +1253,28 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAssetTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         assetTypes_ = new com.google.protobuf.LazyStringArrayList(assetTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1210,10 +1289,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1228,10 +1316,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1247,10 +1344,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1266,10 +1372,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1292,10 +1407,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1317,10 +1441,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1339,10 +1472,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1352,7 +1494,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearAssetTypes() {
       assetTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1360,10 +1502,19 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A list of asset types of which to take a snapshot for. For  example:
-     * "compute.googleapis.com/Disk". If specified, only matching assets will be
-     * returned. See [Introduction to Cloud Asset
-     * Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview)
+     * A list of asset types to take a snapshot for. For example:
+     * "compute.googleapis.com/Disk".
+     * Regular expression is also supported. For example:
+     * * "compute.googleapis.com.*" snapshots resources whose asset type starts
+     * with "compute.googleapis.com".
+     * * ".*Instance" snapshots resources whose asset type ends with "Instance".
+     * * ".*Instance.*" snapshots resources whose asset type contains "Instance".
+     * See [RE2](https://github.com/google/re2/wiki/Syntax) for all supported
+     * regular expression syntax. If the regular expression does not match any
+     * supported asset type, an INVALID_ARGUMENT error will be returned.
+     * If specified, only matching assets will be returned, otherwise, it will
+     * snapshot all asset types. See [Introduction to Cloud Asset
+     * Inventory](https://cloud.google.com/asset-inventory/docs/overview)
      * for all supported asset types.
      * </pre>
      *
@@ -1414,8 +1565,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setContentTypeValue(int value) {
-
       contentType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1433,9 +1584,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.asset.v1p5beta1.ContentType getContentType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1p5beta1.ContentType result =
-          com.google.cloud.asset.v1p5beta1.ContentType.valueOf(contentType_);
+          com.google.cloud.asset.v1p5beta1.ContentType.forNumber(contentType_);
       return result == null ? com.google.cloud.asset.v1p5beta1.ContentType.UNRECOGNIZED : result;
     }
     /**
@@ -1455,7 +1605,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       contentType_ = value.getNumber();
       onChanged();
       return this;
@@ -1473,7 +1623,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearContentType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       contentType_ = 0;
       onChanged();
       return this;
@@ -1512,6 +1662,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1528,7 +1679,7 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1601,8 +1752,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1620,8 +1771,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1644,8 +1795,8 @@ public final class ListAssetsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

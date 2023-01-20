@@ -233,15 +233,17 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
    * <pre>
    * Required. Name of the resource to perform the analysis against.
-   * Only GCP Project are supported as of today. Hence, this can only be Project
-   * ID (such as "projects/my-project-id") or a Project Number (such as
-   * "projects/12345").
+   * Only Google Cloud projects are supported as of today. Hence, this can only
+   * be a project ID (such as "projects/my-project-id") or a project number
+   * (such as "projects/12345").
    * </pre>
    *
    * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -265,9 +267,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Name of the resource to perform the analysis against.
-   * Only GCP Project are supported as of today. Hence, this can only be Project
-   * ID (such as "projects/my-project-id") or a Project Number (such as
-   * "projects/12345").
+   * Only Google Cloud projects are supported as of today. Hence, this can only
+   * be a project ID (such as "projects/my-project-id") or a project number
+   * (such as "projects/12345").
    * </pre>
    *
    * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -288,15 +290,17 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DESTINATION_PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object destinationParent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationParent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Name of the GCP Folder or Organization to reparent the target
-   * resource. The analysis will be performed against hypothetically moving the
-   * resource to this specified desitination parent. This can only be a Folder
-   * number (such as "folders/123") or an Organization number (such as
+   * Required. Name of the Google Cloud folder or organization to reparent the
+   * target resource. The analysis will be performed against hypothetically
+   * moving the resource to this specified desitination parent. This can only be
+   * a folder number (such as "folders/123") or an organization number (such as
    * "organizations/123").
    * </pre>
    *
@@ -320,10 +324,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Name of the GCP Folder or Organization to reparent the target
-   * resource. The analysis will be performed against hypothetically moving the
-   * resource to this specified desitination parent. This can only be a Folder
-   * number (such as "folders/123") or an Organization number (such as
+   * Required. Name of the Google Cloud folder or organization to reparent the
+   * target resource. The analysis will be performed against hypothetically
+   * moving the resource to this specified desitination parent. This can only be
+   * a folder number (such as "folders/123") or an organization number (such as
    * "organizations/123").
    * </pre>
    *
@@ -345,7 +349,7 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VIEW_FIELD_NUMBER = 3;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -376,9 +380,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView getView() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView result =
-        com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.valueOf(view_);
+        com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.forNumber(view_);
     return result == null
         ? com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.UNRECOGNIZED
         : result;
@@ -603,12 +606,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resource_ = "";
-
       destinationParent_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -636,11 +637,24 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.asset.v1.AnalyzeMoveRequest buildPartial() {
       com.google.cloud.asset.v1.AnalyzeMoveRequest result =
           new com.google.cloud.asset.v1.AnalyzeMoveRequest(this);
-      result.resource_ = resource_;
-      result.destinationParent_ = destinationParent_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.AnalyzeMoveRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.destinationParent_ = destinationParent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -690,10 +704,12 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.asset.v1.AnalyzeMoveRequest.getDefaultInstance()) return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDestinationParent().isEmpty()) {
         destinationParent_ = other.destinationParent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -728,19 +744,19 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 destinationParent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -760,15 +776,17 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object resource_ = "";
     /**
      *
      *
      * <pre>
      * Required. Name of the resource to perform the analysis against.
-     * Only GCP Project are supported as of today. Hence, this can only be Project
-     * ID (such as "projects/my-project-id") or a Project Number (such as
-     * "projects/12345").
+     * Only Google Cloud projects are supported as of today. Hence, this can only
+     * be a project ID (such as "projects/my-project-id") or a project number
+     * (such as "projects/12345").
      * </pre>
      *
      * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -791,9 +809,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the resource to perform the analysis against.
-     * Only GCP Project are supported as of today. Hence, this can only be Project
-     * ID (such as "projects/my-project-id") or a Project Number (such as
-     * "projects/12345").
+     * Only Google Cloud projects are supported as of today. Hence, this can only
+     * be a project ID (such as "projects/my-project-id") or a project number
+     * (such as "projects/12345").
      * </pre>
      *
      * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -816,9 +834,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the resource to perform the analysis against.
-     * Only GCP Project are supported as of today. Hence, this can only be Project
-     * ID (such as "projects/my-project-id") or a Project Number (such as
-     * "projects/12345").
+     * Only Google Cloud projects are supported as of today. Hence, this can only
+     * be a project ID (such as "projects/my-project-id") or a project number
+     * (such as "projects/12345").
      * </pre>
      *
      * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,8 +848,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -840,9 +858,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the resource to perform the analysis against.
-     * Only GCP Project are supported as of today. Hence, this can only be Project
-     * ID (such as "projects/my-project-id") or a Project Number (such as
-     * "projects/12345").
+     * Only Google Cloud projects are supported as of today. Hence, this can only
+     * be a project ID (such as "projects/my-project-id") or a project number
+     * (such as "projects/12345").
      * </pre>
      *
      * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -850,8 +868,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -860,9 +878,9 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Name of the resource to perform the analysis against.
-     * Only GCP Project are supported as of today. Hence, this can only be Project
-     * ID (such as "projects/my-project-id") or a Project Number (such as
-     * "projects/12345").
+     * Only Google Cloud projects are supported as of today. Hence, this can only
+     * be a project ID (such as "projects/my-project-id") or a project number
+     * (such as "projects/12345").
      * </pre>
      *
      * <code>string resource = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -875,8 +893,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -886,10 +904,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the GCP Folder or Organization to reparent the target
-     * resource. The analysis will be performed against hypothetically moving the
-     * resource to this specified desitination parent. This can only be a Folder
-     * number (such as "folders/123") or an Organization number (such as
+     * Required. Name of the Google Cloud folder or organization to reparent the
+     * target resource. The analysis will be performed against hypothetically
+     * moving the resource to this specified desitination parent. This can only be
+     * a folder number (such as "folders/123") or an organization number (such as
      * "organizations/123").
      * </pre>
      *
@@ -912,10 +930,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the GCP Folder or Organization to reparent the target
-     * resource. The analysis will be performed against hypothetically moving the
-     * resource to this specified desitination parent. This can only be a Folder
-     * number (such as "folders/123") or an Organization number (such as
+     * Required. Name of the Google Cloud folder or organization to reparent the
+     * target resource. The analysis will be performed against hypothetically
+     * moving the resource to this specified desitination parent. This can only be
+     * a folder number (such as "folders/123") or an organization number (such as
      * "organizations/123").
      * </pre>
      *
@@ -938,10 +956,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the GCP Folder or Organization to reparent the target
-     * resource. The analysis will be performed against hypothetically moving the
-     * resource to this specified desitination parent. This can only be a Folder
-     * number (such as "folders/123") or an Organization number (such as
+     * Required. Name of the Google Cloud folder or organization to reparent the
+     * target resource. The analysis will be performed against hypothetically
+     * moving the resource to this specified desitination parent. This can only be
+     * a folder number (such as "folders/123") or an organization number (such as
      * "organizations/123").
      * </pre>
      *
@@ -954,8 +972,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationParent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -963,10 +981,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the GCP Folder or Organization to reparent the target
-     * resource. The analysis will be performed against hypothetically moving the
-     * resource to this specified desitination parent. This can only be a Folder
-     * number (such as "folders/123") or an Organization number (such as
+     * Required. Name of the Google Cloud folder or organization to reparent the
+     * target resource. The analysis will be performed against hypothetically
+     * moving the resource to this specified desitination parent. This can only be
+     * a folder number (such as "folders/123") or an organization number (such as
      * "organizations/123").
      * </pre>
      *
@@ -975,8 +993,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDestinationParent() {
-
       destinationParent_ = getDefaultInstance().getDestinationParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -984,10 +1002,10 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the GCP Folder or Organization to reparent the target
-     * resource. The analysis will be performed against hypothetically moving the
-     * resource to this specified desitination parent. This can only be a Folder
-     * number (such as "folders/123") or an Organization number (such as
+     * Required. Name of the Google Cloud folder or organization to reparent the
+     * target resource. The analysis will be performed against hypothetically
+     * moving the resource to this specified desitination parent. This can only be
+     * a folder number (such as "folders/123") or an organization number (such as
      * "organizations/123").
      * </pre>
      *
@@ -1001,8 +1019,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationParent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1038,8 +1056,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,9 +1075,8 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView getView() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView result =
-          com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.valueOf(view_);
+          com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.forNumber(view_);
       return result == null
           ? com.google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView.UNRECOGNIZED
           : result;
@@ -1081,7 +1098,7 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1099,7 +1116,7 @@ public final class AnalyzeMoveRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
       onChanged();
       return this;

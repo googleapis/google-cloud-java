@@ -401,6 +401,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       objectUriCase_ = 0;
       objectUri_ = null;
       return this;
@@ -430,12 +431,21 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p2beta1.GcsDestination buildPartial() {
       com.google.cloud.asset.v1p2beta1.GcsDestination result =
           new com.google.cloud.asset.v1p2beta1.GcsDestination(this);
-      if (objectUriCase_ == 1) {
-        result.objectUri_ = objectUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.objectUriCase_ = objectUriCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p2beta1.GcsDestination result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.asset.v1p2beta1.GcsDestination result) {
+      result.objectUriCase_ = objectUriCase_;
+      result.objectUri_ = this.objectUri_;
     }
 
     @java.lang.Override
@@ -560,6 +570,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

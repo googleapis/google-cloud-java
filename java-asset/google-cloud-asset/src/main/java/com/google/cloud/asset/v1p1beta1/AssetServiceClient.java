@@ -178,11 +178,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the resources under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the resources under a scope,
-   * even if they don't have .get permission of all the resources. Callers should have
-   * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the resources within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the resources within a scope, even if they don't have `.get` permission of all the
+   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
+   * scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -207,9 +207,9 @@ public class AssetServiceClient implements BackgroundResource {
    *     within the `scope`. The allowed value must be:
    *     <ul>
    *       <li>Organization number (such as "organizations/123")
-   *       <li>Folder number(such as "folders/1234")
+   *       <li>Folder number (such as "folders/1234")
    *       <li>Project number (such as "projects/12345")
-   *       <li>Project id (such as "projects/abc")
+   *       <li>Project ID (such as "projects/abc")
    *     </ul>
    *
    * @param query Optional. The query statement.
@@ -230,11 +230,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the resources under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the resources under a scope,
-   * even if they don't have .get permission of all the resources. Callers should have
-   * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the resources within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the resources within a scope, even if they don't have `.get` permission of all the
+   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
+   * scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -271,11 +271,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the resources under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the resources under a scope,
-   * even if they don't have .get permission of all the resources. Callers should have
-   * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the resources within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the resources within a scope, even if they don't have `.get` permission of all the
+   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
+   * scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -311,11 +311,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the resources under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the resources under a scope,
-   * even if they don't have .get permission of all the resources. Callers should have
-   * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the resources within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the resources within a scope, even if they don't have `.get` permission of all the
+   * resources. Callers should have `cloud.assets.SearchAllResources` permission on the requested
+   * scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -358,11 +358,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the IAM policies under a
-   * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
-   * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the IAM policies within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
+   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
+   * the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -386,9 +386,9 @@ public class AssetServiceClient implements BackgroundResource {
    *     within the `scope`. The allowed value must be:
    *     <ul>
    *       <li>Organization number (such as "organizations/123")
-   *       <li>Folder number(such as "folders/1234")
+   *       <li>Folder number (such as "folders/1234")
    *       <li>Project number (such as "projects/12345")
-   *       <li>Project id (such as "projects/abc")
+   *       <li>Project ID (such as "projects/abc")
    *     </ul>
    *
    * @param query Optional. The query statement. Examples:
@@ -407,11 +407,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the IAM policies under a
-   * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
-   * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the IAM policies within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
+   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
+   * the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -446,11 +446,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the IAM policies under a
-   * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
-   * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the IAM policies within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
+   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
+   * the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *
@@ -484,11 +484,11 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all the IAM policies under a given accessible CRM scope (project/folder/organization).
-   * This RPC gives callers especially admins the ability to search all the IAM policies under a
-   * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
-   * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
-   * rejected.
+   * Searches all the IAM policies within a given accessible Resource Manager scope
+   * (project/folder/organization). This RPC gives callers especially administrators the ability to
+   * search all the IAM policies within a scope, even if they don't have `.getIamPolicy` permission
+   * of all the IAM policies. Callers should have `cloud.assets.SearchAllIamPolicies` permission on
+   * the requested scope, otherwise the request will be rejected.
    *
    * <p>Sample code:
    *

@@ -69,7 +69,9 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ASSET_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object assetType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assetType_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object fullResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullResourceName_ = "";
   /**
    *
    *
@@ -374,10 +378,9 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       assetType_ = "";
-
       fullResourceName_ = "";
-
       return this;
     }
 
@@ -405,10 +408,21 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.asset.v1.RelatedResource buildPartial() {
       com.google.cloud.asset.v1.RelatedResource result =
           new com.google.cloud.asset.v1.RelatedResource(this);
-      result.assetType_ = assetType_;
-      result.fullResourceName_ = fullResourceName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.RelatedResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.assetType_ = assetType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fullResourceName_ = fullResourceName_;
+      }
     }
 
     @java.lang.Override
@@ -458,10 +472,12 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.asset.v1.RelatedResource.getDefaultInstance()) return this;
       if (!other.getAssetType().isEmpty()) {
         assetType_ = other.assetType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFullResourceName().isEmpty()) {
         fullResourceName_ = other.fullResourceName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -493,13 +509,13 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 assetType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 fullResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -518,6 +534,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object assetType_ = "";
     /**
@@ -580,8 +598,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       assetType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -597,8 +615,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAssetType() {
-
       assetType_ = getDefaultInstance().getAssetType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +637,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       assetType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +707,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,8 +725,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFullResourceName() {
-
       fullResourceName_ = getDefaultInstance().getFullResourceName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -730,8 +748,8 @@ public final class RelatedResource extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

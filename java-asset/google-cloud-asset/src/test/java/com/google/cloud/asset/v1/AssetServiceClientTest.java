@@ -16,6 +16,9 @@
 
 package com.google.cloud.asset.v1;
 
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPoliciesPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedAssetsPagedResponse;
+import static com.google.cloud.asset.v1.AssetServiceClient.AnalyzeOrgPolicyGovernedContainersPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.ListSavedQueriesPagedResponse;
 import static com.google.cloud.asset.v1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
@@ -1543,6 +1546,167 @@ public class AssetServiceClientTest {
               .addAllNames(new ArrayList<String>())
               .build();
       client.batchGetEffectiveIamPolicies(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeOrgPoliciesTest() throws Exception {
+    AnalyzeOrgPoliciesResponse.OrgPolicyResult responsesElement =
+        AnalyzeOrgPoliciesResponse.OrgPolicyResult.newBuilder().build();
+    AnalyzeOrgPoliciesResponse expectedResponse =
+        AnalyzeOrgPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOrgPolicyResults(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String scope = "scope109264468";
+    String constraint = "constraint-190376483";
+    String filter = "filter-1274492040";
+
+    AnalyzeOrgPoliciesPagedResponse pagedListResponse =
+        client.analyzeOrgPolicies(scope, constraint, filter);
+
+    List<AnalyzeOrgPoliciesResponse.OrgPolicyResult> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOrgPolicyResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeOrgPoliciesRequest actualRequest = ((AnalyzeOrgPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(scope, actualRequest.getScope());
+    Assert.assertEquals(constraint, actualRequest.getConstraint());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeOrgPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String scope = "scope109264468";
+      String constraint = "constraint-190376483";
+      String filter = "filter-1274492040";
+      client.analyzeOrgPolicies(scope, constraint, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeOrgPolicyGovernedContainersTest() throws Exception {
+    AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer responsesElement =
+        AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.newBuilder().build();
+    AnalyzeOrgPolicyGovernedContainersResponse expectedResponse =
+        AnalyzeOrgPolicyGovernedContainersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGovernedContainers(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String scope = "scope109264468";
+    String constraint = "constraint-190376483";
+    String filter = "filter-1274492040";
+
+    AnalyzeOrgPolicyGovernedContainersPagedResponse pagedListResponse =
+        client.analyzeOrgPolicyGovernedContainers(scope, constraint, filter);
+
+    List<AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGovernedContainersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeOrgPolicyGovernedContainersRequest actualRequest =
+        ((AnalyzeOrgPolicyGovernedContainersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(scope, actualRequest.getScope());
+    Assert.assertEquals(constraint, actualRequest.getConstraint());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeOrgPolicyGovernedContainersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String scope = "scope109264468";
+      String constraint = "constraint-190376483";
+      String filter = "filter-1274492040";
+      client.analyzeOrgPolicyGovernedContainers(scope, constraint, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void analyzeOrgPolicyGovernedAssetsTest() throws Exception {
+    AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset responsesElement =
+        AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.newBuilder().build();
+    AnalyzeOrgPolicyGovernedAssetsResponse expectedResponse =
+        AnalyzeOrgPolicyGovernedAssetsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGovernedAssets(Arrays.asList(responsesElement))
+            .build();
+    mockAssetService.addResponse(expectedResponse);
+
+    String scope = "scope109264468";
+    String constraint = "constraint-190376483";
+    String filter = "filter-1274492040";
+
+    AnalyzeOrgPolicyGovernedAssetsPagedResponse pagedListResponse =
+        client.analyzeOrgPolicyGovernedAssets(scope, constraint, filter);
+
+    List<AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGovernedAssetsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAssetService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeOrgPolicyGovernedAssetsRequest actualRequest =
+        ((AnalyzeOrgPolicyGovernedAssetsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(scope, actualRequest.getScope());
+    Assert.assertEquals(constraint, actualRequest.getConstraint());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void analyzeOrgPolicyGovernedAssetsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAssetService.addException(exception);
+
+    try {
+      String scope = "scope109264468";
+      String constraint = "constraint-190376483";
+      String filter = "filter-1274492040";
+      client.analyzeOrgPolicyGovernedAssets(scope, constraint, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

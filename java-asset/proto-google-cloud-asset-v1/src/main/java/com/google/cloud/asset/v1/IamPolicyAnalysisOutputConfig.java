@@ -74,8 +74,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-     * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+     * Required. The URI of the Cloud Storage object. It's the same URI that is
+     * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
@@ -93,8 +93,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-     * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+     * Required. The URI of the Cloud Storage object. It's the same URI that is
+     * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
@@ -159,13 +159,15 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-     * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+     * Required. The URI of the Cloud Storage object. It's the same URI that is
+     * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
@@ -194,8 +196,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-     * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+     * Required. The URI of the Cloud Storage object. It's the same URI that is
+     * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
      * Editing Object
      * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
@@ -425,8 +427,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         return this;
       }
 
@@ -457,9 +459,19 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination(this);
-        result.uri_ = uri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
       }
 
       @java.lang.Override
@@ -516,6 +528,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
                 .getDefaultInstance()) return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -547,7 +560,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -567,13 +580,15 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object uri_ = "";
       /**
        *
        *
        * <pre>
-       * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-       * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+       * Required. The URI of the Cloud Storage object. It's the same URI that is
+       * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
@@ -601,8 +616,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-       * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+       * Required. The URI of the Cloud Storage object. It's the same URI that is
+       * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
@@ -630,8 +645,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-       * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+       * Required. The URI of the Cloud Storage object. It's the same URI that is
+       * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
@@ -649,8 +664,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -658,8 +673,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-       * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+       * Required. The URI of the Cloud Storage object. It's the same URI that is
+       * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
@@ -673,8 +688,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -682,8 +697,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The uri of the Cloud Storage object. It's the same uri that is used by
-       * gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
+       * Required. The URI of the Cloud Storage object. It's the same URI that is
+       * used by gsutil. Example: "gs://bucket_name/object_name". See [Viewing and
        * Editing Object
        * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
        * for more information.
@@ -702,8 +717,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -785,9 +800,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-     * to which the analysis results should be exported. If this dataset does
-     * not exist, the export call will return an INVALID_ARGUMENT error.
+     * Required. The BigQuery dataset in format
+     * "projects/projectId/datasets/datasetId", to which the analysis results
+     * should be exported. If this dataset does not exist, the export call will
+     * return an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -799,9 +815,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-     * to which the analysis results should be exported. If this dataset does
-     * not exist, the export call will return an INVALID_ARGUMENT error.
+     * Required. The BigQuery dataset in format
+     * "projects/projectId/datasets/datasetId", to which the analysis results
+     * should be exported. If this dataset does not exist, the export call will
+     * return an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -814,8 +831,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The prefix of the BigQuery tables to which the analysis results will be
-     * written. Tables will be created based on this table_prefix if not exist:
+     * Required. The prefix of the BigQuery tables to which the analysis results
+     * will be written. Tables will be created based on this table_prefix if not
+     * exist:
      * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
      * * &lt;table_prefix&gt;_analysis_result will contain all the
      *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -832,8 +850,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The prefix of the BigQuery tables to which the analysis results will be
-     * written. Tables will be created based on this table_prefix if not exist:
+     * Required. The prefix of the BigQuery tables to which the analysis results
+     * will be written. Tables will be created based on this table_prefix if not
+     * exist:
      * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
      * * &lt;table_prefix&gt;_analysis_result will contain all the
      *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -881,8 +900,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Specifies the action that occurs if the destination table or partition
-     * already exists. The following values are supported:
+     * Optional. Specifies the action that occurs if the destination table or
+     * partition already exists. The following values are supported:
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -903,8 +922,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Specifies the action that occurs if the destination table or partition
-     * already exists. The following values are supported:
+     * Optional. Specifies the action that occurs if the destination table or
+     * partition already exists. The following values are supported:
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -1124,14 +1143,17 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataset_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-     * to which the analysis results should be exported. If this dataset does
-     * not exist, the export call will return an INVALID_ARGUMENT error.
+     * Required. The BigQuery dataset in format
+     * "projects/projectId/datasets/datasetId", to which the analysis results
+     * should be exported. If this dataset does not exist, the export call will
+     * return an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1154,9 +1176,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-     * to which the analysis results should be exported. If this dataset does
-     * not exist, the export call will return an INVALID_ARGUMENT error.
+     * Required. The BigQuery dataset in format
+     * "projects/projectId/datasets/datasetId", to which the analysis results
+     * should be exported. If this dataset does not exist, the export call will
+     * return an INVALID_ARGUMENT error.
      * </pre>
      *
      * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1177,13 +1200,16 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     }
 
     public static final int TABLE_PREFIX_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tablePrefix_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tablePrefix_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The prefix of the BigQuery tables to which the analysis results will be
-     * written. Tables will be created based on this table_prefix if not exist:
+     * Required. The prefix of the BigQuery tables to which the analysis results
+     * will be written. Tables will be created based on this table_prefix if not
+     * exist:
      * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
      * * &lt;table_prefix&gt;_analysis_result will contain all the
      *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1211,8 +1237,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The prefix of the BigQuery tables to which the analysis results will be
-     * written. Tables will be created based on this table_prefix if not exist:
+     * Required. The prefix of the BigQuery tables to which the analysis results
+     * will be written. Tables will be created based on this table_prefix if not
+     * exist:
      * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
      * * &lt;table_prefix&gt;_analysis_result will contain all the
      *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1238,7 +1265,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     }
 
     public static final int PARTITION_KEY_FIELD_NUMBER = 3;
-    private int partitionKey_;
+    private int partitionKey_ = 0;
     /**
      *
      *
@@ -1272,11 +1299,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     @java.lang.Override
     public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey
         getPartitionKey() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey
           result =
               com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination
-                  .PartitionKey.valueOf(partitionKey_);
+                  .PartitionKey.forNumber(partitionKey_);
       return result == null
           ? com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey
               .UNRECOGNIZED
@@ -1284,13 +1310,15 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     }
 
     public static final int WRITE_DISPOSITION_FIELD_NUMBER = 4;
-    private volatile java.lang.Object writeDisposition_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object writeDisposition_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. Specifies the action that occurs if the destination table or partition
-     * already exists. The following values are supported:
+     * Optional. Specifies the action that occurs if the destination table or
+     * partition already exists. The following values are supported:
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -1322,8 +1350,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Specifies the action that occurs if the destination table or partition
-     * already exists. The following values are supported:
+     * Optional. Specifies the action that occurs if the destination table or
+     * partition already exists. The following values are supported:
      * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
      * overwrites the entire table or all the partitions data.
      * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -1594,14 +1622,11 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dataset_ = "";
-
         tablePrefix_ = "";
-
         partitionKey_ = 0;
-
         writeDisposition_ = "";
-
         return this;
       }
 
@@ -1633,12 +1658,28 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
           buildPartial() {
         com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination result =
             new com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination(this);
-        result.dataset_ = dataset_;
-        result.tablePrefix_ = tablePrefix_;
-        result.partitionKey_ = partitionKey_;
-        result.writeDisposition_ = writeDisposition_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataset_ = dataset_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tablePrefix_ = tablePrefix_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.partitionKey_ = partitionKey_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.writeDisposition_ = writeDisposition_;
+        }
       }
 
       @java.lang.Override
@@ -1696,10 +1737,12 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
                 .getDefaultInstance()) return this;
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTablePrefix().isEmpty()) {
           tablePrefix_ = other.tablePrefix_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.partitionKey_ != 0) {
@@ -1707,6 +1750,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         }
         if (!other.getWriteDisposition().isEmpty()) {
           writeDisposition_ = other.writeDisposition_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1738,25 +1782,25 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
               case 10:
                 {
                   dataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   tablePrefix_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   partitionKey_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   writeDisposition_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -1776,14 +1820,17 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         return this;
       }
 
+      private int bitField0_;
+
       private java.lang.Object dataset_ = "";
       /**
        *
        *
        * <pre>
-       * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-       * to which the analysis results should be exported. If this dataset does
-       * not exist, the export call will return an INVALID_ARGUMENT error.
+       * Required. The BigQuery dataset in format
+       * "projects/projectId/datasets/datasetId", to which the analysis results
+       * should be exported. If this dataset does not exist, the export call will
+       * return an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1805,9 +1852,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-       * to which the analysis results should be exported. If this dataset does
-       * not exist, the export call will return an INVALID_ARGUMENT error.
+       * Required. The BigQuery dataset in format
+       * "projects/projectId/datasets/datasetId", to which the analysis results
+       * should be exported. If this dataset does not exist, the export call will
+       * return an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1829,9 +1877,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-       * to which the analysis results should be exported. If this dataset does
-       * not exist, the export call will return an INVALID_ARGUMENT error.
+       * Required. The BigQuery dataset in format
+       * "projects/projectId/datasets/datasetId", to which the analysis results
+       * should be exported. If this dataset does not exist, the export call will
+       * return an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1843,8 +1892,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1852,9 +1901,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-       * to which the analysis results should be exported. If this dataset does
-       * not exist, the export call will return an INVALID_ARGUMENT error.
+       * Required. The BigQuery dataset in format
+       * "projects/projectId/datasets/datasetId", to which the analysis results
+       * should be exported. If this dataset does not exist, the export call will
+       * return an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1862,8 +1912,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearDataset() {
-
         dataset_ = getDefaultInstance().getDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1871,9 +1921,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The BigQuery dataset in format "projects/projectId/datasets/datasetId",
-       * to which the analysis results should be exported. If this dataset does
-       * not exist, the export call will return an INVALID_ARGUMENT error.
+       * Required. The BigQuery dataset in format
+       * "projects/projectId/datasets/datasetId", to which the analysis results
+       * should be exported. If this dataset does not exist, the export call will
+       * return an INVALID_ARGUMENT error.
        * </pre>
        *
        * <code>string dataset = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1886,8 +1937,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1897,8 +1948,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The prefix of the BigQuery tables to which the analysis results will be
-       * written. Tables will be created based on this table_prefix if not exist:
+       * Required. The prefix of the BigQuery tables to which the analysis results
+       * will be written. Tables will be created based on this table_prefix if not
+       * exist:
        * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
        * * &lt;table_prefix&gt;_analysis_result will contain all the
        *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1925,8 +1977,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The prefix of the BigQuery tables to which the analysis results will be
-       * written. Tables will be created based on this table_prefix if not exist:
+       * Required. The prefix of the BigQuery tables to which the analysis results
+       * will be written. Tables will be created based on this table_prefix if not
+       * exist:
        * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
        * * &lt;table_prefix&gt;_analysis_result will contain all the
        *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1953,8 +2006,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The prefix of the BigQuery tables to which the analysis results will be
-       * written. Tables will be created based on this table_prefix if not exist:
+       * Required. The prefix of the BigQuery tables to which the analysis results
+       * will be written. Tables will be created based on this table_prefix if not
+       * exist:
        * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
        * * &lt;table_prefix&gt;_analysis_result will contain all the
        *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1971,8 +2025,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         tablePrefix_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1980,8 +2034,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The prefix of the BigQuery tables to which the analysis results will be
-       * written. Tables will be created based on this table_prefix if not exist:
+       * Required. The prefix of the BigQuery tables to which the analysis results
+       * will be written. Tables will be created based on this table_prefix if not
+       * exist:
        * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
        * * &lt;table_prefix&gt;_analysis_result will contain all the
        *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -1994,8 +2049,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearTablePrefix() {
-
         tablePrefix_ = getDefaultInstance().getTablePrefix();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2003,8 +2058,9 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Required. The prefix of the BigQuery tables to which the analysis results will be
-       * written. Tables will be created based on this table_prefix if not exist:
+       * Required. The prefix of the BigQuery tables to which the analysis results
+       * will be written. Tables will be created based on this table_prefix if not
+       * exist:
        * * &lt;table_prefix&gt;_analysis table will contain export operation's metadata.
        * * &lt;table_prefix&gt;_analysis_result will contain all the
        *   [IamPolicyAnalysisResult][google.cloud.asset.v1.IamPolicyAnalysisResult].
@@ -2022,8 +2078,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tablePrefix_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2061,8 +2117,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder setPartitionKeyValue(int value) {
-
         partitionKey_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2083,11 +2139,10 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination
               .PartitionKey
           getPartitionKey() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey
             result =
                 com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination
-                    .PartitionKey.valueOf(partitionKey_);
+                    .PartitionKey.forNumber(partitionKey_);
         return result == null
             ? com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.BigQueryDestination
                 .PartitionKey.UNRECOGNIZED
@@ -2113,7 +2168,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         partitionKey_ = value.getNumber();
         onChanged();
         return this;
@@ -2132,7 +2187,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearPartitionKey() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         partitionKey_ = 0;
         onChanged();
         return this;
@@ -2143,8 +2198,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. Specifies the action that occurs if the destination table or partition
-       * already exists. The following values are supported:
+       * Optional. Specifies the action that occurs if the destination table or
+       * partition already exists. The following values are supported:
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -2175,8 +2230,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. Specifies the action that occurs if the destination table or partition
-       * already exists. The following values are supported:
+       * Optional. Specifies the action that occurs if the destination table or
+       * partition already exists. The following values are supported:
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -2207,8 +2262,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. Specifies the action that occurs if the destination table or partition
-       * already exists. The following values are supported:
+       * Optional. Specifies the action that occurs if the destination table or
+       * partition already exists. The following values are supported:
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -2229,8 +2284,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
         if (value == null) {
           throw new NullPointerException();
         }
-
         writeDisposition_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2238,8 +2293,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. Specifies the action that occurs if the destination table or partition
-       * already exists. The following values are supported:
+       * Optional. Specifies the action that occurs if the destination table or
+       * partition already exists. The following values are supported:
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -2256,8 +2311,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        * @return This builder for chaining.
        */
       public Builder clearWriteDisposition() {
-
         writeDisposition_ = getDefaultInstance().getWriteDisposition();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2265,8 +2320,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
        *
        *
        * <pre>
-       * Optional. Specifies the action that occurs if the destination table or partition
-       * already exists. The following values are supported:
+       * Optional. Specifies the action that occurs if the destination table or
+       * partition already exists. The following values are supported:
        * * WRITE_TRUNCATE: If the table or partition already exists, BigQuery
        * overwrites the entire table or all the partitions data.
        * * WRITE_APPEND: If the table or partition already exists, BigQuery
@@ -2288,8 +2343,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         writeDisposition_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2766,6 +2821,7 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsDestinationBuilder_ != null) {
         gcsDestinationBuilder_.clear();
       }
@@ -2801,23 +2857,28 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
     public com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig buildPartial() {
       com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig result =
           new com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig(this);
-      if (destinationCase_ == 1) {
-        if (gcsDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = gcsDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (destinationCase_ == 2) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
-      }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 1 && gcsDestinationBuilder_ != null) {
+        result.destination_ = gcsDestinationBuilder_.build();
+      }
+      if (destinationCase_ == 2 && bigqueryDestinationBuilder_ != null) {
+        result.destination_ = bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2951,6 +3012,8 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.asset.v1.IamPolicyAnalysisOutputConfig.GcsDestination,
@@ -3193,7 +3256,6 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       }
       destinationCase_ = 1;
       onChanged();
-      ;
       return gcsDestinationBuilder_;
     }
 
@@ -3440,7 +3502,6 @@ public final class IamPolicyAnalysisOutputConfig extends com.google.protobuf.Gen
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return bigqueryDestinationBuilder_;
     }
 

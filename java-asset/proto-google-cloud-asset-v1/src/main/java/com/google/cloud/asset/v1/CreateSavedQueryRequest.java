@@ -69,16 +69,18 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The name of the project/folder/organization where this saved_query
-   * should be created in. It can only be an organization number (such as
-   * "organizations/123"), a folder number (such as "folders/123"), a project ID
-   * (such as "projects/my-project-id")", or a project number (such as
-   * "projects/12345").
+   * Required. The name of the project/folder/organization where this
+   * saved_query should be created in. It can only be an organization number
+   * (such as "organizations/123"), a folder number (such as "folders/123"), a
+   * project ID (such as "projects/my-project-id")", or a project number (such
+   * as "projects/12345").
    * </pre>
    *
    * <code>
@@ -103,11 +105,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the project/folder/organization where this saved_query
-   * should be created in. It can only be an organization number (such as
-   * "organizations/123"), a folder number (such as "folders/123"), a project ID
-   * (such as "projects/my-project-id")", or a project number (such as
-   * "projects/12345").
+   * Required. The name of the project/folder/organization where this
+   * saved_query should be created in. It can only be an organization number
+   * (such as "organizations/123"), a folder number (such as "folders/123"), a
+   * project ID (such as "projects/my-project-id")", or a project number (such
+   * as "projects/12345").
    * </pre>
    *
    * <code>
@@ -135,8 +137,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -153,8 +155,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -173,8 +175,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The saved_query details. The `name` field must be empty as it will be
-   * generated based on the parent and saved_query_id.
+   * Required. The saved_query details. The `name` field must be empty as it
+   * will be generated based on the parent and saved_query_id.
    * </pre>
    *
    * <code>
@@ -183,20 +185,24 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.asset.v1.SavedQueryOrBuilder getSavedQueryOrBuilder() {
-    return getSavedQuery();
+    return savedQuery_ == null
+        ? com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()
+        : savedQuery_;
   }
 
   public static final int SAVED_QUERY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object savedQueryId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object savedQueryId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The ID to use for the saved query, which must be unique in the specified
-   * parent. It will become the final component of the saved query's resource
-   * name.
+   * Required. The ID to use for the saved query, which must be unique in the
+   * specified parent. It will become the final component of the saved query's
+   * resource name.
    * This value should be 4-63 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `[a-z][0-9]-`.
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>
@@ -221,11 +227,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The ID to use for the saved query, which must be unique in the specified
-   * parent. It will become the final component of the saved query's resource
-   * name.
+   * Required. The ID to use for the saved query, which must be unique in the
+   * specified parent. It will become the final component of the saved query's
+   * resource name.
    * This value should be 4-63 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `[a-z][0-9]-`.
    * Notice that this field is required in the saved query creation, and the
    * `name` field of the `saved_query` will be ignored.
    * </pre>
@@ -467,16 +473,14 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (savedQueryBuilder_ == null) {
-        savedQuery_ = null;
-      } else {
-        savedQuery_ = null;
+      savedQuery_ = null;
+      if (savedQueryBuilder_ != null) {
+        savedQueryBuilder_.dispose();
         savedQueryBuilder_ = null;
       }
       savedQueryId_ = "";
-
       return this;
     }
 
@@ -504,15 +508,24 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     public com.google.cloud.asset.v1.CreateSavedQueryRequest buildPartial() {
       com.google.cloud.asset.v1.CreateSavedQueryRequest result =
           new com.google.cloud.asset.v1.CreateSavedQueryRequest(this);
-      result.parent_ = parent_;
-      if (savedQueryBuilder_ == null) {
-        result.savedQuery_ = savedQuery_;
-      } else {
-        result.savedQuery_ = savedQueryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.savedQueryId_ = savedQueryId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.CreateSavedQueryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.savedQuery_ = savedQueryBuilder_ == null ? savedQuery_ : savedQueryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.savedQueryId_ = savedQueryId_;
+      }
     }
 
     @java.lang.Override
@@ -563,6 +576,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSavedQuery()) {
@@ -570,6 +584,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       }
       if (!other.getSavedQueryId().isEmpty()) {
         savedQueryId_ = other.savedQueryId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -601,19 +616,19 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSavedQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 savedQueryId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -633,16 +648,18 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object parent_ = "";
     /**
      *
      *
      * <pre>
-     * Required. The name of the project/folder/organization where this saved_query
-     * should be created in. It can only be an organization number (such as
-     * "organizations/123"), a folder number (such as "folders/123"), a project ID
-     * (such as "projects/my-project-id")", or a project number (such as
-     * "projects/12345").
+     * Required. The name of the project/folder/organization where this
+     * saved_query should be created in. It can only be an organization number
+     * (such as "organizations/123"), a folder number (such as "folders/123"), a
+     * project ID (such as "projects/my-project-id")", or a project number (such
+     * as "projects/12345").
      * </pre>
      *
      * <code>
@@ -666,11 +683,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project/folder/organization where this saved_query
-     * should be created in. It can only be an organization number (such as
-     * "organizations/123"), a folder number (such as "folders/123"), a project ID
-     * (such as "projects/my-project-id")", or a project number (such as
-     * "projects/12345").
+     * Required. The name of the project/folder/organization where this
+     * saved_query should be created in. It can only be an organization number
+     * (such as "organizations/123"), a folder number (such as "folders/123"), a
+     * project ID (such as "projects/my-project-id")", or a project number (such
+     * as "projects/12345").
      * </pre>
      *
      * <code>
@@ -694,11 +711,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project/folder/organization where this saved_query
-     * should be created in. It can only be an organization number (such as
-     * "organizations/123"), a folder number (such as "folders/123"), a project ID
-     * (such as "projects/my-project-id")", or a project number (such as
-     * "projects/12345").
+     * Required. The name of the project/folder/organization where this
+     * saved_query should be created in. It can only be an organization number
+     * (such as "organizations/123"), a folder number (such as "folders/123"), a
+     * project ID (such as "projects/my-project-id")", or a project number (such
+     * as "projects/12345").
      * </pre>
      *
      * <code>
@@ -712,8 +729,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,11 +738,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project/folder/organization where this saved_query
-     * should be created in. It can only be an organization number (such as
-     * "organizations/123"), a folder number (such as "folders/123"), a project ID
-     * (such as "projects/my-project-id")", or a project number (such as
-     * "projects/12345").
+     * Required. The name of the project/folder/organization where this
+     * saved_query should be created in. It can only be an organization number
+     * (such as "organizations/123"), a folder number (such as "folders/123"), a
+     * project ID (such as "projects/my-project-id")", or a project number (such
+     * as "projects/12345").
      * </pre>
      *
      * <code>
@@ -735,8 +752,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -744,11 +761,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the project/folder/organization where this saved_query
-     * should be created in. It can only be an organization number (such as
-     * "organizations/123"), a folder number (such as "folders/123"), a project ID
-     * (such as "projects/my-project-id")", or a project number (such as
-     * "projects/12345").
+     * Required. The name of the project/folder/organization where this
+     * saved_query should be created in. It can only be an organization number
+     * (such as "organizations/123"), a folder number (such as "folders/123"), a
+     * project ID (such as "projects/my-project-id")", or a project number (such
+     * as "projects/12345").
      * </pre>
      *
      * <code>
@@ -763,8 +780,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -779,8 +796,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -790,14 +807,14 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * @return Whether the savedQuery field is set.
      */
     public boolean hasSavedQuery() {
-      return savedQueryBuilder_ != null || savedQuery_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -819,8 +836,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -833,19 +850,19 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         savedQuery_ = value;
-        onChanged();
       } else {
         savedQueryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -855,19 +872,19 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
     public Builder setSavedQuery(com.google.cloud.asset.v1.SavedQuery.Builder builderForValue) {
       if (savedQueryBuilder_ == null) {
         savedQuery_ = builderForValue.build();
-        onChanged();
       } else {
         savedQueryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -876,27 +893,26 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      */
     public Builder mergeSavedQuery(com.google.cloud.asset.v1.SavedQuery value) {
       if (savedQueryBuilder_ == null) {
-        if (savedQuery_ != null) {
-          savedQuery_ =
-              com.google.cloud.asset.v1.SavedQuery.newBuilder(savedQuery_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && savedQuery_ != null
+            && savedQuery_ != com.google.cloud.asset.v1.SavedQuery.getDefaultInstance()) {
+          getSavedQueryBuilder().mergeFrom(value);
         } else {
           savedQuery_ = value;
         }
-        onChanged();
       } else {
         savedQueryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -904,22 +920,21 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearSavedQuery() {
-      if (savedQueryBuilder_ == null) {
-        savedQuery_ = null;
-        onChanged();
-      } else {
-        savedQuery_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      savedQuery_ = null;
+      if (savedQueryBuilder_ != null) {
+        savedQueryBuilder_.dispose();
         savedQueryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -927,7 +942,7 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.asset.v1.SavedQuery.Builder getSavedQueryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSavedQueryFieldBuilder().getBuilder();
     }
@@ -935,8 +950,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -956,8 +971,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The saved_query details. The `name` field must be empty as it will be
-     * generated based on the parent and saved_query_id.
+     * Required. The saved_query details. The `name` field must be empty as it
+     * will be generated based on the parent and saved_query_id.
      * </pre>
      *
      * <code>
@@ -986,11 +1001,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the saved query, which must be unique in the specified
-     * parent. It will become the final component of the saved query's resource
-     * name.
+     * Required. The ID to use for the saved query, which must be unique in the
+     * specified parent. It will become the final component of the saved query's
+     * resource name.
      * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `[a-z][0-9]-`.
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1014,11 +1029,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the saved query, which must be unique in the specified
-     * parent. It will become the final component of the saved query's resource
-     * name.
+     * Required. The ID to use for the saved query, which must be unique in the
+     * specified parent. It will become the final component of the saved query's
+     * resource name.
      * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `[a-z][0-9]-`.
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1042,11 +1057,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the saved query, which must be unique in the specified
-     * parent. It will become the final component of the saved query's resource
-     * name.
+     * Required. The ID to use for the saved query, which must be unique in the
+     * specified parent. It will become the final component of the saved query's
+     * resource name.
      * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `[a-z][0-9]-`.
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1060,8 +1075,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       savedQueryId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1069,11 +1084,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the saved query, which must be unique in the specified
-     * parent. It will become the final component of the saved query's resource
-     * name.
+     * Required. The ID to use for the saved query, which must be unique in the
+     * specified parent. It will become the final component of the saved query's
+     * resource name.
      * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `[a-z][0-9]-`.
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1083,8 +1098,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSavedQueryId() {
-
       savedQueryId_ = getDefaultInstance().getSavedQueryId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1092,11 +1107,11 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The ID to use for the saved query, which must be unique in the specified
-     * parent. It will become the final component of the saved query's resource
-     * name.
+     * Required. The ID to use for the saved query, which must be unique in the
+     * specified parent. It will become the final component of the saved query's
+     * resource name.
      * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `[a-z][0-9]-`.
      * Notice that this field is required in the saved query creation, and the
      * `name` field of the `saved_query` will be ignored.
      * </pre>
@@ -1111,8 +1126,8 @@ public final class CreateSavedQueryRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       savedQueryId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

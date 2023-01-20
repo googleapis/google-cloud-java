@@ -68,12 +68,14 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int URIS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList uris_;
   /**
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of URIs of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -88,7 +90,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of URIs of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -103,7 +105,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of URIs of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -119,7 +121,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * List of uris of the Cloud Storage objects. Example:
+   * List of URIs of the Cloud Storage objects. Example:
    * "gs://bucket_name/object_name".
    * </pre>
    *
@@ -336,6 +338,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -365,14 +368,25 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.asset.v1p7beta1.GcsOutputResult buildPartial() {
       com.google.cloud.asset.v1p7beta1.GcsOutputResult result =
           new com.google.cloud.asset.v1p7beta1.GcsOutputResult(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.asset.v1p7beta1.GcsOutputResult result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         uris_ = uris_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.uris_ = uris_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p7beta1.GcsOutputResult result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -496,7 +510,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -511,7 +525,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -526,7 +540,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -542,7 +556,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -558,7 +572,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -581,7 +595,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -603,7 +617,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -622,7 +636,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *
@@ -640,7 +654,7 @@ public final class GcsOutputResult extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * List of uris of the Cloud Storage objects. Example:
+     * List of URIs of the Cloud Storage objects. Example:
      * "gs://bucket_name/object_name".
      * </pre>
      *

@@ -1059,7 +1059,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * Searches all Google Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1100,42 +1100,45 @@ public class AssetServiceClient implements BackgroundResource {
    *     the specified `scope`.
    *     <p>Examples:
    *     <ul>
-   *       <li>`name:Important` to find Cloud resources whose name contains "Important" as a word.
-   *       <li>`name=Important` to find the Cloud resource whose name is exactly "Important".
-   *       <li>`displayName:Impor&#42;` to find Cloud resources whose display name contains "Impor"
-   *           as a prefix of any word in the field.
-   *       <li>`location:us-west&#42;` to find Cloud resources whose location contains both "us" and
-   *           "west" as prefixes.
-   *       <li>`labels:prod` to find Cloud resources whose labels contain "prod" as a key or value.
-   *       <li>`labels.env:prod` to find Cloud resources that have a label "env" and its value is
-   *           "prod".
-   *       <li>`labels.env:&#42;` to find Cloud resources that have a label "env".
-   *       <li>`kmsKey:key` to find Cloud resources encrypted with a customer-managed encryption key
-   *           whose name contains "key" as a word. This field is deprecated. Please use the
-   *           `kmsKeys` field to retrieve KMS key information.
-   *       <li>`kmsKeys:key` to find Cloud resources encrypted with customer-managed encryption keys
-   *           whose name contains the word "key".
-   *       <li>`relationships:instance-group-1` to find Cloud resources that have relationships with
-   *           "instance-group-1" in the related resource name.
-   *       <li>`relationships:INSTANCE_TO_INSTANCEGROUP` to find compute instances that have
-   *           relationships of type "INSTANCE_TO_INSTANCEGROUP".
-   *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find compute instances
-   *           that have relationships with "instance-group-1" in the compute instance group
-   *           resource name, for relationship type "INSTANCE_TO_INSTANCEGROUP".
-   *       <li>`state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a word.
-   *       <li>`NOT state:ACTIVE` to find Cloud resources whose state doesn't contain "ACTIVE" as a
+   *       <li>`name:Important` to find Google Cloud resources whose name contains "Important" as a
    *           word.
-   *       <li>`createTime&lt;1609459200` to find Cloud resources that were created before
+   *       <li>`name=Important` to find the Google Cloud resource whose name is exactly "Important".
+   *       <li>`displayName:Impor&#42;` to find Google Cloud resources whose display name contains
+   *           "Impor" as a prefix of any word in the field.
+   *       <li>`location:us-west&#42;` to find Google Cloud resources whose location contains both
+   *           "us" and "west" as prefixes.
+   *       <li>`labels:prod` to find Google Cloud resources whose labels contain "prod" as a key or
+   *           value.
+   *       <li>`labels.env:prod` to find Google Cloud resources that have a label "env" and its
+   *           value is "prod".
+   *       <li>`labels.env:&#42;` to find Google Cloud resources that have a label "env".
+   *       <li>`kmsKey:key` to find Google Cloud resources encrypted with a customer-managed
+   *           encryption key whose name contains "key" as a word. This field is deprecated. Please
+   *           use the `kmsKeys` field to retrieve Cloud KMS key information.
+   *       <li>`kmsKeys:key` to find Google Cloud resources encrypted with customer-managed
+   *           encryption keys whose name contains the word "key".
+   *       <li>`relationships:instance-group-1` to find Google Cloud resources that have
+   *           relationships with "instance-group-1" in the related resource name.
+   *       <li>`relationships:INSTANCE_TO_INSTANCEGROUP` to find Compute Engine instances that have
+   *           relationships of type "INSTANCE_TO_INSTANCEGROUP".
+   *       <li>`relationships.INSTANCE_TO_INSTANCEGROUP:instance-group-1` to find Compute Engine
+   *           instances that have relationships with "instance-group-1" in the Compute Engine
+   *           instance group resource name, for relationship type "INSTANCE_TO_INSTANCEGROUP".
+   *       <li>`state:ACTIVE` to find Google Cloud resources whose state contains "ACTIVE" as a
+   *           word.
+   *       <li>`NOT state:ACTIVE` to find Google Cloud resources whose state doesn't contain
+   *           "ACTIVE" as a word.
+   *       <li>`createTime&lt;1609459200` to find Google Cloud resources that were created before
    *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
    *           UTC" in seconds.
-   *       <li>`updateTime&gt;1609459200` to find Cloud resources that were updated after
+   *       <li>`updateTime&gt;1609459200` to find Google Cloud resources that were updated after
    *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of "2021-01-01 00:00:00
    *           UTC" in seconds.
-   *       <li>`Important` to find Cloud resources that contain "Important" as a word in any of the
-   *           searchable fields.
-   *       <li>`Impor&#42;` to find Cloud resources that contain "Impor" as a prefix of any word in
-   *           any of the searchable fields.
-   *       <li>`Important location:(us-west1 OR global)` to find Cloud resources that contain
+   *       <li>`Important` to find Google Cloud resources that contain "Important" as a word in any
+   *           of the searchable fields.
+   *       <li>`Impor&#42;` to find Google Cloud resources that contain "Impor" as a prefix of any
+   *           word in any of the searchable fields.
+   *       <li>`Important location:(us-west1 OR global)` to find Google Cloud resources that contain
    *           "Important" as a word in any of the searchable fields and are also located in the
    *           "us-west1" region or the "global" location.
    *     </ul>
@@ -1168,7 +1171,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * Searches all Google Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1208,7 +1211,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * Searches all Google Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1247,7 +1250,7 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Searches all Cloud resources within the specified scope, such as a project, folder, or
+   * Searches all Google Cloud resources within the specified scope, such as a project, folder, or
    * organization. The caller must be granted the `cloudasset.assets.searchAllResources` permission
    * on the desired scope, otherwise the request will be rejected.
    *
@@ -1330,10 +1333,10 @@ public class AssetServiceClient implements BackgroundResource {
    * @param query Optional. The query statement. See [how to construct a
    *     query](https://cloud.google.com/asset-inventory/docs/searching-iam-policies#how_to_construct_a_query)
    *     for more information. If not specified or empty, it will search all the IAM policies within
-   *     the specified `scope`. Note that the query string is compared against each Cloud IAM policy
-   *     binding, including its principals, roles, and Cloud IAM conditions. The returned Cloud IAM
-   *     policies will only contain the bindings that match your query. To learn more about the IAM
-   *     policy structure, see the [IAM policy
+   *     the specified `scope`. Note that the query string is compared against each IAM policy
+   *     binding, including its principals, roles, and IAM conditions. The returned IAM policies
+   *     will only contain the bindings that match your query. To learn more about the IAM policy
+   *     structure, see the [IAM policy
    *     documentation](https://cloud.google.com/iam/help/allow-policies/structure).
    *     <p>Examples:
    *     <ul>
@@ -1854,7 +1857,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     be generated based on the parent and saved_query_id.
    * @param savedQueryId Required. The ID to use for the saved query, which must be unique in the
    *     specified parent. It will become the final component of the saved query's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 4-63 characters, and valid characters are `[a-z][0-9]-`.
    *     <p>Notice that this field is required in the saved query creation, and the `name` field of
    *     the `saved_query` will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1898,7 +1901,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     be generated based on the parent and saved_query_id.
    * @param savedQueryId Required. The ID to use for the saved query, which must be unique in the
    *     specified parent. It will become the final component of the saved query's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 4-63 characters, and valid characters are `[a-z][0-9]-`.
    *     <p>Notice that this field is required in the saved query creation, and the `name` field of
    *     the `saved_query` will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1942,7 +1945,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     be generated based on the parent and saved_query_id.
    * @param savedQueryId Required. The ID to use for the saved query, which must be unique in the
    *     specified parent. It will become the final component of the saved query's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 4-63 characters, and valid characters are `[a-z][0-9]-`.
    *     <p>Notice that this field is required in the saved query creation, and the `name` field of
    *     the `saved_query` will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1986,7 +1989,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     be generated based on the parent and saved_query_id.
    * @param savedQueryId Required. The ID to use for the saved query, which must be unique in the
    *     specified parent. It will become the final component of the saved query's resource name.
-   *     <p>This value should be 4-63 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 4-63 characters, and valid characters are `[a-z][0-9]-`.
    *     <p>Notice that this field is required in the saved query creation, and the `name` field of
    *     the `saved_query` will be ignored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2704,6 +2707,588 @@ public class AssetServiceClient implements BackgroundResource {
     return stub.batchGetEffectiveIamPoliciesCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies under a scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "scope109264468";
+   *   String constraint = "constraint-190376483";
+   *   String filter = "filter-1274492040";
+   *   for (AnalyzeOrgPoliciesResponse.OrgPolicyResult element :
+   *       assetServiceClient.analyzeOrgPolicies(scope, constraint, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param scope Required. The organization to scope the request. Only organization policies within
+   *     the scope will be analyzed.
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
+   * @param constraint Required. The name of the constraint to analyze organization policies for.
+   *     The response only contains analyzed organization policies for the provided constraint.
+   * @param filter The expression to filter
+   *     [AnalyzeOrgPoliciesResponse.org_policy_results][google.cloud.asset.v1.AnalyzeOrgPoliciesResponse.org_policy_results].
+   *     The only supported field is `consolidated_policy.attached_resource`, and the only supported
+   *     operator is `=`.
+   *     <p>Example:
+   *     consolidated_policy.attached_resource="//cloudresourcemanager.googleapis.com/folders/001"
+   *     will return the org policy results of"folders/001".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPoliciesPagedResponse analyzeOrgPolicies(
+      String scope, String constraint, String filter) {
+    AnalyzeOrgPoliciesRequest request =
+        AnalyzeOrgPoliciesRequest.newBuilder()
+            .setScope(scope)
+            .setConstraint(constraint)
+            .setFilter(filter)
+            .build();
+    return analyzeOrgPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies under a scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPoliciesRequest request =
+   *       AnalyzeOrgPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AnalyzeOrgPoliciesResponse.OrgPolicyResult element :
+   *       assetServiceClient.analyzeOrgPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPoliciesPagedResponse analyzeOrgPolicies(
+      AnalyzeOrgPoliciesRequest request) {
+    return analyzeOrgPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies under a scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPoliciesRequest request =
+   *       AnalyzeOrgPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AnalyzeOrgPoliciesResponse.OrgPolicyResult> future =
+   *       assetServiceClient.analyzeOrgPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AnalyzeOrgPoliciesResponse.OrgPolicyResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesPagedResponse>
+      analyzeOrgPoliciesPagedCallable() {
+    return stub.analyzeOrgPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies under a scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPoliciesRequest request =
+   *       AnalyzeOrgPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     AnalyzeOrgPoliciesResponse response =
+   *         assetServiceClient.analyzeOrgPoliciesCallable().call(request);
+   *     for (AnalyzeOrgPoliciesResponse.OrgPolicyResult element :
+   *         response.getOrgPolicyResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
+      analyzeOrgPoliciesCallable() {
+    return stub.analyzeOrgPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed containers (projects, folders or organization) under a
+   * scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "scope109264468";
+   *   String constraint = "constraint-190376483";
+   *   String filter = "filter-1274492040";
+   *   for (AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer element :
+   *       assetServiceClient
+   *           .analyzeOrgPolicyGovernedContainers(scope, constraint, filter)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param scope Required. The organization to scope the request. Only organization policies within
+   *     the scope will be analyzed. The output containers will also be limited to the ones governed
+   *     by those in-scope organization policies.
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
+   * @param constraint Required. The name of the constraint to analyze governed containers for. The
+   *     analysis only contains organization policies for the provided constraint.
+   * @param filter The expression to filter the governed containers in result. The only supported
+   *     field is `parent`, and the only supported operator is `=`.
+   *     <p>Example: parent="//cloudresourcemanager.googleapis.com/folders/001" will return all
+   *     containers under "folders/001".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPolicyGovernedContainersPagedResponse analyzeOrgPolicyGovernedContainers(
+      String scope, String constraint, String filter) {
+    AnalyzeOrgPolicyGovernedContainersRequest request =
+        AnalyzeOrgPolicyGovernedContainersRequest.newBuilder()
+            .setScope(scope)
+            .setConstraint(constraint)
+            .setFilter(filter)
+            .build();
+    return analyzeOrgPolicyGovernedContainers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed containers (projects, folders or organization) under a
+   * scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedContainersRequest request =
+   *       AnalyzeOrgPolicyGovernedContainersRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer element :
+   *       assetServiceClient.analyzeOrgPolicyGovernedContainers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPolicyGovernedContainersPagedResponse analyzeOrgPolicyGovernedContainers(
+      AnalyzeOrgPolicyGovernedContainersRequest request) {
+    return analyzeOrgPolicyGovernedContainersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed containers (projects, folders or organization) under a
+   * scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedContainersRequest request =
+   *       AnalyzeOrgPolicyGovernedContainersRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer> future =
+   *       assetServiceClient.analyzeOrgPolicyGovernedContainersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer element :
+   *       future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersPagedResponse>
+      analyzeOrgPolicyGovernedContainersPagedCallable() {
+    return stub.analyzeOrgPolicyGovernedContainersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed containers (projects, folders or organization) under a
+   * scope.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedContainersRequest request =
+   *       AnalyzeOrgPolicyGovernedContainersRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     AnalyzeOrgPolicyGovernedContainersResponse response =
+   *         assetServiceClient.analyzeOrgPolicyGovernedContainersCallable().call(request);
+   *     for (AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer element :
+   *         response.getGovernedContainersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AnalyzeOrgPolicyGovernedContainersRequest, AnalyzeOrgPolicyGovernedContainersResponse>
+      analyzeOrgPolicyGovernedContainersCallable() {
+    return stub.analyzeOrgPolicyGovernedContainersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
+   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   *
+   * <ul>
+   *   <li>storage.uniformBucketLevelAccess
+   *   <li>iam.disableServiceAccountKeyCreation
+   *   <li>iam.allowedPolicyMemberDomains
+   *   <li>compute.vmExternalIpAccess
+   *   <li>appengine.enforceServiceAccountActAsCheck
+   *   <li>gcp.resourceLocations
+   *   <li>compute.trustedImageProjects
+   *   <li>compute.skipDefaultNetworkCreation
+   *   <li>compute.requireOsLogin
+   *   <li>compute.disableNestedVirtualization
+   * </ul>
+   *
+   * <p>This RPC only returns either resources of types supported by [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+   * or IAM policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "scope109264468";
+   *   String constraint = "constraint-190376483";
+   *   String filter = "filter-1274492040";
+   *   for (AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset element :
+   *       assetServiceClient
+   *           .analyzeOrgPolicyGovernedAssets(scope, constraint, filter)
+   *           .iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param scope Required. The organization to scope the request. Only organization policies within
+   *     the scope will be analyzed. The output assets will also be limited to the ones governed by
+   *     those in-scope organization policies.
+   *     <ul>
+   *       <li>organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
+   *     </ul>
+   *
+   * @param constraint Required. The name of the constraint to analyze governed assets for. The
+   *     analysis only contains analyzed organization policies for the provided constraint.
+   * @param filter The expression to filter the governed assets in result. The only supported fields
+   *     for governed resources are `governed_resource.project` and `governed_resource.folders`. The
+   *     only supported fields for governed iam policies are `governed_iam_policy.project` and
+   *     `governed_iam_policy.folders`. The only supported operator is `=`.
+   *     <p>Example 1: governed_resource.project="projects/12345678" filter will return all governed
+   *     resources under projects/12345678 including the project ifself, if applicable.
+   *     <p>Example 2: governed_iam_policy.folders="folders/12345678" filter will return all
+   *     governed iam policies under folders/12345678, if applicable.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPolicyGovernedAssetsPagedResponse analyzeOrgPolicyGovernedAssets(
+      String scope, String constraint, String filter) {
+    AnalyzeOrgPolicyGovernedAssetsRequest request =
+        AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder()
+            .setScope(scope)
+            .setConstraint(constraint)
+            .setFilter(filter)
+            .build();
+    return analyzeOrgPolicyGovernedAssets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
+   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   *
+   * <ul>
+   *   <li>storage.uniformBucketLevelAccess
+   *   <li>iam.disableServiceAccountKeyCreation
+   *   <li>iam.allowedPolicyMemberDomains
+   *   <li>compute.vmExternalIpAccess
+   *   <li>appengine.enforceServiceAccountActAsCheck
+   *   <li>gcp.resourceLocations
+   *   <li>compute.trustedImageProjects
+   *   <li>compute.skipDefaultNetworkCreation
+   *   <li>compute.requireOsLogin
+   *   <li>compute.disableNestedVirtualization
+   * </ul>
+   *
+   * <p>This RPC only returns either resources of types supported by [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+   * or IAM policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedAssetsRequest request =
+   *       AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset element :
+   *       assetServiceClient.analyzeOrgPolicyGovernedAssets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnalyzeOrgPolicyGovernedAssetsPagedResponse analyzeOrgPolicyGovernedAssets(
+      AnalyzeOrgPolicyGovernedAssetsRequest request) {
+    return analyzeOrgPolicyGovernedAssetsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
+   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   *
+   * <ul>
+   *   <li>storage.uniformBucketLevelAccess
+   *   <li>iam.disableServiceAccountKeyCreation
+   *   <li>iam.allowedPolicyMemberDomains
+   *   <li>compute.vmExternalIpAccess
+   *   <li>appengine.enforceServiceAccountActAsCheck
+   *   <li>gcp.resourceLocations
+   *   <li>compute.trustedImageProjects
+   *   <li>compute.skipDefaultNetworkCreation
+   *   <li>compute.requireOsLogin
+   *   <li>compute.disableNestedVirtualization
+   * </ul>
+   *
+   * <p>This RPC only returns either resources of types supported by [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+   * or IAM policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedAssetsRequest request =
+   *       AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset> future =
+   *       assetServiceClient.analyzeOrgPolicyGovernedAssetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset element :
+   *       future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsPagedResponse>
+      analyzeOrgPolicyGovernedAssetsPagedCallable() {
+    return stub.analyzeOrgPolicyGovernedAssetsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Analyzes organization policies governed assets (Google Cloud resources or policies) under a
+   * scope. This RPC supports custom constraints and the following 10 canned constraints:
+   *
+   * <ul>
+   *   <li>storage.uniformBucketLevelAccess
+   *   <li>iam.disableServiceAccountKeyCreation
+   *   <li>iam.allowedPolicyMemberDomains
+   *   <li>compute.vmExternalIpAccess
+   *   <li>appengine.enforceServiceAccountActAsCheck
+   *   <li>gcp.resourceLocations
+   *   <li>compute.trustedImageProjects
+   *   <li>compute.skipDefaultNetworkCreation
+   *   <li>compute.requireOsLogin
+   *   <li>compute.disableNestedVirtualization
+   * </ul>
+   *
+   * <p>This RPC only returns either resources of types supported by [searchable asset
+   * types](https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types),
+   * or IAM policies.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeOrgPolicyGovernedAssetsRequest request =
+   *       AnalyzeOrgPolicyGovernedAssetsRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setConstraint("constraint-190376483")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     AnalyzeOrgPolicyGovernedAssetsResponse response =
+   *         assetServiceClient.analyzeOrgPolicyGovernedAssetsCallable().call(request);
+   *     for (AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset element :
+   *         response.getGovernedAssetsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AnalyzeOrgPolicyGovernedAssetsRequest, AnalyzeOrgPolicyGovernedAssetsResponse>
+      analyzeOrgPolicyGovernedAssetsCallable() {
+    return stub.analyzeOrgPolicyGovernedAssetsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3053,6 +3638,297 @@ public class AssetServiceClient implements BackgroundResource {
     protected ListSavedQueriesFixedSizeCollection createCollection(
         List<ListSavedQueriesPage> pages, int collectionSize) {
       return new ListSavedQueriesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AnalyzeOrgPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          AnalyzeOrgPoliciesRequest,
+          AnalyzeOrgPoliciesResponse,
+          AnalyzeOrgPoliciesResponse.OrgPolicyResult,
+          AnalyzeOrgPoliciesPage,
+          AnalyzeOrgPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<AnalyzeOrgPoliciesPagedResponse> createAsync(
+        PageContext<
+                AnalyzeOrgPoliciesRequest,
+                AnalyzeOrgPoliciesResponse,
+                AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+            context,
+        ApiFuture<AnalyzeOrgPoliciesResponse> futureResponse) {
+      ApiFuture<AnalyzeOrgPoliciesPage> futurePage =
+          AnalyzeOrgPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AnalyzeOrgPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AnalyzeOrgPoliciesPagedResponse(AnalyzeOrgPoliciesPage page) {
+      super(page, AnalyzeOrgPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AnalyzeOrgPoliciesPage
+      extends AbstractPage<
+          AnalyzeOrgPoliciesRequest,
+          AnalyzeOrgPoliciesResponse,
+          AnalyzeOrgPoliciesResponse.OrgPolicyResult,
+          AnalyzeOrgPoliciesPage> {
+
+    private AnalyzeOrgPoliciesPage(
+        PageContext<
+                AnalyzeOrgPoliciesRequest,
+                AnalyzeOrgPoliciesResponse,
+                AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+            context,
+        AnalyzeOrgPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static AnalyzeOrgPoliciesPage createEmptyPage() {
+      return new AnalyzeOrgPoliciesPage(null, null);
+    }
+
+    @Override
+    protected AnalyzeOrgPoliciesPage createPage(
+        PageContext<
+                AnalyzeOrgPoliciesRequest,
+                AnalyzeOrgPoliciesResponse,
+                AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+            context,
+        AnalyzeOrgPoliciesResponse response) {
+      return new AnalyzeOrgPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AnalyzeOrgPoliciesPage> createPageAsync(
+        PageContext<
+                AnalyzeOrgPoliciesRequest,
+                AnalyzeOrgPoliciesResponse,
+                AnalyzeOrgPoliciesResponse.OrgPolicyResult>
+            context,
+        ApiFuture<AnalyzeOrgPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AnalyzeOrgPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AnalyzeOrgPoliciesRequest,
+          AnalyzeOrgPoliciesResponse,
+          AnalyzeOrgPoliciesResponse.OrgPolicyResult,
+          AnalyzeOrgPoliciesPage,
+          AnalyzeOrgPoliciesFixedSizeCollection> {
+
+    private AnalyzeOrgPoliciesFixedSizeCollection(
+        List<AnalyzeOrgPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AnalyzeOrgPoliciesFixedSizeCollection createEmptyCollection() {
+      return new AnalyzeOrgPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AnalyzeOrgPoliciesFixedSizeCollection createCollection(
+        List<AnalyzeOrgPoliciesPage> pages, int collectionSize) {
+      return new AnalyzeOrgPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedContainersPagedResponse
+      extends AbstractPagedListResponse<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer,
+          AnalyzeOrgPolicyGovernedContainersPage,
+          AnalyzeOrgPolicyGovernedContainersFixedSizeCollection> {
+
+    public static ApiFuture<AnalyzeOrgPolicyGovernedContainersPagedResponse> createAsync(
+        PageContext<
+                AnalyzeOrgPolicyGovernedContainersRequest,
+                AnalyzeOrgPolicyGovernedContainersResponse,
+                AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+            context,
+        ApiFuture<AnalyzeOrgPolicyGovernedContainersResponse> futureResponse) {
+      ApiFuture<AnalyzeOrgPolicyGovernedContainersPage> futurePage =
+          AnalyzeOrgPolicyGovernedContainersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AnalyzeOrgPolicyGovernedContainersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AnalyzeOrgPolicyGovernedContainersPagedResponse(
+        AnalyzeOrgPolicyGovernedContainersPage page) {
+      super(page, AnalyzeOrgPolicyGovernedContainersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedContainersPage
+      extends AbstractPage<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer,
+          AnalyzeOrgPolicyGovernedContainersPage> {
+
+    private AnalyzeOrgPolicyGovernedContainersPage(
+        PageContext<
+                AnalyzeOrgPolicyGovernedContainersRequest,
+                AnalyzeOrgPolicyGovernedContainersResponse,
+                AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+            context,
+        AnalyzeOrgPolicyGovernedContainersResponse response) {
+      super(context, response);
+    }
+
+    private static AnalyzeOrgPolicyGovernedContainersPage createEmptyPage() {
+      return new AnalyzeOrgPolicyGovernedContainersPage(null, null);
+    }
+
+    @Override
+    protected AnalyzeOrgPolicyGovernedContainersPage createPage(
+        PageContext<
+                AnalyzeOrgPolicyGovernedContainersRequest,
+                AnalyzeOrgPolicyGovernedContainersResponse,
+                AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+            context,
+        AnalyzeOrgPolicyGovernedContainersResponse response) {
+      return new AnalyzeOrgPolicyGovernedContainersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AnalyzeOrgPolicyGovernedContainersPage> createPageAsync(
+        PageContext<
+                AnalyzeOrgPolicyGovernedContainersRequest,
+                AnalyzeOrgPolicyGovernedContainersResponse,
+                AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer>
+            context,
+        ApiFuture<AnalyzeOrgPolicyGovernedContainersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedContainersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AnalyzeOrgPolicyGovernedContainersRequest,
+          AnalyzeOrgPolicyGovernedContainersResponse,
+          AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer,
+          AnalyzeOrgPolicyGovernedContainersPage,
+          AnalyzeOrgPolicyGovernedContainersFixedSizeCollection> {
+
+    private AnalyzeOrgPolicyGovernedContainersFixedSizeCollection(
+        List<AnalyzeOrgPolicyGovernedContainersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AnalyzeOrgPolicyGovernedContainersFixedSizeCollection createEmptyCollection() {
+      return new AnalyzeOrgPolicyGovernedContainersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AnalyzeOrgPolicyGovernedContainersFixedSizeCollection createCollection(
+        List<AnalyzeOrgPolicyGovernedContainersPage> pages, int collectionSize) {
+      return new AnalyzeOrgPolicyGovernedContainersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedAssetsPagedResponse
+      extends AbstractPagedListResponse<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset,
+          AnalyzeOrgPolicyGovernedAssetsPage,
+          AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection> {
+
+    public static ApiFuture<AnalyzeOrgPolicyGovernedAssetsPagedResponse> createAsync(
+        PageContext<
+                AnalyzeOrgPolicyGovernedAssetsRequest,
+                AnalyzeOrgPolicyGovernedAssetsResponse,
+                AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+            context,
+        ApiFuture<AnalyzeOrgPolicyGovernedAssetsResponse> futureResponse) {
+      ApiFuture<AnalyzeOrgPolicyGovernedAssetsPage> futurePage =
+          AnalyzeOrgPolicyGovernedAssetsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AnalyzeOrgPolicyGovernedAssetsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AnalyzeOrgPolicyGovernedAssetsPagedResponse(AnalyzeOrgPolicyGovernedAssetsPage page) {
+      super(page, AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedAssetsPage
+      extends AbstractPage<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset,
+          AnalyzeOrgPolicyGovernedAssetsPage> {
+
+    private AnalyzeOrgPolicyGovernedAssetsPage(
+        PageContext<
+                AnalyzeOrgPolicyGovernedAssetsRequest,
+                AnalyzeOrgPolicyGovernedAssetsResponse,
+                AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+            context,
+        AnalyzeOrgPolicyGovernedAssetsResponse response) {
+      super(context, response);
+    }
+
+    private static AnalyzeOrgPolicyGovernedAssetsPage createEmptyPage() {
+      return new AnalyzeOrgPolicyGovernedAssetsPage(null, null);
+    }
+
+    @Override
+    protected AnalyzeOrgPolicyGovernedAssetsPage createPage(
+        PageContext<
+                AnalyzeOrgPolicyGovernedAssetsRequest,
+                AnalyzeOrgPolicyGovernedAssetsResponse,
+                AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+            context,
+        AnalyzeOrgPolicyGovernedAssetsResponse response) {
+      return new AnalyzeOrgPolicyGovernedAssetsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AnalyzeOrgPolicyGovernedAssetsPage> createPageAsync(
+        PageContext<
+                AnalyzeOrgPolicyGovernedAssetsRequest,
+                AnalyzeOrgPolicyGovernedAssetsResponse,
+                AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset>
+            context,
+        ApiFuture<AnalyzeOrgPolicyGovernedAssetsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AnalyzeOrgPolicyGovernedAssetsRequest,
+          AnalyzeOrgPolicyGovernedAssetsResponse,
+          AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset,
+          AnalyzeOrgPolicyGovernedAssetsPage,
+          AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection> {
+
+    private AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection(
+        List<AnalyzeOrgPolicyGovernedAssetsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection createEmptyCollection() {
+      return new AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection createCollection(
+        List<AnalyzeOrgPolicyGovernedAssetsPage> pages, int collectionSize) {
+      return new AnalyzeOrgPolicyGovernedAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -73,7 +73,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISCOVERY_DOCUMENT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object discoveryDocumentUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object discoveryDocumentUri_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISCOVERY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object discoveryName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object discoveryName_ = "";
   /**
    *
    *
@@ -234,7 +240,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object resourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceUrl_ = "";
   /**
    *
    *
@@ -289,7 +297,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -299,7 +309,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -331,7 +341,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For Google Cloud assets, this value is the parent resource defined in the
-   * [Cloud IAM policy
+   * [IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
    * Example:
    * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -401,11 +411,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
-    return getData();
+    return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -711,24 +723,18 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       discoveryDocumentUri_ = "";
-
       discoveryName_ = "";
-
       resourceUrl_ = "";
-
       parent_ = "";
-
-      if (dataBuilder_ == null) {
-        data_ = null;
-      } else {
-        data_ = null;
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
         dataBuilder_ = null;
       }
       location_ = "";
-
       return this;
     }
 
@@ -756,19 +762,36 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1p7beta1.Resource buildPartial() {
       com.google.cloud.asset.v1p7beta1.Resource result =
           new com.google.cloud.asset.v1p7beta1.Resource(this);
-      result.version_ = version_;
-      result.discoveryDocumentUri_ = discoveryDocumentUri_;
-      result.discoveryName_ = discoveryName_;
-      result.resourceUrl_ = resourceUrl_;
-      result.parent_ = parent_;
-      if (dataBuilder_ == null) {
-        result.data_ = data_;
-      } else {
-        result.data_ = dataBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.location_ = location_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1p7beta1.Resource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.discoveryDocumentUri_ = discoveryDocumentUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.discoveryName_ = discoveryName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resourceUrl_ = resourceUrl_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.data_ = dataBuilder_ == null ? data_ : dataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -818,22 +841,27 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.asset.v1p7beta1.Resource.getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDiscoveryDocumentUri().isEmpty()) {
         discoveryDocumentUri_ = other.discoveryDocumentUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDiscoveryName().isEmpty()) {
         discoveryName_ = other.discoveryName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getResourceUrl().isEmpty()) {
         resourceUrl_ = other.resourceUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasData()) {
@@ -841,6 +869,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -872,43 +901,43 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 discoveryDocumentUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 discoveryName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 resourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getDataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 66:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -927,6 +956,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -989,8 +1020,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1006,8 +1037,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1028,8 +1059,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1107,8 +1138,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       discoveryDocumentUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1128,8 +1159,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiscoveryDocumentUri() {
-
       discoveryDocumentUri_ = getDefaultInstance().getDiscoveryDocumentUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1154,8 +1185,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       discoveryDocumentUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1230,8 +1261,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       discoveryName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1250,8 +1281,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiscoveryName() {
-
       discoveryName_ = getDefaultInstance().getDiscoveryName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1275,8 +1306,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       discoveryName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1351,8 +1382,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1371,8 +1402,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceUrl() {
-
       resourceUrl_ = getDefaultInstance().getResourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1396,8 +1427,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1412,7 +1443,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For Google Cloud assets, this value is the parent resource defined in the
-     * [Cloud IAM policy
+     * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -1443,7 +1474,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For Google Cloud assets, this value is the parent resource defined in the
-     * [Cloud IAM policy
+     * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -1474,7 +1505,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For Google Cloud assets, this value is the parent resource defined in the
-     * [Cloud IAM policy
+     * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -1490,8 +1521,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1504,7 +1535,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For Google Cloud assets, this value is the parent resource defined in the
-     * [Cloud IAM policy
+     * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -1516,8 +1547,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1530,7 +1561,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * For Google Cloud assets, this value is the parent resource defined in the
-     * [Cloud IAM policy
+     * [IAM policy
      * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
      * Example:
      * `//cloudresourcemanager.googleapis.com/projects/my_project_123`
@@ -1547,8 +1578,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1572,7 +1603,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the data field is set.
      */
     public boolean hasData() {
-      return dataBuilder_ != null || data_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1609,11 +1640,11 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         data_ = value;
-        onChanged();
       } else {
         dataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1629,11 +1660,11 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
     public Builder setData(com.google.protobuf.Struct.Builder builderForValue) {
       if (dataBuilder_ == null) {
         data_ = builderForValue.build();
-        onChanged();
       } else {
         dataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1648,16 +1679,18 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeData(com.google.protobuf.Struct value) {
       if (dataBuilder_ == null) {
-        if (data_ != null) {
-          data_ = com.google.protobuf.Struct.newBuilder(data_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && data_ != null
+            && data_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getDataBuilder().mergeFrom(value);
         } else {
           data_ = value;
         }
-        onChanged();
       } else {
         dataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1671,14 +1704,13 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct data = 6;</code>
      */
     public Builder clearData() {
-      if (dataBuilder_ == null) {
-        data_ = null;
-        onChanged();
-      } else {
-        data_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
         dataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1692,7 +1724,7 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Struct data = 6;</code>
      */
     public com.google.protobuf.Struct.Builder getDataBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDataFieldBuilder().getBuilder();
     }
@@ -1803,8 +1835,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1821,8 +1853,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1844,8 +1876,8 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FIELD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object field_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object field_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MODE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mode_ = "";
   /**
    *
    *
@@ -252,6 +258,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FIELDS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.asset.v1.TableFieldSchema> fields_;
   /**
    *
@@ -551,19 +559,17 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       field_ = "";
-
       type_ = "";
-
       mode_ = "";
-
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
       } else {
         fields_ = null;
         fieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -591,21 +597,37 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.asset.v1.TableFieldSchema buildPartial() {
       com.google.cloud.asset.v1.TableFieldSchema result =
           new com.google.cloud.asset.v1.TableFieldSchema(this);
-      int from_bitField0_ = bitField0_;
-      result.field_ = field_;
-      result.type_ = type_;
-      result.mode_ = mode_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.asset.v1.TableFieldSchema result) {
       if (fieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           fields_ = java.util.Collections.unmodifiableList(fields_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.fields_ = fields_;
       } else {
         result.fields_ = fieldsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.asset.v1.TableFieldSchema result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.field_ = field_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mode_ = mode_;
+      }
     }
 
     @java.lang.Override
@@ -655,21 +677,24 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.asset.v1.TableFieldSchema.getDefaultInstance()) return this;
       if (!other.getField().isEmpty()) {
         field_ = other.field_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMode().isEmpty()) {
         mode_ = other.mode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (fieldsBuilder_ == null) {
         if (!other.fields_.isEmpty()) {
           if (fields_.isEmpty()) {
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFieldsIsMutable();
             fields_.addAll(other.fields_);
@@ -682,7 +707,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
             fieldsBuilder_.dispose();
             fieldsBuilder_ = null;
             fields_ = other.fields_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             fieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFieldsFieldBuilder()
@@ -721,19 +746,19 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 field_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -835,8 +860,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       field_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,8 +879,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearField() {
-
       field_ = getDefaultInstance().getField();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -878,8 +903,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       field_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -987,8 +1012,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1018,8 +1043,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1054,8 +1079,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1124,8 +1149,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1142,8 +1167,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-
       mode_ = getDefaultInstance().getMode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1165,8 +1190,8 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1175,9 +1200,9 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         fields_ = new java.util.ArrayList<com.google.cloud.asset.v1.TableFieldSchema>(fields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1403,7 +1428,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
     public Builder clearFields() {
       if (fieldsBuilder_ == null) {
         fields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         fieldsBuilder_.clear();
@@ -1532,7 +1557,7 @@ public final class TableFieldSchema extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.asset.v1.TableFieldSchema,
                 com.google.cloud.asset.v1.TableFieldSchema.Builder,
                 com.google.cloud.asset.v1.TableFieldSchemaOrBuilder>(
-                fields_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                fields_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         fields_ = null;
       }
       return fieldsBuilder_;
