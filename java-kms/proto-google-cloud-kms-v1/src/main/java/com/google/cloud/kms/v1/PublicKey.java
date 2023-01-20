@@ -73,7 +73,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PEM_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pem_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pem_ = "";
   /**
    *
    *
@@ -130,7 +132,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALGORITHM_FIELD_NUMBER = 2;
-  private int algorithm_;
+  private int algorithm_ = 0;
   /**
    *
    *
@@ -163,9 +165,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
     return result == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
         : result;
@@ -250,11 +251,13 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getPemCrc32COrBuilder() {
-    return getPemCrc32C();
+    return pemCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : pemCrc32C_;
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -309,7 +312,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -340,9 +343,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -592,20 +594,16 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pem_ = "";
-
       algorithm_ = 0;
-
-      if (pemCrc32CBuilder_ == null) {
-        pemCrc32C_ = null;
-      } else {
-        pemCrc32C_ = null;
+      pemCrc32C_ = null;
+      if (pemCrc32CBuilder_ != null) {
+        pemCrc32CBuilder_.dispose();
         pemCrc32CBuilder_ = null;
       }
       name_ = "";
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -632,17 +630,30 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.PublicKey buildPartial() {
       com.google.cloud.kms.v1.PublicKey result = new com.google.cloud.kms.v1.PublicKey(this);
-      result.pem_ = pem_;
-      result.algorithm_ = algorithm_;
-      if (pemCrc32CBuilder_ == null) {
-        result.pemCrc32C_ = pemCrc32C_;
-      } else {
-        result.pemCrc32C_ = pemCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.PublicKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pem_ = pem_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.algorithm_ = algorithm_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pemCrc32C_ = pemCrc32CBuilder_ == null ? pemCrc32C_ : pemCrc32CBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -692,6 +703,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.kms.v1.PublicKey.getDefaultInstance()) return this;
       if (!other.getPem().isEmpty()) {
         pem_ = other.pem_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.algorithm_ != 0) {
@@ -702,6 +714,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.protectionLevel_ != 0) {
@@ -736,31 +749,31 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 pem_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 algorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getPemCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -779,6 +792,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object pem_ = "";
     /**
@@ -853,8 +868,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pem_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -874,8 +889,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPem() {
-
       pem_ = getDefaultInstance().getPem();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -900,8 +915,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pem_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -939,8 +954,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
-
       algorithm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -959,9 +974,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
       return result == null
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
@@ -985,7 +999,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       algorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -1004,7 +1018,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       algorithm_ = 0;
       onChanged();
       return this;
@@ -1040,7 +1054,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the pemCrc32c field is set.
      */
     public boolean hasPemCrc32C() {
-      return pemCrc32CBuilder_ != null || pemCrc32C_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1101,11 +1115,11 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         pemCrc32C_ = value;
-        onChanged();
       } else {
         pemCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1132,11 +1146,11 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setPemCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (pemCrc32CBuilder_ == null) {
         pemCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         pemCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1162,17 +1176,18 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePemCrc32C(com.google.protobuf.Int64Value value) {
       if (pemCrc32CBuilder_ == null) {
-        if (pemCrc32C_ != null) {
-          pemCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(pemCrc32C_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && pemCrc32C_ != null
+            && pemCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getPemCrc32CBuilder().mergeFrom(value);
         } else {
           pemCrc32C_ = value;
         }
-        onChanged();
       } else {
         pemCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1197,14 +1212,13 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
      */
     public Builder clearPemCrc32C() {
-      if (pemCrc32CBuilder_ == null) {
-        pemCrc32C_ = null;
-        onChanged();
-      } else {
-        pemCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      pemCrc32C_ = null;
+      if (pemCrc32CBuilder_ != null) {
+        pemCrc32CBuilder_.dispose();
         pemCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1229,7 +1243,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Int64Value pem_crc32c = 3;</code>
      */
     public com.google.protobuf.Int64Value.Builder getPemCrc32CBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPemCrc32CFieldBuilder().getBuilder();
     }
@@ -1371,8 +1385,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1391,8 +1405,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1416,8 +1430,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1453,8 +1467,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1472,9 +1486,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1494,7 +1507,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1512,7 +1525,7 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       protectionLevel_ = 0;
       onChanged();
       return this;

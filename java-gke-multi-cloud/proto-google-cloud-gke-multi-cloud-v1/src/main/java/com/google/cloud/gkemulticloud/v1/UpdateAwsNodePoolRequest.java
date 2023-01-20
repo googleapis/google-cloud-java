@@ -119,11 +119,13 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsNodePoolOrBuilder getAwsNodePoolOrBuilder() {
-    return getAwsNodePool();
+    return awsNodePool_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance()
+        : awsNodePool_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -258,7 +260,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -487,18 +489,16 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (awsNodePoolBuilder_ == null) {
-        awsNodePool_ = null;
-      } else {
-        awsNodePool_ = null;
+      bitField0_ = 0;
+      awsNodePool_ = null;
+      if (awsNodePoolBuilder_ != null) {
+        awsNodePoolBuilder_.dispose();
         awsNodePoolBuilder_ = null;
       }
       validateOnly_ = false;
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -528,19 +528,25 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest result =
           new com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest(this);
-      if (awsNodePoolBuilder_ == null) {
-        result.awsNodePool_ = awsNodePool_;
-      } else {
-        result.awsNodePool_ = awsNodePoolBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.awsNodePool_ =
+            awsNodePoolBuilder_ == null ? awsNodePool_ : awsNodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -627,19 +633,19 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getAwsNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -658,6 +664,8 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gkemulticloud.v1.AwsNodePool awsNodePool_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -680,7 +688,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return Whether the awsNodePool field is set.
      */
     public boolean hasAwsNodePool() {
-      return awsNodePoolBuilder_ != null || awsNodePool_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -723,11 +731,11 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         awsNodePool_ = value;
-        onChanged();
       } else {
         awsNodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -746,11 +754,11 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
         com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder builderForValue) {
       if (awsNodePoolBuilder_ == null) {
         awsNodePool_ = builderForValue.build();
-        onChanged();
       } else {
         awsNodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +775,18 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAwsNodePool(com.google.cloud.gkemulticloud.v1.AwsNodePool value) {
       if (awsNodePoolBuilder_ == null) {
-        if (awsNodePool_ != null) {
-          awsNodePool_ =
-              com.google.cloud.gkemulticloud.v1.AwsNodePool.newBuilder(awsNodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && awsNodePool_ != null
+            && awsNodePool_ != com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance()) {
+          getAwsNodePoolBuilder().mergeFrom(value);
         } else {
           awsNodePool_ = value;
         }
-        onChanged();
       } else {
         awsNodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -795,14 +802,13 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAwsNodePool() {
-      if (awsNodePoolBuilder_ == null) {
-        awsNodePool_ = null;
-        onChanged();
-      } else {
-        awsNodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      awsNodePool_ = null;
+      if (awsNodePoolBuilder_ != null) {
+        awsNodePoolBuilder_.dispose();
         awsNodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -818,7 +824,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder getAwsNodePoolBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAwsNodePoolFieldBuilder().getBuilder();
     }
@@ -903,6 +909,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -918,7 +925,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -967,7 +974,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1054,11 +1061,11 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1098,11 +1105,11 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1141,17 +1148,18 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1189,14 +1197,13 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1234,7 +1241,7 @@ public final class UpdateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

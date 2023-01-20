@@ -70,7 +70,9 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VALID_VERSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo>
       validVersions_;
   /**
@@ -406,15 +410,15 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (validVersionsBuilder_ == null) {
         validVersions_ = java.util.Collections.emptyList();
       } else {
         validVersions_ = null;
         validVersionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -442,19 +446,32 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkemulticloud.v1.AttachedServerConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedServerConfig result =
           new com.google.cloud.gkemulticloud.v1.AttachedServerConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AttachedServerConfig result) {
       if (validVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           validVersions_ = java.util.Collections.unmodifiableList(validVersions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.validVersions_ = validVersions_;
       } else {
         result.validVersions_ = validVersionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AttachedServerConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -505,13 +522,14 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (validVersionsBuilder_ == null) {
         if (!other.validVersions_.isEmpty()) {
           if (validVersions_.isEmpty()) {
             validVersions_ = other.validVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureValidVersionsIsMutable();
             validVersions_.addAll(other.validVersions_);
@@ -524,7 +542,7 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
             validVersionsBuilder_.dispose();
             validVersionsBuilder_ = null;
             validVersions_ = other.validVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             validVersionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getValidVersionsFieldBuilder()
@@ -563,7 +581,7 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -660,8 +678,8 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +695,8 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,11 +727,11 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
         validVersions_ = java.util.Collections.emptyList();
 
     private void ensureValidVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         validVersions_ =
             new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo>(
                 validVersions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -948,7 +966,7 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
     public Builder clearValidVersions() {
       if (validVersionsBuilder_ == null) {
         validVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         validVersionsBuilder_.clear();
@@ -1086,7 +1104,7 @@ public final class AttachedServerConfig extends com.google.protobuf.GeneratedMes
                 com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfo.Builder,
                 com.google.cloud.gkemulticloud.v1.AttachedPlatformVersionInfoOrBuilder>(
                 validVersions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         validVersions_ = null;

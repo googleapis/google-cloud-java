@@ -212,6 +212,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.monitoring.v3.TypedValue> values_;
     /**
      *
@@ -325,7 +327,9 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.v3.TimeIntervalOrBuilder getTimeIntervalOrBuilder() {
-      return getTimeInterval();
+      return timeInterval_ == null
+          ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
+          : timeInterval_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -545,6 +549,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (valuesBuilder_ == null) {
           values_ = java.util.Collections.emptyList();
         } else {
@@ -552,10 +557,9 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           valuesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (timeIntervalBuilder_ == null) {
-          timeInterval_ = null;
-        } else {
-          timeInterval_ = null;
+        timeInterval_ = null;
+        if (timeIntervalBuilder_ != null) {
+          timeIntervalBuilder_.dispose();
           timeIntervalBuilder_ = null;
         }
         return this;
@@ -585,7 +589,16 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.TimeSeriesData.PointData buildPartial() {
         com.google.monitoring.v3.TimeSeriesData.PointData result =
             new com.google.monitoring.v3.TimeSeriesData.PointData(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.monitoring.v3.TimeSeriesData.PointData result) {
         if (valuesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             values_ = java.util.Collections.unmodifiableList(values_);
@@ -595,13 +608,14 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.values_ = valuesBuilder_.build();
         }
-        if (timeIntervalBuilder_ == null) {
-          result.timeInterval_ = timeInterval_;
-        } else {
-          result.timeInterval_ = timeIntervalBuilder_.build();
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.TimeSeriesData.PointData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.timeInterval_ =
+              timeIntervalBuilder_ == null ? timeInterval_ : timeIntervalBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -724,7 +738,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   input.readMessage(getTimeIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1112,7 +1126,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the timeInterval field is set.
        */
       public boolean hasTimeInterval() {
-        return timeIntervalBuilder_ != null || timeInterval_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1149,11 +1163,11 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           timeInterval_ = value;
-          onChanged();
         } else {
           timeIntervalBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1169,11 +1183,11 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
           com.google.monitoring.v3.TimeInterval.Builder builderForValue) {
         if (timeIntervalBuilder_ == null) {
           timeInterval_ = builderForValue.build();
-          onChanged();
         } else {
           timeIntervalBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1187,19 +1201,18 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeTimeInterval(com.google.monitoring.v3.TimeInterval value) {
         if (timeIntervalBuilder_ == null) {
-          if (timeInterval_ != null) {
-            timeInterval_ =
-                com.google.monitoring.v3.TimeInterval.newBuilder(timeInterval_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && timeInterval_ != null
+              && timeInterval_ != com.google.monitoring.v3.TimeInterval.getDefaultInstance()) {
+            getTimeIntervalBuilder().mergeFrom(value);
           } else {
             timeInterval_ = value;
           }
-          onChanged();
         } else {
           timeIntervalBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1212,14 +1225,13 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.v3.TimeInterval time_interval = 2;</code>
        */
       public Builder clearTimeInterval() {
-        if (timeIntervalBuilder_ == null) {
-          timeInterval_ = null;
-          onChanged();
-        } else {
-          timeInterval_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        timeInterval_ = null;
+        if (timeIntervalBuilder_ != null) {
+          timeIntervalBuilder_.dispose();
           timeIntervalBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1232,7 +1244,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.v3.TimeInterval time_interval = 2;</code>
        */
       public com.google.monitoring.v3.TimeInterval.Builder getTimeIntervalBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTimeIntervalFieldBuilder().getBuilder();
       }
@@ -1345,6 +1357,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LABEL_VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.LabelValue> labelValues_;
   /**
    *
@@ -1429,6 +1443,8 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POINT_DATA_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeriesData.PointData> pointData_;
   /**
    *
@@ -1708,6 +1724,7 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (labelValuesBuilder_ == null) {
         labelValues_ = java.util.Collections.emptyList();
       } else {
@@ -1749,7 +1766,15 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.TimeSeriesData buildPartial() {
       com.google.monitoring.v3.TimeSeriesData result =
           new com.google.monitoring.v3.TimeSeriesData(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.TimeSeriesData result) {
       if (labelValuesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           labelValues_ = java.util.Collections.unmodifiableList(labelValues_);
@@ -1768,8 +1793,10 @@ public final class TimeSeriesData extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.pointData_ = pointDataBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.TimeSeriesData result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

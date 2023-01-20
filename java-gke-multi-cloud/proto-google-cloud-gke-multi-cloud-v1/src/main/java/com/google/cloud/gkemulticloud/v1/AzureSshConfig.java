@@ -68,7 +68,9 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTHORIZED_KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object authorizedKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizedKey_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authorizedKey_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AzureSshConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureSshConfig result =
           new com.google.cloud.gkemulticloud.v1.AzureSshConfig(this);
-      result.authorizedKey_ = authorizedKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureSshConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authorizedKey_ = authorizedKey_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getAuthorizedKey().isEmpty()) {
         authorizedKey_ = other.authorizedKey_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 authorizedKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +461,8 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object authorizedKey_ = "";
     /**
@@ -517,8 +531,8 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       authorizedKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -536,8 +550,8 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthorizedKey() {
-
       authorizedKey_ = getDefaultInstance().getAuthorizedKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -560,8 +574,8 @@ public final class AzureSshConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authorizedKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

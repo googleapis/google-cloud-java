@@ -83,7 +83,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -158,7 +160,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -207,7 +211,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNIQUE_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object uniqueId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uniqueId_ = "";
   /**
    *
    *
@@ -264,7 +270,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMAIL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object email_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    *
    *
@@ -313,7 +321,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -364,7 +374,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString etag_;
+  private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -385,7 +395,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 8;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -436,7 +448,9 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OAUTH2_CLIENT_ID_FIELD_NUMBER = 9;
-  private volatile java.lang.Object oauth2ClientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oauth2ClientId_ = "";
   /**
    *
    *
@@ -485,7 +499,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLED_FIELD_NUMBER = 11;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -778,24 +792,16 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       projectId_ = "";
-
       uniqueId_ = "";
-
       email_ = "";
-
       displayName_ = "";
-
       etag_ = com.google.protobuf.ByteString.EMPTY;
-
       description_ = "";
-
       oauth2ClientId_ = "";
-
       disabled_ = false;
-
       return this;
     }
 
@@ -823,17 +829,42 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public com.google.iam.admin.v1.ServiceAccount buildPartial() {
       com.google.iam.admin.v1.ServiceAccount result =
           new com.google.iam.admin.v1.ServiceAccount(this);
-      result.name_ = name_;
-      result.projectId_ = projectId_;
-      result.uniqueId_ = uniqueId_;
-      result.email_ = email_;
-      result.displayName_ = displayName_;
-      result.etag_ = etag_;
-      result.description_ = description_;
-      result.oauth2ClientId_ = oauth2ClientId_;
-      result.disabled_ = disabled_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.ServiceAccount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uniqueId_ = uniqueId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.email_ = email_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.oauth2ClientId_ = oauth2ClientId_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.disabled_ = disabled_;
+      }
     }
 
     @java.lang.Override
@@ -883,22 +914,27 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getEmail().isEmpty()) {
         email_ = other.email_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getEtag() != com.google.protobuf.ByteString.EMPTY) {
@@ -906,10 +942,12 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getOauth2ClientId().isEmpty()) {
         oauth2ClientId_ = other.oauth2ClientId_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getDisabled() != false) {
@@ -944,55 +982,55 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 email_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 etag_ = input.readBytes();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             case 66:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
               {
                 oauth2ClientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 88:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             default:
@@ -1011,6 +1049,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1112,8 +1152,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1142,8 +1182,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1177,8 +1217,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1244,8 +1284,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1261,8 +1301,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1283,8 +1323,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1362,8 +1402,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1383,8 +1423,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUniqueId() {
-
       uniqueId_ = getDefaultInstance().getUniqueId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1409,8 +1449,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1476,8 +1516,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       email_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1493,8 +1533,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1515,8 +1555,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       email_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1585,8 +1625,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1603,8 +1643,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1626,8 +1666,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1670,8 +1710,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1690,7 +1730,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearEtag() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       etag_ = getDefaultInstance().getEtag();
       onChanged();
       return this;
@@ -1760,8 +1800,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1778,8 +1818,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1801,8 +1841,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1868,8 +1908,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       oauth2ClientId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1885,8 +1925,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOauth2ClientId() {
-
       oauth2ClientId_ = getDefaultInstance().getOauth2ClientId();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1907,8 +1947,8 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       oauth2ClientId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1944,6 +1984,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1959,7 +2000,7 @@ public final class ServiceAccount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       disabled_ = false;
       onChanged();
       return this;

@@ -74,7 +74,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 1;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -109,14 +109,13 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
   public static final int ALGORITHM_FIELD_NUMBER = 3;
-  private int algorithm_;
+  private int algorithm_ = 0;
   /**
    *
    *
@@ -165,9 +164,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
     return result == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
         : result;
@@ -392,10 +390,9 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       protectionLevel_ = 0;
-
       algorithm_ = 0;
-
       return this;
     }
 
@@ -423,10 +420,21 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
     public com.google.cloud.kms.v1.CryptoKeyVersionTemplate buildPartial() {
       com.google.cloud.kms.v1.CryptoKeyVersionTemplate result =
           new com.google.cloud.kms.v1.CryptoKeyVersionTemplate(this);
-      result.protectionLevel_ = protectionLevel_;
-      result.algorithm_ = algorithm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.CryptoKeyVersionTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.algorithm_ = algorithm_;
+      }
     }
 
     @java.lang.Override
@@ -510,13 +518,13 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
             case 8:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 24:
               {
                 algorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -535,6 +543,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int protectionLevel_ = 0;
     /**
@@ -571,8 +581,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -592,9 +602,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -616,7 +625,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -636,7 +645,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       protectionLevel_ = 0;
       onChanged();
       return this;
@@ -691,8 +700,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
-
       algorithm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -719,9 +728,8 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
       return result == null
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
@@ -753,7 +761,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       algorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -780,7 +788,7 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       algorithm_ = 0;
       onChanged();
       return this;

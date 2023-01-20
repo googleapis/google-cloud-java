@@ -68,7 +68,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BEGIN_OFFSET_FIELD_NUMBER = 2;
-  private int beginOffset_;
+  private int beginOffset_ = 0;
   /**
    *
    *
@@ -339,10 +341,9 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-
       beginOffset_ = 0;
-
       return this;
     }
 
@@ -370,10 +371,21 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1.TextSpan buildPartial() {
       com.google.cloud.language.v1.TextSpan result =
           new com.google.cloud.language.v1.TextSpan(this);
-      result.content_ = content_;
-      result.beginOffset_ = beginOffset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.TextSpan result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.beginOffset_ = beginOffset_;
+      }
     }
 
     @java.lang.Override
@@ -423,6 +435,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.language.v1.TextSpan.getDefaultInstance()) return this;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getBeginOffset() != 0) {
@@ -457,13 +470,13 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 beginOffset_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -482,6 +495,8 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object content_ = "";
     /**
@@ -544,8 +559,8 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -561,8 +576,8 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -583,8 +598,8 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,6 +637,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
     public Builder setBeginOffset(int value) {
 
       beginOffset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -638,7 +654,7 @@ public final class TextSpan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBeginOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       beginOffset_ = 0;
       onChanged();
       return this;

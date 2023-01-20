@@ -74,7 +74,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_IP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceIp_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_IP_FIELD_NUMBER = 2;
-  private volatile java.lang.Object destinationIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationIp_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROTOCOL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object protocol_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object protocol_ = "";
   /**
    *
    *
@@ -221,7 +227,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_PORT_FIELD_NUMBER = 4;
-  private int sourcePort_;
+  private int sourcePort_ = 0;
   /**
    *
    *
@@ -239,7 +245,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_PORT_FIELD_NUMBER = 5;
-  private int destinationPort_;
+  private int destinationPort_ = 0;
   /**
    *
    *
@@ -257,7 +263,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_NETWORK_URI_FIELD_NUMBER = 6;
-  private volatile java.lang.Object sourceNetworkUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceNetworkUri_ = "";
   /**
    *
    *
@@ -306,7 +314,9 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESTINATION_NETWORK_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object destinationNetworkUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationNetworkUri_ = "";
   /**
    *
    *
@@ -607,20 +617,14 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceIp_ = "";
-
       destinationIp_ = "";
-
       protocol_ = "";
-
       sourcePort_ = 0;
-
       destinationPort_ = 0;
-
       sourceNetworkUri_ = "";
-
       destinationNetworkUri_ = "";
-
       return this;
     }
 
@@ -648,15 +652,36 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.EndpointInfo buildPartial() {
       com.google.cloud.networkmanagement.v1.EndpointInfo result =
           new com.google.cloud.networkmanagement.v1.EndpointInfo(this);
-      result.sourceIp_ = sourceIp_;
-      result.destinationIp_ = destinationIp_;
-      result.protocol_ = protocol_;
-      result.sourcePort_ = sourcePort_;
-      result.destinationPort_ = destinationPort_;
-      result.sourceNetworkUri_ = sourceNetworkUri_;
-      result.destinationNetworkUri_ = destinationNetworkUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1.EndpointInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceIp_ = sourceIp_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.destinationIp_ = destinationIp_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.protocol_ = protocol_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sourcePort_ = sourcePort_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.destinationPort_ = destinationPort_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sourceNetworkUri_ = sourceNetworkUri_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.destinationNetworkUri_ = destinationNetworkUri_;
+      }
     }
 
     @java.lang.Override
@@ -707,14 +732,17 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSourceIp().isEmpty()) {
         sourceIp_ = other.sourceIp_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDestinationIp().isEmpty()) {
         destinationIp_ = other.destinationIp_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getProtocol().isEmpty()) {
         protocol_ = other.protocol_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSourcePort() != 0) {
@@ -725,10 +753,12 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSourceNetworkUri().isEmpty()) {
         sourceNetworkUri_ = other.sourceNetworkUri_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDestinationNetworkUri().isEmpty()) {
         destinationNetworkUri_ = other.destinationNetworkUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -760,43 +790,43 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sourceIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 destinationIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 protocol_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 sourcePort_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 destinationPort_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 sourceNetworkUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 destinationNetworkUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -815,6 +845,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourceIp_ = "";
     /**
@@ -877,8 +909,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,8 +926,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceIp() {
-
       sourceIp_ = getDefaultInstance().getSourceIp();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -916,8 +948,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceIp_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -983,8 +1015,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationIp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1000,8 +1032,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestinationIp() {
-
       destinationIp_ = getDefaultInstance().getDestinationIp();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1022,8 +1054,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationIp_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1089,8 +1121,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       protocol_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1106,8 +1138,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-
       protocol_ = getDefaultInstance().getProtocol();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1128,8 +1160,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       protocol_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1165,6 +1197,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setSourcePort(int value) {
 
       sourcePort_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1180,7 +1213,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourcePort() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       sourcePort_ = 0;
       onChanged();
       return this;
@@ -1217,6 +1250,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setDestinationPort(int value) {
 
       destinationPort_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1232,7 +1266,7 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestinationPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       destinationPort_ = 0;
       onChanged();
       return this;
@@ -1299,8 +1333,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceNetworkUri_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1316,8 +1350,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceNetworkUri() {
-
       sourceNetworkUri_ = getDefaultInstance().getSourceNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1338,8 +1372,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceNetworkUri_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1405,8 +1439,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       destinationNetworkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1422,8 +1456,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestinationNetworkUri() {
-
       destinationNetworkUri_ = getDefaultInstance().getDestinationNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1444,8 +1478,8 @@ public final class EndpointInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destinationNetworkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

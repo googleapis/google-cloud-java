@@ -70,7 +70,9 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROXY_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString proxy_;
+  private com.google.protobuf.ByteString proxy_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -147,7 +149,9 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -416,12 +420,10 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       proxy_ = com.google.protobuf.ByteString.EMPTY;
-
       namespace_ = "";
-
       return this;
     }
 
@@ -449,11 +451,24 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.v1beta1.ConnectAgent buildPartial() {
       com.google.cloud.gkehub.v1beta1.ConnectAgent result =
           new com.google.cloud.gkehub.v1beta1.ConnectAgent(this);
-      result.name_ = name_;
-      result.proxy_ = proxy_;
-      result.namespace_ = namespace_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.ConnectAgent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.proxy_ = proxy_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.namespace_ = namespace_;
+      }
     }
 
     @java.lang.Override
@@ -503,6 +518,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1beta1.ConnectAgent.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getProxy() != com.google.protobuf.ByteString.EMPTY) {
@@ -510,6 +526,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -541,19 +558,19 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 proxy_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -572,6 +589,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -643,8 +662,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +682,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +707,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -734,8 +753,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       proxy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -755,7 +774,7 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProxy() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       proxy_ = getDefaultInstance().getProxy();
       onChanged();
       return this;
@@ -831,8 +850,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -851,8 +870,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -876,8 +895,8 @@ public final class ConnectAgent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

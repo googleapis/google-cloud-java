@@ -68,7 +68,7 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTHORIZATION_HEADER_FIELD_NUMBER = 1;
-  private int authorizationHeader_;
+  private int authorizationHeader_ = 0;
   /**
    *
    *
@@ -97,9 +97,8 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.apps.script.type.HttpAuthorizationHeader getAuthorizationHeader() {
-    @SuppressWarnings("deprecation")
     com.google.apps.script.type.HttpAuthorizationHeader result =
-        com.google.apps.script.type.HttpAuthorizationHeader.valueOf(authorizationHeader_);
+        com.google.apps.script.type.HttpAuthorizationHeader.forNumber(authorizationHeader_);
     return result == null
         ? com.google.apps.script.type.HttpAuthorizationHeader.UNRECOGNIZED
         : result;
@@ -305,8 +304,8 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       authorizationHeader_ = 0;
-
       return this;
     }
 
@@ -334,9 +333,18 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.script.type.HttpOptions buildPartial() {
       com.google.apps.script.type.HttpOptions result =
           new com.google.apps.script.type.HttpOptions(this);
-      result.authorizationHeader_ = authorizationHeader_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.HttpOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.authorizationHeader_ = authorizationHeader_;
+      }
     }
 
     @java.lang.Override
@@ -416,7 +424,7 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 authorizationHeader_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -435,6 +443,8 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int authorizationHeader_ = 0;
     /**
@@ -465,8 +475,8 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAuthorizationHeaderValue(int value) {
-
       authorizationHeader_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -483,9 +493,8 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.apps.script.type.HttpAuthorizationHeader getAuthorizationHeader() {
-      @SuppressWarnings("deprecation")
       com.google.apps.script.type.HttpAuthorizationHeader result =
-          com.google.apps.script.type.HttpAuthorizationHeader.valueOf(authorizationHeader_);
+          com.google.apps.script.type.HttpAuthorizationHeader.forNumber(authorizationHeader_);
       return result == null
           ? com.google.apps.script.type.HttpAuthorizationHeader.UNRECOGNIZED
           : result;
@@ -507,7 +516,7 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       authorizationHeader_ = value.getNumber();
       onChanged();
       return this;
@@ -524,7 +533,7 @@ public final class HttpOptions extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationHeader() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       authorizationHeader_ = 0;
       onChanged();
       return this;

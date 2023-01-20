@@ -68,7 +68,9 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -129,7 +131,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COUNT_FIELD_NUMBER = 2;
-  private long count_;
+  private long count_ = 0L;
   /**
    *
    *
@@ -352,10 +354,9 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       count_ = 0L;
-
       return this;
     }
 
@@ -383,10 +384,21 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Accelerator buildPartial() {
       com.google.cloud.lifesciences.v2beta.Accelerator result =
           new com.google.cloud.lifesciences.v2beta.Accelerator(this);
-      result.type_ = type_;
-      result.count_ = count_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Accelerator result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.count_ = count_;
+      }
     }
 
     @java.lang.Override
@@ -437,6 +449,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getCount() != 0L) {
@@ -471,13 +484,13 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 count_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -496,6 +509,8 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
@@ -576,8 +591,8 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +614,8 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -627,8 +642,8 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -664,6 +679,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
     public Builder setCount(long value) {
 
       count_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -679,7 +695,7 @@ public final class Accelerator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       count_ = 0L;
       onChanged();
       return this;

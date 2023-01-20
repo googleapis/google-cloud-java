@@ -181,11 +181,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-    return getTimestamp();
+    return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -1129,14 +1131,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-      } else {
-        timestamp_ = null;
+      bitField0_ = 0;
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
       description_ = "";
-
       if (delayedBuilder_ != null) {
         delayedBuilder_.clear();
       }
@@ -1196,85 +1197,57 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Event buildPartial() {
       com.google.cloud.lifesciences.v2beta.Event result =
           new com.google.cloud.lifesciences.v2beta.Event(this);
-      if (timestampBuilder_ == null) {
-        result.timestamp_ = timestamp_;
-      } else {
-        result.timestamp_ = timestampBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.description_ = description_;
-      if (detailsCase_ == 17) {
-        if (delayedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = delayedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 18) {
-        if (workerAssignedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = workerAssignedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 19) {
-        if (workerReleasedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = workerReleasedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 20) {
-        if (pullStartedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = pullStartedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 21) {
-        if (pullStoppedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = pullStoppedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 22) {
-        if (containerStartedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = containerStartedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 23) {
-        if (containerStoppedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = containerStoppedBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 24) {
-        if (containerKilledBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = containerKilledBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 25) {
-        if (unexpectedExitStatusBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = unexpectedExitStatusBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 26) {
-        if (failedBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = failedBuilder_.build();
-        }
-      }
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Event result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.timestamp_ = timestampBuilder_ == null ? timestamp_ : timestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.lifesciences.v2beta.Event result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 17 && delayedBuilder_ != null) {
+        result.details_ = delayedBuilder_.build();
+      }
+      if (detailsCase_ == 18 && workerAssignedBuilder_ != null) {
+        result.details_ = workerAssignedBuilder_.build();
+      }
+      if (detailsCase_ == 19 && workerReleasedBuilder_ != null) {
+        result.details_ = workerReleasedBuilder_.build();
+      }
+      if (detailsCase_ == 20 && pullStartedBuilder_ != null) {
+        result.details_ = pullStartedBuilder_.build();
+      }
+      if (detailsCase_ == 21 && pullStoppedBuilder_ != null) {
+        result.details_ = pullStoppedBuilder_.build();
+      }
+      if (detailsCase_ == 22 && containerStartedBuilder_ != null) {
+        result.details_ = containerStartedBuilder_.build();
+      }
+      if (detailsCase_ == 23 && containerStoppedBuilder_ != null) {
+        result.details_ = containerStoppedBuilder_.build();
+      }
+      if (detailsCase_ == 24 && containerKilledBuilder_ != null) {
+        result.details_ = containerKilledBuilder_.build();
+      }
+      if (detailsCase_ == 25 && unexpectedExitStatusBuilder_ != null) {
+        result.details_ = unexpectedExitStatusBuilder_.build();
+      }
+      if (detailsCase_ == 26 && failedBuilder_ != null) {
+        result.details_ = failedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1327,6 +1300,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getDetailsCase()) {
@@ -1414,13 +1388,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTimestampFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 138:
@@ -1517,6 +1491,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Timestamp timestamp_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1535,7 +1511,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
-      return timestampBuilder_ != null || timestamp_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1570,11 +1546,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timestamp_ = value;
-        onChanged();
       } else {
         timestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1589,11 +1565,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timestampBuilder_ == null) {
         timestamp_ = builderForValue.build();
-        onChanged();
       } else {
         timestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1607,17 +1583,18 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
-        if (timestamp_ != null) {
-          timestamp_ =
-              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && timestamp_ != null
+            && timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTimestampBuilder().mergeFrom(value);
         } else {
           timestamp_ = value;
         }
-        onChanged();
       } else {
         timestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1630,14 +1607,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp timestamp = 1;</code>
      */
     public Builder clearTimestamp() {
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-        onChanged();
-      } else {
-        timestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1650,7 +1626,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp timestamp = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
@@ -1763,8 +1739,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1782,8 +1758,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1806,8 +1782,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2018,7 +1994,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 17;
       onChanged();
-      ;
       return delayedBuilder_;
     }
 
@@ -2233,7 +2208,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 18;
       onChanged();
-      ;
       return workerAssignedBuilder_;
     }
 
@@ -2448,7 +2422,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 19;
       onChanged();
-      ;
       return workerReleasedBuilder_;
     }
 
@@ -2660,7 +2633,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 20;
       onChanged();
-      ;
       return pullStartedBuilder_;
     }
 
@@ -2872,7 +2844,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 21;
       onChanged();
-      ;
       return pullStoppedBuilder_;
     }
 
@@ -3089,7 +3060,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 22;
       onChanged();
-      ;
       return containerStartedBuilder_;
     }
 
@@ -3306,7 +3276,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 23;
       onChanged();
-      ;
       return containerStoppedBuilder_;
     }
 
@@ -3521,7 +3490,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 24;
       onChanged();
-      ;
       return containerKilledBuilder_;
     }
 
@@ -3757,7 +3725,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 25;
       onChanged();
-      ;
       return unexpectedExitStatusBuilder_;
     }
 
@@ -3967,7 +3934,6 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 26;
       onChanged();
-      ;
       return failedBuilder_;
     }
 

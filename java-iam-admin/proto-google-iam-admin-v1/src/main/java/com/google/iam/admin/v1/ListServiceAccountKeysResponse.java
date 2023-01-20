@@ -69,6 +69,8 @@ public final class ListServiceAccountKeysResponse extends com.google.protobuf.Ge
   }
 
   public static final int KEYS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.iam.admin.v1.ServiceAccountKey> keys_;
   /**
    *
@@ -337,6 +339,7 @@ public final class ListServiceAccountKeysResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (keysBuilder_ == null) {
         keys_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,16 @@ public final class ListServiceAccountKeysResponse extends com.google.protobuf.Ge
     public com.google.iam.admin.v1.ListServiceAccountKeysResponse buildPartial() {
       com.google.iam.admin.v1.ListServiceAccountKeysResponse result =
           new com.google.iam.admin.v1.ListServiceAccountKeysResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.iam.admin.v1.ListServiceAccountKeysResponse result) {
       if (keysBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -381,8 +393,10 @@ public final class ListServiceAccountKeysResponse extends com.google.protobuf.Ge
       } else {
         result.keys_ = keysBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.ListServiceAccountKeysResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

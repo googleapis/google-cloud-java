@@ -69,6 +69,8 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   }
 
   public static final int ALERT_POLICIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.AlertPolicy> alertPolicies_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -191,7 +195,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
   }
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
-  private int totalSize_;
+  private int totalSize_ = 0;
   /**
    *
    *
@@ -426,6 +430,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (alertPoliciesBuilder_ == null) {
         alertPolicies_ = java.util.Collections.emptyList();
       } else {
@@ -434,9 +439,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       totalSize_ = 0;
-
       return this;
     }
 
@@ -464,7 +467,16 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     public com.google.monitoring.v3.ListAlertPoliciesResponse buildPartial() {
       com.google.monitoring.v3.ListAlertPoliciesResponse result =
           new com.google.monitoring.v3.ListAlertPoliciesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.v3.ListAlertPoliciesResponse result) {
       if (alertPoliciesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           alertPolicies_ = java.util.Collections.unmodifiableList(alertPolicies_);
@@ -474,10 +486,16 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       } else {
         result.alertPolicies_ = alertPoliciesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.totalSize_ = totalSize_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ListAlertPoliciesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +573,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getTotalSize() != 0) {
@@ -589,7 +608,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -608,7 +627,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
             case 32:
               {
                 totalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -1050,8 +1069,8 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1069,8 +1088,8 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1093,8 +1112,8 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1132,6 +1151,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
     public Builder setTotalSize(int value) {
 
       totalSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1148,7 +1168,7 @@ public final class ListAlertPoliciesResponse extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalSize_ = 0;
       onChanged();
       return this;

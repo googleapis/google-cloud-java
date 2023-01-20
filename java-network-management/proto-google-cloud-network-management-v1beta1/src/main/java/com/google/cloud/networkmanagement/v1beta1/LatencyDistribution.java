@@ -68,6 +68,8 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LATENCY_PERCENTILES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1beta1.LatencyPercentile>
       latencyPercentiles_;
   /**
@@ -352,6 +354,7 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (latencyPercentilesBuilder_ == null) {
         latencyPercentiles_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,16 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networkmanagement.v1beta1.LatencyDistribution buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.LatencyDistribution result =
           new com.google.cloud.networkmanagement.v1beta1.LatencyDistribution(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.LatencyDistribution result) {
       if (latencyPercentilesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           latencyPercentiles_ = java.util.Collections.unmodifiableList(latencyPercentiles_);
@@ -397,8 +409,11 @@ public final class LatencyDistribution extends com.google.protobuf.GeneratedMess
       } else {
         result.latencyPercentiles_ = latencyPercentilesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkmanagement.v1beta1.LatencyDistribution result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

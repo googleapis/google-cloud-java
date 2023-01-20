@@ -454,6 +454,7 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (goodTotalRatioBuilder_ != null) {
         goodTotalRatioBuilder_.clear();
       }
@@ -489,23 +490,27 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.RequestBasedSli buildPartial() {
       com.google.monitoring.v3.RequestBasedSli result =
           new com.google.monitoring.v3.RequestBasedSli(this);
-      if (methodCase_ == 1) {
-        if (goodTotalRatioBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = goodTotalRatioBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (methodCase_ == 3) {
-        if (distributionCutBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = distributionCutBuilder_.build();
-        }
-      }
-      result.methodCase_ = methodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.RequestBasedSli result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.RequestBasedSli result) {
+      result.methodCase_ = methodCase_;
+      result.method_ = this.method_;
+      if (methodCase_ == 1 && goodTotalRatioBuilder_ != null) {
+        result.method_ = goodTotalRatioBuilder_.build();
+      }
+      if (methodCase_ == 3 && distributionCutBuilder_ != null) {
+        result.method_ = distributionCutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -637,6 +642,8 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.TimeSeriesRatio,
@@ -853,7 +860,6 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       methodCase_ = 1;
       onChanged();
-      ;
       return goodTotalRatioBuilder_;
     }
 
@@ -1090,7 +1096,6 @@ public final class RequestBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       methodCase_ = 3;
       onChanged();
-      ;
       return distributionCutBuilder_;
     }
 

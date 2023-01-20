@@ -70,7 +70,9 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NETWORK_SECURITY_GROUP_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object networkSecurityGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkSecurityGroupId_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONTROL_PLANE_APPLICATION_SECURITY_GROUP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object controlPlaneApplicationSecurityGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object controlPlaneApplicationSecurityGroupId_ = "";
   /**
    *
    *
@@ -385,10 +389,9 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       networkSecurityGroupId_ = "";
-
       controlPlaneApplicationSecurityGroupId_ = "";
-
       return this;
     }
 
@@ -416,10 +419,21 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
     public com.google.cloud.gkemulticloud.v1.AzureClusterResources buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureClusterResources result =
           new com.google.cloud.gkemulticloud.v1.AzureClusterResources(this);
-      result.networkSecurityGroupId_ = networkSecurityGroupId_;
-      result.controlPlaneApplicationSecurityGroupId_ = controlPlaneApplicationSecurityGroupId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureClusterResources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.networkSecurityGroupId_ = networkSecurityGroupId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.controlPlaneApplicationSecurityGroupId_ = controlPlaneApplicationSecurityGroupId_;
+      }
     }
 
     @java.lang.Override
@@ -470,10 +484,12 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getNetworkSecurityGroupId().isEmpty()) {
         networkSecurityGroupId_ = other.networkSecurityGroupId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getControlPlaneApplicationSecurityGroupId().isEmpty()) {
         controlPlaneApplicationSecurityGroupId_ = other.controlPlaneApplicationSecurityGroupId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +521,13 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 networkSecurityGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 controlPlaneApplicationSecurityGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -530,6 +546,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object networkSecurityGroupId_ = "";
     /**
@@ -595,8 +613,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkSecurityGroupId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +631,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNetworkSecurityGroupId() {
-
       networkSecurityGroupId_ = getDefaultInstance().getNetworkSecurityGroupId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -636,8 +654,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkSecurityGroupId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +727,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       controlPlaneApplicationSecurityGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -728,9 +746,9 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearControlPlaneApplicationSecurityGroupId() {
-
       controlPlaneApplicationSecurityGroupId_ =
           getDefaultInstance().getControlPlaneApplicationSecurityGroupId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -754,8 +772,8 @@ public final class AzureClusterResources extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       controlPlaneApplicationSecurityGroupId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

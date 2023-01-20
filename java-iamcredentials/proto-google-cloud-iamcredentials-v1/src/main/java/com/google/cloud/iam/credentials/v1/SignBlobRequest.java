@@ -62,7 +62,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DELEGATES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList delegates_;
   /**
    *
@@ -214,7 +218,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString payload_;
+  private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -445,12 +449,11 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       payload_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -478,16 +481,31 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.iam.credentials.v1.SignBlobRequest buildPartial() {
       com.google.cloud.iam.credentials.v1.SignBlobRequest result =
           new com.google.cloud.iam.credentials.v1.SignBlobRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.delegates_ = delegates_;
-      result.payload_ = payload_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.iam.credentials.v1.SignBlobRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        delegates_ = delegates_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.delegates_ = delegates_;
+    }
+
+    private void buildPartial0(com.google.cloud.iam.credentials.v1.SignBlobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.payload_ = payload_;
+      }
     }
 
     @java.lang.Override
@@ -538,12 +556,13 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -582,7 +601,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -595,7 +614,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
             case 42:
               {
                 payload_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             default:
@@ -693,8 +712,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +734,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +761,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -752,9 +771,9 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -953,7 +972,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1020,8 +1039,8 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       payload_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1037,7 +1056,7 @@ public final class SignBlobRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPayload() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       payload_ = getDefaultInstance().getPayload();
       onChanged();
       return this;

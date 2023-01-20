@@ -80,7 +80,9 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -147,6 +149,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
             io.grafeas.v1.Note.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.Note> notes_;
 
   private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.Note> internalGetNotes() {
@@ -207,8 +210,10 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
    * </code>
    */
   @java.lang.Override
-  public io.grafeas.v1.Note getNotesOrDefault(
-      java.lang.String key, io.grafeas.v1.Note defaultValue) {
+  public /* nullable */ io.grafeas.v1.Note getNotesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      io.grafeas.v1.Note defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -469,8 +474,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       internalGetMutableNotes().clear();
       return this;
     }
@@ -499,12 +504,22 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     public io.grafeas.v1.BatchCreateNotesRequest buildPartial() {
       io.grafeas.v1.BatchCreateNotesRequest result =
           new io.grafeas.v1.BatchCreateNotesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      result.notes_ = internalGetNotes();
-      result.notes_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.BatchCreateNotesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.notes_ = internalGetNotes();
+        result.notes_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -554,9 +569,11 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       if (other == io.grafeas.v1.BatchCreateNotesRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableNotes().mergeFrom(other.internalGetNotes());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -586,7 +603,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -595,6 +612,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
                     input.readMessage(
                         NotesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableNotes().getMutableMap().put(notes__.getKey(), notes__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -686,8 +704,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,8 +724,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -731,8 +749,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,14 +766,14 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
 
     private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1.Note>
         internalGetMutableNotes() {
-      onChanged();
-      ;
       if (notes_ == null) {
         notes_ = com.google.protobuf.MapField.newMapField(NotesDefaultEntryHolder.defaultEntry);
       }
       if (!notes_.isMutable()) {
         notes_ = notes_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return notes_;
     }
 
@@ -813,8 +831,10 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      * </code>
      */
     @java.lang.Override
-    public io.grafeas.v1.Note getNotesOrDefault(
-        java.lang.String key, io.grafeas.v1.Note defaultValue) {
+    public /* nullable */ io.grafeas.v1.Note getNotesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        io.grafeas.v1.Note defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -845,6 +865,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     }
 
     public Builder clearNotes() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableNotes().getMutableMap().clear();
       return this;
     }
@@ -869,6 +890,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1.Note> getMutableNotes() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableNotes().getMutableMap();
     }
     /**
@@ -889,8 +911,8 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableNotes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -906,6 +928,7 @@ public final class BatchCreateNotesRequest extends com.google.protobuf.Generated
      */
     public Builder putAllNotes(java.util.Map<java.lang.String, io.grafeas.v1.Note> values) {
       internalGetMutableNotes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

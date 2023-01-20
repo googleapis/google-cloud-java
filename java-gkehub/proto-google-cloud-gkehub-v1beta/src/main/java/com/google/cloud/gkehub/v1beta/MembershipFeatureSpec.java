@@ -379,6 +379,7 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (configmanagementBuilder_ != null) {
         configmanagementBuilder_.clear();
       }
@@ -411,16 +412,24 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
     public com.google.cloud.gkehub.v1beta.MembershipFeatureSpec buildPartial() {
       com.google.cloud.gkehub.v1beta.MembershipFeatureSpec result =
           new com.google.cloud.gkehub.v1beta.MembershipFeatureSpec(this);
-      if (featureSpecCase_ == 106) {
-        if (configmanagementBuilder_ == null) {
-          result.featureSpec_ = featureSpec_;
-        } else {
-          result.featureSpec_ = configmanagementBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.featureSpecCase_ = featureSpecCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta.MembershipFeatureSpec result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.gkehub.v1beta.MembershipFeatureSpec result) {
+      result.featureSpecCase_ = featureSpecCase_;
+      result.featureSpec_ = this.featureSpec_;
+      if (featureSpecCase_ == 106 && configmanagementBuilder_ != null) {
+        result.featureSpec_ = configmanagementBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -543,6 +552,8 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.MembershipSpec,
@@ -766,7 +777,6 @@ public final class MembershipFeatureSpec extends com.google.protobuf.GeneratedMe
       }
       featureSpecCase_ = 106;
       onChanged();
-      ;
       return configmanagementBuilder_;
     }
 

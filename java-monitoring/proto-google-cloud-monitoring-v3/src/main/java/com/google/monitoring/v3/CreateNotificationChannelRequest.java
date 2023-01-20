@@ -69,7 +69,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -184,7 +186,9 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelOrBuilder() {
-    return getNotificationChannel();
+    return notificationChannel_ == null
+        ? com.google.monitoring.v3.NotificationChannel.getDefaultInstance()
+        : notificationChannel_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -399,12 +403,11 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (notificationChannelBuilder_ == null) {
-        notificationChannel_ = null;
-      } else {
-        notificationChannel_ = null;
+      notificationChannel_ = null;
+      if (notificationChannelBuilder_ != null) {
+        notificationChannelBuilder_.dispose();
         notificationChannelBuilder_ = null;
       }
       return this;
@@ -434,14 +437,24 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
     public com.google.monitoring.v3.CreateNotificationChannelRequest buildPartial() {
       com.google.monitoring.v3.CreateNotificationChannelRequest result =
           new com.google.monitoring.v3.CreateNotificationChannelRequest(this);
-      result.name_ = name_;
-      if (notificationChannelBuilder_ == null) {
-        result.notificationChannel_ = notificationChannel_;
-      } else {
-        result.notificationChannel_ = notificationChannelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateNotificationChannelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.notificationChannel_ =
+            notificationChannelBuilder_ == null
+                ? notificationChannel_
+                : notificationChannelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -492,6 +505,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasNotificationChannel()) {
@@ -527,13 +541,13 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
               {
                 input.readMessage(
                     getNotificationChannelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -552,6 +566,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -638,8 +654,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +679,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +709,8 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,7 +735,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * @return Whether the notificationChannel field is set.
      */
     public boolean hasNotificationChannel() {
-      return notificationChannelBuilder_ != null || notificationChannel_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -760,11 +776,11 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         notificationChannel_ = value;
-        onChanged();
       } else {
         notificationChannelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +798,11 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
         com.google.monitoring.v3.NotificationChannel.Builder builderForValue) {
       if (notificationChannelBuilder_ == null) {
         notificationChannel_ = builderForValue.build();
-        onChanged();
       } else {
         notificationChannelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -802,19 +818,19 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      */
     public Builder mergeNotificationChannel(com.google.monitoring.v3.NotificationChannel value) {
       if (notificationChannelBuilder_ == null) {
-        if (notificationChannel_ != null) {
-          notificationChannel_ =
-              com.google.monitoring.v3.NotificationChannel.newBuilder(notificationChannel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && notificationChannel_ != null
+            && notificationChannel_
+                != com.google.monitoring.v3.NotificationChannel.getDefaultInstance()) {
+          getNotificationChannelBuilder().mergeFrom(value);
         } else {
           notificationChannel_ = value;
         }
-        onChanged();
       } else {
         notificationChannelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,14 +845,13 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearNotificationChannel() {
-      if (notificationChannelBuilder_ == null) {
-        notificationChannel_ = null;
-        onChanged();
-      } else {
-        notificationChannel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      notificationChannel_ = null;
+      if (notificationChannelBuilder_ != null) {
+        notificationChannelBuilder_.dispose();
         notificationChannelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -851,7 +866,7 @@ public final class CreateNotificationChannelRequest extends com.google.protobuf.
      * </code>
      */
     public com.google.monitoring.v3.NotificationChannel.Builder getNotificationChannelBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNotificationChannelFieldBuilder().getBuilder();
     }

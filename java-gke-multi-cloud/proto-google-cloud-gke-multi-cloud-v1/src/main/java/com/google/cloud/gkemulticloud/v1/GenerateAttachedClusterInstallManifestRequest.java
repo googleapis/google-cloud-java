@@ -74,7 +74,9 @@ public final class GenerateAttachedClusterInstallManifestRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class GenerateAttachedClusterInstallManifestRequest
   }
 
   public static final int ATTACHED_CLUSTER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object attachedClusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object attachedClusterId_ = "";
   /**
    *
    *
@@ -206,7 +210,9 @@ public final class GenerateAttachedClusterInstallManifestRequest
   }
 
   public static final int PLATFORM_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object platformVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object platformVersion_ = "";
   /**
    *
    *
@@ -488,12 +494,10 @@ public final class GenerateAttachedClusterInstallManifestRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       attachedClusterId_ = "";
-
       platformVersion_ = "";
-
       return this;
     }
 
@@ -525,11 +529,25 @@ public final class GenerateAttachedClusterInstallManifestRequest
         buildPartial() {
       com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest result =
           new com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest(this);
-      result.parent_ = parent_;
-      result.attachedClusterId_ = attachedClusterId_;
-      result.platformVersion_ = platformVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.attachedClusterId_ = attachedClusterId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.platformVersion_ = platformVersion_;
+      }
     }
 
     @java.lang.Override
@@ -586,14 +604,17 @@ public final class GenerateAttachedClusterInstallManifestRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAttachedClusterId().isEmpty()) {
         attachedClusterId_ = other.attachedClusterId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPlatformVersion().isEmpty()) {
         platformVersion_ = other.platformVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -625,19 +646,19 @@ public final class GenerateAttachedClusterInstallManifestRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 attachedClusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 platformVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -656,6 +677,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -739,8 +762,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -763,8 +786,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -792,8 +815,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -889,8 +912,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       attachedClusterId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -916,8 +939,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * @return This builder for chaining.
      */
     public Builder clearAttachedClusterId() {
-
       attachedClusterId_ = getDefaultInstance().getAttachedClusterId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -948,8 +971,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       attachedClusterId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1024,8 +1047,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1044,8 +1067,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
      * @return This builder for chaining.
      */
     public Builder clearPlatformVersion() {
-
       platformVersion_ = getDefaultInstance().getPlatformVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1069,8 +1092,8 @@ public final class GenerateAttachedClusterInstallManifestRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

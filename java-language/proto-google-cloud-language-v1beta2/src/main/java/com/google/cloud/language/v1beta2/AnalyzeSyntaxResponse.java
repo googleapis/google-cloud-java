@@ -70,6 +70,8 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SENTENCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Sentence> sentences_;
   /**
    *
@@ -139,6 +141,8 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TOKENS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Token> tokens_;
   /**
    *
@@ -208,7 +212,9 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -480,6 +486,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (sentencesBuilder_ == null) {
         sentences_ = java.util.Collections.emptyList();
       } else {
@@ -495,7 +502,6 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       language_ = "";
-
       return this;
     }
 
@@ -523,7 +529,16 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse buildPartial() {
       com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result =
           new com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result) {
       if (sentencesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
@@ -542,9 +557,13 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.tokens_ = tokensBuilder_.build();
       }
-      result.language_ = language_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.language_ = language_;
+      }
     }
 
     @java.lang.Override
@@ -649,6 +668,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -706,7 +726,7 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
             case 26:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1494,8 +1514,8 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1513,8 +1533,8 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1537,8 +1557,8 @@ public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

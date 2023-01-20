@@ -69,7 +69,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TEMPLATE_LIBRARY_INSTALLED_FIELD_NUMBER = 2;
-  private boolean templateLibraryInstalled_;
+  private boolean templateLibraryInstalled_ = false;
   /**
    *
    *
@@ -122,7 +122,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AUDIT_INTERVAL_SECONDS_FIELD_NUMBER = 3;
-  private long auditIntervalSeconds_;
+  private long auditIntervalSeconds_ = 0L;
   /**
    *
    *
@@ -157,6 +157,8 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EXEMPTABLE_NAMESPACES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList exemptableNamespaces_;
   /**
    *
@@ -222,7 +224,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REFERENTIAL_RULES_ENABLED_FIELD_NUMBER = 5;
-  private boolean referentialRulesEnabled_;
+  private boolean referentialRulesEnabled_ = false;
   /**
    *
    *
@@ -241,7 +243,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int LOG_DENIES_ENABLED_FIELD_NUMBER = 6;
-  private boolean logDeniesEnabled_;
+  private boolean logDeniesEnabled_ = false;
   /**
    *
    *
@@ -519,18 +521,14 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       templateLibraryInstalled_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       auditIntervalSeconds_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000002);
       exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       referentialRulesEnabled_ = false;
-
       logDeniesEnabled_ = false;
-
       return this;
     }
 
@@ -559,27 +557,45 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyController buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.PolicyController result =
           new com.google.cloud.gkehub.configmanagement.v1beta.PolicyController(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyController result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        exemptableNamespaces_ = exemptableNamespaces_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.exemptableNamespaces_ = exemptableNamespaces_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyController result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.enabled_ = enabled_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.templateLibraryInstalled_ = templateLibraryInstalled_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.auditIntervalSeconds_ = auditIntervalSeconds_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        exemptableNamespaces_ = exemptableNamespaces_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.referentialRulesEnabled_ = referentialRulesEnabled_;
       }
-      result.exemptableNamespaces_ = exemptableNamespaces_;
-      result.referentialRulesEnabled_ = referentialRulesEnabled_;
-      result.logDeniesEnabled_ = logDeniesEnabled_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.logDeniesEnabled_ = logDeniesEnabled_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -642,7 +658,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
       if (!other.exemptableNamespaces_.isEmpty()) {
         if (exemptableNamespaces_.isEmpty()) {
           exemptableNamespaces_ = other.exemptableNamespaces_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureExemptableNamespacesIsMutable();
           exemptableNamespaces_.addAll(other.exemptableNamespaces_);
@@ -684,19 +700,19 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 templateLibraryInstalled_ = input.readBool();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 auditIntervalSeconds_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -709,13 +725,13 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
             case 40:
               {
                 referentialRulesEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 logDeniesEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -772,6 +788,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,7 +806,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -809,7 +826,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTemplateLibraryInstalled() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -839,8 +856,9 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setTemplateLibraryInstalled(boolean value) {
-      bitField0_ |= 0x00000001;
+
       templateLibraryInstalled_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -856,7 +874,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTemplateLibraryInstalled() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       templateLibraryInstalled_ = false;
       onChanged();
       return this;
@@ -877,7 +895,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAuditIntervalSeconds() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -909,8 +927,9 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setAuditIntervalSeconds(long value) {
-      bitField0_ |= 0x00000002;
+
       auditIntervalSeconds_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -927,7 +946,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAuditIntervalSeconds() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       auditIntervalSeconds_ = 0L;
       onChanged();
       return this;
@@ -937,9 +956,9 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExemptableNamespacesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         exemptableNamespaces_ = new com.google.protobuf.LazyStringArrayList(exemptableNamespaces_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1082,7 +1101,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearExemptableNamespaces() {
       exemptableNamespaces_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1143,6 +1162,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public Builder setReferentialRulesEnabled(boolean value) {
 
       referentialRulesEnabled_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1159,7 +1179,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReferentialRulesEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       referentialRulesEnabled_ = false;
       onChanged();
       return this;
@@ -1196,6 +1216,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
     public Builder setLogDeniesEnabled(boolean value) {
 
       logDeniesEnabled_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1211,7 +1232,7 @@ public final class PolicyController extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLogDeniesEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       logDeniesEnabled_ = false;
       onChanged();
       return this;

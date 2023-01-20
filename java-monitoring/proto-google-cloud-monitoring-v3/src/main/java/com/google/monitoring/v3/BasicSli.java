@@ -638,7 +638,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getThresholdOrBuilder() {
-      return getThreshold();
+      return threshold_ == null ? com.google.protobuf.Duration.getDefaultInstance() : threshold_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -845,10 +845,10 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (thresholdBuilder_ == null) {
-          threshold_ = null;
-        } else {
-          threshold_ = null;
+        bitField0_ = 0;
+        threshold_ = null;
+        if (thresholdBuilder_ != null) {
+          thresholdBuilder_.dispose();
           thresholdBuilder_ = null;
         }
         return this;
@@ -878,13 +878,18 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.BasicSli.LatencyCriteria buildPartial() {
         com.google.monitoring.v3.BasicSli.LatencyCriteria result =
             new com.google.monitoring.v3.BasicSli.LatencyCriteria(this);
-        if (thresholdBuilder_ == null) {
-          result.threshold_ = threshold_;
-        } else {
-          result.threshold_ = thresholdBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.BasicSli.LatencyCriteria result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.threshold_ = thresholdBuilder_ == null ? threshold_ : thresholdBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -967,7 +972,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
               case 26:
                 {
                   input.readMessage(getThresholdFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 26
               default:
@@ -986,6 +991,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Duration threshold_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1006,7 +1013,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the threshold field is set.
        */
       public boolean hasThreshold() {
-        return thresholdBuilder_ != null || threshold_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1045,11 +1052,11 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           threshold_ = value;
-          onChanged();
         } else {
           thresholdBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1065,11 +1072,11 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       public Builder setThreshold(com.google.protobuf.Duration.Builder builderForValue) {
         if (thresholdBuilder_ == null) {
           threshold_ = builderForValue.build();
-          onChanged();
         } else {
           thresholdBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1084,17 +1091,18 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeThreshold(com.google.protobuf.Duration value) {
         if (thresholdBuilder_ == null) {
-          if (threshold_ != null) {
-            threshold_ =
-                com.google.protobuf.Duration.newBuilder(threshold_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && threshold_ != null
+              && threshold_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getThresholdBuilder().mergeFrom(value);
           } else {
             threshold_ = value;
           }
-          onChanged();
         } else {
           thresholdBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1108,14 +1116,13 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration threshold = 3;</code>
        */
       public Builder clearThreshold() {
-        if (thresholdBuilder_ == null) {
-          threshold_ = null;
-          onChanged();
-        } else {
-          threshold_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        threshold_ = null;
+        if (thresholdBuilder_ != null) {
+          thresholdBuilder_.dispose();
           thresholdBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1129,7 +1136,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.protobuf.Duration threshold = 3;</code>
        */
       public com.google.protobuf.Duration.Builder getThresholdBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getThresholdFieldBuilder().getBuilder();
       }
@@ -1291,6 +1298,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METHOD_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList method_;
   /**
    *
@@ -1368,6 +1377,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList location_;
   /**
    *
@@ -1445,6 +1456,8 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList version_;
   /**
    *
@@ -1908,6 +1921,7 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       method_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       location_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1948,7 +1962,16 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.BasicSli buildPartial() {
       com.google.monitoring.v3.BasicSli result = new com.google.monitoring.v3.BasicSli(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.BasicSli result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         method_ = method_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1964,23 +1987,21 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.version_ = version_;
-      if (sliCriteriaCase_ == 2) {
-        if (availabilityBuilder_ == null) {
-          result.sliCriteria_ = sliCriteria_;
-        } else {
-          result.sliCriteria_ = availabilityBuilder_.build();
-        }
-      }
-      if (sliCriteriaCase_ == 3) {
-        if (latencyBuilder_ == null) {
-          result.sliCriteria_ = sliCriteria_;
-        } else {
-          result.sliCriteria_ = latencyBuilder_.build();
-        }
-      }
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.BasicSli result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.BasicSli result) {
       result.sliCriteriaCase_ = sliCriteriaCase_;
-      onBuilt();
-      return result;
+      result.sliCriteria_ = this.sliCriteria_;
+      if (sliCriteriaCase_ == 2 && availabilityBuilder_ != null) {
+        result.sliCriteria_ = availabilityBuilder_.build();
+      }
+      if (sliCriteriaCase_ == 3 && latencyBuilder_ != null) {
+        result.sliCriteria_ = latencyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2996,7 +3017,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       sliCriteriaCase_ = 2;
       onChanged();
-      ;
       return availabilityBuilder_;
     }
 
@@ -3216,7 +3236,6 @@ public final class BasicSli extends com.google.protobuf.GeneratedMessageV3
       }
       sliCriteriaCase_ = 3;
       onChanged();
-      ;
       return latencyBuilder_;
     }
 

@@ -70,7 +70,9 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourcePath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourcePath_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object resourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceName_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_NAMESPACE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object resourceNamespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceNamespace_ = "";
   /**
    *
    *
@@ -262,7 +268,9 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKindOrBuilder
       getResourceGvkOrBuilder() {
-    return getResourceGvk();
+    return resourceGvk_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind.getDefaultInstance()
+        : resourceGvk_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -495,16 +503,13 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourcePath_ = "";
-
       resourceName_ = "";
-
       resourceNamespace_ = "";
-
-      if (resourceGvkBuilder_ == null) {
-        resourceGvk_ = null;
-      } else {
-        resourceGvk_ = null;
+      resourceGvk_ = null;
+      if (resourceGvkBuilder_ != null) {
+        resourceGvkBuilder_.dispose();
         resourceGvkBuilder_ = null;
       }
       return this;
@@ -535,16 +540,29 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource result =
           new com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource(this);
-      result.sourcePath_ = sourcePath_;
-      result.resourceName_ = resourceName_;
-      result.resourceNamespace_ = resourceNamespace_;
-      if (resourceGvkBuilder_ == null) {
-        result.resourceGvk_ = resourceGvk_;
-      } else {
-        result.resourceGvk_ = resourceGvkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourcePath_ = sourcePath_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceName_ = resourceName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceNamespace_ = resourceNamespace_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resourceGvk_ =
+            resourceGvkBuilder_ == null ? resourceGvk_ : resourceGvkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -596,14 +614,17 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSourcePath().isEmpty()) {
         sourcePath_ = other.sourcePath_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getResourceName().isEmpty()) {
         resourceName_ = other.resourceName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getResourceNamespace().isEmpty()) {
         resourceNamespace_ = other.resourceNamespace_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasResourceGvk()) {
@@ -638,25 +659,25 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sourcePath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 resourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 resourceNamespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getResourceGvkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -675,6 +696,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sourcePath_ = "";
     /**
@@ -737,8 +760,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourcePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -754,8 +777,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourcePath() {
-
       sourcePath_ = getDefaultInstance().getSourcePath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -776,8 +799,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourcePath_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -843,8 +866,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -860,8 +883,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceName() {
-
       resourceName_ = getDefaultInstance().getResourceName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -882,8 +905,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -949,8 +972,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceNamespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -966,8 +989,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceNamespace() {
-
       resourceNamespace_ = getDefaultInstance().getResourceNamespace();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -988,8 +1011,8 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceNamespace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1012,7 +1035,7 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceGvk field is set.
      */
     public boolean hasResourceGvk() {
-      return resourceGvkBuilder_ != null || resourceGvk_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1050,11 +1073,11 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resourceGvk_ = value;
-        onChanged();
       } else {
         resourceGvkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1070,11 +1093,11 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind.Builder builderForValue) {
       if (resourceGvkBuilder_ == null) {
         resourceGvk_ = builderForValue.build();
-        onChanged();
       } else {
         resourceGvkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1089,20 +1112,20 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeResourceGvk(
         com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind value) {
       if (resourceGvkBuilder_ == null) {
-        if (resourceGvk_ != null) {
-          resourceGvk_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind.newBuilder(
-                      resourceGvk_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && resourceGvk_ != null
+            && resourceGvk_
+                != com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind
+                    .getDefaultInstance()) {
+          getResourceGvkBuilder().mergeFrom(value);
         } else {
           resourceGvk_ = value;
         }
-        onChanged();
       } else {
         resourceGvkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1115,14 +1138,13 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind resource_gvk = 4;</code>
      */
     public Builder clearResourceGvk() {
-      if (resourceGvkBuilder_ == null) {
-        resourceGvk_ = null;
-        onChanged();
-      } else {
-        resourceGvk_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resourceGvk_ = null;
+      if (resourceGvkBuilder_ != null) {
+        resourceGvkBuilder_.dispose();
         resourceGvkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1136,7 +1158,7 @@ public final class ErrorResource extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.GroupVersionKind.Builder
         getResourceGvkBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResourceGvkFieldBuilder().getBuilder();
     }

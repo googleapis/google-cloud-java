@@ -73,7 +73,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
   }
 
   public static final int HNC_FIELD_NUMBER = 1;
-  private int hnc_;
+  private int hnc_ = 0;
   /**
    *
    *
@@ -102,16 +102,15 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getHnc() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(hnc_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(hnc_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int EXTENSION_FIELD_NUMBER = 2;
-  private int extension_;
+  private int extension_ = 0;
   /**
    *
    *
@@ -140,9 +139,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getExtension() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(extension_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(extension_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
@@ -380,10 +378,9 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hnc_ = 0;
-
       extension_ = 0;
-
       return this;
     }
 
@@ -417,10 +414,22 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerDeploymentState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerDeploymentState(
               this);
-      result.hnc_ = hnc_;
-      result.extension_ = extension_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.HierarchyControllerDeploymentState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hnc_ = hnc_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.extension_ = extension_;
+      }
     }
 
     @java.lang.Override
@@ -510,13 +519,13 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
             case 8:
               {
                 hnc_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 extension_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -535,6 +544,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int hnc_ = 0;
     /**
@@ -565,8 +576,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setHncValue(int value) {
-
       hnc_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -583,9 +594,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getHnc() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(hnc_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(hnc_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -606,7 +616,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       hnc_ = value.getNumber();
       onChanged();
       return this;
@@ -623,7 +633,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearHnc() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hnc_ = 0;
       onChanged();
       return this;
@@ -658,8 +668,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setExtensionValue(int value) {
-
       extension_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -676,9 +686,8 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getExtension() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(extension_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(extension_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -700,7 +709,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       extension_ = value.getNumber();
       onChanged();
       return this;
@@ -717,7 +726,7 @@ public final class HierarchyControllerDeploymentState extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearExtension() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       extension_ = 0;
       onChanged();
       return this;

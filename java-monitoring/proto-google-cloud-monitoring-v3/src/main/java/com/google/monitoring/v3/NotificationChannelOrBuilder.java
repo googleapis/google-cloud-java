@@ -193,7 +193,6 @@ public interface NotificationChannelOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -283,7 +282,6 @@ public interface NotificationChannelOrBuilder
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
   /* nullable */
   java.lang.String getUserLabelsOrDefault(
       java.lang.String key,

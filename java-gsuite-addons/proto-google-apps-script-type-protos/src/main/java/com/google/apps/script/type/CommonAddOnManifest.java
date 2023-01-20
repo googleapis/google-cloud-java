@@ -70,7 +70,9 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LOGO_URL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object logoUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logoUrl_ = "";
   /**
    *
    *
@@ -212,7 +216,9 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.apps.script.type.LayoutPropertiesOrBuilder getLayoutPropertiesOrBuilder() {
-    return getLayoutProperties();
+    return layoutProperties_ == null
+        ? com.google.apps.script.type.LayoutProperties.getDefaultInstance()
+        : layoutProperties_;
   }
 
   public static final int ADD_ON_WIDGET_SET_FIELD_NUMBER = 4;
@@ -263,11 +269,13 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.apps.script.type.AddOnWidgetSetOrBuilder getAddOnWidgetSetOrBuilder() {
-    return getAddOnWidgetSet();
+    return addOnWidgetSet_ == null
+        ? com.google.apps.script.type.AddOnWidgetSet.getDefaultInstance()
+        : addOnWidgetSet_;
   }
 
   public static final int USE_LOCALE_FROM_APP_FIELD_NUMBER = 5;
-  private boolean useLocaleFromApp_;
+  private boolean useLocaleFromApp_ = false;
   /**
    *
    *
@@ -338,10 +346,14 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.apps.script.type.HomepageExtensionPointOrBuilder getHomepageTriggerOrBuilder() {
-    return getHomepageTrigger();
+    return homepageTrigger_ == null
+        ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
+        : homepageTrigger_;
   }
 
   public static final int UNIVERSAL_ACTIONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.UniversalActionExtensionPoint>
       universalActions_;
   /**
@@ -497,7 +509,9 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.ListValueOrBuilder getOpenLinkUrlPrefixesOrBuilder() {
-    return getOpenLinkUrlPrefixes();
+    return openLinkUrlPrefixes_ == null
+        ? com.google.protobuf.ListValue.getDefaultInstance()
+        : openLinkUrlPrefixes_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -782,28 +796,23 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       logoUrl_ = "";
-
-      if (layoutPropertiesBuilder_ == null) {
-        layoutProperties_ = null;
-      } else {
-        layoutProperties_ = null;
+      layoutProperties_ = null;
+      if (layoutPropertiesBuilder_ != null) {
+        layoutPropertiesBuilder_.dispose();
         layoutPropertiesBuilder_ = null;
       }
-      if (addOnWidgetSetBuilder_ == null) {
-        addOnWidgetSet_ = null;
-      } else {
-        addOnWidgetSet_ = null;
+      addOnWidgetSet_ = null;
+      if (addOnWidgetSetBuilder_ != null) {
+        addOnWidgetSetBuilder_.dispose();
         addOnWidgetSetBuilder_ = null;
       }
       useLocaleFromApp_ = false;
-
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-      } else {
-        homepageTrigger_ = null;
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
       if (universalActionsBuilder_ == null) {
@@ -812,11 +821,10 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         universalActions_ = null;
         universalActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (openLinkUrlPrefixesBuilder_ == null) {
-        openLinkUrlPrefixes_ = null;
-      } else {
-        openLinkUrlPrefixes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      openLinkUrlPrefixes_ = null;
+      if (openLinkUrlPrefixesBuilder_ != null) {
+        openLinkUrlPrefixesBuilder_.dispose();
         openLinkUrlPrefixesBuilder_ = null;
       }
       return this;
@@ -846,41 +854,56 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public com.google.apps.script.type.CommonAddOnManifest buildPartial() {
       com.google.apps.script.type.CommonAddOnManifest result =
           new com.google.apps.script.type.CommonAddOnManifest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.logoUrl_ = logoUrl_;
-      if (layoutPropertiesBuilder_ == null) {
-        result.layoutProperties_ = layoutProperties_;
-      } else {
-        result.layoutProperties_ = layoutPropertiesBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (addOnWidgetSetBuilder_ == null) {
-        result.addOnWidgetSet_ = addOnWidgetSet_;
-      } else {
-        result.addOnWidgetSet_ = addOnWidgetSetBuilder_.build();
-      }
-      result.useLocaleFromApp_ = useLocaleFromApp_;
-      if (homepageTriggerBuilder_ == null) {
-        result.homepageTrigger_ = homepageTrigger_;
-      } else {
-        result.homepageTrigger_ = homepageTriggerBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.apps.script.type.CommonAddOnManifest result) {
       if (universalActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           universalActions_ = java.util.Collections.unmodifiableList(universalActions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.universalActions_ = universalActions_;
       } else {
         result.universalActions_ = universalActionsBuilder_.build();
       }
-      if (openLinkUrlPrefixesBuilder_ == null) {
-        result.openLinkUrlPrefixes_ = openLinkUrlPrefixes_;
-      } else {
-        result.openLinkUrlPrefixes_ = openLinkUrlPrefixesBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.apps.script.type.CommonAddOnManifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.logoUrl_ = logoUrl_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.layoutProperties_ =
+            layoutPropertiesBuilder_ == null ? layoutProperties_ : layoutPropertiesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.addOnWidgetSet_ =
+            addOnWidgetSetBuilder_ == null ? addOnWidgetSet_ : addOnWidgetSetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.useLocaleFromApp_ = useLocaleFromApp_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.homepageTrigger_ =
+            homepageTriggerBuilder_ == null ? homepageTrigger_ : homepageTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.openLinkUrlPrefixes_ =
+            openLinkUrlPrefixesBuilder_ == null
+                ? openLinkUrlPrefixes_
+                : openLinkUrlPrefixesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -931,10 +954,12 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLogoUrl().isEmpty()) {
         logoUrl_ = other.logoUrl_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasLayoutProperties()) {
@@ -953,7 +978,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         if (!other.universalActions_.isEmpty()) {
           if (universalActions_.isEmpty()) {
             universalActions_ = other.universalActions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureUniversalActionsIsMutable();
             universalActions_.addAll(other.universalActions_);
@@ -966,7 +991,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             universalActionsBuilder_.dispose();
             universalActionsBuilder_ = null;
             universalActions_ = other.universalActions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             universalActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUniversalActionsFieldBuilder()
@@ -1008,38 +1033,38 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 logoUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getLayoutPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getAddOnWidgetSetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 useLocaleFromApp_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getHomepageTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1060,7 +1085,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getOpenLinkUrlPrefixesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -1143,8 +1168,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1160,8 +1185,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1182,8 +1207,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1249,8 +1274,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1266,8 +1291,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLogoUrl() {
-
       logoUrl_ = getDefaultInstance().getLogoUrl();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1288,8 +1313,8 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1312,7 +1337,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return Whether the layoutProperties field is set.
      */
     public boolean hasLayoutProperties() {
-      return layoutPropertiesBuilder_ != null || layoutProperties_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1349,11 +1374,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         layoutProperties_ = value;
-        onChanged();
       } else {
         layoutPropertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1369,11 +1394,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         com.google.apps.script.type.LayoutProperties.Builder builderForValue) {
       if (layoutPropertiesBuilder_ == null) {
         layoutProperties_ = builderForValue.build();
-        onChanged();
       } else {
         layoutPropertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1387,19 +1412,19 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeLayoutProperties(com.google.apps.script.type.LayoutProperties value) {
       if (layoutPropertiesBuilder_ == null) {
-        if (layoutProperties_ != null) {
-          layoutProperties_ =
-              com.google.apps.script.type.LayoutProperties.newBuilder(layoutProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && layoutProperties_ != null
+            && layoutProperties_
+                != com.google.apps.script.type.LayoutProperties.getDefaultInstance()) {
+          getLayoutPropertiesBuilder().mergeFrom(value);
         } else {
           layoutProperties_ = value;
         }
-        onChanged();
       } else {
         layoutPropertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1412,14 +1437,13 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.LayoutProperties layout_properties = 3;</code>
      */
     public Builder clearLayoutProperties() {
-      if (layoutPropertiesBuilder_ == null) {
-        layoutProperties_ = null;
-        onChanged();
-      } else {
-        layoutProperties_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      layoutProperties_ = null;
+      if (layoutPropertiesBuilder_ != null) {
+        layoutPropertiesBuilder_.dispose();
         layoutPropertiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1432,7 +1456,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.LayoutProperties layout_properties = 3;</code>
      */
     public com.google.apps.script.type.LayoutProperties.Builder getLayoutPropertiesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLayoutPropertiesFieldBuilder().getBuilder();
     }
@@ -1499,7 +1523,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return Whether the addOnWidgetSet field is set.
      */
     public boolean hasAddOnWidgetSet() {
-      return addOnWidgetSetBuilder_ != null || addOnWidgetSet_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1538,11 +1562,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         addOnWidgetSet_ = value;
-        onChanged();
       } else {
         addOnWidgetSetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1559,11 +1583,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         com.google.apps.script.type.AddOnWidgetSet.Builder builderForValue) {
       if (addOnWidgetSetBuilder_ == null) {
         addOnWidgetSet_ = builderForValue.build();
-        onChanged();
       } else {
         addOnWidgetSetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1578,19 +1602,18 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeAddOnWidgetSet(com.google.apps.script.type.AddOnWidgetSet value) {
       if (addOnWidgetSetBuilder_ == null) {
-        if (addOnWidgetSet_ != null) {
-          addOnWidgetSet_ =
-              com.google.apps.script.type.AddOnWidgetSet.newBuilder(addOnWidgetSet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && addOnWidgetSet_ != null
+            && addOnWidgetSet_ != com.google.apps.script.type.AddOnWidgetSet.getDefaultInstance()) {
+          getAddOnWidgetSetBuilder().mergeFrom(value);
         } else {
           addOnWidgetSet_ = value;
         }
-        onChanged();
       } else {
         addOnWidgetSetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1604,14 +1627,13 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.AddOnWidgetSet add_on_widget_set = 4;</code>
      */
     public Builder clearAddOnWidgetSet() {
-      if (addOnWidgetSetBuilder_ == null) {
-        addOnWidgetSet_ = null;
-        onChanged();
-      } else {
-        addOnWidgetSet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      addOnWidgetSet_ = null;
+      if (addOnWidgetSetBuilder_ != null) {
+        addOnWidgetSetBuilder_.dispose();
         addOnWidgetSetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1625,7 +1647,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.AddOnWidgetSet add_on_widget_set = 4;</code>
      */
     public com.google.apps.script.type.AddOnWidgetSet.Builder getAddOnWidgetSetBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAddOnWidgetSetFieldBuilder().getBuilder();
     }
@@ -1706,6 +1728,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public Builder setUseLocaleFromApp(boolean value) {
 
       useLocaleFromApp_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1721,7 +1744,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUseLocaleFromApp() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       useLocaleFromApp_ = false;
       onChanged();
       return this;
@@ -1748,7 +1771,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return Whether the homepageTrigger field is set.
      */
     public boolean hasHomepageTrigger() {
-      return homepageTriggerBuilder_ != null || homepageTrigger_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1791,11 +1814,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         homepageTrigger_ = value;
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1814,11 +1837,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         com.google.apps.script.type.HomepageExtensionPoint.Builder builderForValue) {
       if (homepageTriggerBuilder_ == null) {
         homepageTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1835,19 +1858,19 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeHomepageTrigger(com.google.apps.script.type.HomepageExtensionPoint value) {
       if (homepageTriggerBuilder_ == null) {
-        if (homepageTrigger_ != null) {
-          homepageTrigger_ =
-              com.google.apps.script.type.HomepageExtensionPoint.newBuilder(homepageTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && homepageTrigger_ != null
+            && homepageTrigger_
+                != com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()) {
+          getHomepageTriggerBuilder().mergeFrom(value);
         } else {
           homepageTrigger_ = value;
         }
-        onChanged();
       } else {
         homepageTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1863,14 +1886,13 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 6;</code>
      */
     public Builder clearHomepageTrigger() {
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-        onChanged();
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1886,7 +1908,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 6;</code>
      */
     public com.google.apps.script.type.HomepageExtensionPoint.Builder getHomepageTriggerBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
@@ -1945,11 +1967,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
         universalActions_ = java.util.Collections.emptyList();
 
     private void ensureUniversalActionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         universalActions_ =
             new java.util.ArrayList<com.google.apps.script.type.UniversalActionExtensionPoint>(
                 universalActions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2217,7 +2239,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public Builder clearUniversalActions() {
       if (universalActionsBuilder_ == null) {
         universalActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         universalActionsBuilder_.clear();
@@ -2376,7 +2398,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
                 com.google.apps.script.type.UniversalActionExtensionPoint.Builder,
                 com.google.apps.script.type.UniversalActionExtensionPointOrBuilder>(
                 universalActions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         universalActions_ = null;
@@ -2408,7 +2430,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * @return Whether the openLinkUrlPrefixes field is set.
      */
     public boolean hasOpenLinkUrlPrefixes() {
-      return openLinkUrlPrefixesBuilder_ != null || openLinkUrlPrefixes_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2457,11 +2479,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         openLinkUrlPrefixes_ = value;
-        onChanged();
       } else {
         openLinkUrlPrefixesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2482,11 +2504,11 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
     public Builder setOpenLinkUrlPrefixes(com.google.protobuf.ListValue.Builder builderForValue) {
       if (openLinkUrlPrefixesBuilder_ == null) {
         openLinkUrlPrefixes_ = builderForValue.build();
-        onChanged();
       } else {
         openLinkUrlPrefixesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2506,19 +2528,18 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeOpenLinkUrlPrefixes(com.google.protobuf.ListValue value) {
       if (openLinkUrlPrefixesBuilder_ == null) {
-        if (openLinkUrlPrefixes_ != null) {
-          openLinkUrlPrefixes_ =
-              com.google.protobuf.ListValue.newBuilder(openLinkUrlPrefixes_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && openLinkUrlPrefixes_ != null
+            && openLinkUrlPrefixes_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          getOpenLinkUrlPrefixesBuilder().mergeFrom(value);
         } else {
           openLinkUrlPrefixes_ = value;
         }
-        onChanged();
       } else {
         openLinkUrlPrefixesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2537,14 +2558,13 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.ListValue open_link_url_prefixes = 8;</code>
      */
     public Builder clearOpenLinkUrlPrefixes() {
-      if (openLinkUrlPrefixesBuilder_ == null) {
-        openLinkUrlPrefixes_ = null;
-        onChanged();
-      } else {
-        openLinkUrlPrefixes_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      openLinkUrlPrefixes_ = null;
+      if (openLinkUrlPrefixesBuilder_ != null) {
+        openLinkUrlPrefixesBuilder_.dispose();
         openLinkUrlPrefixesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2563,7 +2583,7 @@ public final class CommonAddOnManifest extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.ListValue open_link_url_prefixes = 8;</code>
      */
     public com.google.protobuf.ListValue.Builder getOpenLinkUrlPrefixesBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getOpenLinkUrlPrefixesFieldBuilder().getBuilder();
     }

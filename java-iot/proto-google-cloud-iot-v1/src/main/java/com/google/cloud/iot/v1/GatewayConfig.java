@@ -70,7 +70,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GATEWAY_TYPE_FIELD_NUMBER = 1;
-  private int gatewayType_;
+  private int gatewayType_ = 0;
   /**
    *
    *
@@ -99,14 +99,13 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.GatewayType getGatewayType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.GatewayType result =
-        com.google.cloud.iot.v1.GatewayType.valueOf(gatewayType_);
+        com.google.cloud.iot.v1.GatewayType.forNumber(gatewayType_);
     return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
   }
 
   public static final int GATEWAY_AUTH_METHOD_FIELD_NUMBER = 2;
-  private int gatewayAuthMethod_;
+  private int gatewayAuthMethod_ = 0;
   /**
    *
    *
@@ -137,14 +136,15 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.GatewayAuthMethod getGatewayAuthMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.GatewayAuthMethod result =
-        com.google.cloud.iot.v1.GatewayAuthMethod.valueOf(gatewayAuthMethod_);
+        com.google.cloud.iot.v1.GatewayAuthMethod.forNumber(gatewayAuthMethod_);
     return result == null ? com.google.cloud.iot.v1.GatewayAuthMethod.UNRECOGNIZED : result;
   }
 
   public static final int LAST_ACCESSED_GATEWAY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object lastAccessedGatewayId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastAccessedGatewayId_ = "";
   /**
    *
    *
@@ -240,7 +240,9 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastAccessedGatewayTimeOrBuilder() {
-    return getLastAccessedGatewayTime();
+    return lastAccessedGatewayTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastAccessedGatewayTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -473,16 +475,13 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gatewayType_ = 0;
-
       gatewayAuthMethod_ = 0;
-
       lastAccessedGatewayId_ = "";
-
-      if (lastAccessedGatewayTimeBuilder_ == null) {
-        lastAccessedGatewayTime_ = null;
-      } else {
-        lastAccessedGatewayTime_ = null;
+      lastAccessedGatewayTime_ = null;
+      if (lastAccessedGatewayTimeBuilder_ != null) {
+        lastAccessedGatewayTimeBuilder_.dispose();
         lastAccessedGatewayTimeBuilder_ = null;
       }
       return this;
@@ -512,16 +511,30 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.iot.v1.GatewayConfig buildPartial() {
       com.google.cloud.iot.v1.GatewayConfig result =
           new com.google.cloud.iot.v1.GatewayConfig(this);
-      result.gatewayType_ = gatewayType_;
-      result.gatewayAuthMethod_ = gatewayAuthMethod_;
-      result.lastAccessedGatewayId_ = lastAccessedGatewayId_;
-      if (lastAccessedGatewayTimeBuilder_ == null) {
-        result.lastAccessedGatewayTime_ = lastAccessedGatewayTime_;
-      } else {
-        result.lastAccessedGatewayTime_ = lastAccessedGatewayTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.GatewayConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gatewayType_ = gatewayType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gatewayAuthMethod_ = gatewayAuthMethod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.lastAccessedGatewayId_ = lastAccessedGatewayId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastAccessedGatewayTime_ =
+            lastAccessedGatewayTimeBuilder_ == null
+                ? lastAccessedGatewayTime_
+                : lastAccessedGatewayTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -577,6 +590,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLastAccessedGatewayId().isEmpty()) {
         lastAccessedGatewayId_ = other.lastAccessedGatewayId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasLastAccessedGatewayTime()) {
@@ -611,26 +625,26 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 gatewayType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 gatewayAuthMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 lastAccessedGatewayId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getLastAccessedGatewayTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -649,6 +663,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int gatewayType_ = 0;
     /**
@@ -679,8 +695,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGatewayTypeValue(int value) {
-
       gatewayType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -697,9 +713,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.GatewayType result =
-          com.google.cloud.iot.v1.GatewayType.valueOf(gatewayType_);
+          com.google.cloud.iot.v1.GatewayType.forNumber(gatewayType_);
       return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
     }
     /**
@@ -718,7 +733,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       gatewayType_ = value.getNumber();
       onChanged();
       return this;
@@ -735,7 +750,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       gatewayType_ = 0;
       onChanged();
       return this;
@@ -772,8 +787,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGatewayAuthMethodValue(int value) {
-
       gatewayAuthMethod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -791,9 +806,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.iot.v1.GatewayAuthMethod getGatewayAuthMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.GatewayAuthMethod result =
-          com.google.cloud.iot.v1.GatewayAuthMethod.valueOf(gatewayAuthMethod_);
+          com.google.cloud.iot.v1.GatewayAuthMethod.forNumber(gatewayAuthMethod_);
       return result == null ? com.google.cloud.iot.v1.GatewayAuthMethod.UNRECOGNIZED : result;
     }
     /**
@@ -813,7 +827,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       gatewayAuthMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -831,7 +845,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayAuthMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       gatewayAuthMethod_ = 0;
       onChanged();
       return this;
@@ -898,8 +912,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lastAccessedGatewayId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -915,8 +929,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastAccessedGatewayId() {
-
       lastAccessedGatewayId_ = getDefaultInstance().getLastAccessedGatewayId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -937,8 +951,8 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lastAccessedGatewayId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -962,7 +976,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastAccessedGatewayTime field is set.
      */
     public boolean hasLastAccessedGatewayTime() {
-      return lastAccessedGatewayTimeBuilder_ != null || lastAccessedGatewayTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1001,11 +1015,11 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastAccessedGatewayTime_ = value;
-        onChanged();
       } else {
         lastAccessedGatewayTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1022,11 +1036,11 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastAccessedGatewayTimeBuilder_ == null) {
         lastAccessedGatewayTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastAccessedGatewayTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1041,19 +1055,18 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastAccessedGatewayTime(com.google.protobuf.Timestamp value) {
       if (lastAccessedGatewayTimeBuilder_ == null) {
-        if (lastAccessedGatewayTime_ != null) {
-          lastAccessedGatewayTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastAccessedGatewayTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lastAccessedGatewayTime_ != null
+            && lastAccessedGatewayTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastAccessedGatewayTimeBuilder().mergeFrom(value);
         } else {
           lastAccessedGatewayTime_ = value;
         }
-        onChanged();
       } else {
         lastAccessedGatewayTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1067,14 +1080,13 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
      */
     public Builder clearLastAccessedGatewayTime() {
-      if (lastAccessedGatewayTimeBuilder_ == null) {
-        lastAccessedGatewayTime_ = null;
-        onChanged();
-      } else {
-        lastAccessedGatewayTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastAccessedGatewayTime_ = null;
+      if (lastAccessedGatewayTimeBuilder_ != null) {
+        lastAccessedGatewayTimeBuilder_.dispose();
         lastAccessedGatewayTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1088,7 +1100,7 @@ public final class GatewayConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_accessed_gateway_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastAccessedGatewayTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLastAccessedGatewayTimeFieldBuilder().getBuilder();
     }

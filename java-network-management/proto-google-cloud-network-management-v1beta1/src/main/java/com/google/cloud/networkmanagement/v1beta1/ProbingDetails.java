@@ -524,7 +524,9 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METROPOLITAN_AREA_FIELD_NUMBER = 1;
-    private volatile java.lang.Object metropolitanArea_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metropolitanArea_ = "";
     /**
      *
      *
@@ -777,8 +779,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metropolitanArea_ = "";
-
         return this;
       }
 
@@ -809,9 +811,19 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation buildPartial() {
         com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation result =
             new com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation(this);
-        result.metropolitanArea_ = metropolitanArea_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metropolitanArea_ = metropolitanArea_;
+        }
       }
 
       @java.lang.Override
@@ -868,6 +880,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getMetropolitanArea().isEmpty()) {
           metropolitanArea_ = other.metropolitanArea_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -899,7 +912,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   metropolitanArea_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -918,6 +931,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object metropolitanArea_ = "";
       /**
@@ -980,8 +995,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         metropolitanArea_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -997,8 +1012,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetropolitanArea() {
-
         metropolitanArea_ = getDefaultInstance().getMetropolitanArea();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1019,8 +1034,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         metropolitanArea_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1094,7 +1109,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESULT_FIELD_NUMBER = 1;
-  private int result_;
+  private int result_ = 0;
   /**
    *
    *
@@ -1123,9 +1138,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult getResult() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult result =
-        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.valueOf(result_);
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.forNumber(result_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.UNRECOGNIZED
         : result;
@@ -1174,7 +1188,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getVerifyTimeOrBuilder() {
-    return getVerifyTime();
+    return verifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : verifyTime_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
@@ -1220,11 +1234,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int ABORT_CAUSE_FIELD_NUMBER = 4;
-  private int abortCause_;
+  private int abortCause_ = 0;
   /**
    *
    *
@@ -1256,9 +1270,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause
       getAbortCause() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause result =
-        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.valueOf(
+        com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.forNumber(
             abortCause_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.UNRECOGNIZED
@@ -1266,7 +1279,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SENT_PROBE_COUNT_FIELD_NUMBER = 5;
-  private int sentProbeCount_;
+  private int sentProbeCount_ = 0;
   /**
    *
    *
@@ -1284,7 +1297,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUCCESSFUL_PROBE_COUNT_FIELD_NUMBER = 6;
-  private int successfulProbeCount_;
+  private int successfulProbeCount_ = 0;
   /**
    *
    *
@@ -1350,7 +1363,9 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.EndpointInfoOrBuilder
       getEndpointInfoOrBuilder() {
-    return getEndpointInfo();
+    return endpointInfo_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.EndpointInfo.getDefaultInstance()
+        : endpointInfo_;
   }
 
   public static final int PROBING_LATENCY_FIELD_NUMBER = 8;
@@ -1402,7 +1417,9 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.LatencyDistributionOrBuilder
       getProbingLatencyOrBuilder() {
-    return getProbingLatency();
+    return probingLatency_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.LatencyDistribution.getDefaultInstance()
+        : probingLatency_;
   }
 
   public static final int DESTINATION_EGRESS_LOCATION_FIELD_NUMBER = 9;
@@ -1475,7 +1492,10 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocationOrBuilder
       getDestinationEgressLocationOrBuilder() {
-    return getDestinationEgressLocation();
+    return destinationEgressLocation_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation
+            .getDefaultInstance()
+        : destinationEgressLocation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1788,42 +1808,34 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       result_ = 0;
-
-      if (verifyTimeBuilder_ == null) {
-        verifyTime_ = null;
-      } else {
-        verifyTime_ = null;
+      verifyTime_ = null;
+      if (verifyTimeBuilder_ != null) {
+        verifyTimeBuilder_.dispose();
         verifyTimeBuilder_ = null;
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       abortCause_ = 0;
-
       sentProbeCount_ = 0;
-
       successfulProbeCount_ = 0;
-
-      if (endpointInfoBuilder_ == null) {
-        endpointInfo_ = null;
-      } else {
-        endpointInfo_ = null;
+      endpointInfo_ = null;
+      if (endpointInfoBuilder_ != null) {
+        endpointInfoBuilder_.dispose();
         endpointInfoBuilder_ = null;
       }
-      if (probingLatencyBuilder_ == null) {
-        probingLatency_ = null;
-      } else {
-        probingLatency_ = null;
+      probingLatency_ = null;
+      if (probingLatencyBuilder_ != null) {
+        probingLatencyBuilder_.dispose();
         probingLatencyBuilder_ = null;
       }
-      if (destinationEgressLocationBuilder_ == null) {
-        destinationEgressLocation_ = null;
-      } else {
-        destinationEgressLocation_ = null;
+      destinationEgressLocation_ = null;
+      if (destinationEgressLocationBuilder_ != null) {
+        destinationEgressLocationBuilder_.dispose();
         destinationEgressLocationBuilder_ = null;
       }
       return this;
@@ -1853,37 +1865,47 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.ProbingDetails buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.ProbingDetails result =
           new com.google.cloud.networkmanagement.v1beta1.ProbingDetails(this);
-      result.result_ = result_;
-      if (verifyTimeBuilder_ == null) {
-        result.verifyTime_ = verifyTime_;
-      } else {
-        result.verifyTime_ = verifyTimeBuilder_.build();
-      }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
-      result.abortCause_ = abortCause_;
-      result.sentProbeCount_ = sentProbeCount_;
-      result.successfulProbeCount_ = successfulProbeCount_;
-      if (endpointInfoBuilder_ == null) {
-        result.endpointInfo_ = endpointInfo_;
-      } else {
-        result.endpointInfo_ = endpointInfoBuilder_.build();
-      }
-      if (probingLatencyBuilder_ == null) {
-        result.probingLatency_ = probingLatency_;
-      } else {
-        result.probingLatency_ = probingLatencyBuilder_.build();
-      }
-      if (destinationEgressLocationBuilder_ == null) {
-        result.destinationEgressLocation_ = destinationEgressLocation_;
-      } else {
-        result.destinationEgressLocation_ = destinationEgressLocationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.ProbingDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = result_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.verifyTime_ = verifyTimeBuilder_ == null ? verifyTime_ : verifyTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.abortCause_ = abortCause_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sentProbeCount_ = sentProbeCount_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.successfulProbeCount_ = successfulProbeCount_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.endpointInfo_ =
+            endpointInfoBuilder_ == null ? endpointInfo_ : endpointInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.probingLatency_ =
+            probingLatencyBuilder_ == null ? probingLatency_ : probingLatencyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.destinationEgressLocation_ =
+            destinationEgressLocationBuilder_ == null
+                ? destinationEgressLocation_
+                : destinationEgressLocationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1988,56 +2010,56 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 result_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getVerifyTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 abortCause_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 sentProbeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 successfulProbeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getEndpointInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getProbingLatencyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     getDestinationEgressLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -2056,6 +2078,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int result_ = 0;
     /**
@@ -2086,8 +2110,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setResultValue(int value) {
-
       result_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2104,9 +2128,9 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult getResult() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult result =
-          com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.valueOf(result_);
+          com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.forNumber(
+              result_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingResult.UNRECOGNIZED
           : result;
@@ -2128,7 +2152,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       result_ = value.getNumber();
       onChanged();
       return this;
@@ -2145,7 +2169,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       result_ = 0;
       onChanged();
       return this;
@@ -2169,7 +2193,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the verifyTime field is set.
      */
     public boolean hasVerifyTime() {
-      return verifyTimeBuilder_ != null || verifyTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2206,11 +2230,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         verifyTime_ = value;
-        onChanged();
       } else {
         verifyTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2225,11 +2249,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setVerifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (verifyTimeBuilder_ == null) {
         verifyTime_ = builderForValue.build();
-        onChanged();
       } else {
         verifyTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2243,17 +2267,18 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVerifyTime(com.google.protobuf.Timestamp value) {
       if (verifyTimeBuilder_ == null) {
-        if (verifyTime_ != null) {
-          verifyTime_ =
-              com.google.protobuf.Timestamp.newBuilder(verifyTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && verifyTime_ != null
+            && verifyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getVerifyTimeBuilder().mergeFrom(value);
         } else {
           verifyTime_ = value;
         }
-        onChanged();
       } else {
         verifyTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2266,14 +2291,13 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp verify_time = 2;</code>
      */
     public Builder clearVerifyTime() {
-      if (verifyTimeBuilder_ == null) {
-        verifyTime_ = null;
-        onChanged();
-      } else {
-        verifyTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      verifyTime_ = null;
+      if (verifyTimeBuilder_ != null) {
+        verifyTimeBuilder_.dispose();
         verifyTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2286,7 +2310,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp verify_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getVerifyTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVerifyTimeFieldBuilder().getBuilder();
     }
@@ -2350,7 +2374,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2385,11 +2409,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2404,11 +2428,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2422,16 +2446,18 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2444,14 +2470,13 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 3;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2464,7 +2489,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 3;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -2540,8 +2565,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAbortCauseValue(int value) {
-
       abortCause_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2561,9 +2586,8 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause
         getAbortCause() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause result =
-          com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.valueOf(
+          com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.forNumber(
               abortCause_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.ProbingDetails.ProbingAbortCause.UNRECOGNIZED
@@ -2588,7 +2612,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       abortCause_ = value.getNumber();
       onChanged();
       return this;
@@ -2607,7 +2631,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAbortCause() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       abortCause_ = 0;
       onChanged();
       return this;
@@ -2644,6 +2668,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setSentProbeCount(int value) {
 
       sentProbeCount_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2659,7 +2684,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSentProbeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sentProbeCount_ = 0;
       onChanged();
       return this;
@@ -2696,6 +2721,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder setSuccessfulProbeCount(int value) {
 
       successfulProbeCount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2711,7 +2737,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSuccessfulProbeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       successfulProbeCount_ = 0;
       onChanged();
       return this;
@@ -2736,7 +2762,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endpointInfo field is set.
      */
     public boolean hasEndpointInfo() {
-      return endpointInfoBuilder_ != null || endpointInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2775,11 +2801,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endpointInfo_ = value;
-        onChanged();
       } else {
         endpointInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2796,11 +2822,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.networkmanagement.v1beta1.EndpointInfo.Builder builderForValue) {
       if (endpointInfoBuilder_ == null) {
         endpointInfo_ = builderForValue.build();
-        onChanged();
       } else {
         endpointInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2816,19 +2842,19 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEndpointInfo(
         com.google.cloud.networkmanagement.v1beta1.EndpointInfo value) {
       if (endpointInfoBuilder_ == null) {
-        if (endpointInfo_ != null) {
-          endpointInfo_ =
-              com.google.cloud.networkmanagement.v1beta1.EndpointInfo.newBuilder(endpointInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && endpointInfo_ != null
+            && endpointInfo_
+                != com.google.cloud.networkmanagement.v1beta1.EndpointInfo.getDefaultInstance()) {
+          getEndpointInfoBuilder().mergeFrom(value);
         } else {
           endpointInfo_ = value;
         }
-        onChanged();
       } else {
         endpointInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2842,14 +2868,13 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkmanagement.v1beta1.EndpointInfo endpoint_info = 7;</code>
      */
     public Builder clearEndpointInfo() {
-      if (endpointInfoBuilder_ == null) {
-        endpointInfo_ = null;
-        onChanged();
-      } else {
-        endpointInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      endpointInfo_ = null;
+      if (endpointInfoBuilder_ != null) {
+        endpointInfoBuilder_.dispose();
         endpointInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2864,7 +2889,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1beta1.EndpointInfo.Builder
         getEndpointInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEndpointInfoFieldBuilder().getBuilder();
     }
@@ -2934,7 +2959,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the probingLatency field is set.
      */
     public boolean hasProbingLatency() {
-      return probingLatencyBuilder_ != null || probingLatency_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2974,11 +2999,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         probingLatency_ = value;
-        onChanged();
       } else {
         probingLatencyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2995,11 +3020,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.networkmanagement.v1beta1.LatencyDistribution.Builder builderForValue) {
       if (probingLatencyBuilder_ == null) {
         probingLatency_ = builderForValue.build();
-        onChanged();
       } else {
         probingLatencyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3015,20 +3040,20 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProbingLatency(
         com.google.cloud.networkmanagement.v1beta1.LatencyDistribution value) {
       if (probingLatencyBuilder_ == null) {
-        if (probingLatency_ != null) {
-          probingLatency_ =
-              com.google.cloud.networkmanagement.v1beta1.LatencyDistribution.newBuilder(
-                      probingLatency_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && probingLatency_ != null
+            && probingLatency_
+                != com.google.cloud.networkmanagement.v1beta1.LatencyDistribution
+                    .getDefaultInstance()) {
+          getProbingLatencyBuilder().mergeFrom(value);
         } else {
           probingLatency_ = value;
         }
-        onChanged();
       } else {
         probingLatencyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3042,14 +3067,13 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkmanagement.v1beta1.LatencyDistribution probing_latency = 8;</code>
      */
     public Builder clearProbingLatency() {
-      if (probingLatencyBuilder_ == null) {
-        probingLatency_ = null;
-        onChanged();
-      } else {
-        probingLatency_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      probingLatency_ = null;
+      if (probingLatencyBuilder_ != null) {
+        probingLatencyBuilder_.dispose();
         probingLatencyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3064,7 +3088,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1beta1.LatencyDistribution.Builder
         getProbingLatencyBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getProbingLatencyFieldBuilder().getBuilder();
     }
@@ -3141,7 +3165,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destinationEgressLocation field is set.
      */
     public boolean hasDestinationEgressLocation() {
-      return destinationEgressLocationBuilder_ != null || destinationEgressLocation_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3195,11 +3219,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destinationEgressLocation_ = value;
-        onChanged();
       } else {
         destinationEgressLocationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3223,11 +3247,11 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (destinationEgressLocationBuilder_ == null) {
         destinationEgressLocation_ = builderForValue.build();
-        onChanged();
       } else {
         destinationEgressLocationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3249,20 +3273,20 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDestinationEgressLocation(
         com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation value) {
       if (destinationEgressLocationBuilder_ == null) {
-        if (destinationEgressLocation_ != null) {
-          destinationEgressLocation_ =
-              com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.newBuilder(
-                      destinationEgressLocation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && destinationEgressLocation_ != null
+            && destinationEgressLocation_
+                != com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation
+                    .getDefaultInstance()) {
+          getDestinationEgressLocationBuilder().mergeFrom(value);
         } else {
           destinationEgressLocation_ = value;
         }
-        onChanged();
       } else {
         destinationEgressLocationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3282,14 +3306,13 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDestinationEgressLocation() {
-      if (destinationEgressLocationBuilder_ == null) {
-        destinationEgressLocation_ = null;
-        onChanged();
-      } else {
-        destinationEgressLocation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      destinationEgressLocation_ = null;
+      if (destinationEgressLocationBuilder_ != null) {
+        destinationEgressLocationBuilder_.dispose();
         destinationEgressLocationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3310,7 +3333,7 @@ public final class ProbingDetails extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1beta1.ProbingDetails.EdgeLocation.Builder
         getDestinationEgressLocationBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDestinationEgressLocationFieldBuilder().getBuilder();
     }

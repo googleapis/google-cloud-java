@@ -74,7 +74,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAW_DER_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString rawDer_;
+  private com.google.protobuf.ByteString rawDer_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARSED_FIELD_NUMBER = 2;
-  private boolean parsed_;
+  private boolean parsed_ = false;
   /**
    *
    *
@@ -110,7 +110,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ISSUER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object issuer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issuer_ = "";
   /**
    *
    *
@@ -161,7 +163,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBJECT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object subject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subject_ = "";
   /**
    *
    *
@@ -212,6 +216,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBJECT_ALTERNATIVE_DNS_NAMES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList subjectAlternativeDnsNames_;
   /**
    *
@@ -338,7 +344,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNotBeforeTimeOrBuilder() {
-    return getNotBeforeTime();
+    return notBeforeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : notBeforeTime_;
   }
 
   public static final int NOT_AFTER_TIME_FIELD_NUMBER = 7;
@@ -395,11 +403,15 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNotAfterTimeOrBuilder() {
-    return getNotAfterTime();
+    return notAfterTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : notAfterTime_;
   }
 
   public static final int SERIAL_NUMBER_FIELD_NUMBER = 8;
-  private volatile java.lang.Object serialNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serialNumber_ = "";
   /**
    *
    *
@@ -450,7 +462,9 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SHA256_FINGERPRINT_FIELD_NUMBER = 9;
-  private volatile java.lang.Object sha256Fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha256Fingerprint_ = "";
   /**
    *
    *
@@ -787,32 +801,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rawDer_ = com.google.protobuf.ByteString.EMPTY;
-
       parsed_ = false;
-
       issuer_ = "";
-
       subject_ = "";
-
       subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (notBeforeTimeBuilder_ == null) {
-        notBeforeTime_ = null;
-      } else {
-        notBeforeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      notBeforeTime_ = null;
+      if (notBeforeTimeBuilder_ != null) {
+        notBeforeTimeBuilder_.dispose();
         notBeforeTimeBuilder_ = null;
       }
-      if (notAfterTimeBuilder_ == null) {
-        notAfterTime_ = null;
-      } else {
-        notAfterTime_ = null;
+      notAfterTime_ = null;
+      if (notAfterTimeBuilder_ != null) {
+        notAfterTimeBuilder_.dispose();
         notAfterTimeBuilder_ = null;
       }
       serialNumber_ = "";
-
       sha256Fingerprint_ = "";
-
       return this;
     }
 
@@ -839,30 +846,50 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.Certificate buildPartial() {
       com.google.cloud.kms.v1.Certificate result = new com.google.cloud.kms.v1.Certificate(this);
-      int from_bitField0_ = bitField0_;
-      result.rawDer_ = rawDer_;
-      result.parsed_ = parsed_;
-      result.issuer_ = issuer_;
-      result.subject_ = subject_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_;
-      if (notBeforeTimeBuilder_ == null) {
-        result.notBeforeTime_ = notBeforeTime_;
-      } else {
-        result.notBeforeTime_ = notBeforeTimeBuilder_.build();
-      }
-      if (notAfterTimeBuilder_ == null) {
-        result.notAfterTime_ = notAfterTime_;
-      } else {
-        result.notAfterTime_ = notAfterTimeBuilder_.build();
-      }
-      result.serialNumber_ = serialNumber_;
-      result.sha256Fingerprint_ = sha256Fingerprint_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.kms.v1.Certificate result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.subjectAlternativeDnsNames_ = subjectAlternativeDnsNames_;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.Certificate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rawDer_ = rawDer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parsed_ = parsed_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.issuer_ = issuer_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.subject_ = subject_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.notBeforeTime_ =
+            notBeforeTimeBuilder_ == null ? notBeforeTime_ : notBeforeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.notAfterTime_ =
+            notAfterTimeBuilder_ == null ? notAfterTime_ : notAfterTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.serialNumber_ = serialNumber_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sha256Fingerprint_ = sha256Fingerprint_;
+      }
     }
 
     @java.lang.Override
@@ -918,16 +945,18 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIssuer().isEmpty()) {
         issuer_ = other.issuer_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getSubject().isEmpty()) {
         subject_ = other.subject_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.subjectAlternativeDnsNames_.isEmpty()) {
         if (subjectAlternativeDnsNames_.isEmpty()) {
           subjectAlternativeDnsNames_ = other.subjectAlternativeDnsNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureSubjectAlternativeDnsNamesIsMutable();
           subjectAlternativeDnsNames_.addAll(other.subjectAlternativeDnsNames_);
@@ -942,10 +971,12 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSerialNumber().isEmpty()) {
         serialNumber_ = other.serialNumber_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getSha256Fingerprint().isEmpty()) {
         sha256Fingerprint_ = other.sha256Fingerprint_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -977,25 +1008,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 rawDer_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 parsed_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 issuer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 subject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1008,25 +1039,25 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getNotBeforeTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getNotAfterTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 serialNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 sha256Fingerprint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1080,8 +1111,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       rawDer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1097,7 +1128,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRawDer() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rawDer_ = getDefaultInstance().getRawDer();
       onChanged();
       return this;
@@ -1134,6 +1165,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder setParsed(boolean value) {
 
       parsed_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1149,7 +1181,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParsed() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       parsed_ = false;
       onChanged();
       return this;
@@ -1219,8 +1251,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       issuer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1237,8 +1269,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIssuer() {
-
       issuer_ = getDefaultInstance().getIssuer();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1260,8 +1292,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issuer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1330,8 +1362,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subject_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1348,8 +1380,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubject() {
-
       subject_ = getDefaultInstance().getSubject();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1371,8 +1403,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subject_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1381,10 +1413,10 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSubjectAlternativeDnsNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         subjectAlternativeDnsNames_ =
             new com.google.protobuf.LazyStringArrayList(subjectAlternativeDnsNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1543,7 +1575,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSubjectAlternativeDnsNames() {
       subjectAlternativeDnsNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1594,7 +1626,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the notBeforeTime field is set.
      */
     public boolean hasNotBeforeTime() {
-      return notBeforeTimeBuilder_ != null || notBeforeTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1637,11 +1669,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         notBeforeTime_ = value;
-        onChanged();
       } else {
         notBeforeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1659,11 +1691,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder setNotBeforeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (notBeforeTimeBuilder_ == null) {
         notBeforeTime_ = builderForValue.build();
-        onChanged();
       } else {
         notBeforeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1680,19 +1712,18 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNotBeforeTime(com.google.protobuf.Timestamp value) {
       if (notBeforeTimeBuilder_ == null) {
-        if (notBeforeTime_ != null) {
-          notBeforeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(notBeforeTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && notBeforeTime_ != null
+            && notBeforeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getNotBeforeTimeBuilder().mergeFrom(value);
         } else {
           notBeforeTime_ = value;
         }
-        onChanged();
       } else {
         notBeforeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1708,14 +1739,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNotBeforeTime() {
-      if (notBeforeTimeBuilder_ == null) {
-        notBeforeTime_ = null;
-        onChanged();
-      } else {
-        notBeforeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      notBeforeTime_ = null;
+      if (notBeforeTimeBuilder_ != null) {
+        notBeforeTimeBuilder_.dispose();
         notBeforeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1731,7 +1761,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getNotBeforeTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getNotBeforeTimeFieldBuilder().getBuilder();
     }
@@ -1806,7 +1836,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the notAfterTime field is set.
      */
     public boolean hasNotAfterTime() {
-      return notAfterTimeBuilder_ != null || notAfterTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1849,11 +1879,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         notAfterTime_ = value;
-        onChanged();
       } else {
         notAfterTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1871,11 +1901,11 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
     public Builder setNotAfterTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (notAfterTimeBuilder_ == null) {
         notAfterTime_ = builderForValue.build();
-        onChanged();
       } else {
         notAfterTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1892,19 +1922,18 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNotAfterTime(com.google.protobuf.Timestamp value) {
       if (notAfterTimeBuilder_ == null) {
-        if (notAfterTime_ != null) {
-          notAfterTime_ =
-              com.google.protobuf.Timestamp.newBuilder(notAfterTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && notAfterTime_ != null
+            && notAfterTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getNotAfterTimeBuilder().mergeFrom(value);
         } else {
           notAfterTime_ = value;
         }
-        onChanged();
       } else {
         notAfterTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1920,14 +1949,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNotAfterTime() {
-      if (notAfterTimeBuilder_ == null) {
-        notAfterTime_ = null;
-        onChanged();
-      } else {
-        notAfterTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      notAfterTime_ = null;
+      if (notAfterTimeBuilder_ != null) {
+        notAfterTimeBuilder_.dispose();
         notAfterTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1943,7 +1971,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getNotAfterTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getNotAfterTimeFieldBuilder().getBuilder();
     }
@@ -2061,8 +2089,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       serialNumber_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2079,8 +2107,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSerialNumber() {
-
       serialNumber_ = getDefaultInstance().getSerialNumber();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2102,8 +2130,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serialNumber_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2172,8 +2200,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sha256Fingerprint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2190,8 +2218,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSha256Fingerprint() {
-
       sha256Fingerprint_ = getDefaultInstance().getSha256Fingerprint();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2213,8 +2241,8 @@ public final class Certificate extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sha256Fingerprint_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

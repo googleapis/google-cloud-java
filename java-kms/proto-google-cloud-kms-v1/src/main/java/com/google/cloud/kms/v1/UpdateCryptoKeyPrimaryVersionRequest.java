@@ -72,7 +72,9 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
   }
 
   public static final int CRYPTO_KEY_VERSION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cryptoKeyVersionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyVersionId_ = "";
   /**
    *
    *
@@ -385,10 +389,9 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       cryptoKeyVersionId_ = "";
-
       return this;
     }
 
@@ -417,10 +420,22 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
     public com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest buildPartial() {
       com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest result =
           new com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest(this);
-      result.name_ = name_;
-      result.cryptoKeyVersionId_ = cryptoKeyVersionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cryptoKeyVersionId_ = cryptoKeyVersionId_;
+      }
     }
 
     @java.lang.Override
@@ -472,10 +487,12 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCryptoKeyVersionId().isEmpty()) {
         cryptoKeyVersionId_ = other.cryptoKeyVersionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,13 +524,13 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cryptoKeyVersionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -532,6 +549,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -603,8 +622,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -623,8 +642,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -648,8 +667,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +737,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyVersionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -736,8 +755,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyVersionId() {
-
       cryptoKeyVersionId_ = getDefaultInstance().getCryptoKeyVersionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -759,8 +778,8 @@ public final class UpdateCryptoKeyPrimaryVersionRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyVersionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

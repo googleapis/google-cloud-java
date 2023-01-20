@@ -72,7 +72,9 @@ public final class ListMetricsScopesByMonitoredProjectRequest
   }
 
   public static final int MONITORED_RESOURCE_CONTAINER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object monitoredResourceContainer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object monitoredResourceContainer_ = "";
   /**
    *
    *
@@ -336,8 +338,8 @@ public final class ListMetricsScopesByMonitoredProjectRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       monitoredResourceContainer_ = "";
-
       return this;
     }
 
@@ -371,9 +373,19 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest result =
           new com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest(
               this);
-      result.monitoredResourceContainer_ = monitoredResourceContainer_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.monitoredResourceContainer_ = monitoredResourceContainer_;
+      }
     }
 
     @java.lang.Override
@@ -430,6 +442,7 @@ public final class ListMetricsScopesByMonitoredProjectRequest
               .getDefaultInstance()) return this;
       if (!other.getMonitoredResourceContainer().isEmpty()) {
         monitoredResourceContainer_ = other.monitoredResourceContainer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -461,7 +474,7 @@ public final class ListMetricsScopesByMonitoredProjectRequest
             case 10:
               {
                 monitoredResourceContainer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -480,6 +493,8 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object monitoredResourceContainer_ = "";
     /**
@@ -551,8 +566,8 @@ public final class ListMetricsScopesByMonitoredProjectRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       monitoredResourceContainer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class ListMetricsScopesByMonitoredProjectRequest
      * @return This builder for chaining.
      */
     public Builder clearMonitoredResourceContainer() {
-
       monitoredResourceContainer_ = getDefaultInstance().getMonitoredResourceContainer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -596,8 +611,8 @@ public final class ListMetricsScopesByMonitoredProjectRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       monitoredResourceContainer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

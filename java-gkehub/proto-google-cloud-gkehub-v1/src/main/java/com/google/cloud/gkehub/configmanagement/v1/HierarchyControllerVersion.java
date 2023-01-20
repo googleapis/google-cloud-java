@@ -69,7 +69,9 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
   }
 
   public static final int HNC_FIELD_NUMBER = 1;
-  private volatile java.lang.Object hnc_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hnc_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
   }
 
   public static final int EXTENSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object extension_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object extension_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hnc_ = "";
-
       extension_ = "";
-
       return this;
     }
 
@@ -409,10 +412,22 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion result =
           new com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion(this);
-      result.hnc_ = hnc_;
-      result.extension_ = extension_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hnc_ = hnc_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.extension_ = extension_;
+      }
     }
 
     @java.lang.Override
@@ -466,10 +481,12 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
               .getDefaultInstance()) return this;
       if (!other.getHnc().isEmpty()) {
         hnc_ = other.hnc_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getExtension().isEmpty()) {
         extension_ = other.extension_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -501,13 +518,13 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
             case 10:
               {
                 hnc_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 extension_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -526,6 +543,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object hnc_ = "";
     /**
@@ -588,8 +607,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       hnc_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +624,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearHnc() {
-
       hnc_ = getDefaultInstance().getHnc();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -627,8 +646,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hnc_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +713,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       extension_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -711,8 +730,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearExtension() {
-
       extension_ = getDefaultInstance().getExtension();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -733,8 +752,8 @@ public final class HierarchyControllerVersion extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       extension_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

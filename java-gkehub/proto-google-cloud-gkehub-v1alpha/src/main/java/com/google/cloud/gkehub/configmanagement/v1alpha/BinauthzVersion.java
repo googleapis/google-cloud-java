@@ -68,7 +68,9 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int WEBHOOK_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object webhookVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webhookVersion_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       webhookVersion_ = "";
-
       return this;
     }
 
@@ -344,9 +346,19 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzVersion buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzVersion result =
           new com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzVersion(this);
-      result.webhookVersion_ = webhookVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1alpha.BinauthzVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.webhookVersion_ = webhookVersion_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +411,7 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getWebhookVersion().isEmpty()) {
         webhookVersion_ = other.webhookVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +443,7 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 webhookVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +462,8 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object webhookVersion_ = "";
     /**
@@ -511,8 +526,8 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       webhookVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -528,8 +543,8 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearWebhookVersion() {
-
       webhookVersion_ = getDefaultInstance().getWebhookVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -550,8 +565,8 @@ public final class BinauthzVersion extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       webhookVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

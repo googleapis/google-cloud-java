@@ -68,7 +68,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MQTT_ENABLED_STATE_FIELD_NUMBER = 1;
-  private int mqttEnabledState_;
+  private int mqttEnabledState_ = 0;
   /**
    *
    *
@@ -99,9 +99,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.MqttState getMqttEnabledState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.MqttState result =
-        com.google.cloud.iot.v1.MqttState.valueOf(mqttEnabledState_);
+        com.google.cloud.iot.v1.MqttState.forNumber(mqttEnabledState_);
     return result == null ? com.google.cloud.iot.v1.MqttState.UNRECOGNIZED : result;
   }
 
@@ -300,8 +299,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       mqttEnabledState_ = 0;
-
       return this;
     }
 
@@ -328,9 +327,18 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.iot.v1.MqttConfig buildPartial() {
       com.google.cloud.iot.v1.MqttConfig result = new com.google.cloud.iot.v1.MqttConfig(this);
-      result.mqttEnabledState_ = mqttEnabledState_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.MqttConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.mqttEnabledState_ = mqttEnabledState_;
+      }
     }
 
     @java.lang.Override
@@ -410,7 +418,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 mqttEnabledState_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -429,6 +437,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int mqttEnabledState_ = 0;
     /**
@@ -461,8 +471,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMqttEnabledStateValue(int value) {
-
       mqttEnabledState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -480,9 +490,8 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.iot.v1.MqttState getMqttEnabledState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.MqttState result =
-          com.google.cloud.iot.v1.MqttState.valueOf(mqttEnabledState_);
+          com.google.cloud.iot.v1.MqttState.forNumber(mqttEnabledState_);
       return result == null ? com.google.cloud.iot.v1.MqttState.UNRECOGNIZED : result;
     }
     /**
@@ -502,7 +511,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       mqttEnabledState_ = value.getNumber();
       onChanged();
       return this;
@@ -520,7 +529,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMqttEnabledState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       mqttEnabledState_ = 0;
       onChanged();
       return this;

@@ -71,7 +71,9 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ON_CREATE_FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object onCreateFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object onCreateFunction_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -226,7 +232,9 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOGO_URL_FIELD_NUMBER = 6;
-  private volatile java.lang.Object logoUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logoUrl_ = "";
   /**
    *
    *
@@ -499,14 +507,11 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       onCreateFunction_ = "";
-
       id_ = "";
-
       name_ = "";
-
       logoUrl_ = "";
-
       return this;
     }
 
@@ -534,12 +539,27 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
     public com.google.apps.script.type.calendar.ConferenceSolution buildPartial() {
       com.google.apps.script.type.calendar.ConferenceSolution result =
           new com.google.apps.script.type.calendar.ConferenceSolution(this);
-      result.onCreateFunction_ = onCreateFunction_;
-      result.id_ = id_;
-      result.name_ = name_;
-      result.logoUrl_ = logoUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.calendar.ConferenceSolution result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.onCreateFunction_ = onCreateFunction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.logoUrl_ = logoUrl_;
+      }
     }
 
     @java.lang.Override
@@ -590,18 +610,22 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getOnCreateFunction().isEmpty()) {
         onCreateFunction_ = other.onCreateFunction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLogoUrl().isEmpty()) {
         logoUrl_ = other.logoUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -633,25 +657,25 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 onCreateFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 logoUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -670,6 +694,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object onCreateFunction_ = "";
     /**
@@ -732,8 +758,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       onCreateFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +775,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearOnCreateFunction() {
-
       onCreateFunction_ = getDefaultInstance().getOnCreateFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -771,8 +797,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       onCreateFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +876,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -871,8 +897,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -897,8 +923,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -964,8 +990,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,8 +1007,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1003,8 +1029,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,8 +1096,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1087,8 +1113,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLogoUrl() {
-
       logoUrl_ = getDefaultInstance().getLogoUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1109,8 +1135,8 @@ public final class ConferenceSolution extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

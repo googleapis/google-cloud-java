@@ -86,7 +86,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -137,7 +139,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -236,7 +240,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -288,11 +292,13 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -341,7 +347,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKUP_PLAN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object backupPlan_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlan_ = "";
   /**
    *
    *
@@ -398,7 +406,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object cluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cluster_ = "";
   /**
    *
    *
@@ -511,7 +521,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.RestoreConfigOrBuilder getRestoreConfigOrBuilder() {
-    return getRestoreConfig();
+    return restoreConfig_ == null
+        ? com.google.cloud.gkebackup.v1.RestoreConfig.getDefaultInstance()
+        : restoreConfig_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 9;
@@ -527,6 +539,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -584,7 +597,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -613,7 +629,9 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 10;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -998,37 +1016,29 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       description_ = "";
-
       backupPlan_ = "";
-
       cluster_ = "";
-
-      if (restoreConfigBuilder_ == null) {
-        restoreConfig_ = null;
-      } else {
-        restoreConfig_ = null;
+      restoreConfig_ = null;
+      if (restoreConfigBuilder_ != null) {
+        restoreConfigBuilder_.dispose();
         restoreConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       etag_ = "";
-
       return this;
     }
 
@@ -1056,32 +1066,47 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.RestorePlan buildPartial() {
       com.google.cloud.gkebackup.v1.RestorePlan result =
           new com.google.cloud.gkebackup.v1.RestorePlan(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uid_ = uid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.description_ = description_;
-      result.backupPlan_ = backupPlan_;
-      result.cluster_ = cluster_;
-      if (restoreConfigBuilder_ == null) {
-        result.restoreConfig_ = restoreConfig_;
-      } else {
-        result.restoreConfig_ = restoreConfigBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.etag_ = etag_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.RestorePlan result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.backupPlan_ = backupPlan_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.cluster_ = cluster_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.restoreConfig_ =
+            restoreConfigBuilder_ == null ? restoreConfig_ : restoreConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -1131,10 +1156,12 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkebackup.v1.RestorePlan.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1145,22 +1172,27 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getBackupPlan().isEmpty()) {
         backupPlan_ = other.backupPlan_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getCluster().isEmpty()) {
         cluster_ = other.cluster_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasRestoreConfig()) {
         mergeRestoreConfig(other.getRestoreConfig());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1192,49 +1224,49 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 backupPlan_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 cluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getRestoreConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -1246,12 +1278,13 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -1337,8 +1370,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1355,8 +1388,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1378,8 +1411,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1448,8 +1481,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1466,8 +1499,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1489,8 +1522,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1516,7 +1549,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1559,11 +1592,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1581,11 +1614,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1602,17 +1635,18 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1628,14 +1662,13 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1651,7 +1684,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1726,7 +1759,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1769,11 +1802,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1791,11 +1824,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1812,17 +1845,18 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1838,14 +1872,13 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1861,7 +1894,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1976,8 +2009,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1993,8 +2026,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2015,8 +2048,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2094,8 +2127,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       backupPlan_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2115,8 +2148,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackupPlan() {
-
       backupPlan_ = getDefaultInstance().getBackupPlan();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2141,8 +2174,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backupPlan_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2229,8 +2262,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cluster_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2253,8 +2286,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCluster() {
-
       cluster_ = getDefaultInstance().getCluster();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2282,8 +2315,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cluster_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2308,7 +2341,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the restoreConfig field is set.
      */
     public boolean hasRestoreConfig() {
-      return restoreConfigBuilder_ != null || restoreConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2349,11 +2382,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         restoreConfig_ = value;
-        onChanged();
       } else {
         restoreConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2371,11 +2404,11 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkebackup.v1.RestoreConfig.Builder builderForValue) {
       if (restoreConfigBuilder_ == null) {
         restoreConfig_ = builderForValue.build();
-        onChanged();
       } else {
         restoreConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2391,19 +2424,18 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRestoreConfig(com.google.cloud.gkebackup.v1.RestoreConfig value) {
       if (restoreConfigBuilder_ == null) {
-        if (restoreConfig_ != null) {
-          restoreConfig_ =
-              com.google.cloud.gkebackup.v1.RestoreConfig.newBuilder(restoreConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && restoreConfig_ != null
+            && restoreConfig_ != com.google.cloud.gkebackup.v1.RestoreConfig.getDefaultInstance()) {
+          getRestoreConfigBuilder().mergeFrom(value);
         } else {
           restoreConfig_ = value;
         }
-        onChanged();
       } else {
         restoreConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2418,14 +2450,13 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRestoreConfig() {
-      if (restoreConfigBuilder_ == null) {
-        restoreConfig_ = null;
-        onChanged();
-      } else {
-        restoreConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      restoreConfig_ = null;
+      if (restoreConfigBuilder_ != null) {
+        restoreConfigBuilder_.dispose();
         restoreConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2440,7 +2471,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestoreConfig.Builder getRestoreConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getRestoreConfigFieldBuilder().getBuilder();
     }
@@ -2503,14 +2534,14 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -2562,8 +2593,10 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2592,6 +2625,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2614,6 +2648,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2632,8 +2667,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -2647,6 +2682,7 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 
@@ -2732,8 +2768,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2756,8 +2792,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2785,8 +2821,8 @@ public final class RestorePlan extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

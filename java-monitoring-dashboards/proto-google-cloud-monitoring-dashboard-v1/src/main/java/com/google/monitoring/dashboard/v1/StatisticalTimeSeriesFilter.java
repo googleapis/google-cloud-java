@@ -207,7 +207,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
   }
 
   public static final int RANKING_METHOD_FIELD_NUMBER = 1;
-  private int rankingMethod_;
+  private int rankingMethod_ = 0;
   /**
    *
    *
@@ -246,9 +246,8 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method getRankingMethod() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method result =
-        com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.valueOf(
+        com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.forNumber(
             rankingMethod_);
     return result == null
         ? com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.UNRECOGNIZED
@@ -256,7 +255,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
   }
 
   public static final int NUM_TIME_SERIES_FIELD_NUMBER = 2;
-  private int numTimeSeries_;
+  private int numTimeSeries_ = 0;
   /**
    *
    *
@@ -486,10 +485,9 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rankingMethod_ = 0;
-
       numTimeSeries_ = 0;
-
       return this;
     }
 
@@ -518,10 +516,22 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter buildPartial() {
       com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter result =
           new com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter(this);
-      result.rankingMethod_ = rankingMethod_;
-      result.numTimeSeries_ = numTimeSeries_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rankingMethod_ = rankingMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.numTimeSeries_ = numTimeSeries_;
+      }
     }
 
     @java.lang.Override
@@ -606,13 +616,13 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
             case 8:
               {
                 rankingMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 numTimeSeries_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -631,6 +641,8 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int rankingMethod_ = 0;
     /**
@@ -671,8 +683,8 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setRankingMethodValue(int value) {
-
       rankingMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,9 +707,8 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method
         getRankingMethod() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method result =
-          com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.valueOf(
+          com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.forNumber(
               rankingMethod_);
       return result == null
           ? com.google.monitoring.dashboard.v1.StatisticalTimeSeriesFilter.Method.UNRECOGNIZED
@@ -725,7 +736,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       rankingMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -747,7 +758,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearRankingMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rankingMethod_ = 0;
       onChanged();
       return this;
@@ -784,6 +795,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
     public Builder setNumTimeSeries(int value) {
 
       numTimeSeries_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,7 +811,7 @@ public final class StatisticalTimeSeriesFilter extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearNumTimeSeries() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       numTimeSeries_ = 0;
       onChanged();
       return this;

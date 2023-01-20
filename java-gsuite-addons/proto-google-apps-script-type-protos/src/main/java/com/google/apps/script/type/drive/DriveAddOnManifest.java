@@ -113,7 +113,9 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.apps.script.type.HomepageExtensionPointOrBuilder getHomepageTriggerOrBuilder() {
-    return getHomepageTrigger();
+    return homepageTrigger_ == null
+        ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
+        : homepageTrigger_;
   }
 
   public static final int ON_ITEMS_SELECTED_TRIGGER_FIELD_NUMBER = 2;
@@ -165,7 +167,9 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.apps.script.type.drive.DriveExtensionPointOrBuilder
       getOnItemsSelectedTriggerOrBuilder() {
-    return getOnItemsSelectedTrigger();
+    return onItemsSelectedTrigger_ == null
+        ? com.google.apps.script.type.drive.DriveExtensionPoint.getDefaultInstance()
+        : onItemsSelectedTrigger_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +389,15 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = 0;
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
-      if (onItemsSelectedTriggerBuilder_ == null) {
-        onItemsSelectedTrigger_ = null;
-      } else {
-        onItemsSelectedTrigger_ = null;
+      onItemsSelectedTrigger_ = null;
+      if (onItemsSelectedTriggerBuilder_ != null) {
+        onItemsSelectedTriggerBuilder_.dispose();
         onItemsSelectedTriggerBuilder_ = null;
       }
       return this;
@@ -424,18 +427,25 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     public com.google.apps.script.type.drive.DriveAddOnManifest buildPartial() {
       com.google.apps.script.type.drive.DriveAddOnManifest result =
           new com.google.apps.script.type.drive.DriveAddOnManifest(this);
-      if (homepageTriggerBuilder_ == null) {
-        result.homepageTrigger_ = homepageTrigger_;
-      } else {
-        result.homepageTrigger_ = homepageTriggerBuilder_.build();
-      }
-      if (onItemsSelectedTriggerBuilder_ == null) {
-        result.onItemsSelectedTrigger_ = onItemsSelectedTrigger_;
-      } else {
-        result.onItemsSelectedTrigger_ = onItemsSelectedTriggerBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.drive.DriveAddOnManifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.homepageTrigger_ =
+            homepageTriggerBuilder_ == null ? homepageTrigger_ : homepageTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.onItemsSelectedTrigger_ =
+            onItemsSelectedTriggerBuilder_ == null
+                ? onItemsSelectedTrigger_
+                : onItemsSelectedTriggerBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,14 +529,14 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getHomepageTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getOnItemsSelectedTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +555,8 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.apps.script.type.HomepageExtensionPoint homepageTrigger_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -565,7 +577,7 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      * @return Whether the homepageTrigger field is set.
      */
     public boolean hasHomepageTrigger() {
-      return homepageTriggerBuilder_ != null || homepageTrigger_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -604,11 +616,11 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         homepageTrigger_ = value;
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -625,11 +637,11 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         com.google.apps.script.type.HomepageExtensionPoint.Builder builderForValue) {
       if (homepageTriggerBuilder_ == null) {
         homepageTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -644,19 +656,19 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeHomepageTrigger(com.google.apps.script.type.HomepageExtensionPoint value) {
       if (homepageTriggerBuilder_ == null) {
-        if (homepageTrigger_ != null) {
-          homepageTrigger_ =
-              com.google.apps.script.type.HomepageExtensionPoint.newBuilder(homepageTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && homepageTrigger_ != null
+            && homepageTrigger_
+                != com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()) {
+          getHomepageTriggerBuilder().mergeFrom(value);
         } else {
           homepageTrigger_ = value;
         }
-        onChanged();
       } else {
         homepageTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -670,14 +682,13 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 1;</code>
      */
     public Builder clearHomepageTrigger() {
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-        onChanged();
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -691,7 +702,7 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 1;</code>
      */
     public com.google.apps.script.type.HomepageExtensionPoint.Builder getHomepageTriggerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
@@ -762,7 +773,7 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      * @return Whether the onItemsSelectedTrigger field is set.
      */
     public boolean hasOnItemsSelectedTrigger() {
-      return onItemsSelectedTriggerBuilder_ != null || onItemsSelectedTrigger_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -804,11 +815,11 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         onItemsSelectedTrigger_ = value;
-        onChanged();
       } else {
         onItemsSelectedTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -826,11 +837,11 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
         com.google.apps.script.type.drive.DriveExtensionPoint.Builder builderForValue) {
       if (onItemsSelectedTriggerBuilder_ == null) {
         onItemsSelectedTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         onItemsSelectedTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,20 +858,19 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
     public Builder mergeOnItemsSelectedTrigger(
         com.google.apps.script.type.drive.DriveExtensionPoint value) {
       if (onItemsSelectedTriggerBuilder_ == null) {
-        if (onItemsSelectedTrigger_ != null) {
-          onItemsSelectedTrigger_ =
-              com.google.apps.script.type.drive.DriveExtensionPoint.newBuilder(
-                      onItemsSelectedTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && onItemsSelectedTrigger_ != null
+            && onItemsSelectedTrigger_
+                != com.google.apps.script.type.drive.DriveExtensionPoint.getDefaultInstance()) {
+          getOnItemsSelectedTriggerBuilder().mergeFrom(value);
         } else {
           onItemsSelectedTrigger_ = value;
         }
-        onChanged();
       } else {
         onItemsSelectedTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,14 +885,13 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearOnItemsSelectedTrigger() {
-      if (onItemsSelectedTriggerBuilder_ == null) {
-        onItemsSelectedTrigger_ = null;
-        onChanged();
-      } else {
-        onItemsSelectedTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onItemsSelectedTrigger_ = null;
+      if (onItemsSelectedTriggerBuilder_ != null) {
+        onItemsSelectedTriggerBuilder_.dispose();
         onItemsSelectedTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -898,7 +907,7 @@ public final class DriveAddOnManifest extends com.google.protobuf.GeneratedMessa
      */
     public com.google.apps.script.type.drive.DriveExtensionPoint.Builder
         getOnItemsSelectedTriggerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOnItemsSelectedTriggerFieldBuilder().getBuilder();
     }

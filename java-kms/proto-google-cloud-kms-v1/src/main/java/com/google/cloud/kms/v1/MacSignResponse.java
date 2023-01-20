@@ -71,7 +71,9 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int MAC_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString mac_;
+  private com.google.protobuf.ByteString mac_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -220,11 +222,11 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getMacCrc32COrBuilder() {
-    return getMacCrc32C();
+    return macCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : macCrc32C_;
   }
 
   public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 4;
-  private boolean verifiedDataCrc32C_;
+  private boolean verifiedDataCrc32C_ = false;
   /**
    *
    *
@@ -255,7 +257,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -286,9 +288,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -532,20 +533,16 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       mac_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (macCrc32CBuilder_ == null) {
-        macCrc32C_ = null;
-      } else {
-        macCrc32C_ = null;
+      macCrc32C_ = null;
+      if (macCrc32CBuilder_ != null) {
+        macCrc32CBuilder_.dispose();
         macCrc32CBuilder_ = null;
       }
       verifiedDataCrc32C_ = false;
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -573,17 +570,30 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.kms.v1.MacSignResponse buildPartial() {
       com.google.cloud.kms.v1.MacSignResponse result =
           new com.google.cloud.kms.v1.MacSignResponse(this);
-      result.name_ = name_;
-      result.mac_ = mac_;
-      if (macCrc32CBuilder_ == null) {
-        result.macCrc32C_ = macCrc32C_;
-      } else {
-        result.macCrc32C_ = macCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
-      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.MacSignResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mac_ = mac_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.macCrc32C_ = macCrc32CBuilder_ == null ? macCrc32C_ : macCrc32CBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -633,6 +643,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.kms.v1.MacSignResponse.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getMac() != com.google.protobuf.ByteString.EMPTY) {
@@ -676,31 +687,31 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 mac_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getMacCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 verifiedDataCrc32C_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -719,6 +730,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -787,8 +800,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -806,8 +819,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -830,8 +843,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -868,8 +881,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       mac_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -885,7 +898,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMac() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       mac_ = getDefaultInstance().getMac();
       onChanged();
       return this;
@@ -921,7 +934,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return Whether the macCrc32c field is set.
      */
     public boolean hasMacCrc32C() {
-      return macCrc32CBuilder_ != null || macCrc32C_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -982,11 +995,11 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         macCrc32C_ = value;
-        onChanged();
       } else {
         macCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1013,11 +1026,11 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setMacCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (macCrc32CBuilder_ == null) {
         macCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         macCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1043,17 +1056,18 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMacCrc32C(com.google.protobuf.Int64Value value) {
       if (macCrc32CBuilder_ == null) {
-        if (macCrc32C_ != null) {
-          macCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(macCrc32C_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && macCrc32C_ != null
+            && macCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getMacCrc32CBuilder().mergeFrom(value);
         } else {
           macCrc32C_ = value;
         }
-        onChanged();
       } else {
         macCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1078,14 +1092,13 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
      */
     public Builder clearMacCrc32C() {
-      if (macCrc32CBuilder_ == null) {
-        macCrc32C_ = null;
-        onChanged();
-      } else {
-        macCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      macCrc32C_ = null;
+      if (macCrc32CBuilder_ != null) {
+        macCrc32CBuilder_.dispose();
         macCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1110,7 +1123,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int64Value mac_crc32c = 3;</code>
      */
     public com.google.protobuf.Int64Value.Builder getMacCrc32CBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMacCrc32CFieldBuilder().getBuilder();
     }
@@ -1239,6 +1252,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setVerifiedDataCrc32C(boolean value) {
 
       verifiedDataCrc32C_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,7 +1281,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearVerifiedDataCrc32C() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       verifiedDataCrc32C_ = false;
       onChanged();
       return this;
@@ -1304,8 +1318,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1323,9 +1337,8 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1345,7 +1358,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1363,7 +1376,7 @@ public final class MacSignResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       protectionLevel_ = 0;
       onChanged();
       return this;

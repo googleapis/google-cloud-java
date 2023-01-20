@@ -513,11 +513,15 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesQueryOrBuilder
         getTimeSeriesQueryOrBuilder() {
-      return getTimeSeriesQuery();
+      return timeSeriesQuery_ == null
+          ? com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()
+          : timeSeriesQuery_;
     }
 
     public static final int TABLE_TEMPLATE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object tableTemplate_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object tableTemplate_ = "";
     /**
      *
      *
@@ -634,7 +638,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getMinAlignmentPeriodOrBuilder() {
-      return getMinAlignmentPeriod();
+      return minAlignmentPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minAlignmentPeriod_;
     }
 
     public static final int TABLE_DISPLAY_OPTIONS_FIELD_NUMBER = 4;
@@ -692,7 +698,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.TableDisplayOptionsOrBuilder
         getTableDisplayOptionsOrBuilder() {
-      return getTableDisplayOptions();
+      return tableDisplayOptions_ == null
+          ? com.google.monitoring.dashboard.v1.TableDisplayOptions.getDefaultInstance()
+          : tableDisplayOptions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -941,24 +949,21 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (timeSeriesQueryBuilder_ == null) {
-          timeSeriesQuery_ = null;
-        } else {
-          timeSeriesQuery_ = null;
+        bitField0_ = 0;
+        timeSeriesQuery_ = null;
+        if (timeSeriesQueryBuilder_ != null) {
+          timeSeriesQueryBuilder_.dispose();
           timeSeriesQueryBuilder_ = null;
         }
         tableTemplate_ = "";
-
-        if (minAlignmentPeriodBuilder_ == null) {
-          minAlignmentPeriod_ = null;
-        } else {
-          minAlignmentPeriod_ = null;
+        minAlignmentPeriod_ = null;
+        if (minAlignmentPeriodBuilder_ != null) {
+          minAlignmentPeriodBuilder_.dispose();
           minAlignmentPeriodBuilder_ = null;
         }
-        if (tableDisplayOptionsBuilder_ == null) {
-          tableDisplayOptions_ = null;
-        } else {
-          tableDisplayOptions_ = null;
+        tableDisplayOptions_ = null;
+        if (tableDisplayOptionsBuilder_ != null) {
+          tableDisplayOptionsBuilder_.dispose();
           tableDisplayOptionsBuilder_ = null;
         }
         return this;
@@ -989,24 +994,35 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet buildPartial() {
         com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet result =
             new com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet(this);
-        if (timeSeriesQueryBuilder_ == null) {
-          result.timeSeriesQuery_ = timeSeriesQuery_;
-        } else {
-          result.timeSeriesQuery_ = timeSeriesQueryBuilder_.build();
-        }
-        result.tableTemplate_ = tableTemplate_;
-        if (minAlignmentPeriodBuilder_ == null) {
-          result.minAlignmentPeriod_ = minAlignmentPeriod_;
-        } else {
-          result.minAlignmentPeriod_ = minAlignmentPeriodBuilder_.build();
-        }
-        if (tableDisplayOptionsBuilder_ == null) {
-          result.tableDisplayOptions_ = tableDisplayOptions_;
-        } else {
-          result.tableDisplayOptions_ = tableDisplayOptionsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.timeSeriesQuery_ =
+              timeSeriesQueryBuilder_ == null ? timeSeriesQuery_ : timeSeriesQueryBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.tableTemplate_ = tableTemplate_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.minAlignmentPeriod_ =
+              minAlignmentPeriodBuilder_ == null
+                  ? minAlignmentPeriod_
+                  : minAlignmentPeriodBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.tableDisplayOptions_ =
+              tableDisplayOptionsBuilder_ == null
+                  ? tableDisplayOptions_
+                  : tableDisplayOptionsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1064,6 +1080,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         }
         if (!other.getTableTemplate().isEmpty()) {
           tableTemplate_ = other.tableTemplate_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasMinAlignmentPeriod()) {
@@ -1102,27 +1119,27 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
                 {
                   input.readMessage(
                       getTimeSeriesQueryFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   tableTemplate_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getMinAlignmentPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getTableDisplayOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -1141,6 +1158,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.monitoring.dashboard.v1.TimeSeriesQuery timeSeriesQuery_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1163,7 +1182,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return Whether the timeSeriesQuery field is set.
        */
       public boolean hasTimeSeriesQuery() {
-        return timeSeriesQueryBuilder_ != null || timeSeriesQuery_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -1206,11 +1225,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           timeSeriesQuery_ = value;
-          onChanged();
         } else {
           timeSeriesQueryBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1229,11 +1248,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder builderForValue) {
         if (timeSeriesQueryBuilder_ == null) {
           timeSeriesQuery_ = builderForValue.build();
-          onChanged();
         } else {
           timeSeriesQueryBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1251,19 +1270,19 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public Builder mergeTimeSeriesQuery(
           com.google.monitoring.dashboard.v1.TimeSeriesQuery value) {
         if (timeSeriesQueryBuilder_ == null) {
-          if (timeSeriesQuery_ != null) {
-            timeSeriesQuery_ =
-                com.google.monitoring.dashboard.v1.TimeSeriesQuery.newBuilder(timeSeriesQuery_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && timeSeriesQuery_ != null
+              && timeSeriesQuery_
+                  != com.google.monitoring.dashboard.v1.TimeSeriesQuery.getDefaultInstance()) {
+            getTimeSeriesQueryBuilder().mergeFrom(value);
           } else {
             timeSeriesQuery_ = value;
           }
-          onChanged();
         } else {
           timeSeriesQueryBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1279,14 +1298,13 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearTimeSeriesQuery() {
-        if (timeSeriesQueryBuilder_ == null) {
-          timeSeriesQuery_ = null;
-          onChanged();
-        } else {
-          timeSeriesQuery_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        timeSeriesQuery_ = null;
+        if (timeSeriesQueryBuilder_ != null) {
+          timeSeriesQueryBuilder_.dispose();
           timeSeriesQueryBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1303,7 +1321,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        */
       public com.google.monitoring.dashboard.v1.TimeSeriesQuery.Builder
           getTimeSeriesQueryBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTimeSeriesQueryFieldBuilder().getBuilder();
       }
@@ -1428,8 +1446,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         tableTemplate_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1448,8 +1466,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearTableTemplate() {
-
         tableTemplate_ = getDefaultInstance().getTableTemplate();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1473,8 +1491,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         tableTemplate_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1503,7 +1521,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return Whether the minAlignmentPeriod field is set.
        */
       public boolean hasMinAlignmentPeriod() {
-        return minAlignmentPeriodBuilder_ != null || minAlignmentPeriod_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1552,11 +1570,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           minAlignmentPeriod_ = value;
-          onChanged();
         } else {
           minAlignmentPeriodBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1577,11 +1595,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public Builder setMinAlignmentPeriod(com.google.protobuf.Duration.Builder builderForValue) {
         if (minAlignmentPeriodBuilder_ == null) {
           minAlignmentPeriod_ = builderForValue.build();
-          onChanged();
         } else {
           minAlignmentPeriodBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1601,19 +1619,18 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeMinAlignmentPeriod(com.google.protobuf.Duration value) {
         if (minAlignmentPeriodBuilder_ == null) {
-          if (minAlignmentPeriod_ != null) {
-            minAlignmentPeriod_ =
-                com.google.protobuf.Duration.newBuilder(minAlignmentPeriod_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && minAlignmentPeriod_ != null
+              && minAlignmentPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinAlignmentPeriodBuilder().mergeFrom(value);
           } else {
             minAlignmentPeriod_ = value;
           }
-          onChanged();
         } else {
           minAlignmentPeriodBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1632,14 +1649,13 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearMinAlignmentPeriod() {
-        if (minAlignmentPeriodBuilder_ == null) {
-          minAlignmentPeriod_ = null;
-          onChanged();
-        } else {
-          minAlignmentPeriod_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        minAlignmentPeriod_ = null;
+        if (minAlignmentPeriodBuilder_ != null) {
+          minAlignmentPeriodBuilder_.dispose();
           minAlignmentPeriodBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1658,7 +1674,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public com.google.protobuf.Duration.Builder getMinAlignmentPeriodBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getMinAlignmentPeriodFieldBuilder().getBuilder();
       }
@@ -1739,7 +1755,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return Whether the tableDisplayOptions field is set.
        */
       public boolean hasTableDisplayOptions() {
-        return tableDisplayOptionsBuilder_ != null || tableDisplayOptions_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1783,11 +1799,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           tableDisplayOptions_ = value;
-          onChanged();
         } else {
           tableDisplayOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1806,11 +1822,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           com.google.monitoring.dashboard.v1.TableDisplayOptions.Builder builderForValue) {
         if (tableDisplayOptionsBuilder_ == null) {
           tableDisplayOptions_ = builderForValue.build();
-          onChanged();
         } else {
           tableDisplayOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1828,20 +1844,19 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public Builder mergeTableDisplayOptions(
           com.google.monitoring.dashboard.v1.TableDisplayOptions value) {
         if (tableDisplayOptionsBuilder_ == null) {
-          if (tableDisplayOptions_ != null) {
-            tableDisplayOptions_ =
-                com.google.monitoring.dashboard.v1.TableDisplayOptions.newBuilder(
-                        tableDisplayOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && tableDisplayOptions_ != null
+              && tableDisplayOptions_
+                  != com.google.monitoring.dashboard.v1.TableDisplayOptions.getDefaultInstance()) {
+            getTableDisplayOptionsBuilder().mergeFrom(value);
           } else {
             tableDisplayOptions_ = value;
           }
-          onChanged();
         } else {
           tableDisplayOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1857,14 +1872,13 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * </code>
        */
       public Builder clearTableDisplayOptions() {
-        if (tableDisplayOptionsBuilder_ == null) {
-          tableDisplayOptions_ = null;
-          onChanged();
-        } else {
-          tableDisplayOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        tableDisplayOptions_ = null;
+        if (tableDisplayOptionsBuilder_ != null) {
+          tableDisplayOptionsBuilder_.dispose();
           tableDisplayOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1881,7 +1895,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        */
       public com.google.monitoring.dashboard.v1.TableDisplayOptions.Builder
           getTableDisplayOptionsBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getTableDisplayOptionsFieldBuilder().getBuilder();
       }
@@ -2096,7 +2110,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int COLUMN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object column_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object column_ = "";
     /**
      *
      *
@@ -2145,7 +2161,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int VISIBLE_FIELD_NUMBER = 2;
-    private boolean visible_;
+    private boolean visible_ = false;
     /**
      *
      *
@@ -2373,10 +2389,9 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         column_ = "";
-
         visible_ = false;
-
         return this;
       }
 
@@ -2406,10 +2421,22 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings buildPartial() {
         com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings result =
             new com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings(this);
-        result.column_ = column_;
-        result.visible_ = visible_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.column_ = column_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.visible_ = visible_;
+        }
       }
 
       @java.lang.Override
@@ -2465,6 +2492,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
                 .getDefaultInstance()) return this;
         if (!other.getColumn().isEmpty()) {
           column_ = other.column_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getVisible() != false) {
@@ -2499,13 +2527,13 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   column_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   visible_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -2524,6 +2552,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object column_ = "";
       /**
@@ -2586,8 +2616,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         column_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2603,8 +2633,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearColumn() {
-
         column_ = getDefaultInstance().getColumn();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2625,8 +2655,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         column_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2662,6 +2692,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       public Builder setVisible(boolean value) {
 
         visible_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2677,7 +2708,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearVisible() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         visible_ = false;
         onChanged();
         return this;
@@ -2751,6 +2782,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DATA_SETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.TableDataSet> dataSets_;
   /**
    *
@@ -2833,7 +2866,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int METRIC_VISUALIZATION_FIELD_NUMBER = 2;
-  private int metricVisualization_;
+  private int metricVisualization_ = 0;
   /**
    *
    *
@@ -2867,9 +2900,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
       getMetricVisualization() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization result =
-        com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.valueOf(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.forNumber(
             metricVisualization_);
     return result == null
         ? com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.UNRECOGNIZED
@@ -2877,6 +2909,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int COLUMN_SETTINGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>
       columnSettings_;
   /**
@@ -3185,6 +3219,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dataSetsBuilder_ == null) {
         dataSets_ = java.util.Collections.emptyList();
       } else {
@@ -3193,14 +3228,13 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       metricVisualization_ = 0;
-
       if (columnSettingsBuilder_ == null) {
         columnSettings_ = java.util.Collections.emptyList();
       } else {
         columnSettings_ = null;
         columnSettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -3228,7 +3262,16 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.dashboard.v1.TimeSeriesTable buildPartial() {
       com.google.monitoring.dashboard.v1.TimeSeriesTable result =
           new com.google.monitoring.dashboard.v1.TimeSeriesTable(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.dashboard.v1.TimeSeriesTable result) {
       if (dataSetsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dataSets_ = java.util.Collections.unmodifiableList(dataSets_);
@@ -3238,18 +3281,22 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       } else {
         result.dataSets_ = dataSetsBuilder_.build();
       }
-      result.metricVisualization_ = metricVisualization_;
       if (columnSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           columnSettings_ = java.util.Collections.unmodifiableList(columnSettings_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.columnSettings_ = columnSettings_;
       } else {
         result.columnSettings_ = columnSettingsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.TimeSeriesTable result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metricVisualization_ = metricVisualization_;
+      }
     }
 
     @java.lang.Override
@@ -3332,7 +3379,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         if (!other.columnSettings_.isEmpty()) {
           if (columnSettings_.isEmpty()) {
             columnSettings_ = other.columnSettings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureColumnSettingsIsMutable();
             columnSettings_.addAll(other.columnSettings_);
@@ -3345,7 +3392,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             columnSettingsBuilder_.dispose();
             columnSettingsBuilder_ = null;
             columnSettings_ = other.columnSettings_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             columnSettingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getColumnSettingsFieldBuilder()
@@ -3398,7 +3445,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
             case 16:
               {
                 metricVisualization_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 34:
@@ -3871,8 +3918,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setMetricVisualizationValue(int value) {
-
       metricVisualization_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3892,9 +3939,8 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization
         getMetricVisualization() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization result =
-          com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.valueOf(
+          com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.forNumber(
               metricVisualization_);
       return result == null
           ? com.google.monitoring.dashboard.v1.TimeSeriesTable.MetricVisualization.UNRECOGNIZED
@@ -3919,7 +3965,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       metricVisualization_ = value.getNumber();
       onChanged();
       return this;
@@ -3938,7 +3984,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearMetricVisualization() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       metricVisualization_ = 0;
       onChanged();
       return this;
@@ -3948,11 +3994,11 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
         columnSettings_ = java.util.Collections.emptyList();
 
     private void ensureColumnSettingsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         columnSettings_ =
             new java.util.ArrayList<
                 com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings>(columnSettings_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -4199,7 +4245,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
     public Builder clearColumnSettings() {
       if (columnSettingsBuilder_ == null) {
         columnSettings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         columnSettingsBuilder_.clear();
@@ -4346,7 +4392,7 @@ public final class TimeSeriesTable extends com.google.protobuf.GeneratedMessageV
                 com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettings.Builder,
                 com.google.monitoring.dashboard.v1.TimeSeriesTable.ColumnSettingsOrBuilder>(
                 columnSettings_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         columnSettings_ = null;

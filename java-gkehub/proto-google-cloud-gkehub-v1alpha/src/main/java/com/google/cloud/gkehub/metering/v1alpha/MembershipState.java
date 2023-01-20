@@ -113,11 +113,13 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastMeasurementTimeOrBuilder() {
-    return getLastMeasurementTime();
+    return lastMeasurementTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastMeasurementTime_;
   }
 
   public static final int PRECISE_LAST_MEASURED_CLUSTER_VCPU_CAPACITY_FIELD_NUMBER = 3;
-  private float preciseLastMeasuredClusterVcpuCapacity_;
+  private float preciseLastMeasuredClusterVcpuCapacity_ = 0F;
   /**
    *
    *
@@ -352,14 +354,13 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lastMeasurementTimeBuilder_ == null) {
-        lastMeasurementTime_ = null;
-      } else {
-        lastMeasurementTime_ = null;
+      bitField0_ = 0;
+      lastMeasurementTime_ = null;
+      if (lastMeasurementTimeBuilder_ != null) {
+        lastMeasurementTimeBuilder_.dispose();
         lastMeasurementTimeBuilder_ = null;
       }
       preciseLastMeasuredClusterVcpuCapacity_ = 0F;
-
       return this;
     }
 
@@ -387,14 +388,24 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.metering.v1alpha.MembershipState buildPartial() {
       com.google.cloud.gkehub.metering.v1alpha.MembershipState result =
           new com.google.cloud.gkehub.metering.v1alpha.MembershipState(this);
-      if (lastMeasurementTimeBuilder_ == null) {
-        result.lastMeasurementTime_ = lastMeasurementTime_;
-      } else {
-        result.lastMeasurementTime_ = lastMeasurementTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.preciseLastMeasuredClusterVcpuCapacity_ = preciseLastMeasuredClusterVcpuCapacity_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.metering.v1alpha.MembershipState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastMeasurementTime_ =
+            lastMeasurementTimeBuilder_ == null
+                ? lastMeasurementTime_
+                : lastMeasurementTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.preciseLastMeasuredClusterVcpuCapacity_ = preciseLastMeasuredClusterVcpuCapacity_;
+      }
     }
 
     @java.lang.Override
@@ -480,13 +491,13 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getLastMeasurementTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 29:
               {
                 preciseLastMeasuredClusterVcpuCapacity_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 29
             default:
@@ -505,6 +516,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp lastMeasurementTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -525,7 +538,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * @return Whether the lastMeasurementTime field is set.
      */
     public boolean hasLastMeasurementTime() {
-      return lastMeasurementTimeBuilder_ != null || lastMeasurementTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -564,11 +577,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         lastMeasurementTime_ = value;
-        onChanged();
       } else {
         lastMeasurementTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -584,11 +597,11 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public Builder setLastMeasurementTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastMeasurementTimeBuilder_ == null) {
         lastMeasurementTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastMeasurementTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -603,19 +616,18 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeLastMeasurementTime(com.google.protobuf.Timestamp value) {
       if (lastMeasurementTimeBuilder_ == null) {
-        if (lastMeasurementTime_ != null) {
-          lastMeasurementTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastMeasurementTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && lastMeasurementTime_ != null
+            && lastMeasurementTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastMeasurementTimeBuilder().mergeFrom(value);
         } else {
           lastMeasurementTime_ = value;
         }
-        onChanged();
       } else {
         lastMeasurementTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -629,14 +641,13 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp last_measurement_time = 1;</code>
      */
     public Builder clearLastMeasurementTime() {
-      if (lastMeasurementTimeBuilder_ == null) {
-        lastMeasurementTime_ = null;
-        onChanged();
-      } else {
-        lastMeasurementTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      lastMeasurementTime_ = null;
+      if (lastMeasurementTimeBuilder_ != null) {
+        lastMeasurementTimeBuilder_.dispose();
         lastMeasurementTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -650,7 +661,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp last_measurement_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastMeasurementTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLastMeasurementTimeFieldBuilder().getBuilder();
     }
@@ -733,6 +744,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public Builder setPreciseLastMeasuredClusterVcpuCapacity(float value) {
 
       preciseLastMeasuredClusterVcpuCapacity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -749,7 +761,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPreciseLastMeasuredClusterVcpuCapacity() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       preciseLastMeasuredClusterVcpuCapacity_ = 0F;
       onChanged();
       return this;

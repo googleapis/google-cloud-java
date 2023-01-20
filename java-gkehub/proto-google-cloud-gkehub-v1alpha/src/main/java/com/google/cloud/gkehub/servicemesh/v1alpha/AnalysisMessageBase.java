@@ -370,7 +370,9 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -423,7 +425,9 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CODE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object code_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object code_ = "";
     /**
      *
      *
@@ -690,10 +694,9 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         displayName_ = "";
-
         code_ = "";
-
         return this;
       }
 
@@ -724,10 +727,22 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type buildPartial() {
         com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type result =
             new com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type(this);
-        result.displayName_ = displayName_;
-        result.code_ = code_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.displayName_ = displayName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.code_ = code_;
+        }
       }
 
       @java.lang.Override
@@ -783,10 +798,12 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
                 .getDefaultInstance()) return this;
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getCode().isEmpty()) {
           code_ = other.code_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -818,13 +835,13 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   code_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -843,6 +860,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object displayName_ = "";
       /**
@@ -911,8 +930,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -930,8 +949,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -954,8 +973,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1027,8 +1046,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         code_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1046,8 +1065,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearCode() {
-
         code_ = getDefaultInstance().getCode();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1070,8 +1089,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         code_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1189,11 +1208,13 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.TypeOrBuilder
       getTypeOrBuilder() {
-    return getType();
+    return type_ == null
+        ? com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type.getDefaultInstance()
+        : type_;
   }
 
   public static final int LEVEL_FIELD_NUMBER = 2;
-  private int level_;
+  private int level_ = 0;
   /**
    *
    *
@@ -1222,16 +1243,17 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level getLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level result =
-        com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.valueOf(level_);
+        com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.forNumber(level_);
     return result == null
         ? com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.UNRECOGNIZED
         : result;
   }
 
   public static final int DOCUMENTATION_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object documentationUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object documentationUrl_ = "";
   /**
    *
    *
@@ -1507,16 +1529,14 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (typeBuilder_ == null) {
-        type_ = null;
-      } else {
-        type_ = null;
+      bitField0_ = 0;
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
       level_ = 0;
-
       documentationUrl_ = "";
-
       return this;
     }
 
@@ -1545,15 +1565,25 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase buildPartial() {
       com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase result =
           new com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase(this);
-      if (typeBuilder_ == null) {
-        result.type_ = type_;
-      } else {
-        result.type_ = typeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.level_ = level_;
-      result.documentationUrl_ = documentationUrl_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = typeBuilder_ == null ? type_ : typeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.level_ = level_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.documentationUrl_ = documentationUrl_;
+      }
     }
 
     @java.lang.Override
@@ -1612,6 +1642,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       }
       if (!other.getDocumentationUrl().isEmpty()) {
         documentationUrl_ = other.documentationUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1643,19 +1674,19 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 level_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 documentationUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1675,6 +1706,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type type_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type,
@@ -1693,7 +1726,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return typeBuilder_ != null || type_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1732,11 +1765,11 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         type_ = value;
-        onChanged();
       } else {
         typeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1753,11 +1786,11 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (typeBuilder_ == null) {
         type_ = builderForValue.build();
-        onChanged();
       } else {
         typeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1772,19 +1805,20 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
     public Builder mergeType(
         com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type value) {
       if (typeBuilder_ == null) {
-        if (type_ != null) {
-          type_ =
-              com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type.newBuilder(type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && type_ != null
+            && type_
+                != com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type
+                    .getDefaultInstance()) {
+          getTypeBuilder().mergeFrom(value);
         } else {
           type_ = value;
         }
-        onChanged();
       } else {
         typeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1797,14 +1831,13 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type type = 1;</code>
      */
     public Builder clearType() {
-      if (typeBuilder_ == null) {
-        type_ = null;
-        onChanged();
-      } else {
-        type_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1818,7 +1851,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Type.Builder
         getTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
@@ -1897,8 +1930,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
-
       level_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1915,9 +1948,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level getLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level result =
-          com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.valueOf(level_);
+          com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.forNumber(level_);
       return result == null
           ? com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessageBase.Level.UNRECOGNIZED
           : result;
@@ -1939,7 +1971,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       level_ = value.getNumber();
       onChanged();
       return this;
@@ -1956,7 +1988,7 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       level_ = 0;
       onChanged();
       return this;
@@ -2026,8 +2058,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       documentationUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2044,8 +2076,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDocumentationUrl() {
-
       documentationUrl_ = getDefaultInstance().getDocumentationUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2067,8 +2099,8 @@ public final class AnalysisMessageBase extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       documentationUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

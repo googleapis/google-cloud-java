@@ -127,7 +127,7 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 2;
@@ -184,7 +184,9 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.DomainOrBuilder getDomainOrBuilder() {
-    return getDomain();
+    return domain_ == null
+        ? com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()
+        : domain_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -405,16 +407,15 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (domainBuilder_ == null) {
-        domain_ = null;
-      } else {
-        domain_ = null;
+      domain_ = null;
+      if (domainBuilder_ != null) {
+        domainBuilder_.dispose();
         domainBuilder_ = null;
       }
       return this;
@@ -444,18 +445,21 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.managedidentities.v1.UpdateDomainRequest buildPartial() {
       com.google.cloud.managedidentities.v1.UpdateDomainRequest result =
           new com.google.cloud.managedidentities.v1.UpdateDomainRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (domainBuilder_ == null) {
-        result.domain_ = domain_;
-      } else {
-        result.domain_ = domainBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.managedidentities.v1.UpdateDomainRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domain_ = domainBuilder_ == null ? domain_ : domainBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -539,13 +543,13 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDomainFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -564,6 +568,8 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -589,7 +595,7 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -638,11 +644,11 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,11 +669,11 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -687,17 +693,18 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -716,14 +723,13 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -742,7 +748,7 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -823,7 +829,7 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
-      return domainBuilder_ != null || domain_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -866,11 +872,11 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         domain_ = value;
-        onChanged();
       } else {
         domainBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -888,11 +894,11 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
     public Builder setDomain(com.google.cloud.managedidentities.v1.Domain.Builder builderForValue) {
       if (domainBuilder_ == null) {
         domain_ = builderForValue.build();
-        onChanged();
       } else {
         domainBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -909,19 +915,18 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDomain(com.google.cloud.managedidentities.v1.Domain value) {
       if (domainBuilder_ == null) {
-        if (domain_ != null) {
-          domain_ =
-              com.google.cloud.managedidentities.v1.Domain.newBuilder(domain_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && domain_ != null
+            && domain_ != com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()) {
+          getDomainBuilder().mergeFrom(value);
         } else {
           domain_ = value;
         }
-        onChanged();
       } else {
         domainBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -937,14 +942,13 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDomain() {
-      if (domainBuilder_ == null) {
-        domain_ = null;
-        onChanged();
-      } else {
-        domain_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      domain_ = null;
+      if (domainBuilder_ != null) {
+        domainBuilder_.dispose();
         domainBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -960,7 +964,7 @@ public final class UpdateDomainRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.managedidentities.v1.Domain.Builder getDomainBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDomainFieldBuilder().getBuilder();
     }

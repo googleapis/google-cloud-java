@@ -269,7 +269,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -320,7 +322,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -373,7 +377,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -428,7 +434,9 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -493,6 +501,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -559,7 +568,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -603,6 +615,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
@@ -681,8 +694,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getUserLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -718,7 +733,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VERIFICATION_STATUS_FIELD_NUMBER = 9;
-  private int verificationStatus_;
+  private int verificationStatus_ = 0;
   /**
    *
    *
@@ -779,9 +794,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.NotificationChannel.VerificationStatus result =
-        com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(
+        com.google.monitoring.v3.NotificationChannel.VerificationStatus.forNumber(
             verificationStatus_);
     return result == null
         ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED
@@ -846,7 +860,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder() {
-    return getEnabled();
+    return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
   }
 
   public static final int CREATION_RECORD_FIELD_NUMBER = 12;
@@ -894,10 +908,14 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.monitoring.v3.MutationRecordOrBuilder getCreationRecordOrBuilder() {
-    return getCreationRecord();
+    return creationRecord_ == null
+        ? com.google.monitoring.v3.MutationRecord.getDefaultInstance()
+        : creationRecord_;
   }
 
   public static final int MUTATION_RECORDS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.MutationRecord> mutationRecords_;
   /**
    *
@@ -1306,28 +1324,22 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = "";
-
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       internalGetMutableLabels().clear();
       internalGetMutableUserLabels().clear();
       verificationStatus_ = 0;
-
-      if (enabledBuilder_ == null) {
-        enabled_ = null;
-      } else {
-        enabled_ = null;
+      enabled_ = null;
+      if (enabledBuilder_ != null) {
+        enabledBuilder_.dispose();
         enabledBuilder_ = null;
       }
-      if (creationRecordBuilder_ == null) {
-        creationRecord_ = null;
-      } else {
-        creationRecord_ = null;
+      creationRecord_ = null;
+      if (creationRecordBuilder_ != null) {
+        creationRecordBuilder_.dispose();
         creationRecordBuilder_ = null;
       }
       if (mutationRecordsBuilder_ == null) {
@@ -1336,7 +1348,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         mutationRecords_ = null;
         mutationRecordsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1364,37 +1376,58 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.v3.NotificationChannel buildPartial() {
       com.google.monitoring.v3.NotificationChannel result =
           new com.google.monitoring.v3.NotificationChannel(this);
-      int from_bitField0_ = bitField0_;
-      result.type_ = type_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.userLabels_ = internalGetUserLabels();
-      result.userLabels_.makeImmutable();
-      result.verificationStatus_ = verificationStatus_;
-      if (enabledBuilder_ == null) {
-        result.enabled_ = enabled_;
-      } else {
-        result.enabled_ = enabledBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (creationRecordBuilder_ == null) {
-        result.creationRecord_ = creationRecord_;
-      } else {
-        result.creationRecord_ = creationRecordBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.NotificationChannel result) {
       if (mutationRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           mutationRecords_ = java.util.Collections.unmodifiableList(mutationRecords_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.mutationRecords_ = mutationRecords_;
       } else {
         result.mutationRecords_ = mutationRecordsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.NotificationChannel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.verificationStatus_ = verificationStatus_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enabled_ = enabledBuilder_ == null ? enabled_ : enabledBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.creationRecord_ =
+            creationRecordBuilder_ == null ? creationRecord_ : creationRecordBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1444,22 +1477,28 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (other == com.google.monitoring.v3.NotificationChannel.getDefaultInstance()) return this;
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000010;
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000020;
       if (other.verificationStatus_ != 0) {
         setVerificationStatusValue(other.getVerificationStatusValue());
       }
@@ -1473,7 +1512,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         if (!other.mutationRecords_.isEmpty()) {
           if (mutationRecords_.isEmpty()) {
             mutationRecords_ = other.mutationRecords_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureMutationRecordsIsMutable();
             mutationRecords_.addAll(other.mutationRecords_);
@@ -1486,7 +1525,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             mutationRecordsBuilder_.dispose();
             mutationRecordsBuilder_ = null;
             mutationRecords_ = other.mutationRecords_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000200);
             mutationRecordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMutationRecordsFieldBuilder()
@@ -1525,19 +1564,19 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1549,12 +1588,13 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 66:
@@ -1566,24 +1606,25 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 72:
               {
                 verificationStatus_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 72
             case 90:
               {
                 input.readMessage(getEnabledFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getCreationRecordFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 106:
@@ -1682,8 +1723,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1700,8 +1741,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1723,8 +1764,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1796,8 +1837,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1815,8 +1856,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1839,8 +1880,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1915,8 +1956,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1935,8 +1976,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1960,8 +2001,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2033,8 +2074,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2052,8 +2093,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2076,8 +2117,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2093,14 +2134,14 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return labels_;
     }
 
@@ -2161,8 +2202,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2194,6 +2237,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2219,6 +2263,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2240,8 +2285,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2258,6 +2303,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2274,8 +2320,6 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableUserLabels() {
-      onChanged();
-      ;
       if (userLabels_ == null) {
         userLabels_ =
             com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
@@ -2283,6 +2327,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return userLabels_;
     }
 
@@ -2355,8 +2401,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getUserLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2392,6 +2440,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     }
 
     public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -2421,6 +2470,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -2446,8 +2496,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -2468,6 +2518,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2532,8 +2583,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setVerificationStatusValue(int value) {
-
       verificationStatus_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2566,9 +2617,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.NotificationChannel.VerificationStatus result =
-          com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(
+          com.google.monitoring.v3.NotificationChannel.VerificationStatus.forNumber(
               verificationStatus_);
       return result == null
           ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED
@@ -2607,7 +2657,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       verificationStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -2640,7 +2690,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVerificationStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       verificationStatus_ = 0;
       onChanged();
       return this;
@@ -2669,7 +2719,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return Whether the enabled field is set.
      */
     public boolean hasEnabled() {
-      return enabledBuilder_ != null || enabled_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2714,11 +2764,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         enabled_ = value;
-        onChanged();
       } else {
         enabledBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2738,11 +2788,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     public Builder setEnabled(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (enabledBuilder_ == null) {
         enabled_ = builderForValue.build();
-        onChanged();
       } else {
         enabledBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2761,17 +2811,18 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeEnabled(com.google.protobuf.BoolValue value) {
       if (enabledBuilder_ == null) {
-        if (enabled_ != null) {
-          enabled_ =
-              com.google.protobuf.BoolValue.newBuilder(enabled_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && enabled_ != null
+            && enabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnabledBuilder().mergeFrom(value);
         } else {
           enabled_ = value;
         }
-        onChanged();
       } else {
         enabledBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2789,14 +2840,13 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
      */
     public Builder clearEnabled() {
-      if (enabledBuilder_ == null) {
-        enabled_ = null;
-        onChanged();
-      } else {
-        enabled_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      enabled_ = null;
+      if (enabledBuilder_ != null) {
+        enabledBuilder_.dispose();
         enabledBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2814,7 +2864,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnabledBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEnabledFieldBuilder().getBuilder();
     }
@@ -2888,7 +2938,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * @return Whether the creationRecord field is set.
      */
     public boolean hasCreationRecord() {
-      return creationRecordBuilder_ != null || creationRecord_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2925,11 +2975,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         creationRecord_ = value;
-        onChanged();
       } else {
         creationRecordBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2945,11 +2995,11 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         com.google.monitoring.v3.MutationRecord.Builder builderForValue) {
       if (creationRecordBuilder_ == null) {
         creationRecord_ = builderForValue.build();
-        onChanged();
       } else {
         creationRecordBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2963,19 +3013,18 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreationRecord(com.google.monitoring.v3.MutationRecord value) {
       if (creationRecordBuilder_ == null) {
-        if (creationRecord_ != null) {
-          creationRecord_ =
-              com.google.monitoring.v3.MutationRecord.newBuilder(creationRecord_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && creationRecord_ != null
+            && creationRecord_ != com.google.monitoring.v3.MutationRecord.getDefaultInstance()) {
+          getCreationRecordBuilder().mergeFrom(value);
         } else {
           creationRecord_ = value;
         }
-        onChanged();
       } else {
         creationRecordBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2988,14 +3037,13 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
      */
     public Builder clearCreationRecord() {
-      if (creationRecordBuilder_ == null) {
-        creationRecord_ = null;
-        onChanged();
-      } else {
-        creationRecord_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      creationRecord_ = null;
+      if (creationRecordBuilder_ != null) {
+        creationRecordBuilder_.dispose();
         creationRecordBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3008,7 +3056,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
      * <code>.google.monitoring.v3.MutationRecord creation_record = 12;</code>
      */
     public com.google.monitoring.v3.MutationRecord.Builder getCreationRecordBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreationRecordFieldBuilder().getBuilder();
     }
@@ -3060,10 +3108,10 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureMutationRecordsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         mutationRecords_ =
             new java.util.ArrayList<com.google.monitoring.v3.MutationRecord>(mutationRecords_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3279,7 +3327,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     public Builder clearMutationRecords() {
       if (mutationRecordsBuilder_ == null) {
         mutationRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         mutationRecordsBuilder_.clear();
@@ -3402,7 +3450,7 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
                 com.google.monitoring.v3.MutationRecord.Builder,
                 com.google.monitoring.v3.MutationRecordOrBuilder>(
                 mutationRecords_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         mutationRecords_ = null;

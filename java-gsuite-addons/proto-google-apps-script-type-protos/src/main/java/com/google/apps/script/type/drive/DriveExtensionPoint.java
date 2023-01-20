@@ -69,7 +69,9 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RUN_FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object runFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runFunction_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       runFunction_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
     public com.google.apps.script.type.drive.DriveExtensionPoint buildPartial() {
       com.google.apps.script.type.drive.DriveExtensionPoint result =
           new com.google.apps.script.type.drive.DriveExtensionPoint(this);
-      result.runFunction_ = runFunction_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.drive.DriveExtensionPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.runFunction_ = runFunction_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getRunFunction().isEmpty()) {
         runFunction_ = other.runFunction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 runFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object runFunction_ = "";
     /**
@@ -515,8 +529,8 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,8 +547,8 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRunFunction() {
-
       runFunction_ = getDefaultInstance().getRunFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -556,8 +570,8 @@ public final class DriveExtensionPoint extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

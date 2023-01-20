@@ -335,7 +335,10 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USED_WIDGETS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> usedWidgets_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.apps.script.type.AddOnWidgetSet.WidgetType>
       usedWidgets_converter_ =
@@ -343,9 +346,8 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
               java.lang.Integer, com.google.apps.script.type.AddOnWidgetSet.WidgetType>() {
             public com.google.apps.script.type.AddOnWidgetSet.WidgetType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.apps.script.type.AddOnWidgetSet.WidgetType result =
-                  com.google.apps.script.type.AddOnWidgetSet.WidgetType.valueOf(from);
+                  com.google.apps.script.type.AddOnWidgetSet.WidgetType.forNumber(from);
               return result == null
                   ? com.google.apps.script.type.AddOnWidgetSet.WidgetType.UNRECOGNIZED
                   : result;
@@ -647,6 +649,7 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       usedWidgets_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -676,14 +679,24 @@ public final class AddOnWidgetSet extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.script.type.AddOnWidgetSet buildPartial() {
       com.google.apps.script.type.AddOnWidgetSet result =
           new com.google.apps.script.type.AddOnWidgetSet(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.apps.script.type.AddOnWidgetSet result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         usedWidgets_ = java.util.Collections.unmodifiableList(usedWidgets_);
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.usedWidgets_ = usedWidgets_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.AddOnWidgetSet result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

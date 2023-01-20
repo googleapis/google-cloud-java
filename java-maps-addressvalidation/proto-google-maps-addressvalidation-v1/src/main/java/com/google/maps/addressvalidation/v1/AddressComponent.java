@@ -305,11 +305,15 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.ComponentNameOrBuilder getComponentNameOrBuilder() {
-    return getComponentName();
+    return componentName_ == null
+        ? com.google.maps.addressvalidation.v1.ComponentName.getDefaultInstance()
+        : componentName_;
   }
 
   public static final int COMPONENT_TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object componentType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object componentType_ = "";
   /**
    *
    *
@@ -364,7 +368,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CONFIRMATION_LEVEL_FIELD_NUMBER = 3;
-  private int confirmationLevel_;
+  private int confirmationLevel_ = 0;
   /**
    *
    *
@@ -400,9 +404,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel
       getConfirmationLevel() {
-    @SuppressWarnings("deprecation")
     com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel result =
-        com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.valueOf(
+        com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.forNumber(
             confirmationLevel_);
     return result == null
         ? com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.UNRECOGNIZED
@@ -410,7 +413,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int INFERRED_FIELD_NUMBER = 4;
-  private boolean inferred_;
+  private boolean inferred_ = false;
   /**
    *
    *
@@ -430,7 +433,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SPELL_CORRECTED_FIELD_NUMBER = 5;
-  private boolean spellCorrected_;
+  private boolean spellCorrected_ = false;
   /**
    *
    *
@@ -450,7 +453,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REPLACED_FIELD_NUMBER = 6;
-  private boolean replaced_;
+  private boolean replaced_ = false;
   /**
    *
    *
@@ -471,7 +474,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int UNEXPECTED_FIELD_NUMBER = 7;
-  private boolean unexpected_;
+  private boolean unexpected_ = false;
   /**
    *
    *
@@ -753,24 +756,18 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (componentNameBuilder_ == null) {
-        componentName_ = null;
-      } else {
-        componentName_ = null;
+      bitField0_ = 0;
+      componentName_ = null;
+      if (componentNameBuilder_ != null) {
+        componentNameBuilder_.dispose();
         componentNameBuilder_ = null;
       }
       componentType_ = "";
-
       confirmationLevel_ = 0;
-
       inferred_ = false;
-
       spellCorrected_ = false;
-
       replaced_ = false;
-
       unexpected_ = false;
-
       return this;
     }
 
@@ -798,19 +795,37 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public com.google.maps.addressvalidation.v1.AddressComponent buildPartial() {
       com.google.maps.addressvalidation.v1.AddressComponent result =
           new com.google.maps.addressvalidation.v1.AddressComponent(this);
-      if (componentNameBuilder_ == null) {
-        result.componentName_ = componentName_;
-      } else {
-        result.componentName_ = componentNameBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.componentType_ = componentType_;
-      result.confirmationLevel_ = confirmationLevel_;
-      result.inferred_ = inferred_;
-      result.spellCorrected_ = spellCorrected_;
-      result.replaced_ = replaced_;
-      result.unexpected_ = unexpected_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.AddressComponent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.componentName_ =
+            componentNameBuilder_ == null ? componentName_ : componentNameBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.componentType_ = componentType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.confirmationLevel_ = confirmationLevel_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inferred_ = inferred_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.spellCorrected_ = spellCorrected_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.replaced_ = replaced_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.unexpected_ = unexpected_;
+      }
     }
 
     @java.lang.Override
@@ -864,6 +879,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getComponentType().isEmpty()) {
         componentType_ = other.componentType_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.confirmationLevel_ != 0) {
@@ -910,43 +926,43 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getComponentNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 componentType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 confirmationLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 inferred_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 spellCorrected_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 replaced_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 unexpected_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -966,6 +982,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.maps.addressvalidation.v1.ComponentName componentName_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.addressvalidation.v1.ComponentName,
@@ -984,7 +1002,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return Whether the componentName field is set.
      */
     public boolean hasComponentName() {
-      return componentNameBuilder_ != null || componentName_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1021,11 +1039,11 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         componentName_ = value;
-        onChanged();
       } else {
         componentNameBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1041,11 +1059,11 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         com.google.maps.addressvalidation.v1.ComponentName.Builder builderForValue) {
       if (componentNameBuilder_ == null) {
         componentName_ = builderForValue.build();
-        onChanged();
       } else {
         componentNameBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1059,19 +1077,19 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeComponentName(com.google.maps.addressvalidation.v1.ComponentName value) {
       if (componentNameBuilder_ == null) {
-        if (componentName_ != null) {
-          componentName_ =
-              com.google.maps.addressvalidation.v1.ComponentName.newBuilder(componentName_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && componentName_ != null
+            && componentName_
+                != com.google.maps.addressvalidation.v1.ComponentName.getDefaultInstance()) {
+          getComponentNameBuilder().mergeFrom(value);
         } else {
           componentName_ = value;
         }
-        onChanged();
       } else {
         componentNameBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1084,14 +1102,13 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.addressvalidation.v1.ComponentName component_name = 1;</code>
      */
     public Builder clearComponentName() {
-      if (componentNameBuilder_ == null) {
-        componentName_ = null;
-        onChanged();
-      } else {
-        componentName_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      componentName_ = null;
+      if (componentNameBuilder_ != null) {
+        componentNameBuilder_.dispose();
         componentNameBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1104,7 +1121,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * <code>.google.maps.addressvalidation.v1.ComponentName component_name = 1;</code>
      */
     public com.google.maps.addressvalidation.v1.ComponentName.Builder getComponentNameBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getComponentNameFieldBuilder().getBuilder();
     }
@@ -1222,8 +1239,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       componentType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1242,8 +1259,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearComponentType() {
-
       componentType_ = getDefaultInstance().getComponentType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1267,8 +1284,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       componentType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1308,8 +1325,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setConfirmationLevelValue(int value) {
-
       confirmationLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1330,9 +1347,8 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel
         getConfirmationLevel() {
-      @SuppressWarnings("deprecation")
       com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel result =
-          com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.valueOf(
+          com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.forNumber(
               confirmationLevel_);
       return result == null
           ? com.google.maps.addressvalidation.v1.AddressComponent.ConfirmationLevel.UNRECOGNIZED
@@ -1358,7 +1374,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       confirmationLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1378,7 +1394,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearConfirmationLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       confirmationLevel_ = 0;
       onChanged();
       return this;
@@ -1419,6 +1435,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public Builder setInferred(boolean value) {
 
       inferred_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1436,7 +1453,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInferred() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       inferred_ = false;
       onChanged();
       return this;
@@ -1477,6 +1494,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public Builder setSpellCorrected(boolean value) {
 
       spellCorrected_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1494,7 +1512,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSpellCorrected() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       spellCorrected_ = false;
       onChanged();
       return this;
@@ -1537,6 +1555,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public Builder setReplaced(boolean value) {
 
       replaced_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1555,7 +1574,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReplaced() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       replaced_ = false;
       onChanged();
       return this;
@@ -1596,6 +1615,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
     public Builder setUnexpected(boolean value) {
 
       unexpected_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1613,7 +1633,7 @@ public final class AddressComponent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUnexpected() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       unexpected_ = false;
       onChanged();
       return this;

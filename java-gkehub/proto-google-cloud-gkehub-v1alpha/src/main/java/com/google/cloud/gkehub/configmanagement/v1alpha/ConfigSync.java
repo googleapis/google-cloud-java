@@ -112,11 +112,15 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1alpha.GitConfigOrBuilder getGitOrBuilder() {
-    return getGit();
+    return git_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.getDefaultInstance()
+        : git_;
   }
 
   public static final int SOURCE_FORMAT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object sourceFormat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceFormat_ = "";
   /**
    *
    *
@@ -378,14 +382,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gitBuilder_ == null) {
-        git_ = null;
-      } else {
-        git_ = null;
+      bitField0_ = 0;
+      git_ = null;
+      if (gitBuilder_ != null) {
+        gitBuilder_.dispose();
         gitBuilder_ = null;
       }
       sourceFormat_ = "";
-
       return this;
     }
 
@@ -413,14 +416,21 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync result =
           new com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync(this);
-      if (gitBuilder_ == null) {
-        result.git_ = git_;
-      } else {
-        result.git_ = gitBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.sourceFormat_ = sourceFormat_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSync result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.git_ = gitBuilder_ == null ? git_ : gitBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sourceFormat_ = sourceFormat_;
+      }
     }
 
     @java.lang.Override
@@ -474,6 +484,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSourceFormat().isEmpty()) {
         sourceFormat_ = other.sourceFormat_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,13 +516,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getGitFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 58
             case 66:
               {
                 sourceFormat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 66
             default:
@@ -531,6 +542,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig git_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig,
@@ -549,7 +562,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the git field is set.
      */
     public boolean hasGit() {
-      return gitBuilder_ != null || git_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -586,11 +599,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         git_ = value;
-        onChanged();
       } else {
         gitBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -606,11 +619,11 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.Builder builderForValue) {
       if (gitBuilder_ == null) {
         git_ = builderForValue.build();
-        onChanged();
       } else {
         gitBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -624,19 +637,20 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGit(com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig value) {
       if (gitBuilder_ == null) {
-        if (git_ != null) {
-          git_ =
-              com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.newBuilder(git_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && git_ != null
+            && git_
+                != com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig
+                    .getDefaultInstance()) {
+          getGitBuilder().mergeFrom(value);
         } else {
           git_ = value;
         }
-        onChanged();
       } else {
         gitBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,14 +663,13 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1alpha.GitConfig git = 7;</code>
      */
     public Builder clearGit() {
-      if (gitBuilder_ == null) {
-        git_ = null;
-        onChanged();
-      } else {
-        git_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      git_ = null;
+      if (gitBuilder_ != null) {
+        gitBuilder_.dispose();
         gitBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -669,7 +682,7 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1alpha.GitConfig git = 7;</code>
      */
     public com.google.cloud.gkehub.configmanagement.v1alpha.GitConfig.Builder getGitBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGitFieldBuilder().getBuilder();
     }
@@ -781,8 +794,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,8 +812,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceFormat() {
-
       sourceFormat_ = getDefaultInstance().getSourceFormat();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -822,8 +835,8 @@ public final class ConfigSync extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceFormat_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

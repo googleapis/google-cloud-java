@@ -149,11 +149,13 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.type.PostalAddressOrBuilder getAddressOrBuilder() {
-    return getAddress();
+    return address_ == null ? com.google.type.PostalAddress.getDefaultInstance() : address_;
   }
 
   public static final int PREVIOUS_RESPONSE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object previousResponseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object previousResponseId_ = "";
   /**
    *
    *
@@ -214,7 +216,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENABLE_USPS_CASS_FIELD_NUMBER = 3;
-  private boolean enableUspsCass_;
+  private boolean enableUspsCass_ = false;
   /**
    *
    *
@@ -462,16 +464,14 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (addressBuilder_ == null) {
-        address_ = null;
-      } else {
-        address_ = null;
+      bitField0_ = 0;
+      address_ = null;
+      if (addressBuilder_ != null) {
+        addressBuilder_.dispose();
         addressBuilder_ = null;
       }
       previousResponseId_ = "";
-
       enableUspsCass_ = false;
-
       return this;
     }
 
@@ -499,15 +499,24 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     public com.google.maps.addressvalidation.v1.ValidateAddressRequest buildPartial() {
       com.google.maps.addressvalidation.v1.ValidateAddressRequest result =
           new com.google.maps.addressvalidation.v1.ValidateAddressRequest(this);
-      if (addressBuilder_ == null) {
-        result.address_ = address_;
-      } else {
-        result.address_ = addressBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.previousResponseId_ = previousResponseId_;
-      result.enableUspsCass_ = enableUspsCass_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.ValidateAddressRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.address_ = addressBuilder_ == null ? address_ : addressBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.previousResponseId_ = previousResponseId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableUspsCass_ = enableUspsCass_;
+      }
     }
 
     @java.lang.Override
@@ -561,6 +570,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getPreviousResponseId().isEmpty()) {
         previousResponseId_ = other.previousResponseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getEnableUspsCass() != false) {
@@ -595,19 +605,19 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getAddressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 previousResponseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 enableUspsCass_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -626,6 +636,8 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.type.PostalAddress address_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -659,7 +671,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * @return Whether the address field is set.
      */
     public boolean hasAddress() {
-      return addressBuilder_ != null || address_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -722,11 +734,11 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         address_ = value;
-        onChanged();
       } else {
         addressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -755,11 +767,11 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     public Builder setAddress(com.google.type.PostalAddress.Builder builderForValue) {
       if (addressBuilder_ == null) {
         address_ = builderForValue.build();
-        onChanged();
       } else {
         addressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -787,17 +799,18 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeAddress(com.google.type.PostalAddress value) {
       if (addressBuilder_ == null) {
-        if (address_ != null) {
-          address_ =
-              com.google.type.PostalAddress.newBuilder(address_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && address_ != null
+            && address_ != com.google.type.PostalAddress.getDefaultInstance()) {
+          getAddressBuilder().mergeFrom(value);
         } else {
           address_ = value;
         }
-        onChanged();
       } else {
         addressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -824,14 +837,13 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearAddress() {
-      if (addressBuilder_ == null) {
-        address_ = null;
-        onChanged();
-      } else {
-        address_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      address_ = null;
+      if (addressBuilder_ != null) {
+        addressBuilder_.dispose();
         addressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -858,7 +870,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.type.PostalAddress.Builder getAddressBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAddressFieldBuilder().getBuilder();
     }
@@ -1011,8 +1023,8 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       previousResponseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1034,8 +1046,8 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPreviousResponseId() {
-
       previousResponseId_ = getDefaultInstance().getPreviousResponseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1062,8 +1074,8 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       previousResponseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1119,6 +1131,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
     public Builder setEnableUspsCass(boolean value) {
 
       enableUspsCass_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1144,7 +1157,7 @@ public final class ValidateAddressRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnableUspsCass() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableUspsCass_ = false;
       onChanged();
       return this;

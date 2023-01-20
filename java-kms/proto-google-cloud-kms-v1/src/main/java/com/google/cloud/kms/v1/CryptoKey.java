@@ -358,7 +358,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -491,11 +493,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getPrimaryOrBuilder() {
-    return getPrimary();
+    return primary_ == null
+        ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()
+        : primary_;
   }
 
   public static final int PURPOSE_FIELD_NUMBER = 3;
-  private int purpose_;
+  private int purpose_ = 0;
   /**
    *
    *
@@ -530,9 +534,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose result =
-        com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.valueOf(purpose_);
+        com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.forNumber(purpose_);
     return result == null
         ? com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.UNRECOGNIZED
         : result;
@@ -587,7 +590,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int NEXT_ROTATION_TIME_FIELD_NUMBER = 7;
@@ -671,7 +674,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getNextRotationTimeOrBuilder() {
-    return getNextRotationTime();
+    return nextRotationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : nextRotationTime_;
   }
 
   public static final int ROTATION_PERIOD_FIELD_NUMBER = 8;
@@ -812,7 +817,9 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder getVersionTemplateOrBuilder() {
-    return getVersionTemplate();
+    return versionTemplate_ == null
+        ? com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance()
+        : versionTemplate_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 10;
@@ -828,6 +835,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -888,7 +896,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -918,7 +929,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORT_ONLY_FIELD_NUMBER = 13;
-  private boolean importOnly_;
+  private boolean importOnly_ = false;
   /**
    *
    *
@@ -998,11 +1009,15 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getDestroyScheduledDurationOrBuilder() {
-    return getDestroyScheduledDuration();
+    return destroyScheduledDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : destroyScheduledDuration_;
   }
 
   public static final int CRYPTO_KEY_BACKEND_FIELD_NUMBER = 15;
-  private volatile java.lang.Object cryptoKeyBackend_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyBackend_ = "";
   /**
    *
    *
@@ -1435,48 +1450,40 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (primaryBuilder_ == null) {
-        primary_ = null;
-      } else {
-        primary_ = null;
+      primary_ = null;
+      if (primaryBuilder_ != null) {
+        primaryBuilder_.dispose();
         primaryBuilder_ = null;
       }
       purpose_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (nextRotationTimeBuilder_ == null) {
-        nextRotationTime_ = null;
-      } else {
-        nextRotationTime_ = null;
+      nextRotationTime_ = null;
+      if (nextRotationTimeBuilder_ != null) {
+        nextRotationTimeBuilder_.dispose();
         nextRotationTimeBuilder_ = null;
       }
       if (rotationPeriodBuilder_ != null) {
         rotationPeriodBuilder_.clear();
       }
-      if (versionTemplateBuilder_ == null) {
-        versionTemplate_ = null;
-      } else {
-        versionTemplate_ = null;
+      versionTemplate_ = null;
+      if (versionTemplateBuilder_ != null) {
+        versionTemplateBuilder_.dispose();
         versionTemplateBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       importOnly_ = false;
-
-      if (destroyScheduledDurationBuilder_ == null) {
-        destroyScheduledDuration_ = null;
-      } else {
-        destroyScheduledDuration_ = null;
+      destroyScheduledDuration_ = null;
+      if (destroyScheduledDurationBuilder_ != null) {
+        destroyScheduledDurationBuilder_.dispose();
         destroyScheduledDurationBuilder_ = null;
       }
       cryptoKeyBackend_ = "";
-
       rotationScheduleCase_ = 0;
       rotationSchedule_ = null;
       return this;
@@ -1505,48 +1512,60 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKey buildPartial() {
       com.google.cloud.kms.v1.CryptoKey result = new com.google.cloud.kms.v1.CryptoKey(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (primaryBuilder_ == null) {
-        result.primary_ = primary_;
-      } else {
-        result.primary_ = primaryBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.purpose_ = purpose_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (nextRotationTimeBuilder_ == null) {
-        result.nextRotationTime_ = nextRotationTime_;
-      } else {
-        result.nextRotationTime_ = nextRotationTimeBuilder_.build();
-      }
-      if (rotationScheduleCase_ == 8) {
-        if (rotationPeriodBuilder_ == null) {
-          result.rotationSchedule_ = rotationSchedule_;
-        } else {
-          result.rotationSchedule_ = rotationPeriodBuilder_.build();
-        }
-      }
-      if (versionTemplateBuilder_ == null) {
-        result.versionTemplate_ = versionTemplate_;
-      } else {
-        result.versionTemplate_ = versionTemplateBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.importOnly_ = importOnly_;
-      if (destroyScheduledDurationBuilder_ == null) {
-        result.destroyScheduledDuration_ = destroyScheduledDuration_;
-      } else {
-        result.destroyScheduledDuration_ = destroyScheduledDurationBuilder_.build();
-      }
-      result.cryptoKeyBackend_ = cryptoKeyBackend_;
-      result.rotationScheduleCase_ = rotationScheduleCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.CryptoKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.primary_ = primaryBuilder_ == null ? primary_ : primaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.purpose_ = purpose_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nextRotationTime_ =
+            nextRotationTimeBuilder_ == null ? nextRotationTime_ : nextRotationTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.versionTemplate_ =
+            versionTemplateBuilder_ == null ? versionTemplate_ : versionTemplateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.importOnly_ = importOnly_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.destroyScheduledDuration_ =
+            destroyScheduledDurationBuilder_ == null
+                ? destroyScheduledDuration_
+                : destroyScheduledDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.cryptoKeyBackend_ = cryptoKeyBackend_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.kms.v1.CryptoKey result) {
+      result.rotationScheduleCase_ = rotationScheduleCase_;
+      result.rotationSchedule_ = this.rotationSchedule_;
+      if (rotationScheduleCase_ == 8 && rotationPeriodBuilder_ != null) {
+        result.rotationSchedule_ = rotationPeriodBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1596,6 +1615,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPrimary()) {
@@ -1614,6 +1634,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         mergeVersionTemplate(other.getVersionTemplate());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       if (other.getImportOnly() != false) {
         setImportOnly(other.getImportOnly());
       }
@@ -1622,6 +1643,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCryptoKeyBackend().isEmpty()) {
         cryptoKeyBackend_ = other.cryptoKeyBackend_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getRotationScheduleCase()) {
@@ -1664,32 +1686,32 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPrimaryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 purpose_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 58:
               {
                 input.readMessage(
                     getNextRotationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
@@ -1707,31 +1729,32 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getVersionTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 90
             case 104:
               {
                 importOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     getDestroyScheduledDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 114
             case 122:
               {
                 cryptoKeyBackend_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
             default:
@@ -1834,8 +1857,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1853,8 +1876,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1877,8 +1900,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1913,7 +1936,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the primary field is set.
      */
     public boolean hasPrimary() {
-      return primaryBuilder_ != null || primary_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1974,11 +1997,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         primary_ = value;
-        onChanged();
       } else {
         primaryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2005,11 +2028,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setPrimary(com.google.cloud.kms.v1.CryptoKeyVersion.Builder builderForValue) {
       if (primaryBuilder_ == null) {
         primary_ = builderForValue.build();
-        onChanged();
       } else {
         primaryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2035,19 +2058,18 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePrimary(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (primaryBuilder_ == null) {
-        if (primary_ != null) {
-          primary_ =
-              com.google.cloud.kms.v1.CryptoKeyVersion.newBuilder(primary_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && primary_ != null
+            && primary_ != com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()) {
+          getPrimaryBuilder().mergeFrom(value);
         } else {
           primary_ = value;
         }
-        onChanged();
       } else {
         primaryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2072,14 +2094,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPrimary() {
-      if (primaryBuilder_ == null) {
-        primary_ = null;
-        onChanged();
-      } else {
-        primary_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      primary_ = null;
+      if (primaryBuilder_ != null) {
+        primaryBuilder_.dispose();
         primaryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2104,7 +2125,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.Builder getPrimaryBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPrimaryFieldBuilder().getBuilder();
     }
@@ -2211,8 +2232,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPurposeValue(int value) {
-
       purpose_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2232,9 +2253,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose result =
-          com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.valueOf(purpose_);
+          com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.forNumber(purpose_);
       return result == null
           ? com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.UNRECOGNIZED
           : result;
@@ -2258,7 +2278,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       purpose_ = value.getNumber();
       onChanged();
       return this;
@@ -2278,7 +2298,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPurpose() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       purpose_ = 0;
       onChanged();
       return this;
@@ -2305,7 +2325,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2348,11 +2368,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2370,11 +2390,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2391,17 +2411,18 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2417,14 +2438,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2440,7 +2460,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2524,7 +2544,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextRotationTime field is set.
      */
     public boolean hasNextRotationTime() {
-      return nextRotationTimeBuilder_ != null || nextRotationTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2585,11 +2605,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nextRotationTime_ = value;
-        onChanged();
       } else {
         nextRotationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2616,11 +2636,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setNextRotationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (nextRotationTimeBuilder_ == null) {
         nextRotationTime_ = builderForValue.build();
-        onChanged();
       } else {
         nextRotationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2646,19 +2666,18 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNextRotationTime(com.google.protobuf.Timestamp value) {
       if (nextRotationTimeBuilder_ == null) {
-        if (nextRotationTime_ != null) {
-          nextRotationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(nextRotationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && nextRotationTime_ != null
+            && nextRotationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getNextRotationTimeBuilder().mergeFrom(value);
         } else {
           nextRotationTime_ = value;
         }
-        onChanged();
       } else {
         nextRotationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2683,14 +2702,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
      */
     public Builder clearNextRotationTime() {
-      if (nextRotationTimeBuilder_ == null) {
-        nextRotationTime_ = null;
-        onChanged();
-      } else {
-        nextRotationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      nextRotationTime_ = null;
+      if (nextRotationTimeBuilder_ != null) {
+        nextRotationTimeBuilder_.dispose();
         nextRotationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2715,7 +2733,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp next_rotation_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getNextRotationTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getNextRotationTimeFieldBuilder().getBuilder();
     }
@@ -3073,7 +3091,6 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       }
       rotationScheduleCase_ = 8;
       onChanged();
-      ;
       return rotationPeriodBuilder_;
     }
 
@@ -3100,7 +3117,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the versionTemplate field is set.
      */
     public boolean hasVersionTemplate() {
-      return versionTemplateBuilder_ != null || versionTemplate_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3147,11 +3164,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         versionTemplate_ = value;
-        onChanged();
       } else {
         versionTemplateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3172,11 +3189,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder builderForValue) {
       if (versionTemplateBuilder_ == null) {
         versionTemplate_ = builderForValue.build();
-        onChanged();
       } else {
         versionTemplateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3195,19 +3212,19 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVersionTemplate(com.google.cloud.kms.v1.CryptoKeyVersionTemplate value) {
       if (versionTemplateBuilder_ == null) {
-        if (versionTemplate_ != null) {
-          versionTemplate_ =
-              com.google.cloud.kms.v1.CryptoKeyVersionTemplate.newBuilder(versionTemplate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && versionTemplate_ != null
+            && versionTemplate_
+                != com.google.cloud.kms.v1.CryptoKeyVersionTemplate.getDefaultInstance()) {
+          getVersionTemplateBuilder().mergeFrom(value);
         } else {
           versionTemplate_ = value;
         }
-        onChanged();
       } else {
         versionTemplateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3225,14 +3242,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
      */
     public Builder clearVersionTemplate() {
-      if (versionTemplateBuilder_ == null) {
-        versionTemplate_ = null;
-        onChanged();
-      } else {
-        versionTemplate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      versionTemplate_ = null;
+      if (versionTemplateBuilder_ != null) {
+        versionTemplateBuilder_.dispose();
         versionTemplateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3250,7 +3266,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.kms.v1.CryptoKeyVersionTemplate version_template = 11;</code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersionTemplate.Builder getVersionTemplateBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getVersionTemplateFieldBuilder().getBuilder();
     }
@@ -3319,14 +3335,14 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -3381,8 +3397,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 10;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3412,6 +3430,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3435,6 +3454,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3454,8 +3474,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -3470,6 +3490,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -3504,6 +3525,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
     public Builder setImportOnly(boolean value) {
 
       importOnly_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3519,7 +3541,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       importOnly_ = false;
       onChanged();
       return this;
@@ -3549,7 +3571,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the destroyScheduledDuration field is set.
      */
     public boolean hasDestroyScheduledDuration() {
-      return destroyScheduledDurationBuilder_ != null || destroyScheduledDuration_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3598,11 +3620,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         destroyScheduledDuration_ = value;
-        onChanged();
       } else {
         destroyScheduledDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3624,11 +3646,11 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Duration.Builder builderForValue) {
       if (destroyScheduledDurationBuilder_ == null) {
         destroyScheduledDuration_ = builderForValue.build();
-        onChanged();
       } else {
         destroyScheduledDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3648,19 +3670,18 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDestroyScheduledDuration(com.google.protobuf.Duration value) {
       if (destroyScheduledDurationBuilder_ == null) {
-        if (destroyScheduledDuration_ != null) {
-          destroyScheduledDuration_ =
-              com.google.protobuf.Duration.newBuilder(destroyScheduledDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && destroyScheduledDuration_ != null
+            && destroyScheduledDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDestroyScheduledDurationBuilder().mergeFrom(value);
         } else {
           destroyScheduledDuration_ = value;
         }
-        onChanged();
       } else {
         destroyScheduledDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3679,14 +3700,13 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDestroyScheduledDuration() {
-      if (destroyScheduledDurationBuilder_ == null) {
-        destroyScheduledDuration_ = null;
-        onChanged();
-      } else {
-        destroyScheduledDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      destroyScheduledDuration_ = null;
+      if (destroyScheduledDurationBuilder_ != null) {
+        destroyScheduledDurationBuilder_.dispose();
         destroyScheduledDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3705,7 +3725,7 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDestroyScheduledDurationBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDestroyScheduledDurationFieldBuilder().getBuilder();
     }
@@ -3859,8 +3879,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyBackend_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3887,8 +3907,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyBackend() {
-
       cryptoKeyBackend_ = getDefaultInstance().getCryptoKeyBackend();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3920,8 +3940,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyBackend_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

@@ -68,6 +68,8 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
   }
 
   public static final int ADMIN_USERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterUser> adminUsers_;
   /**
    *
@@ -367,6 +369,7 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (adminUsersBuilder_ == null) {
         adminUsers_ = java.util.Collections.emptyList();
       } else {
@@ -402,7 +405,16 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
     public com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization result =
           new com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization result) {
       if (adminUsersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           adminUsers_ = java.util.Collections.unmodifiableList(adminUsers_);
@@ -412,8 +424,11 @@ public final class AttachedClustersAuthorization extends com.google.protobuf.Gen
       } else {
         result.adminUsers_ = adminUsersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

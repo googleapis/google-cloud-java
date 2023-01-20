@@ -70,7 +70,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int IMPORT_JOB_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object importJobId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importJobId_ = "";
   /**
    *
    *
@@ -226,7 +230,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ImportJobOrBuilder getImportJobOrBuilder() {
-    return getImportJob();
+    return importJob_ == null ? com.google.cloud.kms.v1.ImportJob.getDefaultInstance() : importJob_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,14 +454,12 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       importJobId_ = "";
-
-      if (importJobBuilder_ == null) {
-        importJob_ = null;
-      } else {
-        importJob_ = null;
+      importJob_ = null;
+      if (importJobBuilder_ != null) {
+        importJobBuilder_.dispose();
         importJobBuilder_ = null;
       }
       return this;
@@ -487,15 +489,24 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.kms.v1.CreateImportJobRequest buildPartial() {
       com.google.cloud.kms.v1.CreateImportJobRequest result =
           new com.google.cloud.kms.v1.CreateImportJobRequest(this);
-      result.parent_ = parent_;
-      result.importJobId_ = importJobId_;
-      if (importJobBuilder_ == null) {
-        result.importJob_ = importJob_;
-      } else {
-        result.importJob_ = importJobBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.CreateImportJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importJobId_ = importJobId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.importJob_ = importJobBuilder_ == null ? importJob_ : importJobBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -545,10 +556,12 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.kms.v1.CreateImportJobRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImportJobId().isEmpty()) {
         importJobId_ = other.importJobId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasImportJob()) {
@@ -583,19 +596,19 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 importJobId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getImportJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +627,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -688,8 +703,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +724,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -735,8 +750,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -805,8 +820,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       importJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -823,8 +838,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearImportJobId() {
-
       importJobId_ = getDefaultInstance().getImportJobId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -846,8 +861,8 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importJobId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -873,7 +888,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * @return Whether the importJob field is set.
      */
     public boolean hasImportJob() {
-      return importJobBuilder_ != null || importJob_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -916,11 +931,11 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         importJob_ = value;
-        onChanged();
       } else {
         importJobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -938,11 +953,11 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
     public Builder setImportJob(com.google.cloud.kms.v1.ImportJob.Builder builderForValue) {
       if (importJobBuilder_ == null) {
         importJob_ = builderForValue.build();
-        onChanged();
       } else {
         importJobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -959,19 +974,18 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeImportJob(com.google.cloud.kms.v1.ImportJob value) {
       if (importJobBuilder_ == null) {
-        if (importJob_ != null) {
-          importJob_ =
-              com.google.cloud.kms.v1.ImportJob.newBuilder(importJob_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && importJob_ != null
+            && importJob_ != com.google.cloud.kms.v1.ImportJob.getDefaultInstance()) {
+          getImportJobBuilder().mergeFrom(value);
         } else {
           importJob_ = value;
         }
-        onChanged();
       } else {
         importJobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -987,14 +1001,13 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearImportJob() {
-      if (importJobBuilder_ == null) {
-        importJob_ = null;
-        onChanged();
-      } else {
-        importJob_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      importJob_ = null;
+      if (importJobBuilder_ != null) {
+        importJobBuilder_.dispose();
         importJobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1010,7 +1023,7 @@ public final class CreateImportJobRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.kms.v1.ImportJob.Builder getImportJobBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getImportJobFieldBuilder().getBuilder();
     }

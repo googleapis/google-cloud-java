@@ -70,7 +70,9 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
   }
 
   public static final int KEY_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object keyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
   /**
    *
    *
@@ -326,8 +328,8 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyId_ = "";
-
       return this;
     }
 
@@ -355,9 +357,18 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
     public com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption result =
           new com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption(this);
-      result.keyId_ = keyId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureDatabaseEncryption result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyId_ = keyId_;
+      }
     }
 
     @java.lang.Override
@@ -408,6 +419,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
         return this;
       if (!other.getKeyId().isEmpty()) {
         keyId_ = other.keyId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -439,7 +451,7 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
             case 26:
               {
                 keyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -458,6 +470,8 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyId_ = "";
     /**
@@ -532,8 +546,8 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
-
       keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -579,8 +593,8 @@ public final class AzureDatabaseEncryption extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

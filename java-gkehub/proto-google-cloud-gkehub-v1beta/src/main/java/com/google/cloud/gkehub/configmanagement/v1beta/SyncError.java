@@ -70,7 +70,9 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -168,6 +172,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_RESOURCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource>
       errorResources_;
   /**
@@ -464,17 +470,16 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = "";
-
       errorMessage_ = "";
-
       if (errorResourcesBuilder_ == null) {
         errorResources_ = java.util.Collections.emptyList();
       } else {
         errorResources_ = null;
         errorResourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -502,20 +507,35 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1beta.SyncError buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.SyncError result =
           new com.google.cloud.gkehub.configmanagement.v1beta.SyncError(this);
-      int from_bitField0_ = bitField0_;
-      result.code_ = code_;
-      result.errorMessage_ = errorMessage_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.configmanagement.v1beta.SyncError result) {
       if (errorResourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           errorResources_ = java.util.Collections.unmodifiableList(errorResources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.errorResources_ = errorResources_;
       } else {
         result.errorResources_ = errorResourcesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1beta.SyncError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -566,17 +586,19 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (errorResourcesBuilder_ == null) {
         if (!other.errorResources_.isEmpty()) {
           if (errorResources_.isEmpty()) {
             errorResources_ = other.errorResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureErrorResourcesIsMutable();
             errorResources_.addAll(other.errorResources_);
@@ -589,7 +611,7 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
             errorResourcesBuilder_.dispose();
             errorResourcesBuilder_ = null;
             errorResources_ = other.errorResources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             errorResourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorResourcesFieldBuilder()
@@ -628,13 +650,13 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -731,8 +753,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,8 +770,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -770,8 +792,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,8 +859,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -854,8 +876,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -876,8 +898,8 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,11 +908,11 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
         errorResources_ = java.util.Collections.emptyList();
 
     private void ensureErrorResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         errorResources_ =
             new java.util.ArrayList<com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource>(
                 errorResources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1136,7 +1158,7 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrorResources() {
       if (errorResourcesBuilder_ == null) {
         errorResources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         errorResourcesBuilder_.clear();
@@ -1281,7 +1303,7 @@ public final class SyncError extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkehub.configmanagement.v1beta.ErrorResource.Builder,
                 com.google.cloud.gkehub.configmanagement.v1beta.ErrorResourceOrBuilder>(
                 errorResources_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         errorResources_ = null;

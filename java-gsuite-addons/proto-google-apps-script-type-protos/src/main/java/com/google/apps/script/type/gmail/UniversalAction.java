@@ -116,7 +116,9 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object text_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object text_ = "";
   /**
    *
    *
@@ -545,8 +547,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       text_ = "";
-
       actionTypeCase_ = 0;
       actionType_ = null;
       return this;
@@ -576,16 +578,24 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
     public com.google.apps.script.type.gmail.UniversalAction buildPartial() {
       com.google.apps.script.type.gmail.UniversalAction result =
           new com.google.apps.script.type.gmail.UniversalAction(this);
-      result.text_ = text_;
-      if (actionTypeCase_ == 2) {
-        result.actionType_ = actionType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionTypeCase_ == 3) {
-        result.actionType_ = actionType_;
-      }
-      result.actionTypeCase_ = actionTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.gmail.UniversalAction result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.text_ = text_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.apps.script.type.gmail.UniversalAction result) {
+      result.actionTypeCase_ = actionTypeCase_;
+      result.actionType_ = this.actionType_;
     }
 
     @java.lang.Override
@@ -636,6 +646,7 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getActionTypeCase()) {
@@ -687,7 +698,7 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 text_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -734,6 +745,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object text_ = "";
     /**
@@ -799,8 +812,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,8 +830,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearText() {
-
       text_ = getDefaultInstance().getText();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -840,8 +853,8 @@ public final class UniversalAction extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       text_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

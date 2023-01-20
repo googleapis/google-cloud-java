@@ -212,7 +212,6 @@ public interface AwsNodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -285,7 +284,6 @@ public interface AwsNodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getTagsOrDefault(
       java.lang.String key,

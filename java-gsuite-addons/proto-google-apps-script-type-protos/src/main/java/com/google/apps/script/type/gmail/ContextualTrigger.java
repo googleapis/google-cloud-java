@@ -166,7 +166,9 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ON_TRIGGER_FUNCTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object onTriggerFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object onTriggerFunction_ = "";
   /**
    *
    *
@@ -439,11 +441,11 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (unconditionalBuilder_ != null) {
         unconditionalBuilder_.clear();
       }
       onTriggerFunction_ = "";
-
       triggerCase_ = 0;
       trigger_ = null;
       return this;
@@ -473,17 +475,27 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
     public com.google.apps.script.type.gmail.ContextualTrigger buildPartial() {
       com.google.apps.script.type.gmail.ContextualTrigger result =
           new com.google.apps.script.type.gmail.ContextualTrigger(this);
-      if (triggerCase_ == 1) {
-        if (unconditionalBuilder_ == null) {
-          result.trigger_ = trigger_;
-        } else {
-          result.trigger_ = unconditionalBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.onTriggerFunction_ = onTriggerFunction_;
-      result.triggerCase_ = triggerCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.gmail.ContextualTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.onTriggerFunction_ = onTriggerFunction_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.apps.script.type.gmail.ContextualTrigger result) {
+      result.triggerCase_ = triggerCase_;
+      result.trigger_ = this.trigger_;
+      if (triggerCase_ == 1 && unconditionalBuilder_ != null) {
+        result.trigger_ = unconditionalBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,6 +546,7 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getOnTriggerFunction().isEmpty()) {
         onTriggerFunction_ = other.onTriggerFunction_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getTriggerCase()) {
@@ -582,7 +595,7 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
             case 34:
               {
                 onTriggerFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -615,6 +628,8 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.apps.script.type.gmail.UnconditionalTrigger,
@@ -826,7 +841,6 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       }
       triggerCase_ = 1;
       onChanged();
-      ;
       return unconditionalBuilder_;
     }
 
@@ -894,8 +908,8 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       onTriggerFunction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -912,8 +926,8 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearOnTriggerFunction() {
-
       onTriggerFunction_ = getDefaultInstance().getOnTriggerFunction();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -935,8 +949,8 @@ public final class ContextualTrigger extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       onTriggerFunction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

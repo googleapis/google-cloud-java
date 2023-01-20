@@ -120,7 +120,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -326,10 +326,10 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      bitField0_ = 0;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       return this;
@@ -359,13 +359,18 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
     public com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse buildPartial() {
       com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse result =
           new com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse(this);
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.ValidateExclusivityResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -446,7 +451,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +470,8 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.rpc.Status status_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +493,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -529,11 +536,11 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,11 +559,11 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
     public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,16 +581,18 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      */
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -600,14 +609,13 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      * <code>.google.rpc.Status status = 1;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -624,7 +632,7 @@ public final class ValidateExclusivityResponse extends com.google.protobuf.Gener
      * <code>.google.rpc.Status status = 1;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }

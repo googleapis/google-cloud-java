@@ -71,7 +71,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int SIGNATURE_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString signature_;
+  private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -169,11 +169,13 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getSignatureCrc32COrBuilder() {
-    return getSignatureCrc32C();
+    return signatureCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : signatureCrc32C_;
   }
 
   public static final int VERIFIED_DIGEST_CRC32C_FIELD_NUMBER = 3;
-  private boolean verifiedDigestCrc32C_;
+  private boolean verifiedDigestCrc32C_ = false;
   /**
    *
    *
@@ -204,7 +206,9 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -257,7 +261,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 5;
-  private boolean verifiedDataCrc32C_;
+  private boolean verifiedDataCrc32C_ = false;
   /**
    *
    *
@@ -288,7 +292,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 6;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -319,9 +323,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -575,22 +578,17 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       signature_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32C_ = null;
-      } else {
-        signatureCrc32C_ = null;
+      signatureCrc32C_ = null;
+      if (signatureCrc32CBuilder_ != null) {
+        signatureCrc32CBuilder_.dispose();
         signatureCrc32CBuilder_ = null;
       }
       verifiedDigestCrc32C_ = false;
-
       name_ = "";
-
       verifiedDataCrc32C_ = false;
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -618,18 +616,34 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.kms.v1.AsymmetricSignResponse buildPartial() {
       com.google.cloud.kms.v1.AsymmetricSignResponse result =
           new com.google.cloud.kms.v1.AsymmetricSignResponse(this);
-      result.signature_ = signature_;
-      if (signatureCrc32CBuilder_ == null) {
-        result.signatureCrc32C_ = signatureCrc32C_;
-      } else {
-        result.signatureCrc32C_ = signatureCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.verifiedDigestCrc32C_ = verifiedDigestCrc32C_;
-      result.name_ = name_;
-      result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
-      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.AsymmetricSignResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.signature_ = signature_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.signatureCrc32C_ =
+            signatureCrc32CBuilder_ == null ? signatureCrc32C_ : signatureCrc32CBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.verifiedDigestCrc32C_ = verifiedDigestCrc32C_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -688,6 +702,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getVerifiedDataCrc32C() != false) {
@@ -725,37 +740,37 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
             case 10:
               {
                 signature_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSignatureCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 verifiedDigestCrc32C_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 verifiedDataCrc32C_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -774,6 +789,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -807,8 +824,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       signature_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -824,7 +841,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSignature() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       signature_ = getDefaultInstance().getSignature();
       onChanged();
       return this;
@@ -860,7 +877,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return Whether the signatureCrc32c field is set.
      */
     public boolean hasSignatureCrc32C() {
-      return signatureCrc32CBuilder_ != null || signatureCrc32C_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -921,11 +938,11 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         signatureCrc32C_ = value;
-        onChanged();
       } else {
         signatureCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,11 +969,11 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public Builder setSignatureCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (signatureCrc32CBuilder_ == null) {
         signatureCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         signatureCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -982,19 +999,18 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSignatureCrc32C(com.google.protobuf.Int64Value value) {
       if (signatureCrc32CBuilder_ == null) {
-        if (signatureCrc32C_ != null) {
-          signatureCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(signatureCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && signatureCrc32C_ != null
+            && signatureCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getSignatureCrc32CBuilder().mergeFrom(value);
         } else {
           signatureCrc32C_ = value;
         }
-        onChanged();
       } else {
         signatureCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1019,14 +1035,13 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
      */
     public Builder clearSignatureCrc32C() {
-      if (signatureCrc32CBuilder_ == null) {
-        signatureCrc32C_ = null;
-        onChanged();
-      } else {
-        signatureCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      signatureCrc32C_ = null;
+      if (signatureCrc32CBuilder_ != null) {
+        signatureCrc32CBuilder_.dispose();
         signatureCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1051,7 +1066,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Int64Value signature_crc32c = 2;</code>
      */
     public com.google.protobuf.Int64Value.Builder getSignatureCrc32CBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSignatureCrc32CFieldBuilder().getBuilder();
     }
@@ -1180,6 +1195,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public Builder setVerifiedDigestCrc32C(boolean value) {
 
       verifiedDigestCrc32C_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1208,7 +1224,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVerifiedDigestCrc32C() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       verifiedDigestCrc32C_ = false;
       onChanged();
       return this;
@@ -1281,8 +1297,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1300,8 +1316,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1324,8 +1340,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1387,6 +1403,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
     public Builder setVerifiedDataCrc32C(boolean value) {
 
       verifiedDataCrc32C_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1415,7 +1432,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVerifiedDataCrc32C() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       verifiedDataCrc32C_ = false;
       onChanged();
       return this;
@@ -1452,8 +1469,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1471,9 +1488,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1493,7 +1509,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1511,7 +1527,7 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       protectionLevel_ = 0;
       onChanged();
       return this;

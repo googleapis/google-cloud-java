@@ -69,7 +69,9 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
   }
 
   public static final int AZURE_CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object azureCluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object azureCluster_ = "";
   /**
    *
    *
@@ -333,8 +335,8 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       azureCluster_ = "";
-
       return this;
     }
 
@@ -363,9 +365,19 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
     public com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest result =
           new com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest(this);
-      result.azureCluster_ = azureCluster_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.azureCluster_ = azureCluster_;
+      }
     }
 
     @java.lang.Override
@@ -418,6 +430,7 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
         return this;
       if (!other.getAzureCluster().isEmpty()) {
         azureCluster_ = other.azureCluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -449,7 +462,7 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
             case 10:
               {
                 azureCluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -468,6 +481,8 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object azureCluster_ = "";
     /**
@@ -554,8 +569,8 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       azureCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -579,8 +594,8 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearAzureCluster() {
-
       azureCluster_ = getDefaultInstance().getAzureCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -609,8 +624,8 @@ public final class GenerateAzureAccessTokenRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       azureCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

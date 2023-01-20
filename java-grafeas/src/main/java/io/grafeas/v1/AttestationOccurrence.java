@@ -77,7 +77,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERIALIZED_PAYLOAD_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString serializedPayload_;
+  private com.google.protobuf.ByteString serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -96,6 +96,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SIGNATURES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Signature> signatures_;
   /**
    *
@@ -179,6 +181,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
   }
 
   public static final int JWTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Jwt> jwts_;
   /**
    *
@@ -509,22 +513,22 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serializedPayload_ = com.google.protobuf.ByteString.EMPTY;
-
       if (signaturesBuilder_ == null) {
         signatures_ = java.util.Collections.emptyList();
       } else {
         signatures_ = null;
         signaturesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (jwtsBuilder_ == null) {
         jwts_ = java.util.Collections.emptyList();
       } else {
         jwts_ = null;
         jwtsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -550,28 +554,40 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public io.grafeas.v1.AttestationOccurrence buildPartial() {
       io.grafeas.v1.AttestationOccurrence result = new io.grafeas.v1.AttestationOccurrence(this);
-      int from_bitField0_ = bitField0_;
-      result.serializedPayload_ = serializedPayload_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.AttestationOccurrence result) {
       if (signaturesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           signatures_ = java.util.Collections.unmodifiableList(signatures_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.signatures_ = signatures_;
       } else {
         result.signatures_ = signaturesBuilder_.build();
       }
       if (jwtsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           jwts_ = java.util.Collections.unmodifiableList(jwts_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.jwts_ = jwts_;
       } else {
         result.jwts_ = jwtsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.AttestationOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serializedPayload_ = serializedPayload_;
+      }
     }
 
     @java.lang.Override
@@ -626,7 +642,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         if (!other.signatures_.isEmpty()) {
           if (signatures_.isEmpty()) {
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSignaturesIsMutable();
             signatures_.addAll(other.signatures_);
@@ -639,7 +655,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             signaturesBuilder_.dispose();
             signaturesBuilder_ = null;
             signatures_ = other.signatures_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             signaturesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSignaturesFieldBuilder()
@@ -653,7 +669,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         if (!other.jwts_.isEmpty()) {
           if (jwts_.isEmpty()) {
             jwts_ = other.jwts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureJwtsIsMutable();
             jwts_.addAll(other.jwts_);
@@ -666,7 +682,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             jwtsBuilder_.dispose();
             jwtsBuilder_ = null;
             jwts_ = other.jwts_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             jwtsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getJwtsFieldBuilder()
@@ -705,7 +721,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 serializedPayload_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -786,8 +802,8 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       serializedPayload_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -804,7 +820,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearSerializedPayload() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       serializedPayload_ = getDefaultInstance().getSerializedPayload();
       onChanged();
       return this;
@@ -813,9 +829,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     private java.util.List<io.grafeas.v1.Signature> signatures_ = java.util.Collections.emptyList();
 
     private void ensureSignaturesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         signatures_ = new java.util.ArrayList<io.grafeas.v1.Signature>(signatures_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1060,7 +1076,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public Builder clearSignatures() {
       if (signaturesBuilder_ == null) {
         signatures_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         signaturesBuilder_.clear();
@@ -1200,7 +1216,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
                 io.grafeas.v1.Signature,
                 io.grafeas.v1.Signature.Builder,
                 io.grafeas.v1.SignatureOrBuilder>(
-                signatures_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                signatures_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         signatures_ = null;
       }
       return signaturesBuilder_;
@@ -1209,9 +1225,9 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     private java.util.List<io.grafeas.v1.Jwt> jwts_ = java.util.Collections.emptyList();
 
     private void ensureJwtsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         jwts_ = new java.util.ArrayList<io.grafeas.v1.Jwt>(jwts_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1509,7 +1525,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
     public Builder clearJwts() {
       if (jwtsBuilder_ == null) {
         jwts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         jwtsBuilder_.clear();
@@ -1679,7 +1695,7 @@ public final class AttestationOccurrence extends com.google.protobuf.GeneratedMe
         jwtsBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
                 io.grafeas.v1.Jwt, io.grafeas.v1.Jwt.Builder, io.grafeas.v1.JwtOrBuilder>(
-                jwts_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                jwts_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         jwts_ = null;
       }
       return jwtsBuilder_;

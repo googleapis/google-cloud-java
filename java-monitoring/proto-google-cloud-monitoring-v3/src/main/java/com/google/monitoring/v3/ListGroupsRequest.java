@@ -119,7 +119,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -422,7 +424,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -440,7 +442,9 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -755,12 +759,10 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -790,21 +792,30 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.monitoring.v3.ListGroupsRequest buildPartial() {
       com.google.monitoring.v3.ListGroupsRequest result =
           new com.google.monitoring.v3.ListGroupsRequest(this);
-      result.name_ = name_;
-      if (filterCase_ == 2) {
-        result.filter_ = filter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (filterCase_ == 3) {
-        result.filter_ = filter_;
-      }
-      if (filterCase_ == 4) {
-        result.filter_ = filter_;
-      }
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.filterCase_ = filterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ListGroupsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.ListGroupsRequest result) {
+      result.filterCase_ = filterCase_;
+      result.filter_ = this.filter_;
     }
 
     @java.lang.Override
@@ -854,6 +865,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.monitoring.v3.ListGroupsRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -861,6 +873,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       switch (other.getFilterCase()) {
@@ -940,19 +953,19 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
             case 40:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 58
             default:
@@ -985,6 +998,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1059,8 +1074,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1080,8 +1095,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1106,8 +1121,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1617,6 +1632,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1632,7 +1648,7 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1705,8 +1721,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1724,8 +1740,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1748,8 +1764,8 @@ public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

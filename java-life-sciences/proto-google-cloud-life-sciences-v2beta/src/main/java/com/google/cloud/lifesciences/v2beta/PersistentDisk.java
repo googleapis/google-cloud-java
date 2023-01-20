@@ -71,7 +71,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_GB_FIELD_NUMBER = 1;
-  private int sizeGb_;
+  private int sizeGb_ = 0;
   /**
    *
    *
@@ -94,7 +94,9 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_IMAGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object sourceImage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceImage_ = "";
   /**
    *
    *
@@ -408,12 +412,10 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sizeGb_ = 0;
-
       type_ = "";
-
       sourceImage_ = "";
-
       return this;
     }
 
@@ -441,11 +443,24 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.PersistentDisk buildPartial() {
       com.google.cloud.lifesciences.v2beta.PersistentDisk result =
           new com.google.cloud.lifesciences.v2beta.PersistentDisk(this);
-      result.sizeGb_ = sizeGb_;
-      result.type_ = type_;
-      result.sourceImage_ = sourceImage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.PersistentDisk result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sizeGb_ = sizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceImage_ = sourceImage_;
+      }
     }
 
     @java.lang.Override
@@ -499,10 +514,12 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSourceImage().isEmpty()) {
         sourceImage_ = other.sourceImage_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -534,19 +551,19 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 sizeGb_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 sourceImage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -565,6 +582,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sizeGb_;
     /**
@@ -607,6 +626,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeGb(int value) {
 
       sizeGb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,7 +647,7 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeGb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sizeGb_ = 0;
       onChanged();
       return this;
@@ -694,8 +714,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -711,8 +731,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -733,8 +753,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -800,8 +820,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceImage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -817,8 +837,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceImage() {
-
       sourceImage_ = getDefaultInstance().getSourceImage();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -839,8 +859,8 @@ public final class PersistentDisk extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceImage_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

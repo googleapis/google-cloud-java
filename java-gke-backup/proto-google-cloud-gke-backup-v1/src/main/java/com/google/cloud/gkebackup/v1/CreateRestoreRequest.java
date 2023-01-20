@@ -69,7 +69,9 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,11 +171,13 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.RestoreOrBuilder getRestoreOrBuilder() {
-    return getRestore();
+    return restore_ == null ? com.google.cloud.gkebackup.v1.Restore.getDefaultInstance() : restore_;
   }
 
   public static final int RESTORE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object restoreId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object restoreId_ = "";
   /**
    *
    *
@@ -453,16 +457,14 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (restoreBuilder_ == null) {
-        restore_ = null;
-      } else {
-        restore_ = null;
+      restore_ = null;
+      if (restoreBuilder_ != null) {
+        restoreBuilder_.dispose();
         restoreBuilder_ = null;
       }
       restoreId_ = "";
-
       return this;
     }
 
@@ -490,15 +492,24 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkebackup.v1.CreateRestoreRequest buildPartial() {
       com.google.cloud.gkebackup.v1.CreateRestoreRequest result =
           new com.google.cloud.gkebackup.v1.CreateRestoreRequest(this);
-      result.parent_ = parent_;
-      if (restoreBuilder_ == null) {
-        result.restore_ = restore_;
-      } else {
-        result.restore_ = restoreBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.restoreId_ = restoreId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.CreateRestoreRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.restore_ = restoreBuilder_ == null ? restore_ : restoreBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.restoreId_ = restoreId_;
+      }
     }
 
     @java.lang.Override
@@ -549,6 +560,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRestore()) {
@@ -556,6 +568,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRestoreId().isEmpty()) {
         restoreId_ = other.restoreId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -587,19 +600,19 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRestoreFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 restoreId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -618,6 +631,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -689,8 +704,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,8 +724,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -734,8 +749,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,7 +775,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the restore field is set.
      */
     public boolean hasRestore() {
-      return restoreBuilder_ != null || restore_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -801,11 +816,11 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         restore_ = value;
-        onChanged();
       } else {
         restoreBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -822,11 +837,11 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
     public Builder setRestore(com.google.cloud.gkebackup.v1.Restore.Builder builderForValue) {
       if (restoreBuilder_ == null) {
         restore_ = builderForValue.build();
-        onChanged();
       } else {
         restoreBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,19 +857,18 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeRestore(com.google.cloud.gkebackup.v1.Restore value) {
       if (restoreBuilder_ == null) {
-        if (restore_ != null) {
-          restore_ =
-              com.google.cloud.gkebackup.v1.Restore.newBuilder(restore_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && restore_ != null
+            && restore_ != com.google.cloud.gkebackup.v1.Restore.getDefaultInstance()) {
+          getRestoreBuilder().mergeFrom(value);
         } else {
           restore_ = value;
         }
-        onChanged();
       } else {
         restoreBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -869,14 +883,13 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearRestore() {
-      if (restoreBuilder_ == null) {
-        restore_ = null;
-        onChanged();
-      } else {
-        restore_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      restore_ = null;
+      if (restoreBuilder_ != null) {
+        restoreBuilder_.dispose();
         restoreBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -891,7 +904,7 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.gkebackup.v1.Restore.Builder getRestoreBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRestoreFieldBuilder().getBuilder();
     }
@@ -1022,8 +1035,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       restoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1045,8 +1058,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRestoreId() {
-
       restoreId_ = getDefaultInstance().getRestoreId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1073,8 +1086,8 @@ public final class CreateRestoreRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       restoreId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

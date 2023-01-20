@@ -69,7 +69,9 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
   }
 
   public static final int DEPLOYMENT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deploymentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deploymentId_ = "";
   /**
    *
    *
@@ -225,7 +229,9 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.gsuiteaddons.v1.DeploymentOrBuilder getDeploymentOrBuilder() {
-    return getDeployment();
+    return deployment_ == null
+        ? com.google.cloud.gsuiteaddons.v1.Deployment.getDefaultInstance()
+        : deployment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -449,14 +455,12 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       deploymentId_ = "";
-
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-      } else {
-        deployment_ = null;
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
       return this;
@@ -486,15 +490,24 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
     public com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest buildPartial() {
       com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest result =
           new com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest(this);
-      result.parent_ = parent_;
-      result.deploymentId_ = deploymentId_;
-      if (deploymentBuilder_ == null) {
-        result.deployment_ = deployment_;
-      } else {
-        result.deployment_ = deploymentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentId_ = deploymentId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deployment_ = deploymentBuilder_ == null ? deployment_ : deploymentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -545,10 +558,12 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDeploymentId().isEmpty()) {
         deploymentId_ = other.deploymentId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDeployment()) {
@@ -583,19 +598,19 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deploymentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDeploymentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +629,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -685,8 +702,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +722,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +747,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -800,8 +817,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       deploymentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -818,8 +835,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearDeploymentId() {
-
       deploymentId_ = getDefaultInstance().getDeploymentId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -841,8 +858,8 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deploymentId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -867,7 +884,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      * @return Whether the deployment field is set.
      */
     public boolean hasDeployment() {
-      return deploymentBuilder_ != null || deployment_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -908,11 +925,11 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         deployment_ = value;
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -930,11 +947,11 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
         com.google.cloud.gsuiteaddons.v1.Deployment.Builder builderForValue) {
       if (deploymentBuilder_ == null) {
         deployment_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -950,19 +967,18 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDeployment(com.google.cloud.gsuiteaddons.v1.Deployment value) {
       if (deploymentBuilder_ == null) {
-        if (deployment_ != null) {
-          deployment_ =
-              com.google.cloud.gsuiteaddons.v1.Deployment.newBuilder(deployment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && deployment_ != null
+            && deployment_ != com.google.cloud.gsuiteaddons.v1.Deployment.getDefaultInstance()) {
+          getDeploymentBuilder().mergeFrom(value);
         } else {
           deployment_ = value;
         }
-        onChanged();
       } else {
         deploymentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -977,14 +993,13 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDeployment() {
-      if (deploymentBuilder_ == null) {
-        deployment_ = null;
-        onChanged();
-      } else {
-        deployment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      deployment_ = null;
+      if (deploymentBuilder_ != null) {
+        deploymentBuilder_.dispose();
         deploymentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -999,7 +1014,7 @@ public final class CreateDeploymentRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.gsuiteaddons.v1.Deployment.Builder getDeploymentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeploymentFieldBuilder().getBuilder();
     }

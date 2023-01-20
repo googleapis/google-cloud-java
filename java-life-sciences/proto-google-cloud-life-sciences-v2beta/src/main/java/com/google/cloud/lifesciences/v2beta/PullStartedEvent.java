@@ -68,7 +68,9 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object imageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageUri_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       imageUri_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.lifesciences.v2beta.PullStartedEvent buildPartial() {
       com.google.cloud.lifesciences.v2beta.PullStartedEvent result =
           new com.google.cloud.lifesciences.v2beta.PullStartedEvent(this);
-      result.imageUri_ = imageUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.PullStartedEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.imageUri_ = imageUri_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 imageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object imageUri_ = "";
     /**
@@ -508,8 +522,8 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearImageUri() {
-
       imageUri_ = getDefaultInstance().getImageUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class PullStartedEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

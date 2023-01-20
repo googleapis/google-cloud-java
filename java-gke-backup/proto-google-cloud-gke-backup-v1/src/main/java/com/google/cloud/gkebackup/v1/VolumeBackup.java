@@ -472,7 +472,9 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -523,7 +525,9 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -622,7 +626,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -674,7 +678,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int SOURCE_PVC_FIELD_NUMBER = 5;
@@ -731,11 +735,15 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.NamespacedNameOrBuilder getSourcePvcOrBuilder() {
-    return getSourcePvc();
+    return sourcePvc_ == null
+        ? com.google.cloud.gkebackup.v1.NamespacedName.getDefaultInstance()
+        : sourcePvc_;
   }
 
   public static final int VOLUME_BACKUP_HANDLE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object volumeBackupHandle_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object volumeBackupHandle_ = "";
   /**
    *
    *
@@ -784,7 +792,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 7;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -817,16 +825,15 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat result =
-        com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.valueOf(format_);
+        com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.forNumber(format_);
     return result == null
         ? com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.UNRECOGNIZED
         : result;
   }
 
   public static final int STORAGE_BYTES_FIELD_NUMBER = 8;
-  private long storageBytes_;
+  private long storageBytes_ = 0L;
   /**
    *
    *
@@ -848,7 +855,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_SIZE_BYTES_FIELD_NUMBER = 9;
-  private long diskSizeBytes_;
+  private long diskSizeBytes_ = 0L;
   /**
    *
    *
@@ -919,11 +926,13 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCompleteTimeOrBuilder() {
-    return getCompleteTime();
+    return completeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : completeTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 11;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -956,14 +965,15 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.VolumeBackup.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkebackup.v1.VolumeBackup.State result =
-        com.google.cloud.gkebackup.v1.VolumeBackup.State.valueOf(state_);
+        com.google.cloud.gkebackup.v1.VolumeBackup.State.forNumber(state_);
     return result == null ? com.google.cloud.gkebackup.v1.VolumeBackup.State.UNRECOGNIZED : result;
   }
 
   public static final int STATE_MESSAGE_FIELD_NUMBER = 12;
-  private volatile java.lang.Object stateMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateMessage_ = "";
   /**
    *
    *
@@ -1014,7 +1024,9 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 13;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -1404,48 +1416,36 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (sourcePvcBuilder_ == null) {
-        sourcePvc_ = null;
-      } else {
-        sourcePvc_ = null;
+      sourcePvc_ = null;
+      if (sourcePvcBuilder_ != null) {
+        sourcePvcBuilder_.dispose();
         sourcePvcBuilder_ = null;
       }
       volumeBackupHandle_ = "";
-
       format_ = 0;
-
       storageBytes_ = 0L;
-
       diskSizeBytes_ = 0L;
-
-      if (completeTimeBuilder_ == null) {
-        completeTime_ = null;
-      } else {
-        completeTime_ = null;
+      completeTime_ = null;
+      if (completeTimeBuilder_ != null) {
+        completeTimeBuilder_.dispose();
         completeTimeBuilder_ = null;
       }
       state_ = 0;
-
       stateMessage_ = "";
-
       etag_ = "";
-
       return this;
     }
 
@@ -1473,37 +1473,55 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkebackup.v1.VolumeBackup buildPartial() {
       com.google.cloud.gkebackup.v1.VolumeBackup result =
           new com.google.cloud.gkebackup.v1.VolumeBackup(this);
-      result.name_ = name_;
-      result.uid_ = uid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (sourcePvcBuilder_ == null) {
-        result.sourcePvc_ = sourcePvc_;
-      } else {
-        result.sourcePvc_ = sourcePvcBuilder_.build();
-      }
-      result.volumeBackupHandle_ = volumeBackupHandle_;
-      result.format_ = format_;
-      result.storageBytes_ = storageBytes_;
-      result.diskSizeBytes_ = diskSizeBytes_;
-      if (completeTimeBuilder_ == null) {
-        result.completeTime_ = completeTime_;
-      } else {
-        result.completeTime_ = completeTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.stateMessage_ = stateMessage_;
-      result.etag_ = etag_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.VolumeBackup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sourcePvc_ = sourcePvcBuilder_ == null ? sourcePvc_ : sourcePvcBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.volumeBackupHandle_ = volumeBackupHandle_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.storageBytes_ = storageBytes_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.diskSizeBytes_ = diskSizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.completeTime_ =
+            completeTimeBuilder_ == null ? completeTime_ : completeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.stateMessage_ = stateMessage_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -1553,10 +1571,12 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkebackup.v1.VolumeBackup.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1570,6 +1590,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVolumeBackupHandle().isEmpty()) {
         volumeBackupHandle_ = other.volumeBackupHandle_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.format_ != 0) {
@@ -1589,10 +1610,12 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStateMessage().isEmpty()) {
         stateMessage_ = other.stateMessage_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1624,79 +1647,79 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getSourcePvcFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 volumeBackupHandle_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 storageBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 diskSizeBytes_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getCompleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 stateMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             default:
@@ -1715,6 +1738,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1780,8 +1805,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1798,8 +1823,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1821,8 +1846,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1891,8 +1916,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1909,8 +1934,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1932,8 +1957,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1959,7 +1984,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2002,11 +2027,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2024,11 +2049,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2045,17 +2070,18 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2071,14 +2097,13 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2094,7 +2119,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2169,7 +2194,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2212,11 +2237,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2234,11 +2259,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2255,17 +2280,18 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2281,14 +2307,13 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2304,7 +2329,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2379,7 +2404,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourcePvc field is set.
      */
     public boolean hasSourcePvc() {
-      return sourcePvcBuilder_ != null || sourcePvc_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2422,11 +2447,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sourcePvc_ = value;
-        onChanged();
       } else {
         sourcePvcBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2445,11 +2470,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkebackup.v1.NamespacedName.Builder builderForValue) {
       if (sourcePvcBuilder_ == null) {
         sourcePvc_ = builderForValue.build();
-        onChanged();
       } else {
         sourcePvcBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2466,19 +2491,18 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSourcePvc(com.google.cloud.gkebackup.v1.NamespacedName value) {
       if (sourcePvcBuilder_ == null) {
-        if (sourcePvc_ != null) {
-          sourcePvc_ =
-              com.google.cloud.gkebackup.v1.NamespacedName.newBuilder(sourcePvc_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && sourcePvc_ != null
+            && sourcePvc_ != com.google.cloud.gkebackup.v1.NamespacedName.getDefaultInstance()) {
+          getSourcePvcBuilder().mergeFrom(value);
         } else {
           sourcePvc_ = value;
         }
-        onChanged();
       } else {
         sourcePvcBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2494,14 +2518,13 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourcePvc() {
-      if (sourcePvcBuilder_ == null) {
-        sourcePvc_ = null;
-        onChanged();
-      } else {
-        sourcePvc_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      sourcePvc_ = null;
+      if (sourcePvcBuilder_ != null) {
+        sourcePvcBuilder_.dispose();
         sourcePvcBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2517,7 +2540,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkebackup.v1.NamespacedName.Builder getSourcePvcBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSourcePvcFieldBuilder().getBuilder();
     }
@@ -2632,8 +2655,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       volumeBackupHandle_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2649,8 +2672,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVolumeBackupHandle() {
-
       volumeBackupHandle_ = getDefaultInstance().getVolumeBackupHandle();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2671,8 +2694,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       volumeBackupHandle_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2710,8 +2733,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2730,9 +2753,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat result =
-          com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.valueOf(format_);
+          com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.forNumber(format_);
       return result == null
           ? com.google.cloud.gkebackup.v1.VolumeBackup.VolumeBackupFormat.UNRECOGNIZED
           : result;
@@ -2755,7 +2777,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -2774,7 +2796,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       format_ = 0;
       onChanged();
       return this;
@@ -2819,6 +2841,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public Builder setStorageBytes(long value) {
 
       storageBytes_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2838,7 +2861,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStorageBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       storageBytes_ = 0L;
       onChanged();
       return this;
@@ -2875,6 +2898,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public Builder setDiskSizeBytes(long value) {
 
       diskSizeBytes_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2890,7 +2914,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDiskSizeBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       diskSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -2917,7 +2941,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the completeTime field is set.
      */
     public boolean hasCompleteTime() {
-      return completeTimeBuilder_ != null || completeTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2960,11 +2984,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         completeTime_ = value;
-        onChanged();
       } else {
         completeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -2982,11 +3006,11 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
     public Builder setCompleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (completeTimeBuilder_ == null) {
         completeTime_ = builderForValue.build();
-        onChanged();
       } else {
         completeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3003,19 +3027,18 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompleteTime(com.google.protobuf.Timestamp value) {
       if (completeTimeBuilder_ == null) {
-        if (completeTime_ != null) {
-          completeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(completeTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && completeTime_ != null
+            && completeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCompleteTimeBuilder().mergeFrom(value);
         } else {
           completeTime_ = value;
         }
-        onChanged();
       } else {
         completeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3031,14 +3054,13 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCompleteTime() {
-      if (completeTimeBuilder_ == null) {
-        completeTime_ = null;
-        onChanged();
-      } else {
-        completeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      completeTime_ = null;
+      if (completeTimeBuilder_ != null) {
+        completeTimeBuilder_.dispose();
         completeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3054,7 +3076,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCompleteTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCompleteTimeFieldBuilder().getBuilder();
     }
@@ -3141,8 +3163,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3161,9 +3183,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkebackup.v1.VolumeBackup.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkebackup.v1.VolumeBackup.State result =
-          com.google.cloud.gkebackup.v1.VolumeBackup.State.valueOf(state_);
+          com.google.cloud.gkebackup.v1.VolumeBackup.State.forNumber(state_);
       return result == null
           ? com.google.cloud.gkebackup.v1.VolumeBackup.State.UNRECOGNIZED
           : result;
@@ -3186,7 +3207,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3205,7 +3226,7 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;
@@ -3275,8 +3296,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3293,8 +3314,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateMessage() {
-
       stateMessage_ = getDefaultInstance().getStateMessage();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3316,8 +3337,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3395,8 +3416,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3416,8 +3437,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3442,8 +3463,8 @@ public final class VolumeBackup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

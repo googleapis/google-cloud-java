@@ -68,7 +68,9 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -187,7 +189,9 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.monitoring.metricsscope.v1.MonitoredProjectOrBuilder
       getMonitoredProjectOrBuilder() {
-    return getMonitoredProject();
+    return monitoredProject_ == null
+        ? com.google.monitoring.metricsscope.v1.MonitoredProject.getDefaultInstance()
+        : monitoredProject_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -404,12 +408,11 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (monitoredProjectBuilder_ == null) {
-        monitoredProject_ = null;
-      } else {
-        monitoredProject_ = null;
+      monitoredProject_ = null;
+      if (monitoredProjectBuilder_ != null) {
+        monitoredProjectBuilder_.dispose();
         monitoredProjectBuilder_ = null;
       }
       return this;
@@ -441,14 +444,23 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
     public com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest buildPartial() {
       com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest result =
           new com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest(this);
-      result.parent_ = parent_;
-      if (monitoredProjectBuilder_ == null) {
-        result.monitoredProject_ = monitoredProject_;
-      } else {
-        result.monitoredProject_ = monitoredProjectBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.monitoredProject_ =
+            monitoredProjectBuilder_ == null ? monitoredProject_ : monitoredProjectBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -502,6 +514,7 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMonitoredProject()) {
@@ -536,14 +549,14 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getMonitoredProjectFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -562,6 +575,8 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -639,8 +654,8 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -661,8 +676,8 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -688,8 +703,8 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,7 +732,7 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
      * @return Whether the monitoredProject field is set.
      */
     public boolean hasMonitoredProject() {
-      return monitoredProjectBuilder_ != null || monitoredProject_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -765,11 +780,11 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         monitoredProject_ = value;
-        onChanged();
       } else {
         monitoredProjectBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,11 +805,11 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
         com.google.monitoring.metricsscope.v1.MonitoredProject.Builder builderForValue) {
       if (monitoredProjectBuilder_ == null) {
         monitoredProject_ = builderForValue.build();
-        onChanged();
       } else {
         monitoredProjectBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -814,19 +829,19 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
     public Builder mergeMonitoredProject(
         com.google.monitoring.metricsscope.v1.MonitoredProject value) {
       if (monitoredProjectBuilder_ == null) {
-        if (monitoredProject_ != null) {
-          monitoredProject_ =
-              com.google.monitoring.metricsscope.v1.MonitoredProject.newBuilder(monitoredProject_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && monitoredProject_ != null
+            && monitoredProject_
+                != com.google.monitoring.metricsscope.v1.MonitoredProject.getDefaultInstance()) {
+          getMonitoredProjectBuilder().mergeFrom(value);
         } else {
           monitoredProject_ = value;
         }
-        onChanged();
       } else {
         monitoredProjectBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,14 +859,13 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearMonitoredProject() {
-      if (monitoredProjectBuilder_ == null) {
-        monitoredProject_ = null;
-        onChanged();
-      } else {
-        monitoredProject_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      monitoredProject_ = null;
+      if (monitoredProjectBuilder_ != null) {
+        monitoredProjectBuilder_.dispose();
         monitoredProjectBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -870,7 +884,7 @@ public final class CreateMonitoredProjectRequest extends com.google.protobuf.Gen
      */
     public com.google.monitoring.metricsscope.v1.MonitoredProject.Builder
         getMonitoredProjectBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMonitoredProjectFieldBuilder().getBuilder();
     }

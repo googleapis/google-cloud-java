@@ -68,6 +68,8 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ADMIN_USERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AzureClusterUser> adminUsers_;
   /**
    *
@@ -366,6 +368,7 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (adminUsersBuilder_ == null) {
         adminUsers_ = java.util.Collections.emptyList();
       } else {
@@ -400,7 +403,16 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gkemulticloud.v1.AzureAuthorization buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureAuthorization result =
           new com.google.cloud.gkemulticloud.v1.AzureAuthorization(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AzureAuthorization result) {
       if (adminUsersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           adminUsers_ = java.util.Collections.unmodifiableList(adminUsers_);
@@ -410,8 +422,10 @@ public final class AzureAuthorization extends com.google.protobuf.GeneratedMessa
       } else {
         result.adminUsers_ = adminUsersBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureAuthorization result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

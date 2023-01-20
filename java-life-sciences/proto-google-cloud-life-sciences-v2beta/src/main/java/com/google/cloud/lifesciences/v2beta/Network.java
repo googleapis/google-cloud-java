@@ -69,7 +69,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -124,7 +126,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USE_PRIVATE_ADDRESS_FIELD_NUMBER = 2;
-  private boolean usePrivateAddress_;
+  private boolean usePrivateAddress_ = false;
   /**
    *
    *
@@ -146,7 +148,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object subnetwork_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetwork_ = "";
   /**
    *
    *
@@ -421,12 +425,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       network_ = "";
-
       usePrivateAddress_ = false;
-
       subnetwork_ = "";
-
       return this;
     }
 
@@ -454,11 +456,24 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Network buildPartial() {
       com.google.cloud.lifesciences.v2beta.Network result =
           new com.google.cloud.lifesciences.v2beta.Network(this);
-      result.network_ = network_;
-      result.usePrivateAddress_ = usePrivateAddress_;
-      result.subnetwork_ = subnetwork_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Network result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.usePrivateAddress_ = usePrivateAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.subnetwork_ = subnetwork_;
+      }
     }
 
     @java.lang.Override
@@ -508,6 +523,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.lifesciences.v2beta.Network.getDefaultInstance()) return this;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getUsePrivateAddress() != false) {
@@ -515,6 +531,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -546,19 +563,19 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 usePrivateAddress_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -577,6 +594,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object network_ = "";
     /**
@@ -648,8 +667,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +687,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -693,8 +712,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -738,6 +757,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder setUsePrivateAddress(boolean value) {
 
       usePrivateAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -757,7 +777,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsePrivateAddress() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       usePrivateAddress_ = false;
       onChanged();
       return this;
@@ -842,8 +862,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -865,8 +885,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSubnetwork() {
-
       subnetwork_ = getDefaultInstance().getSubnetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -893,8 +913,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetwork_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

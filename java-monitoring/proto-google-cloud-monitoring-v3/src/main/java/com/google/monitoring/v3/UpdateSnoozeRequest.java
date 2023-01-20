@@ -118,7 +118,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.monitoring.v3.SnoozeOrBuilder getSnoozeOrBuilder() {
-    return getSnooze();
+    return snooze_ == null ? com.google.monitoring.v3.Snooze.getDefaultInstance() : snooze_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -212,7 +212,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,16 +441,15 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (snoozeBuilder_ == null) {
-        snooze_ = null;
-      } else {
-        snooze_ = null;
+      bitField0_ = 0;
+      snooze_ = null;
+      if (snoozeBuilder_ != null) {
+        snoozeBuilder_.dispose();
         snoozeBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -480,18 +479,21 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.v3.UpdateSnoozeRequest buildPartial() {
       com.google.monitoring.v3.UpdateSnoozeRequest result =
           new com.google.monitoring.v3.UpdateSnoozeRequest(this);
-      if (snoozeBuilder_ == null) {
-        result.snooze_ = snooze_;
-      } else {
-        result.snooze_ = snoozeBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UpdateSnoozeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.snooze_ = snoozeBuilder_ == null ? snooze_ : snoozeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -574,13 +576,13 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getSnoozeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -599,6 +601,8 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.monitoring.v3.Snooze snooze_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,7 +623,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the snooze field is set.
      */
     public boolean hasSnooze() {
-      return snoozeBuilder_ != null || snooze_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -656,11 +660,11 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         snooze_ = value;
-        onChanged();
       } else {
         snoozeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -676,11 +680,11 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public Builder setSnooze(com.google.monitoring.v3.Snooze.Builder builderForValue) {
       if (snoozeBuilder_ == null) {
         snooze_ = builderForValue.build();
-        onChanged();
       } else {
         snoozeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -695,17 +699,18 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSnooze(com.google.monitoring.v3.Snooze value) {
       if (snoozeBuilder_ == null) {
-        if (snooze_ != null) {
-          snooze_ =
-              com.google.monitoring.v3.Snooze.newBuilder(snooze_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && snooze_ != null
+            && snooze_ != com.google.monitoring.v3.Snooze.getDefaultInstance()) {
+          getSnoozeBuilder().mergeFrom(value);
         } else {
           snooze_ = value;
         }
-        onChanged();
       } else {
         snoozeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -719,14 +724,13 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearSnooze() {
-      if (snoozeBuilder_ == null) {
-        snooze_ = null;
-        onChanged();
-      } else {
-        snooze_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      snooze_ = null;
+      if (snoozeBuilder_ != null) {
+        snoozeBuilder_.dispose();
         snoozeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -740,7 +744,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.monitoring.v3.Snooze.Builder getSnoozeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getSnoozeFieldBuilder().getBuilder();
     }
@@ -822,7 +826,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -891,11 +895,11 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -926,11 +930,11 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -960,17 +964,18 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -999,14 +1004,13 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1035,7 +1039,7 @@ public final class UpdateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

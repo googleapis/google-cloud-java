@@ -70,6 +70,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList regions_;
   /**
    *
@@ -135,6 +137,8 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZONES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList zones_;
   /**
    *
@@ -244,7 +248,9 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.lifesciences.v2beta.VirtualMachineOrBuilder getVirtualMachineOrBuilder() {
-    return getVirtualMachine();
+    return virtualMachine_ == null
+        ? com.google.cloud.lifesciences.v2beta.VirtualMachine.getDefaultInstance()
+        : virtualMachine_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -482,14 +488,14 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       zones_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      if (virtualMachineBuilder_ == null) {
-        virtualMachine_ = null;
-      } else {
-        virtualMachine_ = null;
+      virtualMachine_ = null;
+      if (virtualMachineBuilder_ != null) {
+        virtualMachineBuilder_.dispose();
         virtualMachineBuilder_ = null;
       }
       return this;
@@ -519,7 +525,15 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Resources buildPartial() {
       com.google.cloud.lifesciences.v2beta.Resources result =
           new com.google.cloud.lifesciences.v2beta.Resources(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.lifesciences.v2beta.Resources result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         regions_ = regions_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -530,13 +544,14 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.zones_ = zones_;
-      if (virtualMachineBuilder_ == null) {
-        result.virtualMachine_ = virtualMachine_;
-      } else {
-        result.virtualMachine_ = virtualMachineBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Resources result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.virtualMachine_ =
+            virtualMachineBuilder_ == null ? virtualMachine_ : virtualMachineBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -650,7 +665,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getVirtualMachineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -1044,7 +1059,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the virtualMachine field is set.
      */
     public boolean hasVirtualMachine() {
-      return virtualMachineBuilder_ != null || virtualMachine_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1081,11 +1096,11 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         virtualMachine_ = value;
-        onChanged();
       } else {
         virtualMachineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1101,11 +1116,11 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.lifesciences.v2beta.VirtualMachine.Builder builderForValue) {
       if (virtualMachineBuilder_ == null) {
         virtualMachine_ = builderForValue.build();
-        onChanged();
       } else {
         virtualMachineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,19 +1134,19 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVirtualMachine(com.google.cloud.lifesciences.v2beta.VirtualMachine value) {
       if (virtualMachineBuilder_ == null) {
-        if (virtualMachine_ != null) {
-          virtualMachine_ =
-              com.google.cloud.lifesciences.v2beta.VirtualMachine.newBuilder(virtualMachine_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && virtualMachine_ != null
+            && virtualMachine_
+                != com.google.cloud.lifesciences.v2beta.VirtualMachine.getDefaultInstance()) {
+          getVirtualMachineBuilder().mergeFrom(value);
         } else {
           virtualMachine_ = value;
         }
-        onChanged();
       } else {
         virtualMachineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1144,14 +1159,13 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.VirtualMachine virtual_machine = 4;</code>
      */
     public Builder clearVirtualMachine() {
-      if (virtualMachineBuilder_ == null) {
-        virtualMachine_ = null;
-        onChanged();
-      } else {
-        virtualMachine_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      virtualMachine_ = null;
+      if (virtualMachineBuilder_ != null) {
+        virtualMachineBuilder_.dispose();
         virtualMachineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1164,7 +1178,7 @@ public final class Resources extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.VirtualMachine virtual_machine = 4;</code>
      */
     public com.google.cloud.lifesciences.v2beta.VirtualMachine.Builder getVirtualMachineBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getVirtualMachineFieldBuilder().getBuilder();
     }

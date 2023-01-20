@@ -160,7 +160,6 @@ public interface PipelineOrBuilder
    *
    * <code>map&lt;string, string&gt; environment = 3;</code>
    */
-
   /* nullable */
   java.lang.String getEnvironmentOrDefault(
       java.lang.String key,

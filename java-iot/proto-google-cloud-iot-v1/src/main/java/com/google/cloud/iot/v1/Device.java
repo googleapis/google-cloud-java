@@ -81,7 +81,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -132,7 +134,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -189,7 +193,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NUM_ID_FIELD_NUMBER = 3;
-  private long numId_;
+  private long numId_ = 0L;
   /**
    *
    *
@@ -208,6 +212,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREDENTIALS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.DeviceCredential> credentials_;
   /**
    *
@@ -358,7 +364,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastHeartbeatTimeOrBuilder() {
-    return getLastHeartbeatTime();
+    return lastHeartbeatTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastHeartbeatTime_;
   }
 
   public static final int LAST_EVENT_TIME_FIELD_NUMBER = 8;
@@ -412,7 +420,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastEventTimeOrBuilder() {
-    return getLastEventTime();
+    return lastEventTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastEventTime_;
   }
 
   public static final int LAST_STATE_TIME_FIELD_NUMBER = 20;
@@ -466,7 +476,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastStateTimeOrBuilder() {
-    return getLastStateTime();
+    return lastStateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastStateTime_;
   }
 
   public static final int LAST_CONFIG_ACK_TIME_FIELD_NUMBER = 14;
@@ -520,7 +532,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastConfigAckTimeOrBuilder() {
-    return getLastConfigAckTime();
+    return lastConfigAckTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastConfigAckTime_;
   }
 
   public static final int LAST_CONFIG_SEND_TIME_FIELD_NUMBER = 18;
@@ -571,11 +585,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastConfigSendTimeOrBuilder() {
-    return getLastConfigSendTime();
+    return lastConfigSendTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastConfigSendTime_;
   }
 
   public static final int BLOCKED_FIELD_NUMBER = 19;
-  private boolean blocked_;
+  private boolean blocked_ = false;
   /**
    *
    *
@@ -645,7 +661,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder() {
-    return getLastErrorTime();
+    return lastErrorTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastErrorTime_;
   }
 
   public static final int LAST_ERROR_STATUS_FIELD_NUMBER = 11;
@@ -703,7 +721,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getLastErrorStatusOrBuilder() {
-    return getLastErrorStatus();
+    return lastErrorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
   }
 
   public static final int CONFIG_FIELD_NUMBER = 13;
@@ -761,7 +779,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.DeviceConfigOrBuilder getConfigOrBuilder() {
-    return getConfig();
+    return config_ == null ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
   }
 
   public static final int STATE_FIELD_NUMBER = 16;
@@ -810,11 +828,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.DeviceStateOrBuilder getStateOrBuilder() {
-    return getState();
+    return state_ == null ? com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
   }
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 21;
-  private int logLevel_;
+  private int logLevel_ = 0;
   /**
    *
    *
@@ -847,8 +865,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.LogLevel getLogLevel() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+    com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.forNumber(logLevel_);
     return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
   }
 
@@ -865,6 +882,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -946,8 +964,10 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1028,7 +1048,9 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
-    return getGatewayConfig();
+    return gatewayConfig_ == null
+        ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()
+        : gatewayConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1449,82 +1471,68 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       name_ = "";
-
       numId_ = 0L;
-
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
       } else {
         credentials_ = null;
         credentialsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (lastHeartbeatTimeBuilder_ == null) {
-        lastHeartbeatTime_ = null;
-      } else {
-        lastHeartbeatTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastHeartbeatTime_ = null;
+      if (lastHeartbeatTimeBuilder_ != null) {
+        lastHeartbeatTimeBuilder_.dispose();
         lastHeartbeatTimeBuilder_ = null;
       }
-      if (lastEventTimeBuilder_ == null) {
-        lastEventTime_ = null;
-      } else {
-        lastEventTime_ = null;
+      lastEventTime_ = null;
+      if (lastEventTimeBuilder_ != null) {
+        lastEventTimeBuilder_.dispose();
         lastEventTimeBuilder_ = null;
       }
-      if (lastStateTimeBuilder_ == null) {
-        lastStateTime_ = null;
-      } else {
-        lastStateTime_ = null;
+      lastStateTime_ = null;
+      if (lastStateTimeBuilder_ != null) {
+        lastStateTimeBuilder_.dispose();
         lastStateTimeBuilder_ = null;
       }
-      if (lastConfigAckTimeBuilder_ == null) {
-        lastConfigAckTime_ = null;
-      } else {
-        lastConfigAckTime_ = null;
+      lastConfigAckTime_ = null;
+      if (lastConfigAckTimeBuilder_ != null) {
+        lastConfigAckTimeBuilder_.dispose();
         lastConfigAckTimeBuilder_ = null;
       }
-      if (lastConfigSendTimeBuilder_ == null) {
-        lastConfigSendTime_ = null;
-      } else {
-        lastConfigSendTime_ = null;
+      lastConfigSendTime_ = null;
+      if (lastConfigSendTimeBuilder_ != null) {
+        lastConfigSendTimeBuilder_.dispose();
         lastConfigSendTimeBuilder_ = null;
       }
       blocked_ = false;
-
-      if (lastErrorTimeBuilder_ == null) {
-        lastErrorTime_ = null;
-      } else {
-        lastErrorTime_ = null;
+      lastErrorTime_ = null;
+      if (lastErrorTimeBuilder_ != null) {
+        lastErrorTimeBuilder_.dispose();
         lastErrorTimeBuilder_ = null;
       }
-      if (lastErrorStatusBuilder_ == null) {
-        lastErrorStatus_ = null;
-      } else {
-        lastErrorStatus_ = null;
+      lastErrorStatus_ = null;
+      if (lastErrorStatusBuilder_ != null) {
+        lastErrorStatusBuilder_.dispose();
         lastErrorStatusBuilder_ = null;
       }
-      if (configBuilder_ == null) {
-        config_ = null;
-      } else {
-        config_ = null;
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
       logLevel_ = 0;
-
       internalGetMutableMetadata().clear();
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfig_ = null;
-      } else {
-        gatewayConfig_ = null;
+      gatewayConfig_ = null;
+      if (gatewayConfigBuilder_ != null) {
+        gatewayConfigBuilder_.dispose();
         gatewayConfigBuilder_ = null;
       }
       return this;
@@ -1553,75 +1561,91 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.iot.v1.Device buildPartial() {
       com.google.cloud.iot.v1.Device result = new com.google.cloud.iot.v1.Device(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.name_ = name_;
-      result.numId_ = numId_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.iot.v1.Device result) {
       if (credentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           credentials_ = java.util.Collections.unmodifiableList(credentials_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.credentials_ = credentials_;
       } else {
         result.credentials_ = credentialsBuilder_.build();
       }
-      if (lastHeartbeatTimeBuilder_ == null) {
-        result.lastHeartbeatTime_ = lastHeartbeatTime_;
-      } else {
-        result.lastHeartbeatTime_ = lastHeartbeatTimeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.Device result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
       }
-      if (lastEventTimeBuilder_ == null) {
-        result.lastEventTime_ = lastEventTime_;
-      } else {
-        result.lastEventTime_ = lastEventTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
       }
-      if (lastStateTimeBuilder_ == null) {
-        result.lastStateTime_ = lastStateTime_;
-      } else {
-        result.lastStateTime_ = lastStateTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.numId_ = numId_;
       }
-      if (lastConfigAckTimeBuilder_ == null) {
-        result.lastConfigAckTime_ = lastConfigAckTime_;
-      } else {
-        result.lastConfigAckTime_ = lastConfigAckTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lastHeartbeatTime_ =
+            lastHeartbeatTimeBuilder_ == null
+                ? lastHeartbeatTime_
+                : lastHeartbeatTimeBuilder_.build();
       }
-      if (lastConfigSendTimeBuilder_ == null) {
-        result.lastConfigSendTime_ = lastConfigSendTime_;
-      } else {
-        result.lastConfigSendTime_ = lastConfigSendTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.lastEventTime_ =
+            lastEventTimeBuilder_ == null ? lastEventTime_ : lastEventTimeBuilder_.build();
       }
-      result.blocked_ = blocked_;
-      if (lastErrorTimeBuilder_ == null) {
-        result.lastErrorTime_ = lastErrorTime_;
-      } else {
-        result.lastErrorTime_ = lastErrorTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.lastStateTime_ =
+            lastStateTimeBuilder_ == null ? lastStateTime_ : lastStateTimeBuilder_.build();
       }
-      if (lastErrorStatusBuilder_ == null) {
-        result.lastErrorStatus_ = lastErrorStatus_;
-      } else {
-        result.lastErrorStatus_ = lastErrorStatusBuilder_.build();
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.lastConfigAckTime_ =
+            lastConfigAckTimeBuilder_ == null
+                ? lastConfigAckTime_
+                : lastConfigAckTimeBuilder_.build();
       }
-      if (configBuilder_ == null) {
-        result.config_ = config_;
-      } else {
-        result.config_ = configBuilder_.build();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.lastConfigSendTime_ =
+            lastConfigSendTimeBuilder_ == null
+                ? lastConfigSendTime_
+                : lastConfigSendTimeBuilder_.build();
       }
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.blocked_ = blocked_;
       }
-      result.logLevel_ = logLevel_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      if (gatewayConfigBuilder_ == null) {
-        result.gatewayConfig_ = gatewayConfig_;
-      } else {
-        result.gatewayConfig_ = gatewayConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lastErrorTime_ =
+            lastErrorTimeBuilder_ == null ? lastErrorTime_ : lastErrorTimeBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.lastErrorStatus_ =
+            lastErrorStatusBuilder_ == null ? lastErrorStatus_ : lastErrorStatusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.logLevel_ = logLevel_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.gatewayConfig_ =
+            gatewayConfigBuilder_ == null ? gatewayConfig_ : gatewayConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1671,10 +1695,12 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.iot.v1.Device.getDefaultInstance()) return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getNumId() != 0L) {
@@ -1684,7 +1710,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         if (!other.credentials_.isEmpty()) {
           if (credentials_.isEmpty()) {
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureCredentialsIsMutable();
             credentials_.addAll(other.credentials_);
@@ -1697,7 +1723,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             credentialsBuilder_.dispose();
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             credentialsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCredentialsFieldBuilder()
@@ -1741,6 +1767,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         setLogLevelValue(other.getLogLevelValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00008000;
       if (other.hasGatewayConfig()) {
         mergeGatewayConfig(other.getGatewayConfig());
       }
@@ -1773,44 +1800,44 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 numId_ = input.readUInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 58:
               {
                 input.readMessage(
                     getLastHeartbeatTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getLastEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getLastErrorTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getLastErrorStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
@@ -1829,20 +1856,20 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 input.readMessage(getConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getLastConfigAckTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 114
             case 130:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             case 138:
@@ -1854,37 +1881,38 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(
                     getLastConfigSendTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 146
             case 152:
               {
                 blocked_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 152
             case 162:
               {
                 input.readMessage(getLastStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 162
             case 168:
               {
                 logLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 168
             case 194:
               {
                 input.readMessage(getGatewayConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 194
             default:
@@ -1970,8 +1998,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1988,8 +2016,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2011,8 +2039,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2090,8 +2118,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2111,8 +2139,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2137,8 +2165,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2176,6 +2204,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setNumId(long value) {
 
       numId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2192,7 +2221,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNumId() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       numId_ = 0L;
       onChanged();
       return this;
@@ -2202,10 +2231,10 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureCredentialsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         credentials_ =
             new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>(credentials_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2476,7 +2505,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCredentials() {
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         credentialsBuilder_.clear();
@@ -2633,7 +2662,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.iot.v1.DeviceCredential,
                 com.google.cloud.iot.v1.DeviceCredential.Builder,
                 com.google.cloud.iot.v1.DeviceCredentialOrBuilder>(
-                credentials_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                credentials_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         credentials_ = null;
       }
       return credentialsBuilder_;
@@ -2661,7 +2690,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastHeartbeatTime field is set.
      */
     public boolean hasLastHeartbeatTime() {
-      return lastHeartbeatTimeBuilder_ != null || lastHeartbeatTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2706,11 +2735,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastHeartbeatTime_ = value;
-        onChanged();
       } else {
         lastHeartbeatTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2729,11 +2758,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastHeartbeatTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastHeartbeatTimeBuilder_ == null) {
         lastHeartbeatTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastHeartbeatTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2751,19 +2780,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastHeartbeatTime(com.google.protobuf.Timestamp value) {
       if (lastHeartbeatTimeBuilder_ == null) {
-        if (lastHeartbeatTime_ != null) {
-          lastHeartbeatTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastHeartbeatTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && lastHeartbeatTime_ != null
+            && lastHeartbeatTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastHeartbeatTimeBuilder().mergeFrom(value);
         } else {
           lastHeartbeatTime_ = value;
         }
-        onChanged();
       } else {
         lastHeartbeatTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2780,14 +2808,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
      */
     public Builder clearLastHeartbeatTime() {
-      if (lastHeartbeatTimeBuilder_ == null) {
-        lastHeartbeatTime_ = null;
-        onChanged();
-      } else {
-        lastHeartbeatTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      lastHeartbeatTime_ = null;
+      if (lastHeartbeatTimeBuilder_ != null) {
+        lastHeartbeatTimeBuilder_.dispose();
         lastHeartbeatTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2804,7 +2831,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastHeartbeatTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getLastHeartbeatTimeFieldBuilder().getBuilder();
     }
@@ -2880,7 +2907,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastEventTime field is set.
      */
     public boolean hasLastEventTime() {
-      return lastEventTimeBuilder_ != null || lastEventTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2921,11 +2948,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastEventTime_ = value;
-        onChanged();
       } else {
         lastEventTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2942,11 +2969,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastEventTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastEventTimeBuilder_ == null) {
         lastEventTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastEventTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2962,19 +2989,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastEventTime(com.google.protobuf.Timestamp value) {
       if (lastEventTimeBuilder_ == null) {
-        if (lastEventTime_ != null) {
-          lastEventTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastEventTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && lastEventTime_ != null
+            && lastEventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastEventTimeBuilder().mergeFrom(value);
         } else {
           lastEventTime_ = value;
         }
-        onChanged();
       } else {
         lastEventTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2989,14 +3015,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
      */
     public Builder clearLastEventTime() {
-      if (lastEventTimeBuilder_ == null) {
-        lastEventTime_ = null;
-        onChanged();
-      } else {
-        lastEventTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lastEventTime_ = null;
+      if (lastEventTimeBuilder_ != null) {
+        lastEventTimeBuilder_.dispose();
         lastEventTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3011,7 +3036,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastEventTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLastEventTimeFieldBuilder().getBuilder();
     }
@@ -3083,7 +3108,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastStateTime field is set.
      */
     public boolean hasLastStateTime() {
-      return lastStateTimeBuilder_ != null || lastStateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3124,11 +3149,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastStateTime_ = value;
-        onChanged();
       } else {
         lastStateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3145,11 +3170,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastStateTimeBuilder_ == null) {
         lastStateTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastStateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3165,19 +3190,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastStateTime(com.google.protobuf.Timestamp value) {
       if (lastStateTimeBuilder_ == null) {
-        if (lastStateTime_ != null) {
-          lastStateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastStateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && lastStateTime_ != null
+            && lastStateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastStateTimeBuilder().mergeFrom(value);
         } else {
           lastStateTime_ = value;
         }
-        onChanged();
       } else {
         lastStateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3192,14 +3216,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
      */
     public Builder clearLastStateTime() {
-      if (lastStateTimeBuilder_ == null) {
-        lastStateTime_ = null;
-        onChanged();
-      } else {
-        lastStateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      lastStateTime_ = null;
+      if (lastStateTimeBuilder_ != null) {
+        lastStateTimeBuilder_.dispose();
         lastStateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3214,7 +3237,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastStateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getLastStateTimeFieldBuilder().getBuilder();
     }
@@ -3286,7 +3309,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastConfigAckTime field is set.
      */
     public boolean hasLastConfigAckTime() {
-      return lastConfigAckTimeBuilder_ != null || lastConfigAckTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3327,11 +3350,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastConfigAckTime_ = value;
-        onChanged();
       } else {
         lastConfigAckTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3348,11 +3371,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastConfigAckTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastConfigAckTimeBuilder_ == null) {
         lastConfigAckTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastConfigAckTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3368,19 +3391,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastConfigAckTime(com.google.protobuf.Timestamp value) {
       if (lastConfigAckTimeBuilder_ == null) {
-        if (lastConfigAckTime_ != null) {
-          lastConfigAckTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastConfigAckTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && lastConfigAckTime_ != null
+            && lastConfigAckTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastConfigAckTimeBuilder().mergeFrom(value);
         } else {
           lastConfigAckTime_ = value;
         }
-        onChanged();
       } else {
         lastConfigAckTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3395,14 +3417,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
      */
     public Builder clearLastConfigAckTime() {
-      if (lastConfigAckTimeBuilder_ == null) {
-        lastConfigAckTime_ = null;
-        onChanged();
-      } else {
-        lastConfigAckTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      lastConfigAckTime_ = null;
+      if (lastConfigAckTimeBuilder_ != null) {
+        lastConfigAckTimeBuilder_.dispose();
         lastConfigAckTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3417,7 +3438,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastConfigAckTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getLastConfigAckTimeFieldBuilder().getBuilder();
     }
@@ -3488,7 +3509,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastConfigSendTime field is set.
      */
     public boolean hasLastConfigSendTime() {
-      return lastConfigSendTimeBuilder_ != null || lastConfigSendTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3527,11 +3548,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastConfigSendTime_ = value;
-        onChanged();
       } else {
         lastConfigSendTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3547,11 +3568,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastConfigSendTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastConfigSendTimeBuilder_ == null) {
         lastConfigSendTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastConfigSendTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3566,19 +3587,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastConfigSendTime(com.google.protobuf.Timestamp value) {
       if (lastConfigSendTimeBuilder_ == null) {
-        if (lastConfigSendTime_ != null) {
-          lastConfigSendTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastConfigSendTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && lastConfigSendTime_ != null
+            && lastConfigSendTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastConfigSendTimeBuilder().mergeFrom(value);
         } else {
           lastConfigSendTime_ = value;
         }
-        onChanged();
       } else {
         lastConfigSendTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3592,14 +3612,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
      */
     public Builder clearLastConfigSendTime() {
-      if (lastConfigSendTimeBuilder_ == null) {
-        lastConfigSendTime_ = null;
-        onChanged();
-      } else {
-        lastConfigSendTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastConfigSendTime_ = null;
+      if (lastConfigSendTimeBuilder_ != null) {
+        lastConfigSendTimeBuilder_.dispose();
         lastConfigSendTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3613,7 +3632,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastConfigSendTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getLastConfigSendTimeFieldBuilder().getBuilder();
     }
@@ -3698,6 +3717,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setBlocked(boolean value) {
 
       blocked_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3715,7 +3735,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBlocked() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       blocked_ = false;
       onChanged();
       return this;
@@ -3741,7 +3761,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastErrorTime field is set.
      */
     public boolean hasLastErrorTime() {
-      return lastErrorTimeBuilder_ != null || lastErrorTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3782,11 +3802,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastErrorTime_ = value;
-        onChanged();
       } else {
         lastErrorTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3803,11 +3823,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastErrorTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastErrorTimeBuilder_ == null) {
         lastErrorTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastErrorTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3823,19 +3843,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastErrorTime(com.google.protobuf.Timestamp value) {
       if (lastErrorTimeBuilder_ == null) {
-        if (lastErrorTime_ != null) {
-          lastErrorTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastErrorTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && lastErrorTime_ != null
+            && lastErrorTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastErrorTimeBuilder().mergeFrom(value);
         } else {
           lastErrorTime_ = value;
         }
-        onChanged();
       } else {
         lastErrorTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3850,14 +3869,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
      */
     public Builder clearLastErrorTime() {
-      if (lastErrorTimeBuilder_ == null) {
-        lastErrorTime_ = null;
-        onChanged();
-      } else {
-        lastErrorTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      lastErrorTime_ = null;
+      if (lastErrorTimeBuilder_ != null) {
+        lastErrorTimeBuilder_.dispose();
         lastErrorTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3872,7 +3890,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastErrorTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getLastErrorTimeFieldBuilder().getBuilder();
     }
@@ -3944,7 +3962,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastErrorStatus field is set.
      */
     public boolean hasLastErrorStatus() {
-      return lastErrorStatusBuilder_ != null || lastErrorStatus_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3989,11 +4007,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastErrorStatus_ = value;
-        onChanged();
       } else {
         lastErrorStatusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4012,11 +4030,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastErrorStatus(com.google.rpc.Status.Builder builderForValue) {
       if (lastErrorStatusBuilder_ == null) {
         lastErrorStatus_ = builderForValue.build();
-        onChanged();
       } else {
         lastErrorStatusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4034,17 +4052,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastErrorStatus(com.google.rpc.Status value) {
       if (lastErrorStatusBuilder_ == null) {
-        if (lastErrorStatus_ != null) {
-          lastErrorStatus_ =
-              com.google.rpc.Status.newBuilder(lastErrorStatus_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && lastErrorStatus_ != null
+            && lastErrorStatus_ != com.google.rpc.Status.getDefaultInstance()) {
+          getLastErrorStatusBuilder().mergeFrom(value);
         } else {
           lastErrorStatus_ = value;
         }
-        onChanged();
       } else {
         lastErrorStatusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -4061,14 +4080,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status last_error_status = 11;</code>
      */
     public Builder clearLastErrorStatus() {
-      if (lastErrorStatusBuilder_ == null) {
-        lastErrorStatus_ = null;
-        onChanged();
-      } else {
-        lastErrorStatus_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      lastErrorStatus_ = null;
+      if (lastErrorStatusBuilder_ != null) {
+        lastErrorStatusBuilder_.dispose();
         lastErrorStatusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4085,7 +4103,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status last_error_status = 11;</code>
      */
     public com.google.rpc.Status.Builder getLastErrorStatusBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getLastErrorStatusFieldBuilder().getBuilder();
     }
@@ -4161,7 +4179,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the config field is set.
      */
     public boolean hasConfig() {
-      return configBuilder_ != null || config_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4206,11 +4224,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         config_ = value;
-        onChanged();
       } else {
         configBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4229,11 +4247,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setConfig(com.google.cloud.iot.v1.DeviceConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
-        onChanged();
       } else {
         configBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4251,19 +4269,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfig(com.google.cloud.iot.v1.DeviceConfig value) {
       if (configBuilder_ == null) {
-        if (config_ != null) {
-          config_ =
-              com.google.cloud.iot.v1.DeviceConfig.newBuilder(config_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && config_ != null
+            && config_ != com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
         } else {
           config_ = value;
         }
-        onChanged();
       } else {
         configBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4280,14 +4297,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
      */
     public Builder clearConfig() {
-      if (configBuilder_ == null) {
-        config_ = null;
-        onChanged();
-      } else {
-        config_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
         configBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4304,7 +4320,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
      */
     public com.google.cloud.iot.v1.DeviceConfig.Builder getConfigBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
@@ -4379,7 +4395,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -4416,11 +4432,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4436,11 +4452,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setState(com.google.cloud.iot.v1.DeviceState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4455,19 +4471,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeState(com.google.cloud.iot.v1.DeviceState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.iot.v1.DeviceState.newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && state_ != null
+            && state_ != com.google.cloud.iot.v1.DeviceState.getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -4481,14 +4496,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4502,7 +4516,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
      */
     public com.google.cloud.iot.v1.DeviceState.Builder getStateBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
@@ -4583,8 +4597,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLogLevelValue(int value) {
-
       logLevel_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4603,8 +4617,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.iot.v1.LogLevel getLogLevel() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+      com.google.cloud.iot.v1.LogLevel result =
+          com.google.cloud.iot.v1.LogLevel.forNumber(logLevel_);
       return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
     }
     /**
@@ -4625,7 +4639,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00004000;
       logLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -4644,7 +4658,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00004000);
       logLevel_ = 0;
       onChanged();
       return this;
@@ -4661,8 +4675,6 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -4670,6 +4682,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00008000;
+      onChanged();
       return metadata_;
     }
 
@@ -4745,8 +4759,10 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4783,6 +4799,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00008000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -4813,6 +4830,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00008000;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -4839,8 +4857,8 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00008000;
       return this;
     }
     /**
@@ -4862,6 +4880,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00008000;
       return this;
     }
 
@@ -4883,7 +4902,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gatewayConfig field is set.
      */
     public boolean hasGatewayConfig() {
-      return gatewayConfigBuilder_ != null || gatewayConfig_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4920,11 +4939,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gatewayConfig_ = value;
-        onChanged();
       } else {
         gatewayConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4939,11 +4958,11 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
     public Builder setGatewayConfig(com.google.cloud.iot.v1.GatewayConfig.Builder builderForValue) {
       if (gatewayConfigBuilder_ == null) {
         gatewayConfig_ = builderForValue.build();
-        onChanged();
       } else {
         gatewayConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4957,19 +4976,18 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGatewayConfig(com.google.cloud.iot.v1.GatewayConfig value) {
       if (gatewayConfigBuilder_ == null) {
-        if (gatewayConfig_ != null) {
-          gatewayConfig_ =
-              com.google.cloud.iot.v1.GatewayConfig.newBuilder(gatewayConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && gatewayConfig_ != null
+            && gatewayConfig_ != com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()) {
+          getGatewayConfigBuilder().mergeFrom(value);
         } else {
           gatewayConfig_ = value;
         }
-        onChanged();
       } else {
         gatewayConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4982,14 +5000,13 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
      */
     public Builder clearGatewayConfig() {
-      if (gatewayConfigBuilder_ == null) {
-        gatewayConfig_ = null;
-        onChanged();
-      } else {
-        gatewayConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      gatewayConfig_ = null;
+      if (gatewayConfigBuilder_ != null) {
+        gatewayConfigBuilder_.dispose();
         gatewayConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5002,7 +5019,7 @@ public final class Device extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
      */
     public com.google.cloud.iot.v1.GatewayConfig.Builder getGatewayConfigBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getGatewayConfigFieldBuilder().getBuilder();
     }

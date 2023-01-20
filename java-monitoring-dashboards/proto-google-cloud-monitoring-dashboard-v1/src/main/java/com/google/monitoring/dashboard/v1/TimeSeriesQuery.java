@@ -369,7 +369,9 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int UNIT_OVERRIDE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object unitOverride_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unitOverride_ = "";
   /**
    *
    *
@@ -688,6 +690,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (timeSeriesFilterBuilder_ != null) {
         timeSeriesFilterBuilder_.clear();
       }
@@ -695,7 +698,6 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         timeSeriesFilterRatioBuilder_.clear();
       }
       unitOverride_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -725,30 +727,30 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.dashboard.v1.TimeSeriesQuery buildPartial() {
       com.google.monitoring.dashboard.v1.TimeSeriesQuery result =
           new com.google.monitoring.dashboard.v1.TimeSeriesQuery(this);
-      if (sourceCase_ == 1) {
-        if (timeSeriesFilterBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = timeSeriesFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 2) {
-        if (timeSeriesFilterRatioBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = timeSeriesFilterRatioBuilder_.build();
-        }
-      }
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
-      }
-      if (sourceCase_ == 6) {
-        result.source_ = source_;
-      }
-      result.unitOverride_ = unitOverride_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.TimeSeriesQuery result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.unitOverride_ = unitOverride_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.dashboard.v1.TimeSeriesQuery result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 && timeSeriesFilterBuilder_ != null) {
+        result.source_ = timeSeriesFilterBuilder_.build();
+      }
+      if (sourceCase_ == 2 && timeSeriesFilterRatioBuilder_ != null) {
+        result.source_ = timeSeriesFilterRatioBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -799,6 +801,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getUnitOverride().isEmpty()) {
         unitOverride_ = other.unitOverride_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -881,7 +884,7 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
             case 42:
               {
                 unitOverride_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -921,6 +924,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.dashboard.v1.TimeSeriesFilter,
@@ -1132,7 +1137,6 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       sourceCase_ = 1;
       onChanged();
-      ;
       return timeSeriesFilterBuilder_;
     }
 
@@ -1356,7 +1360,6 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return timeSeriesFilterRatioBuilder_;
     }
 
@@ -1701,8 +1704,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       unitOverride_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1722,8 +1725,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUnitOverride() {
-
       unitOverride_ = getDefaultInstance().getUnitOverride();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1748,8 +1751,8 @@ public final class TimeSeriesQuery extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       unitOverride_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

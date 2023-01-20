@@ -70,7 +70,9 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int FEATURE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object featureId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object featureId_ = "";
   /**
    *
    *
@@ -214,11 +218,15 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha.FeatureOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null
+        ? com.google.cloud.gkehub.v1alpha.Feature.getDefaultInstance()
+        : resource_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -515,18 +523,15 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       featureId_ = "";
-
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -554,16 +559,27 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkehub.v1alpha.CreateFeatureRequest buildPartial() {
       com.google.cloud.gkehub.v1alpha.CreateFeatureRequest result =
           new com.google.cloud.gkehub.v1alpha.CreateFeatureRequest(this);
-      result.parent_ = parent_;
-      result.featureId_ = featureId_;
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha.CreateFeatureRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.featureId_ = featureId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -614,10 +630,12 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFeatureId().isEmpty()) {
         featureId_ = other.featureId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasResource()) {
@@ -625,6 +643,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -656,25 +675,25 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 featureId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -693,6 +712,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -758,8 +779,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -776,8 +797,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -799,8 +820,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -866,8 +887,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       featureId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -883,8 +904,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearFeatureId() {
-
       featureId_ = getDefaultInstance().getFeatureId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -905,8 +926,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       featureId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -929,7 +950,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -966,11 +987,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -985,11 +1006,11 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     public Builder setResource(com.google.cloud.gkehub.v1alpha.Feature.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1003,19 +1024,18 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeResource(com.google.cloud.gkehub.v1alpha.Feature value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.cloud.gkehub.v1alpha.Feature.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resource_ != null
+            && resource_ != com.google.cloud.gkehub.v1alpha.Feature.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1028,14 +1048,13 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.gkehub.v1alpha.Feature resource = 3;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1048,7 +1067,7 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.gkehub.v1alpha.Feature resource = 3;</code>
      */
     public com.google.cloud.gkehub.v1alpha.Feature.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
@@ -1187,8 +1206,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1214,8 +1233,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1246,8 +1265,8 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

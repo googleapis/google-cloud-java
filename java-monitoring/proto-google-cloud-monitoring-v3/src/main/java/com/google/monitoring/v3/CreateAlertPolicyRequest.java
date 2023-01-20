@@ -68,7 +68,9 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -195,7 +197,9 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
-    return getAlertPolicy();
+    return alertPolicy_ == null
+        ? com.google.monitoring.v3.AlertPolicy.getDefaultInstance()
+        : alertPolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -409,12 +413,11 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (alertPolicyBuilder_ == null) {
-        alertPolicy_ = null;
-      } else {
-        alertPolicy_ = null;
+      alertPolicy_ = null;
+      if (alertPolicyBuilder_ != null) {
+        alertPolicyBuilder_.dispose();
         alertPolicyBuilder_ = null;
       }
       return this;
@@ -444,14 +447,22 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     public com.google.monitoring.v3.CreateAlertPolicyRequest buildPartial() {
       com.google.monitoring.v3.CreateAlertPolicyRequest result =
           new com.google.monitoring.v3.CreateAlertPolicyRequest(this);
-      result.name_ = name_;
-      if (alertPolicyBuilder_ == null) {
-        result.alertPolicy_ = alertPolicy_;
-      } else {
-        result.alertPolicy_ = alertPolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateAlertPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.alertPolicy_ =
+            alertPolicyBuilder_ == null ? alertPolicy_ : alertPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -502,6 +513,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAlertPolicy()) {
@@ -536,13 +548,13 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
             case 18:
               {
                 input.readMessage(getAlertPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -561,6 +573,8 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -656,8 +670,8 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +698,8 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -717,8 +731,8 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -745,7 +759,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
      * @return Whether the alertPolicy field is set.
      */
     public boolean hasAlertPolicy() {
-      return alertPolicyBuilder_ != null || alertPolicy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +804,11 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         alertPolicy_ = value;
-        onChanged();
       } else {
         alertPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,11 +827,11 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
     public Builder setAlertPolicy(com.google.monitoring.v3.AlertPolicy.Builder builderForValue) {
       if (alertPolicyBuilder_ == null) {
         alertPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         alertPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -835,19 +849,18 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAlertPolicy(com.google.monitoring.v3.AlertPolicy value) {
       if (alertPolicyBuilder_ == null) {
-        if (alertPolicy_ != null) {
-          alertPolicy_ =
-              com.google.monitoring.v3.AlertPolicy.newBuilder(alertPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && alertPolicy_ != null
+            && alertPolicy_ != com.google.monitoring.v3.AlertPolicy.getDefaultInstance()) {
+          getAlertPolicyBuilder().mergeFrom(value);
         } else {
           alertPolicy_ = value;
         }
-        onChanged();
       } else {
         alertPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -864,14 +877,13 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAlertPolicy() {
-      if (alertPolicyBuilder_ == null) {
-        alertPolicy_ = null;
-        onChanged();
-      } else {
-        alertPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      alertPolicy_ = null;
+      if (alertPolicyBuilder_ != null) {
+        alertPolicyBuilder_.dispose();
         alertPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -888,7 +900,7 @@ public final class CreateAlertPolicyRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.monitoring.v3.AlertPolicy.Builder getAlertPolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAlertPolicyFieldBuilder().getBuilder();
     }

@@ -2983,7 +2983,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TAG_FIELD_NUMBER = 1;
-  private int tag_;
+  private int tag_ = 0;
   /**
    *
    *
@@ -3012,16 +3012,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Tag getTag() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Tag result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Tag.valueOf(tag_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Tag.forNumber(tag_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Tag.UNRECOGNIZED
         : result;
   }
 
   public static final int ASPECT_FIELD_NUMBER = 2;
-  private int aspect_;
+  private int aspect_ = 0;
   /**
    *
    *
@@ -3050,16 +3049,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Aspect getAspect() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Aspect result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.valueOf(aspect_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.forNumber(aspect_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.UNRECOGNIZED
         : result;
   }
 
   public static final int CASE_FIELD_NUMBER = 3;
-  private int case_;
+  private int case_ = 0;
   /**
    *
    *
@@ -3088,16 +3086,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Case getCase() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Case result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Case.valueOf(case_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Case.forNumber(case_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Case.UNRECOGNIZED
         : result;
   }
 
   public static final int FORM_FIELD_NUMBER = 4;
-  private int form_;
+  private int form_ = 0;
   /**
    *
    *
@@ -3126,16 +3123,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Form getForm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Form result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Form.valueOf(form_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Form.forNumber(form_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Form.UNRECOGNIZED
         : result;
   }
 
   public static final int GENDER_FIELD_NUMBER = 5;
-  private int gender_;
+  private int gender_ = 0;
   /**
    *
    *
@@ -3164,16 +3160,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Gender getGender() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Gender result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Gender.valueOf(gender_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Gender.forNumber(gender_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Gender.UNRECOGNIZED
         : result;
   }
 
   public static final int MOOD_FIELD_NUMBER = 6;
-  private int mood_;
+  private int mood_ = 0;
   /**
    *
    *
@@ -3202,16 +3197,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Mood getMood() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Mood result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Mood.valueOf(mood_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Mood.forNumber(mood_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Mood.UNRECOGNIZED
         : result;
   }
 
   public static final int NUMBER_FIELD_NUMBER = 7;
-  private int number_;
+  private int number_ = 0;
   /**
    *
    *
@@ -3240,16 +3234,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Number getNumber() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Number result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Number.valueOf(number_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Number.forNumber(number_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Number.UNRECOGNIZED
         : result;
   }
 
   public static final int PERSON_FIELD_NUMBER = 8;
-  private int person_;
+  private int person_ = 0;
   /**
    *
    *
@@ -3278,16 +3271,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Person getPerson() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Person result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Person.valueOf(person_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Person.forNumber(person_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Person.UNRECOGNIZED
         : result;
   }
 
   public static final int PROPER_FIELD_NUMBER = 9;
-  private int proper_;
+  private int proper_ = 0;
   /**
    *
    *
@@ -3316,16 +3308,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Proper getProper() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Proper result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Proper.valueOf(proper_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Proper.forNumber(proper_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Proper.UNRECOGNIZED
         : result;
   }
 
   public static final int RECIPROCITY_FIELD_NUMBER = 10;
-  private int reciprocity_;
+  private int reciprocity_ = 0;
   /**
    *
    *
@@ -3354,16 +3345,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity getReciprocity() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.forNumber(reciprocity_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.UNRECOGNIZED
         : result;
   }
 
   public static final int TENSE_FIELD_NUMBER = 11;
-  private int tense_;
+  private int tense_ = 0;
   /**
    *
    *
@@ -3392,16 +3382,15 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Tense getTense() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Tense result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Tense.valueOf(tense_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Tense.forNumber(tense_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Tense.UNRECOGNIZED
         : result;
   }
 
   public static final int VOICE_FIELD_NUMBER = 12;
-  private int voice_;
+  private int voice_ = 0;
   /**
    *
    *
@@ -3430,9 +3419,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.PartOfSpeech.Voice getVoice() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.PartOfSpeech.Voice result =
-        com.google.cloud.language.v1beta2.PartOfSpeech.Voice.valueOf(voice_);
+        com.google.cloud.language.v1beta2.PartOfSpeech.Voice.forNumber(voice_);
     return result == null
         ? com.google.cloud.language.v1beta2.PartOfSpeech.Voice.UNRECOGNIZED
         : result;
@@ -3748,30 +3736,19 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tag_ = 0;
-
       aspect_ = 0;
-
       case_ = 0;
-
       form_ = 0;
-
       gender_ = 0;
-
       mood_ = 0;
-
       number_ = 0;
-
       person_ = 0;
-
       proper_ = 0;
-
       reciprocity_ = 0;
-
       tense_ = 0;
-
       voice_ = 0;
-
       return this;
     }
 
@@ -3799,20 +3776,51 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1beta2.PartOfSpeech buildPartial() {
       com.google.cloud.language.v1beta2.PartOfSpeech result =
           new com.google.cloud.language.v1beta2.PartOfSpeech(this);
-      result.tag_ = tag_;
-      result.aspect_ = aspect_;
-      result.case_ = case_;
-      result.form_ = form_;
-      result.gender_ = gender_;
-      result.mood_ = mood_;
-      result.number_ = number_;
-      result.person_ = person_;
-      result.proper_ = proper_;
-      result.reciprocity_ = reciprocity_;
-      result.tense_ = tense_;
-      result.voice_ = voice_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1beta2.PartOfSpeech result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tag_ = tag_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.aspect_ = aspect_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.case_ = case_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.form_ = form_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.gender_ = gender_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.mood_ = mood_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.number_ = number_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.person_ = person_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.proper_ = proper_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.reciprocity_ = reciprocity_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.tense_ = tense_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.voice_ = voice_;
+      }
     }
 
     @java.lang.Override
@@ -3925,73 +3933,73 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 tag_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 aspect_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 case_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 form_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 gender_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 mood_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 number_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 person_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 72:
               {
                 proper_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 80:
               {
                 reciprocity_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 88:
               {
                 tense_ = input.readEnum();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 96:
               {
                 voice_ = input.readEnum();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             default:
@@ -4010,6 +4018,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int tag_ = 0;
     /**
@@ -4040,8 +4050,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTagValue(int value) {
-
       tag_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4058,9 +4068,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Tag getTag() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Tag result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Tag.valueOf(tag_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Tag.forNumber(tag_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Tag.UNRECOGNIZED
           : result;
@@ -4081,7 +4090,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       tag_ = value.getNumber();
       onChanged();
       return this;
@@ -4098,7 +4107,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTag() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tag_ = 0;
       onChanged();
       return this;
@@ -4133,8 +4142,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAspectValue(int value) {
-
       aspect_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4151,9 +4160,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Aspect getAspect() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Aspect result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.valueOf(aspect_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.forNumber(aspect_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Aspect.UNRECOGNIZED
           : result;
@@ -4174,7 +4182,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       aspect_ = value.getNumber();
       onChanged();
       return this;
@@ -4191,7 +4199,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAspect() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       aspect_ = 0;
       onChanged();
       return this;
@@ -4226,8 +4234,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCaseValue(int value) {
-
       case_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4244,9 +4252,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Case getCase() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Case result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Case.valueOf(case_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Case.forNumber(case_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Case.UNRECOGNIZED
           : result;
@@ -4267,7 +4274,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       case_ = value.getNumber();
       onChanged();
       return this;
@@ -4284,7 +4291,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCase() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       case_ = 0;
       onChanged();
       return this;
@@ -4319,8 +4326,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFormValue(int value) {
-
       form_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4337,9 +4344,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Form getForm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Form result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Form.valueOf(form_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Form.forNumber(form_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Form.UNRECOGNIZED
           : result;
@@ -4360,7 +4366,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       form_ = value.getNumber();
       onChanged();
       return this;
@@ -4377,7 +4383,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearForm() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       form_ = 0;
       onChanged();
       return this;
@@ -4412,8 +4418,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGenderValue(int value) {
-
       gender_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4430,9 +4436,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Gender getGender() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Gender result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Gender.valueOf(gender_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Gender.forNumber(gender_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Gender.UNRECOGNIZED
           : result;
@@ -4453,7 +4458,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       gender_ = value.getNumber();
       onChanged();
       return this;
@@ -4470,7 +4475,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGender() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       gender_ = 0;
       onChanged();
       return this;
@@ -4505,8 +4510,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMoodValue(int value) {
-
       mood_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4523,9 +4528,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Mood getMood() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Mood result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Mood.valueOf(mood_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Mood.forNumber(mood_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Mood.UNRECOGNIZED
           : result;
@@ -4546,7 +4550,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       mood_ = value.getNumber();
       onChanged();
       return this;
@@ -4563,7 +4567,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMood() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       mood_ = 0;
       onChanged();
       return this;
@@ -4598,8 +4602,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNumberValue(int value) {
-
       number_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4616,9 +4620,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Number getNumber() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Number result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Number.valueOf(number_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Number.forNumber(number_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Number.UNRECOGNIZED
           : result;
@@ -4639,7 +4642,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       number_ = value.getNumber();
       onChanged();
       return this;
@@ -4656,7 +4659,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNumber() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       number_ = 0;
       onChanged();
       return this;
@@ -4691,8 +4694,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPersonValue(int value) {
-
       person_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4709,9 +4712,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Person getPerson() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Person result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Person.valueOf(person_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Person.forNumber(person_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Person.UNRECOGNIZED
           : result;
@@ -4732,7 +4734,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       person_ = value.getNumber();
       onChanged();
       return this;
@@ -4749,7 +4751,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPerson() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       person_ = 0;
       onChanged();
       return this;
@@ -4784,8 +4786,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProperValue(int value) {
-
       proper_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4802,9 +4804,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Proper getProper() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Proper result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Proper.valueOf(proper_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Proper.forNumber(proper_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Proper.UNRECOGNIZED
           : result;
@@ -4825,7 +4826,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       proper_ = value.getNumber();
       onChanged();
       return this;
@@ -4842,7 +4843,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProper() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       proper_ = 0;
       onChanged();
       return this;
@@ -4877,8 +4878,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setReciprocityValue(int value) {
-
       reciprocity_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4895,9 +4896,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity getReciprocity() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.valueOf(reciprocity_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.forNumber(reciprocity_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Reciprocity.UNRECOGNIZED
           : result;
@@ -4919,7 +4919,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       reciprocity_ = value.getNumber();
       onChanged();
       return this;
@@ -4936,7 +4936,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReciprocity() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       reciprocity_ = 0;
       onChanged();
       return this;
@@ -4971,8 +4971,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTenseValue(int value) {
-
       tense_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4989,9 +4989,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Tense getTense() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Tense result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Tense.valueOf(tense_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Tense.forNumber(tense_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Tense.UNRECOGNIZED
           : result;
@@ -5012,7 +5011,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000400;
       tense_ = value.getNumber();
       onChanged();
       return this;
@@ -5029,7 +5028,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTense() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       tense_ = 0;
       onChanged();
       return this;
@@ -5064,8 +5063,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setVoiceValue(int value) {
-
       voice_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5082,9 +5081,8 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.PartOfSpeech.Voice getVoice() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.PartOfSpeech.Voice result =
-          com.google.cloud.language.v1beta2.PartOfSpeech.Voice.valueOf(voice_);
+          com.google.cloud.language.v1beta2.PartOfSpeech.Voice.forNumber(voice_);
       return result == null
           ? com.google.cloud.language.v1beta2.PartOfSpeech.Voice.UNRECOGNIZED
           : result;
@@ -5105,7 +5103,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000800;
       voice_ = value.getNumber();
       onChanged();
       return this;
@@ -5122,7 +5120,7 @@ public final class PartOfSpeech extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVoice() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       voice_ = 0;
       onChanged();
       return this;

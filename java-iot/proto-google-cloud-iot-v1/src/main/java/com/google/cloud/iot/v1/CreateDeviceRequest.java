@@ -68,7 +68,9 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
-    return getDevice();
+    return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,12 +389,11 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (deviceBuilder_ == null) {
-        device_ = null;
-      } else {
-        device_ = null;
+      device_ = null;
+      if (deviceBuilder_ != null) {
+        deviceBuilder_.dispose();
         deviceBuilder_ = null;
       }
       return this;
@@ -422,14 +423,21 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.iot.v1.CreateDeviceRequest buildPartial() {
       com.google.cloud.iot.v1.CreateDeviceRequest result =
           new com.google.cloud.iot.v1.CreateDeviceRequest(this);
-      result.parent_ = parent_;
-      if (deviceBuilder_ == null) {
-        result.device_ = device_;
-      } else {
-        result.device_ = deviceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.CreateDeviceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.device_ = deviceBuilder_ == null ? device_ : deviceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +487,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.cloud.iot.v1.CreateDeviceRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDevice()) {
@@ -513,13 +522,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDeviceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +547,8 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -612,8 +623,8 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +644,8 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -659,8 +670,8 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -686,7 +697,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the device field is set.
      */
     public boolean hasDevice() {
-      return deviceBuilder_ != null || device_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -727,11 +738,11 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         device_ = value;
-        onChanged();
       } else {
         deviceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -749,11 +760,11 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
     public Builder setDevice(com.google.cloud.iot.v1.Device.Builder builderForValue) {
       if (deviceBuilder_ == null) {
         device_ = builderForValue.build();
-        onChanged();
       } else {
         deviceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -770,17 +781,18 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDevice(com.google.cloud.iot.v1.Device value) {
       if (deviceBuilder_ == null) {
-        if (device_ != null) {
-          device_ =
-              com.google.cloud.iot.v1.Device.newBuilder(device_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && device_ != null
+            && device_ != com.google.cloud.iot.v1.Device.getDefaultInstance()) {
+          getDeviceBuilder().mergeFrom(value);
         } else {
           device_ = value;
         }
-        onChanged();
       } else {
         deviceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,14 +808,13 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDevice() {
-      if (deviceBuilder_ == null) {
-        device_ = null;
-        onChanged();
-      } else {
-        device_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      device_ = null;
+      if (deviceBuilder_ != null) {
+        deviceBuilder_.dispose();
         deviceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -819,7 +830,7 @@ public final class CreateDeviceRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.iot.v1.Device.Builder getDeviceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeviceFieldBuilder().getBuilder();
     }

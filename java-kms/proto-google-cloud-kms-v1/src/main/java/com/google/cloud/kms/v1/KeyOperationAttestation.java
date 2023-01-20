@@ -450,6 +450,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
 
     public static final int CAVIUM_CERTS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList caviumCerts_;
     /**
      *
@@ -511,6 +513,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
 
     public static final int GOOGLE_CARD_CERTS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList googleCardCerts_;
     /**
      *
@@ -572,6 +576,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     }
 
     public static final int GOOGLE_PARTITION_CERTS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList googlePartitionCerts_;
     /**
      *
@@ -876,6 +882,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         caviumCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         googleCardCerts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -911,7 +918,16 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains buildPartial() {
         com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result =
             new com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           caviumCerts_ = caviumCerts_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -927,8 +943,11 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.googlePartitionCerts_ = googlePartitionCerts_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1651,7 +1670,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   }
 
   public static final int FORMAT_FIELD_NUMBER = 4;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -1684,16 +1703,15 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat result =
-        com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.valueOf(format_);
+        com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.forNumber(format_);
     return result == null
         ? com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.UNRECOGNIZED
         : result;
   }
 
   public static final int CONTENT_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString content_;
+  private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -1763,7 +1781,9 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChainsOrBuilder
       getCertChainsOrBuilder() {
-    return getCertChains();
+    return certChains_ == null
+        ? com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.getDefaultInstance()
+        : certChains_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1994,14 +2014,12 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = 0;
-
       content_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (certChainsBuilder_ == null) {
-        certChains_ = null;
-      } else {
-        certChains_ = null;
+      certChains_ = null;
+      if (certChainsBuilder_ != null) {
+        certChainsBuilder_.dispose();
         certChainsBuilder_ = null;
       }
       return this;
@@ -2031,15 +2049,24 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public com.google.cloud.kms.v1.KeyOperationAttestation buildPartial() {
       com.google.cloud.kms.v1.KeyOperationAttestation result =
           new com.google.cloud.kms.v1.KeyOperationAttestation(this);
-      result.format_ = format_;
-      result.content_ = content_;
-      if (certChainsBuilder_ == null) {
-        result.certChains_ = certChains_;
-      } else {
-        result.certChains_ = certChainsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.KeyOperationAttestation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.certChains_ = certChainsBuilder_ == null ? certChains_ : certChainsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2126,19 +2153,19 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
             case 32:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 32
             case 42:
               {
                 content_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCertChainsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             default:
@@ -2157,6 +2184,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int format_ = 0;
     /**
@@ -2191,8 +2220,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2211,9 +2240,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat result =
-          com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.valueOf(format_);
+          com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.forNumber(format_);
       return result == null
           ? com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat.UNRECOGNIZED
           : result;
@@ -2237,7 +2265,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -2256,7 +2284,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       format_ = 0;
       onChanged();
       return this;
@@ -2296,8 +2324,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2314,7 +2342,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
@@ -2340,7 +2368,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * @return Whether the certChains field is set.
      */
     public boolean hasCertChains() {
-      return certChainsBuilder_ != null || certChains_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2382,11 +2410,11 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         certChains_ = value;
-        onChanged();
       } else {
         certChainsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2404,11 +2432,11 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
         com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder builderForValue) {
       if (certChainsBuilder_ == null) {
         certChains_ = builderForValue.build();
-        onChanged();
       } else {
         certChainsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2425,20 +2453,20 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     public Builder mergeCertChains(
         com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains value) {
       if (certChainsBuilder_ == null) {
-        if (certChains_ != null) {
-          certChains_ =
-              com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.newBuilder(
-                      certChains_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && certChains_ != null
+            && certChains_
+                != com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains
+                    .getDefaultInstance()) {
+          getCertChainsBuilder().mergeFrom(value);
         } else {
           certChains_ = value;
         }
-        onChanged();
       } else {
         certChainsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2453,14 +2481,13 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearCertChains() {
-      if (certChainsBuilder_ == null) {
-        certChains_ = null;
-        onChanged();
-      } else {
-        certChains_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      certChains_ = null;
+      if (certChainsBuilder_ != null) {
+        certChainsBuilder_.dispose();
         certChainsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2476,7 +2503,7 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      */
     public com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains.Builder
         getCertChainsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCertChainsFieldBuilder().getBuilder();
     }

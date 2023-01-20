@@ -71,7 +71,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
   }
 
   public static final int GATEWAY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object gatewayId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gatewayId_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
   }
 
   public static final int DEVICE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deviceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deviceId_ = "";
   /**
    *
    *
@@ -445,12 +451,10 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       gatewayId_ = "";
-
       deviceId_ = "";
-
       return this;
     }
 
@@ -478,11 +482,24 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
     public com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest buildPartial() {
       com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest result =
           new com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest(this);
-      result.parent_ = parent_;
-      result.gatewayId_ = gatewayId_;
-      result.deviceId_ = deviceId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gatewayId_ = gatewayId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deviceId_ = deviceId_;
+      }
     }
 
     @java.lang.Override
@@ -533,14 +550,17 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getGatewayId().isEmpty()) {
         gatewayId_ = other.gatewayId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDeviceId().isEmpty()) {
         deviceId_ = other.deviceId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -572,19 +592,19 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 gatewayId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 deviceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -603,6 +623,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -674,8 +696,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +716,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -719,8 +741,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +811,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       gatewayId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -807,8 +829,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearGatewayId() {
-
       gatewayId_ = getDefaultInstance().getGatewayId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -830,8 +852,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gatewayId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -903,8 +925,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       deviceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -922,8 +944,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDeviceId() {
-
       deviceId_ = getDefaultInstance().getDeviceId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -946,8 +968,8 @@ public final class UnbindDeviceFromGatewayRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deviceId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

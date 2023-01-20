@@ -70,7 +70,9 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIG_MEMBERSHIP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object configMembership_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configMembership_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BILLING_FIELD_NUMBER = 2;
-  private int billing_;
+  private int billing_ = 0;
   /**
    *
    *
@@ -150,9 +152,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing getBilling() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing result =
-        com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.valueOf(billing_);
+        com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.forNumber(billing_);
     return result == null
         ? com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.UNRECOGNIZED
         : result;
@@ -370,10 +371,9 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       configMembership_ = "";
-
       billing_ = 0;
-
       return this;
     }
 
@@ -402,10 +402,22 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec buildPartial() {
       com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec result =
           new com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec(this);
-      result.configMembership_ = configMembership_;
-      result.billing_ = billing_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.multiclusteringress.v1alpha.FeatureSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.configMembership_ = configMembership_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.billing_ = billing_;
+      }
     }
 
     @java.lang.Override
@@ -458,6 +470,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getConfigMembership().isEmpty()) {
         configMembership_ = other.configMembership_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.billing_ != 0) {
@@ -492,13 +505,13 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 configMembership_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 billing_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -517,6 +530,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object configMembership_ = "";
     /**
@@ -582,8 +597,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       configMembership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -600,8 +615,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfigMembership() {
-
       configMembership_ = getDefaultInstance().getConfigMembership();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -623,8 +638,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configMembership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,8 +673,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBillingValue(int value) {
-
       billing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -676,9 +691,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing getBilling() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing result =
-          com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.valueOf(billing_);
+          com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.forNumber(billing_);
       return result == null
           ? com.google.cloud.gkehub.multiclusteringress.v1alpha.Billing.UNRECOGNIZED
           : result;
@@ -699,7 +713,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       billing_ = value.getNumber();
       onChanged();
       return this;
@@ -716,7 +730,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBilling() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       billing_ = 0;
       onChanged();
       return this;

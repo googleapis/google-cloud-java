@@ -92,7 +92,9 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -143,7 +145,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PRIVATE_KEY_TYPE_FIELD_NUMBER = 2;
-  private int privateKeyType_;
+  private int privateKeyType_ = 0;
   /**
    *
    *
@@ -180,16 +182,15 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountPrivateKeyType getPrivateKeyType() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ServiceAccountPrivateKeyType result =
-        com.google.iam.admin.v1.ServiceAccountPrivateKeyType.valueOf(privateKeyType_);
+        com.google.iam.admin.v1.ServiceAccountPrivateKeyType.forNumber(privateKeyType_);
     return result == null
         ? com.google.iam.admin.v1.ServiceAccountPrivateKeyType.UNRECOGNIZED
         : result;
   }
 
   public static final int KEY_ALGORITHM_FIELD_NUMBER = 8;
-  private int keyAlgorithm_;
+  private int keyAlgorithm_ = 0;
   /**
    *
    *
@@ -218,16 +219,15 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountKeyAlgorithm getKeyAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ServiceAccountKeyAlgorithm result =
-        com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.valueOf(keyAlgorithm_);
+        com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.forNumber(keyAlgorithm_);
     return result == null
         ? com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.UNRECOGNIZED
         : result;
   }
 
   public static final int PRIVATE_KEY_DATA_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString privateKeyData_;
+  private com.google.protobuf.ByteString privateKeyData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -251,7 +251,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PUBLIC_KEY_DATA_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString publicKeyData_;
+  private com.google.protobuf.ByteString publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -313,7 +313,9 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getValidAfterTimeOrBuilder() {
-    return getValidAfterTime();
+    return validAfterTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : validAfterTime_;
   }
 
   public static final int VALID_BEFORE_TIME_FIELD_NUMBER = 5;
@@ -370,11 +372,13 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getValidBeforeTimeOrBuilder() {
-    return getValidBeforeTime();
+    return validBeforeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : validBeforeTime_;
   }
 
   public static final int KEY_ORIGIN_FIELD_NUMBER = 9;
-  private int keyOrigin_;
+  private int keyOrigin_ = 0;
   /**
    *
    *
@@ -403,14 +407,13 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountKeyOrigin getKeyOrigin() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ServiceAccountKeyOrigin result =
-        com.google.iam.admin.v1.ServiceAccountKeyOrigin.valueOf(keyOrigin_);
+        com.google.iam.admin.v1.ServiceAccountKeyOrigin.forNumber(keyOrigin_);
     return result == null ? com.google.iam.admin.v1.ServiceAccountKeyOrigin.UNRECOGNIZED : result;
   }
 
   public static final int KEY_TYPE_FIELD_NUMBER = 10;
-  private int keyType_;
+  private int keyType_ = 0;
   /**
    *
    *
@@ -439,16 +442,15 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType result =
-        com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.valueOf(keyType_);
+        com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.forNumber(keyType_);
     return result == null
         ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED
         : result;
   }
 
   public static final int DISABLED_FIELD_NUMBER = 11;
-  private boolean disabled_;
+  private boolean disabled_ = false;
   /**
    *
    *
@@ -781,34 +783,25 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       privateKeyType_ = 0;
-
       keyAlgorithm_ = 0;
-
       privateKeyData_ = com.google.protobuf.ByteString.EMPTY;
-
       publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (validAfterTimeBuilder_ == null) {
-        validAfterTime_ = null;
-      } else {
-        validAfterTime_ = null;
+      validAfterTime_ = null;
+      if (validAfterTimeBuilder_ != null) {
+        validAfterTimeBuilder_.dispose();
         validAfterTimeBuilder_ = null;
       }
-      if (validBeforeTimeBuilder_ == null) {
-        validBeforeTime_ = null;
-      } else {
-        validBeforeTime_ = null;
+      validBeforeTime_ = null;
+      if (validBeforeTimeBuilder_ != null) {
+        validBeforeTimeBuilder_.dispose();
         validBeforeTimeBuilder_ = null;
       }
       keyOrigin_ = 0;
-
       keyType_ = 0;
-
       disabled_ = false;
-
       return this;
     }
 
@@ -836,26 +829,47 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public com.google.iam.admin.v1.ServiceAccountKey buildPartial() {
       com.google.iam.admin.v1.ServiceAccountKey result =
           new com.google.iam.admin.v1.ServiceAccountKey(this);
-      result.name_ = name_;
-      result.privateKeyType_ = privateKeyType_;
-      result.keyAlgorithm_ = keyAlgorithm_;
-      result.privateKeyData_ = privateKeyData_;
-      result.publicKeyData_ = publicKeyData_;
-      if (validAfterTimeBuilder_ == null) {
-        result.validAfterTime_ = validAfterTime_;
-      } else {
-        result.validAfterTime_ = validAfterTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (validBeforeTimeBuilder_ == null) {
-        result.validBeforeTime_ = validBeforeTime_;
-      } else {
-        result.validBeforeTime_ = validBeforeTimeBuilder_.build();
-      }
-      result.keyOrigin_ = keyOrigin_;
-      result.keyType_ = keyType_;
-      result.disabled_ = disabled_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.ServiceAccountKey result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateKeyType_ = privateKeyType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.keyAlgorithm_ = keyAlgorithm_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.privateKeyData_ = privateKeyData_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.publicKeyData_ = publicKeyData_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.validAfterTime_ =
+            validAfterTimeBuilder_ == null ? validAfterTime_ : validAfterTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.validBeforeTime_ =
+            validBeforeTimeBuilder_ == null ? validBeforeTime_ : validBeforeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.keyOrigin_ = keyOrigin_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.keyType_ = keyType_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.disabled_ = disabled_;
+      }
     }
 
     @java.lang.Override
@@ -905,6 +919,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (other == com.google.iam.admin.v1.ServiceAccountKey.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.privateKeyType_ != 0) {
@@ -963,61 +978,61 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 privateKeyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 privateKeyData_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getValidAfterTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getValidBeforeTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 58:
               {
                 publicKeyData_ = input.readBytes();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 64:
               {
                 keyAlgorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 64
             case 72:
               {
                 keyOrigin_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             case 80:
               {
                 keyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 80
             case 88:
               {
                 disabled_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 88
             default:
@@ -1036,6 +1051,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1101,8 +1118,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1119,8 +1136,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1142,8 +1159,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1185,8 +1202,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setPrivateKeyTypeValue(int value) {
-
       privateKeyType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1207,9 +1224,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ServiceAccountPrivateKeyType getPrivateKeyType() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ServiceAccountPrivateKeyType result =
-          com.google.iam.admin.v1.ServiceAccountPrivateKeyType.valueOf(privateKeyType_);
+          com.google.iam.admin.v1.ServiceAccountPrivateKeyType.forNumber(privateKeyType_);
       return result == null
           ? com.google.iam.admin.v1.ServiceAccountPrivateKeyType.UNRECOGNIZED
           : result;
@@ -1234,7 +1250,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       privateKeyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1255,7 +1271,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPrivateKeyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       privateKeyType_ = 0;
       onChanged();
       return this;
@@ -1290,8 +1306,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setKeyAlgorithmValue(int value) {
-
       keyAlgorithm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1308,9 +1324,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ServiceAccountKeyAlgorithm getKeyAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ServiceAccountKeyAlgorithm result =
-          com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.valueOf(keyAlgorithm_);
+          com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.forNumber(keyAlgorithm_);
       return result == null
           ? com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.UNRECOGNIZED
           : result;
@@ -1331,7 +1346,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       keyAlgorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -1348,7 +1363,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKeyAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       keyAlgorithm_ = 0;
       onChanged();
       return this;
@@ -1398,8 +1413,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       privateKeyData_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1421,7 +1436,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPrivateKeyData() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       privateKeyData_ = getDefaultInstance().getPrivateKeyData();
       onChanged();
       return this;
@@ -1459,8 +1474,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicKeyData_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1476,7 +1491,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPublicKeyData() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       publicKeyData_ = getDefaultInstance().getPublicKeyData();
       onChanged();
       return this;
@@ -1500,7 +1515,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return Whether the validAfterTime field is set.
      */
     public boolean hasValidAfterTime() {
-      return validAfterTimeBuilder_ != null || validAfterTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1537,11 +1552,11 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         validAfterTime_ = value;
-        onChanged();
       } else {
         validAfterTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1556,11 +1571,11 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public Builder setValidAfterTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (validAfterTimeBuilder_ == null) {
         validAfterTime_ = builderForValue.build();
-        onChanged();
       } else {
         validAfterTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1574,19 +1589,18 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeValidAfterTime(com.google.protobuf.Timestamp value) {
       if (validAfterTimeBuilder_ == null) {
-        if (validAfterTime_ != null) {
-          validAfterTime_ =
-              com.google.protobuf.Timestamp.newBuilder(validAfterTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && validAfterTime_ != null
+            && validAfterTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getValidAfterTimeBuilder().mergeFrom(value);
         } else {
           validAfterTime_ = value;
         }
-        onChanged();
       } else {
         validAfterTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1599,14 +1613,13 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp valid_after_time = 4;</code>
      */
     public Builder clearValidAfterTime() {
-      if (validAfterTimeBuilder_ == null) {
-        validAfterTime_ = null;
-        onChanged();
-      } else {
-        validAfterTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      validAfterTime_ = null;
+      if (validAfterTimeBuilder_ != null) {
+        validAfterTimeBuilder_.dispose();
         validAfterTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1619,7 +1632,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp valid_after_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getValidAfterTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getValidAfterTimeFieldBuilder().getBuilder();
     }
@@ -1688,7 +1701,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return Whether the validBeforeTime field is set.
      */
     public boolean hasValidBeforeTime() {
-      return validBeforeTimeBuilder_ != null || validBeforeTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1731,11 +1744,11 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         validBeforeTime_ = value;
-        onChanged();
       } else {
         validBeforeTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1753,11 +1766,11 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public Builder setValidBeforeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (validBeforeTimeBuilder_ == null) {
         validBeforeTime_ = builderForValue.build();
-        onChanged();
       } else {
         validBeforeTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1774,19 +1787,18 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeValidBeforeTime(com.google.protobuf.Timestamp value) {
       if (validBeforeTimeBuilder_ == null) {
-        if (validBeforeTime_ != null) {
-          validBeforeTime_ =
-              com.google.protobuf.Timestamp.newBuilder(validBeforeTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && validBeforeTime_ != null
+            && validBeforeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getValidBeforeTimeBuilder().mergeFrom(value);
         } else {
           validBeforeTime_ = value;
         }
-        onChanged();
       } else {
         validBeforeTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1802,14 +1814,13 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      */
     public Builder clearValidBeforeTime() {
-      if (validBeforeTimeBuilder_ == null) {
-        validBeforeTime_ = null;
-        onChanged();
-      } else {
-        validBeforeTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      validBeforeTime_ = null;
+      if (validBeforeTimeBuilder_ != null) {
+        validBeforeTimeBuilder_.dispose();
         validBeforeTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1825,7 +1836,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Timestamp valid_before_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getValidBeforeTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getValidBeforeTimeFieldBuilder().getBuilder();
     }
@@ -1908,8 +1919,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setKeyOriginValue(int value) {
-
       keyOrigin_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1926,9 +1937,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ServiceAccountKeyOrigin getKeyOrigin() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ServiceAccountKeyOrigin result =
-          com.google.iam.admin.v1.ServiceAccountKeyOrigin.valueOf(keyOrigin_);
+          com.google.iam.admin.v1.ServiceAccountKeyOrigin.forNumber(keyOrigin_);
       return result == null ? com.google.iam.admin.v1.ServiceAccountKeyOrigin.UNRECOGNIZED : result;
     }
     /**
@@ -1947,7 +1957,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       keyOrigin_ = value.getNumber();
       onChanged();
       return this;
@@ -1964,7 +1974,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKeyOrigin() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       keyOrigin_ = 0;
       onChanged();
       return this;
@@ -1999,8 +2009,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setKeyTypeValue(int value) {
-
       keyType_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2017,9 +2027,8 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType getKeyType() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType result =
-          com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.valueOf(keyType_);
+          com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.forNumber(keyType_);
       return result == null
           ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED
           : result;
@@ -2040,7 +2049,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       keyType_ = value.getNumber();
       onChanged();
       return this;
@@ -2057,7 +2066,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKeyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       keyType_ = 0;
       onChanged();
       return this;
@@ -2094,6 +2103,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2109,7 +2119,7 @@ public final class ServiceAccountKey extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       disabled_ = false;
       onChanged();
       return this;

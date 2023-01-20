@@ -69,6 +69,8 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
   }
 
   public static final int DEVICE_CONFIGS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.iot.v1.DeviceConfig> deviceConfigs_;
   /**
    *
@@ -342,6 +344,7 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (deviceConfigsBuilder_ == null) {
         deviceConfigs_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
     public com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse buildPartial() {
       com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse result =
           new com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse result) {
       if (deviceConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           deviceConfigs_ = java.util.Collections.unmodifiableList(deviceConfigs_);
@@ -386,8 +398,10 @@ public final class ListDeviceConfigVersionsResponse extends com.google.protobuf.
       } else {
         result.deviceConfigs_ = deviceConfigsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.ListDeviceConfigVersionsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

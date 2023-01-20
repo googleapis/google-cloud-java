@@ -69,7 +69,9 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -124,6 +126,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   }
 
   public static final int NODE_IDS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList nodeIds_;
   /**
    *
@@ -189,7 +193,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
   }
 
   public static final int APPLY_ALL_FIELD_NUMBER = 3;
-  private boolean applyAll_;
+  private boolean applyAll_ = false;
   /**
    *
    *
@@ -431,12 +435,11 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instance_ = "";
-
       nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       applyAll_ = false;
-
       return this;
     }
 
@@ -465,16 +468,32 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest buildPartial() {
       com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result =
           new com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.instance_ = instance_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        nodeIds_ = nodeIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.nodeIds_ = nodeIds_;
-      result.applyAll_ = applyAll_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        nodeIds_ = nodeIds_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.nodeIds_ = nodeIds_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.applyAll_ = applyAll_;
+      }
     }
 
     @java.lang.Override
@@ -526,12 +545,13 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.nodeIds_.isEmpty()) {
         if (nodeIds_.isEmpty()) {
           nodeIds_ = other.nodeIds_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureNodeIdsIsMutable();
           nodeIds_.addAll(other.nodeIds_);
@@ -570,7 +590,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
             case 10:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -583,7 +603,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
             case 24:
               {
                 applyAll_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -675,8 +695,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,8 +715,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -720,8 +740,8 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,9 +750,9 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNodeIdsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         nodeIds_ = new com.google.protobuf.LazyStringArrayList(nodeIds_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -875,7 +895,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
      */
     public Builder clearNodeIds() {
       nodeIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -938,6 +958,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
     public Builder setApplyAll(boolean value) {
 
       applyAll_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,7 +976,7 @@ public final class ApplySoftwareUpdateRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearApplyAll() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       applyAll_ = false;
       onChanged();
       return this;

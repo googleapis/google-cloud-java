@@ -61,7 +61,9 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int KEY_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
   /**
    *
    *
@@ -110,7 +112,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SIGNED_BLOB_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString signedBlob_;
+  private com.google.protobuf.ByteString signedBlob_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -325,10 +327,9 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyId_ = "";
-
       signedBlob_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -356,10 +357,21 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.iam.credentials.v1.SignBlobResponse buildPartial() {
       com.google.cloud.iam.credentials.v1.SignBlobResponse result =
           new com.google.cloud.iam.credentials.v1.SignBlobResponse(this);
-      result.keyId_ = keyId_;
-      result.signedBlob_ = signedBlob_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iam.credentials.v1.SignBlobResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyId_ = keyId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.signedBlob_ = signedBlob_;
+      }
     }
 
     @java.lang.Override
@@ -410,6 +422,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getKeyId().isEmpty()) {
         keyId_ = other.keyId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSignedBlob() != com.google.protobuf.ByteString.EMPTY) {
@@ -444,13 +457,13 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 keyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
               {
                 signedBlob_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -469,6 +482,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyId_ = "";
     /**
@@ -531,8 +546,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -548,8 +563,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
-
       keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -570,8 +585,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -608,8 +623,8 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       signedBlob_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -625,7 +640,7 @@ public final class SignBlobResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSignedBlob() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       signedBlob_ = getDefaultInstance().getSignedBlob();
       onChanged();
       return this;

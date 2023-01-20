@@ -72,7 +72,9 @@ public final class AwsAutoscalingGroupMetricsCollection
   }
 
   public static final int GRANULARITY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object granularity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object granularity_ = "";
   /**
    *
    *
@@ -123,6 +125,8 @@ public final class AwsAutoscalingGroupMetricsCollection
   }
 
   public static final int METRICS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList metrics_;
   /**
    *
@@ -412,10 +416,10 @@ public final class AwsAutoscalingGroupMetricsCollection
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       granularity_ = "";
-
       metrics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -446,15 +450,29 @@ public final class AwsAutoscalingGroupMetricsCollection
     public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection result =
           new com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection(this);
-      int from_bitField0_ = bitField0_;
-      result.granularity_ = granularity_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        metrics_ = metrics_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.metrics_ = metrics_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        metrics_ = metrics_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.metrics_ = metrics_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.granularity_ = granularity_;
+      }
     }
 
     @java.lang.Override
@@ -508,12 +526,13 @@ public final class AwsAutoscalingGroupMetricsCollection
               .getDefaultInstance()) return this;
       if (!other.getGranularity().isEmpty()) {
         granularity_ = other.granularity_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.metrics_.isEmpty()) {
         if (metrics_.isEmpty()) {
           metrics_ = other.metrics_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureMetricsIsMutable();
           metrics_.addAll(other.metrics_);
@@ -549,7 +568,7 @@ public final class AwsAutoscalingGroupMetricsCollection
             case 10:
               {
                 granularity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -642,8 +661,8 @@ public final class AwsAutoscalingGroupMetricsCollection
       if (value == null) {
         throw new NullPointerException();
       }
-
       granularity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -660,8 +679,8 @@ public final class AwsAutoscalingGroupMetricsCollection
      * @return This builder for chaining.
      */
     public Builder clearGranularity() {
-
       granularity_ = getDefaultInstance().getGranularity();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -683,8 +702,8 @@ public final class AwsAutoscalingGroupMetricsCollection
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       granularity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,9 +712,9 @@ public final class AwsAutoscalingGroupMetricsCollection
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         metrics_ = new com.google.protobuf.LazyStringArrayList(metrics_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -854,7 +873,7 @@ public final class AwsAutoscalingGroupMetricsCollection
      */
     public Builder clearMetrics() {
       metrics_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

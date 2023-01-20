@@ -68,7 +68,7 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WEBHOOK_FIELD_NUMBER = 1;
-  private int webhook_;
+  private int webhook_ = 0;
   /**
    *
    *
@@ -97,9 +97,8 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getWebhook() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(webhook_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(webhook_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
@@ -151,7 +150,9 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersionOrBuilder
       getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion.getDefaultInstance()
+        : version_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -372,12 +373,11 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       webhook_ = 0;
-
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
       return this;
@@ -408,14 +408,22 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState(this);
-      result.webhook_ = webhook_;
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.BinauthzState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.webhook_ = webhook_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -500,13 +508,13 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 webhook_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -525,6 +533,8 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int webhook_ = 0;
     /**
@@ -555,8 +565,8 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setWebhookValue(int value) {
-
       webhook_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -573,9 +583,8 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getWebhook() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(webhook_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(webhook_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -597,7 +606,7 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       webhook_ = value.getNumber();
       onChanged();
       return this;
@@ -614,7 +623,7 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWebhook() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       webhook_ = 0;
       onChanged();
       return this;
@@ -638,7 +647,7 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -676,11 +685,11 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -696,11 +705,11 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -715,19 +724,20 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeVersion(
         com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion
+                    .getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,14 +750,13 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion version = 2;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -761,7 +770,7 @@ public final class BinauthzState extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.BinauthzVersion.Builder
         getVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }

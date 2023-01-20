@@ -291,7 +291,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -324,9 +324,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha2.MembershipState.Code getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.v1alpha2.MembershipState.Code result =
-        com.google.cloud.gkehub.v1alpha2.MembershipState.Code.valueOf(code_);
+        com.google.cloud.gkehub.v1alpha2.MembershipState.Code.forNumber(code_);
     return result == null
         ? com.google.cloud.gkehub.v1alpha2.MembershipState.Code.UNRECOGNIZED
         : result;
@@ -531,8 +530,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = 0;
-
       return this;
     }
 
@@ -560,9 +559,18 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.v1alpha2.MembershipState buildPartial() {
       com.google.cloud.gkehub.v1alpha2.MembershipState result =
           new com.google.cloud.gkehub.v1alpha2.MembershipState(this);
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.MembershipState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -643,7 +651,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
             case 8:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -662,6 +670,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int code_ = 0;
     /**
@@ -696,8 +706,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,9 +726,8 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.gkehub.v1alpha2.MembershipState.Code getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.v1alpha2.MembershipState.Code result =
-          com.google.cloud.gkehub.v1alpha2.MembershipState.Code.valueOf(code_);
+          com.google.cloud.gkehub.v1alpha2.MembershipState.Code.forNumber(code_);
       return result == null
           ? com.google.cloud.gkehub.v1alpha2.MembershipState.Code.UNRECOGNIZED
           : result;
@@ -741,7 +750,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -760,7 +769,7 @@ public final class MembershipState extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       code_ = 0;
       onChanged();
       return this;

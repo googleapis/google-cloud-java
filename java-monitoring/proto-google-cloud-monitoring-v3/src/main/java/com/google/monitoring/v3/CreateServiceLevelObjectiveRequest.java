@@ -70,7 +70,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
   }
 
   public static final int SERVICE_LEVEL_OBJECTIVE_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object serviceLevelObjectiveId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceLevelObjectiveId_ = "";
   /**
    *
    *
@@ -235,7 +239,9 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
   @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelObjectiveOrBuilder
       getServiceLevelObjectiveOrBuilder() {
-    return getServiceLevelObjective();
+    return serviceLevelObjective_ == null
+        ? com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()
+        : serviceLevelObjective_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -460,14 +466,12 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       serviceLevelObjectiveId_ = "";
-
-      if (serviceLevelObjectiveBuilder_ == null) {
-        serviceLevelObjective_ = null;
-      } else {
-        serviceLevelObjective_ = null;
+      serviceLevelObjective_ = null;
+      if (serviceLevelObjectiveBuilder_ != null) {
+        serviceLevelObjectiveBuilder_.dispose();
         serviceLevelObjectiveBuilder_ = null;
       }
       return this;
@@ -497,15 +501,27 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     public com.google.monitoring.v3.CreateServiceLevelObjectiveRequest buildPartial() {
       com.google.monitoring.v3.CreateServiceLevelObjectiveRequest result =
           new com.google.monitoring.v3.CreateServiceLevelObjectiveRequest(this);
-      result.parent_ = parent_;
-      result.serviceLevelObjectiveId_ = serviceLevelObjectiveId_;
-      if (serviceLevelObjectiveBuilder_ == null) {
-        result.serviceLevelObjective_ = serviceLevelObjective_;
-      } else {
-        result.serviceLevelObjective_ = serviceLevelObjectiveBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateServiceLevelObjectiveRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.serviceLevelObjectiveId_ = serviceLevelObjectiveId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceLevelObjective_ =
+            serviceLevelObjectiveBuilder_ == null
+                ? serviceLevelObjective_
+                : serviceLevelObjectiveBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -556,10 +572,12 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getServiceLevelObjectiveId().isEmpty()) {
         serviceLevelObjectiveId_ = other.serviceLevelObjectiveId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasServiceLevelObjective()) {
@@ -594,20 +612,20 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getServiceLevelObjectiveFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 serviceLevelObjectiveId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -626,6 +644,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -697,8 +717,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -717,8 +737,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -742,8 +762,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,8 +835,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceLevelObjectiveId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -834,8 +854,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearServiceLevelObjectiveId() {
-
       serviceLevelObjectiveId_ = getDefaultInstance().getServiceLevelObjectiveId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,8 +878,8 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceLevelObjectiveId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,7 +906,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * @return Whether the serviceLevelObjective field is set.
      */
     public boolean hasServiceLevelObjective() {
-      return serviceLevelObjectiveBuilder_ != null || serviceLevelObjective_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -931,11 +951,11 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
           throw new NullPointerException();
         }
         serviceLevelObjective_ = value;
-        onChanged();
       } else {
         serviceLevelObjectiveBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -955,11 +975,11 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
         com.google.monitoring.v3.ServiceLevelObjective.Builder builderForValue) {
       if (serviceLevelObjectiveBuilder_ == null) {
         serviceLevelObjective_ = builderForValue.build();
-        onChanged();
       } else {
         serviceLevelObjectiveBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -978,19 +998,19 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
     public Builder mergeServiceLevelObjective(
         com.google.monitoring.v3.ServiceLevelObjective value) {
       if (serviceLevelObjectiveBuilder_ == null) {
-        if (serviceLevelObjective_ != null) {
-          serviceLevelObjective_ =
-              com.google.monitoring.v3.ServiceLevelObjective.newBuilder(serviceLevelObjective_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && serviceLevelObjective_ != null
+            && serviceLevelObjective_
+                != com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()) {
+          getServiceLevelObjectiveBuilder().mergeFrom(value);
         } else {
           serviceLevelObjective_ = value;
         }
-        onChanged();
       } else {
         serviceLevelObjectiveBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,14 +1027,13 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      * </code>
      */
     public Builder clearServiceLevelObjective() {
-      if (serviceLevelObjectiveBuilder_ == null) {
-        serviceLevelObjective_ = null;
-        onChanged();
-      } else {
-        serviceLevelObjective_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      serviceLevelObjective_ = null;
+      if (serviceLevelObjectiveBuilder_ != null) {
+        serviceLevelObjectiveBuilder_.dispose();
         serviceLevelObjectiveBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1032,7 +1051,7 @@ public final class CreateServiceLevelObjectiveRequest extends com.google.protobu
      */
     public com.google.monitoring.v3.ServiceLevelObjective.Builder
         getServiceLevelObjectiveBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getServiceLevelObjectiveFieldBuilder().getBuilder();
     }

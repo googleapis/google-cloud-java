@@ -67,7 +67,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int HSM_AVAILABLE_FIELD_NUMBER = 1;
-  private boolean hsmAvailable_;
+  private boolean hsmAvailable_ = false;
   /**
    *
    *
@@ -88,7 +88,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EKM_AVAILABLE_FIELD_NUMBER = 2;
-  private boolean ekmAvailable_;
+  private boolean ekmAvailable_ = false;
   /**
    *
    *
@@ -314,10 +314,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       hsmAvailable_ = false;
-
       ekmAvailable_ = false;
-
       return this;
     }
 
@@ -345,10 +344,21 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.kms.v1.LocationMetadata buildPartial() {
       com.google.cloud.kms.v1.LocationMetadata result =
           new com.google.cloud.kms.v1.LocationMetadata(this);
-      result.hsmAvailable_ = hsmAvailable_;
-      result.ekmAvailable_ = ekmAvailable_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.LocationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hsmAvailable_ = hsmAvailable_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ekmAvailable_ = ekmAvailable_;
+      }
     }
 
     @java.lang.Override
@@ -431,13 +441,13 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 hsmAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 ekmAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -456,6 +466,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean hsmAvailable_;
     /**
@@ -494,6 +506,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setHsmAvailable(boolean value) {
 
       hsmAvailable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -512,7 +525,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearHsmAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       hsmAvailable_ = false;
       onChanged();
       return this;
@@ -555,6 +568,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setEkmAvailable(boolean value) {
 
       ekmAvailable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -573,7 +587,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEkmAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ekmAvailable_ = false;
       onChanged();
       return this;

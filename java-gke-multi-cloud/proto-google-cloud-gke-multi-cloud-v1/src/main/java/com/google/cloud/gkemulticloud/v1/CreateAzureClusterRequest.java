@@ -69,7 +69,9 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,11 +187,15 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AzureClusterOrBuilder getAzureClusterOrBuilder() {
-    return getAzureCluster();
+    return azureCluster_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureCluster.getDefaultInstance()
+        : azureCluster_;
   }
 
   public static final int AZURE_CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object azureClusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object azureClusterId_ = "";
   /**
    *
    *
@@ -250,7 +256,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -497,18 +503,15 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (azureClusterBuilder_ == null) {
-        azureCluster_ = null;
-      } else {
-        azureCluster_ = null;
+      azureCluster_ = null;
+      if (azureClusterBuilder_ != null) {
+        azureClusterBuilder_.dispose();
         azureClusterBuilder_ = null;
       }
       azureClusterId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -536,16 +539,28 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
     public com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest result =
           new com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest(this);
-      result.parent_ = parent_;
-      if (azureClusterBuilder_ == null) {
-        result.azureCluster_ = azureCluster_;
-      } else {
-        result.azureCluster_ = azureClusterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.azureClusterId_ = azureClusterId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.azureCluster_ =
+            azureClusterBuilder_ == null ? azureCluster_ : azureClusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.azureClusterId_ = azureClusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -596,6 +611,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAzureCluster()) {
@@ -603,6 +619,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
       }
       if (!other.getAzureClusterId().isEmpty()) {
         azureClusterId_ = other.azureClusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -637,25 +654,25 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAzureClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 azureClusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -674,6 +691,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -757,8 +776,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +800,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -810,8 +829,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,7 +856,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * @return Whether the azureCluster field is set.
      */
     public boolean hasAzureCluster() {
-      return azureClusterBuilder_ != null || azureCluster_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -880,11 +899,11 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         azureCluster_ = value;
-        onChanged();
       } else {
         azureClusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +922,11 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
         com.google.cloud.gkemulticloud.v1.AzureCluster.Builder builderForValue) {
       if (azureClusterBuilder_ == null) {
         azureCluster_ = builderForValue.build();
-        onChanged();
       } else {
         azureClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -924,19 +943,19 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      */
     public Builder mergeAzureCluster(com.google.cloud.gkemulticloud.v1.AzureCluster value) {
       if (azureClusterBuilder_ == null) {
-        if (azureCluster_ != null) {
-          azureCluster_ =
-              com.google.cloud.gkemulticloud.v1.AzureCluster.newBuilder(azureCluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && azureCluster_ != null
+            && azureCluster_
+                != com.google.cloud.gkemulticloud.v1.AzureCluster.getDefaultInstance()) {
+          getAzureClusterBuilder().mergeFrom(value);
         } else {
           azureCluster_ = value;
         }
-        onChanged();
       } else {
         azureClusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +971,13 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearAzureCluster() {
-      if (azureClusterBuilder_ == null) {
-        azureCluster_ = null;
-        onChanged();
-      } else {
-        azureCluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      azureCluster_ = null;
+      if (azureClusterBuilder_ != null) {
+        azureClusterBuilder_.dispose();
         azureClusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +993,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AzureCluster.Builder getAzureClusterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAzureClusterFieldBuilder().getBuilder();
     }
@@ -1108,8 +1126,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       azureClusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1131,8 +1149,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAzureClusterId() {
-
       azureClusterId_ = getDefaultInstance().getAzureClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1159,8 +1177,8 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       azureClusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1196,6 +1214,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1211,7 +1230,7 @@ public final class CreateAzureClusterRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

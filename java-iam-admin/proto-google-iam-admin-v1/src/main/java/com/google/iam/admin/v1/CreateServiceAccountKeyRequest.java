@@ -71,7 +71,9 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -132,7 +134,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static final int PRIVATE_KEY_TYPE_FIELD_NUMBER = 2;
-  private int privateKeyType_;
+  private int privateKeyType_ = 0;
   /**
    *
    *
@@ -165,16 +167,15 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountPrivateKeyType getPrivateKeyType() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ServiceAccountPrivateKeyType result =
-        com.google.iam.admin.v1.ServiceAccountPrivateKeyType.valueOf(privateKeyType_);
+        com.google.iam.admin.v1.ServiceAccountPrivateKeyType.forNumber(privateKeyType_);
     return result == null
         ? com.google.iam.admin.v1.ServiceAccountPrivateKeyType.UNRECOGNIZED
         : result;
   }
 
   public static final int KEY_ALGORITHM_FIELD_NUMBER = 3;
-  private int keyAlgorithm_;
+  private int keyAlgorithm_ = 0;
   /**
    *
    *
@@ -207,9 +208,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountKeyAlgorithm getKeyAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.ServiceAccountKeyAlgorithm result =
-        com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.valueOf(keyAlgorithm_);
+        com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.forNumber(keyAlgorithm_);
     return result == null
         ? com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.UNRECOGNIZED
         : result;
@@ -435,12 +435,10 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       privateKeyType_ = 0;
-
       keyAlgorithm_ = 0;
-
       return this;
     }
 
@@ -468,11 +466,24 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
     public com.google.iam.admin.v1.CreateServiceAccountKeyRequest buildPartial() {
       com.google.iam.admin.v1.CreateServiceAccountKeyRequest result =
           new com.google.iam.admin.v1.CreateServiceAccountKeyRequest(this);
-      result.name_ = name_;
-      result.privateKeyType_ = privateKeyType_;
-      result.keyAlgorithm_ = keyAlgorithm_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.CreateServiceAccountKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.privateKeyType_ = privateKeyType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.keyAlgorithm_ = keyAlgorithm_;
+      }
     }
 
     @java.lang.Override
@@ -523,6 +534,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.privateKeyType_ != 0) {
@@ -560,19 +572,19 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 privateKeyType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 keyAlgorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -591,6 +603,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -671,8 +685,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -694,8 +708,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -722,8 +736,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -761,8 +775,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setPrivateKeyTypeValue(int value) {
-
       privateKeyType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -781,9 +795,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ServiceAccountPrivateKeyType getPrivateKeyType() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ServiceAccountPrivateKeyType result =
-          com.google.iam.admin.v1.ServiceAccountPrivateKeyType.valueOf(privateKeyType_);
+          com.google.iam.admin.v1.ServiceAccountPrivateKeyType.forNumber(privateKeyType_);
       return result == null
           ? com.google.iam.admin.v1.ServiceAccountPrivateKeyType.UNRECOGNIZED
           : result;
@@ -806,7 +819,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       privateKeyType_ = value.getNumber();
       onChanged();
       return this;
@@ -825,7 +838,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearPrivateKeyType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       privateKeyType_ = 0;
       onChanged();
       return this;
@@ -864,8 +877,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder setKeyAlgorithmValue(int value) {
-
       keyAlgorithm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -884,9 +897,8 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      */
     @java.lang.Override
     public com.google.iam.admin.v1.ServiceAccountKeyAlgorithm getKeyAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.ServiceAccountKeyAlgorithm result =
-          com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.valueOf(keyAlgorithm_);
+          com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.forNumber(keyAlgorithm_);
       return result == null
           ? com.google.iam.admin.v1.ServiceAccountKeyAlgorithm.UNRECOGNIZED
           : result;
@@ -909,7 +921,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       keyAlgorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -928,7 +940,7 @@ public final class CreateServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearKeyAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       keyAlgorithm_ = 0;
       onChanged();
       return this;

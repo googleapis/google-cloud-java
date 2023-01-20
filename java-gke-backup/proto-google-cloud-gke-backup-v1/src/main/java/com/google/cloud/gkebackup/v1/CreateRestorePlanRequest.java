@@ -69,7 +69,9 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.RestorePlanOrBuilder getRestorePlanOrBuilder() {
-    return getRestorePlan();
+    return restorePlan_ == null
+        ? com.google.cloud.gkebackup.v1.RestorePlan.getDefaultInstance()
+        : restorePlan_;
   }
 
   public static final int RESTORE_PLAN_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object restorePlanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object restorePlanId_ = "";
   /**
    *
    *
@@ -459,16 +465,14 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (restorePlanBuilder_ == null) {
-        restorePlan_ = null;
-      } else {
-        restorePlan_ = null;
+      restorePlan_ = null;
+      if (restorePlanBuilder_ != null) {
+        restorePlanBuilder_.dispose();
         restorePlanBuilder_ = null;
       }
       restorePlanId_ = "";
-
       return this;
     }
 
@@ -496,15 +500,25 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
     public com.google.cloud.gkebackup.v1.CreateRestorePlanRequest buildPartial() {
       com.google.cloud.gkebackup.v1.CreateRestorePlanRequest result =
           new com.google.cloud.gkebackup.v1.CreateRestorePlanRequest(this);
-      result.parent_ = parent_;
-      if (restorePlanBuilder_ == null) {
-        result.restorePlan_ = restorePlan_;
-      } else {
-        result.restorePlan_ = restorePlanBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.restorePlanId_ = restorePlanId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.CreateRestorePlanRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.restorePlan_ =
+            restorePlanBuilder_ == null ? restorePlan_ : restorePlanBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.restorePlanId_ = restorePlanId_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +569,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRestorePlan()) {
@@ -562,6 +577,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
       }
       if (!other.getRestorePlanId().isEmpty()) {
         restorePlanId_ = other.restorePlanId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +609,19 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRestorePlanFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 restorePlanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +640,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +713,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +733,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +758,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,7 +784,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      * @return Whether the restorePlan field is set.
      */
     public boolean hasRestorePlan() {
-      return restorePlanBuilder_ != null || restorePlan_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +825,11 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         restorePlan_ = value;
-        onChanged();
       } else {
         restorePlanBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +847,11 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
         com.google.cloud.gkebackup.v1.RestorePlan.Builder builderForValue) {
       if (restorePlanBuilder_ == null) {
         restorePlan_ = builderForValue.build();
-        onChanged();
       } else {
         restorePlanBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,19 +867,18 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      */
     public Builder mergeRestorePlan(com.google.cloud.gkebackup.v1.RestorePlan value) {
       if (restorePlanBuilder_ == null) {
-        if (restorePlan_ != null) {
-          restorePlan_ =
-              com.google.cloud.gkebackup.v1.RestorePlan.newBuilder(restorePlan_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && restorePlan_ != null
+            && restorePlan_ != com.google.cloud.gkebackup.v1.RestorePlan.getDefaultInstance()) {
+          getRestorePlanBuilder().mergeFrom(value);
         } else {
           restorePlan_ = value;
         }
-        onChanged();
       } else {
         restorePlanBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +893,13 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearRestorePlan() {
-      if (restorePlanBuilder_ == null) {
-        restorePlan_ = null;
-        onChanged();
-      } else {
-        restorePlan_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      restorePlan_ = null;
+      if (restorePlanBuilder_ != null) {
+        restorePlanBuilder_.dispose();
         restorePlanBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -898,7 +914,7 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.gkebackup.v1.RestorePlan.Builder getRestorePlanBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRestorePlanFieldBuilder().getBuilder();
     }
@@ -1029,8 +1045,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       restorePlanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1052,8 +1068,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearRestorePlanId() {
-
       restorePlanId_ = getDefaultInstance().getRestorePlanId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1080,8 +1096,8 @@ public final class CreateRestorePlanRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       restorePlanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -71,7 +71,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KEY_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SIGNED_JWT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object signedJwt_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object signedJwt_ = "";
   /**
    *
    *
@@ -395,10 +399,9 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyId_ = "";
-
       signedJwt_ = "";
-
       return this;
     }
 
@@ -426,10 +429,21 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.iam.admin.v1.SignJwtResponse buildPartial() {
       com.google.iam.admin.v1.SignJwtResponse result =
           new com.google.iam.admin.v1.SignJwtResponse(this);
-      result.keyId_ = keyId_;
-      result.signedJwt_ = signedJwt_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.SignJwtResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyId_ = keyId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.signedJwt_ = signedJwt_;
+      }
     }
 
     @java.lang.Override
@@ -479,10 +493,12 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.iam.admin.v1.SignJwtResponse.getDefaultInstance()) return this;
       if (!other.getKeyId().isEmpty()) {
         keyId_ = other.keyId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSignedJwt().isEmpty()) {
         signedJwt_ = other.signedJwt_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -514,13 +530,13 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 keyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 signedJwt_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +555,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyId_ = "";
     /**
@@ -616,8 +634,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +656,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Deprecated
     public Builder clearKeyId() {
-
       keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +683,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -747,8 +765,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       signedJwt_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -769,8 +787,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Deprecated
     public Builder clearSignedJwt() {
-
       signedJwt_ = getDefaultInstance().getSignedJwt();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +814,8 @@ public final class SignJwtResponse extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       signedJwt_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

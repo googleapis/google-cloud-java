@@ -69,6 +69,8 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   }
 
   public static final int MEMBERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.MonitoredResource> members_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -191,7 +195,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
   }
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
-  private int totalSize_;
+  private int totalSize_ = 0;
   /**
    *
    *
@@ -425,6 +429,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (membersBuilder_ == null) {
         members_ = java.util.Collections.emptyList();
       } else {
@@ -433,9 +438,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
       totalSize_ = 0;
-
       return this;
     }
 
@@ -463,7 +466,16 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     public com.google.monitoring.v3.ListGroupMembersResponse buildPartial() {
       com.google.monitoring.v3.ListGroupMembersResponse result =
           new com.google.monitoring.v3.ListGroupMembersResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.v3.ListGroupMembersResponse result) {
       if (membersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           members_ = java.util.Collections.unmodifiableList(members_);
@@ -473,10 +485,16 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       } else {
         result.members_ = membersBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      result.totalSize_ = totalSize_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ListGroupMembersResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
     }
 
     @java.lang.Override
@@ -554,6 +572,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getTotalSize() != 0) {
@@ -600,13 +619,13 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 totalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1041,8 +1060,8 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1060,8 +1079,8 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1084,8 +1103,8 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1121,6 +1140,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
     public Builder setTotalSize(int value) {
 
       totalSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1136,7 +1156,7 @@ public final class ListGroupMembersResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       totalSize_ = 0;
       onChanged();
       return this;

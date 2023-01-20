@@ -73,7 +73,9 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ISSUER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issuer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issuer_ = "";
   /**
    *
    *
@@ -138,7 +140,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OIDC_JWKS_FIELD_NUMBER = 5;
-  private com.google.protobuf.ByteString oidcJwks_;
+  private com.google.protobuf.ByteString oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -158,7 +160,9 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IDENTITY_PROVIDER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object identityProvider_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identityProvider_ = "";
   /**
    *
    *
@@ -209,7 +213,9 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKLOAD_IDENTITY_POOL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object workloadIdentityPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workloadIdentityPool_ = "";
   /**
    *
    *
@@ -493,14 +499,11 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issuer_ = "";
-
       oidcJwks_ = com.google.protobuf.ByteString.EMPTY;
-
       identityProvider_ = "";
-
       workloadIdentityPool_ = "";
-
       return this;
     }
 
@@ -528,12 +531,27 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.v1alpha2.Authority buildPartial() {
       com.google.cloud.gkehub.v1alpha2.Authority result =
           new com.google.cloud.gkehub.v1alpha2.Authority(this);
-      result.issuer_ = issuer_;
-      result.oidcJwks_ = oidcJwks_;
-      result.identityProvider_ = identityProvider_;
-      result.workloadIdentityPool_ = workloadIdentityPool_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.Authority result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issuer_ = issuer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.oidcJwks_ = oidcJwks_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.identityProvider_ = identityProvider_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.workloadIdentityPool_ = workloadIdentityPool_;
+      }
     }
 
     @java.lang.Override
@@ -583,6 +601,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1alpha2.Authority.getDefaultInstance()) return this;
       if (!other.getIssuer().isEmpty()) {
         issuer_ = other.issuer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getOidcJwks() != com.google.protobuf.ByteString.EMPTY) {
@@ -590,10 +609,12 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIdentityProvider().isEmpty()) {
         identityProvider_ = other.identityProvider_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getWorkloadIdentityPool().isEmpty()) {
         workloadIdentityPool_ = other.workloadIdentityPool_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -625,25 +646,25 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 issuer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 identityProvider_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 workloadIdentityPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 oidcJwks_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             default:
@@ -662,6 +683,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object issuer_ = "";
     /**
@@ -748,8 +771,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       issuer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,8 +796,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIssuer() {
-
       issuer_ = getDefaultInstance().getIssuer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -803,8 +826,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issuer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -845,8 +868,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       oidcJwks_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -864,7 +887,7 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOidcJwks() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       oidcJwks_ = getDefaultInstance().getOidcJwks();
       onChanged();
       return this;
@@ -934,8 +957,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       identityProvider_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -952,8 +975,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIdentityProvider() {
-
       identityProvider_ = getDefaultInstance().getIdentityProvider();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -975,8 +998,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       identityProvider_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1057,8 +1080,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1079,8 +1102,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearWorkloadIdentityPool() {
-
       workloadIdentityPool_ = getDefaultInstance().getWorkloadIdentityPool();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1106,8 +1129,8 @@ public final class Authority extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

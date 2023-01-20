@@ -68,7 +68,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -180,7 +182,9 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder() {
-    return getMetricDescriptor();
+    return metricDescriptor_ == null
+        ? com.google.api.MetricDescriptor.getDefaultInstance()
+        : metricDescriptor_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -395,12 +399,11 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (metricDescriptorBuilder_ == null) {
-        metricDescriptor_ = null;
-      } else {
-        metricDescriptor_ = null;
+      metricDescriptor_ = null;
+      if (metricDescriptorBuilder_ != null) {
+        metricDescriptorBuilder_.dispose();
         metricDescriptorBuilder_ = null;
       }
       return this;
@@ -430,14 +433,22 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
     public com.google.monitoring.v3.CreateMetricDescriptorRequest buildPartial() {
       com.google.monitoring.v3.CreateMetricDescriptorRequest result =
           new com.google.monitoring.v3.CreateMetricDescriptorRequest(this);
-      result.name_ = name_;
-      if (metricDescriptorBuilder_ == null) {
-        result.metricDescriptor_ = metricDescriptor_;
-      } else {
-        result.metricDescriptor_ = metricDescriptorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateMetricDescriptorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metricDescriptor_ =
+            metricDescriptorBuilder_ == null ? metricDescriptor_ : metricDescriptorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -488,6 +499,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasMetricDescriptor()) {
@@ -523,13 +535,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
               {
                 input.readMessage(
                     getMetricDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -548,6 +560,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -625,8 +639,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -647,8 +661,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -674,8 +688,8 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -701,7 +715,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      * @return Whether the metricDescriptor field is set.
      */
     public boolean hasMetricDescriptor() {
-      return metricDescriptorBuilder_ != null || metricDescriptor_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -744,11 +758,11 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         metricDescriptor_ = value;
-        onChanged();
       } else {
         metricDescriptorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -766,11 +780,11 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
     public Builder setMetricDescriptor(com.google.api.MetricDescriptor.Builder builderForValue) {
       if (metricDescriptorBuilder_ == null) {
         metricDescriptor_ = builderForValue.build();
-        onChanged();
       } else {
         metricDescriptorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,19 +801,18 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      */
     public Builder mergeMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
-        if (metricDescriptor_ != null) {
-          metricDescriptor_ =
-              com.google.api.MetricDescriptor.newBuilder(metricDescriptor_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metricDescriptor_ != null
+            && metricDescriptor_ != com.google.api.MetricDescriptor.getDefaultInstance()) {
+          getMetricDescriptorBuilder().mergeFrom(value);
         } else {
           metricDescriptor_ = value;
         }
-        onChanged();
       } else {
         metricDescriptorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,14 +828,13 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearMetricDescriptor() {
-      if (metricDescriptorBuilder_ == null) {
-        metricDescriptor_ = null;
-        onChanged();
-      } else {
-        metricDescriptor_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metricDescriptor_ = null;
+      if (metricDescriptorBuilder_ != null) {
+        metricDescriptorBuilder_.dispose();
         metricDescriptorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -838,7 +850,7 @@ public final class CreateMetricDescriptorRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.api.MetricDescriptor.Builder getMetricDescriptorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetricDescriptorFieldBuilder().getBuilder();
     }

@@ -268,11 +268,11 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.TextSpanOrBuilder getTextOrBuilder() {
-    return getText();
+    return text_ == null ? com.google.cloud.language.v1.TextSpan.getDefaultInstance() : text_;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -301,9 +301,8 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.EntityMention.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.EntityMention.Type result =
-        com.google.cloud.language.v1.EntityMention.Type.valueOf(type_);
+        com.google.cloud.language.v1.EntityMention.Type.forNumber(type_);
     return result == null ? com.google.cloud.language.v1.EntityMention.Type.UNRECOGNIZED : result;
   }
 
@@ -361,7 +360,9 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getSentimentOrBuilder() {
-    return getSentiment();
+    return sentiment_ == null
+        ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
+        : sentiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -590,18 +591,16 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (textBuilder_ == null) {
-        text_ = null;
-      } else {
-        text_ = null;
+      bitField0_ = 0;
+      text_ = null;
+      if (textBuilder_ != null) {
+        textBuilder_.dispose();
         textBuilder_ = null;
       }
       type_ = 0;
-
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-      } else {
-        sentiment_ = null;
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
       return this;
@@ -631,19 +630,24 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1.EntityMention buildPartial() {
       com.google.cloud.language.v1.EntityMention result =
           new com.google.cloud.language.v1.EntityMention(this);
-      if (textBuilder_ == null) {
-        result.text_ = text_;
-      } else {
-        result.text_ = textBuilder_.build();
-      }
-      result.type_ = type_;
-      if (sentimentBuilder_ == null) {
-        result.sentiment_ = sentiment_;
-      } else {
-        result.sentiment_ = sentimentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.EntityMention result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.text_ = textBuilder_ == null ? text_ : textBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sentiment_ = sentimentBuilder_ == null ? sentiment_ : sentimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -729,19 +733,19 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTextFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -761,6 +765,8 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.language.v1.TextSpan text_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.TextSpan,
@@ -779,7 +785,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the text field is set.
      */
     public boolean hasText() {
-      return textBuilder_ != null || text_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -814,11 +820,11 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         text_ = value;
-        onChanged();
       } else {
         textBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -833,11 +839,11 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public Builder setText(com.google.cloud.language.v1.TextSpan.Builder builderForValue) {
       if (textBuilder_ == null) {
         text_ = builderForValue.build();
-        onChanged();
       } else {
         textBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -851,19 +857,18 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeText(com.google.cloud.language.v1.TextSpan value) {
       if (textBuilder_ == null) {
-        if (text_ != null) {
-          text_ =
-              com.google.cloud.language.v1.TextSpan.newBuilder(text_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && text_ != null
+            && text_ != com.google.cloud.language.v1.TextSpan.getDefaultInstance()) {
+          getTextBuilder().mergeFrom(value);
         } else {
           text_ = value;
         }
-        onChanged();
       } else {
         textBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +881,13 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
      */
     public Builder clearText() {
-      if (textBuilder_ == null) {
-        text_ = null;
-        onChanged();
-      } else {
-        text_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      text_ = null;
+      if (textBuilder_ != null) {
+        textBuilder_.dispose();
         textBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -896,7 +900,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.TextSpan text = 1;</code>
      */
     public com.google.cloud.language.v1.TextSpan.Builder getTextBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTextFieldBuilder().getBuilder();
     }
@@ -971,8 +975,8 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -989,9 +993,8 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1.EntityMention.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.EntityMention.Type result =
-          com.google.cloud.language.v1.EntityMention.Type.valueOf(type_);
+          com.google.cloud.language.v1.EntityMention.Type.forNumber(type_);
       return result == null ? com.google.cloud.language.v1.EntityMention.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1010,7 +1013,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1027,7 +1030,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1054,7 +1057,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sentiment field is set.
      */
     public boolean hasSentiment() {
-      return sentimentBuilder_ != null || sentiment_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1097,11 +1100,11 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sentiment_ = value;
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1119,11 +1122,11 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
     public Builder setSentiment(com.google.cloud.language.v1.Sentiment.Builder builderForValue) {
       if (sentimentBuilder_ == null) {
         sentiment_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1140,19 +1143,18 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSentiment(com.google.cloud.language.v1.Sentiment value) {
       if (sentimentBuilder_ == null) {
-        if (sentiment_ != null) {
-          sentiment_ =
-              com.google.cloud.language.v1.Sentiment.newBuilder(sentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sentiment_ != null
+            && sentiment_ != com.google.cloud.language.v1.Sentiment.getDefaultInstance()) {
+          getSentimentBuilder().mergeFrom(value);
         } else {
           sentiment_ = value;
         }
-        onChanged();
       } else {
         sentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1168,14 +1170,13 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.Sentiment sentiment = 3;</code>
      */
     public Builder clearSentiment() {
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-        onChanged();
-      } else {
-        sentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1191,7 +1192,7 @@ public final class EntityMention extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.Sentiment sentiment = 3;</code>
      */
     public com.google.cloud.language.v1.Sentiment.Builder getSentimentBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }

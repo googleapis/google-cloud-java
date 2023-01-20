@@ -69,7 +69,9 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -156,7 +158,9 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROLE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object roleId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object roleId_ = "";
   /**
    *
    *
@@ -253,7 +257,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.iam.admin.v1.RoleOrBuilder getRoleOrBuilder() {
-    return getRole();
+    return role_ == null ? com.google.iam.admin.v1.Role.getDefaultInstance() : role_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -476,14 +480,12 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       roleId_ = "";
-
-      if (roleBuilder_ == null) {
-        role_ = null;
-      } else {
-        role_ = null;
+      role_ = null;
+      if (roleBuilder_ != null) {
+        roleBuilder_.dispose();
         roleBuilder_ = null;
       }
       return this;
@@ -513,15 +515,24 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     public com.google.iam.admin.v1.CreateRoleRequest buildPartial() {
       com.google.iam.admin.v1.CreateRoleRequest result =
           new com.google.iam.admin.v1.CreateRoleRequest(this);
-      result.parent_ = parent_;
-      result.roleId_ = roleId_;
-      if (roleBuilder_ == null) {
-        result.role_ = role_;
-      } else {
-        result.role_ = roleBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.CreateRoleRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.roleId_ = roleId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.role_ = roleBuilder_ == null ? role_ : roleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -571,10 +582,12 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.iam.admin.v1.CreateRoleRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRoleId().isEmpty()) {
         roleId_ = other.roleId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRole()) {
@@ -609,19 +622,19 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 roleId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRoleFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -640,6 +653,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -759,8 +774,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,8 +810,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -836,8 +851,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -912,8 +927,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       roleId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -932,8 +947,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRoleId() {
-
       roleId_ = getDefaultInstance().getRoleId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -957,8 +972,8 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       roleId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -981,7 +996,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return roleBuilder_ != null || role_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1016,11 +1031,11 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         role_ = value;
-        onChanged();
       } else {
         roleBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1035,11 +1050,11 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
     public Builder setRole(com.google.iam.admin.v1.Role.Builder builderForValue) {
       if (roleBuilder_ == null) {
         role_ = builderForValue.build();
-        onChanged();
       } else {
         roleBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1053,16 +1068,18 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeRole(com.google.iam.admin.v1.Role value) {
       if (roleBuilder_ == null) {
-        if (role_ != null) {
-          role_ = com.google.iam.admin.v1.Role.newBuilder(role_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && role_ != null
+            && role_ != com.google.iam.admin.v1.Role.getDefaultInstance()) {
+          getRoleBuilder().mergeFrom(value);
         } else {
           role_ = value;
         }
-        onChanged();
       } else {
         roleBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1075,14 +1092,13 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.iam.admin.v1.Role role = 3;</code>
      */
     public Builder clearRole() {
-      if (roleBuilder_ == null) {
-        role_ = null;
-        onChanged();
-      } else {
-        role_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      role_ = null;
+      if (roleBuilder_ != null) {
+        roleBuilder_.dispose();
         roleBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1095,7 +1111,7 @@ public final class CreateRoleRequest extends com.google.protobuf.GeneratedMessag
      * <code>.google.iam.admin.v1.Role role = 3;</code>
      */
     public com.google.iam.admin.v1.Role.Builder getRoleBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRoleFieldBuilder().getBuilder();
     }

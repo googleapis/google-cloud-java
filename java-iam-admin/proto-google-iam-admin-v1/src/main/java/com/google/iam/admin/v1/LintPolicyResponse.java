@@ -69,6 +69,8 @@ public final class LintPolicyResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LINT_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.iam.admin.v1.LintResult> lintResults_;
   /**
    *
@@ -337,6 +339,7 @@ public final class LintPolicyResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (lintResultsBuilder_ == null) {
         lintResults_ = java.util.Collections.emptyList();
       } else {
@@ -371,7 +374,15 @@ public final class LintPolicyResponse extends com.google.protobuf.GeneratedMessa
     public com.google.iam.admin.v1.LintPolicyResponse buildPartial() {
       com.google.iam.admin.v1.LintPolicyResponse result =
           new com.google.iam.admin.v1.LintPolicyResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.iam.admin.v1.LintPolicyResponse result) {
       if (lintResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           lintResults_ = java.util.Collections.unmodifiableList(lintResults_);
@@ -381,8 +392,10 @@ public final class LintPolicyResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.lintResults_ = lintResultsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.LintPolicyResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

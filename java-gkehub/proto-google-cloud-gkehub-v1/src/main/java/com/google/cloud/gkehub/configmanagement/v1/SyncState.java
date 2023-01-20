@@ -344,7 +344,9 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sourceToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceToken_ = "";
   /**
    *
    *
@@ -393,7 +395,9 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORT_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object importToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importToken_ = "";
   /**
    *
    *
@@ -442,7 +446,9 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNC_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object syncToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object syncToken_ = "";
   /**
    *
    *
@@ -491,7 +497,9 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LAST_SYNC_FIELD_NUMBER = 4;
-  private volatile java.lang.Object lastSync_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lastSync_ = "";
   /**
    *
    *
@@ -594,11 +602,13 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastSyncTimeOrBuilder() {
-    return getLastSyncTime();
+    return lastSyncTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastSyncTime_;
   }
 
   public static final int CODE_FIELD_NUMBER = 5;
-  private int code_;
+  private int code_ = 0;
   /**
    *
    *
@@ -627,15 +637,16 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode getCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode result =
-        com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.valueOf(code_);
+        com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.forNumber(code_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.UNRECOGNIZED
         : result;
   }
 
   public static final int ERRORS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1.SyncError> errors_;
   /**
    *
@@ -978,29 +989,24 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sourceToken_ = "";
-
       importToken_ = "";
-
       syncToken_ = "";
-
       lastSync_ = "";
-
-      if (lastSyncTimeBuilder_ == null) {
-        lastSyncTime_ = null;
-      } else {
-        lastSyncTime_ = null;
+      lastSyncTime_ = null;
+      if (lastSyncTimeBuilder_ != null) {
+        lastSyncTimeBuilder_.dispose();
         lastSyncTimeBuilder_ = null;
       }
       code_ = 0;
-
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1028,28 +1034,48 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1.SyncState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.SyncState result =
           new com.google.cloud.gkehub.configmanagement.v1.SyncState(this);
-      int from_bitField0_ = bitField0_;
-      result.sourceToken_ = sourceToken_;
-      result.importToken_ = importToken_;
-      result.syncToken_ = syncToken_;
-      result.lastSync_ = lastSync_;
-      if (lastSyncTimeBuilder_ == null) {
-        result.lastSyncTime_ = lastSyncTime_;
-      } else {
-        result.lastSyncTime_ = lastSyncTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.code_ = code_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.configmanagement.v1.SyncState result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1.SyncState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sourceToken_ = sourceToken_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importToken_ = importToken_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.syncToken_ = syncToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastSync_ = lastSync_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lastSyncTime_ =
+            lastSyncTimeBuilder_ == null ? lastSyncTime_ : lastSyncTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -1100,18 +1126,22 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSourceToken().isEmpty()) {
         sourceToken_ = other.sourceToken_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getImportToken().isEmpty()) {
         importToken_ = other.importToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSyncToken().isEmpty()) {
         syncToken_ = other.syncToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getLastSync().isEmpty()) {
         lastSync_ = other.lastSync_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasLastSyncTime()) {
@@ -1124,7 +1154,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -1137,7 +1167,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -1176,31 +1206,31 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 sourceToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 importToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 syncToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 lastSync_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 code_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
@@ -1220,7 +1250,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getLastSyncTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             default:
@@ -1303,8 +1333,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1320,8 +1350,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceToken() {
-
       sourceToken_ = getDefaultInstance().getSourceToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1342,8 +1372,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1409,8 +1439,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       importToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1426,8 +1456,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportToken() {
-
       importToken_ = getDefaultInstance().getImportToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1448,8 +1478,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1515,8 +1545,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       syncToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1532,8 +1562,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSyncToken() {
-
       syncToken_ = getDefaultInstance().getSyncToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1554,8 +1584,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       syncToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1636,8 +1666,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lastSync_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1658,8 +1688,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearLastSync() {
-
       lastSync_ = getDefaultInstance().getLastSync();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1685,8 +1715,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lastSync_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1709,7 +1739,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastSyncTime field is set.
      */
     public boolean hasLastSyncTime() {
-      return lastSyncTimeBuilder_ != null || lastSyncTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1746,11 +1776,11 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastSyncTime_ = value;
-        onChanged();
       } else {
         lastSyncTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1765,11 +1795,11 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastSyncTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastSyncTimeBuilder_ == null) {
         lastSyncTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastSyncTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1783,19 +1813,18 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastSyncTime(com.google.protobuf.Timestamp value) {
       if (lastSyncTimeBuilder_ == null) {
-        if (lastSyncTime_ != null) {
-          lastSyncTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastSyncTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && lastSyncTime_ != null
+            && lastSyncTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastSyncTimeBuilder().mergeFrom(value);
         } else {
           lastSyncTime_ = value;
         }
-        onChanged();
       } else {
         lastSyncTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1808,14 +1837,13 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_sync_time = 7;</code>
      */
     public Builder clearLastSyncTime() {
-      if (lastSyncTimeBuilder_ == null) {
-        lastSyncTime_ = null;
-        onChanged();
-      } else {
-        lastSyncTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      lastSyncTime_ = null;
+      if (lastSyncTimeBuilder_ != null) {
+        lastSyncTimeBuilder_.dispose();
         lastSyncTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1828,7 +1856,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp last_sync_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastSyncTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getLastSyncTimeFieldBuilder().getBuilder();
     }
@@ -1905,8 +1933,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCodeValue(int value) {
-
       code_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1923,9 +1951,8 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode getCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode result =
-          com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.valueOf(code_);
+          com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.forNumber(code_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1.SyncState.SyncCode.UNRECOGNIZED
           : result;
@@ -1946,7 +1973,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       code_ = value.getNumber();
       onChanged();
       return this;
@@ -1963,7 +1990,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       code_ = 0;
       onChanged();
       return this;
@@ -1973,10 +2000,10 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         errors_ =
             new java.util.ArrayList<com.google.cloud.gkehub.configmanagement.v1.SyncError>(errors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2217,7 +2244,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -2357,7 +2384,7 @@ public final class SyncState extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkehub.configmanagement.v1.SyncError,
                 com.google.cloud.gkehub.configmanagement.v1.SyncError.Builder,
                 com.google.cloud.gkehub.configmanagement.v1.SyncErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

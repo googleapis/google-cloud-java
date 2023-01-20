@@ -136,7 +136,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -185,7 +187,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -234,7 +238,9 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 4;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -511,6 +517,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DASHBOARD_FILTERS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.DashboardFilter> dashboardFilters_;
   /**
    *
@@ -594,6 +602,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -651,7 +660,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1013,12 +1025,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       etag_ = "";
-
       if (gridLayoutBuilder_ != null) {
         gridLayoutBuilder_.clear();
       }
@@ -1037,7 +1047,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         dashboardFilters_ = null;
         dashboardFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().clear();
       layoutCase_ = 0;
       layout_ = null;
@@ -1068,52 +1078,59 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Dashboard buildPartial() {
       com.google.monitoring.dashboard.v1.Dashboard result =
           new com.google.monitoring.dashboard.v1.Dashboard(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.etag_ = etag_;
-      if (layoutCase_ == 5) {
-        if (gridLayoutBuilder_ == null) {
-          result.layout_ = layout_;
-        } else {
-          result.layout_ = gridLayoutBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (layoutCase_ == 6) {
-        if (mosaicLayoutBuilder_ == null) {
-          result.layout_ = layout_;
-        } else {
-          result.layout_ = mosaicLayoutBuilder_.build();
-        }
-      }
-      if (layoutCase_ == 8) {
-        if (rowLayoutBuilder_ == null) {
-          result.layout_ = layout_;
-        } else {
-          result.layout_ = rowLayoutBuilder_.build();
-        }
-      }
-      if (layoutCase_ == 9) {
-        if (columnLayoutBuilder_ == null) {
-          result.layout_ = layout_;
-        } else {
-          result.layout_ = columnLayoutBuilder_.build();
-        }
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.dashboard.v1.Dashboard result) {
       if (dashboardFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           dashboardFilters_ = java.util.Collections.unmodifiableList(dashboardFilters_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.dashboardFilters_ = dashboardFilters_;
       } else {
         result.dashboardFilters_ = dashboardFiltersBuilder_.build();
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.Dashboard result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.dashboard.v1.Dashboard result) {
       result.layoutCase_ = layoutCase_;
-      onBuilt();
-      return result;
+      result.layout_ = this.layout_;
+      if (layoutCase_ == 5 && gridLayoutBuilder_ != null) {
+        result.layout_ = gridLayoutBuilder_.build();
+      }
+      if (layoutCase_ == 6 && mosaicLayoutBuilder_ != null) {
+        result.layout_ = mosaicLayoutBuilder_.build();
+      }
+      if (layoutCase_ == 8 && rowLayoutBuilder_ != null) {
+        result.layout_ = rowLayoutBuilder_.build();
+      }
+      if (layoutCase_ == 9 && columnLayoutBuilder_ != null) {
+        result.layout_ = columnLayoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1163,21 +1180,24 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (dashboardFiltersBuilder_ == null) {
         if (!other.dashboardFilters_.isEmpty()) {
           if (dashboardFilters_.isEmpty()) {
             dashboardFilters_ = other.dashboardFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureDashboardFiltersIsMutable();
             dashboardFilters_.addAll(other.dashboardFilters_);
@@ -1190,7 +1210,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
             dashboardFiltersBuilder_.dispose();
             dashboardFiltersBuilder_ = null;
             dashboardFilters_ = other.dashboardFilters_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             dashboardFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDashboardFiltersFieldBuilder()
@@ -1201,6 +1221,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000100;
       switch (other.getLayoutCase()) {
         case GRID_LAYOUT:
           {
@@ -1256,19 +1277,19 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -1318,6 +1339,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             default:
@@ -1414,8 +1436,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1431,8 +1453,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1453,8 +1475,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1520,8 +1542,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1537,8 +1559,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1559,8 +1581,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1644,8 +1666,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1667,8 +1689,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1695,8 +1717,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1916,7 +1938,6 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       }
       layoutCase_ = 5;
       onChanged();
-      ;
       return gridLayoutBuilder_;
     }
 
@@ -2135,7 +2156,6 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       }
       layoutCase_ = 6;
       onChanged();
-      ;
       return mosaicLayoutBuilder_;
     }
 
@@ -2354,7 +2374,6 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       }
       layoutCase_ = 8;
       onChanged();
-      ;
       return rowLayoutBuilder_;
     }
 
@@ -2573,7 +2592,6 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       }
       layoutCase_ = 9;
       onChanged();
-      ;
       return columnLayoutBuilder_;
     }
 
@@ -2581,11 +2599,11 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureDashboardFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         dashboardFilters_ =
             new java.util.ArrayList<com.google.monitoring.dashboard.v1.DashboardFilter>(
                 dashboardFilters_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2804,7 +2822,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     public Builder clearDashboardFilters() {
       if (dashboardFiltersBuilder_ == null) {
         dashboardFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         dashboardFiltersBuilder_.clear();
@@ -2931,7 +2949,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.dashboard.v1.DashboardFilter.Builder,
                 com.google.monitoring.dashboard.v1.DashboardFilterOrBuilder>(
                 dashboardFilters_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         dashboardFilters_ = null;
@@ -2950,14 +2968,14 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000100;
+      onChanged();
       return labels_;
     }
 
@@ -3009,8 +3027,10 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 12;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3039,6 +3059,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000100);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3061,6 +3082,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000100;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3079,8 +3101,8 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
       return this;
     }
     /**
@@ -3094,6 +3116,7 @@ public final class Dashboard extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 

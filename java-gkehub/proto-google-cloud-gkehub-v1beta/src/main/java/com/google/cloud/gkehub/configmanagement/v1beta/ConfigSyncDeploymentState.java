@@ -74,7 +74,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
   }
 
   public static final int IMPORTER_FIELD_NUMBER = 1;
-  private int importer_;
+  private int importer_ = 0;
   /**
    *
    *
@@ -103,16 +103,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getImporter() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(importer_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(importer_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int SYNCER_FIELD_NUMBER = 2;
-  private int syncer_;
+  private int syncer_ = 0;
   /**
    *
    *
@@ -141,16 +140,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getSyncer() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(syncer_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(syncer_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int GIT_SYNC_FIELD_NUMBER = 3;
-  private int gitSync_;
+  private int gitSync_ = 0;
   /**
    *
    *
@@ -179,16 +177,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGitSync() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(gitSync_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(gitSync_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int MONITOR_FIELD_NUMBER = 4;
-  private int monitor_;
+  private int monitor_ = 0;
   /**
    *
    *
@@ -217,16 +214,15 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getMonitor() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(monitor_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(monitor_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int RECONCILER_MANAGER_FIELD_NUMBER = 5;
-  private int reconcilerManager_;
+  private int reconcilerManager_ = 0;
   /**
    *
    *
@@ -257,16 +253,16 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getReconcilerManager() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(reconcilerManager_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+            reconcilerManager_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int ROOT_RECONCILER_FIELD_NUMBER = 6;
-  private int rootReconciler_;
+  private int rootReconciler_ = 0;
   /**
    *
    *
@@ -295,9 +291,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getRootReconciler() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(rootReconciler_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(rootReconciler_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
@@ -586,18 +581,13 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       importer_ = 0;
-
       syncer_ = 0;
-
       gitSync_ = 0;
-
       monitor_ = 0;
-
       reconcilerManager_ = 0;
-
       rootReconciler_ = 0;
-
       return this;
     }
 
@@ -629,14 +619,34 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
         buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState(this);
-      result.importer_ = importer_;
-      result.syncer_ = syncer_;
-      result.gitSync_ = gitSync_;
-      result.monitor_ = monitor_;
-      result.reconcilerManager_ = reconcilerManager_;
-      result.rootReconciler_ = rootReconciler_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.importer_ = importer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.syncer_ = syncer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gitSync_ = gitSync_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.monitor_ = monitor_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reconcilerManager_ = reconcilerManager_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.rootReconciler_ = rootReconciler_;
+      }
     }
 
     @java.lang.Override
@@ -736,37 +746,37 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
             case 8:
               {
                 importer_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 syncer_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 gitSync_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 monitor_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 reconcilerManager_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 rootReconciler_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -785,6 +795,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int importer_ = 0;
     /**
@@ -815,8 +827,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setImporterValue(int value) {
-
       importer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,9 +845,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getImporter() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(importer_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(importer_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -857,7 +868,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       importer_ = value.getNumber();
       onChanged();
       return this;
@@ -874,7 +885,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearImporter() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       importer_ = 0;
       onChanged();
       return this;
@@ -909,8 +920,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setSyncerValue(int value) {
-
       syncer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -927,9 +938,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getSyncer() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(syncer_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(syncer_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -951,7 +961,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       syncer_ = value.getNumber();
       onChanged();
       return this;
@@ -968,7 +978,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearSyncer() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       syncer_ = 0;
       onChanged();
       return this;
@@ -1003,8 +1013,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setGitSyncValue(int value) {
-
       gitSync_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1021,9 +1031,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGitSync() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(gitSync_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(gitSync_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -1045,7 +1054,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       gitSync_ = value.getNumber();
       onChanged();
       return this;
@@ -1062,7 +1071,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearGitSync() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       gitSync_ = 0;
       onChanged();
       return this;
@@ -1097,8 +1106,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setMonitorValue(int value) {
-
       monitor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1115,9 +1124,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getMonitor() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(monitor_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(monitor_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -1139,7 +1147,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       monitor_ = value.getNumber();
       onChanged();
       return this;
@@ -1156,7 +1164,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearMonitor() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       monitor_ = 0;
       onChanged();
       return this;
@@ -1193,8 +1201,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setReconcilerManagerValue(int value) {
-
       reconcilerManager_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1212,9 +1220,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getReconcilerManager() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
               reconcilerManager_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
@@ -1238,7 +1245,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       reconcilerManager_ = value.getNumber();
       onChanged();
       return this;
@@ -1256,7 +1263,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearReconcilerManager() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       reconcilerManager_ = 0;
       onChanged();
       return this;
@@ -1293,8 +1300,8 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setRootReconcilerValue(int value) {
-
       rootReconciler_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1312,9 +1319,9 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getRootReconciler() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(rootReconciler_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+              rootReconciler_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -1337,7 +1344,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       rootReconciler_ = value.getNumber();
       onChanged();
       return this;
@@ -1355,7 +1362,7 @@ public final class ConfigSyncDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRootReconciler() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       rootReconciler_ = 0;
       onChanged();
       return this;

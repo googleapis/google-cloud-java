@@ -71,7 +71,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 1;
-  private int region_;
+  private int region_ = 0;
   /**
    *
    *
@@ -100,14 +100,15 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.UptimeCheckRegion result =
-        com.google.monitoring.v3.UptimeCheckRegion.valueOf(region_);
+        com.google.monitoring.v3.UptimeCheckRegion.forNumber(region_);
     return result == null ? com.google.monitoring.v3.UptimeCheckRegion.UNRECOGNIZED : result;
   }
 
   public static final int LOCATION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -160,7 +161,9 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -431,12 +434,10 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       region_ = 0;
-
       location_ = "";
-
       ipAddress_ = "";
-
       return this;
     }
 
@@ -464,11 +465,24 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.UptimeCheckIp buildPartial() {
       com.google.monitoring.v3.UptimeCheckIp result =
           new com.google.monitoring.v3.UptimeCheckIp(this);
-      result.region_ = region_;
-      result.location_ = location_;
-      result.ipAddress_ = ipAddress_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UptimeCheckIp result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
     }
 
     @java.lang.Override
@@ -521,10 +535,12 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -556,19 +572,19 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 region_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -587,6 +603,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int region_ = 0;
     /**
@@ -617,8 +635,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRegionValue(int value) {
-
       region_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -635,9 +653,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckRegion getRegion() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.UptimeCheckRegion result =
-          com.google.monitoring.v3.UptimeCheckRegion.valueOf(region_);
+          com.google.monitoring.v3.UptimeCheckRegion.forNumber(region_);
       return result == null ? com.google.monitoring.v3.UptimeCheckRegion.UNRECOGNIZED : result;
     }
     /**
@@ -656,7 +673,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       region_ = value.getNumber();
       onChanged();
       return this;
@@ -673,7 +690,7 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       region_ = 0;
       onChanged();
       return this;
@@ -746,8 +763,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -765,8 +782,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -789,8 +806,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -868,8 +885,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -889,8 +906,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -915,8 +932,8 @@ public final class UptimeCheckIp extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

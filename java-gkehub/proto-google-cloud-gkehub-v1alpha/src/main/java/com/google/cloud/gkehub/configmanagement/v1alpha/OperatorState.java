@@ -70,7 +70,9 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
-  private int deploymentState_;
+  private int deploymentState_ = 0;
   /**
    *
    *
@@ -150,15 +152,17 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState getDeploymentState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.valueOf(deploymentState_);
+        com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.forNumber(
+            deploymentState_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.UNRECOGNIZED
         : result;
   }
 
   public static final int ERRORS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.configmanagement.v1alpha.InstallError> errors_;
   /**
    *
@@ -454,17 +458,16 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       deploymentState_ = 0;
-
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,20 +496,36 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState result =
           new com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState(this);
-      int from_bitField0_ = bitField0_;
-      result.version_ = version_;
-      result.deploymentState_ = deploymentState_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1alpha.OperatorState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentState_ = deploymentState_;
+      }
     }
 
     @java.lang.Override
@@ -558,6 +577,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.deploymentState_ != 0) {
@@ -567,7 +587,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -580,7 +600,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -619,13 +639,13 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 deploymentState_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -722,8 +742,8 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,8 +759,8 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -761,8 +781,8 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -798,8 +818,8 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDeploymentStateValue(int value) {
-
       deploymentState_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -817,9 +837,8 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState getDeploymentState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.valueOf(
+          com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.forNumber(
               deploymentState_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1alpha.DeploymentState.UNRECOGNIZED
@@ -843,7 +862,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       deploymentState_ = value.getNumber();
       onChanged();
       return this;
@@ -861,7 +880,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeploymentState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       deploymentState_ = 0;
       onChanged();
       return this;
@@ -871,11 +890,11 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         errors_ =
             new java.util.ArrayList<com.google.cloud.gkehub.configmanagement.v1alpha.InstallError>(
                 errors_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1097,7 +1116,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -1227,7 +1246,7 @@ public final class OperatorState extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkehub.configmanagement.v1alpha.InstallError,
                 com.google.cloud.gkehub.configmanagement.v1alpha.InstallError.Builder,
                 com.google.cloud.gkehub.configmanagement.v1alpha.InstallErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;

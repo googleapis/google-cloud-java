@@ -112,7 +112,9 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fullResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullResourceName_ = "";
   /**
    *
    *
@@ -444,8 +446,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fullResourceName_ = "";
-
       if (conditionBuilder_ != null) {
         conditionBuilder_.clear();
       }
@@ -478,17 +480,27 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
     public com.google.iam.admin.v1.LintPolicyRequest buildPartial() {
       com.google.iam.admin.v1.LintPolicyRequest result =
           new com.google.iam.admin.v1.LintPolicyRequest(this);
-      result.fullResourceName_ = fullResourceName_;
-      if (lintObjectCase_ == 5) {
-        if (conditionBuilder_ == null) {
-          result.lintObject_ = lintObject_;
-        } else {
-          result.lintObject_ = conditionBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.lintObjectCase_ = lintObjectCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.LintPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fullResourceName_ = fullResourceName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.iam.admin.v1.LintPolicyRequest result) {
+      result.lintObjectCase_ = lintObjectCase_;
+      result.lintObject_ = this.lintObject_;
+      if (lintObjectCase_ == 5 && conditionBuilder_ != null) {
+        result.lintObject_ = conditionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -538,6 +550,7 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.iam.admin.v1.LintPolicyRequest.getDefaultInstance()) return this;
       if (!other.getFullResourceName().isEmpty()) {
         fullResourceName_ = other.fullResourceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getLintObjectCase()) {
@@ -580,7 +593,7 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 fullResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 42:
@@ -619,6 +632,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object fullResourceName_ = "";
     /**
@@ -699,8 +714,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -722,8 +737,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFullResourceName() {
-
       fullResourceName_ = getDefaultInstance().getFullResourceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -750,8 +765,8 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,7 +966,6 @@ public final class LintPolicyRequest extends com.google.protobuf.GeneratedMessag
       }
       lintObjectCase_ = 5;
       onChanged();
-      ;
       return conditionBuilder_;
     }
 

@@ -135,7 +135,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getLocationOrBuilder() {
-    return getLocation();
+    return location_ == null ? com.google.type.LatLng.getDefaultInstance() : location_;
   }
 
   public static final int PLUS_CODE_FIELD_NUMBER = 2;
@@ -183,7 +183,9 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.PlusCodeOrBuilder getPlusCodeOrBuilder() {
-    return getPlusCode();
+    return plusCode_ == null
+        ? com.google.maps.addressvalidation.v1.PlusCode.getDefaultInstance()
+        : plusCode_;
   }
 
   public static final int BOUNDS_FIELD_NUMBER = 4;
@@ -229,11 +231,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.geo.type.ViewportOrBuilder getBoundsOrBuilder() {
-    return getBounds();
+    return bounds_ == null ? com.google.geo.type.Viewport.getDefaultInstance() : bounds_;
   }
 
   public static final int FEATURE_SIZE_METERS_FIELD_NUMBER = 5;
-  private float featureSizeMeters_;
+  private float featureSizeMeters_ = 0F;
   /**
    *
    *
@@ -253,7 +255,9 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PLACE_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object placeId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object placeId_ = "";
   /**
    *
    *
@@ -306,6 +310,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PLACE_TYPES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList placeTypes_;
   /**
    *
@@ -639,30 +645,26 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locationBuilder_ == null) {
-        location_ = null;
-      } else {
-        location_ = null;
+      bitField0_ = 0;
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-      if (plusCodeBuilder_ == null) {
-        plusCode_ = null;
-      } else {
-        plusCode_ = null;
+      plusCode_ = null;
+      if (plusCodeBuilder_ != null) {
+        plusCodeBuilder_.dispose();
         plusCodeBuilder_ = null;
       }
-      if (boundsBuilder_ == null) {
-        bounds_ = null;
-      } else {
-        bounds_ = null;
+      bounds_ = null;
+      if (boundsBuilder_ != null) {
+        boundsBuilder_.dispose();
         boundsBuilder_ = null;
       }
       featureSizeMeters_ = 0F;
-
       placeId_ = "";
-
       placeTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -690,31 +692,39 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.Geocode buildPartial() {
       com.google.maps.addressvalidation.v1.Geocode result =
           new com.google.maps.addressvalidation.v1.Geocode(this);
-      int from_bitField0_ = bitField0_;
-      if (locationBuilder_ == null) {
-        result.location_ = location_;
-      } else {
-        result.location_ = locationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (plusCodeBuilder_ == null) {
-        result.plusCode_ = plusCode_;
-      } else {
-        result.plusCode_ = plusCodeBuilder_.build();
-      }
-      if (boundsBuilder_ == null) {
-        result.bounds_ = bounds_;
-      } else {
-        result.bounds_ = boundsBuilder_.build();
-      }
-      result.featureSizeMeters_ = featureSizeMeters_;
-      result.placeId_ = placeId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        placeTypes_ = placeTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.placeTypes_ = placeTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.addressvalidation.v1.Geocode result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        placeTypes_ = placeTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.placeTypes_ = placeTypes_;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.Geocode result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = locationBuilder_ == null ? location_ : locationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.plusCode_ = plusCodeBuilder_ == null ? plusCode_ : plusCodeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.bounds_ = boundsBuilder_ == null ? bounds_ : boundsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.featureSizeMeters_ = featureSizeMeters_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.placeId_ = placeId_;
+      }
     }
 
     @java.lang.Override
@@ -776,12 +786,13 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPlaceId().isEmpty()) {
         placeId_ = other.placeId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.placeTypes_.isEmpty()) {
         if (placeTypes_.isEmpty()) {
           placeTypes_ = other.placeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensurePlaceTypesIsMutable();
           placeTypes_.addAll(other.placeTypes_);
@@ -817,31 +828,31 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPlusCodeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getBoundsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 45:
               {
                 featureSizeMeters_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 45
             case 50:
               {
                 placeId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
@@ -894,7 +905,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the location field is set.
      */
     public boolean hasLocation() {
-      return locationBuilder_ != null || location_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -945,11 +956,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         location_ = value;
-        onChanged();
       } else {
         locationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -972,11 +983,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocation(com.google.type.LatLng.Builder builderForValue) {
       if (locationBuilder_ == null) {
         location_ = builderForValue.build();
-        onChanged();
       } else {
         locationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -998,16 +1009,18 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocation(com.google.type.LatLng value) {
       if (locationBuilder_ == null) {
-        if (location_ != null) {
-          location_ = com.google.type.LatLng.newBuilder(location_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && location_ != null
+            && location_ != com.google.type.LatLng.getDefaultInstance()) {
+          getLocationBuilder().mergeFrom(value);
         } else {
           location_ = value;
         }
-        onChanged();
       } else {
         locationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1028,14 +1041,13 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng location = 1;</code>
      */
     public Builder clearLocation() {
-      if (locationBuilder_ == null) {
-        location_ = null;
-        onChanged();
-      } else {
-        location_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      location_ = null;
+      if (locationBuilder_ != null) {
+        locationBuilder_.dispose();
         locationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1056,7 +1068,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LatLng location = 1;</code>
      */
     public com.google.type.LatLng.Builder getLocationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
@@ -1133,7 +1145,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the plusCode field is set.
      */
     public boolean hasPlusCode() {
-      return plusCodeBuilder_ != null || plusCode_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1170,11 +1182,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         plusCode_ = value;
-        onChanged();
       } else {
         plusCodeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1190,11 +1202,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
         com.google.maps.addressvalidation.v1.PlusCode.Builder builderForValue) {
       if (plusCodeBuilder_ == null) {
         plusCode_ = builderForValue.build();
-        onChanged();
       } else {
         plusCodeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1208,19 +1220,18 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePlusCode(com.google.maps.addressvalidation.v1.PlusCode value) {
       if (plusCodeBuilder_ == null) {
-        if (plusCode_ != null) {
-          plusCode_ =
-              com.google.maps.addressvalidation.v1.PlusCode.newBuilder(plusCode_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && plusCode_ != null
+            && plusCode_ != com.google.maps.addressvalidation.v1.PlusCode.getDefaultInstance()) {
+          getPlusCodeBuilder().mergeFrom(value);
         } else {
           plusCode_ = value;
         }
-        onChanged();
       } else {
         plusCodeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1233,14 +1244,13 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.addressvalidation.v1.PlusCode plus_code = 2;</code>
      */
     public Builder clearPlusCode() {
-      if (plusCodeBuilder_ == null) {
-        plusCode_ = null;
-        onChanged();
-      } else {
-        plusCode_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      plusCode_ = null;
+      if (plusCodeBuilder_ != null) {
+        plusCodeBuilder_.dispose();
         plusCodeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1253,7 +1263,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.addressvalidation.v1.PlusCode plus_code = 2;</code>
      */
     public com.google.maps.addressvalidation.v1.PlusCode.Builder getPlusCodeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPlusCodeFieldBuilder().getBuilder();
     }
@@ -1319,7 +1329,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bounds field is set.
      */
     public boolean hasBounds() {
-      return boundsBuilder_ != null || bounds_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1354,11 +1364,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         bounds_ = value;
-        onChanged();
       } else {
         boundsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1373,11 +1383,11 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public Builder setBounds(com.google.geo.type.Viewport.Builder builderForValue) {
       if (boundsBuilder_ == null) {
         bounds_ = builderForValue.build();
-        onChanged();
       } else {
         boundsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1391,17 +1401,18 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBounds(com.google.geo.type.Viewport value) {
       if (boundsBuilder_ == null) {
-        if (bounds_ != null) {
-          bounds_ =
-              com.google.geo.type.Viewport.newBuilder(bounds_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && bounds_ != null
+            && bounds_ != com.google.geo.type.Viewport.getDefaultInstance()) {
+          getBoundsBuilder().mergeFrom(value);
         } else {
           bounds_ = value;
         }
-        onChanged();
       } else {
         boundsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1414,14 +1425,13 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.geo.type.Viewport bounds = 4;</code>
      */
     public Builder clearBounds() {
-      if (boundsBuilder_ == null) {
-        bounds_ = null;
-        onChanged();
-      } else {
-        bounds_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      bounds_ = null;
+      if (boundsBuilder_ != null) {
+        boundsBuilder_.dispose();
         boundsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1434,7 +1444,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.geo.type.Viewport bounds = 4;</code>
      */
     public com.google.geo.type.Viewport.Builder getBoundsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBoundsFieldBuilder().getBuilder();
     }
@@ -1515,6 +1525,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
     public Builder setFeatureSizeMeters(float value) {
 
       featureSizeMeters_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1532,7 +1543,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFeatureSizeMeters() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       featureSizeMeters_ = 0F;
       onChanged();
       return this;
@@ -1605,8 +1616,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       placeId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1624,8 +1635,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPlaceId() {
-
       placeId_ = getDefaultInstance().getPlaceId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1648,8 +1659,8 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       placeId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1658,9 +1669,9 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePlaceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         placeTypes_ = new com.google.protobuf.LazyStringArrayList(placeTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1811,7 +1822,7 @@ public final class Geocode extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPlaceTypes() {
       placeTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

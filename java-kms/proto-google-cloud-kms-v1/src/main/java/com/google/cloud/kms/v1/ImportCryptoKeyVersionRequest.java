@@ -117,7 +117,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -176,7 +178,9 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int CRYPTO_KEY_VERSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object cryptoKeyVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyVersion_ = "";
   /**
    *
    *
@@ -265,7 +269,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int ALGORITHM_FIELD_NUMBER = 2;
-  private int algorithm_;
+  private int algorithm_ = 0;
   /**
    *
    *
@@ -306,16 +310,17 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+        com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
     return result == null
         ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
         : result;
   }
 
   public static final int IMPORT_JOB_FIELD_NUMBER = 4;
-  private volatile java.lang.Object importJob_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importJob_ = "";
   /**
    *
    *
@@ -368,7 +373,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
   }
 
   public static final int WRAPPED_KEY_FIELD_NUMBER = 8;
-  private com.google.protobuf.ByteString wrappedKey_;
+  private com.google.protobuf.ByteString wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -723,16 +728,12 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       cryptoKeyVersion_ = "";
-
       algorithm_ = 0;
-
       importJob_ = "";
-
       wrappedKey_ = com.google.protobuf.ByteString.EMPTY;
-
       wrappedKeyMaterialCase_ = 0;
       wrappedKeyMaterial_ = null;
       return this;
@@ -762,17 +763,36 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest buildPartial() {
       com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest result =
           new com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest(this);
-      result.parent_ = parent_;
-      result.cryptoKeyVersion_ = cryptoKeyVersion_;
-      result.algorithm_ = algorithm_;
-      result.importJob_ = importJob_;
-      result.wrappedKey_ = wrappedKey_;
-      if (wrappedKeyMaterialCase_ == 5) {
-        result.wrappedKeyMaterial_ = wrappedKeyMaterial_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.wrappedKeyMaterialCase_ = wrappedKeyMaterialCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cryptoKeyVersion_ = cryptoKeyVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.algorithm_ = algorithm_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.importJob_ = importJob_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.wrappedKey_ = wrappedKey_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest result) {
+      result.wrappedKeyMaterialCase_ = wrappedKeyMaterialCase_;
+      result.wrappedKeyMaterial_ = this.wrappedKeyMaterial_;
     }
 
     @java.lang.Override
@@ -823,10 +843,12 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCryptoKeyVersion().isEmpty()) {
         cryptoKeyVersion_ = other.cryptoKeyVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.algorithm_ != 0) {
@@ -834,6 +856,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       }
       if (!other.getImportJob().isEmpty()) {
         importJob_ = other.importJob_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getWrappedKey() != com.google.protobuf.ByteString.EMPTY) {
@@ -879,19 +902,19 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 algorithm_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 34:
               {
                 importJob_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -903,13 +926,13 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
             case 50:
               {
                 cryptoKeyVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             case 66:
               {
                 wrappedKey_ = input.readBytes();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             default:
@@ -942,6 +965,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -1019,8 +1044,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1041,8 +1066,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1068,8 +1093,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1195,8 +1220,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1232,8 +1257,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyVersion() {
-
       cryptoKeyVersion_ = getDefaultInstance().getCryptoKeyVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1274,8 +1299,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1321,8 +1346,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setAlgorithmValue(int value) {
-
       algorithm_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1345,9 +1370,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm getAlgorithm() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm result =
-          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.valueOf(algorithm_);
+          com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.forNumber(algorithm_);
       return result == null
           ? com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.UNRECOGNIZED
           : result;
@@ -1375,7 +1399,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       algorithm_ = value.getNumber();
       onChanged();
       return this;
@@ -1398,7 +1422,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAlgorithm() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       algorithm_ = 0;
       onChanged();
       return this;
@@ -1471,8 +1495,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       importJob_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1490,8 +1514,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearImportJob() {
-
       importJob_ = getDefaultInstance().getImportJob();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1514,8 +1538,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importJob_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1616,8 +1640,8 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       wrappedKey_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1665,7 +1689,7 @@ public final class ImportCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearWrappedKey() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       wrappedKey_ = getDefaultInstance().getWrappedKey();
       onChanged();
       return this;

@@ -70,7 +70,9 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,6 +121,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALID_VERSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo> validVersions_;
   /**
    *
@@ -190,6 +194,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SUPPORTED_AWS_REGIONS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList supportedAwsRegions_;
   /**
    *
@@ -474,17 +480,17 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (validVersionsBuilder_ == null) {
         validVersions_ = java.util.Collections.emptyList();
       } else {
         validVersions_ = null;
         validVersionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -512,24 +518,37 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkemulticloud.v1.AwsServerConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsServerConfig result =
           new com.google.cloud.gkemulticloud.v1.AwsServerConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AwsServerConfig result) {
       if (validVersionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           validVersions_ = java.util.Collections.unmodifiableList(validVersions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.validVersions_ = validVersions_;
       } else {
         result.validVersions_ = validVersionsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         supportedAwsRegions_ = supportedAwsRegions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.supportedAwsRegions_ = supportedAwsRegions_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsServerConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -580,13 +599,14 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (validVersionsBuilder_ == null) {
         if (!other.validVersions_.isEmpty()) {
           if (validVersions_.isEmpty()) {
             validVersions_ = other.validVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureValidVersionsIsMutable();
             validVersions_.addAll(other.validVersions_);
@@ -599,7 +619,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
             validVersionsBuilder_.dispose();
             validVersionsBuilder_ = null;
             validVersions_ = other.validVersions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             validVersionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getValidVersionsFieldBuilder()
@@ -612,7 +632,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       if (!other.supportedAwsRegions_.isEmpty()) {
         if (supportedAwsRegions_.isEmpty()) {
           supportedAwsRegions_ = other.supportedAwsRegions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureSupportedAwsRegionsIsMutable();
           supportedAwsRegions_.addAll(other.supportedAwsRegions_);
@@ -648,7 +668,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -752,8 +772,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -769,8 +789,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -791,8 +811,8 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -801,11 +821,11 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureValidVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         validVersions_ =
             new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo>(
                 validVersions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1024,7 +1044,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
     public Builder clearValidVersions() {
       if (validVersionsBuilder_ == null) {
         validVersions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         validVersionsBuilder_.clear();
@@ -1151,7 +1171,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfo.Builder,
                 com.google.cloud.gkemulticloud.v1.AwsK8sVersionInfoOrBuilder>(
                 validVersions_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         validVersions_ = null;
@@ -1163,9 +1183,9 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSupportedAwsRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         supportedAwsRegions_ = new com.google.protobuf.LazyStringArrayList(supportedAwsRegions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1300,7 +1320,7 @@ public final class AwsServerConfig extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearSupportedAwsRegions() {
       supportedAwsRegions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

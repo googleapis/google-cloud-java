@@ -70,7 +70,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int CRYPTO_KEY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cryptoKeyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cryptoKeyId_ = "";
   /**
    *
    *
@@ -224,11 +228,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder() {
-    return getCryptoKey();
+    return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
 
   public static final int SKIP_INITIAL_VERSION_CREATION_FIELD_NUMBER = 5;
-  private boolean skipInitialVersionCreation_;
+  private boolean skipInitialVersionCreation_ = false;
   /**
    *
    *
@@ -482,18 +486,15 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       cryptoKeyId_ = "";
-
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-      } else {
-        cryptoKey_ = null;
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
       skipInitialVersionCreation_ = false;
-
       return this;
     }
 
@@ -521,16 +522,27 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.kms.v1.CreateCryptoKeyRequest buildPartial() {
       com.google.cloud.kms.v1.CreateCryptoKeyRequest result =
           new com.google.cloud.kms.v1.CreateCryptoKeyRequest(this);
-      result.parent_ = parent_;
-      result.cryptoKeyId_ = cryptoKeyId_;
-      if (cryptoKeyBuilder_ == null) {
-        result.cryptoKey_ = cryptoKey_;
-      } else {
-        result.cryptoKey_ = cryptoKeyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.skipInitialVersionCreation_ = skipInitialVersionCreation_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.CreateCryptoKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cryptoKeyId_ = cryptoKeyId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.cryptoKey_ = cryptoKeyBuilder_ == null ? cryptoKey_ : cryptoKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.skipInitialVersionCreation_ = skipInitialVersionCreation_;
+      }
     }
 
     @java.lang.Override
@@ -580,10 +592,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.kms.v1.CreateCryptoKeyRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCryptoKeyId().isEmpty()) {
         cryptoKeyId_ = other.cryptoKeyId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCryptoKey()) {
@@ -621,25 +635,25 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cryptoKeyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCryptoKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 40:
               {
                 skipInitialVersionCreation_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -658,6 +672,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -729,8 +745,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -749,8 +765,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -774,8 +790,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -844,8 +860,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       cryptoKeyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -862,8 +878,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearCryptoKeyId() {
-
       cryptoKeyId_ = getDefaultInstance().getCryptoKeyId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -885,8 +901,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cryptoKeyId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -912,7 +928,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * @return Whether the cryptoKey field is set.
      */
     public boolean hasCryptoKey() {
-      return cryptoKeyBuilder_ != null || cryptoKey_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -955,11 +971,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         cryptoKey_ = value;
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -977,11 +993,11 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public Builder setCryptoKey(com.google.cloud.kms.v1.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
-        onChanged();
       } else {
         cryptoKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -998,19 +1014,18 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCryptoKey(com.google.cloud.kms.v1.CryptoKey value) {
       if (cryptoKeyBuilder_ == null) {
-        if (cryptoKey_ != null) {
-          cryptoKey_ =
-              com.google.cloud.kms.v1.CryptoKey.newBuilder(cryptoKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && cryptoKey_ != null
+            && cryptoKey_ != com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()) {
+          getCryptoKeyBuilder().mergeFrom(value);
         } else {
           cryptoKey_ = value;
         }
-        onChanged();
       } else {
         cryptoKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1026,14 +1041,13 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearCryptoKey() {
-      if (cryptoKeyBuilder_ == null) {
-        cryptoKey_ = null;
-        onChanged();
-      } else {
-        cryptoKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cryptoKey_ = null;
+      if (cryptoKeyBuilder_ != null) {
+        cryptoKeyBuilder_.dispose();
         cryptoKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1049,7 +1063,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.cloud.kms.v1.CryptoKey.Builder getCryptoKeyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
@@ -1148,6 +1162,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public Builder setSkipInitialVersionCreation(boolean value) {
 
       skipInitialVersionCreation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1170,7 +1185,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSkipInitialVersionCreation() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       skipInitialVersionCreation_ = false;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISTRIBUTION_FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object distributionFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object distributionFilter_ = "";
   /**
    *
    *
@@ -170,7 +172,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.monitoring.v3.RangeOrBuilder getRangeOrBuilder() {
-    return getRange();
+    return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,12 +389,11 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       distributionFilter_ = "";
-
-      if (rangeBuilder_ == null) {
-        range_ = null;
-      } else {
-        range_ = null;
+      range_ = null;
+      if (rangeBuilder_ != null) {
+        rangeBuilder_.dispose();
         rangeBuilder_ = null;
       }
       return this;
@@ -422,14 +423,21 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.DistributionCut buildPartial() {
       com.google.monitoring.v3.DistributionCut result =
           new com.google.monitoring.v3.DistributionCut(this);
-      result.distributionFilter_ = distributionFilter_;
-      if (rangeBuilder_ == null) {
-        result.range_ = range_;
-      } else {
-        result.range_ = rangeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.DistributionCut result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.distributionFilter_ = distributionFilter_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.range_ = rangeBuilder_ == null ? range_ : rangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +487,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.monitoring.v3.DistributionCut.getDefaultInstance()) return this;
       if (!other.getDistributionFilter().isEmpty()) {
         distributionFilter_ = other.distributionFilter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRange()) {
@@ -513,13 +522,13 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 distributionFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             default:
@@ -538,6 +547,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object distributionFilter_ = "";
     /**
@@ -606,8 +617,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       distributionFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +636,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDistributionFilter() {
-
       distributionFilter_ = getDefaultInstance().getDistributionFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +660,8 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       distributionFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -674,7 +685,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * @return Whether the range field is set.
      */
     public boolean hasRange() {
-      return rangeBuilder_ != null || range_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -711,11 +722,11 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         range_ = value;
-        onChanged();
       } else {
         rangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -731,11 +742,11 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
     public Builder setRange(com.google.monitoring.v3.Range.Builder builderForValue) {
       if (rangeBuilder_ == null) {
         range_ = builderForValue.build();
-        onChanged();
       } else {
         rangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -750,17 +761,18 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRange(com.google.monitoring.v3.Range value) {
       if (rangeBuilder_ == null) {
-        if (range_ != null) {
-          range_ =
-              com.google.monitoring.v3.Range.newBuilder(range_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && range_ != null
+            && range_ != com.google.monitoring.v3.Range.getDefaultInstance()) {
+          getRangeBuilder().mergeFrom(value);
         } else {
           range_ = value;
         }
-        onChanged();
       } else {
         rangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,14 +786,13 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * <code>.google.monitoring.v3.Range range = 5;</code>
      */
     public Builder clearRange() {
-      if (rangeBuilder_ == null) {
-        range_ = null;
-        onChanged();
-      } else {
-        range_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      range_ = null;
+      if (rangeBuilder_ != null) {
+        rangeBuilder_.dispose();
         rangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -795,7 +806,7 @@ public final class DistributionCut extends com.google.protobuf.GeneratedMessageV
      * <code>.google.monitoring.v3.Range range = 5;</code>
      */
     public com.google.monitoring.v3.Range.Builder getRangeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRangeFieldBuilder().getBuilder();
     }

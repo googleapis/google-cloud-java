@@ -68,7 +68,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
-  private int actionId_;
+  private int actionId_ = 0;
   /**
    *
    *
@@ -86,7 +86,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int EXIT_STATUS_FIELD_NUMBER = 2;
-  private int exitStatus_;
+  private int exitStatus_ = 0;
   /**
    *
    *
@@ -104,7 +104,9 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STDERR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object stderr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stderr_ = "";
   /**
    *
    *
@@ -380,12 +382,10 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       actionId_ = 0;
-
       exitStatus_ = 0;
-
       stderr_ = "";
-
       return this;
     }
 
@@ -413,11 +413,24 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     public com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent buildPartial() {
       com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent result =
           new com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent(this);
-      result.actionId_ = actionId_;
-      result.exitStatus_ = exitStatus_;
-      result.stderr_ = stderr_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.ContainerStoppedEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.actionId_ = actionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.exitStatus_ = exitStatus_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.stderr_ = stderr_;
+      }
     }
 
     @java.lang.Override
@@ -474,6 +487,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       }
       if (!other.getStderr().isEmpty()) {
         stderr_ = other.stderr_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -505,19 +519,19 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 actionId_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 exitStatus_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 stderr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -536,6 +550,8 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int actionId_;
     /**
@@ -568,6 +584,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     public Builder setActionId(int value) {
 
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -583,7 +600,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearActionId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       actionId_ = 0;
       onChanged();
       return this;
@@ -620,6 +637,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
     public Builder setExitStatus(int value) {
 
       exitStatus_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -635,7 +653,7 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearExitStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       exitStatus_ = 0;
       onChanged();
       return this;
@@ -720,8 +738,8 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       stderr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -743,8 +761,8 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearStderr() {
-
       stderr_ = getDefaultInstance().getStderr();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -771,8 +789,8 @@ public final class ContainerStoppedEvent extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stderr_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
   }
 
   public static final int RUN_FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object runFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runFunction_ = "";
   /**
    *
    *
@@ -170,7 +172,7 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder() {
-    return getEnabled();
+    return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +386,11 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       runFunction_ = "";
-
-      if (enabledBuilder_ == null) {
-        enabled_ = null;
-      } else {
-        enabled_ = null;
+      enabled_ = null;
+      if (enabledBuilder_ != null) {
+        enabledBuilder_.dispose();
         enabledBuilder_ = null;
       }
       return this;
@@ -419,14 +420,21 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     public com.google.apps.script.type.HomepageExtensionPoint buildPartial() {
       com.google.apps.script.type.HomepageExtensionPoint result =
           new com.google.apps.script.type.HomepageExtensionPoint(this);
-      result.runFunction_ = runFunction_;
-      if (enabledBuilder_ == null) {
-        result.enabled_ = enabled_;
-      } else {
-        result.enabled_ = enabledBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.HomepageExtensionPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.runFunction_ = runFunction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enabled_ = enabledBuilder_ == null ? enabled_ : enabledBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getRunFunction().isEmpty()) {
         runFunction_ = other.runFunction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEnabled()) {
@@ -511,13 +520,13 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
             case 10:
               {
                 runFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getEnabledFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object runFunction_ = "";
     /**
@@ -601,8 +612,8 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -619,8 +630,8 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRunFunction() {
-
       runFunction_ = getDefaultInstance().getRunFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -642,8 +653,8 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,7 +680,7 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
      * @return Whether the enabled field is set.
      */
     public boolean hasEnabled() {
-      return enabledBuilder_ != null || enabled_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -710,11 +721,11 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         enabled_ = value;
-        onChanged();
       } else {
         enabledBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -732,11 +743,11 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
     public Builder setEnabled(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (enabledBuilder_ == null) {
         enabled_ = builderForValue.build();
-        onChanged();
       } else {
         enabledBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -753,17 +764,18 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
      */
     public Builder mergeEnabled(com.google.protobuf.BoolValue value) {
       if (enabledBuilder_ == null) {
-        if (enabled_ != null) {
-          enabled_ =
-              com.google.protobuf.BoolValue.newBuilder(enabled_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && enabled_ != null
+            && enabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getEnabledBuilder().mergeFrom(value);
         } else {
           enabled_ = value;
         }
-        onChanged();
       } else {
         enabledBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -779,14 +791,13 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.BoolValue enabled = 2;</code>
      */
     public Builder clearEnabled() {
-      if (enabledBuilder_ == null) {
-        enabled_ = null;
-        onChanged();
-      } else {
-        enabled_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      enabled_ = null;
+      if (enabledBuilder_ != null) {
+        enabledBuilder_.dispose();
         enabledBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -802,7 +813,7 @@ public final class HomepageExtensionPoint extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.BoolValue enabled = 2;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnabledBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEnabledFieldBuilder().getBuilder();
     }

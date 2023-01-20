@@ -68,7 +68,9 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkemulticloud.v1.AttachedClusterError buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedClusterError result =
           new com.google.cloud.gkemulticloud.v1.AttachedClusterError(this);
-      result.message_ = message_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AttachedClusterError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -508,8 +522,8 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class AttachedClusterError extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

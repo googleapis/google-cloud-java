@@ -71,7 +71,9 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
   }
 
   public static final int CRD_MANIFEST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object crdManifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crdManifest_ = "";
   /**
    *
    *
@@ -179,7 +183,9 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
   }
 
   public static final int CR_MANIFEST_FIELD_NUMBER = 3;
-  private volatile java.lang.Object crManifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crManifest_ = "";
   /**
    *
    *
@@ -449,12 +455,10 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       crdManifest_ = "";
-
       crManifest_ = "";
-
       return this;
     }
 
@@ -484,11 +488,25 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
     public com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest buildPartial() {
       com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest result =
           new com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest(this);
-      result.name_ = name_;
-      result.crdManifest_ = crdManifest_;
-      result.crManifest_ = crManifest_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.v1beta1.GenerateExclusivityManifestRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.crdManifest_ = crdManifest_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.crManifest_ = crManifest_;
+      }
     }
 
     @java.lang.Override
@@ -542,14 +560,17 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCrdManifest().isEmpty()) {
         crdManifest_ = other.crdManifest_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getCrManifest().isEmpty()) {
         crManifest_ = other.crManifest_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -581,19 +602,19 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 crdManifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 crManifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -612,6 +633,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -683,8 +706,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +726,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -728,8 +751,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -801,8 +824,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       crdManifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -820,8 +843,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearCrdManifest() {
-
       crdManifest_ = getDefaultInstance().getCrdManifest();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -844,8 +867,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crdManifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +940,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       crManifest_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -936,8 +959,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearCrManifest() {
-
       crManifest_ = getDefaultInstance().getCrManifest();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -960,8 +983,8 @@ public final class GenerateExclusivityManifestRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crManifest_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -75,7 +75,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GOOD_SERVICE_FILTER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object goodServiceFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object goodServiceFilter_ = "";
   /**
    *
    *
@@ -130,7 +132,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BAD_SERVICE_FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object badServiceFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object badServiceFilter_ = "";
   /**
    *
    *
@@ -187,7 +191,9 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TOTAL_SERVICE_FILTER_FIELD_NUMBER = 6;
-  private volatile java.lang.Object totalServiceFilter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object totalServiceFilter_ = "";
   /**
    *
    *
@@ -460,12 +466,10 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       goodServiceFilter_ = "";
-
       badServiceFilter_ = "";
-
       totalServiceFilter_ = "";
-
       return this;
     }
 
@@ -493,11 +497,24 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.TimeSeriesRatio buildPartial() {
       com.google.monitoring.v3.TimeSeriesRatio result =
           new com.google.monitoring.v3.TimeSeriesRatio(this);
-      result.goodServiceFilter_ = goodServiceFilter_;
-      result.badServiceFilter_ = badServiceFilter_;
-      result.totalServiceFilter_ = totalServiceFilter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.TimeSeriesRatio result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.goodServiceFilter_ = goodServiceFilter_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.badServiceFilter_ = badServiceFilter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalServiceFilter_ = totalServiceFilter_;
+      }
     }
 
     @java.lang.Override
@@ -547,14 +564,17 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.monitoring.v3.TimeSeriesRatio.getDefaultInstance()) return this;
       if (!other.getGoodServiceFilter().isEmpty()) {
         goodServiceFilter_ = other.goodServiceFilter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getBadServiceFilter().isEmpty()) {
         badServiceFilter_ = other.badServiceFilter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getTotalServiceFilter().isEmpty()) {
         totalServiceFilter_ = other.totalServiceFilter_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -586,19 +606,19 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 goodServiceFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             case 42:
               {
                 badServiceFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
               {
                 totalServiceFilter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             default:
@@ -617,6 +637,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object goodServiceFilter_ = "";
     /**
@@ -688,8 +710,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       goodServiceFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -708,8 +730,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearGoodServiceFilter() {
-
       goodServiceFilter_ = getDefaultInstance().getGoodServiceFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -733,8 +755,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       goodServiceFilter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -812,8 +834,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       badServiceFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -833,8 +855,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBadServiceFilter() {
-
       badServiceFilter_ = getDefaultInstance().getBadServiceFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -859,8 +881,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       badServiceFilter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,8 +957,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       totalServiceFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,8 +977,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTotalServiceFilter() {
-
       totalServiceFilter_ = getDefaultInstance().getTotalServiceFilter();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -980,8 +1002,8 @@ public final class TimeSeriesRatio extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       totalServiceFilter_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

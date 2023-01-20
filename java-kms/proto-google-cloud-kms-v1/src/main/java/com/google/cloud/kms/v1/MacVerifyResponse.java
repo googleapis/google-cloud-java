@@ -70,7 +70,9 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SUCCESS_FIELD_NUMBER = 2;
-  private boolean success_;
+  private boolean success_ = false;
   /**
    *
    *
@@ -146,7 +148,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERIFIED_DATA_CRC32C_FIELD_NUMBER = 3;
-  private boolean verifiedDataCrc32C_;
+  private boolean verifiedDataCrc32C_ = false;
   /**
    *
    *
@@ -177,7 +179,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERIFIED_MAC_CRC32C_FIELD_NUMBER = 4;
-  private boolean verifiedMacCrc32C_;
+  private boolean verifiedMacCrc32C_ = false;
   /**
    *
    *
@@ -208,7 +210,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERIFIED_SUCCESS_INTEGRITY_FIELD_NUMBER = 5;
-  private boolean verifiedSuccessIntegrity_;
+  private boolean verifiedSuccessIntegrity_ = false;
   /**
    *
    *
@@ -229,7 +231,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 6;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -262,9 +264,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -513,18 +514,13 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       success_ = false;
-
       verifiedDataCrc32C_ = false;
-
       verifiedMacCrc32C_ = false;
-
       verifiedSuccessIntegrity_ = false;
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -552,14 +548,33 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.kms.v1.MacVerifyResponse buildPartial() {
       com.google.cloud.kms.v1.MacVerifyResponse result =
           new com.google.cloud.kms.v1.MacVerifyResponse(this);
-      result.name_ = name_;
-      result.success_ = success_;
-      result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
-      result.verifiedMacCrc32C_ = verifiedMacCrc32C_;
-      result.verifiedSuccessIntegrity_ = verifiedSuccessIntegrity_;
-      result.protectionLevel_ = protectionLevel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.MacVerifyResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.success_ = success_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.verifiedDataCrc32C_ = verifiedDataCrc32C_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.verifiedMacCrc32C_ = verifiedMacCrc32C_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.verifiedSuccessIntegrity_ = verifiedSuccessIntegrity_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -609,6 +624,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.kms.v1.MacVerifyResponse.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSuccess() != false) {
@@ -655,37 +671,37 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 success_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 verifiedDataCrc32C_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 verifiedMacCrc32C_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 verifiedSuccessIntegrity_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -704,6 +720,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -775,8 +793,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -795,8 +813,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -820,8 +838,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -863,6 +881,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     public Builder setSuccess(boolean value) {
 
       success_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,7 +900,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSuccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       success_ = false;
       onChanged();
       return this;
@@ -944,6 +963,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     public Builder setVerifiedDataCrc32C(boolean value) {
 
       verifiedDataCrc32C_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -972,7 +992,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVerifiedDataCrc32C() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       verifiedDataCrc32C_ = false;
       onChanged();
       return this;
@@ -1035,6 +1055,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     public Builder setVerifiedMacCrc32C(boolean value) {
 
       verifiedMacCrc32C_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1063,7 +1084,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVerifiedMacCrc32C() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       verifiedMacCrc32C_ = false;
       onChanged();
       return this;
@@ -1106,6 +1127,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
     public Builder setVerifiedSuccessIntegrity(boolean value) {
 
       verifiedSuccessIntegrity_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1124,7 +1146,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVerifiedSuccessIntegrity() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       verifiedSuccessIntegrity_ = false;
       onChanged();
       return this;
@@ -1163,8 +1185,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1183,9 +1205,8 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1206,7 +1227,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1225,7 +1246,7 @@ public final class MacVerifyResponse extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       protectionLevel_ = 0;
       onChanged();
       return this;

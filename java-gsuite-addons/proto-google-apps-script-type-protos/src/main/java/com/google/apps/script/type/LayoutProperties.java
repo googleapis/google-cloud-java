@@ -69,7 +69,9 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PRIMARY_COLOR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object primaryColor_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object primaryColor_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SECONDARY_COLOR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object secondaryColor_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secondaryColor_ = "";
   /**
    *
    *
@@ -384,10 +388,9 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       primaryColor_ = "";
-
       secondaryColor_ = "";
-
       return this;
     }
 
@@ -415,10 +418,21 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
     public com.google.apps.script.type.LayoutProperties buildPartial() {
       com.google.apps.script.type.LayoutProperties result =
           new com.google.apps.script.type.LayoutProperties(this);
-      result.primaryColor_ = primaryColor_;
-      result.secondaryColor_ = secondaryColor_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.LayoutProperties result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.primaryColor_ = primaryColor_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secondaryColor_ = secondaryColor_;
+      }
     }
 
     @java.lang.Override
@@ -468,10 +482,12 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
       if (other == com.google.apps.script.type.LayoutProperties.getDefaultInstance()) return this;
       if (!other.getPrimaryColor().isEmpty()) {
         primaryColor_ = other.primaryColor_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSecondaryColor().isEmpty()) {
         secondaryColor_ = other.secondaryColor_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -503,13 +519,13 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 primaryColor_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 secondaryColor_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -528,6 +544,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object primaryColor_ = "";
     /**
@@ -596,8 +614,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       primaryColor_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -615,8 +633,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPrimaryColor() {
-
       primaryColor_ = getDefaultInstance().getPrimaryColor();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -639,8 +657,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       primaryColor_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +736,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       secondaryColor_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSecondaryColor() {
-
       secondaryColor_ = getDefaultInstance().getSecondaryColor();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -765,8 +783,8 @@ public final class LayoutProperties extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secondaryColor_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

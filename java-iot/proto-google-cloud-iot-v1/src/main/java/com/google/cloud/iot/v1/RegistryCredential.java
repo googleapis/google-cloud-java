@@ -372,6 +372,7 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (publicKeyCertificateBuilder_ != null) {
         publicKeyCertificateBuilder_.clear();
       }
@@ -404,16 +405,24 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.iot.v1.RegistryCredential buildPartial() {
       com.google.cloud.iot.v1.RegistryCredential result =
           new com.google.cloud.iot.v1.RegistryCredential(this);
-      if (credentialCase_ == 1) {
-        if (publicKeyCertificateBuilder_ == null) {
-          result.credential_ = credential_;
-        } else {
-          result.credential_ = publicKeyCertificateBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.credentialCase_ = credentialCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.RegistryCredential result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.iot.v1.RegistryCredential result) {
+      result.credentialCase_ = credentialCase_;
+      result.credential_ = this.credential_;
+      if (credentialCase_ == 1 && publicKeyCertificateBuilder_ != null) {
+        result.credential_ = publicKeyCertificateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,6 +544,8 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.PublicKeyCertificate,
@@ -743,7 +754,6 @@ public final class RegistryCredential extends com.google.protobuf.GeneratedMessa
       }
       credentialCase_ = 1;
       onChanged();
-      ;
       return publicKeyCertificateBuilder_;
     }
 

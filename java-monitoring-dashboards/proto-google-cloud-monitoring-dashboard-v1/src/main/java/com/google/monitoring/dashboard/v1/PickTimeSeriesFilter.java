@@ -462,7 +462,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RANKING_METHOD_FIELD_NUMBER = 1;
-  private int rankingMethod_;
+  private int rankingMethod_ = 0;
   /**
    *
    *
@@ -495,16 +495,15 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method getRankingMethod() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method result =
-        com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.valueOf(rankingMethod_);
+        com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.forNumber(rankingMethod_);
     return result == null
         ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.UNRECOGNIZED
         : result;
   }
 
   public static final int NUM_TIME_SERIES_FIELD_NUMBER = 2;
-  private int numTimeSeries_;
+  private int numTimeSeries_ = 0;
   /**
    *
    *
@@ -522,7 +521,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 3;
-  private int direction_;
+  private int direction_ = 0;
   /**
    *
    *
@@ -551,9 +550,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction getDirection() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction result =
-        com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.valueOf(direction_);
+        com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.forNumber(direction_);
     return result == null
         ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.UNRECOGNIZED
         : result;
@@ -788,12 +786,10 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       rankingMethod_ = 0;
-
       numTimeSeries_ = 0;
-
       direction_ = 0;
-
       return this;
     }
 
@@ -821,11 +817,24 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter buildPartial() {
       com.google.monitoring.dashboard.v1.PickTimeSeriesFilter result =
           new com.google.monitoring.dashboard.v1.PickTimeSeriesFilter(this);
-      result.rankingMethod_ = rankingMethod_;
-      result.numTimeSeries_ = numTimeSeries_;
-      result.direction_ = direction_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.PickTimeSeriesFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.rankingMethod_ = rankingMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.numTimeSeries_ = numTimeSeries_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.direction_ = direction_;
+      }
     }
 
     @java.lang.Override
@@ -912,19 +921,19 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 rankingMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 numTimeSeries_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 direction_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -943,6 +952,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int rankingMethod_ = 0;
     /**
@@ -977,8 +988,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setRankingMethodValue(int value) {
-
       rankingMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -997,9 +1008,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method getRankingMethod() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method result =
-          com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.valueOf(rankingMethod_);
+          com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.forNumber(rankingMethod_);
       return result == null
           ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Method.UNRECOGNIZED
           : result;
@@ -1023,7 +1033,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       rankingMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -1042,7 +1052,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRankingMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       rankingMethod_ = 0;
       onChanged();
       return this;
@@ -1079,6 +1089,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
     public Builder setNumTimeSeries(int value) {
 
       numTimeSeries_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1094,7 +1105,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNumTimeSeries() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       numTimeSeries_ = 0;
       onChanged();
       return this;
@@ -1129,8 +1140,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
-
       direction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1147,9 +1158,8 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction getDirection() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction result =
-          com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.valueOf(direction_);
+          com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.forNumber(direction_);
       return result == null
           ? com.google.monitoring.dashboard.v1.PickTimeSeriesFilter.Direction.UNRECOGNIZED
           : result;
@@ -1171,7 +1181,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       direction_ = value.getNumber();
       onChanged();
       return this;
@@ -1188,7 +1198,7 @@ public final class PickTimeSeriesFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       direction_ = 0;
       onChanged();
       return this;

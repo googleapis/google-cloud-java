@@ -65,7 +65,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIN_FIELD_NUMBER = 1;
-  private double min_;
+  private double min_ = 0D;
   /**
    *
    *
@@ -83,7 +83,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_FIELD_NUMBER = 2;
-  private double max_;
+  private double max_ = 0D;
   /**
    *
    *
@@ -309,10 +309,9 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       min_ = 0D;
-
       max_ = 0D;
-
       return this;
     }
 
@@ -339,10 +338,21 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.Range buildPartial() {
       com.google.monitoring.v3.Range result = new com.google.monitoring.v3.Range(this);
-      result.min_ = min_;
-      result.max_ = max_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.Range result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.min_ = min_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.max_ = max_;
+      }
     }
 
     @java.lang.Override
@@ -425,13 +435,13 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 min_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 max_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -450,6 +460,8 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double min_;
     /**
@@ -482,6 +494,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     public Builder setMin(double value) {
 
       min_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -497,7 +510,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMin() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       min_ = 0D;
       onChanged();
       return this;
@@ -534,6 +547,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
     public Builder setMax(double value) {
 
       max_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -549,7 +563,7 @@ public final class Range extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMax() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       max_ = 0D;
       onChanged();
       return this;

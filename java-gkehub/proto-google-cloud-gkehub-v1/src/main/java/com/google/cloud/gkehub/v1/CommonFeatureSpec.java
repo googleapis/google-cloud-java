@@ -374,6 +374,7 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (multiclusteringressBuilder_ != null) {
         multiclusteringressBuilder_.clear();
       }
@@ -406,16 +407,24 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gkehub.v1.CommonFeatureSpec buildPartial() {
       com.google.cloud.gkehub.v1.CommonFeatureSpec result =
           new com.google.cloud.gkehub.v1.CommonFeatureSpec(this);
-      if (featureSpecCase_ == 102) {
-        if (multiclusteringressBuilder_ == null) {
-          result.featureSpec_ = featureSpec_;
-        } else {
-          result.featureSpec_ = multiclusteringressBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.featureSpecCase_ = featureSpecCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.CommonFeatureSpec result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.gkehub.v1.CommonFeatureSpec result) {
+      result.featureSpecCase_ = featureSpecCase_;
+      result.featureSpec_ = this.featureSpec_;
+      if (featureSpecCase_ == 102 && multiclusteringressBuilder_ != null) {
+        result.featureSpec_ = multiclusteringressBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -537,6 +546,8 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.multiclusteringress.v1.FeatureSpec,
@@ -760,7 +771,6 @@ public final class CommonFeatureSpec extends com.google.protobuf.GeneratedMessag
       }
       featureSpecCase_ = 102;
       onChanged();
-      ;
       return multiclusteringressBuilder_;
     }
 

@@ -114,7 +114,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
@@ -163,11 +163,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -218,6 +220,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int WEEKLY_MAINTENANCE_WINDOW_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.memcache.v1beta2.WeeklyMaintenanceWindow>
       weeklyMaintenanceWindow_;
   /**
@@ -550,27 +554,25 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      bitField0_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       description_ = "";
-
       if (weeklyMaintenanceWindowBuilder_ == null) {
         weeklyMaintenanceWindow_ = java.util.Collections.emptyList();
       } else {
         weeklyMaintenanceWindow_ = null;
         weeklyMaintenanceWindowBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -598,30 +600,39 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.memcache.v1beta2.MaintenancePolicy buildPartial() {
       com.google.cloud.memcache.v1beta2.MaintenancePolicy result =
           new com.google.cloud.memcache.v1beta2.MaintenancePolicy(this);
-      int from_bitField0_ = bitField0_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.description_ = description_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.memcache.v1beta2.MaintenancePolicy result) {
       if (weeklyMaintenanceWindowBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           weeklyMaintenanceWindow_ =
               java.util.Collections.unmodifiableList(weeklyMaintenanceWindow_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.weeklyMaintenanceWindow_ = weeklyMaintenanceWindow_;
       } else {
         result.weeklyMaintenanceWindow_ = weeklyMaintenanceWindowBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.memcache.v1beta2.MaintenancePolicy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
     }
 
     @java.lang.Override
@@ -678,13 +689,14 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (weeklyMaintenanceWindowBuilder_ == null) {
         if (!other.weeklyMaintenanceWindow_.isEmpty()) {
           if (weeklyMaintenanceWindow_.isEmpty()) {
             weeklyMaintenanceWindow_ = other.weeklyMaintenanceWindow_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureWeeklyMaintenanceWindowIsMutable();
             weeklyMaintenanceWindow_.addAll(other.weeklyMaintenanceWindow_);
@@ -697,7 +709,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             weeklyMaintenanceWindowBuilder_.dispose();
             weeklyMaintenanceWindowBuilder_ = null;
             weeklyMaintenanceWindow_ = other.weeklyMaintenanceWindow_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             weeklyMaintenanceWindowBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getWeeklyMaintenanceWindowFieldBuilder()
@@ -736,19 +748,19 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -804,7 +816,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -845,11 +857,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -866,11 +878,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -886,17 +898,18 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -911,14 +924,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -933,7 +945,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1005,7 +1017,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1046,11 +1058,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1067,11 +1079,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1087,17 +1099,18 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1112,14 +1125,13 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1134,7 +1146,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1250,8 +1262,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1268,8 +1280,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1291,8 +1303,8 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1301,11 +1313,11 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
         weeklyMaintenanceWindow_ = java.util.Collections.emptyList();
 
     private void ensureWeeklyMaintenanceWindowIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         weeklyMaintenanceWindow_ =
             new java.util.ArrayList<com.google.cloud.memcache.v1beta2.WeeklyMaintenanceWindow>(
                 weeklyMaintenanceWindow_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1573,7 +1585,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
     public Builder clearWeeklyMaintenanceWindow() {
       if (weeklyMaintenanceWindowBuilder_ == null) {
         weeklyMaintenanceWindow_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         weeklyMaintenanceWindowBuilder_.clear();
@@ -1732,7 +1744,7 @@ public final class MaintenancePolicy extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.memcache.v1beta2.WeeklyMaintenanceWindow.Builder,
                 com.google.cloud.memcache.v1beta2.WeeklyMaintenanceWindowOrBuilder>(
                 weeklyMaintenanceWindow_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         weeklyMaintenanceWindow_ = null;

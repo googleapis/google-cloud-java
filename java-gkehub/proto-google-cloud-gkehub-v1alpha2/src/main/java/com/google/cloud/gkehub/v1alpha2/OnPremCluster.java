@@ -68,7 +68,9 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCE_LINK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceLink_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_MISSING_FIELD_NUMBER = 2;
-  private boolean clusterMissing_;
+  private boolean clusterMissing_ = false;
   /**
    *
    *
@@ -141,7 +143,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADMIN_CLUSTER_FIELD_NUMBER = 3;
-  private boolean adminCluster_;
+  private boolean adminCluster_ = false;
   /**
    *
    *
@@ -373,12 +375,10 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceLink_ = "";
-
       clusterMissing_ = false;
-
       adminCluster_ = false;
-
       return this;
     }
 
@@ -406,11 +406,24 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.v1alpha2.OnPremCluster buildPartial() {
       com.google.cloud.gkehub.v1alpha2.OnPremCluster result =
           new com.google.cloud.gkehub.v1alpha2.OnPremCluster(this);
-      result.resourceLink_ = resourceLink_;
-      result.clusterMissing_ = clusterMissing_;
-      result.adminCluster_ = adminCluster_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.OnPremCluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceLink_ = resourceLink_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterMissing_ = clusterMissing_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.adminCluster_ = adminCluster_;
+      }
     }
 
     @java.lang.Override
@@ -460,6 +473,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1alpha2.OnPremCluster.getDefaultInstance()) return this;
       if (!other.getResourceLink().isEmpty()) {
         resourceLink_ = other.resourceLink_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getClusterMissing() != false) {
@@ -497,19 +511,19 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 resourceLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 clusterMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 adminCluster_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -528,6 +542,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceLink_ = "";
     /**
@@ -596,8 +612,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceLink_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -615,8 +631,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceLink() {
-
       resourceLink_ = getDefaultInstance().getResourceLink();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -639,8 +655,8 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceLink_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,6 +696,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setClusterMissing(boolean value) {
 
       clusterMissing_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -697,7 +714,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       clusterMissing_ = false;
       onChanged();
       return this;
@@ -734,6 +751,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
     public Builder setAdminCluster(boolean value) {
 
       adminCluster_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -749,7 +767,7 @@ public final class OnPremCluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdminCluster() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       adminCluster_ = false;
       onChanged();
       return this;

@@ -226,7 +226,9 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -275,7 +277,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMAT_FIELD_NUMBER = 2;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -304,9 +306,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Text.Format getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Text.Format result =
-        com.google.monitoring.dashboard.v1.Text.Format.valueOf(format_);
+        com.google.monitoring.dashboard.v1.Text.Format.forNumber(format_);
     return result == null ? com.google.monitoring.dashboard.v1.Text.Format.UNRECOGNIZED : result;
   }
 
@@ -515,10 +516,9 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-
       format_ = 0;
-
       return this;
     }
 
@@ -546,10 +546,21 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Text buildPartial() {
       com.google.monitoring.dashboard.v1.Text result =
           new com.google.monitoring.dashboard.v1.Text(this);
-      result.content_ = content_;
-      result.format_ = format_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.Text result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.format_ = format_;
+      }
     }
 
     @java.lang.Override
@@ -599,6 +610,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.dashboard.v1.Text.getDefaultInstance()) return this;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.format_ != 0) {
@@ -633,13 +645,13 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -658,6 +670,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object content_ = "";
     /**
@@ -720,8 +734,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -737,8 +751,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -759,8 +773,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +808,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -812,9 +826,8 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Text.Format getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Text.Format result =
-          com.google.monitoring.dashboard.v1.Text.Format.valueOf(format_);
+          com.google.monitoring.dashboard.v1.Text.Format.forNumber(format_);
       return result == null ? com.google.monitoring.dashboard.v1.Text.Format.UNRECOGNIZED : result;
     }
     /**
@@ -833,7 +846,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -850,7 +863,7 @@ public final class Text extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       format_ = 0;
       onChanged();
       return this;

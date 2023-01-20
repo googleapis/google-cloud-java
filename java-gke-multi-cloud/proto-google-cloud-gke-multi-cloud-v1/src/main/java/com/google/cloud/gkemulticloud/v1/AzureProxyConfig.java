@@ -69,7 +69,9 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESOURCE_GROUP_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceGroupId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceGroupId_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SECRET_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object secretId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretId_ = "";
   /**
    *
    *
@@ -386,10 +390,9 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceGroupId_ = "";
-
       secretId_ = "";
-
       return this;
     }
 
@@ -417,10 +420,21 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkemulticloud.v1.AzureProxyConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureProxyConfig result =
           new com.google.cloud.gkemulticloud.v1.AzureProxyConfig(this);
-      result.resourceGroupId_ = resourceGroupId_;
-      result.secretId_ = secretId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureProxyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceGroupId_ = resourceGroupId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secretId_ = secretId_;
+      }
     }
 
     @java.lang.Override
@@ -471,10 +485,12 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getResourceGroupId().isEmpty()) {
         resourceGroupId_ = other.resourceGroupId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSecretId().isEmpty()) {
         secretId_ = other.secretId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -506,13 +522,13 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 resourceGroupId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 secretId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -531,6 +547,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceGroupId_ = "";
     /**
@@ -599,8 +617,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceGroupId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -618,8 +636,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResourceGroupId() {
-
       resourceGroupId_ = getDefaultInstance().getResourceGroupId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -642,8 +660,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceGroupId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -724,8 +742,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       secretId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -746,8 +764,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSecretId() {
-
       secretId_ = getDefaultInstance().getSecretId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -773,8 +791,8 @@ public final class AzureProxyConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secretId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

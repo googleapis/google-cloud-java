@@ -751,7 +751,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     }
 
     public static final int CONTENT_CATEGORIES_VERSION_FIELD_NUMBER = 1;
-    private int contentCategoriesVersion_;
+    private int contentCategoriesVersion_ = 0;
     /**
      *
      *
@@ -785,11 +785,10 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     @java.lang.Override
     public com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion
         getContentCategoriesVersion() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion
           result =
               com.google.cloud.language.v1.ClassificationModelOptions.V2Model
-                  .ContentCategoriesVersion.valueOf(contentCategoriesVersion_);
+                  .ContentCategoriesVersion.forNumber(contentCategoriesVersion_);
       return result == null
           ? com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion
               .UNRECOGNIZED
@@ -1004,8 +1003,8 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         contentCategoriesVersion_ = 0;
-
         return this;
       }
 
@@ -1034,9 +1033,19 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       public com.google.cloud.language.v1.ClassificationModelOptions.V2Model buildPartial() {
         com.google.cloud.language.v1.ClassificationModelOptions.V2Model result =
             new com.google.cloud.language.v1.ClassificationModelOptions.V2Model(this);
-        result.contentCategoriesVersion_ = contentCategoriesVersion_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.language.v1.ClassificationModelOptions.V2Model result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.contentCategoriesVersion_ = contentCategoriesVersion_;
+        }
       }
 
       @java.lang.Override
@@ -1121,7 +1130,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
               case 8:
                 {
                   contentCategoriesVersion_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -1140,6 +1149,8 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int contentCategoriesVersion_ = 0;
       /**
@@ -1174,8 +1185,8 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder setContentCategoriesVersionValue(int value) {
-
         contentCategoriesVersion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1196,11 +1207,10 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       public com.google.cloud.language.v1.ClassificationModelOptions.V2Model
               .ContentCategoriesVersion
           getContentCategoriesVersion() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.language.v1.ClassificationModelOptions.V2Model.ContentCategoriesVersion
             result =
                 com.google.cloud.language.v1.ClassificationModelOptions.V2Model
-                    .ContentCategoriesVersion.valueOf(contentCategoriesVersion_);
+                    .ContentCategoriesVersion.forNumber(contentCategoriesVersion_);
         return result == null
             ? com.google.cloud.language.v1.ClassificationModelOptions.V2Model
                 .ContentCategoriesVersion.UNRECOGNIZED
@@ -1226,7 +1236,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         contentCategoriesVersion_ = value.getNumber();
         onChanged();
         return this;
@@ -1245,7 +1255,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
        * @return This builder for chaining.
        */
       public Builder clearContentCategoriesVersion() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         contentCategoriesVersion_ = 0;
         onChanged();
         return this;
@@ -1708,6 +1718,7 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (v1ModelBuilder_ != null) {
         v1ModelBuilder_.clear();
       }
@@ -1743,23 +1754,28 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
     public com.google.cloud.language.v1.ClassificationModelOptions buildPartial() {
       com.google.cloud.language.v1.ClassificationModelOptions result =
           new com.google.cloud.language.v1.ClassificationModelOptions(this);
-      if (modelTypeCase_ == 1) {
-        if (v1ModelBuilder_ == null) {
-          result.modelType_ = modelType_;
-        } else {
-          result.modelType_ = v1ModelBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modelTypeCase_ == 2) {
-        if (v2ModelBuilder_ == null) {
-          result.modelType_ = modelType_;
-        } else {
-          result.modelType_ = v2ModelBuilder_.build();
-        }
-      }
-      result.modelTypeCase_ = modelTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.ClassificationModelOptions result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.language.v1.ClassificationModelOptions result) {
+      result.modelTypeCase_ = modelTypeCase_;
+      result.modelType_ = this.modelType_;
+      if (modelTypeCase_ == 1 && v1ModelBuilder_ != null) {
+        result.modelType_ = v1ModelBuilder_.build();
+      }
+      if (modelTypeCase_ == 2 && v2ModelBuilder_ != null) {
+        result.modelType_ = v2ModelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1892,6 +1908,8 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.language.v1.ClassificationModelOptions.V1Model,
@@ -2124,7 +2142,6 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       }
       modelTypeCase_ = 1;
       onChanged();
-      ;
       return v1ModelBuilder_;
     }
 
@@ -2350,7 +2367,6 @@ public final class ClassificationModelOptions extends com.google.protobuf.Genera
       }
       modelTypeCase_ = 2;
       onChanged();
-      ;
       return v2ModelBuilder_;
     }
 

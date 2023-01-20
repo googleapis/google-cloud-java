@@ -68,7 +68,9 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       return this;
     }
 
@@ -349,9 +351,19 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
     public com.google.cloud.gkehub.configmanagement.v1.PolicyControllerVersion buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.PolicyControllerVersion result =
           new com.google.cloud.gkehub.configmanagement.v1.PolicyControllerVersion(this);
-      result.version_ = version_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1.PolicyControllerVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -405,6 +417,7 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -436,7 +449,7 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
             case 10:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -455,6 +468,8 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -520,8 +535,8 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,8 +553,8 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -561,8 +576,8 @@ public final class PolicyControllerVersion extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_ARN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object secretArn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretArn_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object secretVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretVersion_ = "";
   /**
    *
    *
@@ -382,10 +386,9 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       secretArn_ = "";
-
       secretVersion_ = "";
-
       return this;
     }
 
@@ -413,10 +416,21 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AwsProxyConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsProxyConfig result =
           new com.google.cloud.gkemulticloud.v1.AwsProxyConfig(this);
-      result.secretArn_ = secretArn_;
-      result.secretVersion_ = secretVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsProxyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.secretArn_ = secretArn_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.secretVersion_ = secretVersion_;
+      }
     }
 
     @java.lang.Override
@@ -467,10 +481,12 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSecretArn().isEmpty()) {
         secretArn_ = other.secretArn_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSecretVersion().isEmpty()) {
         secretVersion_ = other.secretVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -502,13 +518,13 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 secretArn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 secretVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -527,6 +543,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object secretArn_ = "";
     /**
@@ -601,8 +619,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secretArn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,8 +640,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecretArn() {
-
       secretArn_ = getDefaultInstance().getSecretArn();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -648,8 +666,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secretArn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -718,8 +736,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secretVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -736,8 +754,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecretVersion() {
-
       secretVersion_ = getDefaultInstance().getSecretVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -759,8 +777,8 @@ public final class AwsProxyConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secretVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

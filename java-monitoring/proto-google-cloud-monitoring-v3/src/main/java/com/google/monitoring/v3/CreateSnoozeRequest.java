@@ -69,7 +69,9 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -173,7 +175,7 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.monitoring.v3.SnoozeOrBuilder getSnoozeOrBuilder() {
-    return getSnooze();
+    return snooze_ == null ? com.google.monitoring.v3.Snooze.getDefaultInstance() : snooze_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -388,12 +390,11 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (snoozeBuilder_ == null) {
-        snooze_ = null;
-      } else {
-        snooze_ = null;
+      snooze_ = null;
+      if (snoozeBuilder_ != null) {
+        snoozeBuilder_.dispose();
         snoozeBuilder_ = null;
       }
       return this;
@@ -423,14 +424,21 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.v3.CreateSnoozeRequest buildPartial() {
       com.google.monitoring.v3.CreateSnoozeRequest result =
           new com.google.monitoring.v3.CreateSnoozeRequest(this);
-      result.parent_ = parent_;
-      if (snoozeBuilder_ == null) {
-        result.snooze_ = snooze_;
-      } else {
-        result.snooze_ = snoozeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateSnoozeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.snooze_ = snoozeBuilder_ == null ? snooze_ : snoozeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -480,6 +488,7 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       if (other == com.google.monitoring.v3.CreateSnoozeRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSnooze()) {
@@ -514,13 +523,13 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getSnoozeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -539,6 +548,8 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -616,8 +627,8 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +649,8 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +676,8 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -691,7 +702,7 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the snooze field is set.
      */
     public boolean hasSnooze() {
-      return snoozeBuilder_ != null || snooze_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -730,11 +741,11 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         snooze_ = value;
-        onChanged();
       } else {
         snoozeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -751,11 +762,11 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
     public Builder setSnooze(com.google.monitoring.v3.Snooze.Builder builderForValue) {
       if (snoozeBuilder_ == null) {
         snooze_ = builderForValue.build();
-        onChanged();
       } else {
         snoozeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,17 +782,18 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSnooze(com.google.monitoring.v3.Snooze value) {
       if (snoozeBuilder_ == null) {
-        if (snooze_ != null) {
-          snooze_ =
-              com.google.monitoring.v3.Snooze.newBuilder(snooze_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && snooze_ != null
+            && snooze_ != com.google.monitoring.v3.Snooze.getDefaultInstance()) {
+          getSnoozeBuilder().mergeFrom(value);
         } else {
           snooze_ = value;
         }
-        onChanged();
       } else {
         snoozeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,14 +808,13 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearSnooze() {
-      if (snoozeBuilder_ == null) {
-        snooze_ = null;
-        onChanged();
-      } else {
-        snooze_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      snooze_ = null;
+      if (snoozeBuilder_ != null) {
+        snoozeBuilder_.dispose();
         snoozeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -818,7 +829,7 @@ public final class CreateSnoozeRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.monitoring.v3.Snooze.Builder getSnoozeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSnoozeFieldBuilder().getBuilder();
     }

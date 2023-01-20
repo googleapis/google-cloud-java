@@ -114,7 +114,9 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfigOrBuilder
       getManagedPrometheusConfigOrBuilder() {
-    return getManagedPrometheusConfig();
+    return managedPrometheusConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.getDefaultInstance()
+        : managedPrometheusConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -320,10 +322,10 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (managedPrometheusConfigBuilder_ == null) {
-        managedPrometheusConfig_ = null;
-      } else {
-        managedPrometheusConfig_ = null;
+      bitField0_ = 0;
+      managedPrometheusConfig_ = null;
+      if (managedPrometheusConfigBuilder_ != null) {
+        managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
       }
       return this;
@@ -353,13 +355,21 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkemulticloud.v1.MonitoringConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.MonitoringConfig result =
           new com.google.cloud.gkemulticloud.v1.MonitoringConfig(this);
-      if (managedPrometheusConfigBuilder_ == null) {
-        result.managedPrometheusConfig_ = managedPrometheusConfig_;
-      } else {
-        result.managedPrometheusConfig_ = managedPrometheusConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.MonitoringConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.managedPrometheusConfig_ =
+            managedPrometheusConfigBuilder_ == null
+                ? managedPrometheusConfig_
+                : managedPrometheusConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +451,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getManagedPrometheusConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -460,6 +470,8 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig managedPrometheusConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -480,7 +492,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the managedPrometheusConfig field is set.
      */
     public boolean hasManagedPrometheusConfig() {
-      return managedPrometheusConfigBuilder_ != null || managedPrometheusConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -520,11 +532,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         managedPrometheusConfig_ = value;
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -541,11 +553,11 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
         com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.Builder builderForValue) {
       if (managedPrometheusConfigBuilder_ == null) {
         managedPrometheusConfig_ = builderForValue.build();
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -561,20 +573,19 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeManagedPrometheusConfig(
         com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig value) {
       if (managedPrometheusConfigBuilder_ == null) {
-        if (managedPrometheusConfig_ != null) {
-          managedPrometheusConfig_ =
-              com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.newBuilder(
-                      managedPrometheusConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && managedPrometheusConfig_ != null
+            && managedPrometheusConfig_
+                != com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.getDefaultInstance()) {
+          getManagedPrometheusConfigBuilder().mergeFrom(value);
         } else {
           managedPrometheusConfig_ = value;
         }
-        onChanged();
       } else {
         managedPrometheusConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -588,14 +599,13 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearManagedPrometheusConfig() {
-      if (managedPrometheusConfigBuilder_ == null) {
-        managedPrometheusConfig_ = null;
-        onChanged();
-      } else {
-        managedPrometheusConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      managedPrometheusConfig_ = null;
+      if (managedPrometheusConfigBuilder_ != null) {
+        managedPrometheusConfigBuilder_.dispose();
         managedPrometheusConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -610,7 +620,7 @@ public final class MonitoringConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.gkemulticloud.v1.ManagedPrometheusConfig.Builder
         getManagedPrometheusConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getManagedPrometheusConfigFieldBuilder().getBuilder();
     }

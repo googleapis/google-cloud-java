@@ -109,7 +109,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int NOTIFICATION_CHANNEL_FIELD_NUMBER = 3;
@@ -172,7 +172,9 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.monitoring.v3.NotificationChannelOrBuilder getNotificationChannelOrBuilder() {
-    return getNotificationChannel();
+    return notificationChannel_ == null
+        ? com.google.monitoring.v3.NotificationChannel.getDefaultInstance()
+        : notificationChannel_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +394,15 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (notificationChannelBuilder_ == null) {
-        notificationChannel_ = null;
-      } else {
-        notificationChannel_ = null;
+      notificationChannel_ = null;
+      if (notificationChannelBuilder_ != null) {
+        notificationChannelBuilder_.dispose();
         notificationChannelBuilder_ = null;
       }
       return this;
@@ -431,18 +432,24 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     public com.google.monitoring.v3.UpdateNotificationChannelRequest buildPartial() {
       com.google.monitoring.v3.UpdateNotificationChannelRequest result =
           new com.google.monitoring.v3.UpdateNotificationChannelRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (notificationChannelBuilder_ == null) {
-        result.notificationChannel_ = notificationChannel_;
-      } else {
-        result.notificationChannel_ = notificationChannelBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UpdateNotificationChannelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.notificationChannel_ =
+            notificationChannelBuilder_ == null
+                ? notificationChannel_
+                : notificationChannelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,14 +533,14 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getNotificationChannelFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -553,6 +560,8 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
@@ -571,7 +580,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -608,11 +617,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,11 +636,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -645,17 +654,18 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -668,14 +678,13 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -688,7 +697,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -759,7 +768,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * @return Whether the notificationChannel field is set.
      */
     public boolean hasNotificationChannel() {
-      return notificationChannelBuilder_ != null || notificationChannel_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -806,11 +815,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         notificationChannel_ = value;
-        onChanged();
       } else {
         notificationChannelBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,11 +840,11 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
         com.google.monitoring.v3.NotificationChannel.Builder builderForValue) {
       if (notificationChannelBuilder_ == null) {
         notificationChannel_ = builderForValue.build();
-        onChanged();
       } else {
         notificationChannelBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -854,19 +863,19 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      */
     public Builder mergeNotificationChannel(com.google.monitoring.v3.NotificationChannel value) {
       if (notificationChannelBuilder_ == null) {
-        if (notificationChannel_ != null) {
-          notificationChannel_ =
-              com.google.monitoring.v3.NotificationChannel.newBuilder(notificationChannel_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && notificationChannel_ != null
+            && notificationChannel_
+                != com.google.monitoring.v3.NotificationChannel.getDefaultInstance()) {
+          getNotificationChannelBuilder().mergeFrom(value);
         } else {
           notificationChannel_ = value;
         }
-        onChanged();
       } else {
         notificationChannelBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -884,14 +893,13 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearNotificationChannel() {
-      if (notificationChannelBuilder_ == null) {
-        notificationChannel_ = null;
-        onChanged();
-      } else {
-        notificationChannel_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      notificationChannel_ = null;
+      if (notificationChannelBuilder_ != null) {
+        notificationChannelBuilder_.dispose();
         notificationChannelBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -909,7 +917,7 @@ public final class UpdateNotificationChannelRequest extends com.google.protobuf.
      * </code>
      */
     public com.google.monitoring.v3.NotificationChannel.Builder getNotificationChannelBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getNotificationChannelFieldBuilder().getBuilder();
     }

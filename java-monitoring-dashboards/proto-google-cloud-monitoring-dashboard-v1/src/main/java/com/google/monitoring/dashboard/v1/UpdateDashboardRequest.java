@@ -116,11 +116,13 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.DashboardOrBuilder getDashboardOrBuilder() {
-    return getDashboard();
+    return dashboard_ == null
+        ? com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()
+        : dashboard_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -350,14 +352,13 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (dashboardBuilder_ == null) {
-        dashboard_ = null;
-      } else {
-        dashboard_ = null;
+      bitField0_ = 0;
+      dashboard_ = null;
+      if (dashboardBuilder_ != null) {
+        dashboardBuilder_.dispose();
         dashboardBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -385,14 +386,21 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     public com.google.monitoring.dashboard.v1.UpdateDashboardRequest buildPartial() {
       com.google.monitoring.dashboard.v1.UpdateDashboardRequest result =
           new com.google.monitoring.dashboard.v1.UpdateDashboardRequest(this);
-      if (dashboardBuilder_ == null) {
-        result.dashboard_ = dashboard_;
-      } else {
-        result.dashboard_ = dashboardBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.UpdateDashboardRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.dashboard_ = dashboardBuilder_ == null ? dashboard_ : dashboardBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -476,13 +484,13 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getDashboardFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             default:
@@ -501,6 +509,8 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.monitoring.dashboard.v1.Dashboard dashboard_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -522,7 +532,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
      * @return Whether the dashboard field is set.
      */
     public boolean hasDashboard() {
-      return dashboardBuilder_ != null || dashboard_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -563,11 +573,11 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         dashboard_ = value;
-        onChanged();
       } else {
         dashboardBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -585,11 +595,11 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
         com.google.monitoring.dashboard.v1.Dashboard.Builder builderForValue) {
       if (dashboardBuilder_ == null) {
         dashboard_ = builderForValue.build();
-        onChanged();
       } else {
         dashboardBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -605,19 +615,18 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeDashboard(com.google.monitoring.dashboard.v1.Dashboard value) {
       if (dashboardBuilder_ == null) {
-        if (dashboard_ != null) {
-          dashboard_ =
-              com.google.monitoring.dashboard.v1.Dashboard.newBuilder(dashboard_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && dashboard_ != null
+            && dashboard_ != com.google.monitoring.dashboard.v1.Dashboard.getDefaultInstance()) {
+          getDashboardBuilder().mergeFrom(value);
         } else {
           dashboard_ = value;
         }
-        onChanged();
       } else {
         dashboardBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -632,14 +641,13 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearDashboard() {
-      if (dashboardBuilder_ == null) {
-        dashboard_ = null;
-        onChanged();
-      } else {
-        dashboard_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      dashboard_ = null;
+      if (dashboardBuilder_ != null) {
+        dashboardBuilder_.dispose();
         dashboardBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -654,7 +662,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.monitoring.dashboard.v1.Dashboard.Builder getDashboardBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDashboardFieldBuilder().getBuilder();
     }
@@ -739,6 +747,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -755,7 +764,7 @@ public final class UpdateDashboardRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;

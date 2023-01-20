@@ -72,6 +72,8 @@ public final class ListMetricsScopesByMonitoredProjectResponse
   }
 
   public static final int METRICS_SCOPES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.metricsscope.v1.MetricsScope> metricsScopes_;
   /**
    *
@@ -358,6 +360,7 @@ public final class ListMetricsScopesByMonitoredProjectResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (metricsScopesBuilder_ == null) {
         metricsScopes_ = java.util.Collections.emptyList();
       } else {
@@ -398,7 +401,16 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse result =
           new com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse(
               this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse result) {
       if (metricsScopesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           metricsScopes_ = java.util.Collections.unmodifiableList(metricsScopes_);
@@ -408,8 +420,11 @@ public final class ListMetricsScopesByMonitoredProjectResponse
       } else {
         result.metricsScopes_ = metricsScopesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

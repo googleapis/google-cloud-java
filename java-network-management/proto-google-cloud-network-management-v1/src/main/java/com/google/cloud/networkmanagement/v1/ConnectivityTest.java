@@ -83,7 +83,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -134,7 +136,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -283,7 +287,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1.EndpointOrBuilder getSourceOrBuilder() {
-    return getSource();
+    return source_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.getDefaultInstance()
+        : source_;
   }
 
   public static final int DESTINATION_FIELD_NUMBER = 4;
@@ -376,11 +382,15 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1.EndpointOrBuilder getDestinationOrBuilder() {
-    return getDestination();
+    return destination_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.getDefaultInstance()
+        : destination_;
   }
 
   public static final int PROTOCOL_FIELD_NUMBER = 5;
-  private volatile java.lang.Object protocol_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object protocol_ = "";
   /**
    *
    *
@@ -429,6 +439,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RELATED_PROJECTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList relatedProjects_;
   /**
    *
@@ -494,7 +506,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -555,6 +569,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -612,7 +627,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -686,7 +704,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 11;
@@ -735,7 +753,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int REACHABILITY_DETAILS_FIELD_NUMBER = 12;
@@ -796,7 +814,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder
       getReachabilityDetailsOrBuilder() {
-    return getReachabilityDetails();
+    return reachabilityDetails_ == null
+        ? com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()
+        : reachabilityDetails_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1148,45 +1168,37 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
-      if (sourceBuilder_ == null) {
-        source_ = null;
-      } else {
-        source_ = null;
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-      } else {
-        destination_ = null;
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
       protocol_ = "";
-
       relatedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       displayName_ = "";
-
       internalGetMutableLabels().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (reachabilityDetailsBuilder_ == null) {
-        reachabilityDetails_ = null;
-      } else {
-        reachabilityDetails_ = null;
+      reachabilityDetails_ = null;
+      if (reachabilityDetailsBuilder_ != null) {
+        reachabilityDetailsBuilder_.dispose();
         reachabilityDetailsBuilder_ = null;
       }
       return this;
@@ -1216,45 +1228,60 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.networkmanagement.v1.ConnectivityTest buildPartial() {
       com.google.cloud.networkmanagement.v1.ConnectivityTest result =
           new com.google.cloud.networkmanagement.v1.ConnectivityTest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (sourceBuilder_ == null) {
-        result.source_ = source_;
-      } else {
-        result.source_ = sourceBuilder_.build();
-      }
-      if (destinationBuilder_ == null) {
-        result.destination_ = destination_;
-      } else {
-        result.destination_ = destinationBuilder_.build();
-      }
-      result.protocol_ = protocol_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        relatedProjects_ = relatedProjects_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.relatedProjects_ = relatedProjects_;
-      result.displayName_ = displayName_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (reachabilityDetailsBuilder_ == null) {
-        result.reachabilityDetails_ = reachabilityDetails_;
-      } else {
-        result.reachabilityDetails_ = reachabilityDetailsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1.ConnectivityTest result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        relatedProjects_ = relatedProjects_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.relatedProjects_ = relatedProjects_;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1.ConnectivityTest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.source_ = sourceBuilder_ == null ? source_ : sourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.destination_ =
+            destinationBuilder_ == null ? destination_ : destinationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.protocol_ = protocol_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.reachabilityDetails_ =
+            reachabilityDetailsBuilder_ == null
+                ? reachabilityDetails_
+                : reachabilityDetailsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1305,10 +1332,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSource()) {
@@ -1319,12 +1348,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getProtocol().isEmpty()) {
         protocol_ = other.protocol_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.relatedProjects_.isEmpty()) {
         if (relatedProjects_.isEmpty()) {
           relatedProjects_ = other.relatedProjects_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureRelatedProjectsIsMutable();
           relatedProjects_.addAll(other.relatedProjects_);
@@ -1333,9 +1363,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000080;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1374,31 +1406,31 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getDestinationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 protocol_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1411,7 +1443,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
@@ -1423,25 +1455,26 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getReachabilityDetailsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             default:
@@ -1527,8 +1560,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1545,8 +1578,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1568,8 +1601,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1638,8 +1671,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1656,8 +1689,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1679,8 +1712,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1721,7 +1754,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return Whether the source field is set.
      */
     public boolean hasSource() {
-      return sourceBuilder_ != null || source_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1794,11 +1827,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         source_ = value;
-        onChanged();
       } else {
         sourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1832,11 +1865,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.networkmanagement.v1.Endpoint.Builder builderForValue) {
       if (sourceBuilder_ == null) {
         source_ = builderForValue.build();
-        onChanged();
       } else {
         sourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1868,19 +1901,18 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSource(com.google.cloud.networkmanagement.v1.Endpoint value) {
       if (sourceBuilder_ == null) {
-        if (source_ != null) {
-          source_ =
-              com.google.cloud.networkmanagement.v1.Endpoint.newBuilder(source_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && source_ != null
+            && source_ != com.google.cloud.networkmanagement.v1.Endpoint.getDefaultInstance()) {
+          getSourceBuilder().mergeFrom(value);
         } else {
           source_ = value;
         }
-        onChanged();
       } else {
         sourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1911,14 +1943,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSource() {
-      if (sourceBuilder_ == null) {
-        source_ = null;
-        onChanged();
-      } else {
-        source_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      source_ = null;
+      if (sourceBuilder_ != null) {
+        sourceBuilder_.dispose();
         sourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1949,7 +1980,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.Builder getSourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
@@ -2066,7 +2097,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return Whether the destination field is set.
      */
     public boolean hasDestination() {
-      return destinationBuilder_ != null || destination_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2133,11 +2164,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         destination_ = value;
-        onChanged();
       } else {
         destinationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2168,11 +2199,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.networkmanagement.v1.Endpoint.Builder builderForValue) {
       if (destinationBuilder_ == null) {
         destination_ = builderForValue.build();
-        onChanged();
       } else {
         destinationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2201,19 +2232,19 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDestination(com.google.cloud.networkmanagement.v1.Endpoint value) {
       if (destinationBuilder_ == null) {
-        if (destination_ != null) {
-          destination_ =
-              com.google.cloud.networkmanagement.v1.Endpoint.newBuilder(destination_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && destination_ != null
+            && destination_
+                != com.google.cloud.networkmanagement.v1.Endpoint.getDefaultInstance()) {
+          getDestinationBuilder().mergeFrom(value);
         } else {
           destination_ = value;
         }
-        onChanged();
       } else {
         destinationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2241,14 +2272,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDestination() {
-      if (destinationBuilder_ == null) {
-        destination_ = null;
-        onChanged();
-      } else {
-        destination_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      destination_ = null;
+      if (destinationBuilder_ != null) {
+        destinationBuilder_.dispose();
         destinationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2276,7 +2306,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.networkmanagement.v1.Endpoint.Builder getDestinationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDestinationFieldBuilder().getBuilder();
     }
@@ -2415,8 +2445,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       protocol_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2432,8 +2462,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProtocol() {
-
       protocol_ = getDefaultInstance().getProtocol();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2454,8 +2484,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       protocol_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2464,9 +2494,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRelatedProjectsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         relatedProjects_ = new com.google.protobuf.LazyStringArrayList(relatedProjects_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2609,7 +2639,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRelatedProjects() {
       relatedProjects_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2698,8 +2728,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2715,8 +2745,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2737,8 +2767,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2754,14 +2784,14 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return labels_;
     }
 
@@ -2813,8 +2843,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2843,6 +2875,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2865,6 +2898,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2883,8 +2917,8 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2898,6 +2932,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2921,7 +2956,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2962,11 +2997,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2983,11 +3018,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3003,17 +3038,18 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3028,14 +3064,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3050,7 +3085,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3122,7 +3157,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3163,11 +3198,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3184,11 +3219,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3204,17 +3239,18 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3229,14 +3265,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3251,7 +3286,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3325,7 +3360,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * @return Whether the reachabilityDetails field is set.
      */
     public boolean hasReachabilityDetails() {
-      return reachabilityDetailsBuilder_ != null || reachabilityDetails_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3371,11 +3406,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         reachabilityDetails_ = value;
-        onChanged();
       } else {
         reachabilityDetailsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3395,11 +3430,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder builderForValue) {
       if (reachabilityDetailsBuilder_ == null) {
         reachabilityDetails_ = builderForValue.build();
-        onChanged();
       } else {
         reachabilityDetailsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3418,20 +3453,19 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     public Builder mergeReachabilityDetails(
         com.google.cloud.networkmanagement.v1.ReachabilityDetails value) {
       if (reachabilityDetailsBuilder_ == null) {
-        if (reachabilityDetails_ != null) {
-          reachabilityDetails_ =
-              com.google.cloud.networkmanagement.v1.ReachabilityDetails.newBuilder(
-                      reachabilityDetails_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && reachabilityDetails_ != null
+            && reachabilityDetails_
+                != com.google.cloud.networkmanagement.v1.ReachabilityDetails.getDefaultInstance()) {
+          getReachabilityDetailsBuilder().mergeFrom(value);
         } else {
           reachabilityDetails_ = value;
         }
-        onChanged();
       } else {
         reachabilityDetailsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3448,14 +3482,13 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearReachabilityDetails() {
-      if (reachabilityDetailsBuilder_ == null) {
-        reachabilityDetails_ = null;
-        onChanged();
-      } else {
-        reachabilityDetails_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      reachabilityDetails_ = null;
+      if (reachabilityDetailsBuilder_ != null) {
+        reachabilityDetailsBuilder_.dispose();
         reachabilityDetailsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3473,7 +3506,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkmanagement.v1.ReachabilityDetails.Builder
         getReachabilityDetailsBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getReachabilityDetailsFieldBuilder().getBuilder();
     }

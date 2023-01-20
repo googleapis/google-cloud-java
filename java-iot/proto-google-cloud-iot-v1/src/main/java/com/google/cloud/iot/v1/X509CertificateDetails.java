@@ -71,7 +71,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int ISSUER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issuer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issuer_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int SUBJECT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subject_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subject_ = "";
   /**
    *
    *
@@ -211,7 +215,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
-    return getStartTime();
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
   public static final int EXPIRY_TIME_FIELD_NUMBER = 4;
@@ -257,11 +261,13 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpiryTimeOrBuilder() {
-    return getExpiryTime();
+    return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
   }
 
   public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 5;
-  private volatile java.lang.Object signatureAlgorithm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object signatureAlgorithm_ = "";
   /**
    *
    *
@@ -310,7 +316,9 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
   }
 
   public static final int PUBLIC_KEY_TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object publicKeyType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicKeyType_ = "";
   /**
    *
    *
@@ -610,26 +618,21 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issuer_ = "";
-
       subject_ = "";
-
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-      } else {
-        startTime_ = null;
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-      if (expiryTimeBuilder_ == null) {
-        expiryTime_ = null;
-      } else {
-        expiryTime_ = null;
+      expiryTime_ = null;
+      if (expiryTimeBuilder_ != null) {
+        expiryTimeBuilder_.dispose();
         expiryTimeBuilder_ = null;
       }
       signatureAlgorithm_ = "";
-
       publicKeyType_ = "";
-
       return this;
     }
 
@@ -657,22 +660,33 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     public com.google.cloud.iot.v1.X509CertificateDetails buildPartial() {
       com.google.cloud.iot.v1.X509CertificateDetails result =
           new com.google.cloud.iot.v1.X509CertificateDetails(this);
-      result.issuer_ = issuer_;
-      result.subject_ = subject_;
-      if (startTimeBuilder_ == null) {
-        result.startTime_ = startTime_;
-      } else {
-        result.startTime_ = startTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (expiryTimeBuilder_ == null) {
-        result.expiryTime_ = expiryTime_;
-      } else {
-        result.expiryTime_ = expiryTimeBuilder_.build();
-      }
-      result.signatureAlgorithm_ = signatureAlgorithm_;
-      result.publicKeyType_ = publicKeyType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.X509CertificateDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issuer_ = issuer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.subject_ = subject_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.expiryTime_ = expiryTimeBuilder_ == null ? expiryTime_ : expiryTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.signatureAlgorithm_ = signatureAlgorithm_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.publicKeyType_ = publicKeyType_;
+      }
     }
 
     @java.lang.Override
@@ -722,10 +736,12 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       if (other == com.google.cloud.iot.v1.X509CertificateDetails.getDefaultInstance()) return this;
       if (!other.getIssuer().isEmpty()) {
         issuer_ = other.issuer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSubject().isEmpty()) {
         subject_ = other.subject_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStartTime()) {
@@ -736,10 +752,12 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       }
       if (!other.getSignatureAlgorithm().isEmpty()) {
         signatureAlgorithm_ = other.signatureAlgorithm_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getPublicKeyType().isEmpty()) {
         publicKeyType_ = other.publicKeyType_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -771,37 +789,37 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
             case 10:
               {
                 issuer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 subject_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getExpiryTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 signatureAlgorithm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 publicKeyType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -820,6 +838,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object issuer_ = "";
     /**
@@ -882,8 +902,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       issuer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,8 +919,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIssuer() {
-
       issuer_ = getDefaultInstance().getIssuer();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -921,8 +941,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issuer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -988,8 +1008,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       subject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1005,8 +1025,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSubject() {
-
       subject_ = getDefaultInstance().getSubject();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1027,8 +1047,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subject_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1051,7 +1071,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return startTimeBuilder_ != null || startTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1086,11 +1106,11 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         startTime_ = value;
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1105,11 +1125,11 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
-        onChanged();
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1123,17 +1143,18 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (startTime_ != null) {
-          startTime_ =
-              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
         } else {
           startTime_ = value;
         }
-        onChanged();
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1146,14 +1167,13 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public Builder clearStartTime() {
-      if (startTimeBuilder_ == null) {
-        startTime_ = null;
-        onChanged();
-      } else {
-        startTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1166,7 +1186,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -1230,7 +1250,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return Whether the expiryTime field is set.
      */
     public boolean hasExpiryTime() {
-      return expiryTimeBuilder_ != null || expiryTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1267,11 +1287,11 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         expiryTime_ = value;
-        onChanged();
       } else {
         expiryTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1286,11 +1306,11 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
     public Builder setExpiryTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expiryTimeBuilder_ == null) {
         expiryTime_ = builderForValue.build();
-        onChanged();
       } else {
         expiryTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1304,17 +1324,18 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      */
     public Builder mergeExpiryTime(com.google.protobuf.Timestamp value) {
       if (expiryTimeBuilder_ == null) {
-        if (expiryTime_ != null) {
-          expiryTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expiryTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && expiryTime_ != null
+            && expiryTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpiryTimeBuilder().mergeFrom(value);
         } else {
           expiryTime_ = value;
         }
-        onChanged();
       } else {
         expiryTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1327,14 +1348,13 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
      */
     public Builder clearExpiryTime() {
-      if (expiryTimeBuilder_ == null) {
-        expiryTime_ = null;
-        onChanged();
-      } else {
-        expiryTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      expiryTime_ = null;
+      if (expiryTimeBuilder_ != null) {
+        expiryTimeBuilder_.dispose();
         expiryTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1347,7 +1367,7 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpiryTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getExpiryTimeFieldBuilder().getBuilder();
     }
@@ -1456,8 +1476,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       signatureAlgorithm_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1473,8 +1493,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSignatureAlgorithm() {
-
       signatureAlgorithm_ = getDefaultInstance().getSignatureAlgorithm();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1495,8 +1515,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       signatureAlgorithm_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1562,8 +1582,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicKeyType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1579,8 +1599,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearPublicKeyType() {
-
       publicKeyType_ = getDefaultInstance().getPublicKeyType();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1601,8 +1621,8 @@ public final class X509CertificateDetails extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicKeyType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

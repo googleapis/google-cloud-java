@@ -70,7 +70,9 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
   }
 
   public static final int PUBLIC_KEY_DATA_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString publicKeyData_;
+  private com.google.protobuf.ByteString publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -354,10 +356,9 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       publicKeyData_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -385,10 +386,21 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
     public com.google.iam.admin.v1.UploadServiceAccountKeyRequest buildPartial() {
       com.google.iam.admin.v1.UploadServiceAccountKeyRequest result =
           new com.google.iam.admin.v1.UploadServiceAccountKeyRequest(this);
-      result.name_ = name_;
-      result.publicKeyData_ = publicKeyData_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.UploadServiceAccountKeyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicKeyData_ = publicKeyData_;
+      }
     }
 
     @java.lang.Override
@@ -439,6 +451,7 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPublicKeyData() != com.google.protobuf.ByteString.EMPTY) {
@@ -473,13 +486,13 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 publicKeyData_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -498,6 +511,8 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -572,8 +587,8 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -593,8 +608,8 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -619,8 +634,8 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -663,8 +678,8 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicKeyData_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -683,7 +698,7 @@ public final class UploadServiceAccountKeyRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearPublicKeyData() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       publicKeyData_ = getDefaultInstance().getPublicKeyData();
       onChanged();
       return this;

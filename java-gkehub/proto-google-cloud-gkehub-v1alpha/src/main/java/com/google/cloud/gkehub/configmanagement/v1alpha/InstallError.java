@@ -68,7 +68,9 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       errorMessage_ = "";
-
       return this;
     }
 
@@ -344,9 +346,19 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1alpha.InstallError buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1alpha.InstallError result =
           new com.google.cloud.gkehub.configmanagement.v1alpha.InstallError(this);
-      result.errorMessage_ = errorMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1alpha.InstallError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +410,7 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +442,7 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +461,8 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object errorMessage_ = "";
     /**
@@ -510,8 +525,8 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -527,8 +542,8 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -549,8 +564,8 @@ public final class InstallError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

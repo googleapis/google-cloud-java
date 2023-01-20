@@ -69,7 +69,9 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,11 +187,15 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsClusterOrBuilder getAwsClusterOrBuilder() {
-    return getAwsCluster();
+    return awsCluster_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsCluster.getDefaultInstance()
+        : awsCluster_;
   }
 
   public static final int AWS_CLUSTER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object awsClusterId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object awsClusterId_ = "";
   /**
    *
    *
@@ -250,7 +256,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -497,18 +503,15 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (awsClusterBuilder_ == null) {
-        awsCluster_ = null;
-      } else {
-        awsCluster_ = null;
+      awsCluster_ = null;
+      if (awsClusterBuilder_ != null) {
+        awsClusterBuilder_.dispose();
         awsClusterBuilder_ = null;
       }
       awsClusterId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -536,16 +539,27 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     public com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest result =
           new com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest(this);
-      result.parent_ = parent_;
-      if (awsClusterBuilder_ == null) {
-        result.awsCluster_ = awsCluster_;
-      } else {
-        result.awsCluster_ = awsClusterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.awsClusterId_ = awsClusterId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.awsCluster_ = awsClusterBuilder_ == null ? awsCluster_ : awsClusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.awsClusterId_ = awsClusterId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -596,6 +610,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAwsCluster()) {
@@ -603,6 +618,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       }
       if (!other.getAwsClusterId().isEmpty()) {
         awsClusterId_ = other.awsClusterId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -637,25 +653,25 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAwsClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 awsClusterId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -674,6 +690,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -757,8 +775,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +799,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -810,8 +828,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,7 +855,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * @return Whether the awsCluster field is set.
      */
     public boolean hasAwsCluster() {
-      return awsClusterBuilder_ != null || awsCluster_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -880,11 +898,11 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         awsCluster_ = value;
-        onChanged();
       } else {
         awsClusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +921,11 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         com.google.cloud.gkemulticloud.v1.AwsCluster.Builder builderForValue) {
       if (awsClusterBuilder_ == null) {
         awsCluster_ = builderForValue.build();
-        onChanged();
       } else {
         awsClusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -924,19 +942,18 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAwsCluster(com.google.cloud.gkemulticloud.v1.AwsCluster value) {
       if (awsClusterBuilder_ == null) {
-        if (awsCluster_ != null) {
-          awsCluster_ =
-              com.google.cloud.gkemulticloud.v1.AwsCluster.newBuilder(awsCluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && awsCluster_ != null
+            && awsCluster_ != com.google.cloud.gkemulticloud.v1.AwsCluster.getDefaultInstance()) {
+          getAwsClusterBuilder().mergeFrom(value);
         } else {
           awsCluster_ = value;
         }
-        onChanged();
       } else {
         awsClusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +969,13 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAwsCluster() {
-      if (awsClusterBuilder_ == null) {
-        awsCluster_ = null;
-        onChanged();
-      } else {
-        awsCluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      awsCluster_ = null;
+      if (awsClusterBuilder_ != null) {
+        awsClusterBuilder_.dispose();
         awsClusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +991,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsCluster.Builder getAwsClusterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAwsClusterFieldBuilder().getBuilder();
     }
@@ -1108,8 +1124,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       awsClusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1131,8 +1147,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAwsClusterId() {
-
       awsClusterId_ = getDefaultInstance().getAwsClusterId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1159,8 +1175,8 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       awsClusterId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1196,6 +1212,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1211,7 +1228,7 @@ public final class CreateAwsClusterRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

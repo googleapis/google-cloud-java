@@ -572,6 +572,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ANALYSIS_TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList analysisType_;
     /**
      * <code>repeated string analysis_type = 1;</code>
@@ -816,6 +818,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         analysisType_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
@@ -845,14 +848,25 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted buildPartial() {
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result =
             new io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           analysisType_ = analysisType_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.analysisType_ = analysisType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1144,7 +1158,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   }
 
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
-  private int continuousAnalysis_;
+  private int continuousAnalysis_ = 0;
   /**
    *
    *
@@ -1173,16 +1187,15 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis getContinuousAnalysis() {
-    @SuppressWarnings("deprecation")
     io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis result =
-        io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.valueOf(continuousAnalysis_);
+        io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.forNumber(continuousAnalysis_);
     return result == null
         ? io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.UNRECOGNIZED
         : result;
   }
 
   public static final int ANALYSIS_STATUS_FIELD_NUMBER = 2;
-  private int analysisStatus_;
+  private int analysisStatus_ = 0;
   /**
    *
    *
@@ -1211,9 +1224,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus() {
-    @SuppressWarnings("deprecation")
     io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus result =
-        io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.valueOf(analysisStatus_);
+        io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.forNumber(analysisStatus_);
     return result == null ? io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.UNRECOGNIZED : result;
   }
 
@@ -1243,10 +1255,14 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompletedOrBuilder
       getAnalysisCompletedOrBuilder() {
-    return getAnalysisCompleted();
+    return analysisCompleted_ == null
+        ? io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()
+        : analysisCompleted_;
   }
 
   public static final int ANALYSIS_ERROR_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> analysisError_;
   /**
    *
@@ -1370,11 +1386,15 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getAnalysisStatusErrorOrBuilder() {
-    return getAnalysisStatusError();
+    return analysisStatusError_ == null
+        ? com.google.rpc.Status.getDefaultInstance()
+        : analysisStatusError_;
   }
 
   public static final int CPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object cpe_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cpe_ = "";
   /**
    *
    *
@@ -1467,7 +1487,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastScanTimeOrBuilder() {
-    return getLastScanTime();
+    return lastScanTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastScanTime_;
   }
 
   public static final int ARCHIVE_TIME_FIELD_NUMBER = 6;
@@ -1516,7 +1538,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getArchiveTimeOrBuilder() {
-    return getArchiveTime();
+    return archiveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : archiveTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1806,14 +1828,12 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       continuousAnalysis_ = 0;
-
       analysisStatus_ = 0;
-
-      if (analysisCompletedBuilder_ == null) {
-        analysisCompleted_ = null;
-      } else {
-        analysisCompleted_ = null;
+      analysisCompleted_ = null;
+      if (analysisCompletedBuilder_ != null) {
+        analysisCompletedBuilder_.dispose();
         analysisCompletedBuilder_ = null;
       }
       if (analysisErrorBuilder_ == null) {
@@ -1822,25 +1842,21 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         analysisError_ = null;
         analysisErrorBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (analysisStatusErrorBuilder_ == null) {
-        analysisStatusError_ = null;
-      } else {
-        analysisStatusError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      analysisStatusError_ = null;
+      if (analysisStatusErrorBuilder_ != null) {
+        analysisStatusErrorBuilder_.dispose();
         analysisStatusErrorBuilder_ = null;
       }
       cpe_ = "";
-
-      if (lastScanTimeBuilder_ == null) {
-        lastScanTime_ = null;
-      } else {
-        lastScanTime_ = null;
+      lastScanTime_ = null;
+      if (lastScanTimeBuilder_ != null) {
+        lastScanTimeBuilder_.dispose();
         lastScanTimeBuilder_ = null;
       }
-      if (archiveTimeBuilder_ == null) {
-        archiveTime_ = null;
-      } else {
-        archiveTime_ = null;
+      archiveTime_ = null;
+      if (archiveTimeBuilder_ != null) {
+        archiveTimeBuilder_.dispose();
         archiveTimeBuilder_ = null;
       }
       return this;
@@ -1868,41 +1884,57 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence buildPartial() {
       io.grafeas.v1.DiscoveryOccurrence result = new io.grafeas.v1.DiscoveryOccurrence(this);
-      int from_bitField0_ = bitField0_;
-      result.continuousAnalysis_ = continuousAnalysis_;
-      result.analysisStatus_ = analysisStatus_;
-      if (analysisCompletedBuilder_ == null) {
-        result.analysisCompleted_ = analysisCompleted_;
-      } else {
-        result.analysisCompleted_ = analysisCompletedBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.DiscoveryOccurrence result) {
       if (analysisErrorBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           analysisError_ = java.util.Collections.unmodifiableList(analysisError_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.analysisError_ = analysisError_;
       } else {
         result.analysisError_ = analysisErrorBuilder_.build();
       }
-      if (analysisStatusErrorBuilder_ == null) {
-        result.analysisStatusError_ = analysisStatusError_;
-      } else {
-        result.analysisStatusError_ = analysisStatusErrorBuilder_.build();
+    }
+
+    private void buildPartial0(io.grafeas.v1.DiscoveryOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.continuousAnalysis_ = continuousAnalysis_;
       }
-      result.cpe_ = cpe_;
-      if (lastScanTimeBuilder_ == null) {
-        result.lastScanTime_ = lastScanTime_;
-      } else {
-        result.lastScanTime_ = lastScanTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.analysisStatus_ = analysisStatus_;
       }
-      if (archiveTimeBuilder_ == null) {
-        result.archiveTime_ = archiveTime_;
-      } else {
-        result.archiveTime_ = archiveTimeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.analysisCompleted_ =
+            analysisCompletedBuilder_ == null
+                ? analysisCompleted_
+                : analysisCompletedBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.analysisStatusError_ =
+            analysisStatusErrorBuilder_ == null
+                ? analysisStatusError_
+                : analysisStatusErrorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cpe_ = cpe_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.lastScanTime_ =
+            lastScanTimeBuilder_ == null ? lastScanTime_ : lastScanTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.archiveTime_ =
+            archiveTimeBuilder_ == null ? archiveTime_ : archiveTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1963,7 +1995,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         if (!other.analysisError_.isEmpty()) {
           if (analysisError_.isEmpty()) {
             analysisError_ = other.analysisError_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureAnalysisErrorIsMutable();
             analysisError_.addAll(other.analysisError_);
@@ -1976,7 +2008,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             analysisErrorBuilder_.dispose();
             analysisErrorBuilder_ = null;
             analysisError_ = other.analysisError_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             analysisErrorBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAnalysisErrorFieldBuilder()
@@ -1991,6 +2023,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCpe().isEmpty()) {
         cpe_ = other.cpe_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasLastScanTime()) {
@@ -2028,45 +2061,45 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 continuousAnalysis_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 analysisStatus_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getAnalysisStatusErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 cpe_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getLastScanTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getArchiveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getAnalysisCompletedFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 66:
@@ -2129,8 +2162,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setContinuousAnalysisValue(int value) {
-
       continuousAnalysis_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2147,9 +2180,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis getContinuousAnalysis() {
-      @SuppressWarnings("deprecation")
       io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis result =
-          io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.valueOf(continuousAnalysis_);
+          io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.forNumber(continuousAnalysis_);
       return result == null
           ? io.grafeas.v1.DiscoveryOccurrence.ContinuousAnalysis.UNRECOGNIZED
           : result;
@@ -2171,7 +2203,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       continuousAnalysis_ = value.getNumber();
       onChanged();
       return this;
@@ -2188,7 +2220,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearContinuousAnalysis() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       continuousAnalysis_ = 0;
       onChanged();
       return this;
@@ -2223,8 +2255,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setAnalysisStatusValue(int value) {
-
       analysisStatus_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2241,9 +2273,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus getAnalysisStatus() {
-      @SuppressWarnings("deprecation")
       io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus result =
-          io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.valueOf(analysisStatus_);
+          io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.forNumber(analysisStatus_);
       return result == null
           ? io.grafeas.v1.DiscoveryOccurrence.AnalysisStatus.UNRECOGNIZED
           : result;
@@ -2264,7 +2295,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       analysisStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -2281,7 +2312,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAnalysisStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       analysisStatus_ = 0;
       onChanged();
       return this;
@@ -2299,7 +2330,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return Whether the analysisCompleted field is set.
      */
     public boolean hasAnalysisCompleted() {
-      return analysisCompletedBuilder_ != null || analysisCompleted_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code>
@@ -2322,11 +2353,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         analysisCompleted_ = value;
-        onChanged();
       } else {
         analysisCompletedBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
@@ -2334,48 +2365,47 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder builderForValue) {
       if (analysisCompletedBuilder_ == null) {
         analysisCompleted_ = builderForValue.build();
-        onChanged();
       } else {
         analysisCompletedBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder mergeAnalysisCompleted(
         io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted value) {
       if (analysisCompletedBuilder_ == null) {
-        if (analysisCompleted_ != null) {
-          analysisCompleted_ =
-              io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.newBuilder(analysisCompleted_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && analysisCompleted_ != null
+            && analysisCompleted_
+                != io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.getDefaultInstance()) {
+          getAnalysisCompletedBuilder().mergeFrom(value);
         } else {
           analysisCompleted_ = value;
         }
-        onChanged();
       } else {
         analysisCompletedBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public Builder clearAnalysisCompleted() {
-      if (analysisCompletedBuilder_ == null) {
-        analysisCompleted_ = null;
-        onChanged();
-      } else {
-        analysisCompleted_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      analysisCompleted_ = null;
+      if (analysisCompletedBuilder_ != null) {
+        analysisCompletedBuilder_.dispose();
         analysisCompletedBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted analysis_completed = 7;</code> */
     public io.grafeas.v1.DiscoveryOccurrence.AnalysisCompleted.Builder
         getAnalysisCompletedBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAnalysisCompletedFieldBuilder().getBuilder();
     }
@@ -2412,9 +2442,9 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAnalysisErrorIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         analysisError_ = new java.util.ArrayList<com.google.rpc.Status>(analysisError_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2635,7 +2665,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public Builder clearAnalysisError() {
       if (analysisErrorBuilder_ == null) {
         analysisError_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         analysisErrorBuilder_.clear();
@@ -2761,7 +2791,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
                 analysisError_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         analysisError_ = null;
@@ -2787,7 +2817,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return Whether the analysisStatusError field is set.
      */
     public boolean hasAnalysisStatusError() {
-      return analysisStatusErrorBuilder_ != null || analysisStatusError_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2828,11 +2858,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         analysisStatusError_ = value;
-        onChanged();
       } else {
         analysisStatusErrorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2849,11 +2879,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public Builder setAnalysisStatusError(com.google.rpc.Status.Builder builderForValue) {
       if (analysisStatusErrorBuilder_ == null) {
         analysisStatusError_ = builderForValue.build();
-        onChanged();
       } else {
         analysisStatusErrorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2869,19 +2899,18 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeAnalysisStatusError(com.google.rpc.Status value) {
       if (analysisStatusErrorBuilder_ == null) {
-        if (analysisStatusError_ != null) {
-          analysisStatusError_ =
-              com.google.rpc.Status.newBuilder(analysisStatusError_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && analysisStatusError_ != null
+            && analysisStatusError_ != com.google.rpc.Status.getDefaultInstance()) {
+          getAnalysisStatusErrorBuilder().mergeFrom(value);
         } else {
           analysisStatusError_ = value;
         }
-        onChanged();
       } else {
         analysisStatusErrorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2896,14 +2925,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status analysis_status_error = 3;</code>
      */
     public Builder clearAnalysisStatusError() {
-      if (analysisStatusErrorBuilder_ == null) {
-        analysisStatusError_ = null;
-        onChanged();
-      } else {
-        analysisStatusError_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      analysisStatusError_ = null;
+      if (analysisStatusErrorBuilder_ != null) {
+        analysisStatusErrorBuilder_.dispose();
         analysisStatusErrorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2918,7 +2946,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status analysis_status_error = 3;</code>
      */
     public com.google.rpc.Status.Builder getAnalysisStatusErrorBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAnalysisStatusErrorFieldBuilder().getBuilder();
     }
@@ -3029,8 +3057,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       cpe_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3046,8 +3074,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearCpe() {
-
       cpe_ = getDefaultInstance().getCpe();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3068,8 +3096,8 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cpe_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3092,7 +3120,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return Whether the lastScanTime field is set.
      */
     public boolean hasLastScanTime() {
-      return lastScanTimeBuilder_ != null || lastScanTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3129,11 +3157,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         lastScanTime_ = value;
-        onChanged();
       } else {
         lastScanTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3148,11 +3176,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public Builder setLastScanTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastScanTimeBuilder_ == null) {
         lastScanTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastScanTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3166,19 +3194,18 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeLastScanTime(com.google.protobuf.Timestamp value) {
       if (lastScanTimeBuilder_ == null) {
-        if (lastScanTime_ != null) {
-          lastScanTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastScanTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && lastScanTime_ != null
+            && lastScanTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastScanTimeBuilder().mergeFrom(value);
         } else {
           lastScanTime_ = value;
         }
-        onChanged();
       } else {
         lastScanTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3191,14 +3218,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
      */
     public Builder clearLastScanTime() {
-      if (lastScanTimeBuilder_ == null) {
-        lastScanTime_ = null;
-        onChanged();
-      } else {
-        lastScanTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      lastScanTime_ = null;
+      if (lastScanTimeBuilder_ != null) {
+        lastScanTimeBuilder_.dispose();
         lastScanTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3211,7 +3237,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp last_scan_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastScanTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getLastScanTimeFieldBuilder().getBuilder();
     }
@@ -3279,7 +3305,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * @return Whether the archiveTime field is set.
      */
     public boolean hasArchiveTime() {
-      return archiveTimeBuilder_ != null || archiveTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3320,11 +3346,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         archiveTime_ = value;
-        onChanged();
       } else {
         archiveTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3341,11 +3367,11 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
     public Builder setArchiveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (archiveTimeBuilder_ == null) {
         archiveTime_ = builderForValue.build();
-        onChanged();
       } else {
         archiveTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3361,19 +3387,18 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeArchiveTime(com.google.protobuf.Timestamp value) {
       if (archiveTimeBuilder_ == null) {
-        if (archiveTime_ != null) {
-          archiveTime_ =
-              com.google.protobuf.Timestamp.newBuilder(archiveTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && archiveTime_ != null
+            && archiveTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getArchiveTimeBuilder().mergeFrom(value);
         } else {
           archiveTime_ = value;
         }
-        onChanged();
       } else {
         archiveTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3388,14 +3413,13 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearArchiveTime() {
-      if (archiveTimeBuilder_ == null) {
-        archiveTime_ = null;
-        onChanged();
-      } else {
-        archiveTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      archiveTime_ = null;
+      if (archiveTimeBuilder_ != null) {
+        archiveTimeBuilder_.dispose();
         archiveTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3410,7 +3434,7 @@ public final class DiscoveryOccurrence extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getArchiveTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getArchiveTimeFieldBuilder().getBuilder();
     }

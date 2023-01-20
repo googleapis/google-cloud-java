@@ -68,6 +68,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOWLISTED_SERVICE_ACCOUNTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList allowlistedServiceAccounts_;
   /**
    *
@@ -351,6 +353,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       allowlistedServiceAccounts_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -381,14 +384,26 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec buildPartial() {
       com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result =
           new com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         allowlistedServiceAccounts_ = allowlistedServiceAccounts_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.allowlistedServiceAccounts_ = allowlistedServiceAccounts_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.cloudauditlogging.v1alpha.FeatureSpec result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

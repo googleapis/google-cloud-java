@@ -191,7 +191,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WEIGHT_FIELD_NUMBER = 1;
-    private long weight_;
+    private long weight_ = 0L;
     /**
      *
      *
@@ -212,6 +212,8 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WIDGETS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.monitoring.dashboard.v1.Widget> widgets_;
     /**
      *
@@ -491,15 +493,15 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         weight_ = 0L;
-
         if (widgetsBuilder_ == null) {
           widgets_ = java.util.Collections.emptyList();
         } else {
           widgets_ = null;
           widgetsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -527,19 +529,32 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.dashboard.v1.ColumnLayout.Column buildPartial() {
         com.google.monitoring.dashboard.v1.ColumnLayout.Column result =
             new com.google.monitoring.dashboard.v1.ColumnLayout.Column(this);
-        int from_bitField0_ = bitField0_;
-        result.weight_ = weight_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.monitoring.dashboard.v1.ColumnLayout.Column result) {
         if (widgetsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             widgets_ = java.util.Collections.unmodifiableList(widgets_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.widgets_ = widgets_;
         } else {
           result.widgets_ = widgetsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.dashboard.v1.ColumnLayout.Column result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.weight_ = weight_;
+        }
       }
 
       @java.lang.Override
@@ -597,7 +612,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
           if (!other.widgets_.isEmpty()) {
             if (widgets_.isEmpty()) {
               widgets_ = other.widgets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureWidgetsIsMutable();
               widgets_.addAll(other.widgets_);
@@ -610,7 +625,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
               widgetsBuilder_.dispose();
               widgetsBuilder_ = null;
               widgets_ = other.widgets_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               widgetsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getWidgetsFieldBuilder()
@@ -649,7 +664,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   weight_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
@@ -721,6 +736,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setWeight(long value) {
 
         weight_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -739,7 +755,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWeight() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         weight_ = 0L;
         onChanged();
         return this;
@@ -749,9 +765,9 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureWidgetsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           widgets_ = new java.util.ArrayList<com.google.monitoring.dashboard.v1.Widget>(widgets_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -966,7 +982,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder clearWidgets() {
         if (widgetsBuilder_ == null) {
           widgets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           widgetsBuilder_.clear();
@@ -1088,7 +1104,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
                   com.google.monitoring.dashboard.v1.Widget,
                   com.google.monitoring.dashboard.v1.Widget.Builder,
                   com.google.monitoring.dashboard.v1.WidgetOrBuilder>(
-                  widgets_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                  widgets_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
           widgets_ = null;
         }
         return widgetsBuilder_;
@@ -1159,6 +1175,8 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.ColumnLayout.Column> columns_;
   /**
    *
@@ -1428,6 +1446,7 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (columnsBuilder_ == null) {
         columns_ = java.util.Collections.emptyList();
       } else {
@@ -1462,7 +1481,16 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.ColumnLayout buildPartial() {
       com.google.monitoring.dashboard.v1.ColumnLayout result =
           new com.google.monitoring.dashboard.v1.ColumnLayout(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.dashboard.v1.ColumnLayout result) {
       if (columnsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           columns_ = java.util.Collections.unmodifiableList(columns_);
@@ -1472,8 +1500,10 @@ public final class ColumnLayout extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.columns_ = columnsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.ColumnLayout result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

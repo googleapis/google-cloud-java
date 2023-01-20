@@ -300,7 +300,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RESULT_FIELD_NUMBER = 1;
-  private int result_;
+  private int result_ = 0;
   /**
    *
    *
@@ -329,9 +329,8 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result getResult() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result result =
-        com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.valueOf(result_);
+        com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.forNumber(result_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.UNRECOGNIZED
         : result;
@@ -380,7 +379,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getVerifyTimeOrBuilder() {
-    return getVerifyTime();
+    return verifyTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : verifyTime_;
   }
 
   public static final int ERROR_FIELD_NUMBER = 3;
@@ -426,10 +425,12 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
-    return getError();
+    return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
 
   public static final int TRACES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1beta1.Trace> traces_;
   /**
    *
@@ -749,18 +750,16 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       result_ = 0;
-
-      if (verifyTimeBuilder_ == null) {
-        verifyTime_ = null;
-      } else {
-        verifyTime_ = null;
+      verifyTime_ = null;
+      if (verifyTimeBuilder_ != null) {
+        verifyTimeBuilder_.dispose();
         verifyTimeBuilder_ = null;
       }
-      if (errorBuilder_ == null) {
-        error_ = null;
-      } else {
-        error_ = null;
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
       if (tracesBuilder_ == null) {
@@ -769,7 +768,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         traces_ = null;
         tracesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -798,29 +797,39 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails result =
           new com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails(this);
-      int from_bitField0_ = bitField0_;
-      result.result_ = result_;
-      if (verifyTimeBuilder_ == null) {
-        result.verifyTime_ = verifyTime_;
-      } else {
-        result.verifyTime_ = verifyTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (errorBuilder_ == null) {
-        result.error_ = error_;
-      } else {
-        result.error_ = errorBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails result) {
       if (tracesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           traces_ = java.util.Collections.unmodifiableList(traces_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.traces_ = traces_;
       } else {
         result.traces_ = tracesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = result_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.verifyTime_ = verifyTimeBuilder_ == null ? verifyTime_ : verifyTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -883,7 +892,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         if (!other.traces_.isEmpty()) {
           if (traces_.isEmpty()) {
             traces_ = other.traces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureTracesIsMutable();
             traces_.addAll(other.traces_);
@@ -896,7 +905,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
             tracesBuilder_.dispose();
             tracesBuilder_ = null;
             traces_ = other.traces_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             tracesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTracesFieldBuilder()
@@ -935,19 +944,19 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 result_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getVerifyTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
@@ -1012,8 +1021,8 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setResultValue(int value) {
-
       result_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,9 +1039,8 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result getResult() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result result =
-          com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.valueOf(result_);
+          com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.forNumber(result_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.ReachabilityDetails.Result.UNRECOGNIZED
           : result;
@@ -1054,7 +1062,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       result_ = value.getNumber();
       onChanged();
       return this;
@@ -1071,7 +1079,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearResult() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       result_ = 0;
       onChanged();
       return this;
@@ -1095,7 +1103,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * @return Whether the verifyTime field is set.
      */
     public boolean hasVerifyTime() {
-      return verifyTimeBuilder_ != null || verifyTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1132,11 +1140,11 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         verifyTime_ = value;
-        onChanged();
       } else {
         verifyTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1151,11 +1159,11 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public Builder setVerifyTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (verifyTimeBuilder_ == null) {
         verifyTime_ = builderForValue.build();
-        onChanged();
       } else {
         verifyTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1169,17 +1177,18 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeVerifyTime(com.google.protobuf.Timestamp value) {
       if (verifyTimeBuilder_ == null) {
-        if (verifyTime_ != null) {
-          verifyTime_ =
-              com.google.protobuf.Timestamp.newBuilder(verifyTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && verifyTime_ != null
+            && verifyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getVerifyTimeBuilder().mergeFrom(value);
         } else {
           verifyTime_ = value;
         }
-        onChanged();
       } else {
         verifyTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1192,14 +1201,13 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp verify_time = 2;</code>
      */
     public Builder clearVerifyTime() {
-      if (verifyTimeBuilder_ == null) {
-        verifyTime_ = null;
-        onChanged();
-      } else {
-        verifyTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      verifyTime_ = null;
+      if (verifyTimeBuilder_ != null) {
+        verifyTimeBuilder_.dispose();
         verifyTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1212,7 +1220,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp verify_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getVerifyTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getVerifyTimeFieldBuilder().getBuilder();
     }
@@ -1276,7 +1284,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return errorBuilder_ != null || error_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1311,11 +1319,11 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         error_ = value;
-        onChanged();
       } else {
         errorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1330,11 +1338,11 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
-        onChanged();
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1348,16 +1356,18 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (error_ != null) {
-          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && error_ != null
+            && error_ != com.google.rpc.Status.getDefaultInstance()) {
+          getErrorBuilder().mergeFrom(value);
         } else {
           error_ = value;
         }
-        onChanged();
       } else {
         errorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1370,14 +1380,13 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status error = 3;</code>
      */
     public Builder clearError() {
-      if (errorBuilder_ == null) {
-        error_ = null;
-        onChanged();
-      } else {
-        error_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      error_ = null;
+      if (errorBuilder_ != null) {
+        errorBuilder_.dispose();
         errorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1390,7 +1399,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
      * <code>.google.rpc.Status error = 3;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -1437,10 +1446,10 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureTracesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         traces_ =
             new java.util.ArrayList<com.google.cloud.networkmanagement.v1beta1.Trace>(traces_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1678,7 +1687,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
     public Builder clearTraces() {
       if (tracesBuilder_ == null) {
         traces_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         tracesBuilder_.clear();
@@ -1814,7 +1823,7 @@ public final class ReachabilityDetails extends com.google.protobuf.GeneratedMess
                 com.google.cloud.networkmanagement.v1beta1.Trace,
                 com.google.cloud.networkmanagement.v1beta1.Trace.Builder,
                 com.google.cloud.networkmanagement.v1beta1.TraceOrBuilder>(
-                traces_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                traces_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         traces_ = null;
       }
       return tracesBuilder_;

@@ -193,7 +193,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     }
 
     public static final int FILTER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object filter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filter_ = "";
     /**
      *
      *
@@ -296,7 +298,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.AggregationOrBuilder getAggregationOrBuilder() {
-      return getAggregation();
+      return aggregation_ == null
+          ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+          : aggregation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -516,12 +520,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         filter_ = "";
-
-        if (aggregationBuilder_ == null) {
-          aggregation_ = null;
-        } else {
-          aggregation_ = null;
+        aggregation_ = null;
+        if (aggregationBuilder_ != null) {
+          aggregationBuilder_.dispose();
           aggregationBuilder_ = null;
         }
         return this;
@@ -553,14 +556,23 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
       public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart buildPartial() {
         com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart result =
             new com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart(this);
-        result.filter_ = filter_;
-        if (aggregationBuilder_ == null) {
-          result.aggregation_ = aggregation_;
-        } else {
-          result.aggregation_ = aggregationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.filter_ = filter_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.aggregation_ =
+              aggregationBuilder_ == null ? aggregation_ : aggregationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -616,6 +628,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getFilter().isEmpty()) {
           filter_ = other.filter_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasAggregation()) {
@@ -650,13 +663,13 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   filter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -675,6 +688,8 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object filter_ = "";
       /**
@@ -743,8 +758,8 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -762,8 +777,8 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearFilter() {
-
         filter_ = getDefaultInstance().getFilter();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -786,8 +801,8 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         filter_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -812,7 +827,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        * @return Whether the aggregation field is set.
        */
       public boolean hasAggregation() {
-        return aggregationBuilder_ != null || aggregation_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -853,11 +868,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
             throw new NullPointerException();
           }
           aggregation_ = value;
-          onChanged();
         } else {
           aggregationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -875,11 +890,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           com.google.monitoring.dashboard.v1.Aggregation.Builder builderForValue) {
         if (aggregationBuilder_ == null) {
           aggregation_ = builderForValue.build();
-          onChanged();
         } else {
           aggregationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -895,19 +910,19 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        */
       public Builder mergeAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
         if (aggregationBuilder_ == null) {
-          if (aggregation_ != null) {
-            aggregation_ =
-                com.google.monitoring.dashboard.v1.Aggregation.newBuilder(aggregation_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && aggregation_ != null
+              && aggregation_
+                  != com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()) {
+            getAggregationBuilder().mergeFrom(value);
           } else {
             aggregation_ = value;
           }
-          onChanged();
         } else {
           aggregationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -922,14 +937,13 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
        */
       public Builder clearAggregation() {
-        if (aggregationBuilder_ == null) {
-          aggregation_ = null;
-          onChanged();
-        } else {
-          aggregation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        aggregation_ = null;
+        if (aggregationBuilder_ != null) {
+          aggregationBuilder_.dispose();
           aggregationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -944,7 +958,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
        * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
        */
       public com.google.monitoring.dashboard.v1.Aggregation.Builder getAggregationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAggregationFieldBuilder().getBuilder();
       }
@@ -1157,7 +1171,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPartOrBuilder
       getNumeratorOrBuilder() {
-    return getNumerator();
+    return numerator_ == null
+        ? com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.getDefaultInstance()
+        : numerator_;
   }
 
   public static final int DENOMINATOR_FIELD_NUMBER = 2;
@@ -1206,7 +1222,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPartOrBuilder
       getDenominatorOrBuilder() {
-    return getDenominator();
+    return denominator_ == null
+        ? com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.getDefaultInstance()
+        : denominator_;
   }
 
   public static final int SECONDARY_AGGREGATION_FIELD_NUMBER = 3;
@@ -1255,7 +1273,9 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.AggregationOrBuilder
       getSecondaryAggregationOrBuilder() {
-    return getSecondaryAggregation();
+    return secondaryAggregation_ == null
+        ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+        : secondaryAggregation_;
   }
 
   public static final int PICK_TIME_SERIES_FILTER_FIELD_NUMBER = 4;
@@ -1655,22 +1675,20 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (numeratorBuilder_ == null) {
-        numerator_ = null;
-      } else {
-        numerator_ = null;
+      bitField0_ = 0;
+      numerator_ = null;
+      if (numeratorBuilder_ != null) {
+        numeratorBuilder_.dispose();
         numeratorBuilder_ = null;
       }
-      if (denominatorBuilder_ == null) {
-        denominator_ = null;
-      } else {
-        denominator_ = null;
+      denominator_ = null;
+      if (denominatorBuilder_ != null) {
+        denominatorBuilder_.dispose();
         denominatorBuilder_ = null;
       }
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-      } else {
-        secondaryAggregation_ = null;
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
       if (pickTimeSeriesFilterBuilder_ != null) {
@@ -1708,38 +1726,41 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio buildPartial() {
       com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio result =
           new com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio(this);
-      if (numeratorBuilder_ == null) {
-        result.numerator_ = numerator_;
-      } else {
-        result.numerator_ = numeratorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (denominatorBuilder_ == null) {
-        result.denominator_ = denominator_;
-      } else {
-        result.denominator_ = denominatorBuilder_.build();
-      }
-      if (secondaryAggregationBuilder_ == null) {
-        result.secondaryAggregation_ = secondaryAggregation_;
-      } else {
-        result.secondaryAggregation_ = secondaryAggregationBuilder_.build();
-      }
-      if (outputFilterCase_ == 4) {
-        if (pickTimeSeriesFilterBuilder_ == null) {
-          result.outputFilter_ = outputFilter_;
-        } else {
-          result.outputFilter_ = pickTimeSeriesFilterBuilder_.build();
-        }
-      }
-      if (outputFilterCase_ == 5) {
-        if (statisticalTimeSeriesFilterBuilder_ == null) {
-          result.outputFilter_ = outputFilter_;
-        } else {
-          result.outputFilter_ = statisticalTimeSeriesFilterBuilder_.build();
-        }
-      }
-      result.outputFilterCase_ = outputFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.numerator_ = numeratorBuilder_ == null ? numerator_ : numeratorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.denominator_ =
+            denominatorBuilder_ == null ? denominator_ : denominatorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secondaryAggregation_ =
+            secondaryAggregationBuilder_ == null
+                ? secondaryAggregation_
+                : secondaryAggregationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio result) {
+      result.outputFilterCase_ = outputFilterCase_;
+      result.outputFilter_ = this.outputFilter_;
+      if (outputFilterCase_ == 4 && pickTimeSeriesFilterBuilder_ != null) {
+        result.outputFilter_ = pickTimeSeriesFilterBuilder_.build();
+      }
+      if (outputFilterCase_ == 5 && statisticalTimeSeriesFilterBuilder_ != null) {
+        result.outputFilter_ = statisticalTimeSeriesFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1842,20 +1863,20 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getNumeratorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDenominatorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getSecondaryAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1903,6 +1924,8 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart numerator_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart,
@@ -1921,7 +1944,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * @return Whether the numerator field is set.
      */
     public boolean hasNumerator() {
-      return numeratorBuilder_ != null || numerator_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1960,11 +1983,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         numerator_ = value;
-        onChanged();
       } else {
         numeratorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1981,11 +2004,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (numeratorBuilder_ == null) {
         numerator_ = builderForValue.build();
-        onChanged();
       } else {
         numeratorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2000,20 +2023,20 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     public Builder mergeNumerator(
         com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart value) {
       if (numeratorBuilder_ == null) {
-        if (numerator_ != null) {
-          numerator_ =
-              com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.newBuilder(
-                      numerator_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && numerator_ != null
+            && numerator_
+                != com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart
+                    .getDefaultInstance()) {
+          getNumeratorBuilder().mergeFrom(value);
         } else {
           numerator_ = value;
         }
-        onChanged();
       } else {
         numeratorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2026,14 +2049,13 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart numerator = 1;</code>
      */
     public Builder clearNumerator() {
-      if (numeratorBuilder_ == null) {
-        numerator_ = null;
-        onChanged();
-      } else {
-        numerator_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      numerator_ = null;
+      if (numeratorBuilder_ != null) {
+        numeratorBuilder_.dispose();
         numeratorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2047,7 +2069,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      */
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.Builder
         getNumeratorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNumeratorFieldBuilder().getBuilder();
     }
@@ -2115,7 +2137,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * @return Whether the denominator field is set.
      */
     public boolean hasDenominator() {
-      return denominatorBuilder_ != null || denominator_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2154,11 +2176,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         denominator_ = value;
-        onChanged();
       } else {
         denominatorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2175,11 +2197,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (denominatorBuilder_ == null) {
         denominator_ = builderForValue.build();
-        onChanged();
       } else {
         denominatorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2194,20 +2216,20 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
     public Builder mergeDenominator(
         com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart value) {
       if (denominatorBuilder_ == null) {
-        if (denominator_ != null) {
-          denominator_ =
-              com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.newBuilder(
-                      denominator_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && denominator_ != null
+            && denominator_
+                != com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart
+                    .getDefaultInstance()) {
+          getDenominatorBuilder().mergeFrom(value);
         } else {
           denominator_ = value;
         }
-        onChanged();
       } else {
         denominatorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2220,14 +2242,13 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart denominator = 2;</code>
      */
     public Builder clearDenominator() {
-      if (denominatorBuilder_ == null) {
-        denominator_ = null;
-        onChanged();
-      } else {
-        denominator_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      denominator_ = null;
+      if (denominatorBuilder_ != null) {
+        denominatorBuilder_.dispose();
         denominatorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2241,7 +2262,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      */
     public com.google.monitoring.dashboard.v1.TimeSeriesFilterRatio.RatioPart.Builder
         getDenominatorBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDenominatorFieldBuilder().getBuilder();
     }
@@ -2309,7 +2330,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * @return Whether the secondaryAggregation field is set.
      */
     public boolean hasSecondaryAggregation() {
-      return secondaryAggregationBuilder_ != null || secondaryAggregation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2346,11 +2367,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         secondaryAggregation_ = value;
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2366,11 +2387,11 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
         com.google.monitoring.dashboard.v1.Aggregation.Builder builderForValue) {
       if (secondaryAggregationBuilder_ == null) {
         secondaryAggregation_ = builderForValue.build();
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2384,19 +2405,19 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSecondaryAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
       if (secondaryAggregationBuilder_ == null) {
-        if (secondaryAggregation_ != null) {
-          secondaryAggregation_ =
-              com.google.monitoring.dashboard.v1.Aggregation.newBuilder(secondaryAggregation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && secondaryAggregation_ != null
+            && secondaryAggregation_
+                != com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()) {
+          getSecondaryAggregationBuilder().mergeFrom(value);
         } else {
           secondaryAggregation_ = value;
         }
-        onChanged();
       } else {
         secondaryAggregationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2409,14 +2430,13 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
      */
     public Builder clearSecondaryAggregation() {
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-        onChanged();
-      } else {
-        secondaryAggregation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2429,7 +2449,7 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
      */
     public com.google.monitoring.dashboard.v1.Aggregation.Builder getSecondaryAggregationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSecondaryAggregationFieldBuilder().getBuilder();
     }
@@ -2699,7 +2719,6 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
       }
       outputFilterCase_ = 4;
       onChanged();
-      ;
       return pickTimeSeriesFilterBuilder_;
     }
 
@@ -2959,7 +2978,6 @@ public final class TimeSeriesFilterRatio extends com.google.protobuf.GeneratedMe
       }
       outputFilterCase_ = 5;
       onChanged();
-      ;
       return statisticalTimeSeriesFilterBuilder_;
     }
 

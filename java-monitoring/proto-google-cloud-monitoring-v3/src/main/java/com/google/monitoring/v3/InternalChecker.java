@@ -252,7 +252,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -307,7 +309,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -360,7 +364,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NETWORK_FIELD_NUMBER = 3;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -411,7 +417,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int GCP_ZONE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object gcpZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcpZone_ = "";
   /**
    *
    *
@@ -462,7 +470,9 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PEER_PROJECT_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object peerProjectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object peerProjectId_ = "";
   /**
    *
    *
@@ -513,7 +523,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -542,9 +552,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.monitoring.v3.InternalChecker.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.InternalChecker.State result =
-        com.google.monitoring.v3.InternalChecker.State.valueOf(state_);
+        com.google.monitoring.v3.InternalChecker.State.forNumber(state_);
     return result == null ? com.google.monitoring.v3.InternalChecker.State.UNRECOGNIZED : result;
   }
 
@@ -790,18 +799,13 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       network_ = "";
-
       gcpZone_ = "";
-
       peerProjectId_ = "";
-
       state_ = 0;
-
       return this;
     }
 
@@ -829,14 +833,33 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.InternalChecker buildPartial() {
       com.google.monitoring.v3.InternalChecker result =
           new com.google.monitoring.v3.InternalChecker(this);
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.network_ = network_;
-      result.gcpZone_ = gcpZone_;
-      result.peerProjectId_ = peerProjectId_;
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.InternalChecker result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gcpZone_ = gcpZone_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.peerProjectId_ = peerProjectId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -886,22 +909,27 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.monitoring.v3.InternalChecker.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getGcpZone().isEmpty()) {
         gcpZone_ = other.gcpZone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getPeerProjectId().isEmpty()) {
         peerProjectId_ = other.peerProjectId_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -936,37 +964,37 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 gcpZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 peerProjectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             default:
@@ -985,6 +1013,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1056,8 +1086,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1076,8 +1106,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1101,8 +1131,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1174,8 +1204,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1193,8 +1223,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1217,8 +1247,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1287,8 +1317,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1305,8 +1335,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1328,8 +1358,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1398,8 +1428,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcpZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1416,8 +1446,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearGcpZone() {
-
       gcpZone_ = getDefaultInstance().getGcpZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1439,8 +1469,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcpZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1509,8 +1539,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       peerProjectId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1527,8 +1557,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPeerProjectId() {
-
       peerProjectId_ = getDefaultInstance().getPeerProjectId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1550,8 +1580,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       peerProjectId_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1585,8 +1615,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1603,9 +1633,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.monitoring.v3.InternalChecker.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.InternalChecker.State result =
-          com.google.monitoring.v3.InternalChecker.State.valueOf(state_);
+          com.google.monitoring.v3.InternalChecker.State.forNumber(state_);
       return result == null ? com.google.monitoring.v3.InternalChecker.State.UNRECOGNIZED : result;
     }
     /**
@@ -1624,7 +1653,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1641,7 +1670,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;

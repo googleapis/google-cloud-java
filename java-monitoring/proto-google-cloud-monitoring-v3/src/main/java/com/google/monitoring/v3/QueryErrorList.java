@@ -69,6 +69,8 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERRORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.QueryError> errors_;
   /**
    *
@@ -143,7 +145,9 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_SUMMARY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object errorSummary_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorSummary_ = "";
   /**
    *
    *
@@ -398,6 +402,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
       } else {
@@ -406,7 +411,6 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       errorSummary_ = "";
-
       return this;
     }
 
@@ -434,7 +438,15 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.v3.QueryErrorList buildPartial() {
       com.google.monitoring.v3.QueryErrorList result =
           new com.google.monitoring.v3.QueryErrorList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.QueryErrorList result) {
       if (errorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -444,9 +456,13 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      result.errorSummary_ = errorSummary_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.QueryErrorList result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.errorSummary_ = errorSummary_;
+      }
     }
 
     @java.lang.Override
@@ -523,6 +539,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getErrorSummary().isEmpty()) {
         errorSummary_ = other.errorSummary_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -567,7 +584,7 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 errorSummary_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1016,8 +1033,8 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorSummary_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1033,8 +1050,8 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorSummary() {
-
       errorSummary_ = getDefaultInstance().getErrorSummary();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1055,8 +1072,8 @@ public final class QueryErrorList extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorSummary_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

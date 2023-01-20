@@ -69,7 +69,7 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
   }
 
   public static final int DATA_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString data_;
+  private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -165,7 +165,7 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getDataCrc32COrBuilder() {
-    return getDataCrc32C();
+    return dataCrc32C_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : dataCrc32C_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -380,12 +380,11 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (dataCrc32CBuilder_ == null) {
-        dataCrc32C_ = null;
-      } else {
-        dataCrc32C_ = null;
+      dataCrc32C_ = null;
+      if (dataCrc32CBuilder_ != null) {
+        dataCrc32CBuilder_.dispose();
         dataCrc32CBuilder_ = null;
       }
       return this;
@@ -415,14 +414,21 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
     public com.google.cloud.kms.v1.GenerateRandomBytesResponse buildPartial() {
       com.google.cloud.kms.v1.GenerateRandomBytesResponse result =
           new com.google.cloud.kms.v1.GenerateRandomBytesResponse(this);
-      result.data_ = data_;
-      if (dataCrc32CBuilder_ == null) {
-        result.dataCrc32C_ = dataCrc32C_;
-      } else {
-        result.dataCrc32C_ = dataCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.GenerateRandomBytesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.data_ = data_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataCrc32C_ = dataCrc32CBuilder_ == null ? dataCrc32C_ : dataCrc32CBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -506,13 +512,13 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
             case 10:
               {
                 data_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getDataCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -531,6 +537,8 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -564,8 +572,8 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
       if (value == null) {
         throw new NullPointerException();
       }
-
       data_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -581,7 +589,7 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder clearData() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       data_ = getDefaultInstance().getData();
       onChanged();
       return this;
@@ -617,7 +625,7 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
      * @return Whether the dataCrc32c field is set.
      */
     public boolean hasDataCrc32C() {
-      return dataCrc32CBuilder_ != null || dataCrc32C_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -678,11 +686,11 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         dataCrc32C_ = value;
-        onChanged();
       } else {
         dataCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -709,11 +717,11 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
     public Builder setDataCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (dataCrc32CBuilder_ == null) {
         dataCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         dataCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -739,19 +747,18 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
      */
     public Builder mergeDataCrc32C(com.google.protobuf.Int64Value value) {
       if (dataCrc32CBuilder_ == null) {
-        if (dataCrc32C_ != null) {
-          dataCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(dataCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataCrc32C_ != null
+            && dataCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getDataCrc32CBuilder().mergeFrom(value);
         } else {
           dataCrc32C_ = value;
         }
-        onChanged();
       } else {
         dataCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -776,14 +783,13 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
      * <code>.google.protobuf.Int64Value data_crc32c = 3;</code>
      */
     public Builder clearDataCrc32C() {
-      if (dataCrc32CBuilder_ == null) {
-        dataCrc32C_ = null;
-        onChanged();
-      } else {
-        dataCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataCrc32C_ = null;
+      if (dataCrc32CBuilder_ != null) {
+        dataCrc32CBuilder_.dispose();
         dataCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -808,7 +814,7 @@ public final class GenerateRandomBytesResponse extends com.google.protobuf.Gener
      * <code>.google.protobuf.Int64Value data_crc32c = 3;</code>
      */
     public com.google.protobuf.Int64Value.Builder getDataCrc32CBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataCrc32CFieldBuilder().getBuilder();
     }

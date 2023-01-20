@@ -1344,11 +1344,13 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAlignmentPeriodOrBuilder() {
-    return getAlignmentPeriod();
+    return alignmentPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : alignmentPeriod_;
   }
 
   public static final int PER_SERIES_ALIGNER_FIELD_NUMBER = 2;
-  private int perSeriesAligner_;
+  private int perSeriesAligner_ = 0;
   /**
    *
    *
@@ -1403,16 +1405,15 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation.Aligner getPerSeriesAligner() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Aggregation.Aligner result =
-        com.google.monitoring.dashboard.v1.Aggregation.Aligner.valueOf(perSeriesAligner_);
+        com.google.monitoring.dashboard.v1.Aggregation.Aligner.forNumber(perSeriesAligner_);
     return result == null
         ? com.google.monitoring.dashboard.v1.Aggregation.Aligner.UNRECOGNIZED
         : result;
   }
 
   public static final int CROSS_SERIES_REDUCER_FIELD_NUMBER = 4;
-  private int crossSeriesReducer_;
+  private int crossSeriesReducer_ = 0;
   /**
    *
    *
@@ -1463,15 +1464,16 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Aggregation.Reducer getCrossSeriesReducer() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Aggregation.Reducer result =
-        com.google.monitoring.dashboard.v1.Aggregation.Reducer.valueOf(crossSeriesReducer_);
+        com.google.monitoring.dashboard.v1.Aggregation.Reducer.forNumber(crossSeriesReducer_);
     return result == null
         ? com.google.monitoring.dashboard.v1.Aggregation.Reducer.UNRECOGNIZED
         : result;
   }
 
   public static final int GROUP_BY_FIELDS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList groupByFields_;
   /**
    *
@@ -1846,18 +1848,16 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (alignmentPeriodBuilder_ == null) {
-        alignmentPeriod_ = null;
-      } else {
-        alignmentPeriod_ = null;
+      bitField0_ = 0;
+      alignmentPeriod_ = null;
+      if (alignmentPeriodBuilder_ != null) {
+        alignmentPeriodBuilder_.dispose();
         alignmentPeriodBuilder_ = null;
       }
       perSeriesAligner_ = 0;
-
       crossSeriesReducer_ = 0;
-
       groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -1885,21 +1885,34 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Aggregation buildPartial() {
       com.google.monitoring.dashboard.v1.Aggregation result =
           new com.google.monitoring.dashboard.v1.Aggregation(this);
-      int from_bitField0_ = bitField0_;
-      if (alignmentPeriodBuilder_ == null) {
-        result.alignmentPeriod_ = alignmentPeriod_;
-      } else {
-        result.alignmentPeriod_ = alignmentPeriodBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.perSeriesAligner_ = perSeriesAligner_;
-      result.crossSeriesReducer_ = crossSeriesReducer_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        groupByFields_ = groupByFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.groupByFields_ = groupByFields_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.dashboard.v1.Aggregation result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        groupByFields_ = groupByFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.groupByFields_ = groupByFields_;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.Aggregation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.alignmentPeriod_ =
+            alignmentPeriodBuilder_ == null ? alignmentPeriod_ : alignmentPeriodBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.perSeriesAligner_ = perSeriesAligner_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.crossSeriesReducer_ = crossSeriesReducer_;
+      }
     }
 
     @java.lang.Override
@@ -1959,7 +1972,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       if (!other.groupByFields_.isEmpty()) {
         if (groupByFields_.isEmpty()) {
           groupByFields_ = other.groupByFields_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureGroupByFieldsIsMutable();
           groupByFields_.addAll(other.groupByFields_);
@@ -1995,19 +2008,19 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getAlignmentPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 perSeriesAligner_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 32:
               {
                 crossSeriesReducer_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             case 42:
@@ -2063,7 +2076,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the alignmentPeriod field is set.
      */
     public boolean hasAlignmentPeriod() {
-      return alignmentPeriodBuilder_ != null || alignmentPeriod_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2118,11 +2131,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         alignmentPeriod_ = value;
-        onChanged();
       } else {
         alignmentPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2146,11 +2159,11 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
     public Builder setAlignmentPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (alignmentPeriodBuilder_ == null) {
         alignmentPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         alignmentPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2173,19 +2186,18 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAlignmentPeriod(com.google.protobuf.Duration value) {
       if (alignmentPeriodBuilder_ == null) {
-        if (alignmentPeriod_ != null) {
-          alignmentPeriod_ =
-              com.google.protobuf.Duration.newBuilder(alignmentPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && alignmentPeriod_ != null
+            && alignmentPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAlignmentPeriodBuilder().mergeFrom(value);
         } else {
           alignmentPeriod_ = value;
         }
-        onChanged();
       } else {
         alignmentPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2207,14 +2219,13 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
      */
     public Builder clearAlignmentPeriod() {
-      if (alignmentPeriodBuilder_ == null) {
-        alignmentPeriod_ = null;
-        onChanged();
-      } else {
-        alignmentPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      alignmentPeriod_ = null;
+      if (alignmentPeriodBuilder_ != null) {
+        alignmentPeriodBuilder_.dispose();
         alignmentPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2236,7 +2247,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getAlignmentPeriodBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAlignmentPeriodFieldBuilder().getBuilder();
     }
@@ -2357,8 +2368,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPerSeriesAlignerValue(int value) {
-
       perSeriesAligner_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2388,9 +2399,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Aggregation.Aligner getPerSeriesAligner() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Aggregation.Aligner result =
-          com.google.monitoring.dashboard.v1.Aggregation.Aligner.valueOf(perSeriesAligner_);
+          com.google.monitoring.dashboard.v1.Aggregation.Aligner.forNumber(perSeriesAligner_);
       return result == null
           ? com.google.monitoring.dashboard.v1.Aggregation.Aligner.UNRECOGNIZED
           : result;
@@ -2425,7 +2435,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       perSeriesAligner_ = value.getNumber();
       onChanged();
       return this;
@@ -2455,7 +2465,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPerSeriesAligner() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       perSeriesAligner_ = 0;
       onChanged();
       return this;
@@ -2512,8 +2522,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCrossSeriesReducerValue(int value) {
-
       crossSeriesReducer_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2541,9 +2551,8 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Aggregation.Reducer getCrossSeriesReducer() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Aggregation.Reducer result =
-          com.google.monitoring.dashboard.v1.Aggregation.Reducer.valueOf(crossSeriesReducer_);
+          com.google.monitoring.dashboard.v1.Aggregation.Reducer.forNumber(crossSeriesReducer_);
       return result == null
           ? com.google.monitoring.dashboard.v1.Aggregation.Reducer.UNRECOGNIZED
           : result;
@@ -2576,7 +2585,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       crossSeriesReducer_ = value.getNumber();
       onChanged();
       return this;
@@ -2604,7 +2613,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCrossSeriesReducer() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       crossSeriesReducer_ = 0;
       onChanged();
       return this;
@@ -2614,9 +2623,9 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureGroupByFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         groupByFields_ = new com.google.protobuf.LazyStringArrayList(groupByFields_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2855,7 +2864,7 @@ public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGroupByFields() {
       groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

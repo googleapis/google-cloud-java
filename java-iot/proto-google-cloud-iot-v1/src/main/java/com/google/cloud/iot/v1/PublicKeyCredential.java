@@ -69,7 +69,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
   }
 
   public static final int FORMAT_FIELD_NUMBER = 1;
-  private int format_;
+  private int format_ = 0;
   /**
    *
    *
@@ -98,14 +98,15 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.PublicKeyFormat getFormat() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.iot.v1.PublicKeyFormat result =
-        com.google.cloud.iot.v1.PublicKeyFormat.valueOf(format_);
+        com.google.cloud.iot.v1.PublicKeyFormat.forNumber(format_);
     return result == null ? com.google.cloud.iot.v1.PublicKeyFormat.UNRECOGNIZED : result;
   }
 
   public static final int KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    *
    *
@@ -361,10 +362,9 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       format_ = 0;
-
       key_ = "";
-
       return this;
     }
 
@@ -392,10 +392,21 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
     public com.google.cloud.iot.v1.PublicKeyCredential buildPartial() {
       com.google.cloud.iot.v1.PublicKeyCredential result =
           new com.google.cloud.iot.v1.PublicKeyCredential(this);
-      result.format_ = format_;
-      result.key_ = key_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.PublicKeyCredential result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.format_ = format_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -448,6 +459,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       }
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -479,13 +491,13 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 format_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -504,6 +516,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int format_ = 0;
     /**
@@ -534,8 +548,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setFormatValue(int value) {
-
       format_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -552,9 +566,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.iot.v1.PublicKeyFormat getFormat() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.PublicKeyFormat result =
-          com.google.cloud.iot.v1.PublicKeyFormat.valueOf(format_);
+          com.google.cloud.iot.v1.PublicKeyFormat.forNumber(format_);
       return result == null ? com.google.cloud.iot.v1.PublicKeyFormat.UNRECOGNIZED : result;
     }
     /**
@@ -573,7 +586,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       format_ = value.getNumber();
       onChanged();
       return this;
@@ -590,7 +603,7 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearFormat() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       format_ = 0;
       onChanged();
       return this;
@@ -657,8 +670,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -674,8 +687,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -696,8 +709,8 @@ public final class PublicKeyCredential extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

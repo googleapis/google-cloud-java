@@ -69,7 +69,9 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.gkebackup.v1.BackupPlanOrBuilder getBackupPlanOrBuilder() {
-    return getBackupPlan();
+    return backupPlan_ == null
+        ? com.google.cloud.gkebackup.v1.BackupPlan.getDefaultInstance()
+        : backupPlan_;
   }
 
   public static final int BACKUP_PLAN_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object backupPlanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlanId_ = "";
   /**
    *
    *
@@ -459,16 +465,14 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (backupPlanBuilder_ == null) {
-        backupPlan_ = null;
-      } else {
-        backupPlan_ = null;
+      backupPlan_ = null;
+      if (backupPlanBuilder_ != null) {
+        backupPlanBuilder_.dispose();
         backupPlanBuilder_ = null;
       }
       backupPlanId_ = "";
-
       return this;
     }
 
@@ -496,15 +500,24 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
     public com.google.cloud.gkebackup.v1.CreateBackupPlanRequest buildPartial() {
       com.google.cloud.gkebackup.v1.CreateBackupPlanRequest result =
           new com.google.cloud.gkebackup.v1.CreateBackupPlanRequest(this);
-      result.parent_ = parent_;
-      if (backupPlanBuilder_ == null) {
-        result.backupPlan_ = backupPlan_;
-      } else {
-        result.backupPlan_ = backupPlanBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.backupPlanId_ = backupPlanId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.CreateBackupPlanRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.backupPlan_ = backupPlanBuilder_ == null ? backupPlan_ : backupPlanBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.backupPlanId_ = backupPlanId_;
+      }
     }
 
     @java.lang.Override
@@ -555,6 +568,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasBackupPlan()) {
@@ -562,6 +576,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
       }
       if (!other.getBackupPlanId().isEmpty()) {
         backupPlanId_ = other.backupPlanId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -593,19 +608,19 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getBackupPlanFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 backupPlanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +639,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +712,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +732,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +757,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -766,7 +783,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * @return Whether the backupPlan field is set.
      */
     public boolean hasBackupPlan() {
-      return backupPlanBuilder_ != null || backupPlan_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +824,11 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         backupPlan_ = value;
-        onChanged();
       } else {
         backupPlanBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -828,11 +845,11 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
     public Builder setBackupPlan(com.google.cloud.gkebackup.v1.BackupPlan.Builder builderForValue) {
       if (backupPlanBuilder_ == null) {
         backupPlan_ = builderForValue.build();
-        onChanged();
       } else {
         backupPlanBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,19 +865,18 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      */
     public Builder mergeBackupPlan(com.google.cloud.gkebackup.v1.BackupPlan value) {
       if (backupPlanBuilder_ == null) {
-        if (backupPlan_ != null) {
-          backupPlan_ =
-              com.google.cloud.gkebackup.v1.BackupPlan.newBuilder(backupPlan_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && backupPlan_ != null
+            && backupPlan_ != com.google.cloud.gkebackup.v1.BackupPlan.getDefaultInstance()) {
+          getBackupPlanBuilder().mergeFrom(value);
         } else {
           backupPlan_ = value;
         }
-        onChanged();
       } else {
         backupPlanBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -875,14 +891,13 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearBackupPlan() {
-      if (backupPlanBuilder_ == null) {
-        backupPlan_ = null;
-        onChanged();
-      } else {
-        backupPlan_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      backupPlan_ = null;
+      if (backupPlanBuilder_ != null) {
+        backupPlanBuilder_.dispose();
         backupPlanBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -897,7 +912,7 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.gkebackup.v1.BackupPlan.Builder getBackupPlanBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getBackupPlanFieldBuilder().getBuilder();
     }
@@ -1028,8 +1043,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       backupPlanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1051,8 +1066,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearBackupPlanId() {
-
       backupPlanId_ = getDefaultInstance().getBackupPlanId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1079,8 +1094,8 @@ public final class CreateBackupPlanRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       backupPlanId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -70,6 +70,8 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NON_COMPLIANT_FILES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.NonCompliantFile> nonCompliantFiles_;
   /** <code>repeated .grafeas.v1.NonCompliantFile non_compliant_files = 2;</code> */
   @java.lang.Override
@@ -99,7 +101,9 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
   }
 
   public static final int NON_COMPLIANCE_REASON_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nonComplianceReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nonComplianceReason_ = "";
   /**
    * <code>string non_compliance_reason = 3;</code>
    *
@@ -342,6 +346,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (nonCompliantFilesBuilder_ == null) {
         nonCompliantFiles_ = java.util.Collections.emptyList();
       } else {
@@ -350,7 +355,6 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nonComplianceReason_ = "";
-
       return this;
     }
 
@@ -376,7 +380,15 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public io.grafeas.v1.ComplianceOccurrence buildPartial() {
       io.grafeas.v1.ComplianceOccurrence result = new io.grafeas.v1.ComplianceOccurrence(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.ComplianceOccurrence result) {
       if (nonCompliantFilesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           nonCompliantFiles_ = java.util.Collections.unmodifiableList(nonCompliantFiles_);
@@ -386,9 +398,13 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       } else {
         result.nonCompliantFiles_ = nonCompliantFilesBuilder_.build();
       }
-      result.nonComplianceReason_ = nonComplianceReason_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.ComplianceOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nonComplianceReason_ = nonComplianceReason_;
+      }
     }
 
     @java.lang.Override
@@ -465,6 +481,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       }
       if (!other.getNonComplianceReason().isEmpty()) {
         nonComplianceReason_ = other.nonComplianceReason_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -508,7 +525,7 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
             case 26:
               {
                 nonComplianceReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -782,8 +799,8 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       nonComplianceReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -793,8 +810,8 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearNonComplianceReason() {
-
       nonComplianceReason_ = getDefaultInstance().getNonComplianceReason();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -809,8 +826,8 @@ public final class ComplianceOccurrence extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nonComplianceReason_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

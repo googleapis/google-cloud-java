@@ -229,7 +229,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EXTRACT_SYNTAX_FIELD_NUMBER = 1;
-    private boolean extractSyntax_;
+    private boolean extractSyntax_ = false;
     /**
      *
      *
@@ -247,7 +247,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EXTRACT_ENTITIES_FIELD_NUMBER = 2;
-    private boolean extractEntities_;
+    private boolean extractEntities_ = false;
     /**
      *
      *
@@ -265,7 +265,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EXTRACT_DOCUMENT_SENTIMENT_FIELD_NUMBER = 3;
-    private boolean extractDocumentSentiment_;
+    private boolean extractDocumentSentiment_ = false;
     /**
      *
      *
@@ -283,7 +283,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EXTRACT_ENTITY_SENTIMENT_FIELD_NUMBER = 4;
-    private boolean extractEntitySentiment_;
+    private boolean extractEntitySentiment_ = false;
     /**
      *
      *
@@ -301,7 +301,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CLASSIFY_TEXT_FIELD_NUMBER = 6;
-    private boolean classifyText_;
+    private boolean classifyText_ = false;
     /**
      *
      *
@@ -370,7 +370,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public com.google.cloud.language.v1.ClassificationModelOptionsOrBuilder
         getClassificationModelOptionsOrBuilder() {
-      return getClassificationModelOptions();
+      return classificationModelOptions_ == null
+          ? com.google.cloud.language.v1.ClassificationModelOptions.getDefaultInstance()
+          : classificationModelOptions_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -627,20 +629,15 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         extractSyntax_ = false;
-
         extractEntities_ = false;
-
         extractDocumentSentiment_ = false;
-
         extractEntitySentiment_ = false;
-
         classifyText_ = false;
-
-        if (classificationModelOptionsBuilder_ == null) {
-          classificationModelOptions_ = null;
-        } else {
-          classificationModelOptions_ = null;
+        classificationModelOptions_ = null;
+        if (classificationModelOptionsBuilder_ != null) {
+          classificationModelOptionsBuilder_.dispose();
           classificationModelOptionsBuilder_ = null;
         }
         return this;
@@ -670,18 +667,36 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public com.google.cloud.language.v1.AnnotateTextRequest.Features buildPartial() {
         com.google.cloud.language.v1.AnnotateTextRequest.Features result =
             new com.google.cloud.language.v1.AnnotateTextRequest.Features(this);
-        result.extractSyntax_ = extractSyntax_;
-        result.extractEntities_ = extractEntities_;
-        result.extractDocumentSentiment_ = extractDocumentSentiment_;
-        result.extractEntitySentiment_ = extractEntitySentiment_;
-        result.classifyText_ = classifyText_;
-        if (classificationModelOptionsBuilder_ == null) {
-          result.classificationModelOptions_ = classificationModelOptions_;
-        } else {
-          result.classificationModelOptions_ = classificationModelOptionsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.language.v1.AnnotateTextRequest.Features result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.extractSyntax_ = extractSyntax_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.extractEntities_ = extractEntities_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.extractDocumentSentiment_ = extractDocumentSentiment_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.extractEntitySentiment_ = extractEntitySentiment_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.classifyText_ = classifyText_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.classificationModelOptions_ =
+              classificationModelOptionsBuilder_ == null
+                  ? classificationModelOptions_
+                  : classificationModelOptionsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -779,38 +794,38 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
               case 8:
                 {
                   extractSyntax_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   extractEntities_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   extractDocumentSentiment_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   extractEntitySentiment_ = input.readBool();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 48:
                 {
                   classifyText_ = input.readBool();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 48
               case 82:
                 {
                   input.readMessage(
                       getClassificationModelOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 82
               default:
@@ -829,6 +844,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean extractSyntax_;
       /**
@@ -861,6 +878,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder setExtractSyntax(boolean value) {
 
         extractSyntax_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -876,7 +894,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearExtractSyntax() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         extractSyntax_ = false;
         onChanged();
         return this;
@@ -913,6 +931,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder setExtractEntities(boolean value) {
 
         extractEntities_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -928,7 +947,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearExtractEntities() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         extractEntities_ = false;
         onChanged();
         return this;
@@ -965,6 +984,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder setExtractDocumentSentiment(boolean value) {
 
         extractDocumentSentiment_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -980,7 +1000,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearExtractDocumentSentiment() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         extractDocumentSentiment_ = false;
         onChanged();
         return this;
@@ -1017,6 +1037,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder setExtractEntitySentiment(boolean value) {
 
         extractEntitySentiment_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1032,7 +1053,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearExtractEntitySentiment() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         extractEntitySentiment_ = false;
         onChanged();
         return this;
@@ -1069,6 +1090,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder setClassifyText(boolean value) {
 
         classifyText_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1084,7 +1106,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearClassifyText() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         classifyText_ = false;
         onChanged();
         return this;
@@ -1111,7 +1133,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * @return Whether the classificationModelOptions field is set.
        */
       public boolean hasClassificationModelOptions() {
-        return classificationModelOptionsBuilder_ != null || classificationModelOptions_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -1156,11 +1178,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             throw new NullPointerException();
           }
           classificationModelOptions_ = value;
-          onChanged();
         } else {
           classificationModelOptionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1179,11 +1201,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           com.google.cloud.language.v1.ClassificationModelOptions.Builder builderForValue) {
         if (classificationModelOptionsBuilder_ == null) {
           classificationModelOptions_ = builderForValue.build();
-          onChanged();
         } else {
           classificationModelOptionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1201,20 +1223,19 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       public Builder mergeClassificationModelOptions(
           com.google.cloud.language.v1.ClassificationModelOptions value) {
         if (classificationModelOptionsBuilder_ == null) {
-          if (classificationModelOptions_ != null) {
-            classificationModelOptions_ =
-                com.google.cloud.language.v1.ClassificationModelOptions.newBuilder(
-                        classificationModelOptions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && classificationModelOptions_ != null
+              && classificationModelOptions_
+                  != com.google.cloud.language.v1.ClassificationModelOptions.getDefaultInstance()) {
+            getClassificationModelOptionsBuilder().mergeFrom(value);
           } else {
             classificationModelOptions_ = value;
           }
-          onChanged();
         } else {
           classificationModelOptionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1230,14 +1251,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        * </code>
        */
       public Builder clearClassificationModelOptions() {
-        if (classificationModelOptionsBuilder_ == null) {
-          classificationModelOptions_ = null;
-          onChanged();
-        } else {
-          classificationModelOptions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        classificationModelOptions_ = null;
+        if (classificationModelOptionsBuilder_ != null) {
+          classificationModelOptionsBuilder_.dispose();
           classificationModelOptionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1254,7 +1274,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
        */
       public com.google.cloud.language.v1.ClassificationModelOptions.Builder
           getClassificationModelOptionsBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getClassificationModelOptionsFieldBuilder().getBuilder();
       }
@@ -1424,7 +1444,9 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.language.v1.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int FEATURES_FIELD_NUMBER = 2;
@@ -1478,11 +1500,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.language.v1.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder() {
-    return getFeatures();
+    return features_ == null
+        ? com.google.cloud.language.v1.AnnotateTextRequest.Features.getDefaultInstance()
+        : features_;
   }
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 3;
-  private int encodingType_;
+  private int encodingType_ = 0;
   /**
    *
    *
@@ -1511,9 +1535,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.language.v1.EncodingType getEncodingType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.EncodingType result =
-        com.google.cloud.language.v1.EncodingType.valueOf(encodingType_);
+        com.google.cloud.language.v1.EncodingType.forNumber(encodingType_);
     return result == null ? com.google.cloud.language.v1.EncodingType.UNRECOGNIZED : result;
   }
 
@@ -1743,20 +1766,18 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      bitField0_ = 0;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-      if (featuresBuilder_ == null) {
-        features_ = null;
-      } else {
-        features_ = null;
+      features_ = null;
+      if (featuresBuilder_ != null) {
+        featuresBuilder_.dispose();
         featuresBuilder_ = null;
       }
       encodingType_ = 0;
-
       return this;
     }
 
@@ -1784,19 +1805,24 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.language.v1.AnnotateTextRequest buildPartial() {
       com.google.cloud.language.v1.AnnotateTextRequest result =
           new com.google.cloud.language.v1.AnnotateTextRequest(this);
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (featuresBuilder_ == null) {
-        result.features_ = features_;
-      } else {
-        result.features_ = featuresBuilder_.build();
-      }
-      result.encodingType_ = encodingType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.AnnotateTextRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.features_ = featuresBuilder_ == null ? features_ : featuresBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.encodingType_ = encodingType_;
+      }
     }
 
     @java.lang.Override
@@ -1883,19 +1909,19 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFeaturesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 encodingType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -1914,6 +1940,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.language.v1.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1935,7 +1963,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1976,11 +2004,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1997,11 +2025,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
     public Builder setDocument(com.google.cloud.language.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2017,19 +2045,18 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.language.v1.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.language.v1.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2044,14 +2071,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2066,7 +2092,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.language.v1.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -2138,7 +2164,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the features field is set.
      */
     public boolean hasFeatures() {
-      return featuresBuilder_ != null || features_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2179,11 +2205,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         features_ = value;
-        onChanged();
       } else {
         featuresBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2201,11 +2227,11 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.language.v1.AnnotateTextRequest.Features.Builder builderForValue) {
       if (featuresBuilder_ == null) {
         features_ = builderForValue.build();
-        onChanged();
       } else {
         featuresBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2221,19 +2247,19 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeFeatures(com.google.cloud.language.v1.AnnotateTextRequest.Features value) {
       if (featuresBuilder_ == null) {
-        if (features_ != null) {
-          features_ =
-              com.google.cloud.language.v1.AnnotateTextRequest.Features.newBuilder(features_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && features_ != null
+            && features_
+                != com.google.cloud.language.v1.AnnotateTextRequest.Features.getDefaultInstance()) {
+          getFeaturesBuilder().mergeFrom(value);
         } else {
           features_ = value;
         }
-        onChanged();
       } else {
         featuresBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2248,14 +2274,13 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearFeatures() {
-      if (featuresBuilder_ == null) {
-        features_ = null;
-        onChanged();
-      } else {
-        features_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      features_ = null;
+      if (featuresBuilder_ != null) {
+        featuresBuilder_.dispose();
         featuresBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2270,7 +2295,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.language.v1.AnnotateTextRequest.Features.Builder getFeaturesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
@@ -2352,8 +2377,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
-
       encodingType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2370,9 +2395,8 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.language.v1.EncodingType getEncodingType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.EncodingType result =
-          com.google.cloud.language.v1.EncodingType.valueOf(encodingType_);
+          com.google.cloud.language.v1.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1.EncodingType.UNRECOGNIZED : result;
     }
     /**
@@ -2391,7 +2415,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       encodingType_ = value.getNumber();
       onChanged();
       return this;
@@ -2408,7 +2432,7 @@ public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEncodingType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       encodingType_ = 0;
       onChanged();
       return this;

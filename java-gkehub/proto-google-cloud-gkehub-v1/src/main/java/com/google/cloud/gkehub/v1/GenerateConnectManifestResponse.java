@@ -70,6 +70,8 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
   }
 
   public static final int MANIFEST_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.v1.ConnectAgentResource> manifest_;
   /**
    *
@@ -344,6 +346,7 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (manifestBuilder_ == null) {
         manifest_ = java.util.Collections.emptyList();
       } else {
@@ -378,7 +381,16 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
     public com.google.cloud.gkehub.v1.GenerateConnectManifestResponse buildPartial() {
       com.google.cloud.gkehub.v1.GenerateConnectManifestResponse result =
           new com.google.cloud.gkehub.v1.GenerateConnectManifestResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.v1.GenerateConnectManifestResponse result) {
       if (manifestBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           manifest_ = java.util.Collections.unmodifiableList(manifest_);
@@ -388,8 +400,10 @@ public final class GenerateConnectManifestResponse extends com.google.protobuf.G
       } else {
         result.manifest_ = manifestBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.GenerateConnectManifestResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

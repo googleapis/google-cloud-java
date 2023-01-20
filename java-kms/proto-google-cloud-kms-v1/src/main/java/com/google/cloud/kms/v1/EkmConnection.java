@@ -299,7 +299,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVICE_DIRECTORY_SERVICE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object serviceDirectoryService_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceDirectoryService_ = "";
     /**
      *
      *
@@ -356,7 +358,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ENDPOINT_FILTER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object endpointFilter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointFilter_ = "";
     /**
      *
      *
@@ -413,7 +417,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HOSTNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object hostname_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object hostname_ = "";
     /**
      *
      *
@@ -462,6 +468,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SERVER_CERTIFICATES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.kms.v1.Certificate> serverCertificates_;
     /**
      *
@@ -783,19 +791,17 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         serviceDirectoryService_ = "";
-
         endpointFilter_ = "";
-
         hostname_ = "";
-
         if (serverCertificatesBuilder_ == null) {
           serverCertificates_ = java.util.Collections.emptyList();
         } else {
           serverCertificates_ = null;
           serverCertificatesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -823,21 +829,38 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.kms.v1.EkmConnection.ServiceResolver buildPartial() {
         com.google.cloud.kms.v1.EkmConnection.ServiceResolver result =
             new com.google.cloud.kms.v1.EkmConnection.ServiceResolver(this);
-        int from_bitField0_ = bitField0_;
-        result.serviceDirectoryService_ = serviceDirectoryService_;
-        result.endpointFilter_ = endpointFilter_;
-        result.hostname_ = hostname_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.kms.v1.EkmConnection.ServiceResolver result) {
         if (serverCertificatesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             serverCertificates_ = java.util.Collections.unmodifiableList(serverCertificates_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.serverCertificates_ = serverCertificates_;
         } else {
           result.serverCertificates_ = serverCertificatesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.kms.v1.EkmConnection.ServiceResolver result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.serviceDirectoryService_ = serviceDirectoryService_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endpointFilter_ = endpointFilter_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.hostname_ = hostname_;
+        }
       }
 
       @java.lang.Override
@@ -890,21 +913,24 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getServiceDirectoryService().isEmpty()) {
           serviceDirectoryService_ = other.serviceDirectoryService_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getEndpointFilter().isEmpty()) {
           endpointFilter_ = other.endpointFilter_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getHostname().isEmpty()) {
           hostname_ = other.hostname_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (serverCertificatesBuilder_ == null) {
           if (!other.serverCertificates_.isEmpty()) {
             if (serverCertificates_.isEmpty()) {
               serverCertificates_ = other.serverCertificates_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureServerCertificatesIsMutable();
               serverCertificates_.addAll(other.serverCertificates_);
@@ -917,7 +943,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
               serverCertificatesBuilder_.dispose();
               serverCertificatesBuilder_ = null;
               serverCertificates_ = other.serverCertificates_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               serverCertificatesBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getServerCertificatesFieldBuilder()
@@ -956,19 +982,19 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   serviceDirectoryService_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   endpointFilter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   hostname_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
@@ -1076,8 +1102,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         serviceDirectoryService_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1097,8 +1123,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearServiceDirectoryService() {
-
         serviceDirectoryService_ = getDefaultInstance().getServiceDirectoryService();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1123,8 +1149,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         serviceDirectoryService_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1202,8 +1228,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         endpointFilter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1223,8 +1249,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearEndpointFilter() {
-
         endpointFilter_ = getDefaultInstance().getEndpointFilter();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1249,8 +1275,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         endpointFilter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1316,8 +1342,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         hostname_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1333,8 +1359,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHostname() {
-
         hostname_ = getDefaultInstance().getHostname();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1355,8 +1381,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         hostname_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1365,10 +1391,10 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           java.util.Collections.emptyList();
 
       private void ensureServerCertificatesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           serverCertificates_ =
               new java.util.ArrayList<com.google.cloud.kms.v1.Certificate>(serverCertificates_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
         }
       }
 
@@ -1628,7 +1654,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       public Builder clearServerCertificates() {
         if (serverCertificatesBuilder_ == null) {
           serverCertificates_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           serverCertificatesBuilder_.clear();
@@ -1780,7 +1806,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
                   com.google.cloud.kms.v1.Certificate.Builder,
                   com.google.cloud.kms.v1.CertificateOrBuilder>(
                   serverCertificates_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           serverCertificates_ = null;
@@ -1853,7 +1879,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1954,10 +1982,12 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int SERVICE_RESOLVERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver> serviceResolvers_;
   /**
    *
@@ -2054,7 +2084,9 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 5;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -2340,12 +2372,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       if (serviceResolversBuilder_ == null) {
@@ -2354,9 +2385,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         serviceResolvers_ = null;
         serviceResolversBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       etag_ = "";
-
       return this;
     }
 
@@ -2384,25 +2414,37 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.kms.v1.EkmConnection buildPartial() {
       com.google.cloud.kms.v1.EkmConnection result =
           new com.google.cloud.kms.v1.EkmConnection(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.kms.v1.EkmConnection result) {
       if (serviceResolversBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           serviceResolvers_ = java.util.Collections.unmodifiableList(serviceResolvers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.serviceResolvers_ = serviceResolvers_;
       } else {
         result.serviceResolvers_ = serviceResolversBuilder_.build();
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.EkmConnection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -2452,6 +2494,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.kms.v1.EkmConnection.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -2461,7 +2504,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         if (!other.serviceResolvers_.isEmpty()) {
           if (serviceResolvers_.isEmpty()) {
             serviceResolvers_ = other.serviceResolvers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureServiceResolversIsMutable();
             serviceResolvers_.addAll(other.serviceResolvers_);
@@ -2474,7 +2517,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             serviceResolversBuilder_.dispose();
             serviceResolversBuilder_ = null;
             serviceResolvers_ = other.serviceResolvers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             serviceResolversBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceResolversFieldBuilder()
@@ -2486,6 +2529,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2517,13 +2561,13 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2543,7 +2587,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -2632,8 +2676,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2651,8 +2695,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2675,8 +2719,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2702,7 +2746,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2745,11 +2789,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2767,11 +2811,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2788,17 +2832,18 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2814,14 +2859,13 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2837,7 +2881,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2895,11 +2939,11 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         serviceResolvers_ = java.util.Collections.emptyList();
 
     private void ensureServiceResolversIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         serviceResolvers_ =
             new java.util.ArrayList<com.google.cloud.kms.v1.EkmConnection.ServiceResolver>(
                 serviceResolvers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -3186,7 +3230,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceResolvers() {
       if (serviceResolversBuilder_ == null) {
         serviceResolvers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         serviceResolversBuilder_.clear();
@@ -3356,7 +3400,7 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.kms.v1.EkmConnection.ServiceResolver.Builder,
                 com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder>(
                 serviceResolvers_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         serviceResolvers_ = null;
@@ -3428,8 +3472,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3446,8 +3490,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3469,8 +3513,8 @@ public final class EkmConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
   }
 
   public static final int RUN_FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object runFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runFunction_ = "";
   /**
    *
    *
@@ -316,8 +318,8 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       runFunction_ = "";
-
       return this;
     }
 
@@ -345,9 +347,18 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
     public com.google.apps.script.type.calendar.CalendarExtensionPoint buildPartial() {
       com.google.apps.script.type.calendar.CalendarExtensionPoint result =
           new com.google.apps.script.type.calendar.CalendarExtensionPoint(this);
-      result.runFunction_ = runFunction_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.calendar.CalendarExtensionPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.runFunction_ = runFunction_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getRunFunction().isEmpty()) {
         runFunction_ = other.runFunction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
             case 10:
               {
                 runFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object runFunction_ = "";
     /**
@@ -513,8 +527,8 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -531,8 +545,8 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRunFunction() {
-
       runFunction_ = getDefaultInstance().getRunFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -554,8 +568,8 @@ public final class CalendarExtensionPoint extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

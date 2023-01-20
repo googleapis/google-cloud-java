@@ -241,7 +241,9 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder() {
-    return getExpirationTime();
+    return expirationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : expirationTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,13 +471,13 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (publicKeyBuilder_ != null) {
         publicKeyBuilder_.clear();
       }
-      if (expirationTimeBuilder_ == null) {
-        expirationTime_ = null;
-      } else {
-        expirationTime_ = null;
+      expirationTime_ = null;
+      if (expirationTimeBuilder_ != null) {
+        expirationTimeBuilder_.dispose();
         expirationTimeBuilder_ = null;
       }
       credentialCase_ = 0;
@@ -507,21 +509,28 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.iot.v1.DeviceCredential buildPartial() {
       com.google.cloud.iot.v1.DeviceCredential result =
           new com.google.cloud.iot.v1.DeviceCredential(this);
-      if (credentialCase_ == 2) {
-        if (publicKeyBuilder_ == null) {
-          result.credential_ = credential_;
-        } else {
-          result.credential_ = publicKeyBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (expirationTimeBuilder_ == null) {
-        result.expirationTime_ = expirationTime_;
-      } else {
-        result.expirationTime_ = expirationTimeBuilder_.build();
-      }
-      result.credentialCase_ = credentialCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.DeviceCredential result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expirationTime_ =
+            expirationTimeBuilder_ == null ? expirationTime_ : expirationTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.iot.v1.DeviceCredential result) {
+      result.credentialCase_ = credentialCase_;
+      result.credential_ = this.credential_;
+      if (credentialCase_ == 2 && publicKeyBuilder_ != null) {
+        result.credential_ = publicKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -618,7 +627,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
             case 50:
               {
                 input.readMessage(getExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 50
             default:
@@ -651,6 +660,8 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.iot.v1.PublicKeyCredential,
@@ -948,7 +959,6 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
       }
       credentialCase_ = 2;
       onChanged();
-      ;
       return publicKeyBuilder_;
     }
 
@@ -972,7 +982,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
-      return expirationTimeBuilder_ != null || expirationTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1013,11 +1023,11 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         expirationTime_ = value;
-        onChanged();
       } else {
         expirationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1034,11 +1044,11 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
     public Builder setExpirationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expirationTimeBuilder_ == null) {
         expirationTime_ = builderForValue.build();
-        onChanged();
       } else {
         expirationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1054,19 +1064,18 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeExpirationTime(com.google.protobuf.Timestamp value) {
       if (expirationTimeBuilder_ == null) {
-        if (expirationTime_ != null) {
-          expirationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expirationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && expirationTime_ != null
+            && expirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpirationTimeBuilder().mergeFrom(value);
         } else {
           expirationTime_ = value;
         }
-        onChanged();
       } else {
         expirationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1081,14 +1090,13 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
      */
     public Builder clearExpirationTime() {
-      if (expirationTimeBuilder_ == null) {
-        expirationTime_ = null;
-        onChanged();
-      } else {
-        expirationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expirationTime_ = null;
+      if (expirationTimeBuilder_ != null) {
+        expirationTimeBuilder_.dispose();
         expirationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1103,7 +1111,7 @@ public final class DeviceCredential extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp expiration_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpirationTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }

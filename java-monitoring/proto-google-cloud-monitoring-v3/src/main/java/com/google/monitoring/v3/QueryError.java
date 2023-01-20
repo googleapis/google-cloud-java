@@ -113,11 +113,13 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.v3.TextLocatorOrBuilder getLocatorOrBuilder() {
-    return getLocator();
+    return locator_ == null ? com.google.monitoring.v3.TextLocator.getDefaultInstance() : locator_;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -374,14 +376,13 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (locatorBuilder_ == null) {
-        locator_ = null;
-      } else {
-        locator_ = null;
+      bitField0_ = 0;
+      locator_ = null;
+      if (locatorBuilder_ != null) {
+        locatorBuilder_.dispose();
         locatorBuilder_ = null;
       }
       message_ = "";
-
       return this;
     }
 
@@ -408,14 +409,21 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.QueryError buildPartial() {
       com.google.monitoring.v3.QueryError result = new com.google.monitoring.v3.QueryError(this);
-      if (locatorBuilder_ == null) {
-        result.locator_ = locator_;
-      } else {
-        result.locator_ = locatorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.message_ = message_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.QueryError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.locator_ = locatorBuilder_ == null ? locator_ : locatorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -468,6 +476,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +508,13 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getLocatorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +533,8 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.monitoring.v3.TextLocator locator_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -544,7 +555,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the locator field is set.
      */
     public boolean hasLocator() {
-      return locatorBuilder_ != null || locator_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -583,11 +594,11 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         locator_ = value;
-        onChanged();
       } else {
         locatorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -603,11 +614,11 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocator(com.google.monitoring.v3.TextLocator.Builder builderForValue) {
       if (locatorBuilder_ == null) {
         locator_ = builderForValue.build();
-        onChanged();
       } else {
         locatorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,19 +633,18 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLocator(com.google.monitoring.v3.TextLocator value) {
       if (locatorBuilder_ == null) {
-        if (locator_ != null) {
-          locator_ =
-              com.google.monitoring.v3.TextLocator.newBuilder(locator_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && locator_ != null
+            && locator_ != com.google.monitoring.v3.TextLocator.getDefaultInstance()) {
+          getLocatorBuilder().mergeFrom(value);
         } else {
           locator_ = value;
         }
-        onChanged();
       } else {
         locatorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,14 +658,13 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator locator = 1;</code>
      */
     public Builder clearLocator() {
-      if (locatorBuilder_ == null) {
-        locator_ = null;
-        onChanged();
-      } else {
-        locator_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      locator_ = null;
+      if (locatorBuilder_ != null) {
+        locatorBuilder_.dispose();
         locatorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -669,7 +678,7 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator locator = 1;</code>
      */
     public com.google.monitoring.v3.TextLocator.Builder getLocatorBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLocatorFieldBuilder().getBuilder();
     }
@@ -780,8 +789,8 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +806,8 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +828,8 @@ public final class QueryError extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

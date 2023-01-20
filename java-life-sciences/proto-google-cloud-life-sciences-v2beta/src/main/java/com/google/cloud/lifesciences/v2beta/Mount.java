@@ -69,7 +69,9 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object disk_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object disk_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int READ_ONLY_FIELD_NUMBER = 3;
-  private boolean readOnly_;
+  private boolean readOnly_ = false;
   /**
    *
    *
@@ -399,12 +403,10 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disk_ = "";
-
       path_ = "";
-
       readOnly_ = false;
-
       return this;
     }
 
@@ -432,11 +434,24 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Mount buildPartial() {
       com.google.cloud.lifesciences.v2beta.Mount result =
           new com.google.cloud.lifesciences.v2beta.Mount(this);
-      result.disk_ = disk_;
-      result.path_ = path_;
-      result.readOnly_ = readOnly_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Mount result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disk_ = disk_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.readOnly_ = readOnly_;
+      }
     }
 
     @java.lang.Override
@@ -486,10 +501,12 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.lifesciences.v2beta.Mount.getDefaultInstance()) return this;
       if (!other.getDisk().isEmpty()) {
         disk_ = other.disk_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getReadOnly() != false) {
@@ -524,19 +541,19 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 disk_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 readOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -555,6 +572,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object disk_ = "";
     /**
@@ -617,8 +636,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +653,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisk() {
-
       disk_ = getDefaultInstance().getDisk();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +675,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       disk_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +742,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -762,8 +781,8 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,6 +818,7 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
     public Builder setReadOnly(boolean value) {
 
       readOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -814,7 +834,7 @@ public final class Mount extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReadOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       readOnly_ = false;
       onChanged();
       return this;

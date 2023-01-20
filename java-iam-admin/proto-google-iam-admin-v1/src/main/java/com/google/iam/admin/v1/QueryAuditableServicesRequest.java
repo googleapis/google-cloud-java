@@ -68,7 +68,9 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
   }
 
   public static final int FULL_RESOURCE_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fullResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullResourceName_ = "";
   /**
    *
    *
@@ -322,8 +324,8 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fullResourceName_ = "";
-
       return this;
     }
 
@@ -351,9 +353,18 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
     public com.google.iam.admin.v1.QueryAuditableServicesRequest buildPartial() {
       com.google.iam.admin.v1.QueryAuditableServicesRequest result =
           new com.google.iam.admin.v1.QueryAuditableServicesRequest(this);
-      result.fullResourceName_ = fullResourceName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.QueryAuditableServicesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fullResourceName_ = fullResourceName_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +415,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getFullResourceName().isEmpty()) {
         fullResourceName_ = other.fullResourceName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +447,7 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
             case 10:
               {
                 fullResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +466,8 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object fullResourceName_ = "";
     /**
@@ -528,8 +542,8 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,8 +563,8 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearFullResourceName() {
-
       fullResourceName_ = getDefaultInstance().getFullResourceName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -575,8 +589,8 @@ public final class QueryAuditableServicesRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullResourceName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

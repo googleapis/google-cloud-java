@@ -122,7 +122,9 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder() {
-    return getDeviceRegistry();
+    return deviceRegistry_ == null
+        ? com.google.cloud.iot.v1.DeviceRegistry.getDefaultInstance()
+        : deviceRegistry_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -183,7 +185,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -402,16 +404,15 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (deviceRegistryBuilder_ == null) {
-        deviceRegistry_ = null;
-      } else {
-        deviceRegistry_ = null;
+      bitField0_ = 0;
+      deviceRegistry_ = null;
+      if (deviceRegistryBuilder_ != null) {
+        deviceRegistryBuilder_.dispose();
         deviceRegistryBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -441,18 +442,22 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
     public com.google.cloud.iot.v1.UpdateDeviceRegistryRequest buildPartial() {
       com.google.cloud.iot.v1.UpdateDeviceRegistryRequest result =
           new com.google.cloud.iot.v1.UpdateDeviceRegistryRequest(this);
-      if (deviceRegistryBuilder_ == null) {
-        result.deviceRegistry_ = deviceRegistry_;
-      } else {
-        result.deviceRegistry_ = deviceRegistryBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.UpdateDeviceRegistryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deviceRegistry_ =
+            deviceRegistryBuilder_ == null ? deviceRegistry_ : deviceRegistryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -536,13 +541,13 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
             case 10:
               {
                 input.readMessage(getDeviceRegistryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -561,6 +566,8 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.iot.v1.DeviceRegistry deviceRegistry_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -584,7 +591,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * @return Whether the deviceRegistry field is set.
      */
     public boolean hasDeviceRegistry() {
-      return deviceRegistryBuilder_ != null || deviceRegistry_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -629,11 +636,11 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         deviceRegistry_ = value;
-        onChanged();
       } else {
         deviceRegistryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,11 +660,11 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
         com.google.cloud.iot.v1.DeviceRegistry.Builder builderForValue) {
       if (deviceRegistryBuilder_ == null) {
         deviceRegistry_ = builderForValue.build();
-        onChanged();
       } else {
         deviceRegistryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,19 +682,18 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      */
     public Builder mergeDeviceRegistry(com.google.cloud.iot.v1.DeviceRegistry value) {
       if (deviceRegistryBuilder_ == null) {
-        if (deviceRegistry_ != null) {
-          deviceRegistry_ =
-              com.google.cloud.iot.v1.DeviceRegistry.newBuilder(deviceRegistry_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && deviceRegistry_ != null
+            && deviceRegistry_ != com.google.cloud.iot.v1.DeviceRegistry.getDefaultInstance()) {
+          getDeviceRegistryBuilder().mergeFrom(value);
         } else {
           deviceRegistry_ = value;
         }
-        onChanged();
       } else {
         deviceRegistryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -704,14 +710,13 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearDeviceRegistry() {
-      if (deviceRegistryBuilder_ == null) {
-        deviceRegistry_ = null;
-        onChanged();
-      } else {
-        deviceRegistry_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      deviceRegistry_ = null;
+      if (deviceRegistryBuilder_ != null) {
+        deviceRegistryBuilder_.dispose();
         deviceRegistryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -728,7 +733,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.cloud.iot.v1.DeviceRegistry.Builder getDeviceRegistryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDeviceRegistryFieldBuilder().getBuilder();
     }
@@ -807,7 +812,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -854,11 +859,11 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,11 +883,11 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -901,17 +906,18 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -929,14 +935,13 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -954,7 +959,7 @@ public final class UpdateDeviceRegistryRequest extends com.google.protobuf.Gener
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -231,7 +231,9 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -292,7 +294,10 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
   }
 
   public static final int KEY_TYPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> keyTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType>
       keyTypes_converter_ =
@@ -300,9 +305,8 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
               java.lang.Integer, com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType>() {
             public com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType result =
-                  com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.valueOf(from);
+                  com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.forNumber(from);
               return result == null
                   ? com.google.iam.admin.v1.ListServiceAccountKeysRequest.KeyType.UNRECOGNIZED
                   : result;
@@ -624,10 +628,10 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       keyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -655,15 +659,28 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
     public com.google.iam.admin.v1.ListServiceAccountKeysRequest buildPartial() {
       com.google.iam.admin.v1.ListServiceAccountKeysRequest result =
           new com.google.iam.admin.v1.ListServiceAccountKeysRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        keyTypes_ = java.util.Collections.unmodifiableList(keyTypes_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.keyTypes_ = keyTypes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.iam.admin.v1.ListServiceAccountKeysRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        keyTypes_ = java.util.Collections.unmodifiableList(keyTypes_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.keyTypes_ = keyTypes_;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.ListServiceAccountKeysRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -714,12 +731,13 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.keyTypes_.isEmpty()) {
         if (keyTypes_.isEmpty()) {
           keyTypes_ = other.keyTypes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureKeyTypesIsMutable();
           keyTypes_.addAll(other.keyTypes_);
@@ -755,7 +773,7 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
@@ -875,8 +893,8 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -898,8 +916,8 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -926,8 +944,8 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -935,9 +953,9 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
     private java.util.List<java.lang.Integer> keyTypes_ = java.util.Collections.emptyList();
 
     private void ensureKeyTypesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         keyTypes_ = new java.util.ArrayList<java.lang.Integer>(keyTypes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1087,7 +1105,7 @@ public final class ListServiceAccountKeysRequest extends com.google.protobuf.Gen
      */
     public Builder clearKeyTypes() {
       keyTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
   }
 
   public static final int MEMBERSHIP_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object membershipId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object membershipId_ = "";
   /**
    *
    *
@@ -235,7 +239,9 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha2.MembershipOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null
+        ? com.google.cloud.gkehub.v1alpha2.Membership.getDefaultInstance()
+        : resource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -459,14 +465,12 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       membershipId_ = "";
-
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       return this;
@@ -496,15 +500,24 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
     public com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest buildPartial() {
       com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest result =
           new com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest(this);
-      result.parent_ = parent_;
-      result.membershipId_ = membershipId_;
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.CreateMembershipRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.membershipId_ = membershipId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -555,10 +568,12 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getMembershipId().isEmpty()) {
         membershipId_ = other.membershipId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasResource()) {
@@ -593,19 +608,19 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 membershipId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -624,6 +639,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -695,8 +712,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -715,8 +732,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -740,8 +757,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -825,8 +842,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       membershipId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -848,8 +865,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMembershipId() {
-
       membershipId_ = getDefaultInstance().getMembershipId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -876,8 +893,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       membershipId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -902,7 +919,7 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -943,11 +960,11 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -965,11 +982,11 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
         com.google.cloud.gkehub.v1alpha2.Membership.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -985,19 +1002,18 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      */
     public Builder mergeResource(com.google.cloud.gkehub.v1alpha2.Membership value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.cloud.gkehub.v1alpha2.Membership.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resource_ != null
+            && resource_ != com.google.cloud.gkehub.v1alpha2.Membership.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1012,14 +1028,13 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1034,7 +1049,7 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.gkehub.v1alpha2.Membership.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

@@ -344,10 +344,14 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.apps.script.type.HomepageExtensionPointOrBuilder getHomepageTriggerOrBuilder() {
-    return getHomepageTrigger();
+    return homepageTrigger_ == null
+        ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
+        : homepageTrigger_;
   }
 
   public static final int CONFERENCE_SOLUTION_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.calendar.ConferenceSolution>
       conferenceSolution_;
   /**
@@ -425,7 +429,9 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CREATE_SETTINGS_URL_FUNCTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object createSettingsUrlFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object createSettingsUrlFunction_ = "";
   /**
    *
    *
@@ -519,7 +525,9 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.apps.script.type.calendar.CalendarExtensionPointOrBuilder
       getEventOpenTriggerOrBuilder() {
-    return getEventOpenTrigger();
+    return eventOpenTrigger_ == null
+        ? com.google.apps.script.type.calendar.CalendarExtensionPoint.getDefaultInstance()
+        : eventOpenTrigger_;
   }
 
   public static final int EVENT_UPDATE_TRIGGER_FIELD_NUMBER = 11;
@@ -571,11 +579,13 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.apps.script.type.calendar.CalendarExtensionPointOrBuilder
       getEventUpdateTriggerOrBuilder() {
-    return getEventUpdateTrigger();
+    return eventUpdateTrigger_ == null
+        ? com.google.apps.script.type.calendar.CalendarExtensionPoint.getDefaultInstance()
+        : eventUpdateTrigger_;
   }
 
   public static final int CURRENT_EVENT_ACCESS_FIELD_NUMBER = 12;
-  private int currentEventAccess_;
+  private int currentEventAccess_ = 0;
   /**
    *
    *
@@ -609,9 +619,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess
       getCurrentEventAccess() {
-    @SuppressWarnings("deprecation")
     com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess result =
-        com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.valueOf(
+        com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.forNumber(
             currentEventAccess_);
     return result == null
         ? com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.UNRECOGNIZED
@@ -884,10 +893,10 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = 0;
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
       if (conferenceSolutionBuilder_ == null) {
@@ -896,23 +905,19 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         conferenceSolution_ = null;
         conferenceSolutionBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       createSettingsUrlFunction_ = "";
-
-      if (eventOpenTriggerBuilder_ == null) {
-        eventOpenTrigger_ = null;
-      } else {
-        eventOpenTrigger_ = null;
+      eventOpenTrigger_ = null;
+      if (eventOpenTriggerBuilder_ != null) {
+        eventOpenTriggerBuilder_.dispose();
         eventOpenTriggerBuilder_ = null;
       }
-      if (eventUpdateTriggerBuilder_ == null) {
-        eventUpdateTrigger_ = null;
-      } else {
-        eventUpdateTrigger_ = null;
+      eventUpdateTrigger_ = null;
+      if (eventUpdateTriggerBuilder_ != null) {
+        eventUpdateTriggerBuilder_.dispose();
         eventUpdateTriggerBuilder_ = null;
       }
       currentEventAccess_ = 0;
-
       return this;
     }
 
@@ -940,35 +945,49 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public com.google.apps.script.type.calendar.CalendarAddOnManifest buildPartial() {
       com.google.apps.script.type.calendar.CalendarAddOnManifest result =
           new com.google.apps.script.type.calendar.CalendarAddOnManifest(this);
-      int from_bitField0_ = bitField0_;
-      if (homepageTriggerBuilder_ == null) {
-        result.homepageTrigger_ = homepageTrigger_;
-      } else {
-        result.homepageTrigger_ = homepageTriggerBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.apps.script.type.calendar.CalendarAddOnManifest result) {
       if (conferenceSolutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           conferenceSolution_ = java.util.Collections.unmodifiableList(conferenceSolution_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.conferenceSolution_ = conferenceSolution_;
       } else {
         result.conferenceSolution_ = conferenceSolutionBuilder_.build();
       }
-      result.createSettingsUrlFunction_ = createSettingsUrlFunction_;
-      if (eventOpenTriggerBuilder_ == null) {
-        result.eventOpenTrigger_ = eventOpenTrigger_;
-      } else {
-        result.eventOpenTrigger_ = eventOpenTriggerBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.apps.script.type.calendar.CalendarAddOnManifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.homepageTrigger_ =
+            homepageTriggerBuilder_ == null ? homepageTrigger_ : homepageTriggerBuilder_.build();
       }
-      if (eventUpdateTriggerBuilder_ == null) {
-        result.eventUpdateTrigger_ = eventUpdateTrigger_;
-      } else {
-        result.eventUpdateTrigger_ = eventUpdateTriggerBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createSettingsUrlFunction_ = createSettingsUrlFunction_;
       }
-      result.currentEventAccess_ = currentEventAccess_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.eventOpenTrigger_ =
+            eventOpenTriggerBuilder_ == null ? eventOpenTrigger_ : eventOpenTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.eventUpdateTrigger_ =
+            eventUpdateTriggerBuilder_ == null
+                ? eventUpdateTrigger_
+                : eventUpdateTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.currentEventAccess_ = currentEventAccess_;
+      }
     }
 
     @java.lang.Override
@@ -1024,7 +1043,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         if (!other.conferenceSolution_.isEmpty()) {
           if (conferenceSolution_.isEmpty()) {
             conferenceSolution_ = other.conferenceSolution_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureConferenceSolutionIsMutable();
             conferenceSolution_.addAll(other.conferenceSolution_);
@@ -1037,7 +1056,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             conferenceSolutionBuilder_.dispose();
             conferenceSolutionBuilder_ = null;
             conferenceSolution_ = other.conferenceSolution_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             conferenceSolutionBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConferenceSolutionFieldBuilder()
@@ -1049,6 +1068,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getCreateSettingsUrlFunction().isEmpty()) {
         createSettingsUrlFunction_ = other.createSettingsUrlFunction_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasEventOpenTrigger()) {
@@ -1103,33 +1123,33 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
             case 42:
               {
                 createSettingsUrlFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getHomepageTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             case 82:
               {
                 input.readMessage(
                     getEventOpenTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     getEventUpdateTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 90
             case 96:
               {
                 currentEventAccess_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 96
             default:
@@ -1174,7 +1194,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return Whether the homepageTrigger field is set.
      */
     public boolean hasHomepageTrigger() {
-      return homepageTriggerBuilder_ != null || homepageTrigger_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1221,11 +1241,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         homepageTrigger_ = value;
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1246,11 +1266,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         com.google.apps.script.type.HomepageExtensionPoint.Builder builderForValue) {
       if (homepageTriggerBuilder_ == null) {
         homepageTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1269,19 +1289,19 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeHomepageTrigger(com.google.apps.script.type.HomepageExtensionPoint value) {
       if (homepageTriggerBuilder_ == null) {
-        if (homepageTrigger_ != null) {
-          homepageTrigger_ =
-              com.google.apps.script.type.HomepageExtensionPoint.newBuilder(homepageTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && homepageTrigger_ != null
+            && homepageTrigger_
+                != com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()) {
+          getHomepageTriggerBuilder().mergeFrom(value);
         } else {
           homepageTrigger_ = value;
         }
-        onChanged();
       } else {
         homepageTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1299,14 +1319,13 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 6;</code>
      */
     public Builder clearHomepageTrigger() {
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-        onChanged();
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1324,7 +1343,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 6;</code>
      */
     public com.google.apps.script.type.HomepageExtensionPoint.Builder getHomepageTriggerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
@@ -1387,11 +1406,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         conferenceSolution_ = java.util.Collections.emptyList();
 
     private void ensureConferenceSolutionIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         conferenceSolution_ =
             new java.util.ArrayList<com.google.apps.script.type.calendar.ConferenceSolution>(
                 conferenceSolution_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1626,7 +1645,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public Builder clearConferenceSolution() {
       if (conferenceSolutionBuilder_ == null) {
         conferenceSolution_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         conferenceSolutionBuilder_.clear();
@@ -1762,7 +1781,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
                 com.google.apps.script.type.calendar.ConferenceSolution.Builder,
                 com.google.apps.script.type.calendar.ConferenceSolutionOrBuilder>(
                 conferenceSolution_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         conferenceSolution_ = null;
@@ -1831,8 +1850,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       createSettingsUrlFunction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1848,8 +1867,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCreateSettingsUrlFunction() {
-
       createSettingsUrlFunction_ = getDefaultInstance().getCreateSettingsUrlFunction();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1870,8 +1889,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       createSettingsUrlFunction_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1895,7 +1914,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return Whether the eventOpenTrigger field is set.
      */
     public boolean hasEventOpenTrigger() {
-      return eventOpenTriggerBuilder_ != null || eventOpenTrigger_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1935,11 +1954,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         eventOpenTrigger_ = value;
-        onChanged();
       } else {
         eventOpenTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1956,11 +1975,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder builderForValue) {
       if (eventOpenTriggerBuilder_ == null) {
         eventOpenTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         eventOpenTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1976,20 +1995,20 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public Builder mergeEventOpenTrigger(
         com.google.apps.script.type.calendar.CalendarExtensionPoint value) {
       if (eventOpenTriggerBuilder_ == null) {
-        if (eventOpenTrigger_ != null) {
-          eventOpenTrigger_ =
-              com.google.apps.script.type.calendar.CalendarExtensionPoint.newBuilder(
-                      eventOpenTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && eventOpenTrigger_ != null
+            && eventOpenTrigger_
+                != com.google.apps.script.type.calendar.CalendarExtensionPoint
+                    .getDefaultInstance()) {
+          getEventOpenTriggerBuilder().mergeFrom(value);
         } else {
           eventOpenTrigger_ = value;
         }
-        onChanged();
       } else {
         eventOpenTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2003,14 +2022,13 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearEventOpenTrigger() {
-      if (eventOpenTriggerBuilder_ == null) {
-        eventOpenTrigger_ = null;
-        onChanged();
-      } else {
-        eventOpenTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      eventOpenTrigger_ = null;
+      if (eventOpenTriggerBuilder_ != null) {
+        eventOpenTriggerBuilder_.dispose();
         eventOpenTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2025,7 +2043,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      */
     public com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder
         getEventOpenTriggerBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEventOpenTriggerFieldBuilder().getBuilder();
     }
@@ -2095,7 +2113,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return Whether the eventUpdateTrigger field is set.
      */
     public boolean hasEventUpdateTrigger() {
-      return eventUpdateTriggerBuilder_ != null || eventUpdateTrigger_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2135,11 +2153,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         eventUpdateTrigger_ = value;
-        onChanged();
       } else {
         eventUpdateTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2156,11 +2174,11 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
         com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder builderForValue) {
       if (eventUpdateTriggerBuilder_ == null) {
         eventUpdateTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         eventUpdateTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2176,20 +2194,20 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     public Builder mergeEventUpdateTrigger(
         com.google.apps.script.type.calendar.CalendarExtensionPoint value) {
       if (eventUpdateTriggerBuilder_ == null) {
-        if (eventUpdateTrigger_ != null) {
-          eventUpdateTrigger_ =
-              com.google.apps.script.type.calendar.CalendarExtensionPoint.newBuilder(
-                      eventUpdateTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && eventUpdateTrigger_ != null
+            && eventUpdateTrigger_
+                != com.google.apps.script.type.calendar.CalendarExtensionPoint
+                    .getDefaultInstance()) {
+          getEventUpdateTriggerBuilder().mergeFrom(value);
         } else {
           eventUpdateTrigger_ = value;
         }
-        onChanged();
       } else {
         eventUpdateTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2203,14 +2221,13 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearEventUpdateTrigger() {
-      if (eventUpdateTriggerBuilder_ == null) {
-        eventUpdateTrigger_ = null;
-        onChanged();
-      } else {
-        eventUpdateTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      eventUpdateTrigger_ = null;
+      if (eventUpdateTriggerBuilder_ != null) {
+        eventUpdateTriggerBuilder_.dispose();
         eventUpdateTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2225,7 +2242,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      */
     public com.google.apps.script.type.calendar.CalendarExtensionPoint.Builder
         getEventUpdateTriggerBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEventUpdateTriggerFieldBuilder().getBuilder();
     }
@@ -2309,8 +2326,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setCurrentEventAccessValue(int value) {
-
       currentEventAccess_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2330,9 +2347,8 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess
         getCurrentEventAccess() {
-      @SuppressWarnings("deprecation")
       com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess result =
-          com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.valueOf(
+          com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.forNumber(
               currentEventAccess_);
       return result == null
           ? com.google.apps.script.type.calendar.CalendarAddOnManifest.EventAccess.UNRECOGNIZED
@@ -2357,7 +2373,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       currentEventAccess_ = value.getNumber();
       onChanged();
       return this;
@@ -2376,7 +2392,7 @@ public final class CalendarAddOnManifest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearCurrentEventAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       currentEventAccess_ = 0;
       onChanged();
       return this;

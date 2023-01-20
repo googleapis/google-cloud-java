@@ -69,7 +69,9 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -178,7 +180,9 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigOrBuilder() {
-    return getUptimeCheckConfig();
+    return uptimeCheckConfig_ == null
+        ? com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance()
+        : uptimeCheckConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,12 +397,11 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (uptimeCheckConfigBuilder_ == null) {
-        uptimeCheckConfig_ = null;
-      } else {
-        uptimeCheckConfig_ = null;
+      uptimeCheckConfig_ = null;
+      if (uptimeCheckConfigBuilder_ != null) {
+        uptimeCheckConfigBuilder_.dispose();
         uptimeCheckConfigBuilder_ = null;
       }
       return this;
@@ -428,14 +431,24 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
     public com.google.monitoring.v3.CreateUptimeCheckConfigRequest buildPartial() {
       com.google.monitoring.v3.CreateUptimeCheckConfigRequest result =
           new com.google.monitoring.v3.CreateUptimeCheckConfigRequest(this);
-      result.parent_ = parent_;
-      if (uptimeCheckConfigBuilder_ == null) {
-        result.uptimeCheckConfig_ = uptimeCheckConfig_;
-      } else {
-        result.uptimeCheckConfig_ = uptimeCheckConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateUptimeCheckConfigRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uptimeCheckConfig_ =
+            uptimeCheckConfigBuilder_ == null
+                ? uptimeCheckConfig_
+                : uptimeCheckConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -486,6 +499,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasUptimeCheckConfig()) {
@@ -520,14 +534,14 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getUptimeCheckConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -546,6 +560,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -623,8 +639,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -645,8 +661,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -672,8 +688,8 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,7 +714,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * @return Whether the uptimeCheckConfig field is set.
      */
     public boolean hasUptimeCheckConfig() {
-      return uptimeCheckConfigBuilder_ != null || uptimeCheckConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -739,11 +755,11 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         uptimeCheckConfig_ = value;
-        onChanged();
       } else {
         uptimeCheckConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -761,11 +777,11 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
         com.google.monitoring.v3.UptimeCheckConfig.Builder builderForValue) {
       if (uptimeCheckConfigBuilder_ == null) {
         uptimeCheckConfig_ = builderForValue.build();
-        onChanged();
       } else {
         uptimeCheckConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -781,19 +797,19 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      */
     public Builder mergeUptimeCheckConfig(com.google.monitoring.v3.UptimeCheckConfig value) {
       if (uptimeCheckConfigBuilder_ == null) {
-        if (uptimeCheckConfig_ != null) {
-          uptimeCheckConfig_ =
-              com.google.monitoring.v3.UptimeCheckConfig.newBuilder(uptimeCheckConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && uptimeCheckConfig_ != null
+            && uptimeCheckConfig_
+                != com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance()) {
+          getUptimeCheckConfigBuilder().mergeFrom(value);
         } else {
           uptimeCheckConfig_ = value;
         }
-        onChanged();
       } else {
         uptimeCheckConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -808,14 +824,13 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearUptimeCheckConfig() {
-      if (uptimeCheckConfigBuilder_ == null) {
-        uptimeCheckConfig_ = null;
-        onChanged();
-      } else {
-        uptimeCheckConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      uptimeCheckConfig_ = null;
+      if (uptimeCheckConfigBuilder_ != null) {
+        uptimeCheckConfigBuilder_.dispose();
         uptimeCheckConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -830,7 +845,7 @@ public final class CreateUptimeCheckConfigRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.monitoring.v3.UptimeCheckConfig.Builder getUptimeCheckConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUptimeCheckConfigFieldBuilder().getBuilder();
     }

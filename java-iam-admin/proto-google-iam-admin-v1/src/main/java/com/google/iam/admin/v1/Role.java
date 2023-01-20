@@ -301,7 +301,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -358,7 +360,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -409,7 +413,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -458,6 +464,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUDED_PERMISSIONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList includedPermissions_;
   /**
    *
@@ -519,7 +527,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STAGE_FIELD_NUMBER = 8;
-  private int stage_;
+  private int stage_ = 0;
   /**
    *
    *
@@ -552,14 +560,13 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.admin.v1.Role.RoleLaunchStage getStage() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.Role.RoleLaunchStage result =
-        com.google.iam.admin.v1.Role.RoleLaunchStage.valueOf(stage_);
+        com.google.iam.admin.v1.Role.RoleLaunchStage.forNumber(stage_);
     return result == null ? com.google.iam.admin.v1.Role.RoleLaunchStage.UNRECOGNIZED : result;
   }
 
   public static final int ETAG_FIELD_NUMBER = 9;
-  private com.google.protobuf.ByteString etag_;
+  private com.google.protobuf.ByteString etag_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -577,7 +584,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELETED_FIELD_NUMBER = 11;
-  private boolean deleted_;
+  private boolean deleted_ = false;
   /**
    *
    *
@@ -848,20 +855,15 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       title_ = "";
-
       description_ = "";
-
       includedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       stage_ = 0;
-
       etag_ = com.google.protobuf.ByteString.EMPTY;
-
       deleted_ = false;
-
       return this;
     }
 
@@ -887,20 +889,42 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.iam.admin.v1.Role buildPartial() {
       com.google.iam.admin.v1.Role result = new com.google.iam.admin.v1.Role(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.title_ = title_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        includedPermissions_ = includedPermissions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.includedPermissions_ = includedPermissions_;
-      result.stage_ = stage_;
-      result.etag_ = etag_;
-      result.deleted_ = deleted_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.iam.admin.v1.Role result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        includedPermissions_ = includedPermissions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.includedPermissions_ = includedPermissions_;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.Role result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.stage_ = stage_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.deleted_ = deleted_;
+      }
     }
 
     @java.lang.Override
@@ -950,20 +974,23 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.iam.admin.v1.Role.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.includedPermissions_.isEmpty()) {
         if (includedPermissions_.isEmpty()) {
           includedPermissions_ = other.includedPermissions_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureIncludedPermissionsIsMutable();
           includedPermissions_.addAll(other.includedPermissions_);
@@ -1008,19 +1035,19 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 58:
@@ -1033,19 +1060,19 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
             case 64:
               {
                 stage_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 64
             case 74:
               {
                 etag_ = input.readBytes();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 88:
               {
                 deleted_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 88
             default:
@@ -1140,8 +1167,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1161,8 +1188,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1187,8 +1214,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1257,8 +1284,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1275,8 +1302,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1298,8 +1325,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1365,8 +1392,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1382,8 +1409,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1404,8 +1431,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1414,9 +1441,9 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureIncludedPermissionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         includedPermissions_ = new com.google.protobuf.LazyStringArrayList(includedPermissions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1551,7 +1578,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIncludedPermissions() {
       includedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1611,8 +1638,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStageValue(int value) {
-
       stage_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1631,9 +1658,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.iam.admin.v1.Role.RoleLaunchStage getStage() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.Role.RoleLaunchStage result =
-          com.google.iam.admin.v1.Role.RoleLaunchStage.valueOf(stage_);
+          com.google.iam.admin.v1.Role.RoleLaunchStage.forNumber(stage_);
       return result == null ? com.google.iam.admin.v1.Role.RoleLaunchStage.UNRECOGNIZED : result;
     }
     /**
@@ -1654,7 +1680,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       stage_ = value.getNumber();
       onChanged();
       return this;
@@ -1673,7 +1699,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStage() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       stage_ = 0;
       onChanged();
       return this;
@@ -1711,8 +1737,8 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1728,7 +1754,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       etag_ = getDefaultInstance().getEtag();
       onChanged();
       return this;
@@ -1767,6 +1793,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleted(boolean value) {
 
       deleted_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1783,7 +1810,7 @@ public final class Role extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeleted() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       deleted_ = false;
       onChanged();
       return this;

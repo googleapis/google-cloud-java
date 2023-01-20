@@ -202,7 +202,6 @@ public interface AlertPolicyOrBuilder
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
-
   /* nullable */
   java.lang.String getUserLabelsOrDefault(
       java.lang.String key,

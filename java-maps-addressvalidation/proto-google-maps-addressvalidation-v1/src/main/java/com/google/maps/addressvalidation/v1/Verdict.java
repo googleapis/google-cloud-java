@@ -330,7 +330,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_GRANULARITY_FIELD_NUMBER = 1;
-  private int inputGranularity_;
+  private int inputGranularity_ = 0;
   /**
    *
    *
@@ -371,16 +371,15 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.Verdict.Granularity getInputGranularity() {
-    @SuppressWarnings("deprecation")
     com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-        com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(inputGranularity_);
+        com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(inputGranularity_);
     return result == null
         ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
         : result;
   }
 
   public static final int VALIDATION_GRANULARITY_FIELD_NUMBER = 2;
-  private int validationGranularity_;
+  private int validationGranularity_ = 0;
   /**
    *
    *
@@ -417,16 +416,15 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.Verdict.Granularity getValidationGranularity() {
-    @SuppressWarnings("deprecation")
     com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-        com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(validationGranularity_);
+        com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(validationGranularity_);
     return result == null
         ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
         : result;
   }
 
   public static final int GEOCODE_GRANULARITY_FIELD_NUMBER = 3;
-  private int geocodeGranularity_;
+  private int geocodeGranularity_ = 0;
   /**
    *
    *
@@ -471,16 +469,15 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.Verdict.Granularity getGeocodeGranularity() {
-    @SuppressWarnings("deprecation")
     com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-        com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(geocodeGranularity_);
+        com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(geocodeGranularity_);
     return result == null
         ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
         : result;
   }
 
   public static final int ADDRESS_COMPLETE_FIELD_NUMBER = 4;
-  private boolean addressComplete_;
+  private boolean addressComplete_ = false;
   /**
    *
    *
@@ -504,7 +501,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_UNCONFIRMED_COMPONENTS_FIELD_NUMBER = 5;
-  private boolean hasUnconfirmedComponents_;
+  private boolean hasUnconfirmedComponents_ = false;
   /**
    *
    *
@@ -524,7 +521,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_INFERRED_COMPONENTS_FIELD_NUMBER = 6;
-  private boolean hasInferredComponents_;
+  private boolean hasInferredComponents_ = false;
   /**
    *
    *
@@ -545,7 +542,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HAS_REPLACED_COMPONENTS_FIELD_NUMBER = 7;
-  private boolean hasReplacedComponents_;
+  private boolean hasReplacedComponents_ = false;
   /**
    *
    *
@@ -827,20 +824,14 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputGranularity_ = 0;
-
       validationGranularity_ = 0;
-
       geocodeGranularity_ = 0;
-
       addressComplete_ = false;
-
       hasUnconfirmedComponents_ = false;
-
       hasInferredComponents_ = false;
-
       hasReplacedComponents_ = false;
-
       return this;
     }
 
@@ -868,15 +859,36 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.Verdict buildPartial() {
       com.google.maps.addressvalidation.v1.Verdict result =
           new com.google.maps.addressvalidation.v1.Verdict(this);
-      result.inputGranularity_ = inputGranularity_;
-      result.validationGranularity_ = validationGranularity_;
-      result.geocodeGranularity_ = geocodeGranularity_;
-      result.addressComplete_ = addressComplete_;
-      result.hasUnconfirmedComponents_ = hasUnconfirmedComponents_;
-      result.hasInferredComponents_ = hasInferredComponents_;
-      result.hasReplacedComponents_ = hasReplacedComponents_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.Verdict result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputGranularity_ = inputGranularity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validationGranularity_ = validationGranularity_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.geocodeGranularity_ = geocodeGranularity_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.addressComplete_ = addressComplete_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hasUnconfirmedComponents_ = hasUnconfirmedComponents_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.hasInferredComponents_ = hasInferredComponents_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.hasReplacedComponents_ = hasReplacedComponents_;
+      }
     }
 
     @java.lang.Override
@@ -974,43 +986,43 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 inputGranularity_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 validationGranularity_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 geocodeGranularity_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 addressComplete_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 hasUnconfirmedComponents_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 hasInferredComponents_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 hasReplacedComponents_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1029,6 +1041,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int inputGranularity_ = 0;
     /**
@@ -1071,8 +1085,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInputGranularityValue(int value) {
-
       inputGranularity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1095,9 +1109,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.addressvalidation.v1.Verdict.Granularity getInputGranularity() {
-      @SuppressWarnings("deprecation")
       com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-          com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(inputGranularity_);
+          com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(inputGranularity_);
       return result == null
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
@@ -1125,7 +1138,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       inputGranularity_ = value.getNumber();
       onChanged();
       return this;
@@ -1148,7 +1161,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputGranularity() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       inputGranularity_ = 0;
       onChanged();
       return this;
@@ -1193,8 +1206,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValidationGranularityValue(int value) {
-
       validationGranularity_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1216,9 +1229,9 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.addressvalidation.v1.Verdict.Granularity getValidationGranularity() {
-      @SuppressWarnings("deprecation")
       com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-          com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(validationGranularity_);
+          com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(
+              validationGranularity_);
       return result == null
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
@@ -1245,7 +1258,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       validationGranularity_ = value.getNumber();
       onChanged();
       return this;
@@ -1267,7 +1280,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidationGranularity() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validationGranularity_ = 0;
       onChanged();
       return this;
@@ -1318,8 +1331,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGeocodeGranularityValue(int value) {
-
       geocodeGranularity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1344,9 +1357,8 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.maps.addressvalidation.v1.Verdict.Granularity getGeocodeGranularity() {
-      @SuppressWarnings("deprecation")
       com.google.maps.addressvalidation.v1.Verdict.Granularity result =
-          com.google.maps.addressvalidation.v1.Verdict.Granularity.valueOf(geocodeGranularity_);
+          com.google.maps.addressvalidation.v1.Verdict.Granularity.forNumber(geocodeGranularity_);
       return result == null
           ? com.google.maps.addressvalidation.v1.Verdict.Granularity.UNRECOGNIZED
           : result;
@@ -1376,7 +1388,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       geocodeGranularity_ = value.getNumber();
       onChanged();
       return this;
@@ -1401,7 +1413,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGeocodeGranularity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       geocodeGranularity_ = 0;
       onChanged();
       return this;
@@ -1450,6 +1462,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public Builder setAddressComplete(boolean value) {
 
       addressComplete_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1471,7 +1484,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddressComplete() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       addressComplete_ = false;
       onChanged();
       return this;
@@ -1512,6 +1525,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasUnconfirmedComponents(boolean value) {
 
       hasUnconfirmedComponents_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1529,7 +1543,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasUnconfirmedComponents() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       hasUnconfirmedComponents_ = false;
       onChanged();
       return this;
@@ -1572,6 +1586,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasInferredComponents(boolean value) {
 
       hasInferredComponents_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1590,7 +1605,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasInferredComponents() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       hasInferredComponents_ = false;
       onChanged();
       return this;
@@ -1631,6 +1646,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasReplacedComponents(boolean value) {
 
       hasReplacedComponents_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1648,7 +1664,7 @@ public final class Verdict extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasReplacedComponents() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       hasReplacedComponents_ = false;
       onChanged();
       return this;

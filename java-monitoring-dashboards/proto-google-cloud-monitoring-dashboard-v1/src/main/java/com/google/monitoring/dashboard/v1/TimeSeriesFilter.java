@@ -119,7 +119,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FILTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -222,7 +224,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.AggregationOrBuilder getAggregationOrBuilder() {
-    return getAggregation();
+    return aggregation_ == null
+        ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+        : aggregation_;
   }
 
   public static final int SECONDARY_AGGREGATION_FIELD_NUMBER = 3;
@@ -271,7 +275,9 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.AggregationOrBuilder
       getSecondaryAggregationOrBuilder() {
-    return getSecondaryAggregation();
+    return secondaryAggregation_ == null
+        ? com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()
+        : secondaryAggregation_;
   }
 
   public static final int PICK_TIME_SERIES_FILTER_FIELD_NUMBER = 4;
@@ -666,18 +672,16 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filter_ = "";
-
-      if (aggregationBuilder_ == null) {
-        aggregation_ = null;
-      } else {
-        aggregation_ = null;
+      aggregation_ = null;
+      if (aggregationBuilder_ != null) {
+        aggregationBuilder_.dispose();
         aggregationBuilder_ = null;
       }
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-      } else {
-        secondaryAggregation_ = null;
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
       if (pickTimeSeriesFilterBuilder_ != null) {
@@ -715,34 +719,40 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
     public com.google.monitoring.dashboard.v1.TimeSeriesFilter buildPartial() {
       com.google.monitoring.dashboard.v1.TimeSeriesFilter result =
           new com.google.monitoring.dashboard.v1.TimeSeriesFilter(this);
-      result.filter_ = filter_;
-      if (aggregationBuilder_ == null) {
-        result.aggregation_ = aggregation_;
-      } else {
-        result.aggregation_ = aggregationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (secondaryAggregationBuilder_ == null) {
-        result.secondaryAggregation_ = secondaryAggregation_;
-      } else {
-        result.secondaryAggregation_ = secondaryAggregationBuilder_.build();
-      }
-      if (outputFilterCase_ == 4) {
-        if (pickTimeSeriesFilterBuilder_ == null) {
-          result.outputFilter_ = outputFilter_;
-        } else {
-          result.outputFilter_ = pickTimeSeriesFilterBuilder_.build();
-        }
-      }
-      if (outputFilterCase_ == 5) {
-        if (statisticalTimeSeriesFilterBuilder_ == null) {
-          result.outputFilter_ = outputFilter_;
-        } else {
-          result.outputFilter_ = statisticalTimeSeriesFilterBuilder_.build();
-        }
-      }
-      result.outputFilterCase_ = outputFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.TimeSeriesFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.aggregation_ =
+            aggregationBuilder_ == null ? aggregation_ : aggregationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secondaryAggregation_ =
+            secondaryAggregationBuilder_ == null
+                ? secondaryAggregation_
+                : secondaryAggregationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.dashboard.v1.TimeSeriesFilter result) {
+      result.outputFilterCase_ = outputFilterCase_;
+      result.outputFilter_ = this.outputFilter_;
+      if (outputFilterCase_ == 4 && pickTimeSeriesFilterBuilder_ != null) {
+        result.outputFilter_ = pickTimeSeriesFilterBuilder_.build();
+      }
+      if (outputFilterCase_ == 5 && statisticalTimeSeriesFilterBuilder_ != null) {
+        result.outputFilter_ = statisticalTimeSeriesFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -793,6 +803,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAggregation()) {
@@ -846,20 +857,20 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getSecondaryAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -906,6 +917,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object filter_ = "";
     /**
@@ -974,8 +987,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -993,8 +1006,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1017,8 +1030,8 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1043,7 +1056,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * @return Whether the aggregation field is set.
      */
     public boolean hasAggregation() {
-      return aggregationBuilder_ != null || aggregation_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1084,11 +1097,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         aggregation_ = value;
-        onChanged();
       } else {
         aggregationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1106,11 +1119,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         com.google.monitoring.dashboard.v1.Aggregation.Builder builderForValue) {
       if (aggregationBuilder_ == null) {
         aggregation_ = builderForValue.build();
-        onChanged();
       } else {
         aggregationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1126,19 +1139,19 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
       if (aggregationBuilder_ == null) {
-        if (aggregation_ != null) {
-          aggregation_ =
-              com.google.monitoring.dashboard.v1.Aggregation.newBuilder(aggregation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && aggregation_ != null
+            && aggregation_
+                != com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()) {
+          getAggregationBuilder().mergeFrom(value);
         } else {
           aggregation_ = value;
         }
-        onChanged();
       } else {
         aggregationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1153,14 +1166,13 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
      */
     public Builder clearAggregation() {
-      if (aggregationBuilder_ == null) {
-        aggregation_ = null;
-        onChanged();
-      } else {
-        aggregation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      aggregation_ = null;
+      if (aggregationBuilder_ != null) {
+        aggregationBuilder_.dispose();
         aggregationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1175,7 +1187,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * <code>.google.monitoring.dashboard.v1.Aggregation aggregation = 2;</code>
      */
     public com.google.monitoring.dashboard.v1.Aggregation.Builder getAggregationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAggregationFieldBuilder().getBuilder();
     }
@@ -1245,7 +1257,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * @return Whether the secondaryAggregation field is set.
      */
     public boolean hasSecondaryAggregation() {
-      return secondaryAggregationBuilder_ != null || secondaryAggregation_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1282,11 +1294,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         secondaryAggregation_ = value;
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1302,11 +1314,11 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
         com.google.monitoring.dashboard.v1.Aggregation.Builder builderForValue) {
       if (secondaryAggregationBuilder_ == null) {
         secondaryAggregation_ = builderForValue.build();
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1320,19 +1332,19 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSecondaryAggregation(com.google.monitoring.dashboard.v1.Aggregation value) {
       if (secondaryAggregationBuilder_ == null) {
-        if (secondaryAggregation_ != null) {
-          secondaryAggregation_ =
-              com.google.monitoring.dashboard.v1.Aggregation.newBuilder(secondaryAggregation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && secondaryAggregation_ != null
+            && secondaryAggregation_
+                != com.google.monitoring.dashboard.v1.Aggregation.getDefaultInstance()) {
+          getSecondaryAggregationBuilder().mergeFrom(value);
         } else {
           secondaryAggregation_ = value;
         }
-        onChanged();
       } else {
         secondaryAggregationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1345,14 +1357,13 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
      */
     public Builder clearSecondaryAggregation() {
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-        onChanged();
-      } else {
-        secondaryAggregation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1365,7 +1376,7 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
      * <code>.google.monitoring.dashboard.v1.Aggregation secondary_aggregation = 3;</code>
      */
     public com.google.monitoring.dashboard.v1.Aggregation.Builder getSecondaryAggregationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSecondaryAggregationFieldBuilder().getBuilder();
     }
@@ -1635,7 +1646,6 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       }
       outputFilterCase_ = 4;
       onChanged();
-      ;
       return pickTimeSeriesFilterBuilder_;
     }
 
@@ -1893,7 +1903,6 @@ public final class TimeSeriesFilter extends com.google.protobuf.GeneratedMessage
       }
       outputFilterCase_ = 5;
       onChanged();
-      ;
       return statisticalTimeSeriesFilterBuilder_;
     }
 

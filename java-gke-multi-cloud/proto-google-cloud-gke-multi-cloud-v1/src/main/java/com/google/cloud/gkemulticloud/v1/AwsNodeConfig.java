@@ -85,7 +85,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceType_ = "";
   /**
    *
    *
@@ -195,10 +197,14 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsVolumeTemplateOrBuilder getRootVolumeOrBuilder() {
-    return getRootVolume();
+    return rootVolume_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.getDefaultInstance()
+        : rootVolume_;
   }
 
   public static final int TAINTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.NodeTaint> taints_;
   /**
    *
@@ -290,6 +296,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -353,7 +360,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -396,6 +406,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
@@ -462,7 +473,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getTagsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -494,7 +508,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IAM_INSTANCE_PROFILE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object iamInstanceProfile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object iamInstanceProfile_ = "";
   /**
    *
    *
@@ -545,7 +561,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_TYPE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object imageType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageType_ = "";
   /**
    *
    *
@@ -650,10 +668,14 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsSshConfigOrBuilder getSshConfigOrBuilder() {
-    return getSshConfig();
+    return sshConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsSshConfig.getDefaultInstance()
+        : sshConfig_;
   }
 
   public static final int SECURITY_GROUP_IDS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList securityGroupIds_;
   /**
    *
@@ -773,7 +795,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsProxyConfigOrBuilder getProxyConfigOrBuilder() {
-    return getProxyConfig();
+    return proxyConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsProxyConfig.getDefaultInstance()
+        : proxyConfig_;
   }
 
   public static final int CONFIG_ENCRYPTION_FIELD_NUMBER = 13;
@@ -828,7 +852,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsConfigEncryptionOrBuilder
       getConfigEncryptionOrBuilder() {
-    return getConfigEncryption();
+    return configEncryption_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.getDefaultInstance()
+        : configEncryption_;
   }
 
   public static final int INSTANCE_PLACEMENT_FIELD_NUMBER = 14;
@@ -886,7 +912,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsInstancePlacementOrBuilder
       getInstancePlacementOrBuilder() {
-    return getInstancePlacement();
+    return instancePlacement_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.getDefaultInstance()
+        : instancePlacement_;
   }
 
   public static final int AUTOSCALING_METRICS_COLLECTION_FIELD_NUMBER = 15;
@@ -950,7 +978,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollectionOrBuilder
       getAutoscalingMetricsCollectionOrBuilder() {
-    return getAutoscalingMetricsCollection();
+    return autoscalingMetricsCollection_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+            .getDefaultInstance()
+        : autoscalingMetricsCollection_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1340,12 +1371,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceType_ = "";
-
-      if (rootVolumeBuilder_ == null) {
-        rootVolume_ = null;
-      } else {
-        rootVolume_ = null;
+      rootVolume_ = null;
+      if (rootVolumeBuilder_ != null) {
+        rootVolumeBuilder_.dispose();
         rootVolumeBuilder_ = null;
       }
       if (taintsBuilder_ == null) {
@@ -1354,43 +1384,36 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         taints_ = null;
         taintsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableLabels().clear();
       internalGetMutableTags().clear();
       iamInstanceProfile_ = "";
-
       imageType_ = "";
-
-      if (sshConfigBuilder_ == null) {
-        sshConfig_ = null;
-      } else {
-        sshConfig_ = null;
+      sshConfig_ = null;
+      if (sshConfigBuilder_ != null) {
+        sshConfigBuilder_.dispose();
         sshConfigBuilder_ = null;
       }
       securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      if (proxyConfigBuilder_ == null) {
-        proxyConfig_ = null;
-      } else {
-        proxyConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
         proxyConfigBuilder_ = null;
       }
-      if (configEncryptionBuilder_ == null) {
-        configEncryption_ = null;
-      } else {
-        configEncryption_ = null;
+      configEncryption_ = null;
+      if (configEncryptionBuilder_ != null) {
+        configEncryptionBuilder_.dispose();
         configEncryptionBuilder_ = null;
       }
-      if (instancePlacementBuilder_ == null) {
-        instancePlacement_ = null;
-      } else {
-        instancePlacement_ = null;
+      instancePlacement_ = null;
+      if (instancePlacementBuilder_ != null) {
+        instancePlacementBuilder_.dispose();
         instancePlacementBuilder_ = null;
       }
-      if (autoscalingMetricsCollectionBuilder_ == null) {
-        autoscalingMetricsCollection_ = null;
-      } else {
-        autoscalingMetricsCollection_ = null;
+      autoscalingMetricsCollection_ = null;
+      if (autoscalingMetricsCollectionBuilder_ != null) {
+        autoscalingMetricsCollectionBuilder_.dispose();
         autoscalingMetricsCollectionBuilder_ = null;
       }
       return this;
@@ -1420,60 +1443,77 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AwsNodeConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsNodeConfig result =
           new com.google.cloud.gkemulticloud.v1.AwsNodeConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.instanceType_ = instanceType_;
-      if (rootVolumeBuilder_ == null) {
-        result.rootVolume_ = rootVolume_;
-      } else {
-        result.rootVolume_ = rootVolumeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AwsNodeConfig result) {
       if (taintsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           taints_ = java.util.Collections.unmodifiableList(taints_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.taints_ = taints_;
       } else {
         result.taints_ = taintsBuilder_.build();
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.tags_ = internalGetTags();
-      result.tags_.makeImmutable();
-      result.iamInstanceProfile_ = iamInstanceProfile_;
-      result.imageType_ = imageType_;
-      if (sshConfigBuilder_ == null) {
-        result.sshConfig_ = sshConfig_;
-      } else {
-        result.sshConfig_ = sshConfigBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         securityGroupIds_ = securityGroupIds_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.securityGroupIds_ = securityGroupIds_;
-      if (proxyConfigBuilder_ == null) {
-        result.proxyConfig_ = proxyConfig_;
-      } else {
-        result.proxyConfig_ = proxyConfigBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsNodeConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceType_ = instanceType_;
       }
-      if (configEncryptionBuilder_ == null) {
-        result.configEncryption_ = configEncryption_;
-      } else {
-        result.configEncryption_ = configEncryptionBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rootVolume_ = rootVolumeBuilder_ == null ? rootVolume_ : rootVolumeBuilder_.build();
       }
-      if (instancePlacementBuilder_ == null) {
-        result.instancePlacement_ = instancePlacement_;
-      } else {
-        result.instancePlacement_ = instancePlacementBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
       }
-      if (autoscalingMetricsCollectionBuilder_ == null) {
-        result.autoscalingMetricsCollection_ = autoscalingMetricsCollection_;
-      } else {
-        result.autoscalingMetricsCollection_ = autoscalingMetricsCollectionBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.iamInstanceProfile_ = iamInstanceProfile_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.imageType_ = imageType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.sshConfig_ = sshConfigBuilder_ == null ? sshConfig_ : sshConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.proxyConfig_ =
+            proxyConfigBuilder_ == null ? proxyConfig_ : proxyConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.configEncryption_ =
+            configEncryptionBuilder_ == null ? configEncryption_ : configEncryptionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.instancePlacement_ =
+            instancePlacementBuilder_ == null
+                ? instancePlacement_
+                : instancePlacementBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.autoscalingMetricsCollection_ =
+            autoscalingMetricsCollectionBuilder_ == null
+                ? autoscalingMetricsCollection_
+                : autoscalingMetricsCollectionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1524,6 +1564,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getInstanceType().isEmpty()) {
         instanceType_ = other.instanceType_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRootVolume()) {
@@ -1533,7 +1574,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         if (!other.taints_.isEmpty()) {
           if (taints_.isEmpty()) {
             taints_ = other.taints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTaintsIsMutable();
             taints_.addAll(other.taints_);
@@ -1546,7 +1587,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             taintsBuilder_.dispose();
             taintsBuilder_ = null;
             taints_ = other.taints_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             taintsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTaintsFieldBuilder()
@@ -1557,13 +1598,17 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000010;
       if (!other.getIamInstanceProfile().isEmpty()) {
         iamInstanceProfile_ = other.iamInstanceProfile_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getImageType().isEmpty()) {
         imageType_ = other.imageType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSshConfig()) {
@@ -1572,7 +1617,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (!other.securityGroupIds_.isEmpty()) {
         if (securityGroupIds_.isEmpty()) {
           securityGroupIds_ = other.securityGroupIds_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureSecurityGroupIdsIsMutable();
           securityGroupIds_.addAll(other.securityGroupIds_);
@@ -1620,13 +1665,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 instanceType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRootVolumeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1651,6 +1696,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1659,18 +1705,19 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 iamInstanceProfile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 74:
               {
                 input.readMessage(getSshConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
@@ -1683,34 +1730,34 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 imageType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getProxyConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     getConfigEncryptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getInstancePlacementFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getAutoscalingMetricsCollectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             default:
@@ -1796,8 +1843,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1814,8 +1861,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstanceType() {
-
       instanceType_ = getDefaultInstance().getInstanceType();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1837,8 +1884,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1866,7 +1913,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rootVolume field is set.
      */
     public boolean hasRootVolume() {
-      return rootVolumeBuilder_ != null || rootVolume_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1913,11 +1960,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         rootVolume_ = value;
-        onChanged();
       } else {
         rootVolumeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1938,11 +1985,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.Builder builderForValue) {
       if (rootVolumeBuilder_ == null) {
         rootVolume_ = builderForValue.build();
-        onChanged();
       } else {
         rootVolumeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1961,19 +2008,19 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRootVolume(com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate value) {
       if (rootVolumeBuilder_ == null) {
-        if (rootVolume_ != null) {
-          rootVolume_ =
-              com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.newBuilder(rootVolume_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && rootVolume_ != null
+            && rootVolume_
+                != com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.getDefaultInstance()) {
+          getRootVolumeBuilder().mergeFrom(value);
         } else {
           rootVolume_ = value;
         }
-        onChanged();
       } else {
         rootVolumeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1991,14 +2038,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRootVolume() {
-      if (rootVolumeBuilder_ == null) {
-        rootVolume_ = null;
-        onChanged();
-      } else {
-        rootVolume_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rootVolume_ = null;
+      if (rootVolumeBuilder_ != null) {
+        rootVolumeBuilder_.dispose();
         rootVolumeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2016,7 +2062,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.Builder getRootVolumeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRootVolumeFieldBuilder().getBuilder();
     }
@@ -2078,9 +2124,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTaintsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         taints_ = new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.NodeTaint>(taints_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2317,7 +2363,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTaints() {
       if (taintsBuilder_ == null) {
         taints_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         taintsBuilder_.clear();
@@ -2453,7 +2499,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gkemulticloud.v1.NodeTaint,
                 com.google.cloud.gkemulticloud.v1.NodeTaint.Builder,
                 com.google.cloud.gkemulticloud.v1.NodeTaintOrBuilder>(
-                taints_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                taints_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         taints_ = null;
       }
       return taintsBuilder_;
@@ -2470,14 +2516,14 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -2535,8 +2581,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2567,6 +2615,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2591,6 +2640,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2611,8 +2661,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -2628,6 +2678,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -2642,14 +2693,14 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableTags() {
-      onChanged();
-      ;
       if (tags_ == null) {
         tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
       }
       if (!tags_.isMutable()) {
         tags_ = tags_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return tags_;
     }
 
@@ -2710,7 +2761,10 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; tags = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getTagsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2742,6 +2796,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
@@ -2767,6 +2822,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableTags().getMutableMap();
     }
     /**
@@ -2788,8 +2844,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2806,6 +2862,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2873,8 +2930,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       iamInstanceProfile_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2891,8 +2948,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIamInstanceProfile() {
-
       iamInstanceProfile_ = getDefaultInstance().getIamInstanceProfile();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2914,8 +2971,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       iamInstanceProfile_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2990,8 +3047,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3010,8 +3067,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageType() {
-
       imageType_ = getDefaultInstance().getImageType();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3035,8 +3092,8 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3061,7 +3118,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sshConfig field is set.
      */
     public boolean hasSshConfig() {
-      return sshConfigBuilder_ != null || sshConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3102,11 +3159,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sshConfig_ = value;
-        onChanged();
       } else {
         sshConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3124,11 +3181,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkemulticloud.v1.AwsSshConfig.Builder builderForValue) {
       if (sshConfigBuilder_ == null) {
         sshConfig_ = builderForValue.build();
-        onChanged();
       } else {
         sshConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3144,19 +3201,18 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSshConfig(com.google.cloud.gkemulticloud.v1.AwsSshConfig value) {
       if (sshConfigBuilder_ == null) {
-        if (sshConfig_ != null) {
-          sshConfig_ =
-              com.google.cloud.gkemulticloud.v1.AwsSshConfig.newBuilder(sshConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && sshConfig_ != null
+            && sshConfig_ != com.google.cloud.gkemulticloud.v1.AwsSshConfig.getDefaultInstance()) {
+          getSshConfigBuilder().mergeFrom(value);
         } else {
           sshConfig_ = value;
         }
-        onChanged();
       } else {
         sshConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3171,14 +3227,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSshConfig() {
-      if (sshConfigBuilder_ == null) {
-        sshConfig_ = null;
-        onChanged();
-      } else {
-        sshConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      sshConfig_ = null;
+      if (sshConfigBuilder_ != null) {
+        sshConfigBuilder_.dispose();
         sshConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3193,7 +3248,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsSshConfig.Builder getSshConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSshConfigFieldBuilder().getBuilder();
     }
@@ -3249,9 +3304,9 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureSecurityGroupIdsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         securityGroupIds_ = new com.google.protobuf.LazyStringArrayList(securityGroupIds_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -3410,7 +3465,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSecurityGroupIds() {
       securityGroupIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3460,7 +3515,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the proxyConfig field is set.
      */
     public boolean hasProxyConfig() {
-      return proxyConfigBuilder_ != null || proxyConfig_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3501,11 +3556,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         proxyConfig_ = value;
-        onChanged();
       } else {
         proxyConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3523,11 +3578,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkemulticloud.v1.AwsProxyConfig.Builder builderForValue) {
       if (proxyConfigBuilder_ == null) {
         proxyConfig_ = builderForValue.build();
-        onChanged();
       } else {
         proxyConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3543,19 +3598,19 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProxyConfig(com.google.cloud.gkemulticloud.v1.AwsProxyConfig value) {
       if (proxyConfigBuilder_ == null) {
-        if (proxyConfig_ != null) {
-          proxyConfig_ =
-              com.google.cloud.gkemulticloud.v1.AwsProxyConfig.newBuilder(proxyConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && proxyConfig_ != null
+            && proxyConfig_
+                != com.google.cloud.gkemulticloud.v1.AwsProxyConfig.getDefaultInstance()) {
+          getProxyConfigBuilder().mergeFrom(value);
         } else {
           proxyConfig_ = value;
         }
-        onChanged();
       } else {
         proxyConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3570,14 +3625,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearProxyConfig() {
-      if (proxyConfigBuilder_ == null) {
-        proxyConfig_ = null;
-        onChanged();
-      } else {
-        proxyConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      proxyConfig_ = null;
+      if (proxyConfigBuilder_ != null) {
+        proxyConfigBuilder_.dispose();
         proxyConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3592,7 +3646,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsProxyConfig.Builder getProxyConfigBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
@@ -3664,7 +3718,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the configEncryption field is set.
      */
     public boolean hasConfigEncryption() {
-      return configEncryptionBuilder_ != null || configEncryption_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3706,11 +3760,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         configEncryption_ = value;
-        onChanged();
       } else {
         configEncryptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3728,11 +3782,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.Builder builderForValue) {
       if (configEncryptionBuilder_ == null) {
         configEncryption_ = builderForValue.build();
-        onChanged();
       } else {
         configEncryptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3749,19 +3803,19 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeConfigEncryption(
         com.google.cloud.gkemulticloud.v1.AwsConfigEncryption value) {
       if (configEncryptionBuilder_ == null) {
-        if (configEncryption_ != null) {
-          configEncryption_ =
-              com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.newBuilder(configEncryption_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && configEncryption_ != null
+            && configEncryption_
+                != com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.getDefaultInstance()) {
+          getConfigEncryptionBuilder().mergeFrom(value);
         } else {
           configEncryption_ = value;
         }
-        onChanged();
       } else {
         configEncryptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3776,14 +3830,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConfigEncryption() {
-      if (configEncryptionBuilder_ == null) {
-        configEncryption_ = null;
-        onChanged();
-      } else {
-        configEncryption_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      configEncryption_ = null;
+      if (configEncryptionBuilder_ != null) {
+        configEncryptionBuilder_.dispose();
         configEncryptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3799,7 +3852,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkemulticloud.v1.AwsConfigEncryption.Builder
         getConfigEncryptionBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getConfigEncryptionFieldBuilder().getBuilder();
     }
@@ -3873,7 +3926,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the instancePlacement field is set.
      */
     public boolean hasInstancePlacement() {
-      return instancePlacementBuilder_ != null || instancePlacement_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3917,11 +3970,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         instancePlacement_ = value;
-        onChanged();
       } else {
         instancePlacementBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3940,11 +3993,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Builder builderForValue) {
       if (instancePlacementBuilder_ == null) {
         instancePlacement_ = builderForValue.build();
-        onChanged();
       } else {
         instancePlacementBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3962,19 +4015,19 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeInstancePlacement(
         com.google.cloud.gkemulticloud.v1.AwsInstancePlacement value) {
       if (instancePlacementBuilder_ == null) {
-        if (instancePlacement_ != null) {
-          instancePlacement_ =
-              com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.newBuilder(instancePlacement_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && instancePlacement_ != null
+            && instancePlacement_
+                != com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.getDefaultInstance()) {
+          getInstancePlacementBuilder().mergeFrom(value);
         } else {
           instancePlacement_ = value;
         }
-        onChanged();
       } else {
         instancePlacementBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3990,14 +4043,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearInstancePlacement() {
-      if (instancePlacementBuilder_ == null) {
-        instancePlacement_ = null;
-        onChanged();
-      } else {
-        instancePlacement_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      instancePlacement_ = null;
+      if (instancePlacementBuilder_ != null) {
+        instancePlacementBuilder_.dispose();
         instancePlacementBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4014,7 +4066,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Builder
         getInstancePlacementBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getInstancePlacementFieldBuilder().getBuilder();
     }
@@ -4092,7 +4144,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscalingMetricsCollection field is set.
      */
     public boolean hasAutoscalingMetricsCollection() {
-      return autoscalingMetricsCollectionBuilder_ != null || autoscalingMetricsCollection_ != null;
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4140,11 +4192,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         autoscalingMetricsCollection_ = value;
-        onChanged();
       } else {
         autoscalingMetricsCollectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4165,11 +4217,11 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (autoscalingMetricsCollectionBuilder_ == null) {
         autoscalingMetricsCollection_ = builderForValue.build();
-        onChanged();
       } else {
         autoscalingMetricsCollectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4188,20 +4240,20 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAutoscalingMetricsCollection(
         com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection value) {
       if (autoscalingMetricsCollectionBuilder_ == null) {
-        if (autoscalingMetricsCollection_ != null) {
-          autoscalingMetricsCollection_ =
-              com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.newBuilder(
-                      autoscalingMetricsCollection_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00001000) != 0)
+            && autoscalingMetricsCollection_ != null
+            && autoscalingMetricsCollection_
+                != com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection
+                    .getDefaultInstance()) {
+          getAutoscalingMetricsCollectionBuilder().mergeFrom(value);
         } else {
           autoscalingMetricsCollection_ = value;
         }
-        onChanged();
       } else {
         autoscalingMetricsCollectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -4218,14 +4270,13 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAutoscalingMetricsCollection() {
-      if (autoscalingMetricsCollectionBuilder_ == null) {
-        autoscalingMetricsCollection_ = null;
-        onChanged();
-      } else {
-        autoscalingMetricsCollection_ = null;
+      bitField0_ = (bitField0_ & ~0x00001000);
+      autoscalingMetricsCollection_ = null;
+      if (autoscalingMetricsCollectionBuilder_ != null) {
+        autoscalingMetricsCollectionBuilder_.dispose();
         autoscalingMetricsCollectionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4243,7 +4294,7 @@ public final class AwsNodeConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkemulticloud.v1.AwsAutoscalingGroupMetricsCollection.Builder
         getAutoscalingMetricsCollectionBuilder() {
-
+      bitField0_ |= 0x00001000;
       onChanged();
       return getAutoscalingMetricsCollectionFieldBuilder().getBuilder();
     }

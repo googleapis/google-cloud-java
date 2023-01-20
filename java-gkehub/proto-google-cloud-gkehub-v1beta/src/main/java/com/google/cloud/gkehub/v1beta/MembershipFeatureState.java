@@ -264,7 +264,9 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta.FeatureStateOrBuilder getStateOrBuilder() {
-    return getState();
+    return state_ == null
+        ? com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()
+        : state_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -512,16 +514,16 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (meteringBuilder_ != null) {
         meteringBuilder_.clear();
       }
       if (configmanagementBuilder_ != null) {
         configmanagementBuilder_.clear();
       }
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
       featureStateCase_ = 0;
@@ -553,28 +555,30 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     public com.google.cloud.gkehub.v1beta.MembershipFeatureState buildPartial() {
       com.google.cloud.gkehub.v1beta.MembershipFeatureState result =
           new com.google.cloud.gkehub.v1beta.MembershipFeatureState(this);
-      if (featureStateCase_ == 104) {
-        if (meteringBuilder_ == null) {
-          result.featureState_ = featureState_;
-        } else {
-          result.featureState_ = meteringBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (featureStateCase_ == 106) {
-        if (configmanagementBuilder_ == null) {
-          result.featureState_ = featureState_;
-        } else {
-          result.featureState_ = configmanagementBuilder_.build();
-        }
-      }
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
-      }
-      result.featureStateCase_ = featureStateCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta.MembershipFeatureState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.gkehub.v1beta.MembershipFeatureState result) {
+      result.featureStateCase_ = featureStateCase_;
+      result.featureState_ = this.featureState_;
+      if (featureStateCase_ == 104 && meteringBuilder_ != null) {
+        result.featureState_ = meteringBuilder_.build();
+      }
+      if (featureStateCase_ == 106 && configmanagementBuilder_ != null) {
+        result.featureState_ = configmanagementBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -671,7 +675,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
             case 10:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 834:
@@ -717,6 +721,8 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.metering.v1beta.MembershipState,
@@ -926,7 +932,6 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       }
       featureStateCase_ = 104;
       onChanged();
-      ;
       return meteringBuilder_;
     }
 
@@ -1153,7 +1158,6 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
       }
       featureStateCase_ = 106;
       onChanged();
-      ;
       return configmanagementBuilder_;
     }
 
@@ -1175,7 +1179,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1212,11 +1216,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1231,11 +1235,11 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
     public Builder setState(com.google.cloud.gkehub.v1beta.FeatureState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1249,19 +1253,18 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      */
     public Builder mergeState(com.google.cloud.gkehub.v1beta.FeatureState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.gkehub.v1beta.FeatureState.newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && state_ != null
+            && state_ != com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1274,14 +1277,13 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1294,7 +1296,7 @@ public final class MembershipFeatureState extends com.google.protobuf.GeneratedM
      * <code>.google.cloud.gkehub.v1beta.FeatureState state = 1;</code>
      */
     public com.google.cloud.gkehub.v1beta.FeatureState.Builder getStateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }

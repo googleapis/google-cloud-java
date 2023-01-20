@@ -71,7 +71,9 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   }
 
   public static final int TARGET_DOMAIN_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object targetDomainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetDomainName_ = "";
   /**
    *
    *
@@ -177,6 +181,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
   }
 
   public static final int TARGET_DNS_IP_ADDRESSES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetDnsIpAddresses_;
   /**
    *
@@ -470,12 +476,11 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       targetDomainName_ = "";
-
       targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -504,16 +509,32 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
     public com.google.cloud.managedidentities.v1.ReconfigureTrustRequest buildPartial() {
       com.google.cloud.managedidentities.v1.ReconfigureTrustRequest result =
           new com.google.cloud.managedidentities.v1.ReconfigureTrustRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.targetDomainName_ = targetDomainName_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        targetDnsIpAddresses_ = targetDnsIpAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.managedidentities.v1.ReconfigureTrustRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        targetDnsIpAddresses_ = targetDnsIpAddresses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.managedidentities.v1.ReconfigureTrustRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetDomainName_ = targetDomainName_;
+      }
     }
 
     @java.lang.Override
@@ -565,16 +586,18 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTargetDomainName().isEmpty()) {
         targetDomainName_ = other.targetDomainName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.targetDnsIpAddresses_.isEmpty()) {
         if (targetDnsIpAddresses_.isEmpty()) {
           targetDnsIpAddresses_ = other.targetDnsIpAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureTargetDnsIpAddressesIsMutable();
           targetDnsIpAddresses_.addAll(other.targetDnsIpAddresses_);
@@ -610,13 +633,13 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 targetDomainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -715,8 +738,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,8 +758,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -760,8 +783,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +853,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetDomainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -848,8 +871,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearTargetDomainName() {
-
       targetDomainName_ = getDefaultInstance().getTargetDomainName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -871,8 +894,8 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetDomainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -881,9 +904,9 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetDnsIpAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         targetDnsIpAddresses_ = new com.google.protobuf.LazyStringArrayList(targetDnsIpAddresses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1034,7 +1057,7 @@ public final class ReconfigureTrustRequest extends com.google.protobuf.Generated
      */
     public Builder clearTargetDnsIpAddresses() {
       targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

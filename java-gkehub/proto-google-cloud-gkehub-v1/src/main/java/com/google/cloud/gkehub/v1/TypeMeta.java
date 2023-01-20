@@ -70,7 +70,9 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int API_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object apiVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiVersion_ = "";
   /**
    *
    *
@@ -372,10 +376,9 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kind_ = "";
-
       apiVersion_ = "";
-
       return this;
     }
 
@@ -402,10 +405,21 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.gkehub.v1.TypeMeta buildPartial() {
       com.google.cloud.gkehub.v1.TypeMeta result = new com.google.cloud.gkehub.v1.TypeMeta(this);
-      result.kind_ = kind_;
-      result.apiVersion_ = apiVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.TypeMeta result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiVersion_ = apiVersion_;
+      }
     }
 
     @java.lang.Override
@@ -455,10 +469,12 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1.TypeMeta.getDefaultInstance()) return this;
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getApiVersion().isEmpty()) {
         apiVersion_ = other.apiVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -490,13 +506,13 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 apiVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -515,6 +531,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object kind_ = "";
     /**
@@ -577,8 +595,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -594,8 +612,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -616,8 +634,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,8 +701,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -700,8 +718,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApiVersion() {
-
       apiVersion_ = getDefaultInstance().getApiVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -722,8 +740,8 @@ public final class TypeMeta extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

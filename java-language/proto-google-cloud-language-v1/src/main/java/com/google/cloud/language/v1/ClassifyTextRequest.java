@@ -116,7 +116,9 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.language.v1.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.language.v1.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int CLASSIFICATION_MODEL_OPTIONS_FIELD_NUMBER = 3;
@@ -171,7 +173,9 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.language.v1.ClassificationModelOptionsOrBuilder
       getClassificationModelOptionsOrBuilder() {
-    return getClassificationModelOptions();
+    return classificationModelOptions_ == null
+        ? com.google.cloud.language.v1.ClassificationModelOptions.getDefaultInstance()
+        : classificationModelOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,16 +397,15 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      bitField0_ = 0;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-      if (classificationModelOptionsBuilder_ == null) {
-        classificationModelOptions_ = null;
-      } else {
-        classificationModelOptions_ = null;
+      classificationModelOptions_ = null;
+      if (classificationModelOptionsBuilder_ != null) {
+        classificationModelOptionsBuilder_.dispose();
         classificationModelOptionsBuilder_ = null;
       }
       return this;
@@ -432,18 +435,24 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.language.v1.ClassifyTextRequest buildPartial() {
       com.google.cloud.language.v1.ClassifyTextRequest result =
           new com.google.cloud.language.v1.ClassifyTextRequest(this);
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
-      }
-      if (classificationModelOptionsBuilder_ == null) {
-        result.classificationModelOptions_ = classificationModelOptions_;
-      } else {
-        result.classificationModelOptions_ = classificationModelOptionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.ClassifyTextRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.classificationModelOptions_ =
+            classificationModelOptionsBuilder_ == null
+                ? classificationModelOptions_
+                : classificationModelOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -527,14 +536,14 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     getClassificationModelOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -553,6 +562,8 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.language.v1.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -574,7 +585,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -615,11 +626,11 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -636,11 +647,11 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
     public Builder setDocument(com.google.cloud.language.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,19 +667,18 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDocument(com.google.cloud.language.v1.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.language.v1.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.language.v1.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -683,14 +693,13 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -705,7 +714,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.language.v1.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -777,7 +786,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the classificationModelOptions field is set.
      */
     public boolean hasClassificationModelOptions() {
-      return classificationModelOptionsBuilder_ != null || classificationModelOptions_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -819,11 +828,11 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         classificationModelOptions_ = value;
-        onChanged();
       } else {
         classificationModelOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -841,11 +850,11 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.language.v1.ClassificationModelOptions.Builder builderForValue) {
       if (classificationModelOptionsBuilder_ == null) {
         classificationModelOptions_ = builderForValue.build();
-        onChanged();
       } else {
         classificationModelOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -862,20 +871,19 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeClassificationModelOptions(
         com.google.cloud.language.v1.ClassificationModelOptions value) {
       if (classificationModelOptionsBuilder_ == null) {
-        if (classificationModelOptions_ != null) {
-          classificationModelOptions_ =
-              com.google.cloud.language.v1.ClassificationModelOptions.newBuilder(
-                      classificationModelOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && classificationModelOptions_ != null
+            && classificationModelOptions_
+                != com.google.cloud.language.v1.ClassificationModelOptions.getDefaultInstance()) {
+          getClassificationModelOptionsBuilder().mergeFrom(value);
         } else {
           classificationModelOptions_ = value;
         }
-        onChanged();
       } else {
         classificationModelOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -890,14 +898,13 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearClassificationModelOptions() {
-      if (classificationModelOptionsBuilder_ == null) {
-        classificationModelOptions_ = null;
-        onChanged();
-      } else {
-        classificationModelOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      classificationModelOptions_ = null;
+      if (classificationModelOptionsBuilder_ != null) {
+        classificationModelOptionsBuilder_.dispose();
         classificationModelOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -913,7 +920,7 @@ public final class ClassifyTextRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.language.v1.ClassificationModelOptions.Builder
         getClassificationModelOptionsBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getClassificationModelOptionsFieldBuilder().getBuilder();
     }

@@ -76,7 +76,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIRST_ADDRESS_LINE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object firstAddressLine_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firstAddressLine_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIRM_FIELD_NUMBER = 2;
-  private volatile java.lang.Object firm_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object firm_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECOND_ADDRESS_LINE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object secondAddressLine_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secondAddressLine_ = "";
   /**
    *
    *
@@ -223,7 +229,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URBANIZATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object urbanization_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urbanization_ = "";
   /**
    *
    *
@@ -272,7 +280,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CITY_STATE_ZIP_ADDRESS_LINE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object cityStateZipAddressLine_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cityStateZipAddressLine_ = "";
   /**
    *
    *
@@ -321,7 +331,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CITY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object city_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object city_ = "";
   /**
    *
    *
@@ -370,7 +382,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object state_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object state_ = "";
   /**
    *
    *
@@ -419,7 +433,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZIP_CODE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object zipCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zipCode_ = "";
   /**
    *
    *
@@ -468,7 +484,9 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ZIP_CODE_EXTENSION_FIELD_NUMBER = 9;
-  private volatile java.lang.Object zipCodeExtension_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zipCodeExtension_ = "";
   /**
    *
    *
@@ -785,24 +803,16 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       firstAddressLine_ = "";
-
       firm_ = "";
-
       secondAddressLine_ = "";
-
       urbanization_ = "";
-
       cityStateZipAddressLine_ = "";
-
       city_ = "";
-
       state_ = "";
-
       zipCode_ = "";
-
       zipCodeExtension_ = "";
-
       return this;
     }
 
@@ -830,17 +840,42 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.UspsAddress buildPartial() {
       com.google.maps.addressvalidation.v1.UspsAddress result =
           new com.google.maps.addressvalidation.v1.UspsAddress(this);
-      result.firstAddressLine_ = firstAddressLine_;
-      result.firm_ = firm_;
-      result.secondAddressLine_ = secondAddressLine_;
-      result.urbanization_ = urbanization_;
-      result.cityStateZipAddressLine_ = cityStateZipAddressLine_;
-      result.city_ = city_;
-      result.state_ = state_;
-      result.zipCode_ = zipCode_;
-      result.zipCodeExtension_ = zipCodeExtension_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.UspsAddress result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.firstAddressLine_ = firstAddressLine_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.firm_ = firm_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secondAddressLine_ = secondAddressLine_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.urbanization_ = urbanization_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cityStateZipAddressLine_ = cityStateZipAddressLine_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.city_ = city_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.zipCode_ = zipCode_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.zipCodeExtension_ = zipCodeExtension_;
+      }
     }
 
     @java.lang.Override
@@ -891,38 +926,47 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFirstAddressLine().isEmpty()) {
         firstAddressLine_ = other.firstAddressLine_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFirm().isEmpty()) {
         firm_ = other.firm_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getSecondAddressLine().isEmpty()) {
         secondAddressLine_ = other.secondAddressLine_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUrbanization().isEmpty()) {
         urbanization_ = other.urbanization_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getCityStateZipAddressLine().isEmpty()) {
         cityStateZipAddressLine_ = other.cityStateZipAddressLine_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getCity().isEmpty()) {
         city_ = other.city_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getState().isEmpty()) {
         state_ = other.state_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getZipCode().isEmpty()) {
         zipCode_ = other.zipCode_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getZipCodeExtension().isEmpty()) {
         zipCodeExtension_ = other.zipCodeExtension_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -954,55 +998,55 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 firstAddressLine_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 firm_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 secondAddressLine_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 urbanization_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 cityStateZipAddressLine_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 city_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 state_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 zipCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 zipCodeExtension_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -1021,6 +1065,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object firstAddressLine_ = "";
     /**
@@ -1083,8 +1129,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       firstAddressLine_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1100,8 +1146,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirstAddressLine() {
-
       firstAddressLine_ = getDefaultInstance().getFirstAddressLine();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1122,8 +1168,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firstAddressLine_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1189,8 +1235,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       firm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1206,8 +1252,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFirm() {
-
       firm_ = getDefaultInstance().getFirm();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1228,8 +1274,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       firm_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1295,8 +1341,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secondAddressLine_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1312,8 +1358,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecondAddressLine() {
-
       secondAddressLine_ = getDefaultInstance().getSecondAddressLine();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1334,8 +1380,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secondAddressLine_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1401,8 +1447,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       urbanization_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1418,8 +1464,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrbanization() {
-
       urbanization_ = getDefaultInstance().getUrbanization();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1440,8 +1486,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       urbanization_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1507,8 +1553,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cityStateZipAddressLine_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1524,8 +1570,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCityStateZipAddressLine() {
-
       cityStateZipAddressLine_ = getDefaultInstance().getCityStateZipAddressLine();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1546,8 +1592,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cityStateZipAddressLine_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1613,8 +1659,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       city_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1630,8 +1676,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCity() {
-
       city_ = getDefaultInstance().getCity();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1652,8 +1698,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       city_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1719,8 +1765,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1736,8 +1782,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
       state_ = getDefaultInstance().getState();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1758,8 +1804,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1825,8 +1871,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zipCode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1842,8 +1888,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZipCode() {
-
       zipCode_ = getDefaultInstance().getZipCode();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1864,8 +1910,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zipCode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1931,8 +1977,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       zipCodeExtension_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1948,8 +1994,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearZipCodeExtension() {
-
       zipCodeExtension_ = getDefaultInstance().getZipCodeExtension();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1970,8 +2016,8 @@ public final class UspsAddress extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zipCodeExtension_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

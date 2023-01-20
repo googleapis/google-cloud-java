@@ -112,7 +112,10 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersionOrBuilder
       getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion
+            .getDefaultInstance()
+        : version_;
   }
 
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
@@ -170,7 +173,10 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentStateOrBuilder
       getDeploymentStateOrBuilder() {
-    return getDeploymentState();
+    return deploymentState_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState
+            .getDefaultInstance()
+        : deploymentState_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +398,15 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      bitField0_ = 0;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-      if (deploymentStateBuilder_ == null) {
-        deploymentState_ = null;
-      } else {
-        deploymentState_ = null;
+      deploymentState_ = null;
+      if (deploymentStateBuilder_ != null) {
+        deploymentStateBuilder_.dispose();
         deploymentStateBuilder_ = null;
       }
       return this;
@@ -433,18 +438,23 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState(this);
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
-      }
-      if (deploymentStateBuilder_ == null) {
-        result.deploymentState_ = deploymentState_;
-      } else {
-        result.deploymentState_ = deploymentStateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentState_ =
+            deploymentStateBuilder_ == null ? deploymentState_ : deploymentStateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -531,13 +541,13 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDeploymentStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -556,6 +566,8 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion version_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -576,7 +588,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -617,11 +629,11 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -639,11 +651,11 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -659,20 +671,20 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public Builder mergeVersion(
         com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion.newBuilder(
-                      version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion
+                    .getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -686,14 +698,13 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -708,7 +719,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerVersion.Builder
         getVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -781,7 +792,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      * @return Whether the deploymentState field is set.
      */
     public boolean hasDeploymentState() {
-      return deploymentStateBuilder_ != null || deploymentState_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -825,11 +836,11 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         deploymentState_ = value;
-        onChanged();
       } else {
         deploymentStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -848,11 +859,11 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
             builderForValue) {
       if (deploymentStateBuilder_ == null) {
         deploymentState_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -869,20 +880,20 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
     public Builder mergeDeploymentState(
         com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState value) {
       if (deploymentStateBuilder_ == null) {
-        if (deploymentState_ != null) {
-          deploymentState_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState.newBuilder(
-                      deploymentState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deploymentState_ != null
+            && deploymentState_
+                != com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState
+                    .getDefaultInstance()) {
+          getDeploymentStateBuilder().mergeFrom(value);
         } else {
           deploymentState_ = value;
         }
-        onChanged();
       } else {
         deploymentStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -897,14 +908,13 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearDeploymentState() {
-      if (deploymentStateBuilder_ == null) {
-        deploymentState_ = null;
-        onChanged();
-      } else {
-        deploymentState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deploymentState_ = null;
+      if (deploymentStateBuilder_ != null) {
+        deploymentStateBuilder_.dispose();
         deploymentStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -920,7 +930,7 @@ public final class PolicyControllerState extends com.google.protobuf.GeneratedMe
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState.Builder
         getDeploymentStateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeploymentStateFieldBuilder().getBuilder();
     }

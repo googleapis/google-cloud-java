@@ -70,7 +70,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
   }
 
   public static final int BINARY_DATA_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString binaryData_;
+  private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -145,7 +147,9 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
   }
 
   public static final int SUBFOLDER_FIELD_NUMBER = 3;
-  private volatile java.lang.Object subfolder_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subfolder_ = "";
   /**
    *
    *
@@ -416,12 +420,10 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       binaryData_ = com.google.protobuf.ByteString.EMPTY;
-
       subfolder_ = "";
-
       return this;
     }
 
@@ -449,11 +451,24 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
     public com.google.cloud.iot.v1.SendCommandToDeviceRequest buildPartial() {
       com.google.cloud.iot.v1.SendCommandToDeviceRequest result =
           new com.google.cloud.iot.v1.SendCommandToDeviceRequest(this);
-      result.name_ = name_;
-      result.binaryData_ = binaryData_;
-      result.subfolder_ = subfolder_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.SendCommandToDeviceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.binaryData_ = binaryData_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.subfolder_ = subfolder_;
+      }
     }
 
     @java.lang.Override
@@ -504,6 +519,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getBinaryData() != com.google.protobuf.ByteString.EMPTY) {
@@ -511,6 +527,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       }
       if (!other.getSubfolder().isEmpty()) {
         subfolder_ = other.subfolder_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -542,19 +559,19 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 binaryData_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 subfolder_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -573,6 +590,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -647,8 +666,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +687,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -694,8 +713,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -732,8 +751,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       binaryData_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -749,7 +768,7 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       binaryData_ = getDefaultInstance().getBinaryData();
       onChanged();
       return this;
@@ -828,8 +847,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       subfolder_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -849,8 +868,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearSubfolder() {
-
       subfolder_ = getDefaultInstance().getSubfolder();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -875,8 +894,8 @@ public final class SendCommandToDeviceRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subfolder_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

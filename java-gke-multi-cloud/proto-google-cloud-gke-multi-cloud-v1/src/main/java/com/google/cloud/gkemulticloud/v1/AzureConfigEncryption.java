@@ -71,7 +71,9 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
   }
 
   public static final int KEY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object keyId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyId_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PUBLIC_KEY_FIELD_NUMBER = 3;
-  private volatile java.lang.Object publicKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object publicKey_ = "";
   /**
    *
    *
@@ -391,10 +395,9 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyId_ = "";
-
       publicKey_ = "";
-
       return this;
     }
 
@@ -422,10 +425,21 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
     public com.google.cloud.gkemulticloud.v1.AzureConfigEncryption buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureConfigEncryption result =
           new com.google.cloud.gkemulticloud.v1.AzureConfigEncryption(this);
-      result.keyId_ = keyId_;
-      result.publicKey_ = publicKey_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureConfigEncryption result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyId_ = keyId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicKey_ = publicKey_;
+      }
     }
 
     @java.lang.Override
@@ -476,10 +490,12 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getKeyId().isEmpty()) {
         keyId_ = other.keyId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPublicKey().isEmpty()) {
         publicKey_ = other.publicKey_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -511,13 +527,13 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 keyId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 publicKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -536,6 +552,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyId_ = "";
     /**
@@ -607,8 +625,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +645,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearKeyId() {
-
       keyId_ = getDefaultInstance().getKeyId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -652,8 +670,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +749,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       publicKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -752,8 +770,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPublicKey() {
-
       publicKey_ = getDefaultInstance().getPublicKey();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -778,8 +796,8 @@ public final class AzureConfigEncryption extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       publicKey_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

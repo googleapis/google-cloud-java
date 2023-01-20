@@ -129,10 +129,14 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.apps.script.type.HomepageExtensionPointOrBuilder getHomepageTriggerOrBuilder() {
-    return getHomepageTrigger();
+    return homepageTrigger_ == null
+        ? com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()
+        : homepageTrigger_;
   }
 
   public static final int CONTEXTUAL_TRIGGERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.gmail.ContextualTrigger> contextualTriggers_;
   /**
    *
@@ -204,6 +208,8 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int UNIVERSAL_ACTIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.gmail.UniversalAction> universalActions_;
   /**
    *
@@ -344,11 +350,15 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.apps.script.type.gmail.ComposeTriggerOrBuilder getComposeTriggerOrBuilder() {
-    return getComposeTrigger();
+    return composeTrigger_ == null
+        ? com.google.apps.script.type.gmail.ComposeTrigger.getDefaultInstance()
+        : composeTrigger_;
   }
 
   public static final int AUTHORIZATION_CHECK_FUNCTION_FIELD_NUMBER = 7;
-  private volatile java.lang.Object authorizationCheckFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object authorizationCheckFunction_ = "";
   /**
    *
    *
@@ -654,10 +664,10 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = 0;
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
       if (contextualTriggersBuilder_ == null) {
@@ -666,22 +676,20 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         contextualTriggers_ = null;
         contextualTriggersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (universalActionsBuilder_ == null) {
         universalActions_ = java.util.Collections.emptyList();
       } else {
         universalActions_ = null;
         universalActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (composeTriggerBuilder_ == null) {
-        composeTrigger_ = null;
-      } else {
-        composeTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      composeTrigger_ = null;
+      if (composeTriggerBuilder_ != null) {
+        composeTriggerBuilder_.dispose();
         composeTriggerBuilder_ = null;
       }
       authorizationCheckFunction_ = "";
-
       return this;
     }
 
@@ -709,38 +717,49 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     public com.google.apps.script.type.gmail.GmailAddOnManifest buildPartial() {
       com.google.apps.script.type.gmail.GmailAddOnManifest result =
           new com.google.apps.script.type.gmail.GmailAddOnManifest(this);
-      int from_bitField0_ = bitField0_;
-      if (homepageTriggerBuilder_ == null) {
-        result.homepageTrigger_ = homepageTrigger_;
-      } else {
-        result.homepageTrigger_ = homepageTriggerBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.apps.script.type.gmail.GmailAddOnManifest result) {
       if (contextualTriggersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           contextualTriggers_ = java.util.Collections.unmodifiableList(contextualTriggers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.contextualTriggers_ = contextualTriggers_;
       } else {
         result.contextualTriggers_ = contextualTriggersBuilder_.build();
       }
       if (universalActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           universalActions_ = java.util.Collections.unmodifiableList(universalActions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.universalActions_ = universalActions_;
       } else {
         result.universalActions_ = universalActionsBuilder_.build();
       }
-      if (composeTriggerBuilder_ == null) {
-        result.composeTrigger_ = composeTrigger_;
-      } else {
-        result.composeTrigger_ = composeTriggerBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.apps.script.type.gmail.GmailAddOnManifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.homepageTrigger_ =
+            homepageTriggerBuilder_ == null ? homepageTrigger_ : homepageTriggerBuilder_.build();
       }
-      result.authorizationCheckFunction_ = authorizationCheckFunction_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.composeTrigger_ =
+            composeTriggerBuilder_ == null ? composeTrigger_ : composeTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.authorizationCheckFunction_ = authorizationCheckFunction_;
+      }
     }
 
     @java.lang.Override
@@ -796,7 +815,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         if (!other.contextualTriggers_.isEmpty()) {
           if (contextualTriggers_.isEmpty()) {
             contextualTriggers_ = other.contextualTriggers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureContextualTriggersIsMutable();
             contextualTriggers_.addAll(other.contextualTriggers_);
@@ -809,7 +828,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             contextualTriggersBuilder_.dispose();
             contextualTriggersBuilder_ = null;
             contextualTriggers_ = other.contextualTriggers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             contextualTriggersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContextualTriggersFieldBuilder()
@@ -823,7 +842,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         if (!other.universalActions_.isEmpty()) {
           if (universalActions_.isEmpty()) {
             universalActions_ = other.universalActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUniversalActionsIsMutable();
             universalActions_.addAll(other.universalActions_);
@@ -836,7 +855,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             universalActionsBuilder_.dispose();
             universalActionsBuilder_ = null;
             universalActions_ = other.universalActions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             universalActionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUniversalActionsFieldBuilder()
@@ -851,6 +870,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getAuthorizationCheckFunction().isEmpty()) {
         authorizationCheckFunction_ = other.authorizationCheckFunction_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -910,19 +930,19 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
             case 58:
               {
                 authorizationCheckFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 98:
               {
                 input.readMessage(getComposeTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 98
             case 114:
               {
                 input.readMessage(getHomepageTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 114
             default:
@@ -967,7 +987,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * @return Whether the homepageTrigger field is set.
      */
     public boolean hasHomepageTrigger() {
-      return homepageTriggerBuilder_ != null || homepageTrigger_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1014,11 +1034,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         homepageTrigger_ = value;
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1039,11 +1059,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         com.google.apps.script.type.HomepageExtensionPoint.Builder builderForValue) {
       if (homepageTriggerBuilder_ == null) {
         homepageTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         homepageTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1062,19 +1082,19 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeHomepageTrigger(com.google.apps.script.type.HomepageExtensionPoint value) {
       if (homepageTriggerBuilder_ == null) {
-        if (homepageTrigger_ != null) {
-          homepageTrigger_ =
-              com.google.apps.script.type.HomepageExtensionPoint.newBuilder(homepageTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && homepageTrigger_ != null
+            && homepageTrigger_
+                != com.google.apps.script.type.HomepageExtensionPoint.getDefaultInstance()) {
+          getHomepageTriggerBuilder().mergeFrom(value);
         } else {
           homepageTrigger_ = value;
         }
-        onChanged();
       } else {
         homepageTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1092,14 +1112,13 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 14;</code>
      */
     public Builder clearHomepageTrigger() {
-      if (homepageTriggerBuilder_ == null) {
-        homepageTrigger_ = null;
-        onChanged();
-      } else {
-        homepageTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      homepageTrigger_ = null;
+      if (homepageTriggerBuilder_ != null) {
+        homepageTriggerBuilder_.dispose();
         homepageTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1117,7 +1136,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.HomepageExtensionPoint homepage_trigger = 14;</code>
      */
     public com.google.apps.script.type.HomepageExtensionPoint.Builder getHomepageTriggerBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getHomepageTriggerFieldBuilder().getBuilder();
     }
@@ -1180,11 +1199,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         contextualTriggers_ = java.util.Collections.emptyList();
 
     private void ensureContextualTriggersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         contextualTriggers_ =
             new java.util.ArrayList<com.google.apps.script.type.gmail.ContextualTrigger>(
                 contextualTriggers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1415,7 +1434,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     public Builder clearContextualTriggers() {
       if (contextualTriggersBuilder_ == null) {
         contextualTriggers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         contextualTriggersBuilder_.clear();
@@ -1550,7 +1569,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
                 com.google.apps.script.type.gmail.ContextualTrigger.Builder,
                 com.google.apps.script.type.gmail.ContextualTriggerOrBuilder>(
                 contextualTriggers_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         contextualTriggers_ = null;
@@ -1562,11 +1581,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureUniversalActionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         universalActions_ =
             new java.util.ArrayList<com.google.apps.script.type.gmail.UniversalAction>(
                 universalActions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1807,7 +1826,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
     public Builder clearUniversalActions() {
       if (universalActionsBuilder_ == null) {
         universalActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         universalActionsBuilder_.clear();
@@ -1948,7 +1967,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
                 com.google.apps.script.type.gmail.UniversalAction.Builder,
                 com.google.apps.script.type.gmail.UniversalActionOrBuilder>(
                 universalActions_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         universalActions_ = null;
@@ -1979,7 +1998,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * @return Whether the composeTrigger field is set.
      */
     public boolean hasComposeTrigger() {
-      return composeTriggerBuilder_ != null || composeTrigger_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2026,11 +2045,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         composeTrigger_ = value;
-        onChanged();
       } else {
         composeTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2051,11 +2070,11 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         com.google.apps.script.type.gmail.ComposeTrigger.Builder builderForValue) {
       if (composeTriggerBuilder_ == null) {
         composeTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         composeTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2074,19 +2093,19 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeComposeTrigger(com.google.apps.script.type.gmail.ComposeTrigger value) {
       if (composeTriggerBuilder_ == null) {
-        if (composeTrigger_ != null) {
-          composeTrigger_ =
-              com.google.apps.script.type.gmail.ComposeTrigger.newBuilder(composeTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && composeTrigger_ != null
+            && composeTrigger_
+                != com.google.apps.script.type.gmail.ComposeTrigger.getDefaultInstance()) {
+          getComposeTriggerBuilder().mergeFrom(value);
         } else {
           composeTrigger_ = value;
         }
-        onChanged();
       } else {
         composeTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2104,14 +2123,13 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.gmail.ComposeTrigger compose_trigger = 12;</code>
      */
     public Builder clearComposeTrigger() {
-      if (composeTriggerBuilder_ == null) {
-        composeTrigger_ = null;
-        onChanged();
-      } else {
-        composeTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      composeTrigger_ = null;
+      if (composeTriggerBuilder_ != null) {
+        composeTriggerBuilder_.dispose();
         composeTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2129,7 +2147,7 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * <code>.google.apps.script.type.gmail.ComposeTrigger compose_trigger = 12;</code>
      */
     public com.google.apps.script.type.gmail.ComposeTrigger.Builder getComposeTriggerBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getComposeTriggerFieldBuilder().getBuilder();
     }
@@ -2260,8 +2278,8 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       authorizationCheckFunction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2281,8 +2299,8 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAuthorizationCheckFunction() {
-
       authorizationCheckFunction_ = getDefaultInstance().getAuthorizationCheckFunction();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2307,8 +2325,8 @@ public final class GmailAddOnManifest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       authorizationCheckFunction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

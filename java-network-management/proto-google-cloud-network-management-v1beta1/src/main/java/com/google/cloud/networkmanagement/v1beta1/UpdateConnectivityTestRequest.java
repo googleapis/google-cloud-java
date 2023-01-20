@@ -114,7 +114,7 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
@@ -169,7 +169,9 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.ConnectivityTestOrBuilder
       getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.getDefaultInstance()
+        : resource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,16 +395,15 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       return this;
@@ -435,18 +436,22 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
     public com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest result =
           new com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -534,13 +539,13 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -559,6 +564,8 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -580,7 +587,7 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -621,11 +628,11 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -642,11 +649,11 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -662,17 +669,18 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -687,14 +695,13 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -709,7 +716,7 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -781,7 +788,7 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -822,11 +829,11 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,11 +851,11 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
         com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -865,19 +872,20 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
     public Builder mergeResource(
         com.google.cloud.networkmanagement.v1beta1.ConnectivityTest value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resource_ != null
+            && resource_
+                != com.google.cloud.networkmanagement.v1beta1.ConnectivityTest
+                    .getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -892,14 +900,13 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -915,7 +922,7 @@ public final class UpdateConnectivityTestRequest extends com.google.protobuf.Gen
      */
     public com.google.cloud.networkmanagement.v1beta1.ConnectivityTest.Builder
         getResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }

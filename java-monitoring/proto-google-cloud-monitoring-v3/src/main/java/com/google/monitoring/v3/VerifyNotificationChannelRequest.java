@@ -70,7 +70,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
   }
 
   public static final int CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -390,10 +394,9 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       code_ = "";
-
       return this;
     }
 
@@ -421,10 +424,21 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
     public com.google.monitoring.v3.VerifyNotificationChannelRequest buildPartial() {
       com.google.monitoring.v3.VerifyNotificationChannelRequest result =
           new com.google.monitoring.v3.VerifyNotificationChannelRequest(this);
-      result.name_ = name_;
-      result.code_ = code_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.VerifyNotificationChannelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.code_ = code_;
+      }
     }
 
     @java.lang.Override
@@ -475,10 +489,12 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -510,13 +526,13 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -535,6 +551,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -603,8 +621,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -622,8 +640,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -646,8 +664,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -731,8 +749,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -754,8 +772,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -782,8 +800,8 @@ public final class VerifyNotificationChannelRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -120,7 +120,9 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionOrBuilder() {
-    return getCryptoKeyVersion();
+    return cryptoKeyVersion_ == null
+        ? com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()
+        : cryptoKeyVersion_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -169,7 +171,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,16 +392,15 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (cryptoKeyVersionBuilder_ == null) {
-        cryptoKeyVersion_ = null;
-      } else {
-        cryptoKeyVersion_ = null;
+      bitField0_ = 0;
+      cryptoKeyVersion_ = null;
+      if (cryptoKeyVersionBuilder_ != null) {
+        cryptoKeyVersionBuilder_.dispose();
         cryptoKeyVersionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -429,18 +430,22 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest buildPartial() {
       com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest result =
           new com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest(this);
-      if (cryptoKeyVersionBuilder_ == null) {
-        result.cryptoKeyVersion_ = cryptoKeyVersion_;
-      } else {
-        result.cryptoKeyVersion_ = cryptoKeyVersionBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cryptoKeyVersion_ =
+            cryptoKeyVersionBuilder_ == null ? cryptoKeyVersion_ : cryptoKeyVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +530,13 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
               {
                 input.readMessage(
                     getCryptoKeyVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +555,8 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.kms.v1.CryptoKeyVersion cryptoKeyVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -572,7 +579,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return Whether the cryptoKeyVersion field is set.
      */
     public boolean hasCryptoKeyVersion() {
-      return cryptoKeyVersionBuilder_ != null || cryptoKeyVersion_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -615,11 +622,11 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         cryptoKeyVersion_ = value;
-        onChanged();
       } else {
         cryptoKeyVersionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,11 +645,11 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
         com.google.cloud.kms.v1.CryptoKeyVersion.Builder builderForValue) {
       if (cryptoKeyVersionBuilder_ == null) {
         cryptoKeyVersion_ = builderForValue.build();
-        onChanged();
       } else {
         cryptoKeyVersionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -659,19 +666,18 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      */
     public Builder mergeCryptoKeyVersion(com.google.cloud.kms.v1.CryptoKeyVersion value) {
       if (cryptoKeyVersionBuilder_ == null) {
-        if (cryptoKeyVersion_ != null) {
-          cryptoKeyVersion_ =
-              com.google.cloud.kms.v1.CryptoKeyVersion.newBuilder(cryptoKeyVersion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && cryptoKeyVersion_ != null
+            && cryptoKeyVersion_ != com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()) {
+          getCryptoKeyVersionBuilder().mergeFrom(value);
         } else {
           cryptoKeyVersion_ = value;
         }
-        onChanged();
       } else {
         cryptoKeyVersionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -687,14 +693,13 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearCryptoKeyVersion() {
-      if (cryptoKeyVersionBuilder_ == null) {
-        cryptoKeyVersion_ = null;
-        onChanged();
-      } else {
-        cryptoKeyVersion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cryptoKeyVersion_ = null;
+      if (cryptoKeyVersionBuilder_ != null) {
+        cryptoKeyVersionBuilder_.dispose();
         cryptoKeyVersionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -710,7 +715,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.kms.v1.CryptoKeyVersion.Builder getCryptoKeyVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getCryptoKeyVersionFieldBuilder().getBuilder();
     }
@@ -783,7 +788,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -822,11 +827,11 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,11 +847,11 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,17 +866,18 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -885,14 +891,13 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -906,7 +911,7 @@ public final class UpdateCryptoKeyVersionRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

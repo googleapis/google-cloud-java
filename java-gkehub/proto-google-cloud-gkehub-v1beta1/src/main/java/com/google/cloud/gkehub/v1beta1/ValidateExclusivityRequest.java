@@ -71,7 +71,9 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
   }
 
   public static final int CR_MANIFEST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object crManifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object crManifest_ = "";
   /**
    *
    *
@@ -177,7 +181,9 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
   }
 
   public static final int INTENDED_MEMBERSHIP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object intendedMembership_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object intendedMembership_ = "";
   /**
    *
    *
@@ -444,12 +450,10 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       crManifest_ = "";
-
       intendedMembership_ = "";
-
       return this;
     }
 
@@ -477,11 +481,24 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
     public com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest buildPartial() {
       com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest result =
           new com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest(this);
-      result.parent_ = parent_;
-      result.crManifest_ = crManifest_;
-      result.intendedMembership_ = intendedMembership_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.ValidateExclusivityRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.crManifest_ = crManifest_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.intendedMembership_ = intendedMembership_;
+      }
     }
 
     @java.lang.Override
@@ -532,14 +549,17 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCrManifest().isEmpty()) {
         crManifest_ = other.crManifest_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getIntendedMembership().isEmpty()) {
         intendedMembership_ = other.intendedMembership_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -571,19 +591,19 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 crManifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 intendedMembership_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -602,6 +622,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -673,8 +695,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -693,8 +715,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -718,8 +740,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -788,8 +810,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       crManifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -806,8 +828,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearCrManifest() {
-
       crManifest_ = getDefaultInstance().getCrManifest();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -829,8 +851,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       crManifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -899,8 +921,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       intendedMembership_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -917,8 +939,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIntendedMembership() {
-
       intendedMembership_ = getDefaultInstance().getIntendedMembership();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -940,8 +962,8 @@ public final class ValidateExclusivityRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       intendedMembership_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

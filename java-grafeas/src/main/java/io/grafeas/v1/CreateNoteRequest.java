@@ -68,7 +68,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NOTE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object noteId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object noteId_ = "";
   /**
    *
    *
@@ -214,7 +218,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public io.grafeas.v1.NoteOrBuilder getNoteOrBuilder() {
-    return getNote();
+    return note_ == null ? io.grafeas.v1.Note.getDefaultInstance() : note_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -434,14 +438,12 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       noteId_ = "";
-
-      if (noteBuilder_ == null) {
-        note_ = null;
-      } else {
-        note_ = null;
+      note_ = null;
+      if (noteBuilder_ != null) {
+        noteBuilder_.dispose();
         noteBuilder_ = null;
       }
       return this;
@@ -470,15 +472,24 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public io.grafeas.v1.CreateNoteRequest buildPartial() {
       io.grafeas.v1.CreateNoteRequest result = new io.grafeas.v1.CreateNoteRequest(this);
-      result.parent_ = parent_;
-      result.noteId_ = noteId_;
-      if (noteBuilder_ == null) {
-        result.note_ = note_;
-      } else {
-        result.note_ = noteBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.CreateNoteRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.noteId_ = noteId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.note_ = noteBuilder_ == null ? note_ : noteBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -528,10 +539,12 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
       if (other == io.grafeas.v1.CreateNoteRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNoteId().isEmpty()) {
         noteId_ = other.noteId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasNote()) {
@@ -566,19 +579,19 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 noteId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getNoteFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -597,6 +610,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -668,8 +683,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +703,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -713,8 +728,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -780,8 +795,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       noteId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -797,8 +812,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNoteId() {
-
       noteId_ = getDefaultInstance().getNoteId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -819,8 +834,8 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       noteId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -841,7 +856,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the note field is set.
      */
     public boolean hasNote() {
-      return noteBuilder_ != null || note_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -876,11 +891,11 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         note_ = value;
-        onChanged();
       } else {
         noteBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -895,11 +910,11 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
     public Builder setNote(io.grafeas.v1.Note.Builder builderForValue) {
       if (noteBuilder_ == null) {
         note_ = builderForValue.build();
-        onChanged();
       } else {
         noteBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -913,16 +928,18 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeNote(io.grafeas.v1.Note value) {
       if (noteBuilder_ == null) {
-        if (note_ != null) {
-          note_ = io.grafeas.v1.Note.newBuilder(note_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && note_ != null
+            && note_ != io.grafeas.v1.Note.getDefaultInstance()) {
+          getNoteBuilder().mergeFrom(value);
         } else {
           note_ = value;
         }
-        onChanged();
       } else {
         noteBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -935,14 +952,13 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearNote() {
-      if (noteBuilder_ == null) {
-        note_ = null;
-        onChanged();
-      } else {
-        note_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      note_ = null;
+      if (noteBuilder_ != null) {
+        noteBuilder_.dispose();
         noteBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +971,7 @@ public final class CreateNoteRequest extends com.google.protobuf.GeneratedMessag
      * <code>.grafeas.v1.Note note = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public io.grafeas.v1.Note.Builder getNoteBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNoteFieldBuilder().getBuilder();
     }

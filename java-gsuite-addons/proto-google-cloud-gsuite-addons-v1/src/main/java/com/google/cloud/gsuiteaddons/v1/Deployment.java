@@ -70,7 +70,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OAUTH_SCOPES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList oauthScopes_;
   /**
    *
@@ -228,11 +232,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gsuiteaddons.v1.AddOnsOrBuilder getAddOnsOrBuilder() {
-    return getAddOns();
+    return addOns_ == null ? com.google.cloud.gsuiteaddons.v1.AddOns.getDefaultInstance() : addOns_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 5;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -520,18 +526,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (addOnsBuilder_ == null) {
-        addOns_ = null;
-      } else {
-        addOns_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      addOns_ = null;
+      if (addOnsBuilder_ != null) {
+        addOnsBuilder_.dispose();
         addOnsBuilder_ = null;
       }
       etag_ = "";
-
       return this;
     }
 
@@ -559,21 +563,33 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gsuiteaddons.v1.Deployment buildPartial() {
       com.google.cloud.gsuiteaddons.v1.Deployment result =
           new com.google.cloud.gsuiteaddons.v1.Deployment(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        oauthScopes_ = oauthScopes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.oauthScopes_ = oauthScopes_;
-      if (addOnsBuilder_ == null) {
-        result.addOns_ = addOns_;
-      } else {
-        result.addOns_ = addOnsBuilder_.build();
-      }
-      result.etag_ = etag_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.gsuiteaddons.v1.Deployment result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        oauthScopes_ = oauthScopes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.oauthScopes_ = oauthScopes_;
+    }
+
+    private void buildPartial0(com.google.cloud.gsuiteaddons.v1.Deployment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.addOns_ = addOnsBuilder_ == null ? addOns_ : addOnsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -623,12 +639,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gsuiteaddons.v1.Deployment.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.oauthScopes_.isEmpty()) {
         if (oauthScopes_.isEmpty()) {
           oauthScopes_ = other.oauthScopes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureOauthScopesIsMutable();
           oauthScopes_.addAll(other.oauthScopes_);
@@ -640,6 +657,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -671,7 +689,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -684,13 +702,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getAddOnsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -776,8 +794,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -794,8 +812,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +835,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,9 +845,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureOauthScopesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         oauthScopes_ = new com.google.protobuf.LazyStringArrayList(oauthScopes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -972,7 +990,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOauthScopes() {
       oauthScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1018,7 +1036,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the addOns field is set.
      */
     public boolean hasAddOns() {
-      return addOnsBuilder_ != null || addOns_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1055,11 +1073,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         addOns_ = value;
-        onChanged();
       } else {
         addOnsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1074,11 +1092,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder setAddOns(com.google.cloud.gsuiteaddons.v1.AddOns.Builder builderForValue) {
       if (addOnsBuilder_ == null) {
         addOns_ = builderForValue.build();
-        onChanged();
       } else {
         addOnsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1092,19 +1110,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAddOns(com.google.cloud.gsuiteaddons.v1.AddOns value) {
       if (addOnsBuilder_ == null) {
-        if (addOns_ != null) {
-          addOns_ =
-              com.google.cloud.gsuiteaddons.v1.AddOns.newBuilder(addOns_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && addOns_ != null
+            && addOns_ != com.google.cloud.gsuiteaddons.v1.AddOns.getDefaultInstance()) {
+          getAddOnsBuilder().mergeFrom(value);
         } else {
           addOns_ = value;
         }
-        onChanged();
       } else {
         addOnsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1117,14 +1134,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
      */
     public Builder clearAddOns() {
-      if (addOnsBuilder_ == null) {
-        addOns_ = null;
-        onChanged();
-      } else {
-        addOns_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      addOns_ = null;
+      if (addOnsBuilder_ != null) {
+        addOnsBuilder_.dispose();
         addOnsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1137,7 +1153,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gsuiteaddons.v1.AddOns add_ons = 3;</code>
      */
     public com.google.cloud.gsuiteaddons.v1.AddOns.Builder getAddOnsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAddOnsFieldBuilder().getBuilder();
     }
@@ -1252,8 +1268,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1271,8 +1287,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1295,8 +1311,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

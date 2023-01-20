@@ -69,7 +69,9 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,11 +187,15 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AzureClientOrBuilder getAzureClientOrBuilder() {
-    return getAzureClient();
+    return azureClient_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureClient.getDefaultInstance()
+        : azureClient_;
   }
 
   public static final int AZURE_CLIENT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object azureClientId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object azureClientId_ = "";
   /**
    *
    *
@@ -250,7 +256,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -497,18 +503,15 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (azureClientBuilder_ == null) {
-        azureClient_ = null;
-      } else {
-        azureClient_ = null;
+      azureClient_ = null;
+      if (azureClientBuilder_ != null) {
+        azureClientBuilder_.dispose();
         azureClientBuilder_ = null;
       }
       azureClientId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -536,16 +539,28 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest result =
           new com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest(this);
-      result.parent_ = parent_;
-      if (azureClientBuilder_ == null) {
-        result.azureClient_ = azureClient_;
-      } else {
-        result.azureClient_ = azureClientBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.azureClientId_ = azureClientId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.azureClient_ =
+            azureClientBuilder_ == null ? azureClient_ : azureClientBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.azureClientId_ = azureClientId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -596,6 +611,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAzureClient()) {
@@ -603,6 +619,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
       }
       if (!other.getAzureClientId().isEmpty()) {
         azureClientId_ = other.azureClientId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -637,25 +654,25 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAzureClientFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 azureClientId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -674,6 +691,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -757,8 +776,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -781,8 +800,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -810,8 +829,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -837,7 +856,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * @return Whether the azureClient field is set.
      */
     public boolean hasAzureClient() {
-      return azureClientBuilder_ != null || azureClient_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -880,11 +899,11 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         azureClient_ = value;
-        onChanged();
       } else {
         azureClientBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,11 +922,11 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
         com.google.cloud.gkemulticloud.v1.AzureClient.Builder builderForValue) {
       if (azureClientBuilder_ == null) {
         azureClient_ = builderForValue.build();
-        onChanged();
       } else {
         azureClientBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -924,19 +943,18 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAzureClient(com.google.cloud.gkemulticloud.v1.AzureClient value) {
       if (azureClientBuilder_ == null) {
-        if (azureClient_ != null) {
-          azureClient_ =
-              com.google.cloud.gkemulticloud.v1.AzureClient.newBuilder(azureClient_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && azureClient_ != null
+            && azureClient_ != com.google.cloud.gkemulticloud.v1.AzureClient.getDefaultInstance()) {
+          getAzureClientBuilder().mergeFrom(value);
         } else {
           azureClient_ = value;
         }
-        onChanged();
       } else {
         azureClientBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +970,13 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAzureClient() {
-      if (azureClientBuilder_ == null) {
-        azureClient_ = null;
-        onChanged();
-      } else {
-        azureClient_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      azureClient_ = null;
+      if (azureClientBuilder_ != null) {
+        azureClientBuilder_.dispose();
         azureClientBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +992,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AzureClient.Builder getAzureClientBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAzureClientFieldBuilder().getBuilder();
     }
@@ -1108,8 +1125,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       azureClientId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1131,8 +1148,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAzureClientId() {
-
       azureClientId_ = getDefaultInstance().getAzureClientId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1159,8 +1176,8 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       azureClientId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1196,6 +1213,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1211,7 +1229,7 @@ public final class CreateAzureClientRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -215,7 +215,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int X_POS_FIELD_NUMBER = 1;
-    private int xPos_;
+    private int xPos_ = 0;
     /**
      *
      *
@@ -235,7 +235,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int Y_POS_FIELD_NUMBER = 2;
-    private int yPos_;
+    private int yPos_ = 0;
     /**
      *
      *
@@ -254,7 +254,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int WIDTH_FIELD_NUMBER = 3;
-    private int width_;
+    private int width_ = 0;
     /**
      *
      *
@@ -273,7 +273,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HEIGHT_FIELD_NUMBER = 4;
-    private int height_;
+    private int height_ = 0;
     /**
      *
      *
@@ -336,7 +336,9 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.WidgetOrBuilder getWidgetOrBuilder() {
-      return getWidget();
+      return widget_ == null
+          ? com.google.monitoring.dashboard.v1.Widget.getDefaultInstance()
+          : widget_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -581,18 +583,14 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         xPos_ = 0;
-
         yPos_ = 0;
-
         width_ = 0;
-
         height_ = 0;
-
-        if (widgetBuilder_ == null) {
-          widget_ = null;
-        } else {
-          widget_ = null;
+        widget_ = null;
+        if (widgetBuilder_ != null) {
+          widgetBuilder_.dispose();
           widgetBuilder_ = null;
         }
         return this;
@@ -622,17 +620,30 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.dashboard.v1.MosaicLayout.Tile buildPartial() {
         com.google.monitoring.dashboard.v1.MosaicLayout.Tile result =
             new com.google.monitoring.dashboard.v1.MosaicLayout.Tile(this);
-        result.xPos_ = xPos_;
-        result.yPos_ = yPos_;
-        result.width_ = width_;
-        result.height_ = height_;
-        if (widgetBuilder_ == null) {
-          result.widget_ = widget_;
-        } else {
-          result.widget_ = widgetBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.dashboard.v1.MosaicLayout.Tile result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.xPos_ = xPos_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.yPos_ = yPos_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.width_ = width_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.height_ = height_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.widget_ = widgetBuilder_ == null ? widget_ : widgetBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -727,31 +738,31 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   xPos_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   yPos_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   width_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 32:
                 {
                   height_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 42:
                 {
                   input.readMessage(getWidgetFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -770,6 +781,8 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int xPos_;
       /**
@@ -806,6 +819,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setXPos(int value) {
 
         xPos_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -823,7 +837,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearXPos() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         xPos_ = 0;
         onChanged();
         return this;
@@ -862,6 +876,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setYPos(int value) {
 
         yPos_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -878,7 +893,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearYPos() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         yPos_ = 0;
         onChanged();
         return this;
@@ -917,6 +932,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setWidth(int value) {
 
         width_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -933,7 +949,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearWidth() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         width_ = 0;
         onChanged();
         return this;
@@ -972,6 +988,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setHeight(int value) {
 
         height_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -988,7 +1005,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHeight() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         height_ = 0;
         onChanged();
         return this;
@@ -1012,7 +1029,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the widget field is set.
        */
       public boolean hasWidget() {
-        return widgetBuilder_ != null || widget_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -1049,11 +1066,11 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           widget_ = value;
-          onChanged();
         } else {
           widgetBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1068,11 +1085,11 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
       public Builder setWidget(com.google.monitoring.dashboard.v1.Widget.Builder builderForValue) {
         if (widgetBuilder_ == null) {
           widget_ = builderForValue.build();
-          onChanged();
         } else {
           widgetBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1086,19 +1103,18 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeWidget(com.google.monitoring.dashboard.v1.Widget value) {
         if (widgetBuilder_ == null) {
-          if (widget_ != null) {
-            widget_ =
-                com.google.monitoring.dashboard.v1.Widget.newBuilder(widget_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && widget_ != null
+              && widget_ != com.google.monitoring.dashboard.v1.Widget.getDefaultInstance()) {
+            getWidgetBuilder().mergeFrom(value);
           } else {
             widget_ = value;
           }
-          onChanged();
         } else {
           widgetBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1111,14 +1127,13 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.dashboard.v1.Widget widget = 5;</code>
        */
       public Builder clearWidget() {
-        if (widgetBuilder_ == null) {
-          widget_ = null;
-          onChanged();
-        } else {
-          widget_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        widget_ = null;
+        if (widgetBuilder_ != null) {
+          widgetBuilder_.dispose();
           widgetBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1131,7 +1146,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
        * <code>.google.monitoring.dashboard.v1.Widget widget = 5;</code>
        */
       public com.google.monitoring.dashboard.v1.Widget.Builder getWidgetBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getWidgetFieldBuilder().getBuilder();
       }
@@ -1244,7 +1259,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLUMNS_FIELD_NUMBER = 1;
-  private int columns_;
+  private int columns_ = 0;
   /**
    *
    *
@@ -1263,6 +1278,8 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TILES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.dashboard.v1.MosaicLayout.Tile> tiles_;
   /**
    *
@@ -1542,15 +1559,15 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       columns_ = 0;
-
       if (tilesBuilder_ == null) {
         tiles_ = java.util.Collections.emptyList();
       } else {
         tiles_ = null;
         tilesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1578,19 +1595,32 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.MosaicLayout buildPartial() {
       com.google.monitoring.dashboard.v1.MosaicLayout result =
           new com.google.monitoring.dashboard.v1.MosaicLayout(this);
-      int from_bitField0_ = bitField0_;
-      result.columns_ = columns_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.dashboard.v1.MosaicLayout result) {
       if (tilesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           tiles_ = java.util.Collections.unmodifiableList(tiles_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.tiles_ = tiles_;
       } else {
         result.tiles_ = tilesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.MosaicLayout result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.columns_ = columns_;
+      }
     }
 
     @java.lang.Override
@@ -1646,7 +1676,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
         if (!other.tiles_.isEmpty()) {
           if (tiles_.isEmpty()) {
             tiles_ = other.tiles_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTilesIsMutable();
             tiles_.addAll(other.tiles_);
@@ -1659,7 +1689,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
             tilesBuilder_.dispose();
             tilesBuilder_ = null;
             tiles_ = other.tiles_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             tilesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTilesFieldBuilder()
@@ -1698,7 +1728,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 columns_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 26:
@@ -1767,6 +1797,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     public Builder setColumns(int value) {
 
       columns_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1783,7 +1814,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColumns() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       columns_ = 0;
       onChanged();
       return this;
@@ -1793,10 +1824,10 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTilesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         tiles_ =
             new java.util.ArrayList<com.google.monitoring.dashboard.v1.MosaicLayout.Tile>(tiles_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -2012,7 +2043,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTiles() {
       if (tilesBuilder_ == null) {
         tiles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         tilesBuilder_.clear();
@@ -2136,7 +2167,7 @@ public final class MosaicLayout extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.dashboard.v1.MosaicLayout.Tile,
                 com.google.monitoring.dashboard.v1.MosaicLayout.Tile.Builder,
                 com.google.monitoring.dashboard.v1.MosaicLayout.TileOrBuilder>(
-                tiles_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                tiles_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         tiles_ = null;
       }
       return tilesBuilder_;

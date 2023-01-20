@@ -71,7 +71,9 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   }
 
   public static final int VIRTUAL_NETWORK_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object virtualNetworkId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object virtualNetworkId_ = "";
   /**
    *
    *
@@ -132,6 +134,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   }
 
   public static final int POD_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList podAddressCidrBlocks_;
   /**
    *
@@ -213,6 +217,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   }
 
   public static final int SERVICE_ADDRESS_CIDR_BLOCKS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList serviceAddressCidrBlocks_;
   /**
    *
@@ -298,7 +304,9 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
   }
 
   public static final int SERVICE_LOAD_BALANCER_SUBNET_ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object serviceLoadBalancerSubnetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceLoadBalancerSubnetId_ = "";
   /**
    *
    *
@@ -600,14 +608,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       virtualNetworkId_ = "";
-
       podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
+      serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       serviceLoadBalancerSubnetId_ = "";
-
       return this;
     }
 
@@ -635,21 +642,36 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
     public com.google.cloud.gkemulticloud.v1.AzureClusterNetworking buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result =
           new com.google.cloud.gkemulticloud.v1.AzureClusterNetworking(this);
-      int from_bitField0_ = bitField0_;
-      result.virtualNetworkId_ = virtualNetworkId_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        podAddressCidrBlocks_ = podAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
-      result.serviceLoadBalancerSubnetId_ = serviceLoadBalancerSubnetId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        podAddressCidrBlocks_ = podAddressCidrBlocks_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.podAddressCidrBlocks_ = podAddressCidrBlocks_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.serviceAddressCidrBlocks_ = serviceAddressCidrBlocks_;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureClusterNetworking result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.virtualNetworkId_ = virtualNetworkId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serviceLoadBalancerSubnetId_ = serviceLoadBalancerSubnetId_;
+      }
     }
 
     @java.lang.Override
@@ -700,12 +722,13 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getVirtualNetworkId().isEmpty()) {
         virtualNetworkId_ = other.virtualNetworkId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.podAddressCidrBlocks_.isEmpty()) {
         if (podAddressCidrBlocks_.isEmpty()) {
           podAddressCidrBlocks_ = other.podAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensurePodAddressCidrBlocksIsMutable();
           podAddressCidrBlocks_.addAll(other.podAddressCidrBlocks_);
@@ -715,7 +738,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       if (!other.serviceAddressCidrBlocks_.isEmpty()) {
         if (serviceAddressCidrBlocks_.isEmpty()) {
           serviceAddressCidrBlocks_ = other.serviceAddressCidrBlocks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureServiceAddressCidrBlocksIsMutable();
           serviceAddressCidrBlocks_.addAll(other.serviceAddressCidrBlocks_);
@@ -724,6 +747,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       }
       if (!other.getServiceLoadBalancerSubnetId().isEmpty()) {
         serviceLoadBalancerSubnetId_ = other.serviceLoadBalancerSubnetId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -755,7 +779,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
             case 10:
               {
                 virtualNetworkId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -775,7 +799,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
             case 42:
               {
                 serviceLoadBalancerSubnetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -876,8 +900,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       virtualNetworkId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -899,8 +923,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVirtualNetworkId() {
-
       virtualNetworkId_ = getDefaultInstance().getVirtualNetworkId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -927,8 +951,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       virtualNetworkId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -937,9 +961,9 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensurePodAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         podAddressCidrBlocks_ = new com.google.protobuf.LazyStringArrayList(podAddressCidrBlocks_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1114,7 +1138,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      */
     public Builder clearPodAddressCidrBlocks() {
       podAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1150,10 +1174,10 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureServiceAddressCidrBlocksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         serviceAddressCidrBlocks_ =
             new com.google.protobuf.LazyStringArrayList(serviceAddressCidrBlocks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1336,7 +1360,7 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      */
     public Builder clearServiceAddressCidrBlocks() {
       serviceAddressCidrBlocks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1445,8 +1469,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceLoadBalancerSubnetId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1467,8 +1491,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearServiceLoadBalancerSubnetId() {
-
       serviceLoadBalancerSubnetId_ = getDefaultInstance().getServiceLoadBalancerSubnetId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1494,8 +1518,8 @@ public final class AzureClusterNetworking extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceLoadBalancerSubnetId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

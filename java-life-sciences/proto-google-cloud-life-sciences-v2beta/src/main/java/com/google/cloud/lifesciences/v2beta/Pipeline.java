@@ -79,6 +79,8 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.lifesciences.v2beta.Action> actions_;
   /**
    *
@@ -192,7 +194,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.lifesciences.v2beta.ResourcesOrBuilder getResourcesOrBuilder() {
-    return getResources();
+    return resources_ == null
+        ? com.google.cloud.lifesciences.v2beta.Resources.getDefaultInstance()
+        : resources_;
   }
 
   public static final int ENVIRONMENT_FIELD_NUMBER = 3;
@@ -208,6 +212,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> environment_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -272,8 +277,10 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; environment = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getEnvironmentOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getEnvironmentOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -363,7 +370,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.lifesciences.v2beta.SecretOrBuilder getEncryptedEnvironmentOrBuilder() {
-    return getEncryptedEnvironment();
+    return encryptedEnvironment_ == null
+        ? com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()
+        : encryptedEnvironment_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 4;
@@ -421,7 +430,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -703,6 +712,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
       } else {
@@ -710,23 +720,20 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         actionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (resourcesBuilder_ == null) {
-        resources_ = null;
-      } else {
-        resources_ = null;
+      resources_ = null;
+      if (resourcesBuilder_ != null) {
+        resourcesBuilder_.dispose();
         resourcesBuilder_ = null;
       }
       internalGetMutableEnvironment().clear();
-      if (encryptedEnvironmentBuilder_ == null) {
-        encryptedEnvironment_ = null;
-      } else {
-        encryptedEnvironment_ = null;
+      encryptedEnvironment_ = null;
+      if (encryptedEnvironmentBuilder_ != null) {
+        encryptedEnvironmentBuilder_.dispose();
         encryptedEnvironmentBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       return this;
@@ -756,7 +763,15 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Pipeline buildPartial() {
       com.google.cloud.lifesciences.v2beta.Pipeline result =
           new com.google.cloud.lifesciences.v2beta.Pipeline(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.lifesciences.v2beta.Pipeline result) {
       if (actionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
@@ -766,25 +781,26 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.actions_ = actionsBuilder_.build();
       }
-      if (resourcesBuilder_ == null) {
-        result.resources_ = resources_;
-      } else {
-        result.resources_ = resourcesBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Pipeline result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resources_ = resourcesBuilder_ == null ? resources_ : resourcesBuilder_.build();
       }
-      result.environment_ = internalGetEnvironment();
-      result.environment_.makeImmutable();
-      if (encryptedEnvironmentBuilder_ == null) {
-        result.encryptedEnvironment_ = encryptedEnvironment_;
-      } else {
-        result.encryptedEnvironment_ = encryptedEnvironmentBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.environment_ = internalGetEnvironment();
+        result.environment_.makeImmutable();
       }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.encryptedEnvironment_ =
+            encryptedEnvironmentBuilder_ == null
+                ? encryptedEnvironment_
+                : encryptedEnvironmentBuilder_.build();
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -863,6 +879,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         mergeResources(other.getResources());
       }
       internalGetMutableEnvironment().mergeFrom(other.internalGetEnvironment());
+      bitField0_ |= 0x00000004;
       if (other.hasEncryptedEnvironment()) {
         mergeEncryptedEnvironment(other.getEncryptedEnvironment());
       }
@@ -911,7 +928,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getResourcesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -923,19 +940,20 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableEnvironment()
                     .getMutableMap()
                     .put(environment__.getKey(), environment__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getEncryptedEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             default:
@@ -1324,7 +1342,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resources field is set.
      */
     public boolean hasResources() {
-      return resourcesBuilder_ != null || resources_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1361,11 +1379,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resources_ = value;
-        onChanged();
       } else {
         resourcesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1381,11 +1399,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.lifesciences.v2beta.Resources.Builder builderForValue) {
       if (resourcesBuilder_ == null) {
         resources_ = builderForValue.build();
-        onChanged();
       } else {
         resourcesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1399,19 +1417,18 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResources(com.google.cloud.lifesciences.v2beta.Resources value) {
       if (resourcesBuilder_ == null) {
-        if (resources_ != null) {
-          resources_ =
-              com.google.cloud.lifesciences.v2beta.Resources.newBuilder(resources_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resources_ != null
+            && resources_ != com.google.cloud.lifesciences.v2beta.Resources.getDefaultInstance()) {
+          getResourcesBuilder().mergeFrom(value);
         } else {
           resources_ = value;
         }
-        onChanged();
       } else {
         resourcesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1424,14 +1441,13 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.Resources resources = 2;</code>
      */
     public Builder clearResources() {
-      if (resourcesBuilder_ == null) {
-        resources_ = null;
-        onChanged();
-      } else {
-        resources_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resources_ = null;
+      if (resourcesBuilder_ != null) {
+        resourcesBuilder_.dispose();
         resourcesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1444,7 +1460,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.Resources resources = 2;</code>
      */
     public com.google.cloud.lifesciences.v2beta.Resources.Builder getResourcesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourcesFieldBuilder().getBuilder();
     }
@@ -1505,8 +1521,6 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableEnvironment() {
-      onChanged();
-      ;
       if (environment_ == null) {
         environment_ =
             com.google.protobuf.MapField.newMapField(EnvironmentDefaultEntryHolder.defaultEntry);
@@ -1514,6 +1528,8 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       if (!environment_.isMutable()) {
         environment_ = environment_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return environment_;
     }
 
@@ -1571,8 +1587,10 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; environment = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getEnvironmentOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getEnvironmentOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1603,6 +1621,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnvironment() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableEnvironment().getMutableMap().clear();
       return this;
     }
@@ -1627,6 +1646,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnvironment() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableEnvironment().getMutableMap();
     }
     /**
@@ -1647,8 +1667,8 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableEnvironment().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1664,6 +1684,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllEnvironment(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnvironment().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1690,7 +1711,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptedEnvironment field is set.
      */
     public boolean hasEncryptedEnvironment() {
-      return encryptedEnvironmentBuilder_ != null || encryptedEnvironment_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1737,11 +1758,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         encryptedEnvironment_ = value;
-        onChanged();
       } else {
         encryptedEnvironmentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1762,11 +1783,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.lifesciences.v2beta.Secret.Builder builderForValue) {
       if (encryptedEnvironmentBuilder_ == null) {
         encryptedEnvironment_ = builderForValue.build();
-        onChanged();
       } else {
         encryptedEnvironmentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1785,19 +1806,19 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptedEnvironment(com.google.cloud.lifesciences.v2beta.Secret value) {
       if (encryptedEnvironmentBuilder_ == null) {
-        if (encryptedEnvironment_ != null) {
-          encryptedEnvironment_ =
-              com.google.cloud.lifesciences.v2beta.Secret.newBuilder(encryptedEnvironment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && encryptedEnvironment_ != null
+            && encryptedEnvironment_
+                != com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()) {
+          getEncryptedEnvironmentBuilder().mergeFrom(value);
         } else {
           encryptedEnvironment_ = value;
         }
-        onChanged();
       } else {
         encryptedEnvironmentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1815,14 +1836,13 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
      */
     public Builder clearEncryptedEnvironment() {
-      if (encryptedEnvironmentBuilder_ == null) {
-        encryptedEnvironment_ = null;
-        onChanged();
-      } else {
-        encryptedEnvironment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      encryptedEnvironment_ = null;
+      if (encryptedEnvironmentBuilder_ != null) {
+        encryptedEnvironmentBuilder_.dispose();
         encryptedEnvironmentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1840,7 +1860,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.lifesciences.v2beta.Secret encrypted_environment = 5;</code>
      */
     public com.google.cloud.lifesciences.v2beta.Secret.Builder getEncryptedEnvironmentBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getEncryptedEnvironmentFieldBuilder().getBuilder();
     }
@@ -1920,7 +1940,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1963,11 +1983,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1986,11 +2006,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2008,17 +2028,18 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2035,14 +2056,13 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 4;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2059,7 +2079,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }

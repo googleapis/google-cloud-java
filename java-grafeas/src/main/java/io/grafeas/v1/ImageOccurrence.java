@@ -111,11 +111,11 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public io.grafeas.v1.FingerprintOrBuilder getFingerprintOrBuilder() {
-    return getFingerprint();
+    return fingerprint_ == null ? io.grafeas.v1.Fingerprint.getDefaultInstance() : fingerprint_;
   }
 
   public static final int DISTANCE_FIELD_NUMBER = 2;
-  private int distance_;
+  private int distance_ = 0;
   /**
    *
    *
@@ -134,6 +134,8 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LAYER_INFO_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Layer> layerInfo_;
   /**
    *
@@ -212,7 +214,9 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int BASE_RESOURCE_URL_FIELD_NUMBER = 4;
-  private volatile java.lang.Object baseResourceUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baseResourceUrl_ = "";
   /**
    *
    *
@@ -490,23 +494,21 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (fingerprintBuilder_ == null) {
-        fingerprint_ = null;
-      } else {
-        fingerprint_ = null;
+      bitField0_ = 0;
+      fingerprint_ = null;
+      if (fingerprintBuilder_ != null) {
+        fingerprintBuilder_.dispose();
         fingerprintBuilder_ = null;
       }
       distance_ = 0;
-
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
       } else {
         layerInfo_ = null;
         layerInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       baseResourceUrl_ = "";
-
       return this;
     }
 
@@ -532,25 +534,38 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public io.grafeas.v1.ImageOccurrence buildPartial() {
       io.grafeas.v1.ImageOccurrence result = new io.grafeas.v1.ImageOccurrence(this);
-      int from_bitField0_ = bitField0_;
-      if (fingerprintBuilder_ == null) {
-        result.fingerprint_ = fingerprint_;
-      } else {
-        result.fingerprint_ = fingerprintBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.distance_ = distance_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.ImageOccurrence result) {
       if (layerInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           layerInfo_ = java.util.Collections.unmodifiableList(layerInfo_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.layerInfo_ = layerInfo_;
       } else {
         result.layerInfo_ = layerInfoBuilder_.build();
       }
-      result.baseResourceUrl_ = baseResourceUrl_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.ImageOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fingerprint_ =
+            fingerprintBuilder_ == null ? fingerprint_ : fingerprintBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.distance_ = distance_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.baseResourceUrl_ = baseResourceUrl_;
+      }
     }
 
     @java.lang.Override
@@ -608,7 +623,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         if (!other.layerInfo_.isEmpty()) {
           if (layerInfo_.isEmpty()) {
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLayerInfoIsMutable();
             layerInfo_.addAll(other.layerInfo_);
@@ -621,7 +636,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
             layerInfoBuilder_.dispose();
             layerInfoBuilder_ = null;
             layerInfo_ = other.layerInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             layerInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLayerInfoFieldBuilder()
@@ -633,6 +648,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getBaseResourceUrl().isEmpty()) {
         baseResourceUrl_ = other.baseResourceUrl_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -664,13 +680,13 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getFingerprintFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 distance_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -688,7 +704,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 baseResourceUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -728,7 +744,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return fingerprintBuilder_ != null || fingerprint_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -763,11 +779,11 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         fingerprint_ = value;
-        onChanged();
       } else {
         fingerprintBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +798,11 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public Builder setFingerprint(io.grafeas.v1.Fingerprint.Builder builderForValue) {
       if (fingerprintBuilder_ == null) {
         fingerprint_ = builderForValue.build();
-        onChanged();
       } else {
         fingerprintBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -800,17 +816,18 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeFingerprint(io.grafeas.v1.Fingerprint value) {
       if (fingerprintBuilder_ == null) {
-        if (fingerprint_ != null) {
-          fingerprint_ =
-              io.grafeas.v1.Fingerprint.newBuilder(fingerprint_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && fingerprint_ != null
+            && fingerprint_ != io.grafeas.v1.Fingerprint.getDefaultInstance()) {
+          getFingerprintBuilder().mergeFrom(value);
         } else {
           fingerprint_ = value;
         }
-        onChanged();
       } else {
         fingerprintBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -823,14 +840,13 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.Fingerprint fingerprint = 1;</code>
      */
     public Builder clearFingerprint() {
-      if (fingerprintBuilder_ == null) {
-        fingerprint_ = null;
-        onChanged();
-      } else {
-        fingerprint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      fingerprint_ = null;
+      if (fingerprintBuilder_ != null) {
+        fingerprintBuilder_.dispose();
         fingerprintBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -843,7 +859,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      * <code>.grafeas.v1.Fingerprint fingerprint = 1;</code>
      */
     public io.grafeas.v1.Fingerprint.Builder getFingerprintBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFingerprintFieldBuilder().getBuilder();
     }
@@ -922,6 +938,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public Builder setDistance(int value) {
 
       distance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,7 +955,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDistance() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       distance_ = 0;
       onChanged();
       return this;
@@ -947,9 +964,9 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     private java.util.List<io.grafeas.v1.Layer> layerInfo_ = java.util.Collections.emptyList();
 
     private void ensureLayerInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         layerInfo_ = new java.util.ArrayList<io.grafeas.v1.Layer>(layerInfo_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1181,7 +1198,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
     public Builder clearLayerInfo() {
       if (layerInfoBuilder_ == null) {
         layerInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         layerInfoBuilder_.clear();
@@ -1309,7 +1326,7 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         layerInfoBuilder_ =
             new com.google.protobuf.RepeatedFieldBuilderV3<
                 io.grafeas.v1.Layer, io.grafeas.v1.Layer.Builder, io.grafeas.v1.LayerOrBuilder>(
-                layerInfo_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                layerInfo_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         layerInfo_ = null;
       }
       return layerInfoBuilder_;
@@ -1379,8 +1396,8 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       baseResourceUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1397,8 +1414,8 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearBaseResourceUrl() {
-
       baseResourceUrl_ = getDefaultInstance().getBaseResourceUrl();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1420,8 +1437,8 @@ public final class ImageOccurrence extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       baseResourceUrl_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

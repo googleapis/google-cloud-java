@@ -69,6 +69,8 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANALYSIS_MESSAGES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkehub.servicemesh.v1alpha.AnalysisMessage>
       analysisMessages_;
   /**
@@ -353,6 +355,7 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (analysisMessagesBuilder_ == null) {
         analysisMessages_ = java.util.Collections.emptyList();
       } else {
@@ -387,7 +390,16 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState buildPartial() {
       com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState result =
           new com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState result) {
       if (analysisMessagesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           analysisMessages_ = java.util.Collections.unmodifiableList(analysisMessages_);
@@ -397,8 +409,10 @@ public final class FeatureState extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.analysisMessages_ = analysisMessagesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.servicemesh.v1alpha.FeatureState result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

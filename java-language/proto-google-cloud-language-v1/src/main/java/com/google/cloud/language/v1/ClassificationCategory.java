@@ -68,7 +68,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -119,7 +121,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
   }
 
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
-  private float confidence_;
+  private float confidence_ = 0F;
   /**
    *
    *
@@ -344,10 +346,9 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       confidence_ = 0F;
-
       return this;
     }
 
@@ -375,10 +376,21 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     public com.google.cloud.language.v1.ClassificationCategory buildPartial() {
       com.google.cloud.language.v1.ClassificationCategory result =
           new com.google.cloud.language.v1.ClassificationCategory(this);
-      result.name_ = name_;
-      result.confidence_ = confidence_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.ClassificationCategory result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.confidence_ = confidence_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getConfidence() != 0F) {
@@ -463,13 +476,13 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 confidence_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -488,6 +501,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -553,8 +568,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -571,8 +586,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -594,8 +609,8 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,6 +648,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
     public Builder setConfidence(float value) {
 
       confidence_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -649,7 +665,7 @@ public final class ClassificationCategory extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearConfidence() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       confidence_ = 0F;
       onChanged();
       return this;

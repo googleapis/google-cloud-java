@@ -290,7 +290,7 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
   }
 
   public static final int CONCLUSION_FIELD_NUMBER = 1;
-  private int conclusion_;
+  private int conclusion_ = 0;
   /**
    *
    *
@@ -328,11 +328,10 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest.ValidationConclusion
       getConclusion() {
-    @SuppressWarnings("deprecation")
     com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest.ValidationConclusion
         result =
             com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest
-                .ValidationConclusion.valueOf(conclusion_);
+                .ValidationConclusion.forNumber(conclusion_);
     return result == null
         ? com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest.ValidationConclusion
             .UNRECOGNIZED
@@ -340,7 +339,9 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
   }
 
   public static final int RESPONSE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object responseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
   /**
    *
    *
@@ -609,10 +610,9 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       conclusion_ = 0;
-
       responseId_ = "";
-
       return this;
     }
 
@@ -642,10 +642,22 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     public com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest buildPartial() {
       com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest result =
           new com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest(this);
-      result.conclusion_ = conclusion_;
-      result.responseId_ = responseId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conclusion_ = conclusion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.responseId_ = responseId_;
+      }
     }
 
     @java.lang.Override
@@ -702,6 +714,7 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       }
       if (!other.getResponseId().isEmpty()) {
         responseId_ = other.responseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -733,13 +746,13 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
             case 8:
               {
                 conclusion_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 responseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -758,6 +771,8 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int conclusion_ = 0;
     /**
@@ -796,8 +811,8 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder setConclusionValue(int value) {
-
       conclusion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,11 +835,10 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
     public com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest
             .ValidationConclusion
         getConclusion() {
-      @SuppressWarnings("deprecation")
       com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest.ValidationConclusion
           result =
               com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest
-                  .ValidationConclusion.valueOf(conclusion_);
+                  .ValidationConclusion.forNumber(conclusion_);
       return result == null
           ? com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest
               .ValidationConclusion.UNRECOGNIZED
@@ -852,7 +866,7 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       conclusion_ = value.getNumber();
       onChanged();
       return this;
@@ -873,7 +887,7 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearConclusion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       conclusion_ = 0;
       onChanged();
       return this;
@@ -949,8 +963,8 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
       if (value == null) {
         throw new NullPointerException();
       }
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,8 +983,8 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
      * @return This builder for chaining.
      */
     public Builder clearResponseId() {
-
       responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -994,8 +1008,8 @@ public final class ProvideValidationFeedbackRequest extends com.google.protobuf.
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

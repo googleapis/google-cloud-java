@@ -92,7 +92,6 @@ public interface FeatureOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -294,7 +293,6 @@ public interface FeatureOrBuilder
    * map&lt;string, .google.cloud.gkehub.v1.MembershipFeatureSpec&gt; membership_specs = 5 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.gkehub.v1.MembershipFeatureSpec getMembershipSpecsOrDefault(
       java.lang.String key,
@@ -442,7 +440,6 @@ public interface FeatureOrBuilder
    * map&lt;string, .google.cloud.gkehub.v1.MembershipFeatureState&gt; membership_states = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   com.google.cloud.gkehub.v1.MembershipFeatureState getMembershipStatesOrDefault(
       java.lang.String key,

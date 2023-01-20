@@ -75,7 +75,9 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
   }
 
   public static final int EXTERNAL_KEY_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object externalKeyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalKeyUri_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
   }
 
   public static final int EKM_CONNECTION_KEY_PATH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object ekmConnectionKeyPath_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ekmConnectionKeyPath_ = "";
   /**
    *
    *
@@ -392,10 +396,9 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       externalKeyUri_ = "";
-
       ekmConnectionKeyPath_ = "";
-
       return this;
     }
 
@@ -423,10 +426,21 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
     public com.google.cloud.kms.v1.ExternalProtectionLevelOptions buildPartial() {
       com.google.cloud.kms.v1.ExternalProtectionLevelOptions result =
           new com.google.cloud.kms.v1.ExternalProtectionLevelOptions(this);
-      result.externalKeyUri_ = externalKeyUri_;
-      result.ekmConnectionKeyPath_ = ekmConnectionKeyPath_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.ExternalProtectionLevelOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.externalKeyUri_ = externalKeyUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ekmConnectionKeyPath_ = ekmConnectionKeyPath_;
+      }
     }
 
     @java.lang.Override
@@ -477,10 +491,12 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
         return this;
       if (!other.getExternalKeyUri().isEmpty()) {
         externalKeyUri_ = other.externalKeyUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEkmConnectionKeyPath().isEmpty()) {
         ekmConnectionKeyPath_ = other.ekmConnectionKeyPath_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -512,13 +528,13 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
             case 10:
               {
                 externalKeyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 ekmConnectionKeyPath_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +553,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object externalKeyUri_ = "";
     /**
@@ -602,8 +620,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalKeyUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -620,8 +638,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearExternalKeyUri() {
-
       externalKeyUri_ = getDefaultInstance().getExternalKeyUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -643,8 +661,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalKeyUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -719,8 +737,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       ekmConnectionKeyPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEkmConnectionKeyPath() {
-
       ekmConnectionKeyPath_ = getDefaultInstance().getEkmConnectionKeyPath();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -764,8 +782,8 @@ public final class ExternalProtectionLevelOptions extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ekmConnectionKeyPath_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

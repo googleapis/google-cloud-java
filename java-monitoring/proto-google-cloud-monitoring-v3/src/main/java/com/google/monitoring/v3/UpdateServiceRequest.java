@@ -114,7 +114,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.monitoring.v3.ServiceOrBuilder getServiceOrBuilder() {
-    return getService();
+    return service_ == null ? com.google.monitoring.v3.Service.getDefaultInstance() : service_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -160,7 +160,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -379,16 +379,15 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (serviceBuilder_ == null) {
-        service_ = null;
-      } else {
-        service_ = null;
+      bitField0_ = 0;
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -418,18 +417,21 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     public com.google.monitoring.v3.UpdateServiceRequest buildPartial() {
       com.google.monitoring.v3.UpdateServiceRequest result =
           new com.google.monitoring.v3.UpdateServiceRequest(this);
-      if (serviceBuilder_ == null) {
-        result.service_ = service_;
-      } else {
-        result.service_ = serviceBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UpdateServiceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.service_ = serviceBuilder_ == null ? service_ : serviceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,13 +514,13 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getServiceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -537,6 +539,8 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.monitoring.v3.Service service_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -558,7 +562,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return serviceBuilder_ != null || service_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -597,11 +601,11 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         service_ = value;
-        onChanged();
       } else {
         serviceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -618,11 +622,11 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     public Builder setService(com.google.monitoring.v3.Service.Builder builderForValue) {
       if (serviceBuilder_ == null) {
         service_ = builderForValue.build();
-        onChanged();
       } else {
         serviceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,17 +642,18 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeService(com.google.monitoring.v3.Service value) {
       if (serviceBuilder_ == null) {
-        if (service_ != null) {
-          service_ =
-              com.google.monitoring.v3.Service.newBuilder(service_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && service_ != null
+            && service_ != com.google.monitoring.v3.Service.getDefaultInstance()) {
+          getServiceBuilder().mergeFrom(value);
         } else {
           service_ = value;
         }
-        onChanged();
       } else {
         serviceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +668,13 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearService() {
-      if (serviceBuilder_ == null) {
-        service_ = null;
-        onChanged();
-      } else {
-        service_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      service_ = null;
+      if (serviceBuilder_ != null) {
+        serviceBuilder_.dispose();
         serviceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -685,7 +689,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.monitoring.v3.Service.Builder getServiceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
@@ -753,7 +757,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -790,11 +794,11 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -809,11 +813,11 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,17 +831,18 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -850,14 +855,13 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -870,7 +874,7 @@ public final class UpdateServiceRequest extends com.google.protobuf.GeneratedMes
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

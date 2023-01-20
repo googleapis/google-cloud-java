@@ -248,7 +248,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EPOCH_FIELD_NUMBER = 1;
-  private int epoch_;
+  private int epoch_ = 0;
   /**
    *
    *
@@ -266,7 +266,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -317,7 +319,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object revision_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revision_ = "";
   /**
    *
    *
@@ -366,7 +370,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INCLUSIVE_FIELD_NUMBER = 6;
-  private boolean inclusive_;
+  private boolean inclusive_ = false;
   /**
    *
    *
@@ -389,7 +393,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KIND_FIELD_NUMBER = 4;
-  private int kind_;
+  private int kind_ = 0;
   /**
    *
    *
@@ -420,13 +424,14 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public io.grafeas.v1.Version.VersionKind getKind() {
-    @SuppressWarnings("deprecation")
-    io.grafeas.v1.Version.VersionKind result = io.grafeas.v1.Version.VersionKind.valueOf(kind_);
+    io.grafeas.v1.Version.VersionKind result = io.grafeas.v1.Version.VersionKind.forNumber(kind_);
     return result == null ? io.grafeas.v1.Version.VersionKind.UNRECOGNIZED : result;
   }
 
   public static final int FULL_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object fullName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fullName_ = "";
   /**
    *
    *
@@ -713,18 +718,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       epoch_ = 0;
-
       name_ = "";
-
       revision_ = "";
-
       inclusive_ = false;
-
       kind_ = 0;
-
       fullName_ = "";
-
       return this;
     }
 
@@ -750,14 +750,33 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Version buildPartial() {
       io.grafeas.v1.Version result = new io.grafeas.v1.Version(this);
-      result.epoch_ = epoch_;
-      result.name_ = name_;
-      result.revision_ = revision_;
-      result.inclusive_ = inclusive_;
-      result.kind_ = kind_;
-      result.fullName_ = fullName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Version result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.epoch_ = epoch_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.revision_ = revision_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inclusive_ = inclusive_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.kind_ = kind_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.fullName_ = fullName_;
+      }
     }
 
     @java.lang.Override
@@ -810,10 +829,12 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRevision().isEmpty()) {
         revision_ = other.revision_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getInclusive() != false) {
@@ -824,6 +845,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFullName().isEmpty()) {
         fullName_ = other.fullName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -855,37 +877,37 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 epoch_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 revision_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 kind_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
               {
                 fullName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 inclusive_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 48
             default:
@@ -904,6 +926,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int epoch_;
     /**
@@ -936,6 +960,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder setEpoch(int value) {
 
       epoch_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,7 +976,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEpoch() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       epoch_ = 0;
       onChanged();
       return this;
@@ -1021,8 +1046,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1039,8 +1064,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1062,8 +1087,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1129,8 +1154,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       revision_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1146,8 +1171,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRevision() {
-
       revision_ = getDefaultInstance().getRevision();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1168,8 +1193,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revision_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1215,6 +1240,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     public Builder setInclusive(boolean value) {
 
       inclusive_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1235,7 +1261,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInclusive() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       inclusive_ = false;
       onChanged();
       return this;
@@ -1272,8 +1298,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKindValue(int value) {
-
       kind_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1291,8 +1317,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public io.grafeas.v1.Version.VersionKind getKind() {
-      @SuppressWarnings("deprecation")
-      io.grafeas.v1.Version.VersionKind result = io.grafeas.v1.Version.VersionKind.valueOf(kind_);
+      io.grafeas.v1.Version.VersionKind result = io.grafeas.v1.Version.VersionKind.forNumber(kind_);
       return result == null ? io.grafeas.v1.Version.VersionKind.UNRECOGNIZED : result;
     }
     /**
@@ -1312,7 +1337,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       kind_ = value.getNumber();
       onChanged();
       return this;
@@ -1330,7 +1355,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       kind_ = 0;
       onChanged();
       return this;
@@ -1400,8 +1425,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fullName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1418,8 +1443,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFullName() {
-
       fullName_ = getDefaultInstance().getFullName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1441,8 +1466,8 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fullName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -111,11 +111,13 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha2.TypeMetaOrBuilder getTypeOrBuilder() {
-    return getType();
+    return type_ == null ? com.google.cloud.gkehub.v1alpha2.TypeMeta.getDefaultInstance() : type_;
   }
 
   public static final int MANIFEST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object manifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object manifest_ = "";
   /**
    *
    *
@@ -376,14 +378,13 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (typeBuilder_ == null) {
-        type_ = null;
-      } else {
-        type_ = null;
+      bitField0_ = 0;
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
       manifest_ = "";
-
       return this;
     }
 
@@ -411,14 +412,21 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkehub.v1alpha2.ConnectAgentResource buildPartial() {
       com.google.cloud.gkehub.v1alpha2.ConnectAgentResource result =
           new com.google.cloud.gkehub.v1alpha2.ConnectAgentResource(this);
-      if (typeBuilder_ == null) {
-        result.type_ = type_;
-      } else {
-        result.type_ = typeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.manifest_ = manifest_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.ConnectAgentResource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = typeBuilder_ == null ? type_ : typeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.manifest_ = manifest_;
+      }
     }
 
     @java.lang.Override
@@ -472,6 +480,7 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       }
       if (!other.getManifest().isEmpty()) {
         manifest_ = other.manifest_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -503,13 +512,13 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 input.readMessage(getTypeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 manifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +538,8 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.v1alpha2.TypeMeta type_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.v1alpha2.TypeMeta,
@@ -547,7 +558,7 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
      * @return Whether the type field is set.
      */
     public boolean hasType() {
-      return typeBuilder_ != null || type_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -584,11 +595,11 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         type_ = value;
-        onChanged();
       } else {
         typeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -603,11 +614,11 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
     public Builder setType(com.google.cloud.gkehub.v1alpha2.TypeMeta.Builder builderForValue) {
       if (typeBuilder_ == null) {
         type_ = builderForValue.build();
-        onChanged();
       } else {
         typeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -621,19 +632,18 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeType(com.google.cloud.gkehub.v1alpha2.TypeMeta value) {
       if (typeBuilder_ == null) {
-        if (type_ != null) {
-          type_ =
-              com.google.cloud.gkehub.v1alpha2.TypeMeta.newBuilder(type_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && type_ != null
+            && type_ != com.google.cloud.gkehub.v1alpha2.TypeMeta.getDefaultInstance()) {
+          getTypeBuilder().mergeFrom(value);
         } else {
           type_ = value;
         }
-        onChanged();
       } else {
         typeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -646,14 +656,13 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.gkehub.v1alpha2.TypeMeta type = 1;</code>
      */
     public Builder clearType() {
-      if (typeBuilder_ == null) {
-        type_ = null;
-        onChanged();
-      } else {
-        type_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      type_ = null;
+      if (typeBuilder_ != null) {
+        typeBuilder_.dispose();
         typeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -666,7 +675,7 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.gkehub.v1alpha2.TypeMeta type = 1;</code>
      */
     public com.google.cloud.gkehub.v1alpha2.TypeMeta.Builder getTypeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTypeFieldBuilder().getBuilder();
     }
@@ -775,8 +784,8 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       manifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -792,8 +801,8 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearManifest() {
-
       manifest_ = getDefaultInstance().getManifest();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -814,8 +823,8 @@ public final class ConnectAgentResource extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       manifest_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

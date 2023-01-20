@@ -441,7 +441,6 @@ public interface AzureNodePoolOrBuilder
    * <code>map&lt;string, string&gt; annotations = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

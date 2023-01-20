@@ -637,7 +637,9 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_DOMAIN_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object targetDomainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetDomainName_ = "";
   /**
    *
    *
@@ -688,7 +690,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRUST_TYPE_FIELD_NUMBER = 2;
-  private int trustType_;
+  private int trustType_ = 0;
   /**
    *
    *
@@ -721,16 +723,15 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.Trust.TrustType getTrustType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.managedidentities.v1.Trust.TrustType result =
-        com.google.cloud.managedidentities.v1.Trust.TrustType.valueOf(trustType_);
+        com.google.cloud.managedidentities.v1.Trust.TrustType.forNumber(trustType_);
     return result == null
         ? com.google.cloud.managedidentities.v1.Trust.TrustType.UNRECOGNIZED
         : result;
   }
 
   public static final int TRUST_DIRECTION_FIELD_NUMBER = 3;
-  private int trustDirection_;
+  private int trustDirection_ = 0;
   /**
    *
    *
@@ -765,16 +766,15 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.Trust.TrustDirection getTrustDirection() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.managedidentities.v1.Trust.TrustDirection result =
-        com.google.cloud.managedidentities.v1.Trust.TrustDirection.valueOf(trustDirection_);
+        com.google.cloud.managedidentities.v1.Trust.TrustDirection.forNumber(trustDirection_);
     return result == null
         ? com.google.cloud.managedidentities.v1.Trust.TrustDirection.UNRECOGNIZED
         : result;
   }
 
   public static final int SELECTIVE_AUTHENTICATION_FIELD_NUMBER = 4;
-  private boolean selectiveAuthentication_;
+  private boolean selectiveAuthentication_ = false;
   /**
    *
    *
@@ -794,6 +794,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_DNS_IP_ADDRESSES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList targetDnsIpAddresses_;
   /**
    *
@@ -863,7 +865,9 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRUST_HANDSHAKE_SECRET_FIELD_NUMBER = 6;
-  private volatile java.lang.Object trustHandshakeSecret_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trustHandshakeSecret_ = "";
   /**
    *
    *
@@ -959,7 +963,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
@@ -1008,11 +1012,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 9;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1045,14 +1049,15 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.Trust.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.managedidentities.v1.Trust.State result =
-        com.google.cloud.managedidentities.v1.Trust.State.valueOf(state_);
+        com.google.cloud.managedidentities.v1.Trust.State.forNumber(state_);
     return result == null ? com.google.cloud.managedidentities.v1.Trust.State.UNRECOGNIZED : result;
   }
 
   public static final int STATE_DESCRIPTION_FIELD_NUMBER = 11;
-  private volatile java.lang.Object stateDescription_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateDescription_ = "";
   /**
    *
    *
@@ -1151,7 +1156,9 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastTrustHeartbeatTimeOrBuilder() {
-    return getLastTrustHeartbeatTime();
+    return lastTrustHeartbeatTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastTrustHeartbeatTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1474,38 +1481,29 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetDomainName_ = "";
-
       trustType_ = 0;
-
       trustDirection_ = 0;
-
       selectiveAuthentication_ = false;
-
       targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       trustHandshakeSecret_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       state_ = 0;
-
       stateDescription_ = "";
-
-      if (lastTrustHeartbeatTimeBuilder_ == null) {
-        lastTrustHeartbeatTime_ = null;
-      } else {
-        lastTrustHeartbeatTime_ = null;
+      lastTrustHeartbeatTime_ = null;
+      if (lastTrustHeartbeatTimeBuilder_ != null) {
+        lastTrustHeartbeatTimeBuilder_.dispose();
         lastTrustHeartbeatTimeBuilder_ = null;
       }
       return this;
@@ -1535,36 +1533,57 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.managedidentities.v1.Trust buildPartial() {
       com.google.cloud.managedidentities.v1.Trust result =
           new com.google.cloud.managedidentities.v1.Trust(this);
-      int from_bitField0_ = bitField0_;
-      result.targetDomainName_ = targetDomainName_;
-      result.trustType_ = trustType_;
-      result.trustDirection_ = trustDirection_;
-      result.selectiveAuthentication_ = selectiveAuthentication_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        targetDnsIpAddresses_ = targetDnsIpAddresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
-      result.trustHandshakeSecret_ = trustHandshakeSecret_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.stateDescription_ = stateDescription_;
-      if (lastTrustHeartbeatTimeBuilder_ == null) {
-        result.lastTrustHeartbeatTime_ = lastTrustHeartbeatTime_;
-      } else {
-        result.lastTrustHeartbeatTime_ = lastTrustHeartbeatTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.managedidentities.v1.Trust result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        targetDnsIpAddresses_ = targetDnsIpAddresses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.targetDnsIpAddresses_ = targetDnsIpAddresses_;
+    }
+
+    private void buildPartial0(com.google.cloud.managedidentities.v1.Trust result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetDomainName_ = targetDomainName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trustType_ = trustType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trustDirection_ = trustDirection_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.selectiveAuthentication_ = selectiveAuthentication_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.trustHandshakeSecret_ = trustHandshakeSecret_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stateDescription_ = stateDescription_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lastTrustHeartbeatTime_ =
+            lastTrustHeartbeatTimeBuilder_ == null
+                ? lastTrustHeartbeatTime_
+                : lastTrustHeartbeatTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1614,6 +1633,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.managedidentities.v1.Trust.getDefaultInstance()) return this;
       if (!other.getTargetDomainName().isEmpty()) {
         targetDomainName_ = other.targetDomainName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.trustType_ != 0) {
@@ -1628,7 +1648,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (!other.targetDnsIpAddresses_.isEmpty()) {
         if (targetDnsIpAddresses_.isEmpty()) {
           targetDnsIpAddresses_ = other.targetDnsIpAddresses_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureTargetDnsIpAddressesIsMutable();
           targetDnsIpAddresses_.addAll(other.targetDnsIpAddresses_);
@@ -1637,6 +1657,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getTrustHandshakeSecret().isEmpty()) {
         trustHandshakeSecret_ = other.trustHandshakeSecret_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1650,6 +1671,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStateDescription().isEmpty()) {
         stateDescription_ = other.stateDescription_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasLastTrustHeartbeatTime()) {
@@ -1684,25 +1706,25 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 targetDomainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 trustType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 trustDirection_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 selectiveAuthentication_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
@@ -1715,38 +1737,38 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 trustHandshakeSecret_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 90:
               {
                 stateDescription_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(
                     getLastTrustHeartbeatTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             default:
@@ -1832,8 +1854,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       targetDomainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1850,8 +1872,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetDomainName() {
-
       targetDomainName_ = getDefaultInstance().getTargetDomainName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1873,8 +1895,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       targetDomainName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1912,8 +1934,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTrustTypeValue(int value) {
-
       trustType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1932,9 +1954,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.managedidentities.v1.Trust.TrustType getTrustType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.managedidentities.v1.Trust.TrustType result =
-          com.google.cloud.managedidentities.v1.Trust.TrustType.valueOf(trustType_);
+          com.google.cloud.managedidentities.v1.Trust.TrustType.forNumber(trustType_);
       return result == null
           ? com.google.cloud.managedidentities.v1.Trust.TrustType.UNRECOGNIZED
           : result;
@@ -1957,7 +1978,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       trustType_ = value.getNumber();
       onChanged();
       return this;
@@ -1976,7 +1997,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrustType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       trustType_ = 0;
       onChanged();
       return this;
@@ -2017,8 +2038,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTrustDirectionValue(int value) {
-
       trustDirection_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2038,9 +2059,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.managedidentities.v1.Trust.TrustDirection getTrustDirection() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.managedidentities.v1.Trust.TrustDirection result =
-          com.google.cloud.managedidentities.v1.Trust.TrustDirection.valueOf(trustDirection_);
+          com.google.cloud.managedidentities.v1.Trust.TrustDirection.forNumber(trustDirection_);
       return result == null
           ? com.google.cloud.managedidentities.v1.Trust.TrustDirection.UNRECOGNIZED
           : result;
@@ -2065,7 +2085,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       trustDirection_ = value.getNumber();
       onChanged();
       return this;
@@ -2085,7 +2105,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrustDirection() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       trustDirection_ = 0;
       onChanged();
       return this;
@@ -2126,6 +2146,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public Builder setSelectiveAuthentication(boolean value) {
 
       selectiveAuthentication_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2143,7 +2164,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelectiveAuthentication() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       selectiveAuthentication_ = false;
       onChanged();
       return this;
@@ -2153,9 +2174,9 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureTargetDnsIpAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         targetDnsIpAddresses_ = new com.google.protobuf.LazyStringArrayList(targetDnsIpAddresses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2306,7 +2327,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearTargetDnsIpAddresses() {
       targetDnsIpAddresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2399,8 +2420,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       trustHandshakeSecret_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2417,8 +2438,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrustHandshakeSecret() {
-
       trustHandshakeSecret_ = getDefaultInstance().getTrustHandshakeSecret();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2440,8 +2461,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       trustHandshakeSecret_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2466,7 +2487,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2507,11 +2528,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2528,11 +2549,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2548,17 +2569,18 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2573,14 +2595,13 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2595,7 +2616,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2667,7 +2688,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2708,11 +2729,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2729,11 +2750,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2749,17 +2770,18 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2774,14 +2796,13 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2796,7 +2817,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2881,8 +2902,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2901,9 +2922,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.managedidentities.v1.Trust.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.managedidentities.v1.Trust.State result =
-          com.google.cloud.managedidentities.v1.Trust.State.valueOf(state_);
+          com.google.cloud.managedidentities.v1.Trust.State.forNumber(state_);
       return result == null
           ? com.google.cloud.managedidentities.v1.Trust.State.UNRECOGNIZED
           : result;
@@ -2926,7 +2946,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2945,7 +2965,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = 0;
       onChanged();
       return this;
@@ -3012,8 +3032,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateDescription_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3029,8 +3049,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateDescription() {
-
       stateDescription_ = getDefaultInstance().getStateDescription();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3051,8 +3071,8 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateDescription_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3077,7 +3097,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastTrustHeartbeatTime field is set.
      */
     public boolean hasLastTrustHeartbeatTime() {
-      return lastTrustHeartbeatTimeBuilder_ != null || lastTrustHeartbeatTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3118,11 +3138,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastTrustHeartbeatTime_ = value;
-        onChanged();
       } else {
         lastTrustHeartbeatTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3140,11 +3160,11 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastTrustHeartbeatTimeBuilder_ == null) {
         lastTrustHeartbeatTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastTrustHeartbeatTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3160,19 +3180,18 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastTrustHeartbeatTime(com.google.protobuf.Timestamp value) {
       if (lastTrustHeartbeatTimeBuilder_ == null) {
-        if (lastTrustHeartbeatTime_ != null) {
-          lastTrustHeartbeatTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastTrustHeartbeatTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && lastTrustHeartbeatTime_ != null
+            && lastTrustHeartbeatTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastTrustHeartbeatTimeBuilder().mergeFrom(value);
         } else {
           lastTrustHeartbeatTime_ = value;
         }
-        onChanged();
       } else {
         lastTrustHeartbeatTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3187,14 +3206,13 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastTrustHeartbeatTime() {
-      if (lastTrustHeartbeatTimeBuilder_ == null) {
-        lastTrustHeartbeatTime_ = null;
-        onChanged();
-      } else {
-        lastTrustHeartbeatTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      lastTrustHeartbeatTime_ = null;
+      if (lastTrustHeartbeatTimeBuilder_ != null) {
+        lastTrustHeartbeatTimeBuilder_.dispose();
         lastTrustHeartbeatTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3209,7 +3227,7 @@ public final class Trust extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastTrustHeartbeatTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getLastTrustHeartbeatTimeFieldBuilder().getBuilder();
     }

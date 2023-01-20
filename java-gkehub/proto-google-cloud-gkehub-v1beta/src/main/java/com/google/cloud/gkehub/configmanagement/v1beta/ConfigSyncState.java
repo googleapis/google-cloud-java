@@ -111,7 +111,9 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersionOrBuilder
       getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion.getDefaultInstance()
+        : version_;
   }
 
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
@@ -172,7 +174,10 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentStateOrBuilder
       getDeploymentStateOrBuilder() {
-    return getDeploymentState();
+    return deploymentState_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState
+            .getDefaultInstance()
+        : deploymentState_;
   }
 
   public static final int SYNC_STATE_FIELD_NUMBER = 3;
@@ -221,7 +226,9 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.SyncStateOrBuilder
       getSyncStateOrBuilder() {
-    return getSyncState();
+    return syncState_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1beta.SyncState.getDefaultInstance()
+        : syncState_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -455,22 +462,20 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      bitField0_ = 0;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-      if (deploymentStateBuilder_ == null) {
-        deploymentState_ = null;
-      } else {
-        deploymentState_ = null;
+      deploymentState_ = null;
+      if (deploymentStateBuilder_ != null) {
+        deploymentStateBuilder_.dispose();
         deploymentStateBuilder_ = null;
       }
-      if (syncStateBuilder_ == null) {
-        syncState_ = null;
-      } else {
-        syncState_ = null;
+      syncState_ = null;
+      if (syncStateBuilder_ != null) {
+        syncStateBuilder_.dispose();
         syncStateBuilder_ = null;
       }
       return this;
@@ -501,23 +506,26 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState(this);
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
-      }
-      if (deploymentStateBuilder_ == null) {
-        result.deploymentState_ = deploymentState_;
-      } else {
-        result.deploymentState_ = deploymentStateBuilder_.build();
-      }
-      if (syncStateBuilder_ == null) {
-        result.syncState_ = syncState_;
-      } else {
-        result.syncState_ = syncStateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deploymentState_ =
+            deploymentStateBuilder_ == null ? deploymentState_ : deploymentStateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.syncState_ = syncStateBuilder_ == null ? syncState_ : syncStateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -606,19 +614,19 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDeploymentStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSyncStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -638,6 +646,8 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion,
@@ -656,7 +666,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -694,11 +704,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -714,11 +724,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion.Builder builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -733,19 +743,20 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public Builder mergeVersion(
         com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion.newBuilder(version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion
+                    .getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -758,14 +769,13 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion version = 1;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -779,7 +789,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion.Builder
         getVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -850,7 +860,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * @return Whether the deploymentState field is set.
      */
     public boolean hasDeploymentState() {
-      return deploymentStateBuilder_ != null || deploymentState_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -896,11 +906,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         deploymentState_ = value;
-        onChanged();
       } else {
         deploymentStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -920,11 +930,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             builderForValue) {
       if (deploymentStateBuilder_ == null) {
         deploymentState_ = builderForValue.build();
-        onChanged();
       } else {
         deploymentStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -942,20 +952,20 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public Builder mergeDeploymentState(
         com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState value) {
       if (deploymentStateBuilder_ == null) {
-        if (deploymentState_ != null) {
-          deploymentState_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState.newBuilder(
-                      deploymentState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && deploymentState_ != null
+            && deploymentState_
+                != com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState
+                    .getDefaultInstance()) {
+          getDeploymentStateBuilder().mergeFrom(value);
         } else {
           deploymentState_ = value;
         }
-        onChanged();
       } else {
         deploymentStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -971,14 +981,13 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearDeploymentState() {
-      if (deploymentStateBuilder_ == null) {
-        deploymentState_ = null;
-        onChanged();
-      } else {
-        deploymentState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      deploymentState_ = null;
+      if (deploymentStateBuilder_ != null) {
+        deploymentStateBuilder_.dispose();
         deploymentStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -995,7 +1004,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncDeploymentState.Builder
         getDeploymentStateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDeploymentStateFieldBuilder().getBuilder();
     }
@@ -1069,7 +1078,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * @return Whether the syncState field is set.
      */
     public boolean hasSyncState() {
-      return syncStateBuilder_ != null || syncState_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1106,11 +1115,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         syncState_ = value;
-        onChanged();
       } else {
         syncStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1126,11 +1135,11 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkehub.configmanagement.v1beta.SyncState.Builder builderForValue) {
       if (syncStateBuilder_ == null) {
         syncState_ = builderForValue.build();
-        onChanged();
       } else {
         syncStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1144,19 +1153,19 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSyncState(com.google.cloud.gkehub.configmanagement.v1beta.SyncState value) {
       if (syncStateBuilder_ == null) {
-        if (syncState_ != null) {
-          syncState_ =
-              com.google.cloud.gkehub.configmanagement.v1beta.SyncState.newBuilder(syncState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && syncState_ != null
+            && syncState_
+                != com.google.cloud.gkehub.configmanagement.v1beta.SyncState.getDefaultInstance()) {
+          getSyncStateBuilder().mergeFrom(value);
         } else {
           syncState_ = value;
         }
-        onChanged();
       } else {
         syncStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1169,14 +1178,13 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3;</code>
      */
     public Builder clearSyncState() {
-      if (syncStateBuilder_ == null) {
-        syncState_ = null;
-        onChanged();
-      } else {
-        syncState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      syncState_ = null;
+      if (syncStateBuilder_ != null) {
+        syncStateBuilder_.dispose();
         syncStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1189,7 +1197,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.gkehub.configmanagement.v1beta.SyncState sync_state = 3;</code>
      */
     public com.google.cloud.gkehub.configmanagement.v1beta.SyncState.Builder getSyncStateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSyncStateFieldBuilder().getBuilder();
     }

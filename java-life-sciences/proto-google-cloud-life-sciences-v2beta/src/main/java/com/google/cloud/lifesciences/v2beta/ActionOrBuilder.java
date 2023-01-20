@@ -279,7 +279,6 @@ public interface ActionOrBuilder
    *
    * <code>map&lt;string, string&gt; environment = 5;</code>
    */
-
   /* nullable */
   java.lang.String getEnvironmentOrDefault(
       java.lang.String key,
@@ -648,7 +647,6 @@ public interface ActionOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

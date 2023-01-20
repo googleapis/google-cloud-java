@@ -67,7 +67,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
 
   private int bitField0_;
   public static final int BUSINESS_FIELD_NUMBER = 2;
-  private boolean business_;
+  private boolean business_ = false;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PO_BOX_FIELD_NUMBER = 3;
-  private boolean poBox_;
+  private boolean poBox_ = false;
   /**
    *
    *
@@ -137,7 +137,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RESIDENTIAL_FIELD_NUMBER = 6;
-  private boolean residential_;
+  private boolean residential_ = false;
   /**
    *
    *
@@ -401,12 +401,10 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       business_ = false;
-      bitField0_ = (bitField0_ & ~0x00000001);
       poBox_ = false;
-      bitField0_ = (bitField0_ & ~0x00000002);
       residential_ = false;
-      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -434,6 +432,14 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.maps.addressvalidation.v1.AddressMetadata buildPartial() {
       com.google.maps.addressvalidation.v1.AddressMetadata result =
           new com.google.maps.addressvalidation.v1.AddressMetadata(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.AddressMetadata result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -448,9 +454,7 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
         result.residential_ = residential_;
         to_bitField0_ |= 0x00000004;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -618,8 +622,9 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setBusiness(boolean value) {
-      bitField0_ |= 0x00000001;
+
       business_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -689,8 +694,9 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setPoBox(boolean value) {
-      bitField0_ |= 0x00000002;
+
       poBox_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -760,8 +766,9 @@ public final class AddressMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setResidential(boolean value) {
-      bitField0_ |= 0x00000004;
+
       residential_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -437,7 +437,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -468,9 +468,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.Document.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.Document.Type result =
-        com.google.cloud.language.v1beta2.Document.Type.valueOf(type_);
+        com.google.cloud.language.v1beta2.Document.Type.forNumber(type_);
     return result == null ? com.google.cloud.language.v1beta2.Document.Type.UNRECOGNIZED : result;
   }
 
@@ -627,7 +626,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -690,7 +691,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERENCE_WEB_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object referenceWebUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object referenceWebUri_ = "";
   /**
    *
    *
@@ -741,7 +744,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOILERPLATE_HANDLING_FIELD_NUMBER = 6;
-  private int boilerplateHandling_;
+  private int boilerplateHandling_ = 0;
   /**
    *
    *
@@ -776,9 +779,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.Document.BoilerplateHandling result =
-        com.google.cloud.language.v1beta2.Document.BoilerplateHandling.valueOf(
+        com.google.cloud.language.v1beta2.Document.BoilerplateHandling.forNumber(
             boilerplateHandling_);
     return result == null
         ? com.google.cloud.language.v1beta2.Document.BoilerplateHandling.UNRECOGNIZED
@@ -1050,14 +1052,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       language_ = "";
-
       referenceWebUri_ = "";
-
       boilerplateHandling_ = 0;
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -1087,19 +1086,33 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1beta2.Document buildPartial() {
       com.google.cloud.language.v1beta2.Document result =
           new com.google.cloud.language.v1beta2.Document(this);
-      result.type_ = type_;
-      if (sourceCase_ == 2) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
-      }
-      result.language_ = language_;
-      result.referenceWebUri_ = referenceWebUri_;
-      result.boilerplateHandling_ = boilerplateHandling_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1beta2.Document result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.language_ = language_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.referenceWebUri_ = referenceWebUri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.boilerplateHandling_ = boilerplateHandling_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.language.v1beta2.Document result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -1152,10 +1165,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getReferenceWebUri().isEmpty()) {
         referenceWebUri_ = other.referenceWebUri_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.boilerplateHandling_ != 0) {
@@ -1210,7 +1225,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -1230,19 +1245,19 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 referenceWebUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 boilerplateHandling_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             default:
@@ -1276,6 +1291,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int type_ = 0;
     /**
      *
@@ -1307,8 +1324,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1326,9 +1343,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.Document.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.Document.Type result =
-          com.google.cloud.language.v1beta2.Document.Type.valueOf(type_);
+          com.google.cloud.language.v1beta2.Document.Type.forNumber(type_);
       return result == null ? com.google.cloud.language.v1beta2.Document.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1348,7 +1364,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1366,7 +1382,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1746,8 +1762,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1770,8 +1786,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1799,8 +1815,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1869,8 +1885,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       referenceWebUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1887,8 +1903,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReferenceWebUri() {
-
       referenceWebUri_ = getDefaultInstance().getReferenceWebUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1910,8 +1926,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       referenceWebUri_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1951,8 +1967,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setBoilerplateHandlingValue(int value) {
-
       boilerplateHandling_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1972,9 +1988,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.Document.BoilerplateHandling getBoilerplateHandling() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.Document.BoilerplateHandling result =
-          com.google.cloud.language.v1beta2.Document.BoilerplateHandling.valueOf(
+          com.google.cloud.language.v1beta2.Document.BoilerplateHandling.forNumber(
               boilerplateHandling_);
       return result == null
           ? com.google.cloud.language.v1beta2.Document.BoilerplateHandling.UNRECOGNIZED
@@ -2000,7 +2015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       boilerplateHandling_ = value.getNumber();
       onChanged();
       return this;
@@ -2020,7 +2035,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBoilerplateHandling() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       boilerplateHandling_ = 0;
       onChanged();
       return this;

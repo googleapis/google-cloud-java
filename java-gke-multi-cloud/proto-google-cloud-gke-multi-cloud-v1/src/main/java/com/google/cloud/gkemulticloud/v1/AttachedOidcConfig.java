@@ -77,7 +77,9 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ISSUER_URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object issuerUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object issuerUrl_ = "";
   /**
    *
    *
@@ -126,7 +128,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int JWKS_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString jwks_;
+  private com.google.protobuf.ByteString jwks_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -362,10 +364,9 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       issuerUrl_ = "";
-
       jwks_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -393,10 +394,21 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gkemulticloud.v1.AttachedOidcConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedOidcConfig result =
           new com.google.cloud.gkemulticloud.v1.AttachedOidcConfig(this);
-      result.issuerUrl_ = issuerUrl_;
-      result.jwks_ = jwks_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AttachedOidcConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.issuerUrl_ = issuerUrl_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.jwks_ = jwks_;
+      }
     }
 
     @java.lang.Override
@@ -447,6 +459,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getIssuerUrl().isEmpty()) {
         issuerUrl_ = other.issuerUrl_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getJwks() != com.google.protobuf.ByteString.EMPTY) {
@@ -481,13 +494,13 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 issuerUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 jwks_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -506,6 +519,8 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object issuerUrl_ = "";
     /**
@@ -568,8 +583,8 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       issuerUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -585,8 +600,8 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearIssuerUrl() {
-
       issuerUrl_ = getDefaultInstance().getIssuerUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -607,8 +622,8 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       issuerUrl_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -655,8 +670,8 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       jwks_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -677,7 +692,7 @@ public final class AttachedOidcConfig extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearJwks() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       jwks_ = getDefaultInstance().getJwks();
       onChanged();
       return this;

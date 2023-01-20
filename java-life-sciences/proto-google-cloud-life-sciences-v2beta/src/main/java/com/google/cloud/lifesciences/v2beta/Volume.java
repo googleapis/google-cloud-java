@@ -120,7 +120,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VOLUME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object volume_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object volume_ = "";
   /**
    *
    *
@@ -580,8 +582,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       volume_ = "";
-
       if (persistentDiskBuilder_ != null) {
         persistentDiskBuilder_.clear();
       }
@@ -620,31 +622,33 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Volume buildPartial() {
       com.google.cloud.lifesciences.v2beta.Volume result =
           new com.google.cloud.lifesciences.v2beta.Volume(this);
-      result.volume_ = volume_;
-      if (storageCase_ == 2) {
-        if (persistentDiskBuilder_ == null) {
-          result.storage_ = storage_;
-        } else {
-          result.storage_ = persistentDiskBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (storageCase_ == 3) {
-        if (existingDiskBuilder_ == null) {
-          result.storage_ = storage_;
-        } else {
-          result.storage_ = existingDiskBuilder_.build();
-        }
-      }
-      if (storageCase_ == 4) {
-        if (nfsMountBuilder_ == null) {
-          result.storage_ = storage_;
-        } else {
-          result.storage_ = nfsMountBuilder_.build();
-        }
-      }
-      result.storageCase_ = storageCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Volume result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.volume_ = volume_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.lifesciences.v2beta.Volume result) {
+      result.storageCase_ = storageCase_;
+      result.storage_ = this.storage_;
+      if (storageCase_ == 2 && persistentDiskBuilder_ != null) {
+        result.storage_ = persistentDiskBuilder_.build();
+      }
+      if (storageCase_ == 3 && existingDiskBuilder_ != null) {
+        result.storage_ = existingDiskBuilder_.build();
+      }
+      if (storageCase_ == 4 && nfsMountBuilder_ != null) {
+        result.storage_ = nfsMountBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -694,6 +698,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.lifesciences.v2beta.Volume.getDefaultInstance()) return this;
       if (!other.getVolume().isEmpty()) {
         volume_ = other.volume_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getStorageCase()) {
@@ -746,7 +751,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 volume_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -797,6 +802,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object volume_ = "";
     /**
@@ -868,8 +875,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       volume_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -888,8 +895,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVolume() {
-
       volume_ = getDefaultInstance().getVolume();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -913,8 +920,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       volume_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1127,7 +1134,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       storageCase_ = 2;
       onChanged();
-      ;
       return persistentDiskBuilder_;
     }
 
@@ -1337,7 +1343,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       storageCase_ = 3;
       onChanged();
-      ;
       return existingDiskBuilder_;
     }
 
@@ -1547,7 +1552,6 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       storageCase_ = 4;
       onChanged();
-      ;
       return nfsMountBuilder_;
     }
 

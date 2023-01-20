@@ -183,7 +183,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object groupId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object groupId_ = "";
     /**
      *
      *
@@ -236,7 +238,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-    private int resourceType_;
+    private int resourceType_ = 0;
     /**
      *
      *
@@ -265,9 +267,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.monitoring.v3.GroupResourceType getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.GroupResourceType result =
-          com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
+          com.google.monitoring.v3.GroupResourceType.forNumber(resourceType_);
       return result == null ? com.google.monitoring.v3.GroupResourceType.UNRECOGNIZED : result;
     }
 
@@ -483,10 +484,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         groupId_ = "";
-
         resourceType_ = 0;
-
         return this;
       }
 
@@ -514,10 +514,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup buildPartial() {
         com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup result =
             new com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup(this);
-        result.groupId_ = groupId_;
-        result.resourceType_ = resourceType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.resourceType_ = resourceType_;
+        }
       }
 
       @java.lang.Override
@@ -570,6 +581,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getGroupId().isEmpty()) {
           groupId_ = other.groupId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.resourceType_ != 0) {
@@ -604,13 +616,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   groupId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   resourceType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -629,6 +641,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object groupId_ = "";
       /**
@@ -697,8 +711,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         groupId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -716,8 +730,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-
         groupId_ = getDefaultInstance().getGroupId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -740,8 +754,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         groupId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -775,8 +789,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setResourceTypeValue(int value) {
-
         resourceType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -793,9 +807,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       @java.lang.Override
       public com.google.monitoring.v3.GroupResourceType getResourceType() {
-        @SuppressWarnings("deprecation")
         com.google.monitoring.v3.GroupResourceType result =
-            com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
+            com.google.monitoring.v3.GroupResourceType.forNumber(resourceType_);
         return result == null ? com.google.monitoring.v3.GroupResourceType.UNRECOGNIZED : result;
       }
       /**
@@ -814,7 +827,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         resourceType_ = value.getNumber();
         onChanged();
         return this;
@@ -831,7 +844,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearResourceType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         resourceType_ = 0;
         onChanged();
         return this;
@@ -1127,7 +1140,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
     /* nullable */
     java.lang.String getHeadersOrDefault(
         java.lang.String key,
@@ -1699,7 +1711,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object username_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object username_ = "";
       /**
        *
        *
@@ -1748,7 +1762,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int PASSWORD_FIELD_NUMBER = 2;
-      private volatile java.lang.Object password_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object password_ = "";
       /**
        *
        *
@@ -2019,10 +2035,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           username_ = "";
-
           password_ = "";
-
           return this;
         }
 
@@ -2054,10 +2069,22 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             buildPartial() {
           com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result =
               new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication(this);
-          result.username_ = username_;
-          result.password_ = password_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.username_ = username_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.password_ = password_;
+          }
         }
 
         @java.lang.Override
@@ -2114,10 +2141,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                   .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getPassword().isEmpty()) {
             password_ = other.password_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2149,13 +2178,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 case 10:
                   {
                     username_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     password_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -2174,6 +2203,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object username_ = "";
         /**
@@ -2236,8 +2267,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           if (value == null) {
             throw new NullPointerException();
           }
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2253,8 +2284,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearUsername() {
-
           username_ = getDefaultInstance().getUsername();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2275,8 +2306,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           username_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2342,8 +2373,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           if (value == null) {
             throw new NullPointerException();
           }
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2359,8 +2390,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearPassword() {
-
           password_ = getDefaultInstance().getPassword();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -2381,8 +2412,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           password_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2456,7 +2487,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int REQUEST_METHOD_FIELD_NUMBER = 8;
-    private int requestMethod_;
+    private int requestMethod_ = 0;
     /**
      *
      *
@@ -2489,9 +2520,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod getRequestMethod() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod result =
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.valueOf(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.forNumber(
               requestMethod_);
       return result == null
           ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.UNRECOGNIZED
@@ -2499,7 +2529,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int USE_SSL_FIELD_NUMBER = 1;
-    private boolean useSsl_;
+    private boolean useSsl_ = false;
     /**
      *
      *
@@ -2517,7 +2547,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int PATH_FIELD_NUMBER = 2;
-    private volatile java.lang.Object path_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
     /**
      *
      *
@@ -2574,7 +2606,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int PORT_FIELD_NUMBER = 3;
-    private int port_;
+    private int port_ = 0;
     /**
      *
      *
@@ -2647,11 +2679,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder
         getAuthInfoOrBuilder() {
-      return getAuthInfo();
+      return authInfo_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+              .getDefaultInstance()
+          : authInfo_;
     }
 
     public static final int MASK_HEADERS_FIELD_NUMBER = 5;
-    private boolean maskHeaders_;
+    private boolean maskHeaders_ = false;
     /**
      *
      *
@@ -2686,6 +2721,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               "");
     }
 
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
@@ -2764,8 +2800,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
     @java.lang.Override
-    public java.lang.String getHeadersOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHeadersOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2801,7 +2839,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int CONTENT_TYPE_FIELD_NUMBER = 9;
-    private int contentType_;
+    private int contentType_ = 0;
     /**
      *
      *
@@ -2844,16 +2882,15 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType getContentType() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType result =
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.valueOf(contentType_);
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.forNumber(contentType_);
       return result == null
           ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.UNRECOGNIZED
           : result;
     }
 
     public static final int VALIDATE_SSL_FIELD_NUMBER = 7;
-    private boolean validateSsl_;
+    private boolean validateSsl_ = false;
     /**
      *
      *
@@ -2874,7 +2911,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int BODY_FIELD_NUMBER = 10;
-    private com.google.protobuf.ByteString body_;
+    private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
      *
@@ -3220,29 +3257,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         requestMethod_ = 0;
-
         useSsl_ = false;
-
         path_ = "";
-
         port_ = 0;
-
-        if (authInfoBuilder_ == null) {
-          authInfo_ = null;
-        } else {
-          authInfo_ = null;
+        authInfo_ = null;
+        if (authInfoBuilder_ != null) {
+          authInfoBuilder_.dispose();
           authInfoBuilder_ = null;
         }
         maskHeaders_ = false;
-
         internalGetMutableHeaders().clear();
         contentType_ = 0;
-
         validateSsl_ = false;
-
         body_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -3270,24 +3299,46 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck buildPartial() {
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result =
             new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
-        int from_bitField0_ = bitField0_;
-        result.requestMethod_ = requestMethod_;
-        result.useSsl_ = useSsl_;
-        result.path_ = path_;
-        result.port_ = port_;
-        if (authInfoBuilder_ == null) {
-          result.authInfo_ = authInfo_;
-        } else {
-          result.authInfo_ = authInfoBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.maskHeaders_ = maskHeaders_;
-        result.headers_ = internalGetHeaders();
-        result.headers_.makeImmutable();
-        result.contentType_ = contentType_;
-        result.validateSsl_ = validateSsl_;
-        result.body_ = body_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.requestMethod_ = requestMethod_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.useSsl_ = useSsl_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.port_ = port_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.authInfo_ = authInfoBuilder_ == null ? authInfo_ : authInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.maskHeaders_ = maskHeaders_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.headers_ = internalGetHeaders();
+          result.headers_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.contentType_ = contentType_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.validateSsl_ = validateSsl_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.body_ = body_;
+        }
       }
 
       @java.lang.Override
@@ -3346,6 +3397,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         }
         if (!other.getPath().isEmpty()) {
           path_ = other.path_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getPort() != 0) {
@@ -3358,6 +3410,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           setMaskHeaders(other.getMaskHeaders());
         }
         internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
+        bitField0_ |= 0x00000040;
         if (other.contentType_ != 0) {
           setContentTypeValue(other.getContentTypeValue());
         }
@@ -3396,31 +3449,31 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 8:
                 {
                   useSsl_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 8
               case 18:
                 {
                   path_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 18
               case 24:
                 {
                   port_ = input.readInt32();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 24
               case 34:
                 {
                   input.readMessage(getAuthInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
               case 40:
                 {
                   maskHeaders_ = input.readBool();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 40
               case 50:
@@ -3432,30 +3485,31 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                   internalGetMutableHeaders()
                       .getMutableMap()
                       .put(headers__.getKey(), headers__.getValue());
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 50
               case 56:
                 {
                   validateSsl_ = input.readBool();
-
+                  bitField0_ |= 0x00000100;
                   break;
                 } // case 56
               case 64:
                 {
                   requestMethod_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 64
               case 72:
                 {
                   contentType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 72
               case 82:
                 {
                   body_ = input.readBytes();
-
+                  bitField0_ |= 0x00000200;
                   break;
                 } // case 82
               default:
@@ -3510,8 +3564,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setRequestMethodValue(int value) {
-
         requestMethod_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3530,9 +3584,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod getRequestMethod() {
-        @SuppressWarnings("deprecation")
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod result =
-            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.valueOf(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.forNumber(
                 requestMethod_);
         return result == null
             ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.RequestMethod.UNRECOGNIZED
@@ -3557,7 +3610,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         requestMethod_ = value.getNumber();
         onChanged();
         return this;
@@ -3576,7 +3629,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearRequestMethod() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         requestMethod_ = 0;
         onChanged();
         return this;
@@ -3613,6 +3666,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setUseSsl(boolean value) {
 
         useSsl_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3628,7 +3682,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearUseSsl() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         useSsl_ = false;
         onChanged();
         return this;
@@ -3707,8 +3761,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         path_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3728,8 +3782,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearPath() {
-
         path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -3754,8 +3808,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         path_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -3797,6 +3851,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setPort(int value) {
 
         port_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3815,7 +3870,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearPort() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         port_ = 0;
         onChanged();
         return this;
@@ -3841,7 +3896,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return Whether the authInfo field is set.
        */
       public boolean hasAuthInfo() {
-        return authInfoBuilder_ != null || authInfo_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -3885,11 +3940,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             throw new NullPointerException();
           }
           authInfo_ = value;
-          onChanged();
         } else {
           authInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3908,11 +3963,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               builderForValue) {
         if (authInfoBuilder_ == null) {
           authInfo_ = builderForValue.build();
-          onChanged();
         } else {
           authInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3929,20 +3984,20 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder mergeAuthInfo(
           com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication value) {
         if (authInfoBuilder_ == null) {
-          if (authInfo_ != null) {
-            authInfo_ =
-                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.newBuilder(
-                        authInfo_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && authInfo_ != null
+              && authInfo_
+                  != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+                      .getDefaultInstance()) {
+            getAuthInfoBuilder().mergeFrom(value);
           } else {
             authInfo_ = value;
           }
-          onChanged();
         } else {
           authInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -3957,14 +4012,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * </code>
        */
       public Builder clearAuthInfo() {
-        if (authInfoBuilder_ == null) {
-          authInfo_ = null;
-          onChanged();
-        } else {
-          authInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        authInfo_ = null;
+        if (authInfoBuilder_ != null) {
+          authInfoBuilder_.dispose();
           authInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3980,7 +4034,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
           getAuthInfoBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getAuthInfoFieldBuilder().getBuilder();
       }
@@ -4076,6 +4130,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setMaskHeaders(boolean value) {
 
         maskHeaders_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4096,7 +4151,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMaskHeaders() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         maskHeaders_ = false;
         onChanged();
         return this;
@@ -4114,8 +4169,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
 
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
           internalGetMutableHeaders() {
-        onChanged();
-        ;
         if (headers_ == null) {
           headers_ =
               com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
@@ -4123,6 +4176,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!headers_.isMutable()) {
           headers_ = headers_.copy();
         }
+        bitField0_ |= 0x00000040;
+        onChanged();
         return headers_;
       }
 
@@ -4195,8 +4250,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
       @java.lang.Override
-      public java.lang.String getHeadersOrDefault(
-          java.lang.String key, java.lang.String defaultValue) {
+      public /* nullable */ java.lang.String getHeadersOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
         if (key == null) {
           throw new NullPointerException("map key");
         }
@@ -4232,6 +4289,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
 
       public Builder clearHeaders() {
+        bitField0_ = (bitField0_ & ~0x00000040);
         internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
@@ -4261,6 +4319,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
+        bitField0_ |= 0x00000040;
         return internalGetMutableHeaders().getMutableMap();
       }
       /**
@@ -4286,8 +4345,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException("map value");
         }
-
         internalGetMutableHeaders().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
@@ -4308,6 +4367,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableHeaders().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000040;
         return this;
       }
 
@@ -4356,8 +4416,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setContentTypeValue(int value) {
-
         contentType_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4382,9 +4442,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        */
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType getContentType() {
-        @SuppressWarnings("deprecation")
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType result =
-            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.valueOf(contentType_);
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.forNumber(
+                contentType_);
         return result == null
             ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.ContentType.UNRECOGNIZED
             : result;
@@ -4414,7 +4474,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000080;
         contentType_ = value.getNumber();
         onChanged();
         return this;
@@ -4439,7 +4499,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearContentType() {
-
+        bitField0_ = (bitField0_ & ~0x00000080);
         contentType_ = 0;
         onChanged();
         return this;
@@ -4482,6 +4542,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setValidateSsl(boolean value) {
 
         validateSsl_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -4500,7 +4561,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearValidateSsl() {
-
+        bitField0_ = (bitField0_ & ~0x00000100);
         validateSsl_ = false;
         onChanged();
         return this;
@@ -4552,8 +4613,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         body_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -4576,7 +4637,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearBody() {
-
+        bitField0_ = (bitField0_ & ~0x00000200);
         body_ = getDefaultInstance().getBody();
         onChanged();
         return this;
@@ -4714,7 +4775,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int PORT_FIELD_NUMBER = 1;
-    private int port_;
+    private int port_ = 0;
     /**
      *
      *
@@ -4933,8 +4994,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         port_ = 0;
-
         return this;
       }
 
@@ -4962,9 +5023,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck buildPartial() {
         com.google.monitoring.v3.UptimeCheckConfig.TcpCheck result =
             new com.google.monitoring.v3.UptimeCheckConfig.TcpCheck(this);
-        result.port_ = port_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.TcpCheck result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.port_ = port_;
+        }
       }
 
       @java.lang.Override
@@ -5047,7 +5117,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 8:
                 {
                   port_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -5066,6 +5136,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int port_;
       /**
@@ -5102,6 +5174,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public Builder setPort(int value) {
 
         port_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -5119,7 +5192,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearPort() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         port_ = 0;
         onChanged();
         return this;
@@ -5536,7 +5609,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int CONTENT_FIELD_NUMBER = 1;
-    private volatile java.lang.Object content_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object content_ = "";
     /**
      *
      *
@@ -5587,7 +5662,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MATCHER_FIELD_NUMBER = 2;
-    private int matcher_;
+    private int matcher_ = 0;
     /**
      *
      *
@@ -5623,9 +5698,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
         getMatcher() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption result =
-          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption.valueOf(
+          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption.forNumber(
               matcher_);
       return result == null
           ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
@@ -5852,10 +5926,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         content_ = "";
-
         matcher_ = 0;
-
         return this;
       }
 
@@ -5883,10 +5956,21 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher buildPartial() {
         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result =
             new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher(this);
-        result.content_ = content_;
-        result.matcher_ = matcher_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.content_ = content_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.matcher_ = matcher_;
+        }
       }
 
       @java.lang.Override
@@ -5939,6 +6023,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           return this;
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.matcher_ != 0) {
@@ -5973,13 +6058,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
               case 10:
                 {
                   content_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   matcher_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -5998,6 +6083,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object content_ = "";
       /**
@@ -6063,8 +6150,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
         content_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6081,8 +6168,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearContent() {
-
         content_ = getDefaultInstance().getContent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6104,8 +6191,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         content_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6145,8 +6232,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder setMatcherValue(int value) {
-
         matcher_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6167,10 +6254,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
           getMatcher() {
-        @SuppressWarnings("deprecation")
         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption result =
-            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption.valueOf(
-                matcher_);
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
+                .forNumber(matcher_);
         return result == null
             ? com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.ContentMatcherOption
                 .UNRECOGNIZED
@@ -6196,7 +6282,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         matcher_ = value.getNumber();
         onChanged();
         return this;
@@ -6216,7 +6302,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        * @return This builder for chaining.
        */
       public Builder clearMatcher() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         matcher_ = 0;
         onChanged();
         return this;
@@ -6381,7 +6467,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -6442,7 +6530,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -6778,7 +6868,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getPeriodOrBuilder() {
-    return getPeriod();
+    return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 8;
@@ -6827,10 +6917,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   public static final int CONTENT_MATCHERS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
       contentMatchers_;
   /**
@@ -6929,16 +7021,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SELECTED_REGIONS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> selectedRegions_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>
       selectedRegions_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>() {
             public com.google.monitoring.v3.UptimeCheckRegion convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.monitoring.v3.UptimeCheckRegion result =
-                  com.google.monitoring.v3.UptimeCheckRegion.valueOf(from);
+                  com.google.monitoring.v3.UptimeCheckRegion.forNumber(from);
               return result == null
                   ? com.google.monitoring.v3.UptimeCheckRegion.UNRECOGNIZED
                   : result;
@@ -7047,7 +7141,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   private int selectedRegionsMemoizedSerializedSize;
 
   public static final int IS_INTERNAL_FIELD_NUMBER = 15;
-  private boolean isInternal_;
+  private boolean isInternal_ = false;
   /**
    *
    *
@@ -7071,6 +7165,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_;
   /**
    *
@@ -7542,10 +7638,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (monitoredResourceBuilder_ != null) {
         monitoredResourceBuilder_.clear();
       }
@@ -7558,16 +7653,14 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (tcpCheckBuilder_ != null) {
         tcpCheckBuilder_.clear();
       }
-      if (periodBuilder_ == null) {
-        period_ = null;
-      } else {
-        period_ = null;
+      period_ = null;
+      if (periodBuilder_ != null) {
+        periodBuilder_.dispose();
         periodBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       if (contentMatchersBuilder_ == null) {
@@ -7576,18 +7669,17 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchers_ = null;
         contentMatchersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000200);
       isInternal_ = false;
-
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
       } else {
         internalCheckers_ = null;
         internalCheckersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       resourceCase_ = 0;
       resource_ = null;
       checkRequestTypeCase_ = 0;
@@ -7619,75 +7711,77 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public com.google.monitoring.v3.UptimeCheckConfig buildPartial() {
       com.google.monitoring.v3.UptimeCheckConfig result =
           new com.google.monitoring.v3.UptimeCheckConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (resourceCase_ == 3) {
-        if (monitoredResourceBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = monitoredResourceBuilder_.build();
-        }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resourceCase_ == 4) {
-        if (resourceGroupBuilder_ == null) {
-          result.resource_ = resource_;
-        } else {
-          result.resource_ = resourceGroupBuilder_.build();
-        }
-      }
-      if (checkRequestTypeCase_ == 5) {
-        if (httpCheckBuilder_ == null) {
-          result.checkRequestType_ = checkRequestType_;
-        } else {
-          result.checkRequestType_ = httpCheckBuilder_.build();
-        }
-      }
-      if (checkRequestTypeCase_ == 6) {
-        if (tcpCheckBuilder_ == null) {
-          result.checkRequestType_ = checkRequestType_;
-        } else {
-          result.checkRequestType_ = tcpCheckBuilder_.build();
-        }
-      }
-      if (periodBuilder_ == null) {
-        result.period_ = period_;
-      } else {
-        result.period_ = periodBuilder_.build();
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
-      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.UptimeCheckConfig result) {
       if (contentMatchersBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           contentMatchers_ = java.util.Collections.unmodifiableList(contentMatchers_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.contentMatchers_ = contentMatchers_;
       } else {
         result.contentMatchers_ = contentMatchersBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000200) != 0)) {
         selectedRegions_ = java.util.Collections.unmodifiableList(selectedRegions_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000200);
       }
       result.selectedRegions_ = selectedRegions_;
-      result.isInternal_ = isInternal_;
       if (internalCheckersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           internalCheckers_ = java.util.Collections.unmodifiableList(internalCheckers_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.internalCheckers_ = internalCheckers_;
       } else {
         result.internalCheckers_ = internalCheckersBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UptimeCheckConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.period_ = periodBuilder_ == null ? period_ : periodBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.isInternal_ = isInternal_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.UptimeCheckConfig result) {
       result.resourceCase_ = resourceCase_;
+      result.resource_ = this.resource_;
+      if (resourceCase_ == 3 && monitoredResourceBuilder_ != null) {
+        result.resource_ = monitoredResourceBuilder_.build();
+      }
+      if (resourceCase_ == 4 && resourceGroupBuilder_ != null) {
+        result.resource_ = resourceGroupBuilder_.build();
+      }
       result.checkRequestTypeCase_ = checkRequestTypeCase_;
-      onBuilt();
-      return result;
+      result.checkRequestType_ = this.checkRequestType_;
+      if (checkRequestTypeCase_ == 5 && httpCheckBuilder_ != null) {
+        result.checkRequestType_ = httpCheckBuilder_.build();
+      }
+      if (checkRequestTypeCase_ == 6 && tcpCheckBuilder_ != null) {
+        result.checkRequestType_ = tcpCheckBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -7737,10 +7831,12 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (other == com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPeriod()) {
@@ -7753,7 +7849,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.contentMatchers_.isEmpty()) {
           if (contentMatchers_.isEmpty()) {
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureContentMatchersIsMutable();
             contentMatchers_.addAll(other.contentMatchers_);
@@ -7766,7 +7862,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             contentMatchersBuilder_.dispose();
             contentMatchersBuilder_ = null;
             contentMatchers_ = other.contentMatchers_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
             contentMatchersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContentMatchersFieldBuilder()
@@ -7779,7 +7875,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (!other.selectedRegions_.isEmpty()) {
         if (selectedRegions_.isEmpty()) {
           selectedRegions_ = other.selectedRegions_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
           ensureSelectedRegionsIsMutable();
           selectedRegions_.addAll(other.selectedRegions_);
@@ -7793,7 +7889,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         if (!other.internalCheckers_.isEmpty()) {
           if (internalCheckers_.isEmpty()) {
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureInternalCheckersIsMutable();
             internalCheckers_.addAll(other.internalCheckers_);
@@ -7806,7 +7902,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             internalCheckersBuilder_.dispose();
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
             internalCheckersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInternalCheckersFieldBuilder()
@@ -7877,13 +7973,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -7914,13 +8010,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 58:
               {
                 input.readMessage(getPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -7972,7 +8068,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
             case 120:
               {
                 isInternal_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 120
             default:
@@ -8101,8 +8197,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8124,8 +8220,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -8152,8 +8248,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8225,8 +8321,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8244,8 +8340,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -8268,8 +8364,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8558,7 +8654,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       resourceCase_ = 3;
       onChanged();
-      ;
       return monitoredResourceBuilder_;
     }
 
@@ -8773,7 +8868,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       resourceCase_ = 4;
       onChanged();
-      ;
       return resourceGroupBuilder_;
     }
 
@@ -8985,7 +9079,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       checkRequestTypeCase_ = 5;
       onChanged();
-      ;
       return httpCheckBuilder_;
     }
 
@@ -9197,7 +9290,6 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
       }
       checkRequestTypeCase_ = 6;
       onChanged();
-      ;
       return tcpCheckBuilder_;
     }
 
@@ -9222,7 +9314,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the period field is set.
      */
     public boolean hasPeriod() {
-      return periodBuilder_ != null || period_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -9263,11 +9355,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         period_ = value;
-        onChanged();
       } else {
         periodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9285,11 +9377,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder setPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (periodBuilder_ == null) {
         period_ = builderForValue.build();
-        onChanged();
       } else {
         periodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9306,17 +9398,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePeriod(com.google.protobuf.Duration value) {
       if (periodBuilder_ == null) {
-        if (period_ != null) {
-          period_ =
-              com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && period_ != null
+            && period_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getPeriodBuilder().mergeFrom(value);
         } else {
           period_ = value;
         }
-        onChanged();
       } else {
         periodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -9332,14 +9425,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     public Builder clearPeriod() {
-      if (periodBuilder_ == null) {
-        period_ = null;
-        onChanged();
-      } else {
-        period_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      period_ = null;
+      if (periodBuilder_ != null) {
+        periodBuilder_.dispose();
         periodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9355,7 +9447,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getPeriodBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPeriodFieldBuilder().getBuilder();
     }
@@ -9426,7 +9518,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -9463,11 +9555,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -9483,11 +9575,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -9502,17 +9594,18 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -9526,14 +9619,13 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -9547,7 +9639,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -9599,11 +9691,11 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         contentMatchers_ = java.util.Collections.emptyList();
 
     private void ensureContentMatchersIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         contentMatchers_ =
             new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>(
                 contentMatchers_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -9881,7 +9973,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearContentMatchers() {
       if (contentMatchersBuilder_ == null) {
         contentMatchers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         contentMatchersBuilder_.clear();
@@ -10047,7 +10139,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
                 com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>(
                 contentMatchers_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         contentMatchers_ = null;
@@ -10058,9 +10150,9 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> selectedRegions_ = java.util.Collections.emptyList();
 
     private void ensureSelectedRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         selectedRegions_ = new java.util.ArrayList<java.lang.Integer>(selectedRegions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000200;
       }
     }
     /**
@@ -10213,7 +10305,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelectedRegions() {
       selectedRegions_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -10367,6 +10459,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder setIsInternal(boolean value) {
 
       isInternal_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10388,7 +10481,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Deprecated
     public Builder clearIsInternal() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       isInternal_ = false;
       onChanged();
       return this;
@@ -10398,10 +10491,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureInternalCheckersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         internalCheckers_ =
             new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -10683,7 +10776,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearInternalCheckers() {
       if (internalCheckersBuilder_ == null) {
         internalCheckers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         internalCheckersBuilder_.clear();
@@ -10849,7 +10942,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
                 com.google.monitoring.v3.InternalChecker.Builder,
                 com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         internalCheckers_ = null;

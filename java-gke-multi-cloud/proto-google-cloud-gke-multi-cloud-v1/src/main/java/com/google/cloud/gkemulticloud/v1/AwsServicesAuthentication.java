@@ -69,7 +69,9 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
   }
 
   public static final int ROLE_ARN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object roleArn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object roleArn_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
   }
 
   public static final int ROLE_SESSION_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object roleSessionName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object roleSessionName_ = "";
   /**
    *
    *
@@ -377,10 +381,9 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       roleArn_ = "";
-
       roleSessionName_ = "";
-
       return this;
     }
 
@@ -408,10 +411,21 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
     public com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication result =
           new com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication(this);
-      result.roleArn_ = roleArn_;
-      result.roleSessionName_ = roleSessionName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsServicesAuthentication result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.roleArn_ = roleArn_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.roleSessionName_ = roleSessionName_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
         return this;
       if (!other.getRoleArn().isEmpty()) {
         roleArn_ = other.roleArn_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRoleSessionName().isEmpty()) {
         roleSessionName_ = other.roleSessionName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
             case 10:
               {
                 roleArn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 roleSessionName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object roleArn_ = "";
     /**
@@ -587,8 +605,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       roleArn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -605,8 +623,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRoleArn() {
-
       roleArn_ = getDefaultInstance().getRoleArn();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -628,8 +646,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       roleArn_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,8 +716,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       roleSessionName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRoleSessionName() {
-
       roleSessionName_ = getDefaultInstance().getRoleSessionName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -739,8 +757,8 @@ public final class AwsServicesAuthentication extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       roleSessionName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

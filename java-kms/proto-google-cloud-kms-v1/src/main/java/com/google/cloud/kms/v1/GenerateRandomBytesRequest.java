@@ -70,7 +70,9 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
   }
 
   public static final int LOCATION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
   }
 
   public static final int LENGTH_BYTES_FIELD_NUMBER = 2;
-  private int lengthBytes_;
+  private int lengthBytes_ = 0;
   /**
    *
    *
@@ -140,7 +142,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 3;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -175,9 +177,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -399,12 +400,10 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       location_ = "";
-
       lengthBytes_ = 0;
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -432,11 +431,24 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     public com.google.cloud.kms.v1.GenerateRandomBytesRequest buildPartial() {
       com.google.cloud.kms.v1.GenerateRandomBytesRequest result =
           new com.google.cloud.kms.v1.GenerateRandomBytesRequest(this);
-      result.location_ = location_;
-      result.lengthBytes_ = lengthBytes_;
-      result.protectionLevel_ = protectionLevel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.GenerateRandomBytesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.lengthBytes_ = lengthBytes_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -487,6 +499,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getLengthBytes() != 0) {
@@ -524,19 +537,19 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
             case 10:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 lengthBytes_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -555,6 +568,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object location_ = "";
     /**
@@ -620,8 +635,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +653,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -661,8 +676,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,6 +715,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
     public Builder setLengthBytes(int value) {
 
       lengthBytes_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -716,7 +732,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearLengthBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       lengthBytes_ = 0;
       onChanged();
       return this;
@@ -757,8 +773,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -778,9 +794,8 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -802,7 +817,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -822,7 +837,7 @@ public final class GenerateRandomBytesRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       protectionLevel_ = 0;
       onChanged();
       return this;

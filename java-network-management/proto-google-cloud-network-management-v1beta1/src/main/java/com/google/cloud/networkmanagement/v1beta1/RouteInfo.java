@@ -693,7 +693,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROUTE_TYPE_FIELD_NUMBER = 8;
-  private int routeType_;
+  private int routeType_ = 0;
   /**
    *
    *
@@ -722,16 +722,15 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType getRouteType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType result =
-        com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.valueOf(routeType_);
+        com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.forNumber(routeType_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.UNRECOGNIZED
         : result;
   }
 
   public static final int NEXT_HOP_TYPE_FIELD_NUMBER = 9;
-  private int nextHopType_;
+  private int nextHopType_ = 0;
   /**
    *
    *
@@ -760,16 +759,17 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType getNextHopType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType result =
-        com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.valueOf(nextHopType_);
+        com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.forNumber(nextHopType_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.UNRECOGNIZED
         : result;
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -818,7 +818,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -873,7 +875,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEST_IP_RANGE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object destIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destIpRange_ = "";
   /**
    *
    *
@@ -922,7 +926,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEXT_HOP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object nextHop_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextHop_ = "";
   /**
    *
    *
@@ -971,7 +977,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_URI_FIELD_NUMBER = 5;
-  private volatile java.lang.Object networkUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkUri_ = "";
   /**
    *
    *
@@ -1020,7 +1028,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PRIORITY_FIELD_NUMBER = 6;
-  private int priority_;
+  private int priority_ = 0;
   /**
    *
    *
@@ -1038,6 +1046,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_TAGS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instanceTags_;
   /**
    *
@@ -1384,24 +1394,17 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       routeType_ = 0;
-
       nextHopType_ = 0;
-
       displayName_ = "";
-
       uri_ = "";
-
       destIpRange_ = "";
-
       nextHop_ = "";
-
       networkUri_ = "";
-
       priority_ = 0;
-
       instanceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1429,22 +1432,49 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.RouteInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.RouteInfo result =
           new com.google.cloud.networkmanagement.v1beta1.RouteInfo(this);
-      int from_bitField0_ = bitField0_;
-      result.routeType_ = routeType_;
-      result.nextHopType_ = nextHopType_;
-      result.displayName_ = displayName_;
-      result.uri_ = uri_;
-      result.destIpRange_ = destIpRange_;
-      result.nextHop_ = nextHop_;
-      result.networkUri_ = networkUri_;
-      result.priority_ = priority_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        instanceTags_ = instanceTags_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.instanceTags_ = instanceTags_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.RouteInfo result) {
+      if (((bitField0_ & 0x00000100) != 0)) {
+        instanceTags_ = instanceTags_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.instanceTags_ = instanceTags_;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.RouteInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.routeType_ = routeType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextHopType_ = nextHopType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.destIpRange_ = destIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.nextHop_ = nextHop_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.networkUri_ = networkUri_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.priority_ = priority_;
+      }
     }
 
     @java.lang.Override
@@ -1501,22 +1531,27 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDestIpRange().isEmpty()) {
         destIpRange_ = other.destIpRange_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getNextHop().isEmpty()) {
         nextHop_ = other.nextHop_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getNetworkUri().isEmpty()) {
         networkUri_ = other.networkUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.getPriority() != 0) {
@@ -1525,7 +1560,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.instanceTags_.isEmpty()) {
         if (instanceTags_.isEmpty()) {
           instanceTags_ = other.instanceTags_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureInstanceTagsIsMutable();
           instanceTags_.addAll(other.instanceTags_);
@@ -1561,37 +1596,37 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 destIpRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
               {
                 nextHop_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 networkUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 48:
               {
                 priority_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 58:
@@ -1604,13 +1639,13 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
             case 64:
               {
                 routeType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 64
             case 72:
               {
                 nextHopType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 72
             default:
@@ -1661,8 +1696,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRouteTypeValue(int value) {
-
       routeType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1679,9 +1714,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType getRouteType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType result =
-          com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.valueOf(routeType_);
+          com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.forNumber(routeType_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteType.UNRECOGNIZED
           : result;
@@ -1703,7 +1737,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       routeType_ = value.getNumber();
       onChanged();
       return this;
@@ -1720,7 +1754,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRouteType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       routeType_ = 0;
       onChanged();
       return this;
@@ -1755,8 +1789,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNextHopTypeValue(int value) {
-
       nextHopType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1773,9 +1807,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType getNextHopType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType result =
-          com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.valueOf(nextHopType_);
+          com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.forNumber(nextHopType_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.RouteInfo.NextHopType.UNRECOGNIZED
           : result;
@@ -1797,7 +1830,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       nextHopType_ = value.getNumber();
       onChanged();
       return this;
@@ -1814,7 +1847,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextHopType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       nextHopType_ = 0;
       onChanged();
       return this;
@@ -1881,8 +1914,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1898,8 +1931,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1920,8 +1953,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1996,8 +2029,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2016,8 +2049,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2041,8 +2074,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2108,8 +2141,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       destIpRange_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2125,8 +2158,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDestIpRange() {
-
       destIpRange_ = getDefaultInstance().getDestIpRange();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2147,8 +2180,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       destIpRange_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2214,8 +2247,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextHop_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2231,8 +2264,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNextHop() {
-
       nextHop_ = getDefaultInstance().getNextHop();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2253,8 +2286,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextHop_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2320,8 +2353,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2337,8 +2370,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkUri() {
-
       networkUri_ = getDefaultInstance().getNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2359,8 +2392,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2396,6 +2429,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setPriority(int value) {
 
       priority_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2411,7 +2445,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       priority_ = 0;
       onChanged();
       return this;
@@ -2421,9 +2455,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceTagsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         instanceTags_ = new com.google.protobuf.LazyStringArrayList(instanceTags_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -2558,7 +2592,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearInstanceTags() {
       instanceTags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

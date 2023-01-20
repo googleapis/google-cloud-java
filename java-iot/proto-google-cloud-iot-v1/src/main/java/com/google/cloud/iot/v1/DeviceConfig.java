@@ -68,7 +68,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private long version_;
+  private long version_ = 0L;
   /**
    *
    *
@@ -136,7 +136,9 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCloudUpdateTimeOrBuilder() {
-    return getCloudUpdateTime();
+    return cloudUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : cloudUpdateTime_;
   }
 
   public static final int DEVICE_ACK_TIME_FIELD_NUMBER = 3;
@@ -208,11 +210,13 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeviceAckTimeOrBuilder() {
-    return getDeviceAckTime();
+    return deviceAckTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : deviceAckTime_;
   }
 
   public static final int BINARY_DATA_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString binaryData_;
+  private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -461,22 +465,19 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = 0L;
-
-      if (cloudUpdateTimeBuilder_ == null) {
-        cloudUpdateTime_ = null;
-      } else {
-        cloudUpdateTime_ = null;
+      cloudUpdateTime_ = null;
+      if (cloudUpdateTimeBuilder_ != null) {
+        cloudUpdateTimeBuilder_.dispose();
         cloudUpdateTimeBuilder_ = null;
       }
-      if (deviceAckTimeBuilder_ == null) {
-        deviceAckTime_ = null;
-      } else {
-        deviceAckTime_ = null;
+      deviceAckTime_ = null;
+      if (deviceAckTimeBuilder_ != null) {
+        deviceAckTimeBuilder_.dispose();
         deviceAckTimeBuilder_ = null;
       }
       binaryData_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -503,20 +504,29 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.iot.v1.DeviceConfig buildPartial() {
       com.google.cloud.iot.v1.DeviceConfig result = new com.google.cloud.iot.v1.DeviceConfig(this);
-      result.version_ = version_;
-      if (cloudUpdateTimeBuilder_ == null) {
-        result.cloudUpdateTime_ = cloudUpdateTime_;
-      } else {
-        result.cloudUpdateTime_ = cloudUpdateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (deviceAckTimeBuilder_ == null) {
-        result.deviceAckTime_ = deviceAckTime_;
-      } else {
-        result.deviceAckTime_ = deviceAckTimeBuilder_.build();
-      }
-      result.binaryData_ = binaryData_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.DeviceConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cloudUpdateTime_ =
+            cloudUpdateTimeBuilder_ == null ? cloudUpdateTime_ : cloudUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deviceAckTime_ =
+            deviceAckTimeBuilder_ == null ? deviceAckTime_ : deviceAckTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.binaryData_ = binaryData_;
+      }
     }
 
     @java.lang.Override
@@ -605,25 +615,25 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 version_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(getCloudUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDeviceAckTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 binaryData_ = input.readBytes();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -642,6 +652,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long version_;
     /**
@@ -680,6 +692,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setVersion(long value) {
 
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -698,7 +711,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       version_ = 0L;
       onChanged();
       return this;
@@ -723,7 +736,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudUpdateTime field is set.
      */
     public boolean hasCloudUpdateTime() {
-      return cloudUpdateTimeBuilder_ != null || cloudUpdateTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -762,11 +775,11 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cloudUpdateTime_ = value;
-        onChanged();
       } else {
         cloudUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +795,11 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setCloudUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (cloudUpdateTimeBuilder_ == null) {
         cloudUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         cloudUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,19 +814,18 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCloudUpdateTime(com.google.protobuf.Timestamp value) {
       if (cloudUpdateTimeBuilder_ == null) {
-        if (cloudUpdateTime_ != null) {
-          cloudUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(cloudUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cloudUpdateTime_ != null
+            && cloudUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCloudUpdateTimeBuilder().mergeFrom(value);
         } else {
           cloudUpdateTime_ = value;
         }
-        onChanged();
       } else {
         cloudUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,14 +839,13 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
      */
     public Builder clearCloudUpdateTime() {
-      if (cloudUpdateTimeBuilder_ == null) {
-        cloudUpdateTime_ = null;
-        onChanged();
-      } else {
-        cloudUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cloudUpdateTime_ = null;
+      if (cloudUpdateTimeBuilder_ != null) {
+        cloudUpdateTimeBuilder_.dispose();
         cloudUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -848,7 +859,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp cloud_update_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCloudUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCloudUpdateTimeFieldBuilder().getBuilder();
     }
@@ -924,7 +935,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deviceAckTime field is set.
      */
     public boolean hasDeviceAckTime() {
-      return deviceAckTimeBuilder_ != null || deviceAckTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -977,11 +988,11 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deviceAckTime_ = value;
-        onChanged();
       } else {
         deviceAckTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1004,11 +1015,11 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeviceAckTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deviceAckTimeBuilder_ == null) {
         deviceAckTime_ = builderForValue.build();
-        onChanged();
       } else {
         deviceAckTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1030,19 +1041,18 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeviceAckTime(com.google.protobuf.Timestamp value) {
       if (deviceAckTimeBuilder_ == null) {
-        if (deviceAckTime_ != null) {
-          deviceAckTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deviceAckTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && deviceAckTime_ != null
+            && deviceAckTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeviceAckTimeBuilder().mergeFrom(value);
         } else {
           deviceAckTime_ = value;
         }
-        onChanged();
       } else {
         deviceAckTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1063,14 +1073,13 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
      */
     public Builder clearDeviceAckTime() {
-      if (deviceAckTimeBuilder_ == null) {
-        deviceAckTime_ = null;
-        onChanged();
-      } else {
-        deviceAckTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      deviceAckTime_ = null;
+      if (deviceAckTimeBuilder_ != null) {
+        deviceAckTimeBuilder_.dispose();
         deviceAckTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1091,7 +1100,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp device_ack_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeviceAckTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeviceAckTimeFieldBuilder().getBuilder();
     }
@@ -1187,8 +1196,8 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       binaryData_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1204,7 +1213,7 @@ public final class DeviceConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBinaryData() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       binaryData_ = getDefaultInstance().getBinaryData();
       onChanged();
       return this;

@@ -65,7 +65,6 @@ public interface DroppedLabelsOrBuilder
    *
    * <code>map&lt;string, string&gt; label = 1;</code>
    */
-
   /* nullable */
   java.lang.String getLabelOrDefault(
       java.lang.String key,

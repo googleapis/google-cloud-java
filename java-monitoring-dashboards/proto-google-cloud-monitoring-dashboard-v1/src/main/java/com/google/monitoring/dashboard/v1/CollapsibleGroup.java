@@ -67,7 +67,7 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int COLLAPSED_FIELD_NUMBER = 1;
-  private boolean collapsed_;
+  private boolean collapsed_ = false;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       collapsed_ = false;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     public com.google.monitoring.dashboard.v1.CollapsibleGroup buildPartial() {
       com.google.monitoring.dashboard.v1.CollapsibleGroup result =
           new com.google.monitoring.dashboard.v1.CollapsibleGroup(this);
-      result.collapsed_ = collapsed_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.CollapsibleGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.collapsed_ = collapsed_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 collapsed_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean collapsed_;
     /**
@@ -445,6 +456,7 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
     public Builder setCollapsed(boolean value) {
 
       collapsed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -460,7 +472,7 @@ public final class CollapsibleGroup extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCollapsed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       collapsed_ = false;
       onChanged();
       return this;

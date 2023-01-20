@@ -68,7 +68,9 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AwsClusterUser buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsClusterUser result =
           new com.google.cloud.gkemulticloud.v1.AwsClusterUser(this);
-      result.username_ = username_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsClusterUser result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
     }
 
     @java.lang.Override
@@ -395,6 +406,7 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -426,7 +438,7 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -445,6 +457,8 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -507,8 +521,8 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,8 +538,8 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -546,8 +560,8 @@ public final class AwsClusterUser extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

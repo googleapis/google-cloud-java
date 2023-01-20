@@ -232,6 +232,8 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACTIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.apps.script.type.MenuItemExtensionPoint> actions_;
   /**
    *
@@ -307,7 +309,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DRAFT_ACCESS_FIELD_NUMBER = 4;
-  private int draftAccess_;
+  private int draftAccess_ = 0;
   /**
    *
    *
@@ -336,9 +338,8 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess getDraftAccess() {
-    @SuppressWarnings("deprecation")
     com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess result =
-        com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.valueOf(draftAccess_);
+        com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.forNumber(draftAccess_);
     return result == null
         ? com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.UNRECOGNIZED
         : result;
@@ -554,6 +555,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (actionsBuilder_ == null) {
         actions_ = java.util.Collections.emptyList();
       } else {
@@ -562,7 +564,6 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       draftAccess_ = 0;
-
       return this;
     }
 
@@ -590,7 +591,16 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
     public com.google.apps.script.type.gmail.ComposeTrigger buildPartial() {
       com.google.apps.script.type.gmail.ComposeTrigger result =
           new com.google.apps.script.type.gmail.ComposeTrigger(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.apps.script.type.gmail.ComposeTrigger result) {
       if (actionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           actions_ = java.util.Collections.unmodifiableList(actions_);
@@ -600,9 +610,13 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.actions_ = actionsBuilder_.build();
       }
-      result.draftAccess_ = draftAccess_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.gmail.ComposeTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.draftAccess_ = draftAccess_;
+      }
     }
 
     @java.lang.Override
@@ -710,7 +724,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 draftAccess_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 42:
@@ -1146,8 +1160,8 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDraftAccessValue(int value) {
-
       draftAccess_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1164,9 +1178,8 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess getDraftAccess() {
-      @SuppressWarnings("deprecation")
       com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess result =
-          com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.valueOf(draftAccess_);
+          com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.forNumber(draftAccess_);
       return result == null
           ? com.google.apps.script.type.gmail.ComposeTrigger.DraftAccess.UNRECOGNIZED
           : result;
@@ -1188,7 +1201,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       draftAccess_ = value.getNumber();
       onChanged();
       return this;
@@ -1205,7 +1218,7 @@ public final class ComposeTrigger extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDraftAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       draftAccess_ = 0;
       onChanged();
       return this;

@@ -343,7 +343,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -400,7 +402,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -501,11 +505,15 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AttachedOidcConfigOrBuilder getOidcConfigOrBuilder() {
-    return getOidcConfig();
+    return oidcConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.getDefaultInstance()
+        : oidcConfig_;
   }
 
   public static final int PLATFORM_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object platformVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object platformVersion_ = "";
   /**
    *
    *
@@ -560,7 +568,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DISTRIBUTION_FIELD_NUMBER = 16;
-  private volatile java.lang.Object distribution_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object distribution_ = "";
   /**
    *
    *
@@ -611,7 +621,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLUSTER_REGION_FIELD_NUMBER = 22;
-  private volatile java.lang.Object clusterRegion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterRegion_ = "";
   /**
    *
    *
@@ -709,11 +721,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.FleetOrBuilder getFleetOrBuilder() {
-    return getFleet();
+    return fleet_ == null ? com.google.cloud.gkemulticloud.v1.Fleet.getDefaultInstance() : fleet_;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -746,16 +758,17 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AttachedCluster.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkemulticloud.v1.AttachedCluster.State result =
-        com.google.cloud.gkemulticloud.v1.AttachedCluster.State.valueOf(state_);
+        com.google.cloud.gkemulticloud.v1.AttachedCluster.State.forNumber(state_);
     return result == null
         ? com.google.cloud.gkemulticloud.v1.AttachedCluster.State.UNRECOGNIZED
         : result;
   }
 
   public static final int UID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -804,7 +817,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int RECONCILING_FIELD_NUMBER = 8;
-  private boolean reconciling_;
+  private boolean reconciling_ = false;
   /**
    *
    *
@@ -867,7 +880,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
@@ -916,11 +929,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int ETAG_FIELD_NUMBER = 11;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -975,7 +990,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int KUBERNETES_VERSION_FIELD_NUMBER = 12;
-  private volatile java.lang.Object kubernetesVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kubernetesVersion_ = "";
   /**
    *
    *
@@ -1036,6 +1053,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -1118,8 +1136,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1207,7 +1227,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfigOrBuilder
       getWorkloadIdentityConfigOrBuilder() {
-    return getWorkloadIdentityConfig();
+    return workloadIdentityConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.getDefaultInstance()
+        : workloadIdentityConfig_;
   }
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 15;
@@ -1261,10 +1283,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
-    return getLoggingConfig();
+    return loggingConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
 
   public static final int ERRORS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterError> errors_;
   /**
    *
@@ -1396,7 +1422,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorizationOrBuilder
       getAuthorizationOrBuilder() {
-    return getAuthorization();
+    return authorization_ == null
+        ? com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.getDefaultInstance()
+        : authorization_;
   }
 
   public static final int MONITORING_CONFIG_FIELD_NUMBER = 23;
@@ -1451,7 +1479,9 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder
       getMonitoringConfigOrBuilder() {
-    return getMonitoringConfig();
+    return monitoringConfig_ == null
+        ? com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()
+        : monitoringConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1895,61 +1925,46 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
-      if (oidcConfigBuilder_ == null) {
-        oidcConfig_ = null;
-      } else {
-        oidcConfig_ = null;
+      oidcConfig_ = null;
+      if (oidcConfigBuilder_ != null) {
+        oidcConfigBuilder_.dispose();
         oidcConfigBuilder_ = null;
       }
       platformVersion_ = "";
-
       distribution_ = "";
-
       clusterRegion_ = "";
-
-      if (fleetBuilder_ == null) {
-        fleet_ = null;
-      } else {
-        fleet_ = null;
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
         fleetBuilder_ = null;
       }
       state_ = 0;
-
       uid_ = "";
-
       reconciling_ = false;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       etag_ = "";
-
       kubernetesVersion_ = "";
-
       internalGetMutableAnnotations().clear();
-      if (workloadIdentityConfigBuilder_ == null) {
-        workloadIdentityConfig_ = null;
-      } else {
-        workloadIdentityConfig_ = null;
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
         workloadIdentityConfigBuilder_ = null;
       }
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-      } else {
-        loggingConfig_ = null;
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
       if (errorsBuilder_ == null) {
@@ -1958,17 +1973,15 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         errors_ = null;
         errorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (authorizationBuilder_ == null) {
-        authorization_ = null;
-      } else {
-        authorization_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      authorization_ = null;
+      if (authorizationBuilder_ != null) {
+        authorizationBuilder_.dispose();
         authorizationBuilder_ = null;
       }
-      if (monitoringConfigBuilder_ == null) {
-        monitoringConfig_ = null;
-      } else {
-        monitoringConfig_ = null;
+      monitoringConfig_ = null;
+      if (monitoringConfigBuilder_ != null) {
+        monitoringConfigBuilder_.dispose();
         monitoringConfigBuilder_ = null;
       }
       return this;
@@ -1998,70 +2011,93 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkemulticloud.v1.AttachedCluster buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedCluster result =
           new com.google.cloud.gkemulticloud.v1.AttachedCluster(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (oidcConfigBuilder_ == null) {
-        result.oidcConfig_ = oidcConfig_;
-      } else {
-        result.oidcConfig_ = oidcConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.platformVersion_ = platformVersion_;
-      result.distribution_ = distribution_;
-      result.clusterRegion_ = clusterRegion_;
-      if (fleetBuilder_ == null) {
-        result.fleet_ = fleet_;
-      } else {
-        result.fleet_ = fleetBuilder_.build();
-      }
-      result.state_ = state_;
-      result.uid_ = uid_;
-      result.reconciling_ = reconciling_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.etag_ = etag_;
-      result.kubernetesVersion_ = kubernetesVersion_;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      if (workloadIdentityConfigBuilder_ == null) {
-        result.workloadIdentityConfig_ = workloadIdentityConfig_;
-      } else {
-        result.workloadIdentityConfig_ = workloadIdentityConfigBuilder_.build();
-      }
-      if (loggingConfigBuilder_ == null) {
-        result.loggingConfig_ = loggingConfig_;
-      } else {
-        result.loggingConfig_ = loggingConfigBuilder_.build();
-      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.gkemulticloud.v1.AttachedCluster result) {
       if (errorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           errors_ = java.util.Collections.unmodifiableList(errors_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      if (authorizationBuilder_ == null) {
-        result.authorization_ = authorization_;
-      } else {
-        result.authorization_ = authorizationBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AttachedCluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      if (monitoringConfigBuilder_ == null) {
-        result.monitoringConfig_ = monitoringConfig_;
-      } else {
-        result.monitoringConfig_ = monitoringConfigBuilder_.build();
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.oidcConfig_ = oidcConfigBuilder_ == null ? oidcConfig_ : oidcConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.platformVersion_ = platformVersion_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.distribution_ = distribution_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.clusterRegion_ = clusterRegion_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fleet_ = fleetBuilder_ == null ? fleet_ : fleetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.kubernetesVersion_ = kubernetesVersion_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.workloadIdentityConfig_ =
+            workloadIdentityConfigBuilder_ == null
+                ? workloadIdentityConfig_
+                : workloadIdentityConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.loggingConfig_ =
+            loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.authorization_ =
+            authorizationBuilder_ == null ? authorization_ : authorizationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.monitoringConfig_ =
+            monitoringConfigBuilder_ == null ? monitoringConfig_ : monitoringConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2112,10 +2148,12 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasOidcConfig()) {
@@ -2123,14 +2161,17 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getPlatformVersion().isEmpty()) {
         platformVersion_ = other.platformVersion_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDistribution().isEmpty()) {
         distribution_ = other.distribution_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getClusterRegion().isEmpty()) {
         clusterRegion_ = other.clusterRegion_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasFleet()) {
@@ -2141,6 +2182,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getReconciling() != false) {
@@ -2154,13 +2196,16 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getKubernetesVersion().isEmpty()) {
         kubernetesVersion_ = other.kubernetesVersion_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00004000;
       if (other.hasWorkloadIdentityConfig()) {
         mergeWorkloadIdentityConfig(other.getWorkloadIdentityConfig());
       }
@@ -2171,7 +2216,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         if (!other.errors_.isEmpty()) {
           if (errors_.isEmpty()) {
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureErrorsIsMutable();
             errors_.addAll(other.errors_);
@@ -2184,7 +2229,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             errorsBuilder_.dispose();
             errorsBuilder_ = null;
             errors_ = other.errors_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00020000);
             errorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getErrorsFieldBuilder()
@@ -2229,73 +2274,73 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getOidcConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 platformVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getFleetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 58:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 64:
               {
                 reconciling_ = input.readBool();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
               {
                 kubernetesVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
@@ -2307,25 +2352,26 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00004000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     getWorkloadIdentityConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 122
             case 130:
               {
                 distribution_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 130
             case 162:
@@ -2345,20 +2391,20 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             case 170:
               {
                 input.readMessage(getAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 170
             case 178:
               {
                 clusterRegion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(
                     getMonitoringConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 186
             default:
@@ -2453,8 +2499,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2474,8 +2520,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2500,8 +2546,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2570,8 +2616,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2588,8 +2634,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2611,8 +2657,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2637,7 +2683,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the oidcConfig field is set.
      */
     public boolean hasOidcConfig() {
-      return oidcConfigBuilder_ != null || oidcConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2678,11 +2724,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         oidcConfig_ = value;
-        onChanged();
       } else {
         oidcConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2700,11 +2746,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.Builder builderForValue) {
       if (oidcConfigBuilder_ == null) {
         oidcConfig_ = builderForValue.build();
-        onChanged();
       } else {
         oidcConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2720,19 +2766,19 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeOidcConfig(com.google.cloud.gkemulticloud.v1.AttachedOidcConfig value) {
       if (oidcConfigBuilder_ == null) {
-        if (oidcConfig_ != null) {
-          oidcConfig_ =
-              com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.newBuilder(oidcConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && oidcConfig_ != null
+            && oidcConfig_
+                != com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.getDefaultInstance()) {
+          getOidcConfigBuilder().mergeFrom(value);
         } else {
           oidcConfig_ = value;
         }
-        onChanged();
       } else {
         oidcConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2747,14 +2793,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearOidcConfig() {
-      if (oidcConfigBuilder_ == null) {
-        oidcConfig_ = null;
-        onChanged();
-      } else {
-        oidcConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      oidcConfig_ = null;
+      if (oidcConfigBuilder_ != null) {
+        oidcConfigBuilder_.dispose();
         oidcConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2769,7 +2814,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.Builder getOidcConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getOidcConfigFieldBuilder().getBuilder();
     }
@@ -2891,8 +2936,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2911,8 +2956,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPlatformVersion() {
-
       platformVersion_ = getDefaultInstance().getPlatformVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2936,8 +2981,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3006,8 +3051,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       distribution_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3024,8 +3069,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDistribution() {
-
       distribution_ = getDefaultInstance().getDistribution();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3047,8 +3092,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       distribution_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3120,8 +3165,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterRegion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3139,8 +3184,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearClusterRegion() {
-
       clusterRegion_ = getDefaultInstance().getClusterRegion();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3163,8 +3208,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterRegion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3189,7 +3234,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the fleet field is set.
      */
     public boolean hasFleet() {
-      return fleetBuilder_ != null || fleet_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3230,11 +3275,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         fleet_ = value;
-        onChanged();
       } else {
         fleetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3251,11 +3296,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder setFleet(com.google.cloud.gkemulticloud.v1.Fleet.Builder builderForValue) {
       if (fleetBuilder_ == null) {
         fleet_ = builderForValue.build();
-        onChanged();
       } else {
         fleetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3271,19 +3316,18 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeFleet(com.google.cloud.gkemulticloud.v1.Fleet value) {
       if (fleetBuilder_ == null) {
-        if (fleet_ != null) {
-          fleet_ =
-              com.google.cloud.gkemulticloud.v1.Fleet.newBuilder(fleet_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && fleet_ != null
+            && fleet_ != com.google.cloud.gkemulticloud.v1.Fleet.getDefaultInstance()) {
+          getFleetBuilder().mergeFrom(value);
         } else {
           fleet_ = value;
         }
-        onChanged();
       } else {
         fleetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3298,14 +3342,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearFleet() {
-      if (fleetBuilder_ == null) {
-        fleet_ = null;
-        onChanged();
-      } else {
-        fleet_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
         fleetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3320,7 +3363,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.Fleet.Builder getFleetBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getFleetFieldBuilder().getBuilder();
     }
@@ -3405,8 +3448,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3425,9 +3468,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.gkemulticloud.v1.AttachedCluster.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkemulticloud.v1.AttachedCluster.State result =
-          com.google.cloud.gkemulticloud.v1.AttachedCluster.State.valueOf(state_);
+          com.google.cloud.gkemulticloud.v1.AttachedCluster.State.forNumber(state_);
       return result == null
           ? com.google.cloud.gkemulticloud.v1.AttachedCluster.State.UNRECOGNIZED
           : result;
@@ -3450,7 +3492,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3469,7 +3511,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -3536,8 +3578,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3553,8 +3595,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3575,8 +3617,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3612,6 +3654,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3627,7 +3670,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       reconciling_ = false;
       onChanged();
       return this;
@@ -3653,7 +3696,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3694,11 +3737,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3715,11 +3758,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3735,17 +3778,18 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3760,14 +3804,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3782,7 +3825,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3854,7 +3897,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3895,11 +3938,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3916,11 +3959,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3936,17 +3979,18 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000800) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000800;
+      onChanged();
       return this;
     }
     /**
@@ -3961,14 +4005,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000800);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3983,7 +4026,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000800;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4105,8 +4148,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4125,8 +4168,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4150,8 +4193,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4217,8 +4260,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       kubernetesVersion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4234,8 +4277,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearKubernetesVersion() {
-
       kubernetesVersion_ = getDefaultInstance().getKubernetesVersion();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4256,8 +4299,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kubernetesVersion_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4275,8 +4318,6 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -4284,6 +4325,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00004000;
+      onChanged();
       return annotations_;
     }
 
@@ -4359,8 +4402,10 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4397,6 +4442,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -4427,6 +4473,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00004000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -4453,8 +4500,8 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
       return this;
     }
     /**
@@ -4476,6 +4523,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -4499,7 +4547,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the workloadIdentityConfig field is set.
      */
     public boolean hasWorkloadIdentityConfig() {
-      return workloadIdentityConfigBuilder_ != null || workloadIdentityConfig_ != null;
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
@@ -4541,11 +4589,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         workloadIdentityConfig_ = value;
-        onChanged();
       } else {
         workloadIdentityConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4563,11 +4611,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.Builder builderForValue) {
       if (workloadIdentityConfigBuilder_ == null) {
         workloadIdentityConfig_ = builderForValue.build();
-        onChanged();
       } else {
         workloadIdentityConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4584,20 +4632,19 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder mergeWorkloadIdentityConfig(
         com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig value) {
       if (workloadIdentityConfigBuilder_ == null) {
-        if (workloadIdentityConfig_ != null) {
-          workloadIdentityConfig_ =
-              com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.newBuilder(
-                      workloadIdentityConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00008000) != 0)
+            && workloadIdentityConfig_ != null
+            && workloadIdentityConfig_
+                != com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.getDefaultInstance()) {
+          getWorkloadIdentityConfigBuilder().mergeFrom(value);
         } else {
           workloadIdentityConfig_ = value;
         }
-        onChanged();
       } else {
         workloadIdentityConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00008000;
+      onChanged();
       return this;
     }
     /**
@@ -4612,14 +4659,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearWorkloadIdentityConfig() {
-      if (workloadIdentityConfigBuilder_ == null) {
-        workloadIdentityConfig_ = null;
-        onChanged();
-      } else {
-        workloadIdentityConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00008000);
+      workloadIdentityConfig_ = null;
+      if (workloadIdentityConfigBuilder_ != null) {
+        workloadIdentityConfigBuilder_.dispose();
         workloadIdentityConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4635,7 +4681,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.Builder
         getWorkloadIdentityConfigBuilder() {
-
+      bitField0_ |= 0x00008000;
       onChanged();
       return getWorkloadIdentityConfigFieldBuilder().getBuilder();
     }
@@ -4708,7 +4754,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4749,11 +4795,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         loggingConfig_ = value;
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4771,11 +4817,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkemulticloud.v1.LoggingConfig.Builder builderForValue) {
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4791,19 +4837,19 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeLoggingConfig(com.google.cloud.gkemulticloud.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (loggingConfig_ != null) {
-          loggingConfig_ =
-              com.google.cloud.gkemulticloud.v1.LoggingConfig.newBuilder(loggingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00010000) != 0)
+            && loggingConfig_ != null
+            && loggingConfig_
+                != com.google.cloud.gkemulticloud.v1.LoggingConfig.getDefaultInstance()) {
+          getLoggingConfigBuilder().mergeFrom(value);
         } else {
           loggingConfig_ = value;
         }
-        onChanged();
       } else {
         loggingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00010000;
+      onChanged();
       return this;
     }
     /**
@@ -4818,14 +4864,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearLoggingConfig() {
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-        onChanged();
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00010000);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4840,7 +4885,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
-
+      bitField0_ |= 0x00010000;
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
@@ -4896,11 +4941,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         java.util.Collections.emptyList();
 
     private void ensureErrorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         errors_ =
             new java.util.ArrayList<com.google.cloud.gkemulticloud.v1.AttachedClusterError>(
                 errors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -5141,7 +5186,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
         errors_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         errorsBuilder_.clear();
@@ -5281,7 +5326,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
                 com.google.cloud.gkemulticloud.v1.AttachedClusterError,
                 com.google.cloud.gkemulticloud.v1.AttachedClusterError.Builder,
                 com.google.cloud.gkemulticloud.v1.AttachedClusterErrorOrBuilder>(
-                errors_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                errors_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         errors_ = null;
       }
       return errorsBuilder_;
@@ -5307,7 +5352,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the authorization field is set.
      */
     public boolean hasAuthorization() {
-      return authorizationBuilder_ != null || authorization_ != null;
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -5349,11 +5394,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         authorization_ = value;
-        onChanged();
       } else {
         authorizationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5371,11 +5416,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.Builder builderForValue) {
       if (authorizationBuilder_ == null) {
         authorization_ = builderForValue.build();
-        onChanged();
       } else {
         authorizationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5392,20 +5437,20 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public Builder mergeAuthorization(
         com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization value) {
       if (authorizationBuilder_ == null) {
-        if (authorization_ != null) {
-          authorization_ =
-              com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.newBuilder(
-                      authorization_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00040000) != 0)
+            && authorization_ != null
+            && authorization_
+                != com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization
+                    .getDefaultInstance()) {
+          getAuthorizationBuilder().mergeFrom(value);
         } else {
           authorization_ = value;
         }
-        onChanged();
       } else {
         authorizationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00040000;
+      onChanged();
       return this;
     }
     /**
@@ -5420,14 +5465,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearAuthorization() {
-      if (authorizationBuilder_ == null) {
-        authorization_ = null;
-        onChanged();
-      } else {
-        authorization_ = null;
+      bitField0_ = (bitField0_ & ~0x00040000);
+      authorization_ = null;
+      if (authorizationBuilder_ != null) {
+        authorizationBuilder_.dispose();
         authorizationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5443,7 +5487,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.Builder
         getAuthorizationBuilder() {
-
+      bitField0_ |= 0x00040000;
       onChanged();
       return getAuthorizationFieldBuilder().getBuilder();
     }
@@ -5516,7 +5560,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * @return Whether the monitoringConfig field is set.
      */
     public boolean hasMonitoringConfig() {
-      return monitoringConfigBuilder_ != null || monitoringConfig_ != null;
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -5557,11 +5601,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         monitoringConfig_ = value;
-        onChanged();
       } else {
         monitoringConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00080000;
+      onChanged();
       return this;
     }
     /**
@@ -5579,11 +5623,11 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder builderForValue) {
       if (monitoringConfigBuilder_ == null) {
         monitoringConfig_ = builderForValue.build();
-        onChanged();
       } else {
         monitoringConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00080000;
+      onChanged();
       return this;
     }
     /**
@@ -5599,19 +5643,19 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMonitoringConfig(com.google.cloud.gkemulticloud.v1.MonitoringConfig value) {
       if (monitoringConfigBuilder_ == null) {
-        if (monitoringConfig_ != null) {
-          monitoringConfig_ =
-              com.google.cloud.gkemulticloud.v1.MonitoringConfig.newBuilder(monitoringConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00080000) != 0)
+            && monitoringConfig_ != null
+            && monitoringConfig_
+                != com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()) {
+          getMonitoringConfigBuilder().mergeFrom(value);
         } else {
           monitoringConfig_ = value;
         }
-        onChanged();
       } else {
         monitoringConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00080000;
+      onChanged();
       return this;
     }
     /**
@@ -5626,14 +5670,13 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearMonitoringConfig() {
-      if (monitoringConfigBuilder_ == null) {
-        monitoringConfig_ = null;
-        onChanged();
-      } else {
-        monitoringConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00080000);
+      monitoringConfig_ = null;
+      if (monitoringConfigBuilder_ != null) {
+        monitoringConfigBuilder_.dispose();
         monitoringConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5648,7 +5691,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder getMonitoringConfigBuilder() {
-
+      bitField0_ |= 0x00080000;
       onChanged();
       return getMonitoringConfigFieldBuilder().getBuilder();
     }

@@ -70,7 +70,9 @@ public final class GetNotificationChannelVerificationCodeResponse
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object code_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object code_ = "";
   /**
    *
    *
@@ -173,7 +175,7 @@ public final class GetNotificationChannelVerificationCodeResponse
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -391,12 +393,11 @@ public final class GetNotificationChannelVerificationCodeResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       code_ = "";
-
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
       return this;
@@ -429,14 +430,22 @@ public final class GetNotificationChannelVerificationCodeResponse
     public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse buildPartial() {
       com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result =
           new com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse(this);
-      result.code_ = code_;
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.code_ = code_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -491,6 +500,7 @@ public final class GetNotificationChannelVerificationCodeResponse
               .getDefaultInstance()) return this;
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpireTime()) {
@@ -525,13 +535,13 @@ public final class GetNotificationChannelVerificationCodeResponse
             case 10:
               {
                 code_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +560,8 @@ public final class GetNotificationChannelVerificationCodeResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object code_ = "";
     /**
@@ -621,8 +633,8 @@ public final class GetNotificationChannelVerificationCodeResponse
       if (value == null) {
         throw new NullPointerException();
       }
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -641,8 +653,8 @@ public final class GetNotificationChannelVerificationCodeResponse
      * @return This builder for chaining.
      */
     public Builder clearCode() {
-
       code_ = getDefaultInstance().getCode();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -666,8 +678,8 @@ public final class GetNotificationChannelVerificationCodeResponse
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       code_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -692,7 +704,7 @@ public final class GetNotificationChannelVerificationCodeResponse
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -733,11 +745,11 @@ public final class GetNotificationChannelVerificationCodeResponse
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,11 +766,11 @@ public final class GetNotificationChannelVerificationCodeResponse
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,17 +786,18 @@ public final class GetNotificationChannelVerificationCodeResponse
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,14 +812,13 @@ public final class GetNotificationChannelVerificationCodeResponse
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -821,7 +833,7 @@ public final class GetNotificationChannelVerificationCodeResponse
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }

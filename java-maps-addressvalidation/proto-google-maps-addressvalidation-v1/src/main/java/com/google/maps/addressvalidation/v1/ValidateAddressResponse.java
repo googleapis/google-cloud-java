@@ -112,11 +112,15 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.ValidationResultOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null
+        ? com.google.maps.addressvalidation.v1.ValidationResult.getDefaultInstance()
+        : result_;
   }
 
   public static final int RESPONSE_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object responseId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responseId_ = "";
   /**
    *
    *
@@ -378,14 +382,13 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      bitField0_ = 0;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
       responseId_ = "";
-
       return this;
     }
 
@@ -414,14 +417,22 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
     public com.google.maps.addressvalidation.v1.ValidateAddressResponse buildPartial() {
       com.google.maps.addressvalidation.v1.ValidateAddressResponse result =
           new com.google.maps.addressvalidation.v1.ValidateAddressResponse(this);
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.responseId_ = responseId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.maps.addressvalidation.v1.ValidateAddressResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = resultBuilder_ == null ? result_ : resultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.responseId_ = responseId_;
+      }
     }
 
     @java.lang.Override
@@ -476,6 +487,7 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       }
       if (!other.getResponseId().isEmpty()) {
         responseId_ = other.responseId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -507,13 +519,13 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getResultFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 responseId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -533,6 +545,8 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.maps.addressvalidation.v1.ValidationResult result_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.addressvalidation.v1.ValidationResult,
@@ -551,7 +565,7 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -588,11 +602,11 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -608,11 +622,11 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         com.google.maps.addressvalidation.v1.ValidationResult.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -626,19 +640,19 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
      */
     public Builder mergeResult(com.google.maps.addressvalidation.v1.ValidationResult value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-              com.google.maps.addressvalidation.v1.ValidationResult.newBuilder(result_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && result_ != null
+            && result_
+                != com.google.maps.addressvalidation.v1.ValidationResult.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,14 +665,13 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
      * <code>.google.maps.addressvalidation.v1.ValidationResult result = 1;</code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -671,7 +684,7 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
      * <code>.google.maps.addressvalidation.v1.ValidationResult result = 1;</code>
      */
     public com.google.maps.addressvalidation.v1.ValidationResult.Builder getResultBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
@@ -783,8 +796,8 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,8 +814,8 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearResponseId() {
-
       responseId_ = getDefaultInstance().getResponseId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -824,8 +837,8 @@ public final class ValidateAddressResponse extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       responseId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

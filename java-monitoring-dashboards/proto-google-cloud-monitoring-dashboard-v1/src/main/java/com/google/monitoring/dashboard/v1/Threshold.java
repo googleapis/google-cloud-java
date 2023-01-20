@@ -549,7 +549,9 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LABEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -598,7 +600,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
-  private double value_;
+  private double value_ = 0D;
   /**
    *
    *
@@ -617,7 +619,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COLOR_FIELD_NUMBER = 3;
-  private int color_;
+  private int color_ = 0;
   /**
    *
    *
@@ -646,16 +648,15 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold.Color getColor() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Threshold.Color result =
-        com.google.monitoring.dashboard.v1.Threshold.Color.valueOf(color_);
+        com.google.monitoring.dashboard.v1.Threshold.Color.forNumber(color_);
     return result == null
         ? com.google.monitoring.dashboard.v1.Threshold.Color.UNRECOGNIZED
         : result;
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 4;
-  private int direction_;
+  private int direction_ = 0;
   /**
    *
    *
@@ -686,16 +687,15 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold.Direction getDirection() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Threshold.Direction result =
-        com.google.monitoring.dashboard.v1.Threshold.Direction.valueOf(direction_);
+        com.google.monitoring.dashboard.v1.Threshold.Direction.forNumber(direction_);
     return result == null
         ? com.google.monitoring.dashboard.v1.Threshold.Direction.UNRECOGNIZED
         : result;
   }
 
   public static final int TARGET_AXIS_FIELD_NUMBER = 5;
-  private int targetAxis_;
+  private int targetAxis_ = 0;
   /**
    *
    *
@@ -726,9 +726,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.Threshold.TargetAxis getTargetAxis() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.Threshold.TargetAxis result =
-        com.google.monitoring.dashboard.v1.Threshold.TargetAxis.valueOf(targetAxis_);
+        com.google.monitoring.dashboard.v1.Threshold.TargetAxis.forNumber(targetAxis_);
     return result == null
         ? com.google.monitoring.dashboard.v1.Threshold.TargetAxis.UNRECOGNIZED
         : result;
@@ -980,16 +979,12 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       label_ = "";
-
       value_ = 0D;
-
       color_ = 0;
-
       direction_ = 0;
-
       targetAxis_ = 0;
-
       return this;
     }
 
@@ -1017,13 +1012,30 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Threshold buildPartial() {
       com.google.monitoring.dashboard.v1.Threshold result =
           new com.google.monitoring.dashboard.v1.Threshold(this);
-      result.label_ = label_;
-      result.value_ = value_;
-      result.color_ = color_;
-      result.direction_ = direction_;
-      result.targetAxis_ = targetAxis_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.Threshold result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.label_ = label_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.value_ = value_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.color_ = color_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.direction_ = direction_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.targetAxis_ = targetAxis_;
+      }
     }
 
     @java.lang.Override
@@ -1073,6 +1085,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.dashboard.v1.Threshold.getDefaultInstance()) return this;
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getValue() != 0D) {
@@ -1116,31 +1129,31 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 value_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             case 24:
               {
                 color_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 direction_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 targetAxis_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -1159,6 +1172,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object label_ = "";
     /**
@@ -1221,8 +1236,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1238,8 +1253,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1260,8 +1275,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1299,6 +1314,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
     public Builder setValue(double value) {
 
       value_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1315,7 +1331,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValue() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       value_ = 0D;
       onChanged();
       return this;
@@ -1350,8 +1366,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setColorValue(int value) {
-
       color_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1368,9 +1384,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Threshold.Color getColor() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Threshold.Color result =
-          com.google.monitoring.dashboard.v1.Threshold.Color.valueOf(color_);
+          com.google.monitoring.dashboard.v1.Threshold.Color.forNumber(color_);
       return result == null
           ? com.google.monitoring.dashboard.v1.Threshold.Color.UNRECOGNIZED
           : result;
@@ -1391,7 +1406,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       color_ = value.getNumber();
       onChanged();
       return this;
@@ -1408,7 +1423,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearColor() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       color_ = 0;
       onChanged();
       return this;
@@ -1445,8 +1460,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDirectionValue(int value) {
-
       direction_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1464,9 +1479,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Threshold.Direction getDirection() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Threshold.Direction result =
-          com.google.monitoring.dashboard.v1.Threshold.Direction.valueOf(direction_);
+          com.google.monitoring.dashboard.v1.Threshold.Direction.forNumber(direction_);
       return result == null
           ? com.google.monitoring.dashboard.v1.Threshold.Direction.UNRECOGNIZED
           : result;
@@ -1488,7 +1502,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       direction_ = value.getNumber();
       onChanged();
       return this;
@@ -1506,7 +1520,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       direction_ = 0;
       onChanged();
       return this;
@@ -1543,8 +1557,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTargetAxisValue(int value) {
-
       targetAxis_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1562,9 +1576,8 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.Threshold.TargetAxis getTargetAxis() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.Threshold.TargetAxis result =
-          com.google.monitoring.dashboard.v1.Threshold.TargetAxis.valueOf(targetAxis_);
+          com.google.monitoring.dashboard.v1.Threshold.TargetAxis.forNumber(targetAxis_);
       return result == null
           ? com.google.monitoring.dashboard.v1.Threshold.TargetAxis.UNRECOGNIZED
           : result;
@@ -1586,7 +1599,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       targetAxis_ = value.getNumber();
       onChanged();
       return this;
@@ -1604,7 +1617,7 @@ public final class Threshold extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetAxis() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       targetAxis_ = 0;
       onChanged();
       return this;

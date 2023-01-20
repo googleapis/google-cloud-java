@@ -226,6 +226,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ADDED_PERMISSIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList addedPermissions_;
     /**
      *
@@ -287,6 +289,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REMOVED_PERMISSIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList removedPermissions_;
     /**
      *
@@ -571,6 +575,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         addedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         removedPermissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -602,7 +607,16 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       public com.google.iam.admin.v1.AuditData.PermissionDelta buildPartial() {
         com.google.iam.admin.v1.AuditData.PermissionDelta result =
             new com.google.iam.admin.v1.AuditData.PermissionDelta(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.iam.admin.v1.AuditData.PermissionDelta result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           addedPermissions_ = addedPermissions_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -613,8 +627,10 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.removedPermissions_ = removedPermissions_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.iam.admin.v1.AuditData.PermissionDelta result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -1189,7 +1205,9 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.admin.v1.AuditData.PermissionDeltaOrBuilder getPermissionDeltaOrBuilder() {
-    return getPermissionDelta();
+    return permissionDelta_ == null
+        ? com.google.iam.admin.v1.AuditData.PermissionDelta.getDefaultInstance()
+        : permissionDelta_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1394,10 +1412,10 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (permissionDeltaBuilder_ == null) {
-        permissionDelta_ = null;
-      } else {
-        permissionDelta_ = null;
+      bitField0_ = 0;
+      permissionDelta_ = null;
+      if (permissionDeltaBuilder_ != null) {
+        permissionDeltaBuilder_.dispose();
         permissionDeltaBuilder_ = null;
       }
       return this;
@@ -1426,13 +1444,19 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.iam.admin.v1.AuditData buildPartial() {
       com.google.iam.admin.v1.AuditData result = new com.google.iam.admin.v1.AuditData(this);
-      if (permissionDeltaBuilder_ == null) {
-        result.permissionDelta_ = permissionDelta_;
-      } else {
-        result.permissionDelta_ = permissionDeltaBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.AuditData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.permissionDelta_ =
+            permissionDeltaBuilder_ == null ? permissionDelta_ : permissionDeltaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1512,7 +1536,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getPermissionDeltaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -1532,6 +1556,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.iam.admin.v1.AuditData.PermissionDelta permissionDelta_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.iam.admin.v1.AuditData.PermissionDelta,
@@ -1550,7 +1576,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the permissionDelta field is set.
      */
     public boolean hasPermissionDelta() {
-      return permissionDeltaBuilder_ != null || permissionDelta_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1587,11 +1613,11 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         permissionDelta_ = value;
-        onChanged();
       } else {
         permissionDeltaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1607,11 +1633,11 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
         com.google.iam.admin.v1.AuditData.PermissionDelta.Builder builderForValue) {
       if (permissionDeltaBuilder_ == null) {
         permissionDelta_ = builderForValue.build();
-        onChanged();
       } else {
         permissionDeltaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1625,19 +1651,19 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePermissionDelta(com.google.iam.admin.v1.AuditData.PermissionDelta value) {
       if (permissionDeltaBuilder_ == null) {
-        if (permissionDelta_ != null) {
-          permissionDelta_ =
-              com.google.iam.admin.v1.AuditData.PermissionDelta.newBuilder(permissionDelta_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && permissionDelta_ != null
+            && permissionDelta_
+                != com.google.iam.admin.v1.AuditData.PermissionDelta.getDefaultInstance()) {
+          getPermissionDeltaBuilder().mergeFrom(value);
         } else {
           permissionDelta_ = value;
         }
-        onChanged();
       } else {
         permissionDeltaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1650,14 +1676,13 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.admin.v1.AuditData.PermissionDelta permission_delta = 1;</code>
      */
     public Builder clearPermissionDelta() {
-      if (permissionDeltaBuilder_ == null) {
-        permissionDelta_ = null;
-        onChanged();
-      } else {
-        permissionDelta_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      permissionDelta_ = null;
+      if (permissionDeltaBuilder_ != null) {
+        permissionDeltaBuilder_.dispose();
         permissionDeltaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1670,7 +1695,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.iam.admin.v1.AuditData.PermissionDelta permission_delta = 1;</code>
      */
     public com.google.iam.admin.v1.AuditData.PermissionDelta.Builder getPermissionDeltaBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPermissionDeltaFieldBuilder().getBuilder();
     }

@@ -71,7 +71,9 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
   }
 
   public static final int RUN_FUNCTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object runFunction_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object runFunction_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
   }
 
   public static final int LABEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -173,7 +177,9 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
   }
 
   public static final int LOGO_URL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object logoUrl_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object logoUrl_ = "";
   /**
    *
    *
@@ -439,12 +445,10 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       runFunction_ = "";
-
       label_ = "";
-
       logoUrl_ = "";
-
       return this;
     }
 
@@ -472,11 +476,24 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
     public com.google.apps.script.type.MenuItemExtensionPoint buildPartial() {
       com.google.apps.script.type.MenuItemExtensionPoint result =
           new com.google.apps.script.type.MenuItemExtensionPoint(this);
-      result.runFunction_ = runFunction_;
-      result.label_ = label_;
-      result.logoUrl_ = logoUrl_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.MenuItemExtensionPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.runFunction_ = runFunction_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.label_ = label_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.logoUrl_ = logoUrl_;
+      }
     }
 
     @java.lang.Override
@@ -527,14 +544,17 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getRunFunction().isEmpty()) {
         runFunction_ = other.runFunction_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getLogoUrl().isEmpty()) {
         logoUrl_ = other.logoUrl_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -566,19 +586,19 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
             case 10:
               {
                 runFunction_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 logoUrl_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -597,6 +617,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object runFunction_ = "";
     /**
@@ -662,8 +684,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -680,8 +702,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRunFunction() {
-
       runFunction_ = getDefaultInstance().getRunFunction();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -703,8 +725,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       runFunction_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -773,8 +795,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -791,8 +813,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -814,8 +836,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -884,8 +906,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearLogoUrl() {
-
       logoUrl_ = getDefaultInstance().getLogoUrl();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -925,8 +947,8 @@ public final class MenuItemExtensionPoint extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       logoUrl_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

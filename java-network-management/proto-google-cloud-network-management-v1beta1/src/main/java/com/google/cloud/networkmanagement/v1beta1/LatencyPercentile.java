@@ -66,7 +66,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PERCENT_FIELD_NUMBER = 1;
-  private int percent_;
+  private int percent_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LATENCY_MICROS_FIELD_NUMBER = 2;
-  private long latencyMicros_;
+  private long latencyMicros_ = 0L;
   /**
    *
    *
@@ -310,10 +310,9 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       percent_ = 0;
-
       latencyMicros_ = 0L;
-
       return this;
     }
 
@@ -342,10 +341,22 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.networkmanagement.v1beta1.LatencyPercentile buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.LatencyPercentile result =
           new com.google.cloud.networkmanagement.v1beta1.LatencyPercentile(this);
-      result.percent_ = percent_;
-      result.latencyMicros_ = latencyMicros_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkmanagement.v1beta1.LatencyPercentile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.percent_ = percent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.latencyMicros_ = latencyMicros_;
+      }
     }
 
     @java.lang.Override
@@ -430,13 +441,13 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 percent_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 latencyMicros_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -455,6 +466,8 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int percent_;
     /**
@@ -487,6 +500,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     public Builder setPercent(int value) {
 
       percent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -502,7 +516,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPercent() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       percent_ = 0;
       onChanged();
       return this;
@@ -543,6 +557,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
     public Builder setLatencyMicros(long value) {
 
       latencyMicros_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -560,7 +575,7 @@ public final class LatencyPercentile extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLatencyMicros() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       latencyMicros_ = 0L;
       onChanged();
       return this;

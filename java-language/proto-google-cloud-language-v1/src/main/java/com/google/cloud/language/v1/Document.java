@@ -273,7 +273,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -304,9 +304,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.Document.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.Document.Type result =
-        com.google.cloud.language.v1.Document.Type.valueOf(type_);
+        com.google.cloud.language.v1.Document.Type.forNumber(type_);
     return result == null ? com.google.cloud.language.v1.Document.Type.UNRECOGNIZED : result;
   }
 
@@ -463,7 +462,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -764,10 +765,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       type_ = 0;
-
       language_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -797,17 +797,27 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.language.v1.Document buildPartial() {
       com.google.cloud.language.v1.Document result =
           new com.google.cloud.language.v1.Document(this);
-      result.type_ = type_;
-      if (sourceCase_ == 2) {
-        result.source_ = source_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (sourceCase_ == 3) {
-        result.source_ = source_;
-      }
-      result.language_ = language_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.Document result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.language_ = language_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.language.v1.Document result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -860,6 +870,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -911,7 +922,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -931,7 +942,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -965,6 +976,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int type_ = 0;
     /**
      *
@@ -996,8 +1009,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1015,9 +1028,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1.Document.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.Document.Type result =
-          com.google.cloud.language.v1.Document.Type.valueOf(type_);
+          com.google.cloud.language.v1.Document.Type.forNumber(type_);
       return result == null ? com.google.cloud.language.v1.Document.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1037,7 +1049,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1055,7 +1067,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       type_ = 0;
       onChanged();
       return this;
@@ -1435,8 +1447,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1459,8 +1471,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1488,8 +1500,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

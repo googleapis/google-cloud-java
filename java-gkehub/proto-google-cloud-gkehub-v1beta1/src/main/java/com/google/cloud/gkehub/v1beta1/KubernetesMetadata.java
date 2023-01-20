@@ -70,7 +70,9 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int KUBERNETES_API_SERVER_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object kubernetesApiServerVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kubernetesApiServerVersion_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NODE_PROVIDER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nodeProviderId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodeProviderId_ = "";
   /**
    *
    *
@@ -176,7 +180,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NODE_COUNT_FIELD_NUMBER = 3;
-  private int nodeCount_;
+  private int nodeCount_ = 0;
   /**
    *
    *
@@ -194,7 +198,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VCPU_COUNT_FIELD_NUMBER = 4;
-  private int vcpuCount_;
+  private int vcpuCount_ = 0;
   /**
    *
    *
@@ -212,7 +216,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 5;
-  private int memoryMb_;
+  private int memoryMb_ = 0;
   /**
    *
    *
@@ -285,7 +289,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -538,20 +542,15 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       kubernetesApiServerVersion_ = "";
-
       nodeProviderId_ = "";
-
       nodeCount_ = 0;
-
       vcpuCount_ = 0;
-
       memoryMb_ = 0;
-
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       return this;
@@ -581,18 +580,33 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gkehub.v1beta1.KubernetesMetadata buildPartial() {
       com.google.cloud.gkehub.v1beta1.KubernetesMetadata result =
           new com.google.cloud.gkehub.v1beta1.KubernetesMetadata(this);
-      result.kubernetesApiServerVersion_ = kubernetesApiServerVersion_;
-      result.nodeProviderId_ = nodeProviderId_;
-      result.nodeCount_ = nodeCount_;
-      result.vcpuCount_ = vcpuCount_;
-      result.memoryMb_ = memoryMb_;
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.KubernetesMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kubernetesApiServerVersion_ = kubernetesApiServerVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nodeProviderId_ = nodeProviderId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodeCount_ = nodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vcpuCount_ = vcpuCount_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.memoryMb_ = memoryMb_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -643,10 +657,12 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getKubernetesApiServerVersion().isEmpty()) {
         kubernetesApiServerVersion_ = other.kubernetesApiServerVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNodeProviderId().isEmpty()) {
         nodeProviderId_ = other.nodeProviderId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getNodeCount() != 0) {
@@ -690,37 +706,37 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 kubernetesApiServerVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 nodeProviderId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 nodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 vcpuCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 memoryMb_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 802:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 802
             default:
@@ -739,6 +755,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object kubernetesApiServerVersion_ = "";
     /**
@@ -804,8 +822,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       kubernetesApiServerVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -822,8 +840,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearKubernetesApiServerVersion() {
-
       kubernetesApiServerVersion_ = getDefaultInstance().getKubernetesApiServerVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -845,8 +863,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kubernetesApiServerVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -921,8 +939,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodeProviderId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -941,8 +959,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNodeProviderId() {
-
       nodeProviderId_ = getDefaultInstance().getNodeProviderId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -966,8 +984,8 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodeProviderId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1003,6 +1021,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public Builder setNodeCount(int value) {
 
       nodeCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1018,7 +1037,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       nodeCount_ = 0;
       onChanged();
       return this;
@@ -1055,6 +1074,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public Builder setVcpuCount(int value) {
 
       vcpuCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1070,7 +1090,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearVcpuCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       vcpuCount_ = 0;
       onChanged();
       return this;
@@ -1109,6 +1129,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public Builder setMemoryMb(int value) {
 
       memoryMb_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1125,7 +1146,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMemoryMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       memoryMb_ = 0;
       onChanged();
       return this;
@@ -1153,7 +1174,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1198,11 +1219,11 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1221,11 +1242,11 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1243,17 +1264,18 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1270,14 +1292,13 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1294,7 +1315,7 @@ public final class KubernetesMetadata extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

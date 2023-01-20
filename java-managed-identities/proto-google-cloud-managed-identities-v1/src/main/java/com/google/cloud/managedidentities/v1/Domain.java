@@ -356,7 +356,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -419,6 +421,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -476,7 +479,10 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -505,6 +511,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTHORIZED_NETWORKS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList authorizedNetworks_;
   /**
    *
@@ -582,7 +590,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESERVED_IP_RANGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object reservedIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservedIpRange_ = "";
   /**
    *
    *
@@ -637,6 +647,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList locations_;
   /**
    *
@@ -714,7 +726,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADMIN_FIELD_NUMBER = 6;
-  private volatile java.lang.Object admin_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object admin_ = "";
   /**
    *
    *
@@ -765,7 +779,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FQDN_FIELD_NUMBER = 10;
-  private volatile java.lang.Object fqdn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fqdn_ = "";
   /**
    *
    *
@@ -863,7 +879,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 12;
@@ -912,11 +928,11 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 13;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -949,16 +965,17 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.Domain.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.managedidentities.v1.Domain.State result =
-        com.google.cloud.managedidentities.v1.Domain.State.valueOf(state_);
+        com.google.cloud.managedidentities.v1.Domain.State.forNumber(state_);
     return result == null
         ? com.google.cloud.managedidentities.v1.Domain.State.UNRECOGNIZED
         : result;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 14;
-  private volatile java.lang.Object statusMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object statusMessage_ = "";
   /**
    *
    *
@@ -1009,6 +1026,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRUSTS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.managedidentities.v1.Trust> trusts_;
   /**
    *
@@ -1439,42 +1458,35 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableLabels().clear();
       authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      reservedIpRange_ = "";
-
-      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      reservedIpRange_ = "";
+      locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       admin_ = "";
-
       fqdn_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       state_ = 0;
-
       statusMessage_ = "";
-
       if (trustsBuilder_ == null) {
         trusts_ = java.util.Collections.emptyList();
       } else {
         trusts_ = null;
         trustsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1502,46 +1514,66 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.managedidentities.v1.Domain buildPartial() {
       com.google.cloud.managedidentities.v1.Domain result =
           new com.google.cloud.managedidentities.v1.Domain(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000002) != 0)) {
-        authorizedNetworks_ = authorizedNetworks_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.authorizedNetworks_ = authorizedNetworks_;
-      result.reservedIpRange_ = reservedIpRange_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.managedidentities.v1.Domain result) {
       if (((bitField0_ & 0x00000004) != 0)) {
-        locations_ = locations_.getUnmodifiableView();
+        authorizedNetworks_ = authorizedNetworks_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
+      result.authorizedNetworks_ = authorizedNetworks_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        locations_ = locations_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
       result.locations_ = locations_;
-      result.admin_ = admin_;
-      result.fqdn_ = fqdn_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      result.statusMessage_ = statusMessage_;
       if (trustsBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           trusts_ = java.util.Collections.unmodifiableList(trusts_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.trusts_ = trusts_;
       } else {
         result.trusts_ = trustsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.managedidentities.v1.Domain result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reservedIpRange_ = reservedIpRange_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.admin_ = admin_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.fqdn_ = fqdn_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.statusMessage_ = statusMessage_;
+      }
     }
 
     @java.lang.Override
@@ -1591,13 +1623,15 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       if (!other.authorizedNetworks_.isEmpty()) {
         if (authorizedNetworks_.isEmpty()) {
           authorizedNetworks_ = other.authorizedNetworks_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureAuthorizedNetworksIsMutable();
           authorizedNetworks_.addAll(other.authorizedNetworks_);
@@ -1606,12 +1640,13 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getReservedIpRange().isEmpty()) {
         reservedIpRange_ = other.reservedIpRange_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.locations_.isEmpty()) {
         if (locations_.isEmpty()) {
           locations_ = other.locations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureLocationsIsMutable();
           locations_.addAll(other.locations_);
@@ -1620,10 +1655,12 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getAdmin().isEmpty()) {
         admin_ = other.admin_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getFqdn().isEmpty()) {
         fqdn_ = other.fqdn_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1637,13 +1674,14 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (trustsBuilder_ == null) {
         if (!other.trusts_.isEmpty()) {
           if (trusts_.isEmpty()) {
             trusts_ = other.trusts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureTrustsIsMutable();
             trusts_.addAll(other.trusts_);
@@ -1656,7 +1694,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
             trustsBuilder_.dispose();
             trustsBuilder_ = null;
             trusts_ = other.trusts_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000800);
             trustsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTrustsFieldBuilder()
@@ -1695,7 +1733,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1707,6 +1745,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1719,7 +1758,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 reservedIpRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1732,37 +1771,37 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 admin_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 82:
               {
                 fqdn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 98
             case 104:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 104
             case 114:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 114
             case 122:
@@ -1861,8 +1900,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1879,8 +1918,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1902,8 +1941,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1919,14 +1958,14 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -1978,8 +2017,10 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2008,6 +2049,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2030,6 +2072,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2048,8 +2091,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2063,6 +2106,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -2070,9 +2114,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAuthorizedNetworksIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         authorizedNetworks_ = new com.google.protobuf.LazyStringArrayList(authorizedNetworks_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -2247,7 +2291,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAuthorizedNetworks() {
       authorizedNetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2349,8 +2393,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2369,8 +2413,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRange() {
-
       reservedIpRange_ = getDefaultInstance().getReservedIpRange();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2394,8 +2438,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reservedIpRange_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2404,9 +2448,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLocationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2573,7 +2617,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocations() {
       locations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2668,8 +2712,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       admin_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2686,8 +2730,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdmin() {
-
       admin_ = getDefaultInstance().getAdmin();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2709,8 +2753,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       admin_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2782,8 +2826,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fqdn_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2801,8 +2845,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFqdn() {
-
       fqdn_ = getDefaultInstance().getFqdn();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2825,8 +2869,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fqdn_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2851,7 +2895,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2892,11 +2936,11 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2913,11 +2957,11 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2933,17 +2977,18 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2958,14 +3003,13 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2980,7 +3024,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3052,7 +3096,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3093,11 +3137,11 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3114,11 +3158,11 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3134,17 +3178,18 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3159,14 +3204,13 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3181,7 +3225,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3266,8 +3310,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3286,9 +3330,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.managedidentities.v1.Domain.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.managedidentities.v1.Domain.State result =
-          com.google.cloud.managedidentities.v1.Domain.State.valueOf(state_);
+          com.google.cloud.managedidentities.v1.Domain.State.forNumber(state_);
       return result == null
           ? com.google.cloud.managedidentities.v1.Domain.State.UNRECOGNIZED
           : result;
@@ -3311,7 +3354,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3330,7 +3373,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;
@@ -3400,8 +3443,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3418,8 +3461,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
-
       statusMessage_ = getDefaultInstance().getStatusMessage();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3441,8 +3484,8 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       statusMessage_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3451,9 +3494,9 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTrustsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         trusts_ = new java.util.ArrayList<com.google.cloud.managedidentities.v1.Trust>(trusts_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3690,7 +3733,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTrusts() {
       if (trustsBuilder_ == null) {
         trusts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         trustsBuilder_.clear();
@@ -3826,7 +3869,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.managedidentities.v1.Trust,
                 com.google.cloud.managedidentities.v1.Trust.Builder,
                 com.google.cloud.managedidentities.v1.TrustOrBuilder>(
-                trusts_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                trusts_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         trusts_ = null;
       }
       return trustsBuilder_;

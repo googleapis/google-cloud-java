@@ -71,7 +71,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,6 +124,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENV_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList env_;
   /**
    *
@@ -183,6 +187,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList args_;
   /**
    *
@@ -244,7 +250,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object dir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dir_ = "";
   /**
    *
    *
@@ -295,7 +303,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -346,6 +356,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WAIT_FOR_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList waitFor_;
   /**
    *
@@ -664,18 +676,16 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      dir_ = "";
-
-      id_ = "";
-
-      waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      dir_ = "";
+      id_ = "";
+      waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -701,27 +711,43 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Command buildPartial() {
       io.grafeas.v1.Command result = new io.grafeas.v1.Command(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        env_ = env_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.env_ = env_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        args_ = args_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.args_ = args_;
-      result.dir_ = dir_;
-      result.id_ = id_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        waitFor_ = waitFor_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.waitFor_ = waitFor_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.Command result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        env_ = env_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.env_ = env_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        args_ = args_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.args_ = args_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        waitFor_ = waitFor_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.waitFor_ = waitFor_;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Command result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dir_ = dir_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.id_ = id_;
+      }
     }
 
     @java.lang.Override
@@ -771,12 +797,13 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Command.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.env_.isEmpty()) {
         if (env_.isEmpty()) {
           env_ = other.env_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureEnvIsMutable();
           env_.addAll(other.env_);
@@ -786,7 +813,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       if (!other.args_.isEmpty()) {
         if (args_.isEmpty()) {
           args_ = other.args_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureArgsIsMutable();
           args_.addAll(other.args_);
@@ -795,16 +822,18 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDir().isEmpty()) {
         dir_ = other.dir_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.waitFor_.isEmpty()) {
         if (waitFor_.isEmpty()) {
           waitFor_ = other.waitFor_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureWaitForIsMutable();
           waitFor_.addAll(other.waitFor_);
@@ -840,7 +869,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -860,13 +889,13 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 dir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -959,8 +988,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -977,8 +1006,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1000,8 +1029,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1009,9 +1038,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.LazyStringList env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureEnvIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         env_ = new com.google.protobuf.LazyStringArrayList(env_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1146,7 +1175,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEnv() {
       env_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1177,9 +1206,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureArgsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1314,7 +1343,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearArgs() {
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1405,8 +1434,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dir_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1423,8 +1452,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDir() {
-
       dir_ = getDefaultInstance().getDir();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1446,8 +1475,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dir_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1516,8 +1545,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1534,8 +1563,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1557,8 +1586,8 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1567,9 +1596,9 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWaitForIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         waitFor_ = new com.google.protobuf.LazyStringArrayList(waitFor_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -1704,7 +1733,7 @@ public final class Command extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearWaitFor() {
       waitFor_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

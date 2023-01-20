@@ -295,7 +295,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -370,6 +372,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -427,7 +430,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -456,7 +462,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -614,7 +622,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.MembershipStateOrBuilder getStateOrBuilder() {
-    return getState();
+    return state_ == null
+        ? com.google.cloud.gkehub.v1beta1.MembershipState.getDefaultInstance()
+        : state_;
   }
 
   public static final int AUTHORITY_FIELD_NUMBER = 9;
@@ -674,7 +684,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.AuthorityOrBuilder getAuthorityOrBuilder() {
-    return getAuthority();
+    return authority_ == null
+        ? com.google.cloud.gkehub.v1beta1.Authority.getDefaultInstance()
+        : authority_;
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
@@ -723,7 +735,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
@@ -772,7 +784,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
@@ -821,11 +833,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object externalId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
   /**
    *
    *
@@ -943,11 +957,15 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastConnectionTimeOrBuilder() {
-    return getLastConnectionTime();
+    return lastConnectionTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastConnectionTime_;
   }
 
   public static final int UNIQUE_ID_FIELD_NUMBER = 12;
-  private volatile java.lang.Object uniqueId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uniqueId_ = "";
   /**
    *
    *
@@ -1000,7 +1018,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INFRASTRUCTURE_TYPE_FIELD_NUMBER = 13;
-  private int infrastructureType_;
+  private int infrastructureType_ = 0;
   /**
    *
    *
@@ -1033,9 +1051,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType getInfrastructureType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType result =
-        com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.valueOf(infrastructureType_);
+        com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.forNumber(
+            infrastructureType_);
     return result == null
         ? com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.UNRECOGNIZED
         : result;
@@ -1425,56 +1443,46 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableLabels().clear();
       description_ = "";
-
       if (endpointBuilder_ != null) {
         endpointBuilder_.clear();
       }
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-      if (authorityBuilder_ == null) {
-        authority_ = null;
-      } else {
-        authority_ = null;
+      authority_ = null;
+      if (authorityBuilder_ != null) {
+        authorityBuilder_.dispose();
         authorityBuilder_ = null;
       }
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
       externalId_ = "";
-
-      if (lastConnectionTimeBuilder_ == null) {
-        lastConnectionTime_ = null;
-      } else {
-        lastConnectionTime_ = null;
+      lastConnectionTime_ = null;
+      if (lastConnectionTimeBuilder_ != null) {
+        lastConnectionTimeBuilder_.dispose();
         lastConnectionTimeBuilder_ = null;
       }
       uniqueId_ = "";
-
       infrastructureType_ = 0;
-
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1504,54 +1512,64 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.v1beta1.Membership buildPartial() {
       com.google.cloud.gkehub.v1beta1.Membership result =
           new com.google.cloud.gkehub.v1beta1.Membership(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.description_ = description_;
-      if (typeCase_ == 4) {
-        if (endpointBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = endpointBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
-      }
-      if (authorityBuilder_ == null) {
-        result.authority_ = authority_;
-      } else {
-        result.authority_ = authorityBuilder_.build();
-      }
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
-      }
-      result.externalId_ = externalId_;
-      if (lastConnectionTimeBuilder_ == null) {
-        result.lastConnectionTime_ = lastConnectionTime_;
-      } else {
-        result.lastConnectionTime_ = lastConnectionTimeBuilder_.build();
-      }
-      result.uniqueId_ = uniqueId_;
-      result.infrastructureType_ = infrastructureType_;
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.Membership result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.authority_ = authorityBuilder_ == null ? authority_ : authorityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.externalId_ = externalId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lastConnectionTime_ =
+            lastConnectionTimeBuilder_ == null
+                ? lastConnectionTime_
+                : lastConnectionTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.uniqueId_ = uniqueId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.infrastructureType_ = infrastructureType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.gkehub.v1beta1.Membership result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 4 && endpointBuilder_ != null) {
+        result.type_ = endpointBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1601,11 +1619,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1beta1.Membership.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasState()) {
@@ -1625,6 +1646,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExternalId().isEmpty()) {
         externalId_ = other.externalId_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasLastConnectionTime()) {
@@ -1632,6 +1654,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.infrastructureType_ != 0) {
@@ -1677,7 +1700,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1689,12 +1712,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1706,56 +1730,56 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getAuthorityFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 74
             case 82:
               {
                 externalId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     getLastConnectionTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 104:
               {
                 infrastructureType_ = input.readEnum();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 104
             default:
@@ -1873,8 +1897,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1897,8 +1921,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1926,8 +1950,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1943,14 +1967,14 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -2002,8 +2026,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2032,6 +2058,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2054,6 +2081,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2072,8 +2100,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -2087,6 +2115,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -2154,8 +2183,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2172,8 +2201,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2195,8 +2224,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2425,7 +2454,6 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       }
       typeCase_ = 4;
       onChanged();
-      ;
       return endpointBuilder_;
     }
 
@@ -2449,7 +2477,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2490,11 +2518,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2512,11 +2540,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.v1beta1.MembershipState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2532,19 +2560,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeState(com.google.cloud.gkehub.v1beta1.MembershipState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.gkehub.v1beta1.MembershipState.newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && state_ != null
+            && state_ != com.google.cloud.gkehub.v1beta1.MembershipState.getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2559,14 +2586,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2581,7 +2607,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkehub.v1beta1.MembershipState.Builder getStateBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
@@ -2655,7 +2681,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the authority field is set.
      */
     public boolean hasAuthority() {
-      return authorityBuilder_ != null || authority_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2700,11 +2726,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         authority_ = value;
-        onChanged();
       } else {
         authorityBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2723,11 +2749,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public Builder setAuthority(com.google.cloud.gkehub.v1beta1.Authority.Builder builderForValue) {
       if (authorityBuilder_ == null) {
         authority_ = builderForValue.build();
-        onChanged();
       } else {
         authorityBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2745,19 +2771,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAuthority(com.google.cloud.gkehub.v1beta1.Authority value) {
       if (authorityBuilder_ == null) {
-        if (authority_ != null) {
-          authority_ =
-              com.google.cloud.gkehub.v1beta1.Authority.newBuilder(authority_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && authority_ != null
+            && authority_ != com.google.cloud.gkehub.v1beta1.Authority.getDefaultInstance()) {
+          getAuthorityBuilder().mergeFrom(value);
         } else {
           authority_ = value;
         }
-        onChanged();
       } else {
         authorityBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2774,14 +2799,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAuthority() {
-      if (authorityBuilder_ == null) {
-        authority_ = null;
-        onChanged();
-      } else {
-        authority_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      authority_ = null;
+      if (authorityBuilder_ != null) {
+        authorityBuilder_.dispose();
         authorityBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2798,7 +2822,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkehub.v1beta1.Authority.Builder getAuthorityBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getAuthorityFieldBuilder().getBuilder();
     }
@@ -2874,7 +2898,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2915,11 +2939,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2936,11 +2960,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2956,17 +2980,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2981,14 +3006,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3003,7 +3027,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3075,7 +3099,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3116,11 +3140,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3137,11 +3161,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3157,17 +3181,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3182,14 +3207,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3204,7 +3228,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3276,7 +3300,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3317,11 +3341,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3338,11 +3362,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3358,17 +3382,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3383,14 +3408,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3405,7 +3429,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -3533,8 +3557,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalId_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3555,8 +3579,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
-
       externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3582,8 +3606,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalId_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3611,7 +3635,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastConnectionTime field is set.
      */
     public boolean hasLastConnectionTime() {
-      return lastConnectionTimeBuilder_ != null || lastConnectionTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3658,11 +3682,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         lastConnectionTime_ = value;
-        onChanged();
       } else {
         lastConnectionTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3682,11 +3706,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastConnectionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastConnectionTimeBuilder_ == null) {
         lastConnectionTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastConnectionTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3705,19 +3729,18 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastConnectionTime(com.google.protobuf.Timestamp value) {
       if (lastConnectionTimeBuilder_ == null) {
-        if (lastConnectionTime_ != null) {
-          lastConnectionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastConnectionTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && lastConnectionTime_ != null
+            && lastConnectionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastConnectionTimeBuilder().mergeFrom(value);
         } else {
           lastConnectionTime_ = value;
         }
-        onChanged();
       } else {
         lastConnectionTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -3735,14 +3758,13 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastConnectionTime() {
-      if (lastConnectionTimeBuilder_ == null) {
-        lastConnectionTime_ = null;
-        onChanged();
-      } else {
-        lastConnectionTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      lastConnectionTime_ = null;
+      if (lastConnectionTimeBuilder_ != null) {
+        lastConnectionTimeBuilder_.dispose();
         lastConnectionTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3760,7 +3782,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastConnectionTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getLastConnectionTimeFieldBuilder().getBuilder();
     }
@@ -3885,8 +3907,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3904,8 +3926,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUniqueId() {
-
       uniqueId_ = getDefaultInstance().getUniqueId();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3928,8 +3950,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uniqueId_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3967,8 +3989,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInfrastructureTypeValue(int value) {
-
       infrastructureType_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3987,9 +4009,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType getInfrastructureType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType result =
-          com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.valueOf(
+          com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.forNumber(
               infrastructureType_);
       return result == null
           ? com.google.cloud.gkehub.v1beta1.Membership.InfrastructureType.UNRECOGNIZED
@@ -4014,7 +4035,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00001000;
       infrastructureType_ = value.getNumber();
       onChanged();
       return this;
@@ -4033,7 +4054,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInfrastructureType() {
-
+      bitField0_ = (bitField0_ & ~0x00001000);
       infrastructureType_ = 0;
       onChanged();
       return this;

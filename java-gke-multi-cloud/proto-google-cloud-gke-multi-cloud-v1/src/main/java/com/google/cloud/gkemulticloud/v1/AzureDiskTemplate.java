@@ -66,7 +66,7 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SIZE_GIB_FIELD_NUMBER = 1;
-  private int sizeGib_;
+  private int sizeGib_ = 0;
   /**
    *
    *
@@ -282,8 +282,8 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sizeGib_ = 0;
-
       return this;
     }
 
@@ -311,9 +311,18 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gkemulticloud.v1.AzureDiskTemplate buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureDiskTemplate result =
           new com.google.cloud.gkemulticloud.v1.AzureDiskTemplate(this);
-      result.sizeGib_ = sizeGib_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureDiskTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sizeGib_ = sizeGib_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 sizeGib_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sizeGib_;
     /**
@@ -449,6 +460,7 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setSizeGib(int value) {
 
       sizeGib_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -466,7 +478,7 @@ public final class AzureDiskTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sizeGib_ = 0;
       onChanged();
       return this;

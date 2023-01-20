@@ -113,11 +113,15 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getDocumentSentimentOrBuilder() {
-    return getDocumentSentiment();
+    return documentSentiment_ == null
+        ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
+        : documentSentiment_;
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -170,6 +174,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
   }
 
   public static final int SENTENCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.Sentence> sentences_;
   /**
    *
@@ -461,21 +467,20 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentSentimentBuilder_ == null) {
-        documentSentiment_ = null;
-      } else {
-        documentSentiment_ = null;
+      bitField0_ = 0;
+      documentSentiment_ = null;
+      if (documentSentimentBuilder_ != null) {
+        documentSentimentBuilder_.dispose();
         documentSentimentBuilder_ = null;
       }
       language_ = "";
-
       if (sentencesBuilder_ == null) {
         sentences_ = java.util.Collections.emptyList();
       } else {
         sentences_ = null;
         sentencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -503,24 +508,38 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     public com.google.cloud.language.v1.AnalyzeSentimentResponse buildPartial() {
       com.google.cloud.language.v1.AnalyzeSentimentResponse result =
           new com.google.cloud.language.v1.AnalyzeSentimentResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (documentSentimentBuilder_ == null) {
-        result.documentSentiment_ = documentSentiment_;
-      } else {
-        result.documentSentiment_ = documentSentimentBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.language_ = language_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.language.v1.AnalyzeSentimentResponse result) {
       if (sentencesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.sentences_ = sentences_;
       } else {
         result.sentences_ = sentencesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.AnalyzeSentimentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.documentSentiment_ =
+            documentSentimentBuilder_ == null
+                ? documentSentiment_
+                : documentSentimentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.language_ = language_;
+      }
     }
 
     @java.lang.Override
@@ -574,13 +593,14 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (sentencesBuilder_ == null) {
         if (!other.sentences_.isEmpty()) {
           if (sentences_.isEmpty()) {
             sentences_ = other.sentences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSentencesIsMutable();
             sentences_.addAll(other.sentences_);
@@ -593,7 +613,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
             sentencesBuilder_.dispose();
             sentencesBuilder_ = null;
             sentences_ = other.sentences_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             sentencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSentencesFieldBuilder()
@@ -633,13 +653,13 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
               {
                 input.readMessage(
                     getDocumentSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -692,7 +712,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * @return Whether the documentSentiment field is set.
      */
     public boolean hasDocumentSentiment() {
-      return documentSentimentBuilder_ != null || documentSentiment_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -729,11 +749,11 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         documentSentiment_ = value;
-        onChanged();
       } else {
         documentSentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -749,11 +769,11 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         com.google.cloud.language.v1.Sentiment.Builder builderForValue) {
       if (documentSentimentBuilder_ == null) {
         documentSentiment_ = builderForValue.build();
-        onChanged();
       } else {
         documentSentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -767,19 +787,18 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      */
     public Builder mergeDocumentSentiment(com.google.cloud.language.v1.Sentiment value) {
       if (documentSentimentBuilder_ == null) {
-        if (documentSentiment_ != null) {
-          documentSentiment_ =
-              com.google.cloud.language.v1.Sentiment.newBuilder(documentSentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && documentSentiment_ != null
+            && documentSentiment_ != com.google.cloud.language.v1.Sentiment.getDefaultInstance()) {
+          getDocumentSentimentBuilder().mergeFrom(value);
         } else {
           documentSentiment_ = value;
         }
-        onChanged();
       } else {
         documentSentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +811,13 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <code>.google.cloud.language.v1.Sentiment document_sentiment = 1;</code>
      */
     public Builder clearDocumentSentiment() {
-      if (documentSentimentBuilder_ == null) {
-        documentSentiment_ = null;
-        onChanged();
-      } else {
-        documentSentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      documentSentiment_ = null;
+      if (documentSentimentBuilder_ != null) {
+        documentSentimentBuilder_.dispose();
         documentSentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -812,7 +830,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * <code>.google.cloud.language.v1.Sentiment document_sentiment = 1;</code>
      */
     public com.google.cloud.language.v1.Sentiment.Builder getDocumentSentimentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentSentimentFieldBuilder().getBuilder();
     }
@@ -927,8 +945,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -946,8 +964,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -970,8 +988,8 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -980,9 +998,9 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureSentencesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         sentences_ = new java.util.ArrayList<com.google.cloud.language.v1.Sentence>(sentences_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1197,7 +1215,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
     public Builder clearSentences() {
       if (sentencesBuilder_ == null) {
         sentences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         sentencesBuilder_.clear();
@@ -1318,7 +1336,7 @@ public final class AnalyzeSentimentResponse extends com.google.protobuf.Generate
                 com.google.cloud.language.v1.Sentence,
                 com.google.cloud.language.v1.Sentence.Builder,
                 com.google.cloud.language.v1.SentenceOrBuilder>(
-                sentences_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                sentences_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         sentences_ = null;
       }
       return sentencesBuilder_;

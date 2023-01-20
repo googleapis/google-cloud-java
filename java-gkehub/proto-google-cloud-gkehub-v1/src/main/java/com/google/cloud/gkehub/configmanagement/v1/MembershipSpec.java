@@ -113,7 +113,9 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.ConfigSyncOrBuilder getConfigSyncOrBuilder() {
-    return getConfigSync();
+    return configSync_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1.ConfigSync.getDefaultInstance()
+        : configSync_;
   }
 
   public static final int POLICY_CONTROLLER_FIELD_NUMBER = 2;
@@ -162,7 +164,9 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.PolicyControllerOrBuilder
       getPolicyControllerOrBuilder() {
-    return getPolicyController();
+    return policyController_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1.PolicyController.getDefaultInstance()
+        : policyController_;
   }
 
   public static final int HIERARCHY_CONTROLLER_FIELD_NUMBER = 4;
@@ -219,11 +223,15 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfigOrBuilder
       getHierarchyControllerOrBuilder() {
-    return getHierarchyController();
+    return hierarchyController_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig.getDefaultInstance()
+        : hierarchyController_;
   }
 
   public static final int VERSION_FIELD_NUMBER = 10;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -512,26 +520,23 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (configSyncBuilder_ == null) {
-        configSync_ = null;
-      } else {
-        configSync_ = null;
+      bitField0_ = 0;
+      configSync_ = null;
+      if (configSyncBuilder_ != null) {
+        configSyncBuilder_.dispose();
         configSyncBuilder_ = null;
       }
-      if (policyControllerBuilder_ == null) {
-        policyController_ = null;
-      } else {
-        policyController_ = null;
+      policyController_ = null;
+      if (policyControllerBuilder_ != null) {
+        policyControllerBuilder_.dispose();
         policyControllerBuilder_ = null;
       }
-      if (hierarchyControllerBuilder_ == null) {
-        hierarchyController_ = null;
-      } else {
-        hierarchyController_ = null;
+      hierarchyController_ = null;
+      if (hierarchyControllerBuilder_ != null) {
+        hierarchyControllerBuilder_.dispose();
         hierarchyControllerBuilder_ = null;
       }
       version_ = "";
-
       return this;
     }
 
@@ -559,24 +564,31 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1.MembershipSpec buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.MembershipSpec result =
           new com.google.cloud.gkehub.configmanagement.v1.MembershipSpec(this);
-      if (configSyncBuilder_ == null) {
-        result.configSync_ = configSync_;
-      } else {
-        result.configSync_ = configSyncBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (policyControllerBuilder_ == null) {
-        result.policyController_ = policyController_;
-      } else {
-        result.policyController_ = policyControllerBuilder_.build();
-      }
-      if (hierarchyControllerBuilder_ == null) {
-        result.hierarchyController_ = hierarchyController_;
-      } else {
-        result.hierarchyController_ = hierarchyControllerBuilder_.build();
-      }
-      result.version_ = version_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1.MembershipSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.configSync_ = configSyncBuilder_ == null ? configSync_ : configSyncBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.policyController_ =
+            policyControllerBuilder_ == null ? policyController_ : policyControllerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hierarchyController_ =
+            hierarchyControllerBuilder_ == null
+                ? hierarchyController_
+                : hierarchyControllerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.version_ = version_;
+      }
     }
 
     @java.lang.Override
@@ -636,6 +648,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -667,27 +680,27 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getConfigSyncFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getPolicyControllerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(
                     getHierarchyControllerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 82:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 82
             default:
@@ -707,6 +720,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.configmanagement.v1.ConfigSync configSync_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1.ConfigSync,
@@ -725,7 +740,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the configSync field is set.
      */
     public boolean hasConfigSync() {
-      return configSyncBuilder_ != null || configSync_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -762,11 +777,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         configSync_ = value;
-        onChanged();
       } else {
         configSyncBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -782,11 +797,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.configmanagement.v1.ConfigSync.Builder builderForValue) {
       if (configSyncBuilder_ == null) {
         configSync_ = builderForValue.build();
-        onChanged();
       } else {
         configSyncBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -800,19 +815,19 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConfigSync(com.google.cloud.gkehub.configmanagement.v1.ConfigSync value) {
       if (configSyncBuilder_ == null) {
-        if (configSync_ != null) {
-          configSync_ =
-              com.google.cloud.gkehub.configmanagement.v1.ConfigSync.newBuilder(configSync_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && configSync_ != null
+            && configSync_
+                != com.google.cloud.gkehub.configmanagement.v1.ConfigSync.getDefaultInstance()) {
+          getConfigSyncBuilder().mergeFrom(value);
         } else {
           configSync_ = value;
         }
-        onChanged();
       } else {
         configSyncBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -825,14 +840,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSync config_sync = 1;</code>
      */
     public Builder clearConfigSync() {
-      if (configSyncBuilder_ == null) {
-        configSync_ = null;
-        onChanged();
-      } else {
-        configSync_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      configSync_ = null;
+      if (configSyncBuilder_ != null) {
+        configSyncBuilder_.dispose();
         configSyncBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -845,7 +859,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1.ConfigSync config_sync = 1;</code>
      */
     public com.google.cloud.gkehub.configmanagement.v1.ConfigSync.Builder getConfigSyncBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConfigSyncFieldBuilder().getBuilder();
     }
@@ -912,7 +926,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the policyController field is set.
      */
     public boolean hasPolicyController() {
-      return policyControllerBuilder_ != null || policyController_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -950,11 +964,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         policyController_ = value;
-        onChanged();
       } else {
         policyControllerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -970,11 +984,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.configmanagement.v1.PolicyController.Builder builderForValue) {
       if (policyControllerBuilder_ == null) {
         policyController_ = builderForValue.build();
-        onChanged();
       } else {
         policyControllerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -989,20 +1003,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePolicyController(
         com.google.cloud.gkehub.configmanagement.v1.PolicyController value) {
       if (policyControllerBuilder_ == null) {
-        if (policyController_ != null) {
-          policyController_ =
-              com.google.cloud.gkehub.configmanagement.v1.PolicyController.newBuilder(
-                      policyController_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && policyController_ != null
+            && policyController_
+                != com.google.cloud.gkehub.configmanagement.v1.PolicyController
+                    .getDefaultInstance()) {
+          getPolicyControllerBuilder().mergeFrom(value);
         } else {
           policyController_ = value;
         }
-        onChanged();
       } else {
         policyControllerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1015,14 +1029,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.gkehub.configmanagement.v1.PolicyController policy_controller = 2;</code>
      */
     public Builder clearPolicyController() {
-      if (policyControllerBuilder_ == null) {
-        policyController_ = null;
-        onChanged();
-      } else {
-        policyController_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      policyController_ = null;
+      if (policyControllerBuilder_ != null) {
+        policyControllerBuilder_.dispose();
         policyControllerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1036,7 +1049,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkehub.configmanagement.v1.PolicyController.Builder
         getPolicyControllerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPolicyControllerFieldBuilder().getBuilder();
     }
@@ -1106,7 +1119,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the hierarchyController field is set.
      */
     public boolean hasHierarchyController() {
-      return hierarchyControllerBuilder_ != null || hierarchyController_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1150,11 +1163,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         hierarchyController_ = value;
-        onChanged();
       } else {
         hierarchyControllerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1173,11 +1186,11 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (hierarchyControllerBuilder_ == null) {
         hierarchyController_ = builderForValue.build();
-        onChanged();
       } else {
         hierarchyControllerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1194,20 +1207,20 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeHierarchyController(
         com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig value) {
       if (hierarchyControllerBuilder_ == null) {
-        if (hierarchyController_ != null) {
-          hierarchyController_ =
-              com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig.newBuilder(
-                      hierarchyController_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && hierarchyController_ != null
+            && hierarchyController_
+                != com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig
+                    .getDefaultInstance()) {
+          getHierarchyControllerBuilder().mergeFrom(value);
         } else {
           hierarchyController_ = value;
         }
-        onChanged();
       } else {
         hierarchyControllerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1222,14 +1235,13 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearHierarchyController() {
-      if (hierarchyControllerBuilder_ == null) {
-        hierarchyController_ = null;
-        onChanged();
-      } else {
-        hierarchyController_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hierarchyController_ = null;
+      if (hierarchyControllerBuilder_ != null) {
+        hierarchyControllerBuilder_.dispose();
         hierarchyControllerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1245,7 +1257,7 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig.Builder
         getHierarchyControllerBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getHierarchyControllerFieldBuilder().getBuilder();
     }
@@ -1360,8 +1372,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1377,8 +1389,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1399,8 +1411,8 @@ public final class MembershipSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

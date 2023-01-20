@@ -76,7 +76,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 6;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int TYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object type_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object type_ = "";
   /**
    *
    *
@@ -186,7 +190,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -237,7 +243,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -290,6 +298,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.LabelDescriptor> labels_;
   /**
    *
@@ -369,16 +379,18 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   }
 
   public static final int SUPPORTED_TIERS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> supportedTiers_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.monitoring.v3.ServiceTier>
       supportedTiers_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.monitoring.v3.ServiceTier>() {
             public com.google.monitoring.v3.ServiceTier convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.monitoring.v3.ServiceTier result =
-                  com.google.monitoring.v3.ServiceTier.valueOf(from);
+                  com.google.monitoring.v3.ServiceTier.forNumber(from);
               return result == null ? com.google.monitoring.v3.ServiceTier.UNRECOGNIZED : result;
             }
           };
@@ -490,7 +502,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
   private int supportedTiersMemoizedSerializedSize;
 
   public static final int LAUNCH_STAGE_FIELD_NUMBER = 7;
-  private int launchStage_;
+  private int launchStage_ = 0;
   /**
    *
    *
@@ -519,8 +531,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.api.LaunchStage getLaunchStage() {
-    @SuppressWarnings("deprecation")
-    com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+    com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
     return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
   }
 
@@ -797,25 +808,21 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
       } else {
         labels_ = null;
         labelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       supportedTiers_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       launchStage_ = 0;
-
       return this;
     }
 
@@ -843,28 +850,49 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public com.google.monitoring.v3.NotificationChannelDescriptor buildPartial() {
       com.google.monitoring.v3.NotificationChannelDescriptor result =
           new com.google.monitoring.v3.NotificationChannelDescriptor(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.type_ = type_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.v3.NotificationChannelDescriptor result) {
       if (labelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           labels_ = java.util.Collections.unmodifiableList(labels_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.labels_ = labels_;
       } else {
         result.labels_ = labelsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         supportedTiers_ = java.util.Collections.unmodifiableList(supportedTiers_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.supportedTiers_ = supportedTiers_;
-      result.launchStage_ = launchStage_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.NotificationChannelDescriptor result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.launchStage_ = launchStage_;
+      }
     }
 
     @java.lang.Override
@@ -915,25 +943,29 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getType().isEmpty()) {
         type_ = other.type_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (labelsBuilder_ == null) {
         if (!other.labels_.isEmpty()) {
           if (labels_.isEmpty()) {
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureLabelsIsMutable();
             labels_.addAll(other.labels_);
@@ -946,7 +978,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             labelsBuilder_.dispose();
             labelsBuilder_ = null;
             labels_ = other.labels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
             labelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLabelsFieldBuilder()
@@ -959,7 +991,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (!other.supportedTiers_.isEmpty()) {
         if (supportedTiers_.isEmpty()) {
           supportedTiers_ = other.supportedTiers_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureSupportedTiersIsMutable();
           supportedTiers_.addAll(other.supportedTiers_);
@@ -998,19 +1030,19 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             case 10:
               {
                 type_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -1047,13 +1079,13 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
             case 50:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 50
             case 56:
               {
                 launchStage_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1142,8 +1174,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1161,8 +1193,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1185,8 +1217,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1264,8 +1296,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1285,8 +1317,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
       type_ = getDefaultInstance().getType();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1311,8 +1343,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1381,8 +1413,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1399,8 +1431,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1422,8 +1454,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1495,8 +1527,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1514,8 +1546,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1538,8 +1570,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1548,9 +1580,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
         java.util.Collections.emptyList();
 
     private void ensureLabelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         labels_ = new java.util.ArrayList<com.google.api.LabelDescriptor>(labels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -1785,7 +1817,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     public Builder clearLabels() {
       if (labelsBuilder_ == null) {
         labels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         labelsBuilder_.clear();
@@ -1920,7 +1952,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
                 com.google.api.LabelDescriptor,
                 com.google.api.LabelDescriptor.Builder,
                 com.google.api.LabelDescriptorOrBuilder>(
-                labels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                labels_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         labels_ = null;
       }
       return labelsBuilder_;
@@ -1929,9 +1961,9 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     private java.util.List<java.lang.Integer> supportedTiers_ = java.util.Collections.emptyList();
 
     private void ensureSupportedTiersIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         supportedTiers_ = new java.util.ArrayList<java.lang.Integer>(supportedTiers_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2091,7 +2123,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
     @java.lang.Deprecated
     public Builder clearSupportedTiers() {
       supportedTiers_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2236,8 +2268,8 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setLaunchStageValue(int value) {
-
       launchStage_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2254,8 +2286,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.api.LaunchStage getLaunchStage() {
-      @SuppressWarnings("deprecation")
-      com.google.api.LaunchStage result = com.google.api.LaunchStage.valueOf(launchStage_);
+      com.google.api.LaunchStage result = com.google.api.LaunchStage.forNumber(launchStage_);
       return result == null ? com.google.api.LaunchStage.UNRECOGNIZED : result;
     }
     /**
@@ -2274,7 +2305,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       launchStage_ = value.getNumber();
       onChanged();
       return this;
@@ -2291,7 +2322,7 @@ public final class NotificationChannelDescriptor extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearLaunchStage() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       launchStage_ = 0;
       onChanged();
       return this;

@@ -673,7 +673,6 @@ public interface DeviceOrBuilder
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
   /* nullable */
   java.lang.String getMetadataOrDefault(
       java.lang.String key,

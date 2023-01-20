@@ -162,7 +162,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LINE_FIELD_NUMBER = 1;
-    private int line_;
+    private int line_ = 0;
     /**
      *
      *
@@ -180,7 +180,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int COLUMN_FIELD_NUMBER = 2;
-    private int column_;
+    private int column_ = 0;
     /**
      *
      *
@@ -406,10 +406,9 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         line_ = 0;
-
         column_ = 0;
-
         return this;
       }
 
@@ -437,10 +436,21 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       public com.google.monitoring.v3.TextLocator.Position buildPartial() {
         com.google.monitoring.v3.TextLocator.Position result =
             new com.google.monitoring.v3.TextLocator.Position(this);
-        result.line_ = line_;
-        result.column_ = column_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.TextLocator.Position result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.line_ = line_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.column_ = column_;
+        }
       }
 
       @java.lang.Override
@@ -526,13 +536,13 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   line_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   column_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -551,6 +561,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int line_;
       /**
@@ -583,6 +595,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       public Builder setLine(int value) {
 
         line_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -598,7 +611,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearLine() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         line_ = 0;
         onChanged();
         return this;
@@ -637,6 +650,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       public Builder setColumn(int value) {
 
         column_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +667,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearColumn() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         column_ = 0;
         onChanged();
         return this;
@@ -724,7 +738,9 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object source_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object source_ = "";
   /**
    *
    *
@@ -829,7 +845,9 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.v3.TextLocator.PositionOrBuilder getStartPositionOrBuilder() {
-    return getStartPosition();
+    return startPosition_ == null
+        ? com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()
+        : startPosition_;
   }
 
   public static final int END_POSITION_FIELD_NUMBER = 3;
@@ -877,7 +895,9 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.v3.TextLocator.PositionOrBuilder getEndPositionOrBuilder() {
-    return getEndPosition();
+    return endPosition_ == null
+        ? com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()
+        : endPosition_;
   }
 
   public static final int NESTED_LOCATOR_FIELD_NUMBER = 4;
@@ -934,11 +954,15 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.monitoring.v3.TextLocatorOrBuilder getNestedLocatorOrBuilder() {
-    return getNestedLocator();
+    return nestedLocator_ == null
+        ? com.google.monitoring.v3.TextLocator.getDefaultInstance()
+        : nestedLocator_;
   }
 
   public static final int NESTING_REASON_FIELD_NUMBER = 5;
-  private volatile java.lang.Object nestingReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nestingReason_ = "";
   /**
    *
    *
@@ -1256,28 +1280,24 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       source_ = "";
-
-      if (startPositionBuilder_ == null) {
-        startPosition_ = null;
-      } else {
-        startPosition_ = null;
+      startPosition_ = null;
+      if (startPositionBuilder_ != null) {
+        startPositionBuilder_.dispose();
         startPositionBuilder_ = null;
       }
-      if (endPositionBuilder_ == null) {
-        endPosition_ = null;
-      } else {
-        endPosition_ = null;
+      endPosition_ = null;
+      if (endPositionBuilder_ != null) {
+        endPositionBuilder_.dispose();
         endPositionBuilder_ = null;
       }
-      if (nestedLocatorBuilder_ == null) {
-        nestedLocator_ = null;
-      } else {
-        nestedLocator_ = null;
+      nestedLocator_ = null;
+      if (nestedLocatorBuilder_ != null) {
+        nestedLocatorBuilder_.dispose();
         nestedLocatorBuilder_ = null;
       }
       nestingReason_ = "";
-
       return this;
     }
 
@@ -1304,25 +1324,33 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.TextLocator buildPartial() {
       com.google.monitoring.v3.TextLocator result = new com.google.monitoring.v3.TextLocator(this);
-      result.source_ = source_;
-      if (startPositionBuilder_ == null) {
-        result.startPosition_ = startPosition_;
-      } else {
-        result.startPosition_ = startPositionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endPositionBuilder_ == null) {
-        result.endPosition_ = endPosition_;
-      } else {
-        result.endPosition_ = endPositionBuilder_.build();
-      }
-      if (nestedLocatorBuilder_ == null) {
-        result.nestedLocator_ = nestedLocator_;
-      } else {
-        result.nestedLocator_ = nestedLocatorBuilder_.build();
-      }
-      result.nestingReason_ = nestingReason_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.TextLocator result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.source_ = source_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startPosition_ =
+            startPositionBuilder_ == null ? startPosition_ : startPositionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endPosition_ =
+            endPositionBuilder_ == null ? endPosition_ : endPositionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.nestedLocator_ =
+            nestedLocatorBuilder_ == null ? nestedLocator_ : nestedLocatorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nestingReason_ = nestingReason_;
+      }
     }
 
     @java.lang.Override
@@ -1372,6 +1400,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.v3.TextLocator.getDefaultInstance()) return this;
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStartPosition()) {
@@ -1385,6 +1414,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNestingReason().isEmpty()) {
         nestingReason_ = other.nestingReason_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1416,31 +1446,31 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 source_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStartPositionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getEndPositionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getNestedLocatorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 nestingReason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -1459,6 +1489,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object source_ = "";
     /**
@@ -1539,8 +1571,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1562,8 +1594,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSource() {
-
       source_ = getDefaultInstance().getSource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1590,8 +1622,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       source_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1614,7 +1646,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startPosition field is set.
      */
     public boolean hasStartPosition() {
-      return startPositionBuilder_ != null || startPosition_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1651,11 +1683,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startPosition_ = value;
-        onChanged();
       } else {
         startPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1671,11 +1703,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
         com.google.monitoring.v3.TextLocator.Position.Builder builderForValue) {
       if (startPositionBuilder_ == null) {
         startPosition_ = builderForValue.build();
-        onChanged();
       } else {
         startPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1689,19 +1721,19 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartPosition(com.google.monitoring.v3.TextLocator.Position value) {
       if (startPositionBuilder_ == null) {
-        if (startPosition_ != null) {
-          startPosition_ =
-              com.google.monitoring.v3.TextLocator.Position.newBuilder(startPosition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && startPosition_ != null
+            && startPosition_
+                != com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()) {
+          getStartPositionBuilder().mergeFrom(value);
         } else {
           startPosition_ = value;
         }
-        onChanged();
       } else {
         startPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1714,14 +1746,13 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator.Position start_position = 2;</code>
      */
     public Builder clearStartPosition() {
-      if (startPositionBuilder_ == null) {
-        startPosition_ = null;
-        onChanged();
-      } else {
-        startPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      startPosition_ = null;
+      if (startPositionBuilder_ != null) {
+        startPositionBuilder_.dispose();
         startPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1734,7 +1765,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator.Position start_position = 2;</code>
      */
     public com.google.monitoring.v3.TextLocator.Position.Builder getStartPositionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStartPositionFieldBuilder().getBuilder();
     }
@@ -1800,7 +1831,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endPosition field is set.
      */
     public boolean hasEndPosition() {
-      return endPositionBuilder_ != null || endPosition_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1837,11 +1868,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endPosition_ = value;
-        onChanged();
       } else {
         endPositionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1857,11 +1888,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
         com.google.monitoring.v3.TextLocator.Position.Builder builderForValue) {
       if (endPositionBuilder_ == null) {
         endPosition_ = builderForValue.build();
-        onChanged();
       } else {
         endPositionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1875,19 +1906,18 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndPosition(com.google.monitoring.v3.TextLocator.Position value) {
       if (endPositionBuilder_ == null) {
-        if (endPosition_ != null) {
-          endPosition_ =
-              com.google.monitoring.v3.TextLocator.Position.newBuilder(endPosition_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && endPosition_ != null
+            && endPosition_ != com.google.monitoring.v3.TextLocator.Position.getDefaultInstance()) {
+          getEndPositionBuilder().mergeFrom(value);
         } else {
           endPosition_ = value;
         }
-        onChanged();
       } else {
         endPositionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1900,14 +1930,13 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator.Position end_position = 3;</code>
      */
     public Builder clearEndPosition() {
-      if (endPositionBuilder_ == null) {
-        endPosition_ = null;
-        onChanged();
-      } else {
-        endPosition_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endPosition_ = null;
+      if (endPositionBuilder_ != null) {
+        endPositionBuilder_.dispose();
         endPositionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1920,7 +1949,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator.Position end_position = 3;</code>
      */
     public com.google.monitoring.v3.TextLocator.Position.Builder getEndPositionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEndPositionFieldBuilder().getBuilder();
     }
@@ -1989,7 +2018,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nestedLocator field is set.
      */
     public boolean hasNestedLocator() {
-      return nestedLocatorBuilder_ != null || nestedLocator_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2032,11 +2061,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nestedLocator_ = value;
-        onChanged();
       } else {
         nestedLocatorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2054,11 +2083,11 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
     public Builder setNestedLocator(com.google.monitoring.v3.TextLocator.Builder builderForValue) {
       if (nestedLocatorBuilder_ == null) {
         nestedLocator_ = builderForValue.build();
-        onChanged();
       } else {
         nestedLocatorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2075,19 +2104,18 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNestedLocator(com.google.monitoring.v3.TextLocator value) {
       if (nestedLocatorBuilder_ == null) {
-        if (nestedLocator_ != null) {
-          nestedLocator_ =
-              com.google.monitoring.v3.TextLocator.newBuilder(nestedLocator_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && nestedLocator_ != null
+            && nestedLocator_ != com.google.monitoring.v3.TextLocator.getDefaultInstance()) {
+          getNestedLocatorBuilder().mergeFrom(value);
         } else {
           nestedLocator_ = value;
         }
-        onChanged();
       } else {
         nestedLocatorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2103,14 +2131,13 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator nested_locator = 4;</code>
      */
     public Builder clearNestedLocator() {
-      if (nestedLocatorBuilder_ == null) {
-        nestedLocator_ = null;
-        onChanged();
-      } else {
-        nestedLocator_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      nestedLocator_ = null;
+      if (nestedLocatorBuilder_ != null) {
+        nestedLocatorBuilder_.dispose();
         nestedLocatorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2126,7 +2153,7 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.monitoring.v3.TextLocator nested_locator = 4;</code>
      */
     public com.google.monitoring.v3.TextLocator.Builder getNestedLocatorBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getNestedLocatorFieldBuilder().getBuilder();
     }
@@ -2256,8 +2283,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nestingReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2278,8 +2305,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNestingReason() {
-
       nestingReason_ = getDefaultInstance().getNestingReason();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2305,8 +2332,8 @@ public final class TextLocator extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nestingReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

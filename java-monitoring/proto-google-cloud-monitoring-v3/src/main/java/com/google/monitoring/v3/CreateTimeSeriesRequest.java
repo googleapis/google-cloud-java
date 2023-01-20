@@ -69,7 +69,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
   }
 
   public static final int TIME_SERIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeries> timeSeries_;
   /**
    *
@@ -437,15 +441,15 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       if (timeSeriesBuilder_ == null) {
         timeSeries_ = java.util.Collections.emptyList();
       } else {
         timeSeries_ = null;
         timeSeriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -473,19 +477,32 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     public com.google.monitoring.v3.CreateTimeSeriesRequest buildPartial() {
       com.google.monitoring.v3.CreateTimeSeriesRequest result =
           new com.google.monitoring.v3.CreateTimeSeriesRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.v3.CreateTimeSeriesRequest result) {
       if (timeSeriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           timeSeries_ = java.util.Collections.unmodifiableList(timeSeries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.timeSeries_ = timeSeries_;
       } else {
         result.timeSeries_ = timeSeriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateTimeSeriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -536,13 +553,14 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (timeSeriesBuilder_ == null) {
         if (!other.timeSeries_.isEmpty()) {
           if (timeSeries_.isEmpty()) {
             timeSeries_ = other.timeSeries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTimeSeriesIsMutable();
             timeSeries_.addAll(other.timeSeries_);
@@ -555,7 +573,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
             timeSeriesBuilder_.dispose();
             timeSeriesBuilder_ = null;
             timeSeries_ = other.timeSeries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             timeSeriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTimeSeriesFieldBuilder()
@@ -607,7 +625,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
             case 26:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -702,8 +720,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -749,8 +767,8 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -759,9 +777,9 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
         java.util.Collections.emptyList();
 
     private void ensureTimeSeriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         timeSeries_ = new java.util.ArrayList<com.google.monitoring.v3.TimeSeries>(timeSeries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1053,7 +1071,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
     public Builder clearTimeSeries() {
       if (timeSeriesBuilder_ == null) {
         timeSeries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         timeSeriesBuilder_.clear();
@@ -1223,7 +1241,7 @@ public final class CreateTimeSeriesRequest extends com.google.protobuf.Generated
                 com.google.monitoring.v3.TimeSeries,
                 com.google.monitoring.v3.TimeSeries.Builder,
                 com.google.monitoring.v3.TimeSeriesOrBuilder>(
-                timeSeries_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                timeSeries_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         timeSeries_ = null;
       }
       return timeSeriesBuilder_;

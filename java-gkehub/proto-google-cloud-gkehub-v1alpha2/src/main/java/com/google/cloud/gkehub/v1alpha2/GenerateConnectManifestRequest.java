@@ -76,7 +76,9 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,9 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int NAMESPACE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object namespace_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object namespace_ = "";
   /**
    *
    *
@@ -182,7 +186,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int PROXY_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString proxy_;
+  private com.google.protobuf.ByteString proxy_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -204,7 +208,9 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object version_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    *
    *
@@ -253,7 +259,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int IS_UPGRADE_FIELD_NUMBER = 5;
-  private boolean isUpgrade_;
+  private boolean isUpgrade_ = false;
   /**
    *
    *
@@ -272,7 +278,9 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int REGISTRY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object registry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object registry_ = "";
   /**
    *
    *
@@ -323,7 +331,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
   }
 
   public static final int IMAGE_PULL_SECRET_CONTENT_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString imagePullSecretContent_;
+  private com.google.protobuf.ByteString imagePullSecretContent_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -594,20 +603,14 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       namespace_ = "";
-
       proxy_ = com.google.protobuf.ByteString.EMPTY;
-
       version_ = "";
-
       isUpgrade_ = false;
-
       registry_ = "";
-
       imagePullSecretContent_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -636,15 +639,37 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     public com.google.cloud.gkehub.v1alpha2.GenerateConnectManifestRequest buildPartial() {
       com.google.cloud.gkehub.v1alpha2.GenerateConnectManifestRequest result =
           new com.google.cloud.gkehub.v1alpha2.GenerateConnectManifestRequest(this);
-      result.name_ = name_;
-      result.namespace_ = namespace_;
-      result.proxy_ = proxy_;
-      result.version_ = version_;
-      result.isUpgrade_ = isUpgrade_;
-      result.registry_ = registry_;
-      result.imagePullSecretContent_ = imagePullSecretContent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.v1alpha2.GenerateConnectManifestRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.namespace_ = namespace_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.proxy_ = proxy_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.isUpgrade_ = isUpgrade_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.registry_ = registry_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.imagePullSecretContent_ = imagePullSecretContent_;
+      }
     }
 
     @java.lang.Override
@@ -697,10 +722,12 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNamespace().isEmpty()) {
         namespace_ = other.namespace_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getProxy() != com.google.protobuf.ByteString.EMPTY) {
@@ -708,6 +735,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       }
       if (!other.getVersion().isEmpty()) {
         version_ = other.version_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getIsUpgrade() != false) {
@@ -715,6 +743,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       }
       if (!other.getRegistry().isEmpty()) {
         registry_ = other.registry_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getImagePullSecretContent() != com.google.protobuf.ByteString.EMPTY) {
@@ -749,43 +778,43 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 namespace_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 proxy_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 version_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 isUpgrade_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 registry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 imagePullSecretContent_ = input.readBytes();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -804,6 +833,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -869,8 +900,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -887,8 +918,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -910,8 +941,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -986,8 +1017,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1006,8 +1037,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearNamespace() {
-
       namespace_ = getDefaultInstance().getNamespace();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1031,8 +1062,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       namespace_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1077,8 +1108,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       proxy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1098,7 +1129,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearProxy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       proxy_ = getDefaultInstance().getProxy();
       onChanged();
       return this;
@@ -1165,8 +1196,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1182,8 +1213,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1204,8 +1235,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       version_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1243,6 +1274,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
     public Builder setIsUpgrade(boolean value) {
 
       isUpgrade_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1259,7 +1291,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearIsUpgrade() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       isUpgrade_ = false;
       onChanged();
       return this;
@@ -1329,8 +1361,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       registry_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1347,8 +1379,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearRegistry() {
-
       registry_ = getDefaultInstance().getRegistry();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1370,8 +1402,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       registry_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1409,8 +1441,8 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       imagePullSecretContent_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1426,7 +1458,7 @@ public final class GenerateConnectManifestRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearImagePullSecretContent() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       imagePullSecretContent_ = getDefaultInstance().getImagePullSecretContent();
       onChanged();
       return this;

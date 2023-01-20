@@ -73,7 +73,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int IMPORTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object importer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object importer_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SYNCER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object syncer_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object syncer_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int GIT_SYNC_FIELD_NUMBER = 3;
-  private volatile java.lang.Object gitSync_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gitSync_ = "";
   /**
    *
    *
@@ -220,7 +226,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MONITOR_FIELD_NUMBER = 4;
-  private volatile java.lang.Object monitor_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object monitor_ = "";
   /**
    *
    *
@@ -269,7 +277,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int RECONCILER_MANAGER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object reconcilerManager_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reconcilerManager_ = "";
   /**
    *
    *
@@ -318,7 +328,9 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROOT_RECONCILER_FIELD_NUMBER = 6;
-  private volatile java.lang.Object rootReconciler_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rootReconciler_ = "";
   /**
    *
    *
@@ -611,18 +623,13 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       importer_ = "";
-
       syncer_ = "";
-
       gitSync_ = "";
-
       monitor_ = "";
-
       reconcilerManager_ = "";
-
       rootReconciler_ = "";
-
       return this;
     }
 
@@ -651,14 +658,34 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion result =
           new com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion(this);
-      result.importer_ = importer_;
-      result.syncer_ = syncer_;
-      result.gitSync_ = gitSync_;
-      result.monitor_ = monitor_;
-      result.reconcilerManager_ = reconcilerManager_;
-      result.rootReconciler_ = rootReconciler_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.ConfigSyncVersion result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.importer_ = importer_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.syncer_ = syncer_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.gitSync_ = gitSync_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.monitor_ = monitor_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.reconcilerManager_ = reconcilerManager_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.rootReconciler_ = rootReconciler_;
+      }
     }
 
     @java.lang.Override
@@ -711,26 +738,32 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getImporter().isEmpty()) {
         importer_ = other.importer_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSyncer().isEmpty()) {
         syncer_ = other.syncer_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getGitSync().isEmpty()) {
         gitSync_ = other.gitSync_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMonitor().isEmpty()) {
         monitor_ = other.monitor_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getReconcilerManager().isEmpty()) {
         reconcilerManager_ = other.reconcilerManager_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getRootReconciler().isEmpty()) {
         rootReconciler_ = other.rootReconciler_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -762,37 +795,37 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 importer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 syncer_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 gitSync_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 monitor_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 reconcilerManager_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 rootReconciler_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -811,6 +844,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object importer_ = "";
     /**
@@ -873,8 +908,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       importer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -890,8 +925,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearImporter() {
-
       importer_ = getDefaultInstance().getImporter();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -912,8 +947,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       importer_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -979,8 +1014,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       syncer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -996,8 +1031,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSyncer() {
-
       syncer_ = getDefaultInstance().getSyncer();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1018,8 +1053,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       syncer_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1085,8 +1120,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       gitSync_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1102,8 +1137,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearGitSync() {
-
       gitSync_ = getDefaultInstance().getGitSync();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1124,8 +1159,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gitSync_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1191,8 +1226,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       monitor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1208,8 +1243,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearMonitor() {
-
       monitor_ = getDefaultInstance().getMonitor();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1230,8 +1265,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       monitor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1297,8 +1332,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       reconcilerManager_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1314,8 +1349,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReconcilerManager() {
-
       reconcilerManager_ = getDefaultInstance().getReconcilerManager();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1336,8 +1371,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reconcilerManager_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1403,8 +1438,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       rootReconciler_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1420,8 +1455,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRootReconciler() {
-
       rootReconciler_ = getDefaultInstance().getRootReconciler();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1442,8 +1477,8 @@ public final class ConfigSyncVersion extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       rootReconciler_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

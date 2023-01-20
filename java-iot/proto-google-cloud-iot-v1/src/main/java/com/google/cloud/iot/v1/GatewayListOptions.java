@@ -166,9 +166,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
    */
   public com.google.cloud.iot.v1.GatewayType getGatewayType() {
     if (filterCase_ == 1) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.iot.v1.GatewayType result =
-          com.google.cloud.iot.v1.GatewayType.valueOf((java.lang.Integer) filter_);
+          com.google.cloud.iot.v1.GatewayType.forNumber((java.lang.Integer) filter_);
       return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
     }
     return com.google.cloud.iot.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED;
@@ -569,6 +568,7 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -598,18 +598,21 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.iot.v1.GatewayListOptions buildPartial() {
       com.google.cloud.iot.v1.GatewayListOptions result =
           new com.google.cloud.iot.v1.GatewayListOptions(this);
-      if (filterCase_ == 1) {
-        result.filter_ = filter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (filterCase_ == 2) {
-        result.filter_ = filter_;
-      }
-      if (filterCase_ == 3) {
-        result.filter_ = filter_;
-      }
-      result.filterCase_ = filterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.GatewayListOptions result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.iot.v1.GatewayListOptions result) {
+      result.filterCase_ = filterCase_;
+      result.filter_ = this.filter_;
     }
 
     @java.lang.Override
@@ -760,6 +763,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -833,9 +838,8 @@ public final class GatewayListOptions extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
       if (filterCase_ == 1) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.iot.v1.GatewayType result =
-            com.google.cloud.iot.v1.GatewayType.valueOf((java.lang.Integer) filter_);
+            com.google.cloud.iot.v1.GatewayType.forNumber((java.lang.Integer) filter_);
         return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
       }
       return com.google.cloud.iot.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED;

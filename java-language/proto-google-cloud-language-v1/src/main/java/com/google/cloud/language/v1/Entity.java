@@ -515,7 +515,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -564,7 +566,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -593,9 +595,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.Entity.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1.Entity.Type result =
-        com.google.cloud.language.v1.Entity.Type.valueOf(type_);
+        com.google.cloud.language.v1.Entity.Type.forNumber(type_);
     return result == null ? com.google.cloud.language.v1.Entity.Type.UNRECOGNIZED : result;
   }
 
@@ -612,6 +613,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -678,8 +680,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -711,7 +715,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SALIENCE_FIELD_NUMBER = 4;
-  private float salience_;
+  private float salience_ = 0F;
   /**
    *
    *
@@ -733,6 +737,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MENTIONS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.EntityMention> mentions_;
   /**
    *
@@ -860,7 +866,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getSentimentOrBuilder() {
-    return getSentiment();
+    return sentiment_ == null
+        ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
+        : sentiment_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1141,24 +1149,21 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       type_ = 0;
-
       internalGetMutableMetadata().clear();
       salience_ = 0F;
-
       if (mentionsBuilder_ == null) {
         mentions_ = java.util.Collections.emptyList();
       } else {
         mentions_ = null;
         mentionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-      } else {
-        sentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
       return this;
@@ -1187,28 +1192,44 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.language.v1.Entity buildPartial() {
       com.google.cloud.language.v1.Entity result = new com.google.cloud.language.v1.Entity(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.type_ = type_;
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      result.salience_ = salience_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.language.v1.Entity result) {
       if (mentionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           mentions_ = java.util.Collections.unmodifiableList(mentions_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.mentions_ = mentions_;
       } else {
         result.mentions_ = mentionsBuilder_.build();
       }
-      if (sentimentBuilder_ == null) {
-        result.sentiment_ = sentiment_;
-      } else {
-        result.sentiment_ = sentimentBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.Entity result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.salience_ = salience_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sentiment_ = sentimentBuilder_ == null ? sentiment_ : sentimentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1258,12 +1279,14 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.language.v1.Entity.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       if (other.getSalience() != 0F) {
         setSalience(other.getSalience());
       }
@@ -1271,7 +1294,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         if (!other.mentions_.isEmpty()) {
           if (mentions_.isEmpty()) {
             mentions_ = other.mentions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureMentionsIsMutable();
             mentions_.addAll(other.mentions_);
@@ -1284,7 +1307,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             mentionsBuilder_.dispose();
             mentionsBuilder_ = null;
             mentions_ = other.mentions_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
             mentionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMentionsFieldBuilder()
@@ -1326,13 +1349,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
@@ -1344,12 +1367,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 salience_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             case 42:
@@ -1368,7 +1392,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -1451,8 +1475,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1468,8 +1492,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1490,8 +1514,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1525,8 +1549,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1543,9 +1567,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.language.v1.Entity.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1.Entity.Type result =
-          com.google.cloud.language.v1.Entity.Type.valueOf(type_);
+          com.google.cloud.language.v1.Entity.Type.forNumber(type_);
       return result == null ? com.google.cloud.language.v1.Entity.Type.UNRECOGNIZED : result;
     }
     /**
@@ -1564,7 +1587,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -1581,7 +1604,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;
@@ -1598,8 +1621,6 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1607,6 +1628,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return metadata_;
     }
 
@@ -1667,8 +1690,10 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1700,6 +1725,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1725,6 +1751,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1746,8 +1773,8 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1764,6 +1791,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1806,6 +1834,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setSalience(float value) {
 
       salience_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1825,7 +1854,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSalience() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       salience_ = 0F;
       onChanged();
       return this;
@@ -1835,9 +1864,9 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureMentionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         mentions_ = new java.util.ArrayList<com.google.cloud.language.v1.EntityMention>(mentions_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000010;
       }
     }
 
@@ -2063,7 +2092,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder clearMentions() {
       if (mentionsBuilder_ == null) {
         mentions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
       } else {
         mentionsBuilder_.clear();
@@ -2192,7 +2221,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.language.v1.EntityMention,
                 com.google.cloud.language.v1.EntityMention.Builder,
                 com.google.cloud.language.v1.EntityMentionOrBuilder>(
-                mentions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                mentions_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
         mentions_ = null;
       }
       return mentionsBuilder_;
@@ -2219,7 +2248,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sentiment field is set.
      */
     public boolean hasSentiment() {
-      return sentimentBuilder_ != null || sentiment_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2262,11 +2291,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sentiment_ = value;
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2284,11 +2313,11 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
     public Builder setSentiment(com.google.cloud.language.v1.Sentiment.Builder builderForValue) {
       if (sentimentBuilder_ == null) {
         sentiment_ = builderForValue.build();
-        onChanged();
       } else {
         sentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2305,19 +2334,18 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSentiment(com.google.cloud.language.v1.Sentiment value) {
       if (sentimentBuilder_ == null) {
-        if (sentiment_ != null) {
-          sentiment_ =
-              com.google.cloud.language.v1.Sentiment.newBuilder(sentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && sentiment_ != null
+            && sentiment_ != com.google.cloud.language.v1.Sentiment.getDefaultInstance()) {
+          getSentimentBuilder().mergeFrom(value);
         } else {
           sentiment_ = value;
         }
-        onChanged();
       } else {
         sentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2333,14 +2361,13 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
      */
     public Builder clearSentiment() {
-      if (sentimentBuilder_ == null) {
-        sentiment_ = null;
-        onChanged();
-      } else {
-        sentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      sentiment_ = null;
+      if (sentimentBuilder_ != null) {
+        sentimentBuilder_.dispose();
         sentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2356,7 +2383,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.language.v1.Sentiment sentiment = 6;</code>
      */
     public com.google.cloud.language.v1.Sentiment.Builder getSentimentBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }

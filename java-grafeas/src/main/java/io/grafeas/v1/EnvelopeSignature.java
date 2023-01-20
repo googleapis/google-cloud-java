@@ -59,7 +59,7 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SIG_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString sig_;
+  private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
   /**
    * <code>bytes sig = 1;</code>
    *
@@ -71,7 +71,9 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KEYID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object keyid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyid_ = "";
   /**
    * <code>string keyid = 2;</code>
    *
@@ -300,10 +302,9 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sig_ = com.google.protobuf.ByteString.EMPTY;
-
       keyid_ = "";
-
       return this;
     }
 
@@ -329,10 +330,21 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public io.grafeas.v1.EnvelopeSignature buildPartial() {
       io.grafeas.v1.EnvelopeSignature result = new io.grafeas.v1.EnvelopeSignature(this);
-      result.sig_ = sig_;
-      result.keyid_ = keyid_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.EnvelopeSignature result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sig_ = sig_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.keyid_ = keyid_;
+      }
     }
 
     @java.lang.Override
@@ -385,6 +397,7 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getKeyid().isEmpty()) {
         keyid_ = other.keyid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -416,13 +429,13 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 sig_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 keyid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -441,6 +454,8 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString sig_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -462,8 +477,8 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       sig_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -473,7 +488,7 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSig() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sig_ = getDefaultInstance().getSig();
       onChanged();
       return this;
@@ -522,8 +537,8 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -533,8 +548,8 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKeyid() {
-
       keyid_ = getDefaultInstance().getKeyid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -549,8 +564,8 @@ public final class EnvelopeSignature extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

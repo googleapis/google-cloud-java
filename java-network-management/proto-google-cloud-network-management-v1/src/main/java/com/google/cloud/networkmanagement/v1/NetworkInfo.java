@@ -70,7 +70,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MATCHED_IP_RANGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object matchedIpRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchedIpRange_ = "";
   /**
    *
    *
@@ -431,12 +437,10 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       uri_ = "";
-
       matchedIpRange_ = "";
-
       return this;
     }
 
@@ -464,11 +468,24 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.NetworkInfo buildPartial() {
       com.google.cloud.networkmanagement.v1.NetworkInfo result =
           new com.google.cloud.networkmanagement.v1.NetworkInfo(this);
-      result.displayName_ = displayName_;
-      result.uri_ = uri_;
-      result.matchedIpRange_ = matchedIpRange_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1.NetworkInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.matchedIpRange_ = matchedIpRange_;
+      }
     }
 
     @java.lang.Override
@@ -519,14 +536,17 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMatchedIpRange().isEmpty()) {
         matchedIpRange_ = other.matchedIpRange_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -558,19 +578,19 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 matchedIpRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -589,6 +609,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -651,8 +673,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +690,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -690,8 +712,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -757,8 +779,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,8 +796,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +818,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -863,8 +885,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       matchedIpRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -880,8 +902,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMatchedIpRange() {
-
       matchedIpRange_ = getDefaultInstance().getMatchedIpRange();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -902,8 +924,8 @@ public final class NetworkInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       matchedIpRange_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

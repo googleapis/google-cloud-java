@@ -71,7 +71,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -134,7 +136,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -152,7 +154,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
   }
 
   public static final int FLEET_MEMBERSHIP_FIELD_NUMBER = 3;
-  private volatile java.lang.Object fleetMembership_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fleetMembership_ = "";
   /**
    *
    *
@@ -201,7 +205,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
   }
 
   public static final int PLATFORM_VERSION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object platformVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object platformVersion_ = "";
   /**
    *
    *
@@ -256,7 +262,9 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
   }
 
   public static final int DISTRIBUTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object distribution_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object distribution_ = "";
   /**
    *
    *
@@ -540,16 +548,12 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       validateOnly_ = false;
-
       fleetMembership_ = "";
-
       platformVersion_ = "";
-
       distribution_ = "";
-
       return this;
     }
 
@@ -578,13 +582,31 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     public com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest result =
           new com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest(this);
-      result.parent_ = parent_;
-      result.validateOnly_ = validateOnly_;
-      result.fleetMembership_ = fleetMembership_;
-      result.platformVersion_ = platformVersion_;
-      result.distribution_ = distribution_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fleetMembership_ = fleetMembership_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.platformVersion_ = platformVersion_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.distribution_ = distribution_;
+      }
     }
 
     @java.lang.Override
@@ -636,6 +658,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -643,14 +666,17 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       }
       if (!other.getFleetMembership().isEmpty()) {
         fleetMembership_ = other.fleetMembership_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getPlatformVersion().isEmpty()) {
         platformVersion_ = other.platformVersion_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDistribution().isEmpty()) {
         distribution_ = other.distribution_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -682,31 +708,31 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 fleetMembership_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 platformVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 distribution_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -725,6 +751,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -808,8 +836,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -832,8 +860,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -861,8 +889,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -898,6 +926,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -913,7 +942,7 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -980,8 +1009,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       fleetMembership_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -997,8 +1026,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearFleetMembership() {
-
       fleetMembership_ = getDefaultInstance().getFleetMembership();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1019,8 +1048,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fleetMembership_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1095,8 +1124,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1115,8 +1144,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearPlatformVersion() {
-
       platformVersion_ = getDefaultInstance().getPlatformVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1140,8 +1169,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       platformVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1210,8 +1239,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       distribution_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1228,8 +1257,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearDistribution() {
-
       distribution_ = getDefaultInstance().getDistribution();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1251,8 +1280,8 @@ public final class ImportAttachedClusterRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       distribution_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

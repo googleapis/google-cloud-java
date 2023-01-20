@@ -62,7 +62,9 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int DELEGATES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList delegates_;
   /**
    *
@@ -214,7 +218,9 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int AUDIENCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object audience_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object audience_ = "";
   /**
    *
    *
@@ -265,7 +271,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int INCLUDE_EMAIL_FIELD_NUMBER = 4;
-  private boolean includeEmail_;
+  private boolean includeEmail_ = false;
   /**
    *
    *
@@ -507,14 +513,12 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       audience_ = "";
-
       includeEmail_ = false;
-
       return this;
     }
 
@@ -542,17 +546,34 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest buildPartial() {
       com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.delegates_ = delegates_;
-      result.audience_ = audience_;
-      result.includeEmail_ = includeEmail_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        delegates_ = delegates_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.delegates_ = delegates_;
+    }
+
+    private void buildPartial0(com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.audience_ = audience_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.includeEmail_ = includeEmail_;
+      }
     }
 
     @java.lang.Override
@@ -603,12 +624,13 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -617,6 +639,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getAudience().isEmpty()) {
         audience_ = other.audience_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getIncludeEmail() != false) {
@@ -651,7 +674,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -664,13 +687,13 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
             case 26:
               {
                 audience_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 includeEmail_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -768,8 +791,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -790,8 +813,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -817,8 +840,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,9 +850,9 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1028,7 +1051,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1127,8 +1150,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       audience_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1145,8 +1168,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAudience() {
-
       audience_ = getDefaultInstance().getAudience();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1168,8 +1191,8 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       audience_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1207,6 +1230,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
     public Builder setIncludeEmail(boolean value) {
 
       includeEmail_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1223,7 +1247,7 @@ public final class GenerateIdTokenRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearIncludeEmail() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       includeEmail_ = false;
       onChanged();
       return this;

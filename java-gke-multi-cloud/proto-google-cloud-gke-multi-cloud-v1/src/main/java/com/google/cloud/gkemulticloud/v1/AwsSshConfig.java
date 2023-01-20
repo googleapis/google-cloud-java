@@ -68,7 +68,9 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EC2_KEY_PAIR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ec2KeyPair_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ec2KeyPair_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ec2KeyPair_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AwsSshConfig buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsSshConfig result =
           new com.google.cloud.gkemulticloud.v1.AwsSshConfig(this);
-      result.ec2KeyPair_ = ec2KeyPair_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsSshConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ec2KeyPair_ = ec2KeyPair_;
+      }
     }
 
     @java.lang.Override
@@ -394,6 +405,7 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkemulticloud.v1.AwsSshConfig.getDefaultInstance()) return this;
       if (!other.getEc2KeyPair().isEmpty()) {
         ec2KeyPair_ = other.ec2KeyPair_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -425,7 +437,7 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 ec2KeyPair_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -444,6 +456,8 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ec2KeyPair_ = "";
     /**
@@ -506,8 +520,8 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ec2KeyPair_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -523,8 +537,8 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEc2KeyPair() {
-
       ec2KeyPair_ = getDefaultInstance().getEc2KeyPair();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -545,8 +559,8 @@ public final class AwsSshConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ec2KeyPair_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

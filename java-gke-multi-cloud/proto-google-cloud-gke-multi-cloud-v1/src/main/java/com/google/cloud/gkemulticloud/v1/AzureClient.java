@@ -91,7 +91,9 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -148,7 +150,9 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TENANT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object tenantId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tenantId_ = "";
   /**
    *
    *
@@ -197,7 +201,9 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int APPLICATION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object applicationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applicationId_ = "";
   /**
    *
    *
@@ -258,6 +264,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -340,8 +347,10 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -378,7 +387,9 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PEM_CERTIFICATE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object pemCertificate_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pemCertificate_ = "";
   /**
    *
    *
@@ -427,7 +438,9 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 5;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -521,7 +534,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -816,21 +829,16 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       tenantId_ = "";
-
       applicationId_ = "";
-
       internalGetMutableAnnotations().clear();
       pemCertificate_ = "";
-
       uid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       return this;
@@ -860,21 +868,37 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkemulticloud.v1.AzureClient buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureClient result =
           new com.google.cloud.gkemulticloud.v1.AzureClient(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.tenantId_ = tenantId_;
-      result.applicationId_ = applicationId_;
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
-      result.pemCertificate_ = pemCertificate_;
-      result.uid_ = uid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureClient result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tenantId_ = tenantId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.applicationId_ = applicationId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.pemCertificate_ = pemCertificate_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -924,23 +948,29 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkemulticloud.v1.AzureClient.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTenantId().isEmpty()) {
         tenantId_ = other.tenantId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getApplicationId().isEmpty()) {
         applicationId_ = other.applicationId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00000008;
       if (!other.getPemCertificate().isEmpty()) {
         pemCertificate_ = other.pemCertificate_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -975,37 +1005,37 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 tenantId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 applicationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 pemCertificate_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 66:
@@ -1017,6 +1047,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 66
             default:
@@ -1111,8 +1142,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1132,8 +1163,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1158,8 +1189,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1225,8 +1256,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       tenantId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1242,8 +1273,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTenantId() {
-
       tenantId_ = getDefaultInstance().getTenantId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1264,8 +1295,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tenantId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1331,8 +1362,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       applicationId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1348,8 +1379,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearApplicationId() {
-
       applicationId_ = getDefaultInstance().getApplicationId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1370,8 +1401,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       applicationId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1389,8 +1420,6 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1398,6 +1427,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return annotations_;
     }
 
@@ -1473,8 +1504,10 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1511,6 +1544,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -1541,6 +1575,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1567,8 +1602,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1590,6 +1625,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1654,8 +1690,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pemCertificate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1671,8 +1707,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPemCertificate() {
-
       pemCertificate_ = getDefaultInstance().getPemCertificate();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1693,8 +1729,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pemCertificate_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1760,8 +1796,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1777,8 +1813,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1799,8 +1835,8 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1825,7 +1861,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1866,11 +1902,11 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1887,11 +1923,11 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1907,17 +1943,18 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1932,14 +1969,13 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1954,7 +1990,7 @@ public final class AzureClient extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }

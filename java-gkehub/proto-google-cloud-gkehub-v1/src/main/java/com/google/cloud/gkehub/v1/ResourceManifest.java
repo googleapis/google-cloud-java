@@ -69,7 +69,9 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MANIFEST_FIELD_NUMBER = 1;
-  private volatile java.lang.Object manifest_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object manifest_ = "";
   /**
    *
    *
@@ -118,7 +120,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CLUSTER_SCOPED_FIELD_NUMBER = 2;
-  private boolean clusterScoped_;
+  private boolean clusterScoped_ = false;
   /**
    *
    *
@@ -345,10 +347,9 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       manifest_ = "";
-
       clusterScoped_ = false;
-
       return this;
     }
 
@@ -376,10 +377,21 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkehub.v1.ResourceManifest buildPartial() {
       com.google.cloud.gkehub.v1.ResourceManifest result =
           new com.google.cloud.gkehub.v1.ResourceManifest(this);
-      result.manifest_ = manifest_;
-      result.clusterScoped_ = clusterScoped_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.ResourceManifest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.manifest_ = manifest_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterScoped_ = clusterScoped_;
+      }
     }
 
     @java.lang.Override
@@ -429,6 +441,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.gkehub.v1.ResourceManifest.getDefaultInstance()) return this;
       if (!other.getManifest().isEmpty()) {
         manifest_ = other.manifest_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getClusterScoped() != false) {
@@ -463,13 +476,13 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 manifest_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 clusterScoped_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -488,6 +501,8 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object manifest_ = "";
     /**
@@ -550,8 +565,8 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       manifest_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +582,8 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearManifest() {
-
       manifest_ = getDefaultInstance().getManifest();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -589,8 +604,8 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       manifest_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -632,6 +647,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
     public Builder setClusterScoped(boolean value) {
 
       clusterScoped_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -650,7 +666,7 @@ public final class ResourceManifest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearClusterScoped() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       clusterScoped_ = false;
       onChanged();
       return this;

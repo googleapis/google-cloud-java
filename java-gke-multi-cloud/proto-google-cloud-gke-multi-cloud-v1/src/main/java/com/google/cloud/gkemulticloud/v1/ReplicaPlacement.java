@@ -69,7 +69,9 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBNET_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object subnetId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subnetId_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AZURE_AVAILABILITY_ZONE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object azureAvailabilityZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object azureAvailabilityZone_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subnetId_ = "";
-
       azureAvailabilityZone_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkemulticloud.v1.ReplicaPlacement buildPartial() {
       com.google.cloud.gkemulticloud.v1.ReplicaPlacement result =
           new com.google.cloud.gkemulticloud.v1.ReplicaPlacement(this);
-      result.subnetId_ = subnetId_;
-      result.azureAvailabilityZone_ = azureAvailabilityZone_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.ReplicaPlacement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subnetId_ = subnetId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.azureAvailabilityZone_ = azureAvailabilityZone_;
+      }
     }
 
     @java.lang.Override
@@ -463,10 +477,12 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getSubnetId().isEmpty()) {
         subnetId_ = other.subnetId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAzureAvailabilityZone().isEmpty()) {
         azureAvailabilityZone_ = other.azureAvailabilityZone_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -498,13 +514,13 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 subnetId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 azureAvailabilityZone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -523,6 +539,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subnetId_ = "";
     /**
@@ -591,8 +609,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       subnetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -610,8 +628,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubnetId() {
-
       subnetId_ = getDefaultInstance().getSubnetId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -634,8 +652,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subnetId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -704,8 +722,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       azureAvailabilityZone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,8 +740,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAzureAvailabilityZone() {
-
       azureAvailabilityZone_ = getDefaultInstance().getAzureAvailabilityZone();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -745,8 +763,8 @@ public final class ReplicaPlacement extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       azureAvailabilityZone_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

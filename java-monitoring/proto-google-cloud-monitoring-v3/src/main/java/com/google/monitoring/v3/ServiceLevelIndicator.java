@@ -534,6 +534,7 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (basicSliBuilder_ != null) {
         basicSliBuilder_.clear();
       }
@@ -572,30 +573,30 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.ServiceLevelIndicator buildPartial() {
       com.google.monitoring.v3.ServiceLevelIndicator result =
           new com.google.monitoring.v3.ServiceLevelIndicator(this);
-      if (typeCase_ == 4) {
-        if (basicSliBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = basicSliBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (typeCase_ == 1) {
-        if (requestBasedBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = requestBasedBuilder_.build();
-        }
-      }
-      if (typeCase_ == 2) {
-        if (windowsBasedBuilder_ == null) {
-          result.type_ = type_;
-        } else {
-          result.type_ = windowsBasedBuilder_.build();
-        }
-      }
-      result.typeCase_ = typeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ServiceLevelIndicator result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.ServiceLevelIndicator result) {
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 4 && basicSliBuilder_ != null) {
+        result.type_ = basicSliBuilder_.build();
+      }
+      if (typeCase_ == 1 && requestBasedBuilder_ != null) {
+        result.type_ = requestBasedBuilder_.build();
+      }
+      if (typeCase_ == 2 && windowsBasedBuilder_ != null) {
+        result.type_ = windowsBasedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -738,6 +739,8 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.monitoring.v3.BasicSli,
@@ -941,7 +944,6 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       typeCase_ = 4;
       onChanged();
-      ;
       return basicSliBuilder_;
     }
 
@@ -1151,7 +1153,6 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       typeCase_ = 1;
       onChanged();
-      ;
       return requestBasedBuilder_;
     }
 
@@ -1361,7 +1362,6 @@ public final class ServiceLevelIndicator extends com.google.protobuf.GeneratedMe
       }
       typeCase_ = 2;
       onChanged();
-      ;
       return windowsBasedBuilder_;
     }
 

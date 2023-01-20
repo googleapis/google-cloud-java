@@ -68,6 +68,8 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SHOWN_COLUMNS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList shownColumns_;
   /**
    *
@@ -357,6 +359,7 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       shownColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -386,14 +389,25 @@ public final class TableDisplayOptions extends com.google.protobuf.GeneratedMess
     public com.google.monitoring.dashboard.v1.TableDisplayOptions buildPartial() {
       com.google.monitoring.dashboard.v1.TableDisplayOptions result =
           new com.google.monitoring.dashboard.v1.TableDisplayOptions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.monitoring.dashboard.v1.TableDisplayOptions result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         shownColumns_ = shownColumns_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.shownColumns_ = shownColumns_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.TableDisplayOptions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

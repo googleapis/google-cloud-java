@@ -68,7 +68,9 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object message_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    *
    *
@@ -313,8 +315,8 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       message_ = "";
-
       return this;
     }
 
@@ -342,9 +344,18 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkemulticloud.v1.AwsNodePoolError buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsNodePoolError result =
           new com.google.cloud.gkemulticloud.v1.AwsNodePoolError(this);
-      result.message_ = message_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsNodePoolError result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -395,6 +406,7 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -426,7 +438,7 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 message_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -445,6 +457,8 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object message_ = "";
     /**
@@ -507,8 +521,8 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -524,8 +538,8 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -546,8 +560,8 @@ public final class AwsNodePoolError extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       message_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int SERVICE_IDENTITY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object serviceIdentity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceIdentity_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int WORKLOAD_IDENTITY_POOL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object workloadIdentityPool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workloadIdentityPool_ = "";
   /**
    *
    *
@@ -379,10 +383,9 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       serviceIdentity_ = "";
-
       workloadIdentityPool_ = "";
-
       return this;
     }
 
@@ -410,10 +413,21 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.gkehub.v1alpha2.InitializeHubResponse buildPartial() {
       com.google.cloud.gkehub.v1alpha2.InitializeHubResponse result =
           new com.google.cloud.gkehub.v1alpha2.InitializeHubResponse(this);
-      result.serviceIdentity_ = serviceIdentity_;
-      result.workloadIdentityPool_ = workloadIdentityPool_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha2.InitializeHubResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.serviceIdentity_ = serviceIdentity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.workloadIdentityPool_ = workloadIdentityPool_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +478,12 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getServiceIdentity().isEmpty()) {
         serviceIdentity_ = other.serviceIdentity_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getWorkloadIdentityPool().isEmpty()) {
         workloadIdentityPool_ = other.workloadIdentityPool_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +515,13 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 serviceIdentity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 workloadIdentityPool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +540,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object serviceIdentity_ = "";
     /**
@@ -592,8 +610,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       serviceIdentity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +629,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearServiceIdentity() {
-
       serviceIdentity_ = getDefaultInstance().getServiceIdentity();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +653,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       serviceIdentity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearWorkloadIdentityPool() {
-
       workloadIdentityPool_ = getDefaultInstance().getWorkloadIdentityPool();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -746,8 +764,8 @@ public final class InitializeHubResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       workloadIdentityPool_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

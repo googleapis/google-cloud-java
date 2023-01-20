@@ -69,7 +69,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
   }
 
   public static final int SUBFOLDER_MATCHES_FIELD_NUMBER = 2;
-  private volatile java.lang.Object subfolderMatches_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subfolderMatches_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
   }
 
   public static final int PUBSUB_TOPIC_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pubsubTopicName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubsubTopicName_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       subfolderMatches_ = "";
-
       pubsubTopicName_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
     public com.google.cloud.iot.v1.EventNotificationConfig buildPartial() {
       com.google.cloud.iot.v1.EventNotificationConfig result =
           new com.google.cloud.iot.v1.EventNotificationConfig(this);
-      result.subfolderMatches_ = subfolderMatches_;
-      result.pubsubTopicName_ = pubsubTopicName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.iot.v1.EventNotificationConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subfolderMatches_ = subfolderMatches_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pubsubTopicName_ = pubsubTopicName_;
+      }
     }
 
     @java.lang.Override
@@ -465,10 +479,12 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
         return this;
       if (!other.getSubfolderMatches().isEmpty()) {
         subfolderMatches_ = other.subfolderMatches_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPubsubTopicName().isEmpty()) {
         pubsubTopicName_ = other.pubsubTopicName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -500,13 +516,13 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
             case 10:
               {
                 pubsubTopicName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 subfolderMatches_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -525,6 +541,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object subfolderMatches_ = "";
     /**
@@ -596,8 +614,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       subfolderMatches_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -616,8 +634,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSubfolderMatches() {
-
       subfolderMatches_ = getDefaultInstance().getSubfolderMatches();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -641,8 +659,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       subfolderMatches_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +729,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubsubTopicName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -729,8 +747,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPubsubTopicName() {
-
       pubsubTopicName_ = getDefaultInstance().getPubsubTopicName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -752,8 +770,8 @@ public final class EventNotificationConfig extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubsubTopicName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

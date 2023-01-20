@@ -439,7 +439,6 @@ public interface AzureControlPlaneOrBuilder
    *
    * <code>map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getTagsOrDefault(
       java.lang.String key,

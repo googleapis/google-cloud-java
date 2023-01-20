@@ -159,7 +159,6 @@ public interface AzureNodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; tags = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getTagsOrDefault(
       java.lang.String key,
@@ -446,7 +445,6 @@ public interface AzureNodeConfigOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

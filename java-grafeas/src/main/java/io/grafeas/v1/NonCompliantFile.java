@@ -68,7 +68,9 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    *
    *
@@ -117,7 +119,9 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DISPLAY_COMMAND_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayCommand_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayCommand_ = "";
   /**
    *
    *
@@ -166,7 +170,9 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REASON_FIELD_NUMBER = 3;
-  private volatile java.lang.Object reason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reason_ = "";
   /**
    *
    *
@@ -424,12 +430,10 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       displayCommand_ = "";
-
       reason_ = "";
-
       return this;
     }
 
@@ -455,11 +459,24 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public io.grafeas.v1.NonCompliantFile buildPartial() {
       io.grafeas.v1.NonCompliantFile result = new io.grafeas.v1.NonCompliantFile(this);
-      result.path_ = path_;
-      result.displayCommand_ = displayCommand_;
-      result.reason_ = reason_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.NonCompliantFile result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayCommand_ = displayCommand_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reason_ = reason_;
+      }
     }
 
     @java.lang.Override
@@ -509,14 +526,17 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
       if (other == io.grafeas.v1.NonCompliantFile.getDefaultInstance()) return this;
       if (!other.getPath().isEmpty()) {
         path_ = other.path_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayCommand().isEmpty()) {
         displayCommand_ = other.displayCommand_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -548,19 +568,19 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 path_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayCommand_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 reason_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -579,6 +599,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object path_ = "";
     /**
@@ -641,8 +663,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -658,8 +680,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -680,8 +702,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -747,8 +769,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayCommand_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -764,8 +786,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisplayCommand() {
-
       displayCommand_ = getDefaultInstance().getDisplayCommand();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -786,8 +808,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayCommand_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,8 +875,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       reason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -870,8 +892,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-
       reason_ = getDefaultInstance().getReason();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -892,8 +914,8 @@ public final class NonCompliantFile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       reason_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

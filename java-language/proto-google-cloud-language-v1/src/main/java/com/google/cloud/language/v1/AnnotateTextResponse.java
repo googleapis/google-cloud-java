@@ -72,6 +72,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SENTENCES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.Sentence> sentences_;
   /**
    *
@@ -146,6 +148,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TOKENS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.Token> tokens_;
   /**
    *
@@ -225,6 +229,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int ENTITIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.Entity> entities_;
   /**
    *
@@ -351,11 +357,15 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.language.v1.SentimentOrBuilder getDocumentSentimentOrBuilder() {
-    return getDocumentSentiment();
+    return documentSentiment_ == null
+        ? com.google.cloud.language.v1.Sentiment.getDefaultInstance()
+        : documentSentiment_;
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -408,6 +418,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CATEGORIES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1.ClassificationCategory> categories_;
   /**
    *
@@ -732,6 +744,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (sentencesBuilder_ == null) {
         sentences_ = java.util.Collections.emptyList();
       } else {
@@ -753,21 +766,19 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         entitiesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (documentSentimentBuilder_ == null) {
-        documentSentiment_ = null;
-      } else {
-        documentSentiment_ = null;
+      documentSentiment_ = null;
+      if (documentSentimentBuilder_ != null) {
+        documentSentimentBuilder_.dispose();
         documentSentimentBuilder_ = null;
       }
       language_ = "";
-
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
       } else {
         categories_ = null;
         categoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -795,7 +806,16 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public com.google.cloud.language.v1.AnnotateTextResponse buildPartial() {
       com.google.cloud.language.v1.AnnotateTextResponse result =
           new com.google.cloud.language.v1.AnnotateTextResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.language.v1.AnnotateTextResponse result) {
       if (sentencesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sentences_ = java.util.Collections.unmodifiableList(sentences_);
@@ -823,23 +843,28 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      if (documentSentimentBuilder_ == null) {
-        result.documentSentiment_ = documentSentiment_;
-      } else {
-        result.documentSentiment_ = documentSentimentBuilder_.build();
-      }
-      result.language_ = language_;
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.categories_ = categories_;
       } else {
         result.categories_ = categoriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.language.v1.AnnotateTextResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.documentSentiment_ =
+            documentSentimentBuilder_ == null
+                ? documentSentiment_
+                : documentSentimentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.language_ = language_;
+      }
     }
 
     @java.lang.Override
@@ -974,13 +999,14 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (categoriesBuilder_ == null) {
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -993,7 +1019,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -1072,13 +1098,13 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getDocumentSentimentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -2267,7 +2293,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * @return Whether the documentSentiment field is set.
      */
     public boolean hasDocumentSentiment() {
-      return documentSentimentBuilder_ != null || documentSentiment_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2306,11 +2332,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         documentSentiment_ = value;
-        onChanged();
       } else {
         documentSentimentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2327,11 +2353,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         com.google.cloud.language.v1.Sentiment.Builder builderForValue) {
       if (documentSentimentBuilder_ == null) {
         documentSentiment_ = builderForValue.build();
-        onChanged();
       } else {
         documentSentimentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2346,19 +2372,18 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeDocumentSentiment(com.google.cloud.language.v1.Sentiment value) {
       if (documentSentimentBuilder_ == null) {
-        if (documentSentiment_ != null) {
-          documentSentiment_ =
-              com.google.cloud.language.v1.Sentiment.newBuilder(documentSentiment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && documentSentiment_ != null
+            && documentSentiment_ != com.google.cloud.language.v1.Sentiment.getDefaultInstance()) {
+          getDocumentSentimentBuilder().mergeFrom(value);
         } else {
           documentSentiment_ = value;
         }
-        onChanged();
       } else {
         documentSentimentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2372,14 +2397,13 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.language.v1.Sentiment document_sentiment = 4;</code>
      */
     public Builder clearDocumentSentiment() {
-      if (documentSentimentBuilder_ == null) {
-        documentSentiment_ = null;
-        onChanged();
-      } else {
-        documentSentiment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      documentSentiment_ = null;
+      if (documentSentimentBuilder_ != null) {
+        documentSentimentBuilder_.dispose();
         documentSentimentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2393,7 +2417,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * <code>.google.cloud.language.v1.Sentiment document_sentiment = 4;</code>
      */
     public com.google.cloud.language.v1.Sentiment.Builder getDocumentSentimentBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDocumentSentimentFieldBuilder().getBuilder();
     }
@@ -2510,8 +2534,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2529,8 +2553,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2553,8 +2577,8 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2563,11 +2587,11 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.cloud.language.v1.ClassificationCategory>(
                 categories_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2785,7 +2809,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -2911,7 +2935,7 @@ public final class AnnotateTextResponse extends com.google.protobuf.GeneratedMes
                 com.google.cloud.language.v1.ClassificationCategory,
                 com.google.cloud.language.v1.ClassificationCategory.Builder,
                 com.google.cloud.language.v1.ClassificationCategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;

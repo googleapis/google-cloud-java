@@ -231,7 +231,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SIZE_GIB_FIELD_NUMBER = 1;
-  private int sizeGib_;
+  private int sizeGib_ = 0;
   /**
    *
    *
@@ -251,7 +251,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VOLUME_TYPE_FIELD_NUMBER = 2;
-  private int volumeType_;
+  private int volumeType_ = 0;
   /**
    *
    *
@@ -286,16 +286,15 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType getVolumeType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType result =
-        com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.valueOf(volumeType_);
+        com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.forNumber(volumeType_);
     return result == null
         ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.UNRECOGNIZED
         : result;
   }
 
   public static final int IOPS_FIELD_NUMBER = 3;
-  private int iops_;
+  private int iops_ = 0;
   /**
    *
    *
@@ -314,7 +313,9 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int KMS_KEY_ARN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object kmsKeyArn_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyArn_ = "";
   /**
    *
    *
@@ -596,14 +597,11 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sizeGib_ = 0;
-
       volumeType_ = 0;
-
       iops_ = 0;
-
       kmsKeyArn_ = "";
-
       return this;
     }
 
@@ -631,12 +629,27 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate result =
           new com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate(this);
-      result.sizeGib_ = sizeGib_;
-      result.volumeType_ = volumeType_;
-      result.iops_ = iops_;
-      result.kmsKeyArn_ = kmsKeyArn_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sizeGib_ = sizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.volumeType_ = volumeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.iops_ = iops_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.kmsKeyArn_ = kmsKeyArn_;
+      }
     }
 
     @java.lang.Override
@@ -696,6 +709,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getKmsKeyArn().isEmpty()) {
         kmsKeyArn_ = other.kmsKeyArn_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -727,25 +741,25 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
             case 8:
               {
                 sizeGib_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 volumeType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 iops_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 kmsKeyArn_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -764,6 +778,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sizeGib_;
     /**
@@ -800,6 +816,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setSizeGib(int value) {
 
       sizeGib_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,7 +834,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sizeGib_ = 0;
       onChanged();
       return this;
@@ -858,8 +875,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder setVolumeTypeValue(int value) {
-
       volumeType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -879,9 +896,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType getVolumeType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType result =
-          com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.valueOf(volumeType_);
+          com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.forNumber(volumeType_);
       return result == null
           ? com.google.cloud.gkemulticloud.v1.AwsVolumeTemplate.VolumeType.UNRECOGNIZED
           : result;
@@ -906,7 +922,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       volumeType_ = value.getNumber();
       onChanged();
       return this;
@@ -926,7 +942,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVolumeType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       volumeType_ = 0;
       onChanged();
       return this;
@@ -965,6 +981,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
     public Builder setIops(int value) {
 
       iops_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,7 +998,7 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearIops() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       iops_ = 0;
       onChanged();
       return this;
@@ -1057,8 +1074,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       kmsKeyArn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1077,8 +1094,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearKmsKeyArn() {
-
       kmsKeyArn_ = getDefaultInstance().getKmsKeyArn();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1102,8 +1119,8 @@ public final class AwsVolumeTemplate extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kmsKeyArn_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

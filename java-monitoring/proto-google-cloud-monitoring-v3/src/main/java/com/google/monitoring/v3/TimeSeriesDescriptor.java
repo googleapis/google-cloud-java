@@ -232,7 +232,9 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      *
      *
@@ -281,7 +283,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     }
 
     public static final int VALUE_TYPE_FIELD_NUMBER = 2;
-    private int valueType_;
+    private int valueType_ = 0;
     /**
      *
      *
@@ -310,14 +312,13 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.ValueType getValueType() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result =
-          com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+          com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
       return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
     }
 
     public static final int METRIC_KIND_FIELD_NUMBER = 3;
-    private int metricKind_;
+    private int metricKind_ = 0;
     /**
      *
      *
@@ -346,14 +347,15 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result =
-          com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+          com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
       return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
     }
 
     public static final int UNIT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object unit_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unit_ = "";
     /**
      *
      *
@@ -638,14 +640,11 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
         valueType_ = 0;
-
         metricKind_ = 0;
-
         unit_ = "";
-
         return this;
       }
 
@@ -674,12 +673,28 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       public com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor buildPartial() {
         com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor result =
             new com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor(this);
-        result.key_ = key_;
-        result.valueType_ = valueType_;
-        result.metricKind_ = metricKind_;
-        result.unit_ = unit_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.valueType_ = valueType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.metricKind_ = metricKind_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unit_ = unit_;
+        }
       }
 
       @java.lang.Override
@@ -734,6 +749,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.valueType_ != 0) {
@@ -744,6 +760,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         }
         if (!other.getUnit().isEmpty()) {
           unit_ = other.unit_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -775,25 +792,25 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
               case 10:
                 {
                   key_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   valueType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 24:
                 {
                   metricKind_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               case 34:
                 {
                   unit_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -812,6 +829,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object key_ = "";
       /**
@@ -874,8 +893,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -891,8 +910,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -913,8 +932,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -948,8 +967,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setValueTypeValue(int value) {
-
         valueType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -966,9 +985,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        */
       @java.lang.Override
       public com.google.api.MetricDescriptor.ValueType getValueType() {
-        @SuppressWarnings("deprecation")
         com.google.api.MetricDescriptor.ValueType result =
-            com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+            com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
         return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
       }
       /**
@@ -987,7 +1005,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         valueType_ = value.getNumber();
         onChanged();
         return this;
@@ -1004,7 +1022,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearValueType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         valueType_ = 0;
         onChanged();
         return this;
@@ -1039,8 +1057,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder setMetricKindValue(int value) {
-
         metricKind_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1057,9 +1075,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        */
       @java.lang.Override
       public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-        @SuppressWarnings("deprecation")
         com.google.api.MetricDescriptor.MetricKind result =
-            com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+            com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
         return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
       }
       /**
@@ -1078,7 +1095,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         metricKind_ = value.getNumber();
         onChanged();
         return this;
@@ -1095,7 +1112,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearMetricKind() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         metricKind_ = 0;
         onChanged();
         return this;
@@ -1171,8 +1188,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
         if (value == null) {
           throw new NullPointerException();
         }
-
         unit_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1191,8 +1208,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
        * @return This builder for chaining.
        */
       public Builder clearUnit() {
-
         unit_ = getDefaultInstance().getUnit();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1216,8 +1233,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         unit_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1290,6 +1307,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LABEL_DESCRIPTORS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.LabelDescriptor> labelDescriptors_;
   /**
    *
@@ -1359,6 +1378,8 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
   }
 
   public static final int POINT_DESCRIPTORS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.TimeSeriesDescriptor.ValueDescriptor>
       pointDescriptors_;
   /**
@@ -1652,6 +1673,7 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (labelDescriptorsBuilder_ == null) {
         labelDescriptors_ = java.util.Collections.emptyList();
       } else {
@@ -1693,7 +1715,15 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
     public com.google.monitoring.v3.TimeSeriesDescriptor buildPartial() {
       com.google.monitoring.v3.TimeSeriesDescriptor result =
           new com.google.monitoring.v3.TimeSeriesDescriptor(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.TimeSeriesDescriptor result) {
       if (labelDescriptorsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           labelDescriptors_ = java.util.Collections.unmodifiableList(labelDescriptors_);
@@ -1712,8 +1742,10 @@ public final class TimeSeriesDescriptor extends com.google.protobuf.GeneratedMes
       } else {
         result.pointDescriptors_ = pointDescriptorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.TimeSeriesDescriptor result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

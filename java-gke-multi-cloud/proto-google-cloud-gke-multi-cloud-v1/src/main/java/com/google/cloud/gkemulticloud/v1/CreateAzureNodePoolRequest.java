@@ -69,7 +69,9 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -183,11 +185,15 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AzureNodePoolOrBuilder getAzureNodePoolOrBuilder() {
-    return getAzureNodePool();
+    return azureNodePool_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()
+        : azureNodePool_;
   }
 
   public static final int AZURE_NODE_POOL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object azureNodePoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object azureNodePoolId_ = "";
   /**
    *
    *
@@ -248,7 +254,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -496,18 +502,15 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (azureNodePoolBuilder_ == null) {
-        azureNodePool_ = null;
-      } else {
-        azureNodePool_ = null;
+      azureNodePool_ = null;
+      if (azureNodePoolBuilder_ != null) {
+        azureNodePoolBuilder_.dispose();
         azureNodePoolBuilder_ = null;
       }
       azureNodePoolId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -536,16 +539,29 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     public com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest result =
           new com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest(this);
-      result.parent_ = parent_;
-      if (azureNodePoolBuilder_ == null) {
-        result.azureNodePool_ = azureNodePool_;
-      } else {
-        result.azureNodePool_ = azureNodePoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.azureNodePoolId_ = azureNodePoolId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.azureNodePool_ =
+            azureNodePoolBuilder_ == null ? azureNodePool_ : azureNodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.azureNodePoolId_ = azureNodePoolId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -597,6 +613,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAzureNodePool()) {
@@ -604,6 +621,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       }
       if (!other.getAzureNodePoolId().isEmpty()) {
         azureNodePoolId_ = other.azureNodePoolId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -638,25 +656,25 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAzureNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 azureNodePoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -675,6 +693,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -755,8 +775,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -778,8 +798,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -806,8 +826,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,7 +853,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return Whether the azureNodePool field is set.
      */
     public boolean hasAzureNodePool() {
-      return azureNodePoolBuilder_ != null || azureNodePool_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -876,11 +896,11 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         azureNodePool_ = value;
-        onChanged();
       } else {
         azureNodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -899,11 +919,11 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder builderForValue) {
       if (azureNodePoolBuilder_ == null) {
         azureNodePool_ = builderForValue.build();
-        onChanged();
       } else {
         azureNodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -920,19 +940,19 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      */
     public Builder mergeAzureNodePool(com.google.cloud.gkemulticloud.v1.AzureNodePool value) {
       if (azureNodePoolBuilder_ == null) {
-        if (azureNodePool_ != null) {
-          azureNodePool_ =
-              com.google.cloud.gkemulticloud.v1.AzureNodePool.newBuilder(azureNodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && azureNodePool_ != null
+            && azureNodePool_
+                != com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()) {
+          getAzureNodePoolBuilder().mergeFrom(value);
         } else {
           azureNodePool_ = value;
         }
-        onChanged();
       } else {
         azureNodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -948,14 +968,13 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearAzureNodePool() {
-      if (azureNodePoolBuilder_ == null) {
-        azureNodePool_ = null;
-        onChanged();
-      } else {
-        azureNodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      azureNodePool_ = null;
+      if (azureNodePoolBuilder_ != null) {
+        azureNodePoolBuilder_.dispose();
         azureNodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -971,7 +990,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder getAzureNodePoolBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAzureNodePoolFieldBuilder().getBuilder();
     }
@@ -1104,8 +1123,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       azureNodePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1127,8 +1146,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearAzureNodePoolId() {
-
       azureNodePoolId_ = getDefaultInstance().getAzureNodePoolId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1155,8 +1174,8 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       azureNodePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1194,6 +1213,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1210,7 +1230,7 @@ public final class CreateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

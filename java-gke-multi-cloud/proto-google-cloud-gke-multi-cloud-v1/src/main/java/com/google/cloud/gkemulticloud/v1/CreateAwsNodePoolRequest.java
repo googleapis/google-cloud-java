@@ -69,7 +69,9 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -185,11 +187,15 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsNodePoolOrBuilder getAwsNodePoolOrBuilder() {
-    return getAwsNodePool();
+    return awsNodePool_ == null
+        ? com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance()
+        : awsNodePool_;
   }
 
   public static final int AWS_NODE_POOL_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object awsNodePoolId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object awsNodePoolId_ = "";
   /**
    *
    *
@@ -250,7 +256,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -498,18 +504,15 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (awsNodePoolBuilder_ == null) {
-        awsNodePool_ = null;
-      } else {
-        awsNodePool_ = null;
+      awsNodePool_ = null;
+      if (awsNodePoolBuilder_ != null) {
+        awsNodePoolBuilder_.dispose();
         awsNodePoolBuilder_ = null;
       }
       awsNodePoolId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -537,16 +540,28 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest result =
           new com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest(this);
-      result.parent_ = parent_;
-      if (awsNodePoolBuilder_ == null) {
-        result.awsNodePool_ = awsNodePool_;
-      } else {
-        result.awsNodePool_ = awsNodePoolBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.awsNodePoolId_ = awsNodePoolId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.awsNodePool_ =
+            awsNodePoolBuilder_ == null ? awsNodePool_ : awsNodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.awsNodePoolId_ = awsNodePoolId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -597,6 +612,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAwsNodePool()) {
@@ -604,6 +620,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
       }
       if (!other.getAwsNodePoolId().isEmpty()) {
         awsNodePoolId_ = other.awsNodePoolId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -638,25 +655,25 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAwsNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 awsNodePoolId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -675,6 +692,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -758,8 +777,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -782,8 +801,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -811,8 +830,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -838,7 +857,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return Whether the awsNodePool field is set.
      */
     public boolean hasAwsNodePool() {
-      return awsNodePoolBuilder_ != null || awsNodePool_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -881,11 +900,11 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         awsNodePool_ = value;
-        onChanged();
       } else {
         awsNodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -904,11 +923,11 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
         com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder builderForValue) {
       if (awsNodePoolBuilder_ == null) {
         awsNodePool_ = builderForValue.build();
-        onChanged();
       } else {
         awsNodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -925,19 +944,18 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAwsNodePool(com.google.cloud.gkemulticloud.v1.AwsNodePool value) {
       if (awsNodePoolBuilder_ == null) {
-        if (awsNodePool_ != null) {
-          awsNodePool_ =
-              com.google.cloud.gkemulticloud.v1.AwsNodePool.newBuilder(awsNodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && awsNodePool_ != null
+            && awsNodePool_ != com.google.cloud.gkemulticloud.v1.AwsNodePool.getDefaultInstance()) {
+          getAwsNodePoolBuilder().mergeFrom(value);
         } else {
           awsNodePool_ = value;
         }
-        onChanged();
       } else {
         awsNodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -953,14 +971,13 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAwsNodePool() {
-      if (awsNodePoolBuilder_ == null) {
-        awsNodePool_ = null;
-        onChanged();
-      } else {
-        awsNodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      awsNodePool_ = null;
+      if (awsNodePoolBuilder_ != null) {
+        awsNodePoolBuilder_.dispose();
         awsNodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -976,7 +993,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AwsNodePool.Builder getAwsNodePoolBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAwsNodePoolFieldBuilder().getBuilder();
     }
@@ -1109,8 +1126,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       awsNodePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1132,8 +1149,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearAwsNodePoolId() {
-
       awsNodePoolId_ = getDefaultInstance().getAwsNodePoolId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1160,8 +1177,8 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       awsNodePoolId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1199,6 +1216,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1215,7 +1233,7 @@ public final class CreateAwsNodePoolRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

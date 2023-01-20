@@ -119,11 +119,13 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AzureNodePoolOrBuilder getAzureNodePoolOrBuilder() {
-    return getAzureNodePool();
+    return azureNodePool_ == null
+        ? com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()
+        : azureNodePool_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 2;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -207,7 +209,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -436,18 +438,16 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (azureNodePoolBuilder_ == null) {
-        azureNodePool_ = null;
-      } else {
-        azureNodePool_ = null;
+      bitField0_ = 0;
+      azureNodePool_ = null;
+      if (azureNodePoolBuilder_ != null) {
+        azureNodePoolBuilder_.dispose();
         azureNodePoolBuilder_ = null;
       }
       validateOnly_ = false;
-
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -478,19 +478,26 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest result =
           new com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest(this);
-      if (azureNodePoolBuilder_ == null) {
-        result.azureNodePool_ = azureNodePool_;
-      } else {
-        result.azureNodePool_ = azureNodePoolBuilder_.build();
-      }
-      result.validateOnly_ = validateOnly_;
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.azureNodePool_ =
+            azureNodePoolBuilder_ == null ? azureNodePool_ : azureNodePoolBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -578,19 +585,19 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getAzureNodePoolFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -609,6 +616,8 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gkemulticloud.v1.AzureNodePool azureNodePool_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -631,7 +640,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return Whether the azureNodePool field is set.
      */
     public boolean hasAzureNodePool() {
-      return azureNodePoolBuilder_ != null || azureNodePool_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -674,11 +683,11 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         azureNodePool_ = value;
-        onChanged();
       } else {
         azureNodePoolBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -697,11 +706,11 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
         com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder builderForValue) {
       if (azureNodePoolBuilder_ == null) {
         azureNodePool_ = builderForValue.build();
-        onChanged();
       } else {
         azureNodePoolBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -718,19 +727,19 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      */
     public Builder mergeAzureNodePool(com.google.cloud.gkemulticloud.v1.AzureNodePool value) {
       if (azureNodePoolBuilder_ == null) {
-        if (azureNodePool_ != null) {
-          azureNodePool_ =
-              com.google.cloud.gkemulticloud.v1.AzureNodePool.newBuilder(azureNodePool_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && azureNodePool_ != null
+            && azureNodePool_
+                != com.google.cloud.gkemulticloud.v1.AzureNodePool.getDefaultInstance()) {
+          getAzureNodePoolBuilder().mergeFrom(value);
         } else {
           azureNodePool_ = value;
         }
-        onChanged();
       } else {
         azureNodePoolBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -746,14 +755,13 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearAzureNodePool() {
-      if (azureNodePoolBuilder_ == null) {
-        azureNodePool_ = null;
-        onChanged();
-      } else {
-        azureNodePool_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      azureNodePool_ = null;
+      if (azureNodePoolBuilder_ != null) {
+        azureNodePoolBuilder_.dispose();
         azureNodePoolBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -769,7 +777,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.gkemulticloud.v1.AzureNodePool.Builder getAzureNodePoolBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAzureNodePoolFieldBuilder().getBuilder();
     }
@@ -854,6 +862,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -869,7 +878,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       validateOnly_ = false;
       onChanged();
       return this;
@@ -901,7 +910,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -954,11 +963,11 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -981,11 +990,11 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1007,17 +1016,18 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1038,14 +1048,13 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1066,7 +1075,7 @@ public final class UpdateAzureNodePoolRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

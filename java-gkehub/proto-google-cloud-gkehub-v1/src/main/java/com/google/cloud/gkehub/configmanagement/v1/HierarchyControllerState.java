@@ -112,7 +112,10 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersionOrBuilder
       getVersionOrBuilder() {
-    return getVersion();
+    return version_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion
+            .getDefaultInstance()
+        : version_;
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
@@ -165,7 +168,10 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentStateOrBuilder
       getStateOrBuilder() {
-    return getState();
+    return state_ == null
+        ? com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState
+            .getDefaultInstance()
+        : state_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +393,15 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (versionBuilder_ == null) {
-        version_ = null;
-      } else {
-        version_ = null;
+      bitField0_ = 0;
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
       return this;
@@ -428,18 +433,22 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerState buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerState result =
           new com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerState(this);
-      if (versionBuilder_ == null) {
-        result.version_ = version_;
-      } else {
-        result.version_ = versionBuilder_.build();
-      }
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,13 +535,13 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             case 10:
               {
                 input.readMessage(getVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -552,6 +561,8 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion version_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion,
@@ -570,7 +581,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return versionBuilder_ != null || version_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -609,11 +620,11 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         version_ = value;
-        onChanged();
       } else {
         versionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -630,11 +641,11 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             builderForValue) {
       if (versionBuilder_ == null) {
         version_ = builderForValue.build();
-        onChanged();
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -649,20 +660,20 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     public Builder mergeVersion(
         com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion value) {
       if (versionBuilder_ == null) {
-        if (version_ != null) {
-          version_ =
-              com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion.newBuilder(
-                      version_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && version_ != null
+            && version_
+                != com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion
+                    .getDefaultInstance()) {
+          getVersionBuilder().mergeFrom(value);
         } else {
           version_ = value;
         }
-        onChanged();
       } else {
         versionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,14 +686,13 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      * <code>.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion version = 1;</code>
      */
     public Builder clearVersion() {
-      if (versionBuilder_ == null) {
-        version_ = null;
-        onChanged();
-      } else {
-        version_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      version_ = null;
+      if (versionBuilder_ != null) {
+        versionBuilder_.dispose();
         versionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -696,7 +706,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      */
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion.Builder
         getVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
@@ -765,7 +775,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -807,11 +817,11 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -829,11 +839,11 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,20 +859,20 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     public Builder mergeState(
         com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState
-                  .newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && state_ != null
+            && state_
+                != com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState
+                    .getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -876,14 +886,13 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -898,7 +907,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
      */
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState.Builder
         getStateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }

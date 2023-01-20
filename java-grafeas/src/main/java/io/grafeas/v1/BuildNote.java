@@ -67,7 +67,9 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BUILDER_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object builderVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object builderVersion_ = "";
   /**
    *
    *
@@ -308,8 +310,8 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       builderVersion_ = "";
-
       return this;
     }
 
@@ -335,9 +337,18 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.BuildNote buildPartial() {
       io.grafeas.v1.BuildNote result = new io.grafeas.v1.BuildNote(this);
-      result.builderVersion_ = builderVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.BuildNote result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.builderVersion_ = builderVersion_;
+      }
     }
 
     @java.lang.Override
@@ -387,6 +398,7 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.BuildNote.getDefaultInstance()) return this;
       if (!other.getBuilderVersion().isEmpty()) {
         builderVersion_ = other.builderVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -418,7 +430,7 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 builderVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -437,6 +449,8 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object builderVersion_ = "";
     /**
@@ -499,8 +513,8 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       builderVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -516,8 +530,8 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBuilderVersion() {
-
       builderVersion_ = getDefaultInstance().getBuilderVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -538,8 +552,8 @@ public final class BuildNote extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       builderVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

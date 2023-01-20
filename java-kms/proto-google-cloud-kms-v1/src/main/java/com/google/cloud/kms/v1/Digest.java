@@ -456,6 +456,7 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       digestCase_ = 0;
       digest_ = null;
       return this;
@@ -483,18 +484,21 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.Digest buildPartial() {
       com.google.cloud.kms.v1.Digest result = new com.google.cloud.kms.v1.Digest(this);
-      if (digestCase_ == 1) {
-        result.digest_ = digest_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (digestCase_ == 2) {
-        result.digest_ = digest_;
-      }
-      if (digestCase_ == 3) {
-        result.digest_ = digest_;
-      }
-      result.digestCase_ = digestCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.Digest result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.kms.v1.Digest result) {
+      result.digestCase_ = digestCase_;
+      result.digest_ = this.digest_;
     }
 
     @java.lang.Override
@@ -637,6 +641,8 @@ public final class Digest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

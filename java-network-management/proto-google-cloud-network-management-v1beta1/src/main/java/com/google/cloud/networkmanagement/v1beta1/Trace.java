@@ -131,10 +131,14 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.EndpointInfoOrBuilder
       getEndpointInfoOrBuilder() {
-    return getEndpointInfo();
+    return endpointInfo_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.EndpointInfo.getDefaultInstance()
+        : endpointInfo_;
   }
 
   public static final int STEPS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkmanagement.v1beta1.Step> steps_;
   /**
    *
@@ -445,10 +449,10 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (endpointInfoBuilder_ == null) {
-        endpointInfo_ = null;
-      } else {
-        endpointInfo_ = null;
+      bitField0_ = 0;
+      endpointInfo_ = null;
+      if (endpointInfoBuilder_ != null) {
+        endpointInfoBuilder_.dispose();
         endpointInfoBuilder_ = null;
       }
       if (stepsBuilder_ == null) {
@@ -457,7 +461,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         steps_ = null;
         stepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -485,23 +489,33 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.Trace buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.Trace result =
           new com.google.cloud.networkmanagement.v1beta1.Trace(this);
-      int from_bitField0_ = bitField0_;
-      if (endpointInfoBuilder_ == null) {
-        result.endpointInfo_ = endpointInfo_;
-      } else {
-        result.endpointInfo_ = endpointInfoBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.networkmanagement.v1beta1.Trace result) {
       if (stepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           steps_ = java.util.Collections.unmodifiableList(steps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.Trace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpointInfo_ =
+            endpointInfoBuilder_ == null ? endpointInfo_ : endpointInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -557,7 +571,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         if (!other.steps_.isEmpty()) {
           if (steps_.isEmpty()) {
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStepsIsMutable();
             steps_.addAll(other.steps_);
@@ -570,7 +584,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             stepsBuilder_.dispose();
             stepsBuilder_ = null;
             steps_ = other.steps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             stepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStepsFieldBuilder()
@@ -609,7 +623,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getEndpointInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -666,7 +680,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endpointInfo field is set.
      */
     public boolean hasEndpointInfo() {
-      return endpointInfoBuilder_ != null || endpointInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -709,11 +723,11 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endpointInfo_ = value;
-        onChanged();
       } else {
         endpointInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -732,11 +746,11 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.networkmanagement.v1beta1.EndpointInfo.Builder builderForValue) {
       if (endpointInfoBuilder_ == null) {
         endpointInfo_ = builderForValue.build();
-        onChanged();
       } else {
         endpointInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -754,19 +768,19 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEndpointInfo(
         com.google.cloud.networkmanagement.v1beta1.EndpointInfo value) {
       if (endpointInfoBuilder_ == null) {
-        if (endpointInfo_ != null) {
-          endpointInfo_ =
-              com.google.cloud.networkmanagement.v1beta1.EndpointInfo.newBuilder(endpointInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && endpointInfo_ != null
+            && endpointInfo_
+                != com.google.cloud.networkmanagement.v1beta1.EndpointInfo.getDefaultInstance()) {
+          getEndpointInfoBuilder().mergeFrom(value);
         } else {
           endpointInfo_ = value;
         }
-        onChanged();
       } else {
         endpointInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -782,14 +796,13 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.networkmanagement.v1beta1.EndpointInfo endpoint_info = 1;</code>
      */
     public Builder clearEndpointInfo() {
-      if (endpointInfoBuilder_ == null) {
-        endpointInfo_ = null;
-        onChanged();
-      } else {
-        endpointInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      endpointInfo_ = null;
+      if (endpointInfoBuilder_ != null) {
+        endpointInfoBuilder_.dispose();
         endpointInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -806,7 +819,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1beta1.EndpointInfo.Builder
         getEndpointInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEndpointInfoFieldBuilder().getBuilder();
     }
@@ -865,9 +878,9 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         steps_ = new java.util.ArrayList<com.google.cloud.networkmanagement.v1beta1.Step>(steps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1127,7 +1140,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSteps() {
       if (stepsBuilder_ == null) {
         steps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         stepsBuilder_.clear();
@@ -1277,7 +1290,7 @@ public final class Trace extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.networkmanagement.v1beta1.Step,
                 com.google.cloud.networkmanagement.v1beta1.Step.Builder,
                 com.google.cloud.networkmanagement.v1beta1.StepOrBuilder>(
-                steps_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                steps_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         steps_ = null;
       }
       return stepsBuilder_;

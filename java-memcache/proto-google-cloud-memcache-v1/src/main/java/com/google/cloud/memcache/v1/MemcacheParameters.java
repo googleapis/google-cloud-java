@@ -71,7 +71,9 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -140,6 +142,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
@@ -197,7 +200,10 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -451,8 +457,8 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
       internalGetMutableParams().clear();
       return this;
     }
@@ -481,12 +487,22 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.memcache.v1.MemcacheParameters buildPartial() {
       com.google.cloud.memcache.v1.MemcacheParameters result =
           new com.google.cloud.memcache.v1.MemcacheParameters(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.memcache.v1.MemcacheParameters result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -537,9 +553,11 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -569,7 +587,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
@@ -581,6 +599,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -675,8 +694,8 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +715,8 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -722,8 +741,8 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -739,14 +758,14 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return params_;
     }
 
@@ -798,8 +817,10 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -828,6 +849,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -850,6 +872,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -868,8 +891,8 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -883,6 +906,7 @@ public final class MemcacheParameters extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

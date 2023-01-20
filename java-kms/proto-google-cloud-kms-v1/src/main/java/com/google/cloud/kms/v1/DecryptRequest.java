@@ -71,7 +71,9 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIPHERTEXT_FIELD_NUMBER = 2;
-  private com.google.protobuf.ByteString ciphertext_;
+  private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -147,7 +149,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDITIONAL_AUTHENTICATED_DATA_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString additionalAuthenticatedData_;
+  private com.google.protobuf.ByteString additionalAuthenticatedData_ =
+      com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -270,7 +273,9 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getCiphertextCrc32COrBuilder() {
-    return getCiphertextCrc32C();
+    return ciphertextCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : ciphertextCrc32C_;
   }
 
   public static final int ADDITIONAL_AUTHENTICATED_DATA_CRC32C_FIELD_NUMBER = 6;
@@ -378,7 +383,9 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getAdditionalAuthenticatedDataCrc32COrBuilder() {
-    return getAdditionalAuthenticatedDataCrc32C();
+    return additionalAuthenticatedDataCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : additionalAuthenticatedDataCrc32C_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -630,22 +637,18 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       ciphertext_ = com.google.protobuf.ByteString.EMPTY;
-
       additionalAuthenticatedData_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
-      } else {
-        ciphertextCrc32C_ = null;
+      ciphertextCrc32C_ = null;
+      if (ciphertextCrc32CBuilder_ != null) {
+        ciphertextCrc32CBuilder_.dispose();
         ciphertextCrc32CBuilder_ = null;
       }
-      if (additionalAuthenticatedDataCrc32CBuilder_ == null) {
-        additionalAuthenticatedDataCrc32C_ = null;
-      } else {
-        additionalAuthenticatedDataCrc32C_ = null;
+      additionalAuthenticatedDataCrc32C_ = null;
+      if (additionalAuthenticatedDataCrc32CBuilder_ != null) {
+        additionalAuthenticatedDataCrc32CBuilder_.dispose();
         additionalAuthenticatedDataCrc32CBuilder_ = null;
       }
       return this;
@@ -675,22 +678,34 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.kms.v1.DecryptRequest buildPartial() {
       com.google.cloud.kms.v1.DecryptRequest result =
           new com.google.cloud.kms.v1.DecryptRequest(this);
-      result.name_ = name_;
-      result.ciphertext_ = ciphertext_;
-      result.additionalAuthenticatedData_ = additionalAuthenticatedData_;
-      if (ciphertextCrc32CBuilder_ == null) {
-        result.ciphertextCrc32C_ = ciphertextCrc32C_;
-      } else {
-        result.ciphertextCrc32C_ = ciphertextCrc32CBuilder_.build();
-      }
-      if (additionalAuthenticatedDataCrc32CBuilder_ == null) {
-        result.additionalAuthenticatedDataCrc32C_ = additionalAuthenticatedDataCrc32C_;
-      } else {
-        result.additionalAuthenticatedDataCrc32C_ =
-            additionalAuthenticatedDataCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.DecryptRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ciphertext_ = ciphertext_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.additionalAuthenticatedData_ = additionalAuthenticatedData_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ciphertextCrc32C_ =
+            ciphertextCrc32CBuilder_ == null ? ciphertextCrc32C_ : ciphertextCrc32CBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.additionalAuthenticatedDataCrc32C_ =
+            additionalAuthenticatedDataCrc32CBuilder_ == null
+                ? additionalAuthenticatedDataCrc32C_
+                : additionalAuthenticatedDataCrc32CBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -740,6 +755,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.kms.v1.DecryptRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getCiphertext() != com.google.protobuf.ByteString.EMPTY) {
@@ -783,26 +799,26 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 ciphertext_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 additionalAuthenticatedData_ = input.readBytes();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 42:
               {
                 input.readMessage(
                     getCiphertextCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
@@ -810,7 +826,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getAdditionalAuthenticatedDataCrc32CFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             default:
@@ -829,6 +845,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -903,8 +921,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -924,8 +942,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -950,8 +968,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -990,8 +1008,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ciphertext_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1008,7 +1026,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCiphertext() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ciphertext_ = getDefaultInstance().getCiphertext();
       onChanged();
       return this;
@@ -1051,8 +1069,8 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       additionalAuthenticatedData_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1070,7 +1088,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdditionalAuthenticatedData() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       additionalAuthenticatedData_ = getDefaultInstance().getAdditionalAuthenticatedData();
       onChanged();
       return this;
@@ -1114,7 +1132,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ciphertextCrc32c field is set.
      */
     public boolean hasCiphertextCrc32C() {
-      return ciphertextCrc32CBuilder_ != null || ciphertextCrc32C_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1191,11 +1209,11 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         ciphertextCrc32C_ = value;
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1230,11 +1248,11 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setCiphertextCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (ciphertextCrc32CBuilder_ == null) {
         ciphertextCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1268,19 +1286,18 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCiphertextCrc32C(com.google.protobuf.Int64Value value) {
       if (ciphertextCrc32CBuilder_ == null) {
-        if (ciphertextCrc32C_ != null) {
-          ciphertextCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(ciphertextCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && ciphertextCrc32C_ != null
+            && ciphertextCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getCiphertextCrc32CBuilder().mergeFrom(value);
         } else {
           ciphertextCrc32C_ = value;
         }
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1313,14 +1330,13 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCiphertextCrc32C() {
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
-        onChanged();
-      } else {
-        ciphertextCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ciphertextCrc32C_ = null;
+      if (ciphertextCrc32CBuilder_ != null) {
+        ciphertextCrc32CBuilder_.dispose();
         ciphertextCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1353,7 +1369,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Int64Value.Builder getCiphertextCrc32CBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCiphertextCrc32CFieldBuilder().getBuilder();
     }
@@ -1479,8 +1495,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the additionalAuthenticatedDataCrc32c field is set.
      */
     public boolean hasAdditionalAuthenticatedDataCrc32C() {
-      return additionalAuthenticatedDataCrc32CBuilder_ != null
-          || additionalAuthenticatedDataCrc32C_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1557,11 +1572,11 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         additionalAuthenticatedDataCrc32C_ = value;
-        onChanged();
       } else {
         additionalAuthenticatedDataCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1597,11 +1612,11 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Int64Value.Builder builderForValue) {
       if (additionalAuthenticatedDataCrc32CBuilder_ == null) {
         additionalAuthenticatedDataCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         additionalAuthenticatedDataCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1635,19 +1650,19 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAdditionalAuthenticatedDataCrc32C(com.google.protobuf.Int64Value value) {
       if (additionalAuthenticatedDataCrc32CBuilder_ == null) {
-        if (additionalAuthenticatedDataCrc32C_ != null) {
-          additionalAuthenticatedDataCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(additionalAuthenticatedDataCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && additionalAuthenticatedDataCrc32C_ != null
+            && additionalAuthenticatedDataCrc32C_
+                != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getAdditionalAuthenticatedDataCrc32CBuilder().mergeFrom(value);
         } else {
           additionalAuthenticatedDataCrc32C_ = value;
         }
-        onChanged();
       } else {
         additionalAuthenticatedDataCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1680,14 +1695,13 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAdditionalAuthenticatedDataCrc32C() {
-      if (additionalAuthenticatedDataCrc32CBuilder_ == null) {
-        additionalAuthenticatedDataCrc32C_ = null;
-        onChanged();
-      } else {
-        additionalAuthenticatedDataCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      additionalAuthenticatedDataCrc32C_ = null;
+      if (additionalAuthenticatedDataCrc32CBuilder_ != null) {
+        additionalAuthenticatedDataCrc32CBuilder_.dispose();
         additionalAuthenticatedDataCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1720,7 +1734,7 @@ public final class DecryptRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Int64Value.Builder getAdditionalAuthenticatedDataCrc32CBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getAdditionalAuthenticatedDataCrc32CFieldBuilder().getBuilder();
     }

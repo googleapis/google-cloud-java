@@ -322,7 +322,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URI_FIELD_NUMBER = 1;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -579,8 +581,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uri_ = "";
-
         return this;
       }
 
@@ -612,9 +614,19 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint result =
             new com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint(this);
-        result.uri_ = uri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
       }
 
       @java.lang.Override
@@ -671,6 +683,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -702,7 +715,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -721,6 +734,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object uri_ = "";
       /**
@@ -783,8 +798,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -800,8 +815,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -822,8 +837,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -897,7 +912,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -952,7 +969,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PORT_FIELD_NUMBER = 2;
-  private int port_;
+  private int port_ = 0;
   /**
    *
    *
@@ -971,7 +988,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -1020,7 +1039,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GKE_MASTER_CLUSTER_FIELD_NUMBER = 7;
-  private volatile java.lang.Object gkeMasterCluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gkeMasterCluster_ = "";
   /**
    *
    *
@@ -1071,7 +1092,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_SQL_INSTANCE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object cloudSqlInstance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudSqlInstance_ = "";
   /**
    *
    *
@@ -1173,11 +1196,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpointOrBuilder
       getCloudFunctionOrBuilder() {
-    return getCloudFunction();
+    return cloudFunction_ == null
+        ? com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint
+            .getDefaultInstance()
+        : cloudFunction_;
   }
 
   public static final int NETWORK_FIELD_NUMBER = 4;
-  private volatile java.lang.Object network_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
   /**
    *
    *
@@ -1226,7 +1254,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NETWORK_TYPE_FIELD_NUMBER = 5;
-  private int networkType_;
+  private int networkType_ = 0;
   /**
    *
    *
@@ -1259,16 +1287,17 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType getNetworkType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType result =
-        com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.valueOf(networkType_);
+        com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.forNumber(networkType_);
     return result == null
         ? com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.UNRECOGNIZED
         : result;
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -1610,28 +1639,20 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipAddress_ = "";
-
       port_ = 0;
-
       instance_ = "";
-
       gkeMasterCluster_ = "";
-
       cloudSqlInstance_ = "";
-
-      if (cloudFunctionBuilder_ == null) {
-        cloudFunction_ = null;
-      } else {
-        cloudFunction_ = null;
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
         cloudFunctionBuilder_ = null;
       }
       network_ = "";
-
       networkType_ = 0;
-
       projectId_ = "";
-
       return this;
     }
 
@@ -1659,21 +1680,43 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.Endpoint buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.Endpoint result =
           new com.google.cloud.networkmanagement.v1beta1.Endpoint(this);
-      result.ipAddress_ = ipAddress_;
-      result.port_ = port_;
-      result.instance_ = instance_;
-      result.gkeMasterCluster_ = gkeMasterCluster_;
-      result.cloudSqlInstance_ = cloudSqlInstance_;
-      if (cloudFunctionBuilder_ == null) {
-        result.cloudFunction_ = cloudFunction_;
-      } else {
-        result.cloudFunction_ = cloudFunctionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.network_ = network_;
-      result.networkType_ = networkType_;
-      result.projectId_ = projectId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.Endpoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.port_ = port_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.instance_ = instance_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gkeMasterCluster_ = gkeMasterCluster_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cloudSqlInstance_ = cloudSqlInstance_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cloudFunction_ =
+            cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.networkType_ = networkType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.projectId_ = projectId_;
+      }
     }
 
     @java.lang.Override
@@ -1724,6 +1767,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPort() != 0) {
@@ -1731,14 +1775,17 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getGkeMasterCluster().isEmpty()) {
         gkeMasterCluster_ = other.gkeMasterCluster_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getCloudSqlInstance().isEmpty()) {
         cloudSqlInstance_ = other.cloudSqlInstance_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCloudFunction()) {
@@ -1746,6 +1793,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -1753,6 +1801,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1784,55 +1833,55 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 port_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 50
             case 58:
               {
                 gkeMasterCluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             case 66:
               {
                 cloudSqlInstance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             case 82:
               {
                 input.readMessage(getCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 82
             default:
@@ -1851,6 +1900,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object ipAddress_ = "";
     /**
@@ -1922,8 +1973,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1942,8 +1993,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1967,8 +2018,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2006,6 +2057,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2022,7 +2074,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       port_ = 0;
       onChanged();
       return this;
@@ -2089,8 +2141,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2106,8 +2158,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2128,8 +2180,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2198,8 +2250,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       gkeMasterCluster_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2216,8 +2268,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGkeMasterCluster() {
-
       gkeMasterCluster_ = getDefaultInstance().getGkeMasterCluster();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2239,8 +2291,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gkeMasterCluster_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2306,8 +2358,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudSqlInstance_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2323,8 +2375,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCloudSqlInstance() {
-
       cloudSqlInstance_ = getDefaultInstance().getCloudSqlInstance();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2345,8 +2397,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudSqlInstance_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2372,7 +2424,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudFunction field is set.
      */
     public boolean hasCloudFunction() {
-      return cloudFunctionBuilder_ != null || cloudFunction_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2416,11 +2468,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cloudFunction_ = value;
-        onChanged();
       } else {
         cloudFunctionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2439,11 +2491,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (cloudFunctionBuilder_ == null) {
         cloudFunction_ = builderForValue.build();
-        onChanged();
       } else {
         cloudFunctionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2460,20 +2512,20 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCloudFunction(
         com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint value) {
       if (cloudFunctionBuilder_ == null) {
-        if (cloudFunction_ != null) {
-          cloudFunction_ =
-              com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint.newBuilder(
-                      cloudFunction_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && cloudFunction_ != null
+            && cloudFunction_
+                != com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint
+                    .getDefaultInstance()) {
+          getCloudFunctionBuilder().mergeFrom(value);
         } else {
           cloudFunction_ = value;
         }
-        onChanged();
       } else {
         cloudFunctionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2488,14 +2540,13 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCloudFunction() {
-      if (cloudFunctionBuilder_ == null) {
-        cloudFunction_ = null;
-        onChanged();
-      } else {
-        cloudFunction_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
         cloudFunctionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2511,7 +2562,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.networkmanagement.v1beta1.Endpoint.CloudFunctionEndpoint.Builder
         getCloudFunctionBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCloudFunctionFieldBuilder().getBuilder();
     }
@@ -2626,8 +2677,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       network_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2643,8 +2694,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-
       network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2665,8 +2716,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       network_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2704,8 +2755,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setNetworkTypeValue(int value) {
-
       networkType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2724,9 +2775,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType getNetworkType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType result =
-          com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.valueOf(networkType_);
+          com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.forNumber(networkType_);
       return result == null
           ? com.google.cloud.networkmanagement.v1beta1.Endpoint.NetworkType.UNRECOGNIZED
           : result;
@@ -2750,7 +2800,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -2769,7 +2819,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       networkType_ = 0;
       onChanged();
       return this;
@@ -2860,8 +2910,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2885,8 +2935,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2915,8 +2965,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

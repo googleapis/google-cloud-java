@@ -69,7 +69,9 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONFIG_MEMBERSHIP_FIELD_NUMBER = 1;
-  private volatile java.lang.Object configMembership_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object configMembership_ = "";
   /**
    *
    *
@@ -318,8 +320,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       configMembership_ = "";
-
       return this;
     }
 
@@ -347,9 +349,18 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.multiclusteringress.v1.FeatureSpec buildPartial() {
       com.google.cloud.gkehub.multiclusteringress.v1.FeatureSpec result =
           new com.google.cloud.gkehub.multiclusteringress.v1.FeatureSpec(this);
-      result.configMembership_ = configMembership_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.multiclusteringress.v1.FeatureSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.configMembership_ = configMembership_;
+      }
     }
 
     @java.lang.Override
@@ -400,6 +411,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getConfigMembership().isEmpty()) {
         configMembership_ = other.configMembership_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -431,7 +443,7 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 configMembership_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -450,6 +462,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object configMembership_ = "";
     /**
@@ -515,8 +529,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       configMembership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -533,8 +547,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConfigMembership() {
-
       configMembership_ = getDefaultInstance().getConfigMembership();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -556,8 +570,8 @@ public final class FeatureSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       configMembership_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

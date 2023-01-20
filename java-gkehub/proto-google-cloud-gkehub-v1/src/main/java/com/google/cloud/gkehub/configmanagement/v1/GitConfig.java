@@ -74,7 +74,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNC_REPO_FIELD_NUMBER = 1;
-  private volatile java.lang.Object syncRepo_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object syncRepo_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNC_BRANCH_FIELD_NUMBER = 2;
-  private volatile java.lang.Object syncBranch_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object syncBranch_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POLICY_DIR_FIELD_NUMBER = 3;
-  private volatile java.lang.Object policyDir_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyDir_ = "";
   /**
    *
    *
@@ -223,7 +229,7 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNC_WAIT_SECS_FIELD_NUMBER = 4;
-  private long syncWaitSecs_;
+  private long syncWaitSecs_ = 0L;
   /**
    *
    *
@@ -241,7 +247,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SYNC_REV_FIELD_NUMBER = 5;
-  private volatile java.lang.Object syncRev_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object syncRev_ = "";
   /**
    *
    *
@@ -290,7 +298,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECRET_TYPE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object secretType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object secretType_ = "";
   /**
    *
    *
@@ -339,7 +349,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTPS_PROXY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object httpsProxy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object httpsProxy_ = "";
   /**
    *
    *
@@ -388,7 +400,9 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GCP_SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 8;
-  private volatile java.lang.Object gcpServiceAccountEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcpServiceAccountEmail_ = "";
   /**
    *
    *
@@ -699,22 +713,15 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       syncRepo_ = "";
-
       syncBranch_ = "";
-
       policyDir_ = "";
-
       syncWaitSecs_ = 0L;
-
       syncRev_ = "";
-
       secretType_ = "";
-
       httpsProxy_ = "";
-
       gcpServiceAccountEmail_ = "";
-
       return this;
     }
 
@@ -742,16 +749,39 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.configmanagement.v1.GitConfig buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.GitConfig result =
           new com.google.cloud.gkehub.configmanagement.v1.GitConfig(this);
-      result.syncRepo_ = syncRepo_;
-      result.syncBranch_ = syncBranch_;
-      result.policyDir_ = policyDir_;
-      result.syncWaitSecs_ = syncWaitSecs_;
-      result.syncRev_ = syncRev_;
-      result.secretType_ = secretType_;
-      result.httpsProxy_ = httpsProxy_;
-      result.gcpServiceAccountEmail_ = gcpServiceAccountEmail_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.configmanagement.v1.GitConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.syncRepo_ = syncRepo_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.syncBranch_ = syncBranch_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.policyDir_ = policyDir_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.syncWaitSecs_ = syncWaitSecs_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.syncRev_ = syncRev_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.secretType_ = secretType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.httpsProxy_ = httpsProxy_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.gcpServiceAccountEmail_ = gcpServiceAccountEmail_;
+      }
     }
 
     @java.lang.Override
@@ -802,14 +832,17 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getSyncRepo().isEmpty()) {
         syncRepo_ = other.syncRepo_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSyncBranch().isEmpty()) {
         syncBranch_ = other.syncBranch_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getPolicyDir().isEmpty()) {
         policyDir_ = other.policyDir_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getSyncWaitSecs() != 0L) {
@@ -817,18 +850,22 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSyncRev().isEmpty()) {
         syncRev_ = other.syncRev_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getSecretType().isEmpty()) {
         secretType_ = other.secretType_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getHttpsProxy().isEmpty()) {
         httpsProxy_ = other.httpsProxy_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getGcpServiceAccountEmail().isEmpty()) {
         gcpServiceAccountEmail_ = other.gcpServiceAccountEmail_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -860,49 +897,49 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 syncRepo_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 syncBranch_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 policyDir_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 syncWaitSecs_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 syncRev_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 secretType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 httpsProxy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 gcpServiceAccountEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -921,6 +958,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object syncRepo_ = "";
     /**
@@ -983,8 +1022,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       syncRepo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1000,8 +1039,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSyncRepo() {
-
       syncRepo_ = getDefaultInstance().getSyncRepo();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1022,8 +1061,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       syncRepo_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1089,8 +1128,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       syncBranch_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1106,8 +1145,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSyncBranch() {
-
       syncBranch_ = getDefaultInstance().getSyncBranch();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1128,8 +1167,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       syncBranch_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1198,8 +1237,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       policyDir_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1216,8 +1255,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPolicyDir() {
-
       policyDir_ = getDefaultInstance().getPolicyDir();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1239,8 +1278,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       policyDir_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1276,6 +1315,7 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setSyncWaitSecs(long value) {
 
       syncWaitSecs_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1291,7 +1331,7 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSyncWaitSecs() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       syncWaitSecs_ = 0L;
       onChanged();
       return this;
@@ -1358,8 +1398,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       syncRev_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1375,8 +1415,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSyncRev() {
-
       syncRev_ = getDefaultInstance().getSyncRev();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1397,8 +1437,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       syncRev_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1464,8 +1504,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       secretType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1481,8 +1521,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecretType() {
-
       secretType_ = getDefaultInstance().getSecretType();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1503,8 +1543,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       secretType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1570,8 +1610,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       httpsProxy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1587,8 +1627,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHttpsProxy() {
-
       httpsProxy_ = getDefaultInstance().getHttpsProxy();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1609,8 +1649,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       httpsProxy_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1679,8 +1719,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcpServiceAccountEmail_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1697,8 +1737,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGcpServiceAccountEmail() {
-
       gcpServiceAccountEmail_ = getDefaultInstance().getGcpServiceAccountEmail();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1720,8 +1760,8 @@ public final class GitConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcpServiceAccountEmail_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -174,7 +176,9 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.TrustOrBuilder getTrustOrBuilder() {
-    return getTrust();
+    return trust_ == null
+        ? com.google.cloud.managedidentities.v1.Trust.getDefaultInstance()
+        : trust_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -390,12 +394,11 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (trustBuilder_ == null) {
-        trust_ = null;
-      } else {
-        trust_ = null;
+      trust_ = null;
+      if (trustBuilder_ != null) {
+        trustBuilder_.dispose();
         trustBuilder_ = null;
       }
       return this;
@@ -425,14 +428,21 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.managedidentities.v1.AttachTrustRequest buildPartial() {
       com.google.cloud.managedidentities.v1.AttachTrustRequest result =
           new com.google.cloud.managedidentities.v1.AttachTrustRequest(this);
-      result.name_ = name_;
-      if (trustBuilder_ == null) {
-        result.trust_ = trust_;
-      } else {
-        result.trust_ = trustBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.managedidentities.v1.AttachTrustRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.trust_ = trustBuilder_ == null ? trust_ : trustBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -483,6 +493,7 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTrust()) {
@@ -517,13 +528,13 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTrustFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -542,6 +553,8 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -613,8 +626,8 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -633,8 +646,8 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -658,8 +671,8 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,7 +697,7 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the trust field is set.
      */
     public boolean hasTrust() {
-      return trustBuilder_ != null || trust_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -725,11 +738,11 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         trust_ = value;
-        onChanged();
       } else {
         trustBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -746,11 +759,11 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
     public Builder setTrust(com.google.cloud.managedidentities.v1.Trust.Builder builderForValue) {
       if (trustBuilder_ == null) {
         trust_ = builderForValue.build();
-        onChanged();
       } else {
         trustBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -766,19 +779,18 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeTrust(com.google.cloud.managedidentities.v1.Trust value) {
       if (trustBuilder_ == null) {
-        if (trust_ != null) {
-          trust_ =
-              com.google.cloud.managedidentities.v1.Trust.newBuilder(trust_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && trust_ != null
+            && trust_ != com.google.cloud.managedidentities.v1.Trust.getDefaultInstance()) {
+          getTrustBuilder().mergeFrom(value);
         } else {
           trust_ = value;
         }
-        onChanged();
       } else {
         trustBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -793,14 +805,13 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearTrust() {
-      if (trustBuilder_ == null) {
-        trust_ = null;
-        onChanged();
-      } else {
-        trust_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      trust_ = null;
+      if (trustBuilder_ != null) {
+        trustBuilder_.dispose();
         trustBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -815,7 +826,7 @@ public final class AttachTrustRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.managedidentities.v1.Trust.Builder getTrustBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTrustFieldBuilder().getBuilder();
     }

@@ -69,7 +69,9 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int RESOURCE_LINK_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resourceLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceLink_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resourceLink_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.gkehub.v1beta1.ApplianceCluster buildPartial() {
       com.google.cloud.gkehub.v1beta1.ApplianceCluster result =
           new com.google.cloud.gkehub.v1beta1.ApplianceCluster(this);
-      result.resourceLink_ = resourceLink_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta1.ApplianceCluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resourceLink_ = resourceLink_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +412,7 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getResourceLink().isEmpty()) {
         resourceLink_ = other.resourceLink_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +444,7 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 resourceLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +463,8 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resourceLink_ = "";
     /**
@@ -519,8 +533,8 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       resourceLink_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -538,8 +552,8 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearResourceLink() {
-
       resourceLink_ = getDefaultInstance().getResourceLink();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -562,8 +576,8 @@ public final class ApplianceCluster extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resourceLink_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

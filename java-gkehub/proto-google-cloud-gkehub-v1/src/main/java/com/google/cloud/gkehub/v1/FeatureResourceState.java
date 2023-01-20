@@ -299,7 +299,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -328,9 +328,8 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1.FeatureResourceState.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.v1.FeatureResourceState.State result =
-        com.google.cloud.gkehub.v1.FeatureResourceState.State.valueOf(state_);
+        com.google.cloud.gkehub.v1.FeatureResourceState.State.forNumber(state_);
     return result == null
         ? com.google.cloud.gkehub.v1.FeatureResourceState.State.UNRECOGNIZED
         : result;
@@ -537,8 +536,8 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       state_ = 0;
-
       return this;
     }
 
@@ -566,9 +565,18 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkehub.v1.FeatureResourceState buildPartial() {
       com.google.cloud.gkehub.v1.FeatureResourceState result =
           new com.google.cloud.gkehub.v1.FeatureResourceState(this);
-      result.state_ = state_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.FeatureResourceState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = state_;
+      }
     }
 
     @java.lang.Override
@@ -649,7 +657,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -668,6 +676,8 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int state_ = 0;
     /**
@@ -698,8 +708,8 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,9 +726,8 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.gkehub.v1.FeatureResourceState.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.v1.FeatureResourceState.State result =
-          com.google.cloud.gkehub.v1.FeatureResourceState.State.valueOf(state_);
+          com.google.cloud.gkehub.v1.FeatureResourceState.State.forNumber(state_);
       return result == null
           ? com.google.cloud.gkehub.v1.FeatureResourceState.State.UNRECOGNIZED
           : result;
@@ -739,7 +748,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -756,7 +765,7 @@ public final class FeatureResourceState extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       state_ = 0;
       onChanged();
       return this;

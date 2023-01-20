@@ -339,7 +339,9 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int LABEL_KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object labelKey_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object labelKey_ = "";
   /**
    *
    *
@@ -388,7 +390,9 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEMPLATE_VARIABLE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object templateVariable_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object templateVariable_ = "";
   /**
    *
    *
@@ -511,7 +515,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int FILTER_TYPE_FIELD_NUMBER = 5;
-  private int filterType_;
+  private int filterType_ = 0;
   /**
    *
    *
@@ -540,9 +544,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.monitoring.dashboard.v1.DashboardFilter.FilterType getFilterType() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.dashboard.v1.DashboardFilter.FilterType result =
-        com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.valueOf(filterType_);
+        com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.forNumber(filterType_);
     return result == null
         ? com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.UNRECOGNIZED
         : result;
@@ -789,12 +792,10 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       labelKey_ = "";
-
       templateVariable_ = "";
-
       filterType_ = 0;
-
       defaultValueCase_ = 0;
       defaultValue_ = null;
       return this;
@@ -824,15 +825,30 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.dashboard.v1.DashboardFilter buildPartial() {
       com.google.monitoring.dashboard.v1.DashboardFilter result =
           new com.google.monitoring.dashboard.v1.DashboardFilter(this);
-      result.labelKey_ = labelKey_;
-      result.templateVariable_ = templateVariable_;
-      if (defaultValueCase_ == 4) {
-        result.defaultValue_ = defaultValue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.filterType_ = filterType_;
-      result.defaultValueCase_ = defaultValueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.DashboardFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.labelKey_ = labelKey_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.templateVariable_ = templateVariable_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filterType_ = filterType_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.dashboard.v1.DashboardFilter result) {
+      result.defaultValueCase_ = defaultValueCase_;
+      result.defaultValue_ = this.defaultValue_;
     }
 
     @java.lang.Override
@@ -883,10 +899,12 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getLabelKey().isEmpty()) {
         labelKey_ = other.labelKey_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTemplateVariable().isEmpty()) {
         templateVariable_ = other.templateVariable_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.filterType_ != 0) {
@@ -934,13 +952,13 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 labelKey_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 templateVariable_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -953,7 +971,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
             case 40:
               {
                 filterType_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             default:
@@ -986,6 +1004,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object labelKey_ = "";
     /**
@@ -1048,8 +1068,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       labelKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1065,8 +1085,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearLabelKey() {
-
       labelKey_ = getDefaultInstance().getLabelKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1087,8 +1107,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       labelKey_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1160,8 +1180,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       templateVariable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1179,8 +1199,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTemplateVariable() {
-
       templateVariable_ = getDefaultInstance().getTemplateVariable();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1203,8 +1223,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       templateVariable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1372,8 +1392,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setFilterTypeValue(int value) {
-
       filterType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1390,9 +1410,8 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.monitoring.dashboard.v1.DashboardFilter.FilterType getFilterType() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.dashboard.v1.DashboardFilter.FilterType result =
-          com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.valueOf(filterType_);
+          com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.forNumber(filterType_);
       return result == null
           ? com.google.monitoring.dashboard.v1.DashboardFilter.FilterType.UNRECOGNIZED
           : result;
@@ -1414,7 +1433,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       filterType_ = value.getNumber();
       onChanged();
       return this;
@@ -1431,7 +1450,7 @@ public final class DashboardFilter extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearFilterType() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       filterType_ = 0;
       onChanged();
       return this;

@@ -134,7 +134,9 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -921,8 +923,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       title_ = "";
-
       if (xyChartBuilder_ != null) {
         xyChartBuilder_.clear();
       }
@@ -976,66 +978,48 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
     public com.google.monitoring.dashboard.v1.Widget buildPartial() {
       com.google.monitoring.dashboard.v1.Widget result =
           new com.google.monitoring.dashboard.v1.Widget(this);
-      result.title_ = title_;
-      if (contentCase_ == 2) {
-        if (xyChartBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = xyChartBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (contentCase_ == 3) {
-        if (scorecardBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = scorecardBuilder_.build();
-        }
-      }
-      if (contentCase_ == 4) {
-        if (textBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = textBuilder_.build();
-        }
-      }
-      if (contentCase_ == 5) {
-        if (blankBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = blankBuilder_.build();
-        }
-      }
-      if (contentCase_ == 7) {
-        if (alertChartBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = alertChartBuilder_.build();
-        }
-      }
-      if (contentCase_ == 8) {
-        if (timeSeriesTableBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = timeSeriesTableBuilder_.build();
-        }
-      }
-      if (contentCase_ == 9) {
-        if (collapsibleGroupBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = collapsibleGroupBuilder_.build();
-        }
-      }
-      if (contentCase_ == 10) {
-        if (logsPanelBuilder_ == null) {
-          result.content_ = content_;
-        } else {
-          result.content_ = logsPanelBuilder_.build();
-        }
-      }
-      result.contentCase_ = contentCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.dashboard.v1.Widget result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.title_ = title_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.dashboard.v1.Widget result) {
+      result.contentCase_ = contentCase_;
+      result.content_ = this.content_;
+      if (contentCase_ == 2 && xyChartBuilder_ != null) {
+        result.content_ = xyChartBuilder_.build();
+      }
+      if (contentCase_ == 3 && scorecardBuilder_ != null) {
+        result.content_ = scorecardBuilder_.build();
+      }
+      if (contentCase_ == 4 && textBuilder_ != null) {
+        result.content_ = textBuilder_.build();
+      }
+      if (contentCase_ == 5 && blankBuilder_ != null) {
+        result.content_ = blankBuilder_.build();
+      }
+      if (contentCase_ == 7 && alertChartBuilder_ != null) {
+        result.content_ = alertChartBuilder_.build();
+      }
+      if (contentCase_ == 8 && timeSeriesTableBuilder_ != null) {
+        result.content_ = timeSeriesTableBuilder_.build();
+      }
+      if (contentCase_ == 9 && collapsibleGroupBuilder_ != null) {
+        result.content_ = collapsibleGroupBuilder_.build();
+      }
+      if (contentCase_ == 10 && logsPanelBuilder_ != null) {
+        result.content_ = logsPanelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1085,6 +1069,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.dashboard.v1.Widget.getDefaultInstance()) return this;
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getContentCase()) {
@@ -1162,7 +1147,7 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1245,6 +1230,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object title_ = "";
     /**
      *
@@ -1306,8 +1293,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1323,8 +1310,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1345,8 +1332,8 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1556,7 +1543,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 2;
       onChanged();
-      ;
       return xyChartBuilder_;
     }
 
@@ -1766,7 +1752,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 3;
       onChanged();
-      ;
       return scorecardBuilder_;
     }
 
@@ -1975,7 +1960,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 4;
       onChanged();
-      ;
       return textBuilder_;
     }
 
@@ -2180,7 +2164,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 5;
       onChanged();
-      ;
       return blankBuilder_;
     }
 
@@ -2390,7 +2373,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 7;
       onChanged();
-      ;
       return alertChartBuilder_;
     }
 
@@ -2602,7 +2584,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 8;
       onChanged();
-      ;
       return timeSeriesTableBuilder_;
     }
 
@@ -2825,7 +2806,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 9;
       onChanged();
-      ;
       return collapsibleGroupBuilder_;
     }
 
@@ -3035,7 +3015,6 @@ public final class Widget extends com.google.protobuf.GeneratedMessageV3
       }
       contentCase_ = 10;
       onChanged();
-      ;
       return logsPanelBuilder_;
     }
 

@@ -69,7 +69,9 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
   }
 
   public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object accessToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object accessToken_ = "";
   /**
    *
    *
@@ -168,7 +170,9 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder() {
-    return getExpirationTime();
+    return expirationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : expirationTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -383,12 +387,11 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       accessToken_ = "";
-
-      if (expirationTimeBuilder_ == null) {
-        expirationTime_ = null;
-      } else {
-        expirationTime_ = null;
+      expirationTime_ = null;
+      if (expirationTimeBuilder_ != null) {
+        expirationTimeBuilder_.dispose();
         expirationTimeBuilder_ = null;
       }
       return this;
@@ -419,14 +422,23 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
     public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse buildPartial() {
       com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse result =
           new com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse(this);
-      result.accessToken_ = accessToken_;
-      if (expirationTimeBuilder_ == null) {
-        result.expirationTime_ = expirationTime_;
-      } else {
-        result.expirationTime_ = expirationTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.accessToken_ = accessToken_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expirationTime_ =
+            expirationTimeBuilder_ == null ? expirationTime_ : expirationTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +491,7 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
         return this;
       if (!other.getAccessToken().isEmpty()) {
         accessToken_ = other.accessToken_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasExpirationTime()) {
@@ -513,13 +526,13 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
             case 10:
               {
                 accessToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +551,8 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
     /**
@@ -600,8 +615,8 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       accessToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -617,8 +632,8 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearAccessToken() {
-
       accessToken_ = getDefaultInstance().getAccessToken();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -639,8 +654,8 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       accessToken_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,7 +680,7 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
      * @return Whether the expirationTime field is set.
      */
     public boolean hasExpirationTime() {
-      return expirationTimeBuilder_ != null || expirationTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -706,11 +721,11 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         expirationTime_ = value;
-        onChanged();
       } else {
         expirationTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -727,11 +742,11 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
     public Builder setExpirationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expirationTimeBuilder_ == null) {
         expirationTime_ = builderForValue.build();
-        onChanged();
       } else {
         expirationTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -747,19 +762,18 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
      */
     public Builder mergeExpirationTime(com.google.protobuf.Timestamp value) {
       if (expirationTimeBuilder_ == null) {
-        if (expirationTime_ != null) {
-          expirationTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expirationTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && expirationTime_ != null
+            && expirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpirationTimeBuilder().mergeFrom(value);
         } else {
           expirationTime_ = value;
         }
-        onChanged();
       } else {
         expirationTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -774,14 +788,13 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearExpirationTime() {
-      if (expirationTimeBuilder_ == null) {
-        expirationTime_ = null;
-        onChanged();
-      } else {
-        expirationTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      expirationTime_ = null;
+      if (expirationTimeBuilder_ != null) {
+        expirationTimeBuilder_.dispose();
         expirationTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -796,7 +809,7 @@ public final class GenerateAwsAccessTokenResponse extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpirationTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }

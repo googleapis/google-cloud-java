@@ -68,7 +68,9 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
   }
 
   public static final int AWS_CLUSTER_FIELD_NUMBER = 1;
-  private volatile java.lang.Object awsCluster_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object awsCluster_ = "";
   /**
    *
    *
@@ -330,8 +332,8 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       awsCluster_ = "";
-
       return this;
     }
 
@@ -360,9 +362,19 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
     public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest buildPartial() {
       com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest result =
           new com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest(this);
-      result.awsCluster_ = awsCluster_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.awsCluster_ = awsCluster_;
+      }
     }
 
     @java.lang.Override
@@ -415,6 +427,7 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
         return this;
       if (!other.getAwsCluster().isEmpty()) {
         awsCluster_ = other.awsCluster_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -446,7 +459,7 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
             case 10:
               {
                 awsCluster_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -465,6 +478,8 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object awsCluster_ = "";
     /**
@@ -551,8 +566,8 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       awsCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAwsCluster() {
-
       awsCluster_ = getDefaultInstance().getAwsCluster();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -606,8 +621,8 @@ public final class GenerateAwsAccessTokenRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       awsCluster_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

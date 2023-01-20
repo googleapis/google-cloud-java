@@ -460,7 +460,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LEVEL_FIELD_NUMBER = 1;
-  private int level_;
+  private int level_ = 0;
   /**
    *
    *
@@ -489,14 +489,15 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.admin.v1.LintResult.Level getLevel() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.LintResult.Level result =
-        com.google.iam.admin.v1.LintResult.Level.valueOf(level_);
+        com.google.iam.admin.v1.LintResult.Level.forNumber(level_);
     return result == null ? com.google.iam.admin.v1.LintResult.Level.UNRECOGNIZED : result;
   }
 
   public static final int VALIDATION_UNIT_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object validationUnitName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object validationUnitName_ = "";
   /**
    *
    *
@@ -547,7 +548,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SEVERITY_FIELD_NUMBER = 3;
-  private int severity_;
+  private int severity_ = 0;
   /**
    *
    *
@@ -576,14 +577,15 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.iam.admin.v1.LintResult.Severity getSeverity() {
-    @SuppressWarnings("deprecation")
     com.google.iam.admin.v1.LintResult.Severity result =
-        com.google.iam.admin.v1.LintResult.Severity.valueOf(severity_);
+        com.google.iam.admin.v1.LintResult.Severity.forNumber(severity_);
     return result == null ? com.google.iam.admin.v1.LintResult.Severity.UNRECOGNIZED : result;
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object fieldName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    *
    *
@@ -642,7 +644,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LOCATION_OFFSET_FIELD_NUMBER = 6;
-  private int locationOffset_;
+  private int locationOffset_ = 0;
   /**
    *
    *
@@ -662,7 +664,9 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEBUG_MESSAGE_FIELD_NUMBER = 7;
-  private volatile java.lang.Object debugMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object debugMessage_ = "";
   /**
    *
    *
@@ -949,18 +953,13 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       level_ = 0;
-
       validationUnitName_ = "";
-
       severity_ = 0;
-
       fieldName_ = "";
-
       locationOffset_ = 0;
-
       debugMessage_ = "";
-
       return this;
     }
 
@@ -986,14 +985,33 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.iam.admin.v1.LintResult buildPartial() {
       com.google.iam.admin.v1.LintResult result = new com.google.iam.admin.v1.LintResult(this);
-      result.level_ = level_;
-      result.validationUnitName_ = validationUnitName_;
-      result.severity_ = severity_;
-      result.fieldName_ = fieldName_;
-      result.locationOffset_ = locationOffset_;
-      result.debugMessage_ = debugMessage_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.LintResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.level_ = level_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.validationUnitName_ = validationUnitName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.severity_ = severity_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.locationOffset_ = locationOffset_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.debugMessage_ = debugMessage_;
+      }
     }
 
     @java.lang.Override
@@ -1046,6 +1064,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getValidationUnitName().isEmpty()) {
         validationUnitName_ = other.validationUnitName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.severity_ != 0) {
@@ -1053,6 +1072,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getLocationOffset() != 0) {
@@ -1060,6 +1080,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDebugMessage().isEmpty()) {
         debugMessage_ = other.debugMessage_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1091,37 +1112,37 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 level_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 validationUnitName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 severity_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 42:
               {
                 fieldName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 48:
               {
                 locationOffset_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 48
             case 58:
               {
                 debugMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -1140,6 +1161,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int level_ = 0;
     /**
@@ -1170,8 +1193,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLevelValue(int value) {
-
       level_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1188,9 +1211,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.iam.admin.v1.LintResult.Level getLevel() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.LintResult.Level result =
-          com.google.iam.admin.v1.LintResult.Level.valueOf(level_);
+          com.google.iam.admin.v1.LintResult.Level.forNumber(level_);
       return result == null ? com.google.iam.admin.v1.LintResult.Level.UNRECOGNIZED : result;
     }
     /**
@@ -1209,7 +1231,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       level_ = value.getNumber();
       onChanged();
       return this;
@@ -1226,7 +1248,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       level_ = 0;
       onChanged();
       return this;
@@ -1296,8 +1318,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       validationUnitName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1314,8 +1336,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidationUnitName() {
-
       validationUnitName_ = getDefaultInstance().getValidationUnitName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1337,8 +1359,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       validationUnitName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1372,8 +1394,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSeverityValue(int value) {
-
       severity_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1390,9 +1412,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.iam.admin.v1.LintResult.Severity getSeverity() {
-      @SuppressWarnings("deprecation")
       com.google.iam.admin.v1.LintResult.Severity result =
-          com.google.iam.admin.v1.LintResult.Severity.valueOf(severity_);
+          com.google.iam.admin.v1.LintResult.Severity.forNumber(severity_);
       return result == null ? com.google.iam.admin.v1.LintResult.Severity.UNRECOGNIZED : result;
     }
     /**
@@ -1411,7 +1432,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       severity_ = value.getNumber();
       onChanged();
       return this;
@@ -1428,7 +1449,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSeverity() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       severity_ = 0;
       onChanged();
       return this;
@@ -1510,8 +1531,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fieldName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1532,8 +1553,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1559,8 +1580,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fieldName_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1600,6 +1621,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
     public Builder setLocationOffset(int value) {
 
       locationOffset_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1617,7 +1639,7 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLocationOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       locationOffset_ = 0;
       onChanged();
       return this;
@@ -1684,8 +1706,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       debugMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1701,8 +1723,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDebugMessage() {
-
       debugMessage_ = getDefaultInstance().getDebugMessage();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1723,8 +1745,8 @@ public final class LintResult extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       debugMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

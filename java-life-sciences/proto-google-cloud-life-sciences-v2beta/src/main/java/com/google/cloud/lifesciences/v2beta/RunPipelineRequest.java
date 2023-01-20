@@ -82,7 +82,9 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PARENT_FIELD_NUMBER = 4;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -181,7 +183,9 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.lifesciences.v2beta.PipelineOrBuilder getPipelineOrBuilder() {
-    return getPipeline();
+    return pipeline_ == null
+        ? com.google.cloud.lifesciences.v2beta.Pipeline.getDefaultInstance()
+        : pipeline_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 2;
@@ -197,6 +201,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -266,7 +271,10 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -299,7 +307,9 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PUB_SUB_TOPIC_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pubSubTopic_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pubSubTopic_ = "";
   /**
    *
    *
@@ -613,17 +623,15 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (pipelineBuilder_ == null) {
-        pipeline_ = null;
-      } else {
-        pipeline_ = null;
+      pipeline_ = null;
+      if (pipelineBuilder_ != null) {
+        pipelineBuilder_.dispose();
         pipelineBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       pubSubTopic_ = "";
-
       return this;
     }
 
@@ -651,18 +659,28 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.lifesciences.v2beta.RunPipelineRequest buildPartial() {
       com.google.cloud.lifesciences.v2beta.RunPipelineRequest result =
           new com.google.cloud.lifesciences.v2beta.RunPipelineRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
-      if (pipelineBuilder_ == null) {
-        result.pipeline_ = pipeline_;
-      } else {
-        result.pipeline_ = pipelineBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.pubSubTopic_ = pubSubTopic_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.RunPipelineRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pipeline_ = pipelineBuilder_ == null ? pipeline_ : pipelineBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pubSubTopic_ = pubSubTopic_;
+      }
     }
 
     @java.lang.Override
@@ -713,14 +731,17 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPipeline()) {
         mergePipeline(other.getPipeline());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000004;
       if (!other.getPubSubTopic().isEmpty()) {
         pubSubTopic_ = other.pubSubTopic_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -752,7 +773,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getPipelineFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -764,18 +785,19 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 pubSubTopic_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -858,8 +880,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -875,8 +897,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -897,8 +919,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -923,7 +945,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the pipeline field is set.
      */
     public boolean hasPipeline() {
-      return pipelineBuilder_ != null || pipeline_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -964,11 +986,11 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         pipeline_ = value;
-        onChanged();
       } else {
         pipelineBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -986,11 +1008,11 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
         com.google.cloud.lifesciences.v2beta.Pipeline.Builder builderForValue) {
       if (pipelineBuilder_ == null) {
         pipeline_ = builderForValue.build();
-        onChanged();
       } else {
         pipelineBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1006,19 +1028,18 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergePipeline(com.google.cloud.lifesciences.v2beta.Pipeline value) {
       if (pipelineBuilder_ == null) {
-        if (pipeline_ != null) {
-          pipeline_ =
-              com.google.cloud.lifesciences.v2beta.Pipeline.newBuilder(pipeline_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && pipeline_ != null
+            && pipeline_ != com.google.cloud.lifesciences.v2beta.Pipeline.getDefaultInstance()) {
+          getPipelineBuilder().mergeFrom(value);
         } else {
           pipeline_ = value;
         }
-        onChanged();
       } else {
         pipelineBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1033,14 +1054,13 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearPipeline() {
-      if (pipelineBuilder_ == null) {
-        pipeline_ = null;
-        onChanged();
-      } else {
-        pipeline_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      pipeline_ = null;
+      if (pipelineBuilder_ != null) {
+        pipelineBuilder_.dispose();
         pipelineBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1055,7 +1075,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.lifesciences.v2beta.Pipeline.Builder getPipelineBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPipelineFieldBuilder().getBuilder();
     }
@@ -1118,14 +1138,14 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return labels_;
     }
 
@@ -1189,8 +1209,10 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1223,6 +1245,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1249,6 +1272,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1271,8 +1295,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1290,6 +1314,7 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1363,8 +1388,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       pubSubTopic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1383,8 +1408,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPubSubTopic() {
-
       pubSubTopic_ = getDefaultInstance().getPubSubTopic();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1408,8 +1433,8 @@ public final class RunPipelineRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pubSubTopic_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

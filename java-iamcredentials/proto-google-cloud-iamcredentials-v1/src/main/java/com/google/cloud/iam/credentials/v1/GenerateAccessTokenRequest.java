@@ -62,7 +62,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,6 +123,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int DELEGATES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList delegates_;
   /**
    *
@@ -214,6 +218,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   }
 
   public static final int SCOPE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList scope_;
   /**
    *
@@ -338,7 +344,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getLifetimeOrBuilder() {
-    return getLifetime();
+    return lifetime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : lifetime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -577,16 +583,15 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
-      if (lifetimeBuilder_ == null) {
-        lifetime_ = null;
-      } else {
-        lifetime_ = null;
+      scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      lifetime_ = null;
+      if (lifetimeBuilder_ != null) {
+        lifetimeBuilder_.dispose();
         lifetimeBuilder_ = null;
       }
       return this;
@@ -617,25 +622,37 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest buildPartial() {
       com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result =
           new com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        delegates_ = delegates_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.delegates_ = delegates_;
-      if (((bitField0_ & 0x00000002) != 0)) {
-        scope_ = scope_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.scope_ = scope_;
-      if (lifetimeBuilder_ == null) {
-        result.lifetime_ = lifetime_;
-      } else {
-        result.lifetime_ = lifetimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        delegates_ = delegates_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.delegates_ = delegates_;
+      if (((bitField0_ & 0x00000004) != 0)) {
+        scope_ = scope_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.scope_ = scope_;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lifetime_ = lifetimeBuilder_ == null ? lifetime_ : lifetimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -687,12 +704,13 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.delegates_.isEmpty()) {
         if (delegates_.isEmpty()) {
           delegates_ = other.delegates_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureDelegatesIsMutable();
           delegates_.addAll(other.delegates_);
@@ -702,7 +720,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (!other.scope_.isEmpty()) {
         if (scope_.isEmpty()) {
           scope_ = other.scope_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureScopeIsMutable();
           scope_.addAll(other.scope_);
@@ -741,7 +759,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -761,7 +779,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             case 58:
               {
                 input.readMessage(getLifetimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 58
             default:
@@ -859,8 +877,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -881,8 +899,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -908,8 +926,8 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,9 +936,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDelegatesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         delegates_ = new com.google.protobuf.LazyStringArrayList(delegates_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1119,7 +1137,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      */
     public Builder clearDelegates() {
       delegates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1158,9 +1176,9 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureScopeIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         scope_ = new com.google.protobuf.LazyStringArrayList(scope_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1319,7 +1337,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      */
     public Builder clearScope() {
       scope_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1370,7 +1388,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * @return Whether the lifetime field is set.
      */
     public boolean hasLifetime() {
-      return lifetimeBuilder_ != null || lifetime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1411,11 +1429,11 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         lifetime_ = value;
-        onChanged();
       } else {
         lifetimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1433,11 +1451,11 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public Builder setLifetime(com.google.protobuf.Duration.Builder builderForValue) {
       if (lifetimeBuilder_ == null) {
         lifetime_ = builderForValue.build();
-        onChanged();
       } else {
         lifetimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1454,17 +1472,18 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      */
     public Builder mergeLifetime(com.google.protobuf.Duration value) {
       if (lifetimeBuilder_ == null) {
-        if (lifetime_ != null) {
-          lifetime_ =
-              com.google.protobuf.Duration.newBuilder(lifetime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && lifetime_ != null
+            && lifetime_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getLifetimeBuilder().mergeFrom(value);
         } else {
           lifetime_ = value;
         }
-        onChanged();
       } else {
         lifetimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1480,14 +1499,13 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration lifetime = 7;</code>
      */
     public Builder clearLifetime() {
-      if (lifetimeBuilder_ == null) {
-        lifetime_ = null;
-        onChanged();
-      } else {
-        lifetime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lifetime_ = null;
+      if (lifetimeBuilder_ != null) {
+        lifetimeBuilder_.dispose();
         lifetimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1503,7 +1521,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
      * <code>.google.protobuf.Duration lifetime = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getLifetimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getLifetimeFieldBuilder().getBuilder();
     }

@@ -70,7 +70,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   }
 
   public static final int GATEKEEPER_CONTROLLER_MANAGER_STATE_FIELD_NUMBER = 1;
-  private int gatekeeperControllerManagerState_;
+  private int gatekeeperControllerManagerState_ = 0;
   /**
    *
    *
@@ -104,9 +104,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
       getGatekeeperControllerManagerState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
             gatekeeperControllerManagerState_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
@@ -114,7 +113,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
   }
 
   public static final int GATEKEEPER_AUDIT_FIELD_NUMBER = 2;
-  private int gatekeeperAudit_;
+  private int gatekeeperAudit_ = 0;
   /**
    *
    *
@@ -143,9 +142,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperAudit() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(gatekeeperAudit_);
+        com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(gatekeeperAudit_);
     return result == null
         ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
         : result;
@@ -376,10 +374,9 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gatekeeperControllerManagerState_ = 0;
-
       gatekeeperAudit_ = 0;
-
       return this;
     }
 
@@ -411,10 +408,22 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
         buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState result =
           new com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState(this);
-      result.gatekeeperControllerManagerState_ = gatekeeperControllerManagerState_;
-      result.gatekeeperAudit_ = gatekeeperAudit_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1beta.GatekeeperDeploymentState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gatekeeperControllerManagerState_ = gatekeeperControllerManagerState_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gatekeeperAudit_ = gatekeeperAudit_;
+      }
     }
 
     @java.lang.Override
@@ -502,13 +511,13 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
             case 8:
               {
                 gatekeeperControllerManagerState_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 gatekeeperAudit_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -527,6 +536,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int gatekeeperControllerManagerState_ = 0;
     /**
@@ -561,8 +572,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setGatekeeperControllerManagerStateValue(int value) {
-
       gatekeeperControllerManagerState_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -582,9 +593,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState
         getGatekeeperControllerManagerState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
               gatekeeperControllerManagerState_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
@@ -609,7 +619,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       gatekeeperControllerManagerState_ = value.getNumber();
       onChanged();
       return this;
@@ -628,7 +638,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearGatekeeperControllerManagerState() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       gatekeeperControllerManagerState_ = 0;
       onChanged();
       return this;
@@ -665,8 +675,8 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setGatekeeperAuditValue(int value) {
-
       gatekeeperAudit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -684,9 +694,9 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState getGatekeeperAudit() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState result =
-          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.valueOf(gatekeeperAudit_);
+          com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.forNumber(
+              gatekeeperAudit_);
       return result == null
           ? com.google.cloud.gkehub.configmanagement.v1beta.DeploymentState.UNRECOGNIZED
           : result;
@@ -709,7 +719,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       gatekeeperAudit_ = value.getNumber();
       onChanged();
       return this;
@@ -727,7 +737,7 @@ public final class GatekeeperDeploymentState extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearGatekeeperAudit() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       gatekeeperAudit_ = 0;
       onChanged();
       return this;

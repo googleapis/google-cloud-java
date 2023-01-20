@@ -70,7 +70,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PLAINTEXT_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString plaintext_;
+  private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -181,11 +181,13 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getPlaintextCrc32COrBuilder() {
-    return getPlaintextCrc32C();
+    return plaintextCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : plaintextCrc32C_;
   }
 
   public static final int USED_PRIMARY_FIELD_NUMBER = 3;
-  private boolean usedPrimary_;
+  private boolean usedPrimary_ = false;
   /**
    *
    *
@@ -203,7 +205,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 4;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -236,9 +238,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -473,18 +474,15 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       plaintext_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (plaintextCrc32CBuilder_ == null) {
-        plaintextCrc32C_ = null;
-      } else {
-        plaintextCrc32C_ = null;
+      plaintextCrc32C_ = null;
+      if (plaintextCrc32CBuilder_ != null) {
+        plaintextCrc32CBuilder_.dispose();
         plaintextCrc32CBuilder_ = null;
       }
       usedPrimary_ = false;
-
       protectionLevel_ = 0;
-
       return this;
     }
 
@@ -512,16 +510,28 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.kms.v1.DecryptResponse buildPartial() {
       com.google.cloud.kms.v1.DecryptResponse result =
           new com.google.cloud.kms.v1.DecryptResponse(this);
-      result.plaintext_ = plaintext_;
-      if (plaintextCrc32CBuilder_ == null) {
-        result.plaintextCrc32C_ = plaintextCrc32C_;
-      } else {
-        result.plaintextCrc32C_ = plaintextCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.usedPrimary_ = usedPrimary_;
-      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.DecryptResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.plaintext_ = plaintext_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.plaintextCrc32C_ =
+            plaintextCrc32CBuilder_ == null ? plaintextCrc32C_ : plaintextCrc32CBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.usedPrimary_ = usedPrimary_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
     }
 
     @java.lang.Override
@@ -610,25 +620,25 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 plaintext_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPlaintextCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 usedPrimary_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -647,6 +657,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.ByteString plaintext_ = com.google.protobuf.ByteString.EMPTY;
     /**
@@ -682,8 +694,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       plaintext_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -700,7 +712,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPlaintext() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       plaintext_ = getDefaultInstance().getPlaintext();
       onChanged();
       return this;
@@ -740,7 +752,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * @return Whether the plaintextCrc32c field is set.
      */
     public boolean hasPlaintextCrc32C() {
-      return plaintextCrc32CBuilder_ != null || plaintextCrc32C_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -809,11 +821,11 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         plaintextCrc32C_ = value;
-        onChanged();
       } else {
         plaintextCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -844,11 +856,11 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setPlaintextCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (plaintextCrc32CBuilder_ == null) {
         plaintextCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         plaintextCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,19 +890,18 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePlaintextCrc32C(com.google.protobuf.Int64Value value) {
       if (plaintextCrc32CBuilder_ == null) {
-        if (plaintextCrc32C_ != null) {
-          plaintextCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(plaintextCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && plaintextCrc32C_ != null
+            && plaintextCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getPlaintextCrc32CBuilder().mergeFrom(value);
         } else {
           plaintextCrc32C_ = value;
         }
-        onChanged();
       } else {
         plaintextCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -919,14 +930,13 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
      */
     public Builder clearPlaintextCrc32C() {
-      if (plaintextCrc32CBuilder_ == null) {
-        plaintextCrc32C_ = null;
-        onChanged();
-      } else {
-        plaintextCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      plaintextCrc32C_ = null;
+      if (plaintextCrc32CBuilder_ != null) {
+        plaintextCrc32CBuilder_.dispose();
         plaintextCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -955,7 +965,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
      */
     public com.google.protobuf.Int64Value.Builder getPlaintextCrc32CBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPlaintextCrc32CFieldBuilder().getBuilder();
     }
@@ -1066,6 +1076,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
     public Builder setUsedPrimary(boolean value) {
 
       usedPrimary_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1081,7 +1092,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUsedPrimary() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       usedPrimary_ = false;
       onChanged();
       return this;
@@ -1120,8 +1131,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1140,9 +1151,8 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -1163,7 +1173,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1182,7 +1192,7 @@ public final class DecryptResponse extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       protectionLevel_ = 0;
       onChanged();
       return this;

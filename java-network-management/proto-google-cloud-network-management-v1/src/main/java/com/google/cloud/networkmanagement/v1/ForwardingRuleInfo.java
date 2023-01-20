@@ -74,7 +74,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MATCHED_PROTOCOL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object matchedProtocol_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchedProtocol_ = "";
   /**
    *
    *
@@ -221,7 +227,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MATCHED_PORT_RANGE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object matchedPortRange_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object matchedPortRange_ = "";
   /**
    *
    *
@@ -270,7 +278,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int VIP_FIELD_NUMBER = 4;
-  private volatile java.lang.Object vip_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vip_ = "";
   /**
    *
    *
@@ -319,7 +329,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_FIELD_NUMBER = 5;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -368,7 +380,9 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NETWORK_URI_FIELD_NUMBER = 7;
-  private volatile java.lang.Object networkUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object networkUri_ = "";
   /**
    *
    *
@@ -668,20 +682,14 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       uri_ = "";
-
       matchedProtocol_ = "";
-
       matchedPortRange_ = "";
-
       vip_ = "";
-
       target_ = "";
-
       networkUri_ = "";
-
       return this;
     }
 
@@ -709,15 +717,36 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.networkmanagement.v1.ForwardingRuleInfo buildPartial() {
       com.google.cloud.networkmanagement.v1.ForwardingRuleInfo result =
           new com.google.cloud.networkmanagement.v1.ForwardingRuleInfo(this);
-      result.displayName_ = displayName_;
-      result.uri_ = uri_;
-      result.matchedProtocol_ = matchedProtocol_;
-      result.matchedPortRange_ = matchedPortRange_;
-      result.vip_ = vip_;
-      result.target_ = target_;
-      result.networkUri_ = networkUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1.ForwardingRuleInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.matchedProtocol_ = matchedProtocol_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.matchedPortRange_ = matchedPortRange_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.vip_ = vip_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.networkUri_ = networkUri_;
+      }
     }
 
     @java.lang.Override
@@ -768,30 +797,37 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMatchedProtocol().isEmpty()) {
         matchedProtocol_ = other.matchedProtocol_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMatchedPortRange().isEmpty()) {
         matchedPortRange_ = other.matchedPortRange_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getVip().isEmpty()) {
         vip_ = other.vip_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getNetworkUri().isEmpty()) {
         networkUri_ = other.networkUri_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -823,43 +859,43 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 matchedProtocol_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 vip_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 matchedPortRange_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 networkUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -878,6 +914,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -940,8 +978,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -957,8 +995,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -979,8 +1017,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1046,8 +1084,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1063,8 +1101,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1085,8 +1123,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1152,8 +1190,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       matchedProtocol_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1169,8 +1207,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMatchedProtocol() {
-
       matchedProtocol_ = getDefaultInstance().getMatchedProtocol();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1191,8 +1229,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       matchedProtocol_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1258,8 +1296,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       matchedPortRange_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1275,8 +1313,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearMatchedPortRange() {
-
       matchedPortRange_ = getDefaultInstance().getMatchedPortRange();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1297,8 +1335,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       matchedPortRange_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1364,8 +1402,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       vip_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1381,8 +1419,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearVip() {
-
       vip_ = getDefaultInstance().getVip();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1403,8 +1441,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vip_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1470,8 +1508,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1487,8 +1525,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1509,8 +1547,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1576,8 +1614,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       networkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1593,8 +1631,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNetworkUri() {
-
       networkUri_ = getDefaultInstance().getNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1615,8 +1653,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       networkUri_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

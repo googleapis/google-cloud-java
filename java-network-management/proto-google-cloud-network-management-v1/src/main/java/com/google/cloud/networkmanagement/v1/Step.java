@@ -777,7 +777,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -826,7 +828,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 2;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -855,14 +857,13 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.networkmanagement.v1.Step.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.networkmanagement.v1.Step.State result =
-        com.google.cloud.networkmanagement.v1.Step.State.valueOf(state_);
+        com.google.cloud.networkmanagement.v1.Step.State.forNumber(state_);
     return result == null ? com.google.cloud.networkmanagement.v1.Step.State.UNRECOGNIZED : result;
   }
 
   public static final int CAUSES_DROP_FIELD_NUMBER = 3;
-  private boolean causesDrop_;
+  private boolean causesDrop_ = false;
   /**
    *
    *
@@ -880,7 +881,9 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -2165,14 +2168,11 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       description_ = "";
-
       state_ = 0;
-
       causesDrop_ = false;
-
       projectId_ = "";
-
       if (instanceBuilder_ != null) {
         instanceBuilder_.clear();
       }
@@ -2247,118 +2247,78 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1.Step buildPartial() {
       com.google.cloud.networkmanagement.v1.Step result =
           new com.google.cloud.networkmanagement.v1.Step(this);
-      result.description_ = description_;
-      result.state_ = state_;
-      result.causesDrop_ = causesDrop_;
-      result.projectId_ = projectId_;
-      if (stepInfoCase_ == 5) {
-        if (instanceBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = instanceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (stepInfoCase_ == 6) {
-        if (firewallBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = firewallBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 7) {
-        if (routeBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = routeBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 8) {
-        if (endpointBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = endpointBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 9) {
-        if (forwardingRuleBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = forwardingRuleBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 10) {
-        if (vpnGatewayBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = vpnGatewayBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 11) {
-        if (vpnTunnelBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = vpnTunnelBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 12) {
-        if (deliverBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = deliverBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 13) {
-        if (forwardBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = forwardBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 14) {
-        if (abortBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = abortBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 15) {
-        if (dropBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = dropBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 16) {
-        if (loadBalancerBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = loadBalancerBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 17) {
-        if (networkBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = networkBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 18) {
-        if (gkeMasterBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = gkeMasterBuilder_.build();
-        }
-      }
-      if (stepInfoCase_ == 19) {
-        if (cloudSqlInstanceBuilder_ == null) {
-          result.stepInfo_ = stepInfo_;
-        } else {
-          result.stepInfo_ = cloudSqlInstanceBuilder_.build();
-        }
-      }
-      result.stepInfoCase_ = stepInfoCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1.Step result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.causesDrop_ = causesDrop_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.projectId_ = projectId_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.networkmanagement.v1.Step result) {
+      result.stepInfoCase_ = stepInfoCase_;
+      result.stepInfo_ = this.stepInfo_;
+      if (stepInfoCase_ == 5 && instanceBuilder_ != null) {
+        result.stepInfo_ = instanceBuilder_.build();
+      }
+      if (stepInfoCase_ == 6 && firewallBuilder_ != null) {
+        result.stepInfo_ = firewallBuilder_.build();
+      }
+      if (stepInfoCase_ == 7 && routeBuilder_ != null) {
+        result.stepInfo_ = routeBuilder_.build();
+      }
+      if (stepInfoCase_ == 8 && endpointBuilder_ != null) {
+        result.stepInfo_ = endpointBuilder_.build();
+      }
+      if (stepInfoCase_ == 9 && forwardingRuleBuilder_ != null) {
+        result.stepInfo_ = forwardingRuleBuilder_.build();
+      }
+      if (stepInfoCase_ == 10 && vpnGatewayBuilder_ != null) {
+        result.stepInfo_ = vpnGatewayBuilder_.build();
+      }
+      if (stepInfoCase_ == 11 && vpnTunnelBuilder_ != null) {
+        result.stepInfo_ = vpnTunnelBuilder_.build();
+      }
+      if (stepInfoCase_ == 12 && deliverBuilder_ != null) {
+        result.stepInfo_ = deliverBuilder_.build();
+      }
+      if (stepInfoCase_ == 13 && forwardBuilder_ != null) {
+        result.stepInfo_ = forwardBuilder_.build();
+      }
+      if (stepInfoCase_ == 14 && abortBuilder_ != null) {
+        result.stepInfo_ = abortBuilder_.build();
+      }
+      if (stepInfoCase_ == 15 && dropBuilder_ != null) {
+        result.stepInfo_ = dropBuilder_.build();
+      }
+      if (stepInfoCase_ == 16 && loadBalancerBuilder_ != null) {
+        result.stepInfo_ = loadBalancerBuilder_.build();
+      }
+      if (stepInfoCase_ == 17 && networkBuilder_ != null) {
+        result.stepInfo_ = networkBuilder_.build();
+      }
+      if (stepInfoCase_ == 18 && gkeMasterBuilder_ != null) {
+        result.stepInfo_ = gkeMasterBuilder_.build();
+      }
+      if (stepInfoCase_ == 19 && cloudSqlInstanceBuilder_ != null) {
+        result.stepInfo_ = cloudSqlInstanceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2408,6 +2368,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.networkmanagement.v1.Step.getDefaultInstance()) return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2418,6 +2379,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getStepInfoCase()) {
@@ -2530,25 +2492,25 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 causesDrop_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -2673,6 +2635,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -2734,8 +2698,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2751,8 +2715,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2773,8 +2737,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2808,8 +2772,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2826,9 +2790,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.networkmanagement.v1.Step.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.networkmanagement.v1.Step.State result =
-          com.google.cloud.networkmanagement.v1.Step.State.valueOf(state_);
+          com.google.cloud.networkmanagement.v1.Step.State.forNumber(state_);
       return result == null
           ? com.google.cloud.networkmanagement.v1.Step.State.UNRECOGNIZED
           : result;
@@ -2849,7 +2812,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2866,7 +2829,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -2903,6 +2866,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
     public Builder setCausesDrop(boolean value) {
 
       causesDrop_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2918,7 +2882,7 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCausesDrop() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       causesDrop_ = false;
       onChanged();
       return this;
@@ -2985,8 +2949,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3002,8 +2966,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -3024,8 +2988,8 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3237,7 +3201,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 5;
       onChanged();
-      ;
       return instanceBuilder_;
     }
 
@@ -3448,7 +3411,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 6;
       onChanged();
-      ;
       return firewallBuilder_;
     }
 
@@ -3658,7 +3620,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 7;
       onChanged();
-      ;
       return routeBuilder_;
     }
 
@@ -3896,7 +3857,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 8;
       onChanged();
-      ;
       return endpointBuilder_;
     }
 
@@ -4111,7 +4071,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 9;
       onChanged();
-      ;
       return forwardingRuleBuilder_;
     }
 
@@ -4322,7 +4281,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 10;
       onChanged();
-      ;
       return vpnGatewayBuilder_;
     }
 
@@ -4533,7 +4491,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 11;
       onChanged();
-      ;
       return vpnTunnelBuilder_;
     }
 
@@ -4744,7 +4701,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 12;
       onChanged();
-      ;
       return deliverBuilder_;
     }
 
@@ -4955,7 +4911,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 13;
       onChanged();
-      ;
       return forwardBuilder_;
     }
 
@@ -5165,7 +5120,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 14;
       onChanged();
-      ;
       return abortBuilder_;
     }
 
@@ -5374,7 +5328,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 15;
       onChanged();
-      ;
       return dropBuilder_;
     }
 
@@ -5586,7 +5539,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 16;
       onChanged();
-      ;
       return loadBalancerBuilder_;
     }
 
@@ -5797,7 +5749,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 17;
       onChanged();
-      ;
       return networkBuilder_;
     }
 
@@ -6008,7 +5959,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 18;
       onChanged();
-      ;
       return gkeMasterBuilder_;
     }
 
@@ -6225,7 +6175,6 @@ public final class Step extends com.google.protobuf.GeneratedMessageV3
       }
       stepInfoCase_ = 19;
       onChanged();
-      ;
       return cloudSqlInstanceBuilder_;
     }
 

@@ -68,7 +68,9 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -170,11 +172,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.monitoring.v3.GroupOrBuilder getGroupOrBuilder() {
-    return getGroup();
+    return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -411,16 +413,14 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (groupBuilder_ == null) {
-        group_ = null;
-      } else {
-        group_ = null;
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
       validateOnly_ = false;
-
       return this;
     }
 
@@ -448,15 +448,24 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public com.google.monitoring.v3.CreateGroupRequest buildPartial() {
       com.google.monitoring.v3.CreateGroupRequest result =
           new com.google.monitoring.v3.CreateGroupRequest(this);
-      result.name_ = name_;
-      if (groupBuilder_ == null) {
-        result.group_ = group_;
-      } else {
-        result.group_ = groupBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.CreateGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.group_ = groupBuilder_ == null ? group_ : groupBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -506,6 +515,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       if (other == com.google.monitoring.v3.CreateGroupRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGroup()) {
@@ -543,19 +553,19 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
             case 18:
               {
                 input.readMessage(getGroupFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 34
             default:
@@ -574,6 +584,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -648,8 +660,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -669,8 +681,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -695,8 +707,8 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,7 +732,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return Whether the group field is set.
      */
     public boolean hasGroup() {
-      return groupBuilder_ != null || group_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -757,11 +769,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         group_ = value;
-        onChanged();
       } else {
         groupBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -777,11 +789,11 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public Builder setGroup(com.google.monitoring.v3.Group.Builder builderForValue) {
       if (groupBuilder_ == null) {
         group_ = builderForValue.build();
-        onChanged();
       } else {
         groupBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -796,17 +808,18 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeGroup(com.google.monitoring.v3.Group value) {
       if (groupBuilder_ == null) {
-        if (group_ != null) {
-          group_ =
-              com.google.monitoring.v3.Group.newBuilder(group_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && group_ != null
+            && group_ != com.google.monitoring.v3.Group.getDefaultInstance()) {
+          getGroupBuilder().mergeFrom(value);
         } else {
           group_ = value;
         }
-        onChanged();
       } else {
         groupBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -820,14 +833,13 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearGroup() {
-      if (groupBuilder_ == null) {
-        group_ = null;
-        onChanged();
-      } else {
-        group_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      group_ = null;
+      if (groupBuilder_ != null) {
+        groupBuilder_.dispose();
         groupBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -841,7 +853,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * <code>.google.monitoring.v3.Group group = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.monitoring.v3.Group.Builder getGroupBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
@@ -920,6 +932,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -935,7 +948,7 @@ public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;
       onChanged();
       return this;

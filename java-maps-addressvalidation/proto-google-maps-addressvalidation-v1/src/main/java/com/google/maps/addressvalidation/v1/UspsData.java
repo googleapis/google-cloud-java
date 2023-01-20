@@ -135,11 +135,15 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.maps.addressvalidation.v1.UspsAddressOrBuilder
       getStandardizedAddressOrBuilder() {
-    return getStandardizedAddress();
+    return standardizedAddress_ == null
+        ? com.google.maps.addressvalidation.v1.UspsAddress.getDefaultInstance()
+        : standardizedAddress_;
   }
 
   public static final int DELIVERY_POINT_CODE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object deliveryPointCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deliveryPointCode_ = "";
   /**
    *
    *
@@ -188,7 +192,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELIVERY_POINT_CHECK_DIGIT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object deliveryPointCheckDigit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object deliveryPointCheckDigit_ = "";
   /**
    *
    *
@@ -243,7 +249,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DPV_CONFIRMATION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object dpvConfirmation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dpvConfirmation_ = "";
   /**
    *
    *
@@ -306,7 +314,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DPV_FOOTNOTE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object dpvFootnote_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dpvFootnote_ = "";
   /**
    *
    *
@@ -389,7 +399,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DPV_CMRA_FIELD_NUMBER = 6;
-  private volatile java.lang.Object dpvCmra_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dpvCmra_ = "";
   /**
    *
    *
@@ -444,7 +456,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DPV_VACANT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object dpvVacant_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dpvVacant_ = "";
   /**
    *
    *
@@ -499,7 +513,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DPV_NO_STAT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object dpvNoStat_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dpvNoStat_ = "";
   /**
    *
    *
@@ -556,7 +572,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CARRIER_ROUTE_FIELD_NUMBER = 9;
-  private volatile java.lang.Object carrierRoute_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object carrierRoute_ = "";
   /**
    *
    *
@@ -621,7 +639,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CARRIER_ROUTE_INDICATOR_FIELD_NUMBER = 10;
-  private volatile java.lang.Object carrierRouteIndicator_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object carrierRouteIndicator_ = "";
   /**
    *
    *
@@ -670,7 +690,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EWS_NO_MATCH_FIELD_NUMBER = 11;
-  private boolean ewsNoMatch_;
+  private boolean ewsNoMatch_ = false;
   /**
    *
    *
@@ -689,7 +709,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POST_OFFICE_CITY_FIELD_NUMBER = 12;
-  private volatile java.lang.Object postOfficeCity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postOfficeCity_ = "";
   /**
    *
    *
@@ -738,7 +760,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POST_OFFICE_STATE_FIELD_NUMBER = 13;
-  private volatile java.lang.Object postOfficeState_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object postOfficeState_ = "";
   /**
    *
    *
@@ -787,7 +811,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ABBREVIATED_CITY_FIELD_NUMBER = 14;
-  private volatile java.lang.Object abbreviatedCity_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object abbreviatedCity_ = "";
   /**
    *
    *
@@ -836,7 +862,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIPS_COUNTY_CODE_FIELD_NUMBER = 15;
-  private volatile java.lang.Object fipsCountyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fipsCountyCode_ = "";
   /**
    *
    *
@@ -885,7 +913,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COUNTY_FIELD_NUMBER = 16;
-  private volatile java.lang.Object county_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object county_ = "";
   /**
    *
    *
@@ -934,7 +964,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ELOT_NUMBER_FIELD_NUMBER = 17;
-  private volatile java.lang.Object elotNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object elotNumber_ = "";
   /**
    *
    *
@@ -983,7 +1015,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ELOT_FLAG_FIELD_NUMBER = 18;
-  private volatile java.lang.Object elotFlag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object elotFlag_ = "";
   /**
    *
    *
@@ -1032,7 +1066,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LACS_LINK_RETURN_CODE_FIELD_NUMBER = 19;
-  private volatile java.lang.Object lacsLinkReturnCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lacsLinkReturnCode_ = "";
   /**
    *
    *
@@ -1081,7 +1117,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LACS_LINK_INDICATOR_FIELD_NUMBER = 20;
-  private volatile java.lang.Object lacsLinkIndicator_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object lacsLinkIndicator_ = "";
   /**
    *
    *
@@ -1130,7 +1168,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PO_BOX_ONLY_POSTAL_CODE_FIELD_NUMBER = 21;
-  private boolean poBoxOnlyPostalCode_;
+  private boolean poBoxOnlyPostalCode_ = false;
   /**
    *
    *
@@ -1148,7 +1186,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUITELINK_FOOTNOTE_FIELD_NUMBER = 22;
-  private volatile java.lang.Object suitelinkFootnote_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object suitelinkFootnote_ = "";
   /**
    *
    *
@@ -1203,7 +1243,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PMB_DESIGNATOR_FIELD_NUMBER = 23;
-  private volatile java.lang.Object pmbDesignator_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pmbDesignator_ = "";
   /**
    *
    *
@@ -1252,7 +1294,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PMB_NUMBER_FIELD_NUMBER = 24;
-  private volatile java.lang.Object pmbNumber_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pmbNumber_ = "";
   /**
    *
    *
@@ -1301,7 +1345,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESS_RECORD_TYPE_FIELD_NUMBER = 25;
-  private volatile java.lang.Object addressRecordType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object addressRecordType_ = "";
   /**
    *
    *
@@ -1372,7 +1418,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEFAULT_ADDRESS_FIELD_NUMBER = 26;
-  private boolean defaultAddress_;
+  private boolean defaultAddress_ = false;
   /**
    *
    *
@@ -1391,7 +1437,9 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_MESSAGE_FIELD_NUMBER = 27;
-  private volatile java.lang.Object errorMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object errorMessage_ = "";
   /**
    *
    *
@@ -1446,7 +1494,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CASS_PROCESSED_FIELD_NUMBER = 28;
-  private boolean cassProcessed_;
+  private boolean cassProcessed_ = false;
   /**
    *
    *
@@ -1908,66 +1956,39 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (standardizedAddressBuilder_ == null) {
-        standardizedAddress_ = null;
-      } else {
-        standardizedAddress_ = null;
+      bitField0_ = 0;
+      standardizedAddress_ = null;
+      if (standardizedAddressBuilder_ != null) {
+        standardizedAddressBuilder_.dispose();
         standardizedAddressBuilder_ = null;
       }
       deliveryPointCode_ = "";
-
       deliveryPointCheckDigit_ = "";
-
       dpvConfirmation_ = "";
-
       dpvFootnote_ = "";
-
       dpvCmra_ = "";
-
       dpvVacant_ = "";
-
       dpvNoStat_ = "";
-
       carrierRoute_ = "";
-
       carrierRouteIndicator_ = "";
-
       ewsNoMatch_ = false;
-
       postOfficeCity_ = "";
-
       postOfficeState_ = "";
-
       abbreviatedCity_ = "";
-
       fipsCountyCode_ = "";
-
       county_ = "";
-
       elotNumber_ = "";
-
       elotFlag_ = "";
-
       lacsLinkReturnCode_ = "";
-
       lacsLinkIndicator_ = "";
-
       poBoxOnlyPostalCode_ = false;
-
       suitelinkFootnote_ = "";
-
       pmbDesignator_ = "";
-
       pmbNumber_ = "";
-
       addressRecordType_ = "";
-
       defaultAddress_ = false;
-
       errorMessage_ = "";
-
       cassProcessed_ = false;
-
       return this;
     }
 
@@ -1995,40 +2016,102 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.UspsData buildPartial() {
       com.google.maps.addressvalidation.v1.UspsData result =
           new com.google.maps.addressvalidation.v1.UspsData(this);
-      if (standardizedAddressBuilder_ == null) {
-        result.standardizedAddress_ = standardizedAddress_;
-      } else {
-        result.standardizedAddress_ = standardizedAddressBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deliveryPointCode_ = deliveryPointCode_;
-      result.deliveryPointCheckDigit_ = deliveryPointCheckDigit_;
-      result.dpvConfirmation_ = dpvConfirmation_;
-      result.dpvFootnote_ = dpvFootnote_;
-      result.dpvCmra_ = dpvCmra_;
-      result.dpvVacant_ = dpvVacant_;
-      result.dpvNoStat_ = dpvNoStat_;
-      result.carrierRoute_ = carrierRoute_;
-      result.carrierRouteIndicator_ = carrierRouteIndicator_;
-      result.ewsNoMatch_ = ewsNoMatch_;
-      result.postOfficeCity_ = postOfficeCity_;
-      result.postOfficeState_ = postOfficeState_;
-      result.abbreviatedCity_ = abbreviatedCity_;
-      result.fipsCountyCode_ = fipsCountyCode_;
-      result.county_ = county_;
-      result.elotNumber_ = elotNumber_;
-      result.elotFlag_ = elotFlag_;
-      result.lacsLinkReturnCode_ = lacsLinkReturnCode_;
-      result.lacsLinkIndicator_ = lacsLinkIndicator_;
-      result.poBoxOnlyPostalCode_ = poBoxOnlyPostalCode_;
-      result.suitelinkFootnote_ = suitelinkFootnote_;
-      result.pmbDesignator_ = pmbDesignator_;
-      result.pmbNumber_ = pmbNumber_;
-      result.addressRecordType_ = addressRecordType_;
-      result.defaultAddress_ = defaultAddress_;
-      result.errorMessage_ = errorMessage_;
-      result.cassProcessed_ = cassProcessed_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.UspsData result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.standardizedAddress_ =
+            standardizedAddressBuilder_ == null
+                ? standardizedAddress_
+                : standardizedAddressBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.deliveryPointCode_ = deliveryPointCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deliveryPointCheckDigit_ = deliveryPointCheckDigit_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dpvConfirmation_ = dpvConfirmation_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dpvFootnote_ = dpvFootnote_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.dpvCmra_ = dpvCmra_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.dpvVacant_ = dpvVacant_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dpvNoStat_ = dpvNoStat_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.carrierRoute_ = carrierRoute_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.carrierRouteIndicator_ = carrierRouteIndicator_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ewsNoMatch_ = ewsNoMatch_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.postOfficeCity_ = postOfficeCity_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.postOfficeState_ = postOfficeState_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.abbreviatedCity_ = abbreviatedCity_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.fipsCountyCode_ = fipsCountyCode_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.county_ = county_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.elotNumber_ = elotNumber_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.elotFlag_ = elotFlag_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.lacsLinkReturnCode_ = lacsLinkReturnCode_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.lacsLinkIndicator_ = lacsLinkIndicator_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.poBoxOnlyPostalCode_ = poBoxOnlyPostalCode_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.suitelinkFootnote_ = suitelinkFootnote_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.pmbDesignator_ = pmbDesignator_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.pmbNumber_ = pmbNumber_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.addressRecordType_ = addressRecordType_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.defaultAddress_ = defaultAddress_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.errorMessage_ = errorMessage_;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.cassProcessed_ = cassProcessed_;
+      }
     }
 
     @java.lang.Override
@@ -2081,38 +2164,47 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDeliveryPointCode().isEmpty()) {
         deliveryPointCode_ = other.deliveryPointCode_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDeliveryPointCheckDigit().isEmpty()) {
         deliveryPointCheckDigit_ = other.deliveryPointCheckDigit_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDpvConfirmation().isEmpty()) {
         dpvConfirmation_ = other.dpvConfirmation_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDpvFootnote().isEmpty()) {
         dpvFootnote_ = other.dpvFootnote_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDpvCmra().isEmpty()) {
         dpvCmra_ = other.dpvCmra_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDpvVacant().isEmpty()) {
         dpvVacant_ = other.dpvVacant_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDpvNoStat().isEmpty()) {
         dpvNoStat_ = other.dpvNoStat_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCarrierRoute().isEmpty()) {
         carrierRoute_ = other.carrierRoute_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getCarrierRouteIndicator().isEmpty()) {
         carrierRouteIndicator_ = other.carrierRouteIndicator_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.getEwsNoMatch() != false) {
@@ -2120,38 +2212,47 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getPostOfficeCity().isEmpty()) {
         postOfficeCity_ = other.postOfficeCity_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getPostOfficeState().isEmpty()) {
         postOfficeState_ = other.postOfficeState_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getAbbreviatedCity().isEmpty()) {
         abbreviatedCity_ = other.abbreviatedCity_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getFipsCountyCode().isEmpty()) {
         fipsCountyCode_ = other.fipsCountyCode_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (!other.getCounty().isEmpty()) {
         county_ = other.county_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (!other.getElotNumber().isEmpty()) {
         elotNumber_ = other.elotNumber_;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (!other.getElotFlag().isEmpty()) {
         elotFlag_ = other.elotFlag_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getLacsLinkReturnCode().isEmpty()) {
         lacsLinkReturnCode_ = other.lacsLinkReturnCode_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (!other.getLacsLinkIndicator().isEmpty()) {
         lacsLinkIndicator_ = other.lacsLinkIndicator_;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.getPoBoxOnlyPostalCode() != false) {
@@ -2159,18 +2260,22 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getSuitelinkFootnote().isEmpty()) {
         suitelinkFootnote_ = other.suitelinkFootnote_;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (!other.getPmbDesignator().isEmpty()) {
         pmbDesignator_ = other.pmbDesignator_;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.getPmbNumber().isEmpty()) {
         pmbNumber_ = other.pmbNumber_;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.getAddressRecordType().isEmpty()) {
         addressRecordType_ = other.addressRecordType_;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.getDefaultAddress() != false) {
@@ -2178,6 +2283,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getErrorMessage().isEmpty()) {
         errorMessage_ = other.errorMessage_;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.getCassProcessed() != false) {
@@ -2213,169 +2319,169 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getStandardizedAddressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 deliveryPointCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 deliveryPointCheckDigit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 dpvConfirmation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 dpvFootnote_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 dpvCmra_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 dpvVacant_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 dpvNoStat_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 carrierRoute_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 carrierRouteIndicator_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 ewsNoMatch_ = input.readBool();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 postOfficeCity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 postOfficeState_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 abbreviatedCity_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 fipsCountyCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 county_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
               {
                 elotNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
               {
                 elotFlag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
               {
                 lacsLinkReturnCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 162:
               {
                 lacsLinkIndicator_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
             case 168:
               {
                 poBoxOnlyPostalCode_ = input.readBool();
-
+                bitField0_ |= 0x00100000;
                 break;
               } // case 168
             case 178:
               {
                 suitelinkFootnote_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 186:
               {
                 pmbDesignator_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00400000;
                 break;
               } // case 186
             case 194:
               {
                 pmbNumber_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00800000;
                 break;
               } // case 194
             case 202:
               {
                 addressRecordType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x01000000;
                 break;
               } // case 202
             case 208:
               {
                 defaultAddress_ = input.readBool();
-
+                bitField0_ |= 0x02000000;
                 break;
               } // case 208
             case 218:
               {
                 errorMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x04000000;
                 break;
               } // case 218
             case 224:
               {
                 cassProcessed_ = input.readBool();
-
+                bitField0_ |= 0x08000000;
                 break;
               } // case 224
             default:
@@ -2395,6 +2501,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.maps.addressvalidation.v1.UspsAddress standardizedAddress_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.maps.addressvalidation.v1.UspsAddress,
@@ -2413,7 +2521,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the standardizedAddress field is set.
      */
     public boolean hasStandardizedAddress() {
-      return standardizedAddressBuilder_ != null || standardizedAddress_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -2450,11 +2558,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         standardizedAddress_ = value;
-        onChanged();
       } else {
         standardizedAddressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2470,11 +2578,11 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         com.google.maps.addressvalidation.v1.UspsAddress.Builder builderForValue) {
       if (standardizedAddressBuilder_ == null) {
         standardizedAddress_ = builderForValue.build();
-        onChanged();
       } else {
         standardizedAddressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2489,19 +2597,19 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStandardizedAddress(
         com.google.maps.addressvalidation.v1.UspsAddress value) {
       if (standardizedAddressBuilder_ == null) {
-        if (standardizedAddress_ != null) {
-          standardizedAddress_ =
-              com.google.maps.addressvalidation.v1.UspsAddress.newBuilder(standardizedAddress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && standardizedAddress_ != null
+            && standardizedAddress_
+                != com.google.maps.addressvalidation.v1.UspsAddress.getDefaultInstance()) {
+          getStandardizedAddressBuilder().mergeFrom(value);
         } else {
           standardizedAddress_ = value;
         }
-        onChanged();
       } else {
         standardizedAddressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -2514,14 +2622,13 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.maps.addressvalidation.v1.UspsAddress standardized_address = 1;</code>
      */
     public Builder clearStandardizedAddress() {
-      if (standardizedAddressBuilder_ == null) {
-        standardizedAddress_ = null;
-        onChanged();
-      } else {
-        standardizedAddress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      standardizedAddress_ = null;
+      if (standardizedAddressBuilder_ != null) {
+        standardizedAddressBuilder_.dispose();
         standardizedAddressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2535,7 +2642,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.maps.addressvalidation.v1.UspsAddress.Builder
         getStandardizedAddressBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStandardizedAddressFieldBuilder().getBuilder();
     }
@@ -2645,8 +2752,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       deliveryPointCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2662,8 +2769,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeliveryPointCode() {
-
       deliveryPointCode_ = getDefaultInstance().getDeliveryPointCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -2684,8 +2791,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deliveryPointCode_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2760,8 +2867,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       deliveryPointCheckDigit_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2780,8 +2887,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeliveryPointCheckDigit() {
-
       deliveryPointCheckDigit_ = getDefaultInstance().getDeliveryPointCheckDigit();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2805,8 +2912,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       deliveryPointCheckDigit_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2893,8 +3000,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dpvConfirmation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2917,8 +3024,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDpvConfirmation() {
-
       dpvConfirmation_ = getDefaultInstance().getDpvConfirmation();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2946,8 +3053,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dpvConfirmation_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3064,8 +3171,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dpvFootnote_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3098,8 +3205,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDpvFootnote() {
-
       dpvFootnote_ = getDefaultInstance().getDpvFootnote();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3137,8 +3244,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dpvFootnote_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3213,8 +3320,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dpvCmra_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3233,8 +3340,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDpvCmra() {
-
       dpvCmra_ = getDefaultInstance().getDpvCmra();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3258,8 +3365,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dpvCmra_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3334,8 +3441,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dpvVacant_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3354,8 +3461,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDpvVacant() {
-
       dpvVacant_ = getDefaultInstance().getDpvVacant();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3379,8 +3486,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dpvVacant_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3458,8 +3565,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       dpvNoStat_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3479,8 +3586,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDpvNoStat() {
-
       dpvNoStat_ = getDefaultInstance().getDpvNoStat();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3505,8 +3612,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       dpvNoStat_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3596,8 +3703,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       carrierRoute_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3621,8 +3728,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCarrierRoute() {
-
       carrierRoute_ = getDefaultInstance().getCarrierRoute();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3651,8 +3758,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       carrierRoute_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3718,8 +3825,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       carrierRouteIndicator_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3735,8 +3842,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCarrierRouteIndicator() {
-
       carrierRouteIndicator_ = getDefaultInstance().getCarrierRouteIndicator();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3757,8 +3864,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       carrierRouteIndicator_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3796,6 +3903,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setEwsNoMatch(boolean value) {
 
       ewsNoMatch_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3812,7 +3920,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEwsNoMatch() {
-
+      bitField0_ = (bitField0_ & ~0x00000400);
       ewsNoMatch_ = false;
       onChanged();
       return this;
@@ -3879,8 +3987,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       postOfficeCity_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3896,8 +4004,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPostOfficeCity() {
-
       postOfficeCity_ = getDefaultInstance().getPostOfficeCity();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3918,8 +4026,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       postOfficeCity_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3985,8 +4093,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       postOfficeState_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4002,8 +4110,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPostOfficeState() {
-
       postOfficeState_ = getDefaultInstance().getPostOfficeState();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4024,8 +4132,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       postOfficeState_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4091,8 +4199,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       abbreviatedCity_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4108,8 +4216,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAbbreviatedCity() {
-
       abbreviatedCity_ = getDefaultInstance().getAbbreviatedCity();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4130,8 +4238,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       abbreviatedCity_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4197,8 +4305,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fipsCountyCode_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4214,8 +4322,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFipsCountyCode() {
-
       fipsCountyCode_ = getDefaultInstance().getFipsCountyCode();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4236,8 +4344,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fipsCountyCode_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4303,8 +4411,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       county_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4320,8 +4428,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCounty() {
-
       county_ = getDefaultInstance().getCounty();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4342,8 +4450,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       county_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4409,8 +4517,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       elotNumber_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4426,8 +4534,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearElotNumber() {
-
       elotNumber_ = getDefaultInstance().getElotNumber();
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4448,8 +4556,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       elotNumber_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4515,8 +4623,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       elotFlag_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4532,8 +4640,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearElotFlag() {
-
       elotFlag_ = getDefaultInstance().getElotFlag();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -4554,8 +4662,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       elotFlag_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4621,8 +4729,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lacsLinkReturnCode_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4638,8 +4746,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLacsLinkReturnCode() {
-
       lacsLinkReturnCode_ = getDefaultInstance().getLacsLinkReturnCode();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4660,8 +4768,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lacsLinkReturnCode_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4727,8 +4835,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       lacsLinkIndicator_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4744,8 +4852,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLacsLinkIndicator() {
-
       lacsLinkIndicator_ = getDefaultInstance().getLacsLinkIndicator();
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -4766,8 +4874,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       lacsLinkIndicator_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4803,6 +4911,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setPoBoxOnlyPostalCode(boolean value) {
 
       poBoxOnlyPostalCode_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -4818,7 +4927,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPoBoxOnlyPostalCode() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       poBoxOnlyPostalCode_ = false;
       onChanged();
       return this;
@@ -4894,8 +5003,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       suitelinkFootnote_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -4914,8 +5023,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSuitelinkFootnote() {
-
       suitelinkFootnote_ = getDefaultInstance().getSuitelinkFootnote();
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -4939,8 +5048,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       suitelinkFootnote_ = value;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -5006,8 +5115,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pmbDesignator_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5023,8 +5132,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPmbDesignator() {
-
       pmbDesignator_ = getDefaultInstance().getPmbDesignator();
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -5045,8 +5154,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pmbDesignator_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -5112,8 +5221,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       pmbNumber_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5129,8 +5238,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPmbNumber() {
-
       pmbNumber_ = getDefaultInstance().getPmbNumber();
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -5151,8 +5260,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pmbNumber_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -5251,8 +5360,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       addressRecordType_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -5279,8 +5388,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAddressRecordType() {
-
       addressRecordType_ = getDefaultInstance().getAddressRecordType();
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -5312,8 +5421,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       addressRecordType_ = value;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -5351,6 +5460,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setDefaultAddress(boolean value) {
 
       defaultAddress_ = value;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -5367,7 +5477,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDefaultAddress() {
-
+      bitField0_ = (bitField0_ & ~0x02000000);
       defaultAddress_ = false;
       onChanged();
       return this;
@@ -5443,8 +5553,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       errorMessage_ = value;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -5463,8 +5573,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorMessage() {
-
       errorMessage_ = getDefaultInstance().getErrorMessage();
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -5488,8 +5598,8 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       errorMessage_ = value;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -5525,6 +5635,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
     public Builder setCassProcessed(boolean value) {
 
       cassProcessed_ = value;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -5540,7 +5651,7 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCassProcessed() {
-
+      bitField0_ = (bitField0_ & ~0x08000000);
       cassProcessed_ = false;
       onChanged();
       return this;

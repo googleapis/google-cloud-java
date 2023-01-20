@@ -70,7 +70,9 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -196,7 +200,9 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -310,7 +316,9 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null
+        ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
+        : interval_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -551,18 +559,14 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       filter_ = "";
-
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        interval_ = null;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
       return this;
@@ -592,17 +596,30 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
     public com.google.monitoring.v3.ListGroupMembersRequest buildPartial() {
       com.google.monitoring.v3.ListGroupMembersRequest result =
           new com.google.monitoring.v3.ListGroupMembersRequest(this);
-      result.name_ = name_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.filter_ = filter_;
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ListGroupMembersRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -653,6 +670,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getPageSize() != 0) {
@@ -660,10 +678,12 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasInterval()) {
@@ -698,31 +718,31 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 58
             default:
@@ -741,6 +761,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -812,8 +834,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -832,8 +854,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -857,8 +879,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -894,6 +916,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -909,7 +932,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -982,8 +1005,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1001,8 +1024,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1025,8 +1048,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1110,8 +1133,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1133,8 +1156,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1161,8 +1184,8 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1188,7 +1211,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1231,11 +1254,11 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1253,11 +1276,11 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
     public Builder setInterval(com.google.monitoring.v3.TimeInterval.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1274,19 +1297,18 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      */
     public Builder mergeInterval(com.google.monitoring.v3.TimeInterval value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
-          interval_ =
-              com.google.monitoring.v3.TimeInterval.newBuilder(interval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && interval_ != null
+            && interval_ != com.google.monitoring.v3.TimeInterval.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1302,14 +1324,13 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * <code>.google.monitoring.v3.TimeInterval interval = 6;</code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        interval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1325,7 +1346,7 @@ public final class ListGroupMembersRequest extends com.google.protobuf.Generated
      * <code>.google.monitoring.v3.TimeInterval interval = 6;</code>
      */
     public com.google.monitoring.v3.TimeInterval.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }

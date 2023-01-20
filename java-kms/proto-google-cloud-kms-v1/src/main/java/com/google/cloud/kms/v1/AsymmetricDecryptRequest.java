@@ -70,7 +70,9 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -127,7 +129,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
   }
 
   public static final int CIPHERTEXT_FIELD_NUMBER = 3;
-  private com.google.protobuf.ByteString ciphertext_;
+  private com.google.protobuf.ByteString ciphertext_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -251,7 +253,9 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.Int64ValueOrBuilder getCiphertextCrc32COrBuilder() {
-    return getCiphertextCrc32C();
+    return ciphertextCrc32C_ == null
+        ? com.google.protobuf.Int64Value.getDefaultInstance()
+        : ciphertextCrc32C_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -475,14 +479,12 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       ciphertext_ = com.google.protobuf.ByteString.EMPTY;
-
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
-      } else {
-        ciphertextCrc32C_ = null;
+      ciphertextCrc32C_ = null;
+      if (ciphertextCrc32CBuilder_ != null) {
+        ciphertextCrc32CBuilder_.dispose();
         ciphertextCrc32CBuilder_ = null;
       }
       return this;
@@ -512,15 +514,25 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     public com.google.cloud.kms.v1.AsymmetricDecryptRequest buildPartial() {
       com.google.cloud.kms.v1.AsymmetricDecryptRequest result =
           new com.google.cloud.kms.v1.AsymmetricDecryptRequest(this);
-      result.name_ = name_;
-      result.ciphertext_ = ciphertext_;
-      if (ciphertextCrc32CBuilder_ == null) {
-        result.ciphertextCrc32C_ = ciphertextCrc32C_;
-      } else {
-        result.ciphertextCrc32C_ = ciphertextCrc32CBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.AsymmetricDecryptRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ciphertext_ = ciphertext_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ciphertextCrc32C_ =
+            ciphertextCrc32CBuilder_ == null ? ciphertextCrc32C_ : ciphertextCrc32CBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -571,6 +583,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getCiphertext() != com.google.protobuf.ByteString.EMPTY) {
@@ -608,20 +621,20 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 ciphertext_ = input.readBytes();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getCiphertextCrc32CFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -640,6 +653,8 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -714,8 +729,8 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -735,8 +750,8 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -761,8 +776,8 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +818,8 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       ciphertext_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -822,7 +837,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearCiphertext() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       ciphertext_ = getDefaultInstance().getCiphertext();
       onChanged();
       return this;
@@ -866,7 +881,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      * @return Whether the ciphertextCrc32c field is set.
      */
     public boolean hasCiphertextCrc32C() {
-      return ciphertextCrc32CBuilder_ != null || ciphertextCrc32C_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -943,11 +958,11 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         ciphertextCrc32C_ = value;
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -982,11 +997,11 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
     public Builder setCiphertextCrc32C(com.google.protobuf.Int64Value.Builder builderForValue) {
       if (ciphertextCrc32CBuilder_ == null) {
         ciphertextCrc32C_ = builderForValue.build();
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1020,19 +1035,18 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      */
     public Builder mergeCiphertextCrc32C(com.google.protobuf.Int64Value value) {
       if (ciphertextCrc32CBuilder_ == null) {
-        if (ciphertextCrc32C_ != null) {
-          ciphertextCrc32C_ =
-              com.google.protobuf.Int64Value.newBuilder(ciphertextCrc32C_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && ciphertextCrc32C_ != null
+            && ciphertextCrc32C_ != com.google.protobuf.Int64Value.getDefaultInstance()) {
+          getCiphertextCrc32CBuilder().mergeFrom(value);
         } else {
           ciphertextCrc32C_ = value;
         }
-        onChanged();
       } else {
         ciphertextCrc32CBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1065,14 +1079,13 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearCiphertextCrc32C() {
-      if (ciphertextCrc32CBuilder_ == null) {
-        ciphertextCrc32C_ = null;
-        onChanged();
-      } else {
-        ciphertextCrc32C_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ciphertextCrc32C_ = null;
+      if (ciphertextCrc32CBuilder_ != null) {
+        ciphertextCrc32CBuilder_.dispose();
         ciphertextCrc32CBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1105,7 +1118,7 @@ public final class AsymmetricDecryptRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.protobuf.Int64Value.Builder getCiphertextCrc32CBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCiphertextCrc32CFieldBuilder().getBuilder();
     }

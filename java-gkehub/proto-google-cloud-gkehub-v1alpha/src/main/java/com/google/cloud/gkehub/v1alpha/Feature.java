@@ -83,7 +83,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -146,6 +148,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -203,7 +206,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -282,7 +288,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha.FeatureResourceStateOrBuilder getResourceStateOrBuilder() {
-    return getResourceState();
+    return resourceState_ == null
+        ? com.google.cloud.gkehub.v1alpha.FeatureResourceState.getDefaultInstance()
+        : resourceState_;
   }
 
   public static final int SPEC_FIELD_NUMBER = 4;
@@ -339,7 +347,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha.CommonFeatureSpecOrBuilder getSpecOrBuilder() {
-    return getSpec();
+    return spec_ == null
+        ? com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.getDefaultInstance()
+        : spec_;
   }
 
   public static final int MEMBERSHIP_SPECS_FIELD_NUMBER = 5;
@@ -359,6 +369,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
       membershipSpecs_;
@@ -465,8 +476,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec getMembershipSpecsOrDefault(
-      java.lang.String key, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec defaultValue) {
+  public /* nullable */ com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec
+      getMembershipSpecsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -562,7 +576,9 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1alpha.CommonFeatureStateOrBuilder getStateOrBuilder() {
-    return getState();
+    return state_ == null
+        ? com.google.cloud.gkehub.v1alpha.CommonFeatureState.getDefaultInstance()
+        : state_;
   }
 
   public static final int MEMBERSHIP_STATES_FIELD_NUMBER = 7;
@@ -583,6 +599,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                             .getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
       membershipStates_;
@@ -671,8 +688,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.gkehub.v1alpha.MembershipFeatureState getMembershipStatesOrDefault(
-      java.lang.String key, com.google.cloud.gkehub.v1alpha.MembershipFeatureState defaultValue) {
+  public /* nullable */ com.google.cloud.gkehub.v1alpha.MembershipFeatureState
+      getMembershipStatesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.gkehub.v1alpha.MembershipFeatureState defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -757,7 +777,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 9;
@@ -806,7 +826,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int DELETE_TIME_FIELD_NUMBER = 10;
@@ -855,7 +875,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder() {
-    return getDeleteTime();
+    return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1223,45 +1243,39 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       internalGetMutableLabels().clear();
-      if (resourceStateBuilder_ == null) {
-        resourceState_ = null;
-      } else {
-        resourceState_ = null;
+      resourceState_ = null;
+      if (resourceStateBuilder_ != null) {
+        resourceStateBuilder_.dispose();
         resourceStateBuilder_ = null;
       }
-      if (specBuilder_ == null) {
-        spec_ = null;
-      } else {
-        spec_ = null;
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
       internalGetMutableMembershipSpecs().clear();
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
       internalGetMutableMembershipStates().clear();
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-      } else {
-        deleteTime_ = null;
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
       return this;
@@ -1291,46 +1305,49 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.gkehub.v1alpha.Feature buildPartial() {
       com.google.cloud.gkehub.v1alpha.Feature result =
           new com.google.cloud.gkehub.v1alpha.Feature(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (resourceStateBuilder_ == null) {
-        result.resourceState_ = resourceState_;
-      } else {
-        result.resourceState_ = resourceStateBuilder_.build();
-      }
-      if (specBuilder_ == null) {
-        result.spec_ = spec_;
-      } else {
-        result.spec_ = specBuilder_.build();
-      }
-      result.membershipSpecs_ = internalGetMembershipSpecs();
-      result.membershipSpecs_.makeImmutable();
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
-      }
-      result.membershipStates_ = internalGetMembershipStates();
-      result.membershipStates_.makeImmutable();
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (deleteTimeBuilder_ == null) {
-        result.deleteTime_ = deleteTime_;
-      } else {
-        result.deleteTime_ = deleteTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1alpha.Feature result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceState_ =
+            resourceStateBuilder_ == null ? resourceState_ : resourceStateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.spec_ = specBuilder_ == null ? spec_ : specBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.membershipSpecs_ = internalGetMembershipSpecs();
+        result.membershipSpecs_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.membershipStates_ = internalGetMembershipStates();
+        result.membershipStates_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1380,9 +1397,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.gkehub.v1alpha.Feature.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
       if (other.hasResourceState()) {
         mergeResourceState(other.getResourceState());
       }
@@ -1390,10 +1409,12 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         mergeSpec(other.getSpec());
       }
       internalGetMutableMembershipSpecs().mergeFrom(other.internalGetMembershipSpecs());
+      bitField0_ |= 0x00000010;
       if (other.hasState()) {
         mergeState(other.getState());
       }
       internalGetMutableMembershipStates().mergeFrom(other.internalGetMembershipStates());
+      bitField0_ |= 0x00000040;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1432,7 +1453,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1444,18 +1465,19 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getResourceStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
@@ -1469,12 +1491,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMembershipSpecs()
                     .getMutableMap()
                     .put(membershipSpecs__.getKey(), membershipSpecs__.getValue());
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1488,24 +1511,25 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMembershipStates()
                     .getMutableMap()
                     .put(membershipStates__.getKey(), membershipStates__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             default:
@@ -1591,8 +1615,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1609,8 +1633,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1632,8 +1656,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1649,14 +1673,14 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return labels_;
     }
 
@@ -1708,8 +1732,10 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1738,6 +1764,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1760,6 +1787,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1778,8 +1806,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1793,6 +1821,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1816,7 +1845,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resourceState field is set.
      */
     public boolean hasResourceState() {
-      return resourceStateBuilder_ != null || resourceState_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1857,11 +1886,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resourceState_ = value;
-        onChanged();
       } else {
         resourceStateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1879,11 +1908,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.v1alpha.FeatureResourceState.Builder builderForValue) {
       if (resourceStateBuilder_ == null) {
         resourceState_ = builderForValue.build();
-        onChanged();
       } else {
         resourceStateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1899,19 +1928,19 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResourceState(com.google.cloud.gkehub.v1alpha.FeatureResourceState value) {
       if (resourceStateBuilder_ == null) {
-        if (resourceState_ != null) {
-          resourceState_ =
-              com.google.cloud.gkehub.v1alpha.FeatureResourceState.newBuilder(resourceState_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resourceState_ != null
+            && resourceState_
+                != com.google.cloud.gkehub.v1alpha.FeatureResourceState.getDefaultInstance()) {
+          getResourceStateBuilder().mergeFrom(value);
         } else {
           resourceState_ = value;
         }
-        onChanged();
       } else {
         resourceStateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1926,14 +1955,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResourceState() {
-      if (resourceStateBuilder_ == null) {
-        resourceState_ = null;
-        onChanged();
-      } else {
-        resourceState_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resourceState_ = null;
+      if (resourceStateBuilder_ != null) {
+        resourceStateBuilder_.dispose();
         resourceStateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1948,7 +1976,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkehub.v1alpha.FeatureResourceState.Builder getResourceStateBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceStateFieldBuilder().getBuilder();
     }
@@ -2022,7 +2050,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
-      return specBuilder_ != null || spec_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2065,11 +2093,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         spec_ = value;
-        onChanged();
       } else {
         specBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2088,11 +2116,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.Builder builderForValue) {
       if (specBuilder_ == null) {
         spec_ = builderForValue.build();
-        onChanged();
       } else {
         specBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2109,19 +2137,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSpec(com.google.cloud.gkehub.v1alpha.CommonFeatureSpec value) {
       if (specBuilder_ == null) {
-        if (spec_ != null) {
-          spec_ =
-              com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.newBuilder(spec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && spec_ != null
+            && spec_ != com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.getDefaultInstance()) {
+          getSpecBuilder().mergeFrom(value);
         } else {
           spec_ = value;
         }
-        onChanged();
       } else {
         specBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2137,14 +2164,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSpec() {
-      if (specBuilder_ == null) {
-        spec_ = null;
-        onChanged();
-      } else {
-        spec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2160,7 +2186,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkehub.v1alpha.CommonFeatureSpec.Builder getSpecBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
@@ -2231,8 +2257,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
         internalGetMutableMembershipSpecs() {
-      onChanged();
-      ;
       if (membershipSpecs_ == null) {
         membershipSpecs_ =
             com.google.protobuf.MapField.newMapField(
@@ -2241,6 +2265,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (!membershipSpecs_.isMutable()) {
         membershipSpecs_ = membershipSpecs_.copy();
       }
+      bitField0_ |= 0x00000010;
+      onChanged();
       return membershipSpecs_;
     }
 
@@ -2336,8 +2362,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec getMembershipSpecsOrDefault(
-        java.lang.String key, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec defaultValue) {
+    public /* nullable */ com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec
+        getMembershipSpecsOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2383,6 +2412,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMembershipSpecs() {
+      bitField0_ = (bitField0_ & ~0x00000010);
       internalGetMutableMembershipSpecs().getMutableMap().clear();
       return this;
     }
@@ -2420,6 +2450,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
         getMutableMembershipSpecs() {
+      bitField0_ |= 0x00000010;
       return internalGetMutableMembershipSpecs().getMutableMap();
     }
     /**
@@ -2453,8 +2484,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMembershipSpecs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000010;
       return this;
     }
     /**
@@ -2484,6 +2515,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureSpec>
             values) {
       internalGetMutableMembershipSpecs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000010;
       return this;
     }
 
@@ -2507,7 +2539,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2548,11 +2580,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2570,11 +2602,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.gkehub.v1alpha.CommonFeatureState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2590,19 +2622,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeState(com.google.cloud.gkehub.v1alpha.CommonFeatureState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.gkehub.v1alpha.CommonFeatureState.newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && state_ != null
+            && state_ != com.google.cloud.gkehub.v1alpha.CommonFeatureState.getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2617,14 +2648,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2639,7 +2669,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.gkehub.v1alpha.CommonFeatureState.Builder getStateBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
@@ -2708,8 +2738,6 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
         internalGetMutableMembershipStates() {
-      onChanged();
-      ;
       if (membershipStates_ == null) {
         membershipStates_ =
             com.google.protobuf.MapField.newMapField(
@@ -2718,6 +2746,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (!membershipStates_.isMutable()) {
         membershipStates_ = membershipStates_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return membershipStates_;
     }
 
@@ -2795,8 +2825,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.gkehub.v1alpha.MembershipFeatureState getMembershipStatesOrDefault(
-        java.lang.String key, com.google.cloud.gkehub.v1alpha.MembershipFeatureState defaultValue) {
+    public /* nullable */ com.google.cloud.gkehub.v1alpha.MembershipFeatureState
+        getMembershipStatesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.gkehub.v1alpha.MembershipFeatureState defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2836,6 +2869,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMembershipStates() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableMembershipStates().getMutableMap().clear();
       return this;
     }
@@ -2867,6 +2901,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
         getMutableMembershipStates() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableMembershipStates().getMutableMap();
     }
     /**
@@ -2894,8 +2929,8 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMembershipStates().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2919,6 +2954,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.gkehub.v1alpha.MembershipFeatureState>
             values) {
       internalGetMutableMembershipStates().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2942,7 +2978,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2983,11 +3019,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3004,11 +3040,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3024,17 +3060,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -3049,14 +3086,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3071,7 +3107,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3143,7 +3179,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3184,11 +3220,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3205,11 +3241,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3225,17 +3261,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3250,14 +3287,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3272,7 +3308,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3344,7 +3380,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return deleteTimeBuilder_ != null || deleteTime_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3385,11 +3421,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         deleteTime_ = value;
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3406,11 +3442,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
     public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
-        onChanged();
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3426,17 +3462,18 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (deleteTime_ != null) {
-          deleteTime_ =
-              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && deleteTime_ != null
+            && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDeleteTimeBuilder().mergeFrom(value);
         } else {
           deleteTime_ = value;
         }
-        onChanged();
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -3451,14 +3488,13 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      if (deleteTimeBuilder_ == null) {
-        deleteTime_ = null;
-        onChanged();
-      } else {
-        deleteTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      deleteTime_ = null;
+      if (deleteTimeBuilder_ != null) {
+        deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3473,7 +3509,7 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }

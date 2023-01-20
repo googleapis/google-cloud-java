@@ -70,6 +70,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   }
 
   public static final int ENTITIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.language.v1beta2.Entity> entities_;
   /**
    *
@@ -139,7 +141,9 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object language_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object language_ = "";
   /**
    *
    *
@@ -400,6 +404,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
       } else {
@@ -408,7 +413,6 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       language_ = "";
-
       return this;
     }
 
@@ -437,7 +441,16 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
     public com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse buildPartial() {
       com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse result =
           new com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse result) {
       if (entitiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
@@ -447,9 +460,14 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
-      result.language_ = language_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.language_ = language_;
+      }
     }
 
     @java.lang.Override
@@ -529,6 +547,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       }
       if (!other.getLanguage().isEmpty()) {
         language_ = other.language_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -573,7 +592,7 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
             case 18:
               {
                 language_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1011,8 +1030,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1030,8 +1049,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearLanguage() {
-
       language_ = getDefaultInstance().getLanguage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1054,8 +1073,8 @@ public final class AnalyzeEntitySentimentResponse extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       language_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

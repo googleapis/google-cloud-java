@@ -70,7 +70,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object keyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object keyName_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIPHER_TEXT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object cipherText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cipherText_ = "";
   /**
    *
    *
@@ -380,10 +384,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       keyName_ = "";
-
       cipherText_ = "";
-
       return this;
     }
 
@@ -411,10 +414,21 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.lifesciences.v2beta.Secret buildPartial() {
       com.google.cloud.lifesciences.v2beta.Secret result =
           new com.google.cloud.lifesciences.v2beta.Secret(this);
-      result.keyName_ = keyName_;
-      result.cipherText_ = cipherText_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.Secret result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.keyName_ = keyName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cipherText_ = cipherText_;
+      }
     }
 
     @java.lang.Override
@@ -464,10 +478,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.lifesciences.v2beta.Secret.getDefaultInstance()) return this;
       if (!other.getKeyName().isEmpty()) {
         keyName_ = other.keyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCipherText().isEmpty()) {
         cipherText_ = other.cipherText_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -499,13 +515,13 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 keyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 cipherText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -524,6 +540,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object keyName_ = "";
     /**
@@ -592,8 +610,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       keyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -611,8 +629,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKeyName() {
-
       keyName_ = getDefaultInstance().getKeyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -635,8 +653,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       keyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cipherText_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -723,8 +741,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCipherText() {
-
       cipherText_ = getDefaultInstance().getCipherText();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -746,8 +764,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cipherText_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ZONE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object zone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object zone_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instance_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instance_ = "";
   /**
    *
    *
@@ -375,10 +379,9 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       zone_ = "";
-
       instance_ = "";
-
       return this;
     }
 
@@ -406,10 +409,21 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
     public com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent buildPartial() {
       com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent result =
           new com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent(this);
-      result.zone_ = zone_;
-      result.instance_ = instance_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.WorkerReleasedEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.zone_ = zone_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instance_ = instance_;
+      }
     }
 
     @java.lang.Override
@@ -460,10 +474,12 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getInstance().isEmpty()) {
         instance_ = other.instance_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -495,13 +511,13 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 zone_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 instance_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -520,6 +536,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object zone_ = "";
     /**
@@ -582,8 +600,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -599,8 +617,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearZone() {
-
       zone_ = getDefaultInstance().getZone();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -621,8 +639,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       zone_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +706,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearInstance() {
-
       instance_ = getDefaultInstance().getInstance();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -727,8 +745,8 @@ public final class WorkerReleasedEvent extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instance_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -72,7 +72,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clusterUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterUri_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_NETWORK_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object clusterNetworkUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterNetworkUri_ = "";
   /**
    *
    *
@@ -170,7 +174,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTERNAL_IP_FIELD_NUMBER = 5;
-  private volatile java.lang.Object internalIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object internalIp_ = "";
   /**
    *
    *
@@ -219,7 +225,9 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_IP_FIELD_NUMBER = 6;
-  private volatile java.lang.Object externalIp_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalIp_ = "";
   /**
    *
    *
@@ -493,14 +501,11 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clusterUri_ = "";
-
       clusterNetworkUri_ = "";
-
       internalIp_ = "";
-
       externalIp_ = "";
-
       return this;
     }
 
@@ -528,12 +533,27 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.networkmanagement.v1beta1.GKEMasterInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.GKEMasterInfo result =
           new com.google.cloud.networkmanagement.v1beta1.GKEMasterInfo(this);
-      result.clusterUri_ = clusterUri_;
-      result.clusterNetworkUri_ = clusterNetworkUri_;
-      result.internalIp_ = internalIp_;
-      result.externalIp_ = externalIp_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.networkmanagement.v1beta1.GKEMasterInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.clusterUri_ = clusterUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterNetworkUri_ = clusterNetworkUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.internalIp_ = internalIp_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.externalIp_ = externalIp_;
+      }
     }
 
     @java.lang.Override
@@ -584,18 +604,22 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getClusterUri().isEmpty()) {
         clusterUri_ = other.clusterUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClusterNetworkUri().isEmpty()) {
         clusterNetworkUri_ = other.clusterNetworkUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getInternalIp().isEmpty()) {
         internalIp_ = other.internalIp_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getExternalIp().isEmpty()) {
         externalIp_ = other.externalIp_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -627,25 +651,25 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 clusterUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 34:
               {
                 clusterNetworkUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 internalIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 externalIp_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -664,6 +688,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object clusterUri_ = "";
     /**
@@ -726,8 +752,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -743,8 +769,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterUri() {
-
       clusterUri_ = getDefaultInstance().getClusterUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -765,8 +791,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -832,8 +858,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterNetworkUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -849,8 +875,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterNetworkUri() {
-
       clusterNetworkUri_ = getDefaultInstance().getClusterNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -871,8 +897,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterNetworkUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,8 +964,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       internalIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,8 +981,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInternalIp() {
-
       internalIp_ = getDefaultInstance().getInternalIp();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -977,8 +1003,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       internalIp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1044,8 +1070,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1061,8 +1087,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalIp() {
-
       externalIp_ = getDefaultInstance().getExternalIp();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1083,8 +1109,8 @@ public final class GKEMasterInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalIp_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -69,7 +69,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CONNECT_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object connectVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object connectVersion_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int V1BETA1_CRD_FIELD_NUMBER = 2;
-  private boolean v1Beta1Crd_;
+  private boolean v1Beta1Crd_ = false;
   /**
    *
    *
@@ -143,7 +145,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int K8S_VERSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object k8SVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object k8SVersion_ = "";
   /**
    *
    *
@@ -410,12 +414,10 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       connectVersion_ = "";
-
       v1Beta1Crd_ = false;
-
       k8SVersion_ = "";
-
       return this;
     }
 
@@ -443,11 +445,24 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkehub.v1.ResourceOptions buildPartial() {
       com.google.cloud.gkehub.v1.ResourceOptions result =
           new com.google.cloud.gkehub.v1.ResourceOptions(this);
-      result.connectVersion_ = connectVersion_;
-      result.v1Beta1Crd_ = v1Beta1Crd_;
-      result.k8SVersion_ = k8SVersion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1.ResourceOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.connectVersion_ = connectVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.v1Beta1Crd_ = v1Beta1Crd_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.k8SVersion_ = k8SVersion_;
+      }
     }
 
     @java.lang.Override
@@ -497,6 +512,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.gkehub.v1.ResourceOptions.getDefaultInstance()) return this;
       if (!other.getConnectVersion().isEmpty()) {
         connectVersion_ = other.connectVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getV1Beta1Crd() != false) {
@@ -504,6 +520,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       }
       if (!other.getK8SVersion().isEmpty()) {
         k8SVersion_ = other.k8SVersion_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -535,19 +552,19 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 connectVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 v1Beta1Crd_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 k8SVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -566,6 +583,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object connectVersion_ = "";
     /**
@@ -634,8 +653,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       connectVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -653,8 +672,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearConnectVersion() {
-
       connectVersion_ = getDefaultInstance().getConnectVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -677,8 +696,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       connectVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -720,6 +739,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     public Builder setV1Beta1Crd(boolean value) {
 
       v1Beta1Crd_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -738,7 +758,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearV1Beta1Crd() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       v1Beta1Crd_ = false;
       onChanged();
       return this;
@@ -811,8 +831,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       k8SVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -830,8 +850,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearK8SVersion() {
-
       k8SVersion_ = getDefaultInstance().getK8SVersion();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -854,8 +874,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       k8SVersion_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

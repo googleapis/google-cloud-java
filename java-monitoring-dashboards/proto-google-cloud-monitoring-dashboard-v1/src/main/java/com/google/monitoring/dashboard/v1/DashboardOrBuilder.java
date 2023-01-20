@@ -357,7 +357,6 @@ public interface DashboardOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 12;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

@@ -252,7 +252,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TENANCY_FIELD_NUMBER = 1;
-  private int tenancy_;
+  private int tenancy_ = 0;
   /**
    *
    *
@@ -285,9 +285,8 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy getTenancy() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy result =
-        com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.valueOf(tenancy_);
+        com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.forNumber(tenancy_);
     return result == null
         ? com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.UNRECOGNIZED
         : result;
@@ -498,8 +497,8 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tenancy_ = 0;
-
       return this;
     }
 
@@ -527,9 +526,18 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
     public com.google.cloud.gkemulticloud.v1.AwsInstancePlacement buildPartial() {
       com.google.cloud.gkemulticloud.v1.AwsInstancePlacement result =
           new com.google.cloud.gkemulticloud.v1.AwsInstancePlacement(this);
-      result.tenancy_ = tenancy_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AwsInstancePlacement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tenancy_ = tenancy_;
+      }
     }
 
     @java.lang.Override
@@ -610,7 +618,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 tenancy_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -629,6 +637,8 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int tenancy_ = 0;
     /**
@@ -663,8 +673,8 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setTenancyValue(int value) {
-
       tenancy_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,9 +693,8 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy getTenancy() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy result =
-          com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.valueOf(tenancy_);
+          com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.forNumber(tenancy_);
       return result == null
           ? com.google.cloud.gkemulticloud.v1.AwsInstancePlacement.Tenancy.UNRECOGNIZED
           : result;
@@ -709,7 +718,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       tenancy_ = value.getNumber();
       onChanged();
       return this;
@@ -728,7 +737,7 @@ public final class AwsInstancePlacement extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTenancy() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       tenancy_ = 0;
       onChanged();
       return this;

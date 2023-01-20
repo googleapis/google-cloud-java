@@ -79,7 +79,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int ACTION_ID_FIELD_NUMBER = 1;
-  private int actionId_;
+  private int actionId_ = 0;
   /**
    *
    *
@@ -109,6 +109,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
             0);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer> portMappings_;
 
   private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -199,7 +200,9 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -497,11 +500,10 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       actionId_ = 0;
-
       internalGetMutablePortMappings().clear();
       ipAddress_ = "";
-
       return this;
     }
 
@@ -529,13 +531,25 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public com.google.cloud.lifesciences.v2beta.ContainerStartedEvent buildPartial() {
       com.google.cloud.lifesciences.v2beta.ContainerStartedEvent result =
           new com.google.cloud.lifesciences.v2beta.ContainerStartedEvent(this);
-      int from_bitField0_ = bitField0_;
-      result.actionId_ = actionId_;
-      result.portMappings_ = internalGetPortMappings();
-      result.portMappings_.makeImmutable();
-      result.ipAddress_ = ipAddress_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.lifesciences.v2beta.ContainerStartedEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.actionId_ = actionId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.portMappings_ = internalGetPortMappings();
+        result.portMappings_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
     }
 
     @java.lang.Override
@@ -588,8 +602,10 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
         setActionId(other.getActionId());
       }
       internalGetMutablePortMappings().mergeFrom(other.internalGetPortMappings());
+      bitField0_ |= 0x00000002;
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -621,7 +637,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
             case 8:
               {
                 actionId_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -633,12 +649,13 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
                 internalGetMutablePortMappings()
                     .getMutableMap()
                     .put(portMappings__.getKey(), portMappings__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -691,6 +708,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public Builder setActionId(int value) {
 
       actionId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -706,7 +724,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearActionId() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       actionId_ = 0;
       onChanged();
       return this;
@@ -725,8 +743,6 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
         internalGetMutablePortMappings() {
-      onChanged();
-      ;
       if (portMappings_ == null) {
         portMappings_ =
             com.google.protobuf.MapField.newMapField(PortMappingsDefaultEntryHolder.defaultEntry);
@@ -734,6 +750,8 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       if (!portMappings_.isMutable()) {
         portMappings_ = portMappings_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return portMappings_;
     }
 
@@ -816,6 +834,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearPortMappings() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutablePortMappings().getMutableMap().clear();
       return this;
     }
@@ -838,6 +857,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.Integer, java.lang.Integer> getMutablePortMappings() {
+      bitField0_ |= 0x00000002;
       return internalGetMutablePortMappings().getMutableMap();
     }
     /**
@@ -854,6 +874,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
     public Builder putPortMappings(int key, int value) {
 
       internalGetMutablePortMappings().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -869,6 +890,7 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
      */
     public Builder putAllPortMappings(java.util.Map<java.lang.Integer, java.lang.Integer> values) {
       internalGetMutablePortMappings().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -942,8 +964,8 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -962,8 +984,8 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -987,8 +1009,8 @@ public final class ContainerStartedEvent extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -157,7 +157,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public io.grafeas.v1.EnvelopeOrBuilder getEnvelopeOrBuilder() {
-    return getEnvelope();
+    return envelope_ == null ? io.grafeas.v1.Envelope.getDefaultInstance() : envelope_;
   }
 
   public static final int STATEMENT_FIELD_NUMBER = 2;
@@ -417,10 +417,10 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (envelopeBuilder_ == null) {
-        envelope_ = null;
-      } else {
-        envelope_ = null;
+      bitField0_ = 0;
+      envelope_ = null;
+      if (envelopeBuilder_ != null) {
+        envelopeBuilder_.dispose();
         envelopeBuilder_ = null;
       }
       if (statementBuilder_ != null) {
@@ -455,21 +455,27 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     public io.grafeas.v1.DSSEAttestationOccurrence buildPartial() {
       io.grafeas.v1.DSSEAttestationOccurrence result =
           new io.grafeas.v1.DSSEAttestationOccurrence(this);
-      if (envelopeBuilder_ == null) {
-        result.envelope_ = envelope_;
-      } else {
-        result.envelope_ = envelopeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (decodedPayloadCase_ == 2) {
-        if (statementBuilder_ == null) {
-          result.decodedPayload_ = decodedPayload_;
-        } else {
-          result.decodedPayload_ = statementBuilder_.build();
-        }
-      }
-      result.decodedPayloadCase_ = decodedPayloadCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.DSSEAttestationOccurrence result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.envelope_ = envelopeBuilder_ == null ? envelope_ : envelopeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(io.grafeas.v1.DSSEAttestationOccurrence result) {
+      result.decodedPayloadCase_ = decodedPayloadCase_;
+      result.decodedPayload_ = this.decodedPayload_;
+      if (decodedPayloadCase_ == 2 && statementBuilder_ != null) {
+        result.decodedPayload_ = statementBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -560,7 +566,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getEnvelopeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -600,6 +606,8 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       return this;
     }
 
+    private int bitField0_;
+
     private io.grafeas.v1.Envelope envelope_;
     private com.google.protobuf.SingleFieldBuilderV3<
             io.grafeas.v1.Envelope, io.grafeas.v1.Envelope.Builder, io.grafeas.v1.EnvelopeOrBuilder>
@@ -617,7 +625,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
      * @return Whether the envelope field is set.
      */
     public boolean hasEnvelope() {
-      return envelopeBuilder_ != null || envelope_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -654,11 +662,11 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         envelope_ = value;
-        onChanged();
       } else {
         envelopeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,11 +682,11 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
     public Builder setEnvelope(io.grafeas.v1.Envelope.Builder builderForValue) {
       if (envelopeBuilder_ == null) {
         envelope_ = builderForValue.build();
-        onChanged();
       } else {
         envelopeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -693,16 +701,18 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
      */
     public Builder mergeEnvelope(io.grafeas.v1.Envelope value) {
       if (envelopeBuilder_ == null) {
-        if (envelope_ != null) {
-          envelope_ = io.grafeas.v1.Envelope.newBuilder(envelope_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && envelope_ != null
+            && envelope_ != io.grafeas.v1.Envelope.getDefaultInstance()) {
+          getEnvelopeBuilder().mergeFrom(value);
         } else {
           envelope_ = value;
         }
-        onChanged();
       } else {
         envelopeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -716,14 +726,13 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
      */
     public Builder clearEnvelope() {
-      if (envelopeBuilder_ == null) {
-        envelope_ = null;
-        onChanged();
-      } else {
-        envelope_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      envelope_ = null;
+      if (envelopeBuilder_ != null) {
+        envelopeBuilder_.dispose();
         envelopeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -737,7 +746,7 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
      * <code>.grafeas.v1.Envelope envelope = 1;</code>
      */
     public io.grafeas.v1.Envelope.Builder getEnvelopeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getEnvelopeFieldBuilder().getBuilder();
     }
@@ -917,7 +926,6 @@ public final class DSSEAttestationOccurrence extends com.google.protobuf.Generat
       }
       decodedPayloadCase_ = 2;
       onChanged();
-      ;
       return statementBuilder_;
     }
 

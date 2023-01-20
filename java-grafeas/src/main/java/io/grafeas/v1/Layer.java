@@ -67,7 +67,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECTIVE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object directive_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object directive_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARGUMENTS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object arguments_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object arguments_ = "";
   /**
    *
    *
@@ -367,10 +371,9 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       directive_ = "";
-
       arguments_ = "";
-
       return this;
     }
 
@@ -396,10 +399,21 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public io.grafeas.v1.Layer buildPartial() {
       io.grafeas.v1.Layer result = new io.grafeas.v1.Layer(this);
-      result.directive_ = directive_;
-      result.arguments_ = arguments_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.Layer result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.directive_ = directive_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.arguments_ = arguments_;
+      }
     }
 
     @java.lang.Override
@@ -449,10 +463,12 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       if (other == io.grafeas.v1.Layer.getDefaultInstance()) return this;
       if (!other.getDirective().isEmpty()) {
         directive_ = other.directive_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getArguments().isEmpty()) {
         arguments_ = other.arguments_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -484,13 +500,13 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 directive_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 arguments_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -509,6 +525,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object directive_ = "";
     /**
@@ -574,8 +592,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       directive_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -592,8 +610,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDirective() {
-
       directive_ = getDefaultInstance().getDirective();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -615,8 +633,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       directive_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -682,8 +700,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       arguments_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -699,8 +717,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArguments() {
-
       arguments_ = getDefaultInstance().getArguments();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -721,8 +739,8 @@ public final class Layer extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       arguments_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

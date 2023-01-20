@@ -118,11 +118,13 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder() {
-    return getDocument();
+    return document_ == null
+        ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
+        : document_;
   }
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 2;
-  private int encodingType_;
+  private int encodingType_ = 0;
   /**
    *
    *
@@ -151,9 +153,8 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.language.v1beta2.EncodingType result =
-        com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
+        com.google.cloud.language.v1beta2.EncodingType.forNumber(encodingType_);
     return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
   }
 
@@ -369,14 +370,13 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (documentBuilder_ == null) {
-        document_ = null;
-      } else {
-        document_ = null;
+      bitField0_ = 0;
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
       encodingType_ = 0;
-
       return this;
     }
 
@@ -405,14 +405,22 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     public com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest buildPartial() {
       com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest result =
           new com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest(this);
-      if (documentBuilder_ == null) {
-        result.document_ = document_;
-      } else {
-        result.document_ = documentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.encodingType_ = encodingType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.encodingType_ = encodingType_;
+      }
     }
 
     @java.lang.Override
@@ -498,13 +506,13 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 encodingType_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -523,6 +531,8 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.language.v1beta2.Document document_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -544,7 +554,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * @return Whether the document field is set.
      */
     public boolean hasDocument() {
-      return documentBuilder_ != null || document_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -585,11 +595,11 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         document_ = value;
-        onChanged();
       } else {
         documentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -606,11 +616,11 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
     public Builder setDocument(com.google.cloud.language.v1beta2.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
-        onChanged();
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -626,19 +636,18 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      */
     public Builder mergeDocument(com.google.cloud.language.v1beta2.Document value) {
       if (documentBuilder_ == null) {
-        if (document_ != null) {
-          document_ =
-              com.google.cloud.language.v1beta2.Document.newBuilder(document_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && document_ != null
+            && document_ != com.google.cloud.language.v1beta2.Document.getDefaultInstance()) {
+          getDocumentBuilder().mergeFrom(value);
         } else {
           document_ = value;
         }
-        onChanged();
       } else {
         documentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -653,14 +662,13 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearDocument() {
-      if (documentBuilder_ == null) {
-        document_ = null;
-        onChanged();
-      } else {
-        document_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      document_ = null;
+      if (documentBuilder_ != null) {
+        documentBuilder_.dispose();
         documentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -675,7 +683,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.cloud.language.v1beta2.Document.Builder getDocumentBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -756,8 +764,8 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setEncodingTypeValue(int value) {
-
       encodingType_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,9 +782,8 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      */
     @java.lang.Override
     public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.language.v1beta2.EncodingType result =
-          com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
+          com.google.cloud.language.v1beta2.EncodingType.forNumber(encodingType_);
       return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
     }
     /**
@@ -795,7 +802,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       encodingType_ = value.getNumber();
       onChanged();
       return this;
@@ -812,7 +819,7 @@ public final class AnalyzeEntitySentimentRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearEncodingType() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       encodingType_ = 0;
       onChanged();
       return this;

@@ -72,7 +72,9 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SPAN_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object spanName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object spanName_ = "";
   /**
    *
    *
@@ -329,8 +331,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       spanName_ = "";
-
       return this;
     }
 
@@ -357,9 +359,18 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.SpanContext buildPartial() {
       com.google.monitoring.v3.SpanContext result = new com.google.monitoring.v3.SpanContext(this);
-      result.spanName_ = spanName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.SpanContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.spanName_ = spanName_;
+      }
     }
 
     @java.lang.Override
@@ -409,6 +420,7 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.monitoring.v3.SpanContext.getDefaultInstance()) return this;
       if (!other.getSpanName().isEmpty()) {
         spanName_ = other.spanName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -440,7 +452,7 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 spanName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -459,6 +471,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object spanName_ = "";
     /**
@@ -536,8 +550,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       spanName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -558,8 +572,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSpanName() {
-
       spanName_ = getDefaultInstance().getSpanName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -585,8 +599,8 @@ public final class SpanContext extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       spanName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

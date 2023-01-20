@@ -159,7 +159,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALERT_POLICY_FIELD_NUMBER = 3;
@@ -222,7 +222,9 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPolicyOrBuilder() {
-    return getAlertPolicy();
+    return alertPolicy_ == null
+        ? com.google.monitoring.v3.AlertPolicy.getDefaultInstance()
+        : alertPolicy_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -441,16 +443,15 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      bitField0_ = 0;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-      if (alertPolicyBuilder_ == null) {
-        alertPolicy_ = null;
-      } else {
-        alertPolicy_ = null;
+      alertPolicy_ = null;
+      if (alertPolicyBuilder_ != null) {
+        alertPolicyBuilder_.dispose();
         alertPolicyBuilder_ = null;
       }
       return this;
@@ -480,18 +481,22 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
     public com.google.monitoring.v3.UpdateAlertPolicyRequest buildPartial() {
       com.google.monitoring.v3.UpdateAlertPolicyRequest result =
           new com.google.monitoring.v3.UpdateAlertPolicyRequest(this);
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      if (alertPolicyBuilder_ == null) {
-        result.alertPolicy_ = alertPolicy_;
-      } else {
-        result.alertPolicy_ = alertPolicyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.UpdateAlertPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.alertPolicy_ =
+            alertPolicyBuilder_ == null ? alertPolicy_ : alertPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -575,13 +580,13 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAlertPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -600,6 +605,8 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.FieldMask updateMask_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -636,7 +643,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -707,11 +714,11 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -743,11 +750,11 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -778,17 +785,18 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -818,14 +826,13 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -855,7 +862,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -960,7 +967,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * @return Whether the alertPolicy field is set.
      */
     public boolean hasAlertPolicy() {
-      return alertPolicyBuilder_ != null || alertPolicy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1007,11 +1014,11 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         alertPolicy_ = value;
-        onChanged();
       } else {
         alertPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1031,11 +1038,11 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
     public Builder setAlertPolicy(com.google.monitoring.v3.AlertPolicy.Builder builderForValue) {
       if (alertPolicyBuilder_ == null) {
         alertPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         alertPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1054,19 +1061,18 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      */
     public Builder mergeAlertPolicy(com.google.monitoring.v3.AlertPolicy value) {
       if (alertPolicyBuilder_ == null) {
-        if (alertPolicy_ != null) {
-          alertPolicy_ =
-              com.google.monitoring.v3.AlertPolicy.newBuilder(alertPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && alertPolicy_ != null
+            && alertPolicy_ != com.google.monitoring.v3.AlertPolicy.getDefaultInstance()) {
+          getAlertPolicyBuilder().mergeFrom(value);
         } else {
           alertPolicy_ = value;
         }
-        onChanged();
       } else {
         alertPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1084,14 +1090,13 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearAlertPolicy() {
-      if (alertPolicyBuilder_ == null) {
-        alertPolicy_ = null;
-        onChanged();
-      } else {
-        alertPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      alertPolicy_ = null;
+      if (alertPolicyBuilder_ != null) {
+        alertPolicyBuilder_.dispose();
         alertPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1109,7 +1114,7 @@ public final class UpdateAlertPolicyRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.monitoring.v3.AlertPolicy.Builder getAlertPolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAlertPolicyFieldBuilder().getBuilder();
     }

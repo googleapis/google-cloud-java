@@ -115,7 +115,9 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
   }
 
   public static final int LABEL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object label_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object label_ = "";
   /**
    *
    *
@@ -538,8 +540,8 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       label_ = "";
-
       actionTypeCase_ = 0;
       actionType_ = null;
       return this;
@@ -569,16 +571,25 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
     public com.google.apps.script.type.UniversalActionExtensionPoint buildPartial() {
       com.google.apps.script.type.UniversalActionExtensionPoint result =
           new com.google.apps.script.type.UniversalActionExtensionPoint(this);
-      result.label_ = label_;
-      if (actionTypeCase_ == 2) {
-        result.actionType_ = actionType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (actionTypeCase_ == 3) {
-        result.actionType_ = actionType_;
-      }
-      result.actionTypeCase_ = actionTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.apps.script.type.UniversalActionExtensionPoint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.label_ = label_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.apps.script.type.UniversalActionExtensionPoint result) {
+      result.actionTypeCase_ = actionTypeCase_;
+      result.actionType_ = this.actionType_;
     }
 
     @java.lang.Override
@@ -629,6 +640,7 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
         return this;
       if (!other.getLabel().isEmpty()) {
         label_ = other.label_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getActionTypeCase()) {
@@ -680,7 +692,7 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
             case 10:
               {
                 label_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -727,6 +739,8 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object label_ = "";
     /**
@@ -792,8 +806,8 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       label_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -810,8 +824,8 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearLabel() {
-
       label_ = getDefaultInstance().getLabel();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -833,8 +847,8 @@ public final class UniversalActionExtensionPoint extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       label_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

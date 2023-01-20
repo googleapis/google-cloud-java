@@ -70,7 +70,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -119,7 +121,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
@@ -168,7 +172,9 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int LOCATION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -217,7 +223,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int VERSION_ID_FIELD_NUMBER = 4;
-  private long versionId_;
+  private long versionId_ = 0L;
   /**
    *
    *
@@ -459,14 +465,11 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       displayName_ = "";
-
       uri_ = "";
-
       location_ = "";
-
       versionId_ = 0L;
-
       return this;
     }
 
@@ -495,12 +498,28 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo buildPartial() {
       com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo result =
           new com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo(this);
-      result.displayName_ = displayName_;
-      result.uri_ = uri_;
-      result.location_ = location_;
-      result.versionId_ = versionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.networkmanagement.v1beta1.CloudFunctionInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.versionId_ = versionId_;
+      }
     }
 
     @java.lang.Override
@@ -552,14 +571,17 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUri().isEmpty()) {
         uri_ = other.uri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getVersionId() != 0L) {
@@ -594,25 +616,25 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 versionId_ = input.readInt64();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -631,6 +653,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object displayName_ = "";
     /**
@@ -693,8 +717,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -710,8 +734,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -732,8 +756,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -799,8 +823,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -816,8 +840,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUri() {
-
       uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -838,8 +862,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -905,8 +929,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -922,8 +946,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -944,8 +968,8 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,6 +1005,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
     public Builder setVersionId(long value) {
 
       versionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -996,7 +1021,7 @@ public final class CloudFunctionInfo extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearVersionId() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       versionId_ = 0L;
       onChanged();
       return this;

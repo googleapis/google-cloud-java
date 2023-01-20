@@ -66,7 +66,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
-  private boolean enabled_;
+  private boolean enabled_ = false;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLE_POD_TREE_LABELS_FIELD_NUMBER = 2;
-  private boolean enablePodTreeLabels_;
+  private boolean enablePodTreeLabels_ = false;
   /**
    *
    *
@@ -102,7 +102,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
   }
 
   public static final int ENABLE_HIERARCHICAL_RESOURCE_QUOTA_FIELD_NUMBER = 3;
-  private boolean enableHierarchicalResourceQuota_;
+  private boolean enableHierarchicalResourceQuota_ = false;
   /**
    *
    *
@@ -342,12 +342,10 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       enabled_ = false;
-
       enablePodTreeLabels_ = false;
-
       enableHierarchicalResourceQuota_ = false;
-
       return this;
     }
 
@@ -377,11 +375,25 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig buildPartial() {
       com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig result =
           new com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig(this);
-      result.enabled_ = enabled_;
-      result.enablePodTreeLabels_ = enablePodTreeLabels_;
-      result.enableHierarchicalResourceQuota_ = enableHierarchicalResourceQuota_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enabled_ = enabled_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enablePodTreeLabels_ = enablePodTreeLabels_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.enableHierarchicalResourceQuota_ = enableHierarchicalResourceQuota_;
+      }
     }
 
     @java.lang.Override
@@ -471,19 +483,19 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
             case 8:
               {
                 enabled_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 enablePodTreeLabels_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 enableHierarchicalResourceQuota_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -502,6 +514,8 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean enabled_;
     /**
@@ -534,6 +548,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -549,7 +564,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
       onChanged();
       return this;
@@ -586,6 +601,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public Builder setEnablePodTreeLabels(boolean value) {
 
       enablePodTreeLabels_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -601,7 +617,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnablePodTreeLabels() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enablePodTreeLabels_ = false;
       onChanged();
       return this;
@@ -638,6 +654,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
     public Builder setEnableHierarchicalResourceQuota(boolean value) {
 
       enableHierarchicalResourceQuota_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -653,7 +670,7 @@ public final class HierarchyControllerConfig extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEnableHierarchicalResourceQuota() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableHierarchicalResourceQuota_ = false;
       onChanged();
       return this;

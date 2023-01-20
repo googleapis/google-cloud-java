@@ -355,7 +355,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int THRESHOLD_FIELD_NUMBER = 2;
-    private double threshold_;
+    private double threshold_ = 0D;
     /**
      *
      *
@@ -616,6 +616,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (performanceBuilder_ != null) {
           performanceBuilder_.clear();
         }
@@ -623,7 +624,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           basicSliPerformanceBuilder_.clear();
         }
         threshold_ = 0D;
-
         typeCase_ = 0;
         type_ = null;
         return this;
@@ -654,24 +654,32 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       public com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold buildPartial() {
         com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold result =
             new com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold(this);
-        if (typeCase_ == 1) {
-          if (performanceBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = performanceBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (typeCase_ == 3) {
-          if (basicSliPerformanceBuilder_ == null) {
-            result.type_ = type_;
-          } else {
-            result.type_ = basicSliPerformanceBuilder_.build();
-          }
-        }
-        result.threshold_ = threshold_;
-        result.typeCase_ = typeCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.threshold_ = threshold_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.monitoring.v3.WindowsBasedSli.PerformanceThreshold result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 1 && performanceBuilder_ != null) {
+          result.type_ = performanceBuilder_.build();
+        }
+        if (typeCase_ == 3 && basicSliPerformanceBuilder_ != null) {
+          result.type_ = basicSliPerformanceBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -778,7 +786,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
               case 17:
                 {
                   threshold_ = input.readDouble();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 17
               case 26:
@@ -818,6 +826,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.monitoring.v3.RequestBasedSli,
@@ -1025,7 +1035,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         }
         typeCase_ = 1;
         onChanged();
-        ;
         return performanceBuilder_;
       }
 
@@ -1232,7 +1241,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         }
         typeCase_ = 3;
         onChanged();
-        ;
         return basicSliPerformanceBuilder_;
       }
 
@@ -1267,6 +1275,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       public Builder setThreshold(double value) {
 
         threshold_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1282,7 +1291,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearThreshold() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         threshold_ = 0D;
         onChanged();
         return this;
@@ -1478,7 +1487,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int TIME_SERIES_FIELD_NUMBER = 1;
-    private volatile java.lang.Object timeSeries_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object timeSeries_ = "";
     /**
      *
      *
@@ -1574,7 +1585,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.monitoring.v3.RangeOrBuilder getRangeOrBuilder() {
-      return getRange();
+      return range_ == null ? com.google.monitoring.v3.Range.getDefaultInstance() : range_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1794,12 +1805,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         timeSeries_ = "";
-
-        if (rangeBuilder_ == null) {
-          range_ = null;
-        } else {
-          range_ = null;
+        range_ = null;
+        if (rangeBuilder_ != null) {
+          rangeBuilder_.dispose();
           rangeBuilder_ = null;
         }
         return this;
@@ -1829,14 +1839,21 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       public com.google.monitoring.v3.WindowsBasedSli.MetricRange buildPartial() {
         com.google.monitoring.v3.WindowsBasedSli.MetricRange result =
             new com.google.monitoring.v3.WindowsBasedSli.MetricRange(this);
-        result.timeSeries_ = timeSeries_;
-        if (rangeBuilder_ == null) {
-          result.range_ = range_;
-        } else {
-          result.range_ = rangeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.monitoring.v3.WindowsBasedSli.MetricRange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.timeSeries_ = timeSeries_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.range_ = rangeBuilder_ == null ? range_ : rangeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1889,6 +1906,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           return this;
         if (!other.getTimeSeries().isEmpty()) {
           timeSeries_ = other.timeSeries_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasRange()) {
@@ -1923,13 +1941,13 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
               case 10:
                 {
                   timeSeries_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 34:
                 {
                   input.readMessage(getRangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 34
               default:
@@ -1948,6 +1966,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object timeSeries_ = "";
       /**
@@ -2013,8 +2033,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
         if (value == null) {
           throw new NullPointerException();
         }
-
         timeSeries_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2031,8 +2051,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * @return This builder for chaining.
        */
       public Builder clearTimeSeries() {
-
         timeSeries_ = getDefaultInstance().getTimeSeries();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2054,8 +2074,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         timeSeries_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2079,7 +2099,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * @return Whether the range field is set.
        */
       public boolean hasRange() {
-        return rangeBuilder_ != null || range_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2116,11 +2136,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             throw new NullPointerException();
           }
           range_ = value;
-          onChanged();
         } else {
           rangeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2136,11 +2156,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       public Builder setRange(com.google.monitoring.v3.Range.Builder builderForValue) {
         if (rangeBuilder_ == null) {
           range_ = builderForValue.build();
-          onChanged();
         } else {
           rangeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2155,17 +2175,18 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        */
       public Builder mergeRange(com.google.monitoring.v3.Range value) {
         if (rangeBuilder_ == null) {
-          if (range_ != null) {
-            range_ =
-                com.google.monitoring.v3.Range.newBuilder(range_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && range_ != null
+              && range_ != com.google.monitoring.v3.Range.getDefaultInstance()) {
+            getRangeBuilder().mergeFrom(value);
           } else {
             range_ = value;
           }
-          onChanged();
         } else {
           rangeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2179,14 +2200,13 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * <code>.google.monitoring.v3.Range range = 4;</code>
        */
       public Builder clearRange() {
-        if (rangeBuilder_ == null) {
-          range_ = null;
-          onChanged();
-        } else {
-          range_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        range_ = null;
+        if (rangeBuilder_ != null) {
+          rangeBuilder_.dispose();
           rangeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2200,7 +2220,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
        * <code>.google.monitoring.v3.Range range = 4;</code>
        */
       public com.google.monitoring.v3.Range.Builder getRangeBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRangeFieldBuilder().getBuilder();
       }
@@ -2658,7 +2678,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getWindowPeriodOrBuilder() {
-    return getWindowPeriod();
+    return windowPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : windowPeriod_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2934,6 +2956,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (goodTotalRatioThresholdBuilder_ != null) {
         goodTotalRatioThresholdBuilder_.clear();
       }
@@ -2943,10 +2966,9 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       if (metricSumInRangeBuilder_ != null) {
         metricSumInRangeBuilder_.clear();
       }
-      if (windowPeriodBuilder_ == null) {
-        windowPeriod_ = null;
-      } else {
-        windowPeriod_ = null;
+      windowPeriod_ = null;
+      if (windowPeriodBuilder_ != null) {
+        windowPeriodBuilder_.dispose();
         windowPeriodBuilder_ = null;
       }
       windowCriterionCase_ = 0;
@@ -2978,38 +3000,34 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     public com.google.monitoring.v3.WindowsBasedSli buildPartial() {
       com.google.monitoring.v3.WindowsBasedSli result =
           new com.google.monitoring.v3.WindowsBasedSli(this);
-      if (windowCriterionCase_ == 5) {
-        result.windowCriterion_ = windowCriterion_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (windowCriterionCase_ == 2) {
-        if (goodTotalRatioThresholdBuilder_ == null) {
-          result.windowCriterion_ = windowCriterion_;
-        } else {
-          result.windowCriterion_ = goodTotalRatioThresholdBuilder_.build();
-        }
-      }
-      if (windowCriterionCase_ == 6) {
-        if (metricMeanInRangeBuilder_ == null) {
-          result.windowCriterion_ = windowCriterion_;
-        } else {
-          result.windowCriterion_ = metricMeanInRangeBuilder_.build();
-        }
-      }
-      if (windowCriterionCase_ == 7) {
-        if (metricSumInRangeBuilder_ == null) {
-          result.windowCriterion_ = windowCriterion_;
-        } else {
-          result.windowCriterion_ = metricSumInRangeBuilder_.build();
-        }
-      }
-      if (windowPeriodBuilder_ == null) {
-        result.windowPeriod_ = windowPeriod_;
-      } else {
-        result.windowPeriod_ = windowPeriodBuilder_.build();
-      }
-      result.windowCriterionCase_ = windowCriterionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.WindowsBasedSli result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.windowPeriod_ =
+            windowPeriodBuilder_ == null ? windowPeriod_ : windowPeriodBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.WindowsBasedSli result) {
+      result.windowCriterionCase_ = windowCriterionCase_;
+      result.windowCriterion_ = this.windowCriterion_;
+      if (windowCriterionCase_ == 2 && goodTotalRatioThresholdBuilder_ != null) {
+        result.windowCriterion_ = goodTotalRatioThresholdBuilder_.build();
+      }
+      if (windowCriterionCase_ == 6 && metricMeanInRangeBuilder_ != null) {
+        result.windowCriterion_ = metricMeanInRangeBuilder_.build();
+      }
+      if (windowCriterionCase_ == 7 && metricSumInRangeBuilder_ != null) {
+        result.windowCriterion_ = metricSumInRangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3124,7 +3142,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 input.readMessage(getWindowPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -3178,6 +3196,8 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -3558,7 +3578,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       windowCriterionCase_ = 2;
       onChanged();
-      ;
       return goodTotalRatioThresholdBuilder_;
     }
 
@@ -3783,7 +3802,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       windowCriterionCase_ = 6;
       onChanged();
-      ;
       return metricMeanInRangeBuilder_;
     }
 
@@ -4007,7 +4025,6 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
       }
       windowCriterionCase_ = 7;
       onChanged();
-      ;
       return metricSumInRangeBuilder_;
     }
 
@@ -4030,7 +4047,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * @return Whether the windowPeriod field is set.
      */
     public boolean hasWindowPeriod() {
-      return windowPeriodBuilder_ != null || windowPeriod_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4069,11 +4086,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         windowPeriod_ = value;
-        onChanged();
       } else {
         windowPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4089,11 +4106,11 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
     public Builder setWindowPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (windowPeriodBuilder_ == null) {
         windowPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         windowPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4108,19 +4125,18 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeWindowPeriod(com.google.protobuf.Duration value) {
       if (windowPeriodBuilder_ == null) {
-        if (windowPeriod_ != null) {
-          windowPeriod_ =
-              com.google.protobuf.Duration.newBuilder(windowPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && windowPeriod_ != null
+            && windowPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getWindowPeriodBuilder().mergeFrom(value);
         } else {
           windowPeriod_ = value;
         }
-        onChanged();
       } else {
         windowPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -4134,14 +4150,13 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration window_period = 4;</code>
      */
     public Builder clearWindowPeriod() {
-      if (windowPeriodBuilder_ == null) {
-        windowPeriod_ = null;
-        onChanged();
-      } else {
-        windowPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      windowPeriod_ = null;
+      if (windowPeriodBuilder_ != null) {
+        windowPeriodBuilder_.dispose();
         windowPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4155,7 +4170,7 @@ public final class WindowsBasedSli extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Duration window_period = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getWindowPeriodBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getWindowPeriodFieldBuilder().getBuilder();
     }

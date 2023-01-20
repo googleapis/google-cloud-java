@@ -103,7 +103,9 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.iam.admin.v1.ServiceAccountOrBuilder getRestoredAccountOrBuilder() {
-    return getRestoredAccount();
+    return restoredAccount_ == null
+        ? com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()
+        : restoredAccount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -301,10 +303,10 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (restoredAccountBuilder_ == null) {
-        restoredAccount_ = null;
-      } else {
-        restoredAccount_ = null;
+      bitField0_ = 0;
+      restoredAccount_ = null;
+      if (restoredAccountBuilder_ != null) {
+        restoredAccountBuilder_.dispose();
         restoredAccountBuilder_ = null;
       }
       return this;
@@ -334,13 +336,19 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
     public com.google.iam.admin.v1.UndeleteServiceAccountResponse buildPartial() {
       com.google.iam.admin.v1.UndeleteServiceAccountResponse result =
           new com.google.iam.admin.v1.UndeleteServiceAccountResponse(this);
-      if (restoredAccountBuilder_ == null) {
-        result.restoredAccount_ = restoredAccount_;
-      } else {
-        result.restoredAccount_ = restoredAccountBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.iam.admin.v1.UndeleteServiceAccountResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.restoredAccount_ =
+            restoredAccountBuilder_ == null ? restoredAccount_ : restoredAccountBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -421,7 +429,7 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getRestoredAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -441,6 +449,8 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.iam.admin.v1.ServiceAccount restoredAccount_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.iam.admin.v1.ServiceAccount,
@@ -459,7 +469,7 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
      * @return Whether the restoredAccount field is set.
      */
     public boolean hasRestoredAccount() {
-      return restoredAccountBuilder_ != null || restoredAccount_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -496,11 +506,11 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         restoredAccount_ = value;
-        onChanged();
       } else {
         restoredAccountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -516,11 +526,11 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
         com.google.iam.admin.v1.ServiceAccount.Builder builderForValue) {
       if (restoredAccountBuilder_ == null) {
         restoredAccount_ = builderForValue.build();
-        onChanged();
       } else {
         restoredAccountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -534,19 +544,18 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
      */
     public Builder mergeRestoredAccount(com.google.iam.admin.v1.ServiceAccount value) {
       if (restoredAccountBuilder_ == null) {
-        if (restoredAccount_ != null) {
-          restoredAccount_ =
-              com.google.iam.admin.v1.ServiceAccount.newBuilder(restoredAccount_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && restoredAccount_ != null
+            && restoredAccount_ != com.google.iam.admin.v1.ServiceAccount.getDefaultInstance()) {
+          getRestoredAccountBuilder().mergeFrom(value);
         } else {
           restoredAccount_ = value;
         }
-        onChanged();
       } else {
         restoredAccountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -559,14 +568,13 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
      * <code>.google.iam.admin.v1.ServiceAccount restored_account = 1;</code>
      */
     public Builder clearRestoredAccount() {
-      if (restoredAccountBuilder_ == null) {
-        restoredAccount_ = null;
-        onChanged();
-      } else {
-        restoredAccount_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      restoredAccount_ = null;
+      if (restoredAccountBuilder_ != null) {
+        restoredAccountBuilder_.dispose();
         restoredAccountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -579,7 +587,7 @@ public final class UndeleteServiceAccountResponse extends com.google.protobuf.Ge
      * <code>.google.iam.admin.v1.ServiceAccount restored_account = 1;</code>
      */
     public com.google.iam.admin.v1.ServiceAccount.Builder getRestoredAccountBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRestoredAccountFieldBuilder().getBuilder();
     }

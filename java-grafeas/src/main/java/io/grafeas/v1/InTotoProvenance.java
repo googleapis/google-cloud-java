@@ -104,7 +104,9 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public io.grafeas.v1.BuilderConfigOrBuilder getBuilderConfigOrBuilder() {
-    return getBuilderConfig();
+    return builderConfig_ == null
+        ? io.grafeas.v1.BuilderConfig.getDefaultInstance()
+        : builderConfig_;
   }
 
   public static final int RECIPE_FIELD_NUMBER = 2;
@@ -159,7 +161,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public io.grafeas.v1.RecipeOrBuilder getRecipeOrBuilder() {
-    return getRecipe();
+    return recipe_ == null ? io.grafeas.v1.Recipe.getDefaultInstance() : recipe_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 3;
@@ -185,10 +187,12 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
   /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.MetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null ? io.grafeas.v1.Metadata.getDefaultInstance() : metadata_;
   }
 
   public static final int MATERIALS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList materials_;
   /**
    *
@@ -496,26 +500,24 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (builderConfigBuilder_ == null) {
-        builderConfig_ = null;
-      } else {
-        builderConfig_ = null;
+      bitField0_ = 0;
+      builderConfig_ = null;
+      if (builderConfigBuilder_ != null) {
+        builderConfigBuilder_.dispose();
         builderConfigBuilder_ = null;
       }
-      if (recipeBuilder_ == null) {
-        recipe_ = null;
-      } else {
-        recipe_ = null;
+      recipe_ = null;
+      if (recipeBuilder_ != null) {
+        recipeBuilder_.dispose();
         recipeBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -542,29 +544,34 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public io.grafeas.v1.InTotoProvenance buildPartial() {
       io.grafeas.v1.InTotoProvenance result = new io.grafeas.v1.InTotoProvenance(this);
-      int from_bitField0_ = bitField0_;
-      if (builderConfigBuilder_ == null) {
-        result.builderConfig_ = builderConfig_;
-      } else {
-        result.builderConfig_ = builderConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (recipeBuilder_ == null) {
-        result.recipe_ = recipe_;
-      } else {
-        result.recipe_ = recipeBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        materials_ = materials_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.materials_ = materials_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(io.grafeas.v1.InTotoProvenance result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        materials_ = materials_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.materials_ = materials_;
+    }
+
+    private void buildPartial0(io.grafeas.v1.InTotoProvenance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.builderConfig_ =
+            builderConfigBuilder_ == null ? builderConfig_ : builderConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.recipe_ = recipeBuilder_ == null ? recipe_ : recipeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -624,7 +631,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
       if (!other.materials_.isEmpty()) {
         if (materials_.isEmpty()) {
           materials_ = other.materials_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureMaterialsIsMutable();
           materials_.addAll(other.materials_);
@@ -660,19 +667,19 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getBuilderConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getRecipeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -719,7 +726,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the builderConfig field is set.
      */
     public boolean hasBuilderConfig() {
-      return builderConfigBuilder_ != null || builderConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -756,11 +763,11 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         builderConfig_ = value;
-        onChanged();
       } else {
         builderConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -775,11 +782,11 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public Builder setBuilderConfig(io.grafeas.v1.BuilderConfig.Builder builderForValue) {
       if (builderConfigBuilder_ == null) {
         builderConfig_ = builderForValue.build();
-        onChanged();
       } else {
         builderConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -793,19 +800,18 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBuilderConfig(io.grafeas.v1.BuilderConfig value) {
       if (builderConfigBuilder_ == null) {
-        if (builderConfig_ != null) {
-          builderConfig_ =
-              io.grafeas.v1.BuilderConfig.newBuilder(builderConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && builderConfig_ != null
+            && builderConfig_ != io.grafeas.v1.BuilderConfig.getDefaultInstance()) {
+          getBuilderConfigBuilder().mergeFrom(value);
         } else {
           builderConfig_ = value;
         }
-        onChanged();
       } else {
         builderConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -818,14 +824,13 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
      */
     public Builder clearBuilderConfig() {
-      if (builderConfigBuilder_ == null) {
-        builderConfig_ = null;
-        onChanged();
-      } else {
-        builderConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      builderConfig_ = null;
+      if (builderConfigBuilder_ != null) {
+        builderConfigBuilder_.dispose();
         builderConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -838,7 +843,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.grafeas.v1.BuilderConfig builder_config = 1;</code>
      */
     public io.grafeas.v1.BuilderConfig.Builder getBuilderConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBuilderConfigFieldBuilder().getBuilder();
     }
@@ -905,7 +910,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the recipe field is set.
      */
     public boolean hasRecipe() {
-      return recipeBuilder_ != null || recipe_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -946,11 +951,11 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         recipe_ = value;
-        onChanged();
       } else {
         recipeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -968,11 +973,11 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
     public Builder setRecipe(io.grafeas.v1.Recipe.Builder builderForValue) {
       if (recipeBuilder_ == null) {
         recipe_ = builderForValue.build();
-        onChanged();
       } else {
         recipeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -989,16 +994,18 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRecipe(io.grafeas.v1.Recipe value) {
       if (recipeBuilder_ == null) {
-        if (recipe_ != null) {
-          recipe_ = io.grafeas.v1.Recipe.newBuilder(recipe_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && recipe_ != null
+            && recipe_ != io.grafeas.v1.Recipe.getDefaultInstance()) {
+          getRecipeBuilder().mergeFrom(value);
         } else {
           recipe_ = value;
         }
-        onChanged();
       } else {
         recipeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1014,14 +1021,13 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
      */
     public Builder clearRecipe() {
-      if (recipeBuilder_ == null) {
-        recipe_ = null;
-        onChanged();
-      } else {
-        recipe_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      recipe_ = null;
+      if (recipeBuilder_ != null) {
+        recipeBuilder_.dispose();
         recipeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1037,7 +1043,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * <code>.grafeas.v1.Recipe recipe = 2;</code>
      */
     public io.grafeas.v1.Recipe.Builder getRecipeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getRecipeFieldBuilder().getBuilder();
     }
@@ -1095,7 +1101,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.grafeas.v1.Metadata metadata = 3;</code>
@@ -1116,54 +1122,55 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder setMetadata(io.grafeas.v1.Metadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder mergeMetadata(io.grafeas.v1.Metadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ = io.grafeas.v1.Metadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_ != io.grafeas.v1.Metadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /** <code>.grafeas.v1.Metadata metadata = 3;</code> */
     public io.grafeas.v1.Metadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1194,9 +1201,9 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMaterialsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         materials_ = new com.google.protobuf.LazyStringArrayList(materials_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1355,7 +1362,7 @@ public final class InTotoProvenance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMaterials() {
       materials_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }

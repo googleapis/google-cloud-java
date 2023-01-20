@@ -681,7 +681,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PEM_FIELD_NUMBER = 1;
-    private volatile java.lang.Object pem_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pem_ = "";
     /**
      *
      *
@@ -939,8 +941,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pem_ = "";
-
         return this;
       }
 
@@ -968,9 +970,18 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.kms.v1.ImportJob.WrappingPublicKey buildPartial() {
         com.google.cloud.kms.v1.ImportJob.WrappingPublicKey result =
             new com.google.cloud.kms.v1.ImportJob.WrappingPublicKey(this);
-        result.pem_ = pem_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.kms.v1.ImportJob.WrappingPublicKey result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pem_ = pem_;
+        }
       }
 
       @java.lang.Override
@@ -1023,6 +1034,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getPem().isEmpty()) {
           pem_ = other.pem_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1054,7 +1066,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   pem_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -1073,6 +1085,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object pem_ = "";
       /**
@@ -1147,8 +1161,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         pem_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1168,8 +1182,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPem() {
-
         pem_ = getDefaultInstance().getPem();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1194,8 +1208,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         pem_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1265,7 +1279,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1318,7 +1334,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMPORT_METHOD_FIELD_NUMBER = 2;
-  private int importMethod_;
+  private int importMethod_ = 0;
   /**
    *
    *
@@ -1353,14 +1369,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ImportJob.ImportMethod result =
-        com.google.cloud.kms.v1.ImportJob.ImportMethod.valueOf(importMethod_);
+        com.google.cloud.kms.v1.ImportJob.ImportMethod.forNumber(importMethod_);
     return result == null ? com.google.cloud.kms.v1.ImportJob.ImportMethod.UNRECOGNIZED : result;
   }
 
   public static final int PROTECTION_LEVEL_FIELD_NUMBER = 9;
-  private int protectionLevel_;
+  private int protectionLevel_ = 0;
   /**
    *
    *
@@ -1403,9 +1418,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ProtectionLevel result =
-        com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+        com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
     return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
@@ -1458,7 +1472,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int GENERATE_TIME_FIELD_NUMBER = 4;
@@ -1515,7 +1529,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getGenerateTimeOrBuilder() {
-    return getGenerateTime();
+    return generateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : generateTime_;
   }
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
@@ -1570,7 +1586,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return getExpireTime();
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
   public static final int EXPIRE_EVENT_TIME_FIELD_NUMBER = 10;
@@ -1630,11 +1646,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getExpireEventTimeOrBuilder() {
-    return getExpireEventTime();
+    return expireEventTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : expireEventTime_;
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1669,9 +1687,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ImportJob.ImportJobState getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.kms.v1.ImportJob.ImportJobState result =
-        com.google.cloud.kms.v1.ImportJob.ImportJobState.valueOf(state_);
+        com.google.cloud.kms.v1.ImportJob.ImportJobState.forNumber(state_);
     return result == null ? com.google.cloud.kms.v1.ImportJob.ImportJobState.UNRECOGNIZED : result;
   }
 
@@ -1732,7 +1749,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.ImportJob.WrappingPublicKeyOrBuilder getPublicKeyOrBuilder() {
-    return getPublicKey();
+    return publicKey_ == null
+        ? com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.getDefaultInstance()
+        : publicKey_;
   }
 
   public static final int ATTESTATION_FIELD_NUMBER = 8;
@@ -1801,7 +1820,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.kms.v1.KeyOperationAttestationOrBuilder getAttestationOrBuilder() {
-    return getAttestation();
+    return attestation_ == null
+        ? com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()
+        : attestation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2146,48 +2167,39 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       importMethod_ = 0;
-
       protectionLevel_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (generateTimeBuilder_ == null) {
-        generateTime_ = null;
-      } else {
-        generateTime_ = null;
+      generateTime_ = null;
+      if (generateTimeBuilder_ != null) {
+        generateTimeBuilder_.dispose();
         generateTimeBuilder_ = null;
       }
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-      } else {
-        expireTime_ = null;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-      if (expireEventTimeBuilder_ == null) {
-        expireEventTime_ = null;
-      } else {
-        expireEventTime_ = null;
+      expireEventTime_ = null;
+      if (expireEventTimeBuilder_ != null) {
+        expireEventTimeBuilder_.dispose();
         expireEventTimeBuilder_ = null;
       }
       state_ = 0;
-
-      if (publicKeyBuilder_ == null) {
-        publicKey_ = null;
-      } else {
-        publicKey_ = null;
+      publicKey_ = null;
+      if (publicKeyBuilder_ != null) {
+        publicKeyBuilder_.dispose();
         publicKeyBuilder_ = null;
       }
-      if (attestationBuilder_ == null) {
-        attestation_ = null;
-      } else {
-        attestation_ = null;
+      attestation_ = null;
+      if (attestationBuilder_ != null) {
+        attestationBuilder_.dispose();
         attestationBuilder_ = null;
       }
       return this;
@@ -2216,42 +2228,48 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.kms.v1.ImportJob buildPartial() {
       com.google.cloud.kms.v1.ImportJob result = new com.google.cloud.kms.v1.ImportJob(this);
-      result.name_ = name_;
-      result.importMethod_ = importMethod_;
-      result.protectionLevel_ = protectionLevel_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (generateTimeBuilder_ == null) {
-        result.generateTime_ = generateTime_;
-      } else {
-        result.generateTime_ = generateTimeBuilder_.build();
-      }
-      if (expireTimeBuilder_ == null) {
-        result.expireTime_ = expireTime_;
-      } else {
-        result.expireTime_ = expireTimeBuilder_.build();
-      }
-      if (expireEventTimeBuilder_ == null) {
-        result.expireEventTime_ = expireEventTime_;
-      } else {
-        result.expireEventTime_ = expireEventTimeBuilder_.build();
-      }
-      result.state_ = state_;
-      if (publicKeyBuilder_ == null) {
-        result.publicKey_ = publicKey_;
-      } else {
-        result.publicKey_ = publicKeyBuilder_.build();
-      }
-      if (attestationBuilder_ == null) {
-        result.attestation_ = attestation_;
-      } else {
-        result.attestation_ = attestationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.kms.v1.ImportJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.importMethod_ = importMethod_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.protectionLevel_ = protectionLevel_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.generateTime_ =
+            generateTimeBuilder_ == null ? generateTime_ : generateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.expireEventTime_ =
+            expireEventTimeBuilder_ == null ? expireEventTime_ : expireEventTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.publicKey_ = publicKeyBuilder_ == null ? publicKey_ : publicKeyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.attestation_ =
+            attestationBuilder_ == null ? attestation_ : attestationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2301,6 +2319,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.kms.v1.ImportJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.importMethod_ != 0) {
@@ -2359,61 +2378,61 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 importMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getGenerateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getPublicKeyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getAttestationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 72:
               {
                 protectionLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getExpireEventTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 82
             default:
@@ -2432,6 +2451,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -2500,8 +2521,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2519,8 +2540,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2543,8 +2564,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2584,8 +2605,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setImportMethodValue(int value) {
-
       importMethod_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2605,9 +2626,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ImportJob.ImportMethod getImportMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ImportJob.ImportMethod result =
-          com.google.cloud.kms.v1.ImportJob.ImportMethod.valueOf(importMethod_);
+          com.google.cloud.kms.v1.ImportJob.ImportMethod.forNumber(importMethod_);
       return result == null ? com.google.cloud.kms.v1.ImportJob.ImportMethod.UNRECOGNIZED : result;
     }
     /**
@@ -2629,7 +2649,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       importMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -2649,7 +2669,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImportMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       importMethod_ = 0;
       onChanged();
       return this;
@@ -2698,8 +2718,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setProtectionLevelValue(int value) {
-
       protectionLevel_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2723,9 +2743,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ProtectionLevel result =
-          com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+          com.google.cloud.kms.v1.ProtectionLevel.forNumber(protectionLevel_);
       return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
     }
     /**
@@ -2751,7 +2770,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       protectionLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -2775,7 +2794,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProtectionLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       protectionLevel_ = 0;
       onChanged();
       return this;
@@ -2802,7 +2821,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2845,11 +2864,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2867,11 +2886,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2888,17 +2907,18 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2914,14 +2934,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2937,7 +2956,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3012,7 +3031,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the generateTime field is set.
      */
     public boolean hasGenerateTime() {
-      return generateTimeBuilder_ != null || generateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -3055,11 +3074,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         generateTime_ = value;
-        onChanged();
       } else {
         generateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3077,11 +3096,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setGenerateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (generateTimeBuilder_ == null) {
         generateTime_ = builderForValue.build();
-        onChanged();
       } else {
         generateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3098,19 +3117,18 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeGenerateTime(com.google.protobuf.Timestamp value) {
       if (generateTimeBuilder_ == null) {
-        if (generateTime_ != null) {
-          generateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(generateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && generateTime_ != null
+            && generateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getGenerateTimeBuilder().mergeFrom(value);
         } else {
           generateTime_ = value;
         }
-        onChanged();
       } else {
         generateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -3126,14 +3144,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGenerateTime() {
-      if (generateTimeBuilder_ == null) {
-        generateTime_ = null;
-        onChanged();
-      } else {
-        generateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      generateTime_ = null;
+      if (generateTimeBuilder_ != null) {
+        generateTimeBuilder_.dispose();
         generateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3149,7 +3166,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getGenerateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getGenerateTimeFieldBuilder().getBuilder();
     }
@@ -3225,7 +3242,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return expireTimeBuilder_ != null || expireTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3270,11 +3287,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireTime_ = value;
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3293,11 +3310,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3315,17 +3332,18 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (expireTime_ != null) {
-          expireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
         } else {
           expireTime_ = value;
         }
-        onChanged();
       } else {
         expireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -3342,14 +3360,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = null;
-        onChanged();
-      } else {
-        expireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3366,7 +3383,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -3444,7 +3461,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireEventTime field is set.
      */
     public boolean hasExpireEventTime() {
-      return expireEventTimeBuilder_ != null || expireEventTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3489,11 +3506,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expireEventTime_ = value;
-        onChanged();
       } else {
         expireEventTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3512,11 +3529,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpireEventTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireEventTimeBuilder_ == null) {
         expireEventTime_ = builderForValue.build();
-        onChanged();
       } else {
         expireEventTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3534,19 +3551,18 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireEventTime(com.google.protobuf.Timestamp value) {
       if (expireEventTimeBuilder_ == null) {
-        if (expireEventTime_ != null) {
-          expireEventTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expireEventTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && expireEventTime_ != null
+            && expireEventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireEventTimeBuilder().mergeFrom(value);
         } else {
           expireEventTime_ = value;
         }
-        onChanged();
       } else {
         expireEventTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -3563,14 +3579,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireEventTime() {
-      if (expireEventTimeBuilder_ == null) {
-        expireEventTime_ = null;
-        onChanged();
-      } else {
-        expireEventTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      expireEventTime_ = null;
+      if (expireEventTimeBuilder_ != null) {
+        expireEventTimeBuilder_.dispose();
         expireEventTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3587,7 +3602,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireEventTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getExpireEventTimeFieldBuilder().getBuilder();
     }
@@ -3678,8 +3693,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3699,9 +3714,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.kms.v1.ImportJob.ImportJobState getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.kms.v1.ImportJob.ImportJobState result =
-          com.google.cloud.kms.v1.ImportJob.ImportJobState.valueOf(state_);
+          com.google.cloud.kms.v1.ImportJob.ImportJobState.forNumber(state_);
       return result == null
           ? com.google.cloud.kms.v1.ImportJob.ImportJobState.UNRECOGNIZED
           : result;
@@ -3725,7 +3739,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3745,7 +3759,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       state_ = 0;
       onChanged();
       return this;
@@ -3773,7 +3787,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the publicKey field is set.
      */
     public boolean hasPublicKey() {
-      return publicKeyBuilder_ != null || publicKey_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3818,11 +3832,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         publicKey_ = value;
-        onChanged();
       } else {
         publicKeyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3842,11 +3856,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.Builder builderForValue) {
       if (publicKeyBuilder_ == null) {
         publicKey_ = builderForValue.build();
-        onChanged();
       } else {
         publicKeyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3864,19 +3878,19 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePublicKey(com.google.cloud.kms.v1.ImportJob.WrappingPublicKey value) {
       if (publicKeyBuilder_ == null) {
-        if (publicKey_ != null) {
-          publicKey_ =
-              com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.newBuilder(publicKey_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && publicKey_ != null
+            && publicKey_
+                != com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.getDefaultInstance()) {
+          getPublicKeyBuilder().mergeFrom(value);
         } else {
           publicKey_ = value;
         }
-        onChanged();
       } else {
         publicKeyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -3893,14 +3907,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPublicKey() {
-      if (publicKeyBuilder_ == null) {
-        publicKey_ = null;
-        onChanged();
-      } else {
-        publicKey_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      publicKey_ = null;
+      if (publicKeyBuilder_ != null) {
+        publicKeyBuilder_.dispose();
         publicKeyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3917,7 +3930,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.kms.v1.ImportJob.WrappingPublicKey.Builder getPublicKeyBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getPublicKeyFieldBuilder().getBuilder();
     }
@@ -3998,7 +4011,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
-      return attestationBuilder_ != null || attestation_ != null;
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -4049,11 +4062,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         attestation_ = value;
-        onChanged();
       } else {
         attestationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4076,11 +4089,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.kms.v1.KeyOperationAttestation.Builder builderForValue) {
       if (attestationBuilder_ == null) {
         attestation_ = builderForValue.build();
-        onChanged();
       } else {
         attestationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4101,19 +4114,19 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAttestation(com.google.cloud.kms.v1.KeyOperationAttestation value) {
       if (attestationBuilder_ == null) {
-        if (attestation_ != null) {
-          attestation_ =
-              com.google.cloud.kms.v1.KeyOperationAttestation.newBuilder(attestation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000200) != 0)
+            && attestation_ != null
+            && attestation_
+                != com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()) {
+          getAttestationBuilder().mergeFrom(value);
         } else {
           attestation_ = value;
         }
-        onChanged();
       } else {
         attestationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000200;
+      onChanged();
       return this;
     }
     /**
@@ -4133,14 +4146,13 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAttestation() {
-      if (attestationBuilder_ == null) {
-        attestation_ = null;
-        onChanged();
-      } else {
-        attestation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000200);
+      attestation_ = null;
+      if (attestationBuilder_ != null) {
+        attestationBuilder_.dispose();
         attestationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4160,7 +4172,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.kms.v1.KeyOperationAttestation.Builder getAttestationBuilder() {
-
+      bitField0_ |= 0x00000200;
       onChanged();
       return getAttestationFieldBuilder().getBuilder();
     }

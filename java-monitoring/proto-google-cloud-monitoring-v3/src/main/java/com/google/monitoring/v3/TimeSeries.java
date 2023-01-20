@@ -119,7 +119,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MetricOrBuilder getMetricOrBuilder() {
-    return getMetric();
+    return metric_ == null ? com.google.api.Metric.getDefaultInstance() : metric_;
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
@@ -174,7 +174,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 7;
@@ -228,11 +228,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int METRIC_KIND_FIELD_NUMBER = 3;
-  private int metricKind_;
+  private int metricKind_ = 0;
   /**
    *
    *
@@ -275,14 +277,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.MetricKind result =
-        com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+        com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
     return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
   }
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 4;
-  private int valueType_;
+  private int valueType_ = 0;
   /**
    *
    *
@@ -319,13 +320,14 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.api.MetricDescriptor.ValueType getValueType() {
-    @SuppressWarnings("deprecation")
     com.google.api.MetricDescriptor.ValueType result =
-        com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+        com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
     return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
   }
 
   public static final int POINTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.monitoring.v3.Point> points_;
   /**
    *
@@ -425,7 +427,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNIT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object unit_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object unit_ = "";
   /**
    *
    *
@@ -750,37 +754,32 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (metricBuilder_ == null) {
-        metric_ = null;
-      } else {
-        metric_ = null;
+      bitField0_ = 0;
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       metricKind_ = 0;
-
       valueType_ = 0;
-
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
       } else {
         points_ = null;
         pointsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       unit_ = "";
-
       return this;
     }
 
@@ -807,36 +806,46 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.monitoring.v3.TimeSeries buildPartial() {
       com.google.monitoring.v3.TimeSeries result = new com.google.monitoring.v3.TimeSeries(this);
-      int from_bitField0_ = bitField0_;
-      if (metricBuilder_ == null) {
-        result.metric_ = metric_;
-      } else {
-        result.metric_ = metricBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
-      }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
-      result.metricKind_ = metricKind_;
-      result.valueType_ = valueType_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.monitoring.v3.TimeSeries result) {
       if (pointsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           points_ = java.util.Collections.unmodifiableList(points_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.points_ = points_;
       } else {
         result.points_ = pointsBuilder_.build();
       }
-      result.unit_ = unit_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.TimeSeries result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metric_ = metricBuilder_ == null ? metric_ : metricBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metricKind_ = metricKind_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.valueType_ = valueType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.unit_ = unit_;
+      }
     }
 
     @java.lang.Override
@@ -903,7 +912,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         if (!other.points_.isEmpty()) {
           if (points_.isEmpty()) {
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensurePointsIsMutable();
             points_.addAll(other.points_);
@@ -916,7 +925,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             pointsBuilder_.dispose();
             pointsBuilder_ = null;
             points_ = other.points_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
             pointsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPointsFieldBuilder()
@@ -928,6 +937,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getUnit().isEmpty()) {
         unit_ = other.unit_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -959,25 +969,25 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getMetricFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getResourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 metricKind_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 valueType_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
@@ -995,13 +1005,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             case 66:
               {
                 unit_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             default:
@@ -1040,7 +1050,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metric field is set.
      */
     public boolean hasMetric() {
-      return metricBuilder_ != null || metric_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1077,11 +1087,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metric_ = value;
-        onChanged();
       } else {
         metricBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1097,11 +1107,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder setMetric(com.google.api.Metric.Builder builderForValue) {
       if (metricBuilder_ == null) {
         metric_ = builderForValue.build();
-        onChanged();
       } else {
         metricBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1116,16 +1126,18 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetric(com.google.api.Metric value) {
       if (metricBuilder_ == null) {
-        if (metric_ != null) {
-          metric_ = com.google.api.Metric.newBuilder(metric_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && metric_ != null
+            && metric_ != com.google.api.Metric.getDefaultInstance()) {
+          getMetricBuilder().mergeFrom(value);
         } else {
           metric_ = value;
         }
-        onChanged();
       } else {
         metricBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1139,14 +1151,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.Metric metric = 1;</code>
      */
     public Builder clearMetric() {
-      if (metricBuilder_ == null) {
-        metric_ = null;
-        onChanged();
-      } else {
-        metric_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      metric_ = null;
+      if (metricBuilder_ != null) {
+        metricBuilder_.dispose();
         metricBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1160,7 +1171,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.Metric metric = 1;</code>
      */
     public com.google.api.Metric.Builder getMetricBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMetricFieldBuilder().getBuilder();
     }
@@ -1226,7 +1237,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1269,11 +1280,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1291,11 +1302,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder setResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1312,19 +1323,18 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResource(com.google.api.MonitoredResource value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-              com.google.api.MonitoredResource.newBuilder(resource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resource_ != null
+            && resource_ != com.google.api.MonitoredResource.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1340,14 +1350,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.MonitoredResource resource = 2;</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1363,7 +1372,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.MonitoredResource resource = 2;</code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
@@ -1437,7 +1446,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1478,11 +1487,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1499,11 +1508,11 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder setMetadata(com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1519,19 +1528,18 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetadata(com.google.api.MonitoredResourceMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.api.MonitoredResourceMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.api.MonitoredResourceMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1546,14 +1554,13 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1568,7 +1575,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.api.MonitoredResourceMetadata metadata = 7;</code>
      */
     public com.google.api.MonitoredResourceMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1663,8 +1670,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMetricKindValue(int value) {
-
       metricKind_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1688,9 +1695,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.MetricKind getMetricKind() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.MetricKind result =
-          com.google.api.MetricDescriptor.MetricKind.valueOf(metricKind_);
+          com.google.api.MetricDescriptor.MetricKind.forNumber(metricKind_);
       return result == null ? com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED : result;
     }
     /**
@@ -1716,7 +1722,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       metricKind_ = value.getNumber();
       onChanged();
       return this;
@@ -1740,7 +1746,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMetricKind() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       metricKind_ = 0;
       onChanged();
       return this;
@@ -1783,8 +1789,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setValueTypeValue(int value) {
-
       valueType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1805,9 +1811,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.api.MetricDescriptor.ValueType getValueType() {
-      @SuppressWarnings("deprecation")
       com.google.api.MetricDescriptor.ValueType result =
-          com.google.api.MetricDescriptor.ValueType.valueOf(valueType_);
+          com.google.api.MetricDescriptor.ValueType.forNumber(valueType_);
       return result == null ? com.google.api.MetricDescriptor.ValueType.UNRECOGNIZED : result;
     }
     /**
@@ -1830,7 +1835,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       valueType_ = value.getNumber();
       onChanged();
       return this;
@@ -1851,7 +1856,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValueType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       valueType_ = 0;
       onChanged();
       return this;
@@ -1861,9 +1866,9 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePointsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         points_ = new java.util.ArrayList<com.google.monitoring.v3.Point>(points_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2142,7 +2147,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPoints() {
       if (pointsBuilder_ == null) {
         points_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         pointsBuilder_.clear();
@@ -2305,7 +2310,7 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
                 com.google.monitoring.v3.Point,
                 com.google.monitoring.v3.Point.Builder,
                 com.google.monitoring.v3.PointOrBuilder>(
-                points_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                points_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         points_ = null;
       }
       return pointsBuilder_;
@@ -2378,8 +2383,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       unit_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2397,8 +2402,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnit() {
-
       unit_ = getDefaultInstance().getUnit();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2421,8 +2426,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       unit_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

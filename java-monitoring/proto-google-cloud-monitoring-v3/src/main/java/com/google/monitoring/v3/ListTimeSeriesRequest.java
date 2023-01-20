@@ -211,7 +211,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 10;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -272,7 +274,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FILTER_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -387,7 +391,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null
+        ? com.google.monitoring.v3.TimeInterval.getDefaultInstance()
+        : interval_;
   }
 
   public static final int AGGREGATION_FIELD_NUMBER = 5;
@@ -444,7 +450,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.monitoring.v3.AggregationOrBuilder getAggregationOrBuilder() {
-    return getAggregation();
+    return aggregation_ == null
+        ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
+        : aggregation_;
   }
 
   public static final int SECONDARY_AGGREGATION_FIELD_NUMBER = 11;
@@ -495,11 +503,15 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.monitoring.v3.AggregationOrBuilder getSecondaryAggregationOrBuilder() {
-    return getSecondaryAggregation();
+    return secondaryAggregation_ == null
+        ? com.google.monitoring.v3.Aggregation.getDefaultInstance()
+        : secondaryAggregation_;
   }
 
   public static final int ORDER_BY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object orderBy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
   /**
    *
    *
@@ -550,7 +562,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int VIEW_FIELD_NUMBER = 7;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -583,16 +595,15 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
-    @SuppressWarnings("deprecation")
     com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result =
-        com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.valueOf(view_);
+        com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.forNumber(view_);
     return result == null
         ? com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.UNRECOGNIZED
         : result;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 8;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -614,7 +625,9 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 9;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -951,36 +964,28 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       filter_ = "";
-
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        interval_ = null;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-      if (aggregationBuilder_ == null) {
-        aggregation_ = null;
-      } else {
-        aggregation_ = null;
+      aggregation_ = null;
+      if (aggregationBuilder_ != null) {
+        aggregationBuilder_.dispose();
         aggregationBuilder_ = null;
       }
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-      } else {
-        secondaryAggregation_ = null;
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
       orderBy_ = "";
-
       view_ = 0;
-
       pageSize_ = 0;
-
       pageToken_ = "";
-
       return this;
     }
 
@@ -1008,29 +1013,46 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.ListTimeSeriesRequest buildPartial() {
       com.google.monitoring.v3.ListTimeSeriesRequest result =
           new com.google.monitoring.v3.ListTimeSeriesRequest(this);
-      result.name_ = name_;
-      result.filter_ = filter_;
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (aggregationBuilder_ == null) {
-        result.aggregation_ = aggregation_;
-      } else {
-        result.aggregation_ = aggregationBuilder_.build();
-      }
-      if (secondaryAggregationBuilder_ == null) {
-        result.secondaryAggregation_ = secondaryAggregation_;
-      } else {
-        result.secondaryAggregation_ = secondaryAggregationBuilder_.build();
-      }
-      result.orderBy_ = orderBy_;
-      result.view_ = view_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ListTimeSeriesRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.aggregation_ =
+            aggregationBuilder_ == null ? aggregation_ : aggregationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.secondaryAggregation_ =
+            secondaryAggregationBuilder_ == null
+                ? secondaryAggregation_
+                : secondaryAggregationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.view_ = view_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
     }
 
     @java.lang.Override
@@ -1080,10 +1102,12 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (other == com.google.monitoring.v3.ListTimeSeriesRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasInterval()) {
@@ -1097,6 +1121,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getOrderBy().isEmpty()) {
         orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -1107,6 +1132,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1138,56 +1164,56 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 42
             case 50:
               {
                 orderBy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     getSecondaryAggregationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 90
             default:
@@ -1206,6 +1232,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1286,8 +1314,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1309,8 +1337,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1337,8 +1365,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1419,8 +1447,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1441,8 +1469,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1468,8 +1496,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1496,7 +1524,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1541,11 +1569,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1564,11 +1592,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     public Builder setInterval(com.google.monitoring.v3.TimeInterval.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1586,19 +1614,18 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInterval(com.google.monitoring.v3.TimeInterval value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
-          interval_ =
-              com.google.monitoring.v3.TimeInterval.newBuilder(interval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && interval_ != null
+            && interval_ != com.google.monitoring.v3.TimeInterval.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1615,14 +1642,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        interval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1639,7 +1665,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.monitoring.v3.TimeInterval.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
@@ -1716,7 +1742,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the aggregation field is set.
      */
     public boolean hasAggregation() {
-      return aggregationBuilder_ != null || aggregation_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1759,11 +1785,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         aggregation_ = value;
-        onChanged();
       } else {
         aggregationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1781,11 +1807,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     public Builder setAggregation(com.google.monitoring.v3.Aggregation.Builder builderForValue) {
       if (aggregationBuilder_ == null) {
         aggregation_ = builderForValue.build();
-        onChanged();
       } else {
         aggregationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1802,19 +1828,18 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAggregation(com.google.monitoring.v3.Aggregation value) {
       if (aggregationBuilder_ == null) {
-        if (aggregation_ != null) {
-          aggregation_ =
-              com.google.monitoring.v3.Aggregation.newBuilder(aggregation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && aggregation_ != null
+            && aggregation_ != com.google.monitoring.v3.Aggregation.getDefaultInstance()) {
+          getAggregationBuilder().mergeFrom(value);
         } else {
           aggregation_ = value;
         }
-        onChanged();
       } else {
         aggregationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1830,14 +1855,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
      */
     public Builder clearAggregation() {
-      if (aggregationBuilder_ == null) {
-        aggregation_ = null;
-        onChanged();
-      } else {
-        aggregation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      aggregation_ = null;
+      if (aggregationBuilder_ != null) {
+        aggregationBuilder_.dispose();
         aggregationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1853,7 +1877,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.Aggregation aggregation = 5;</code>
      */
     public com.google.monitoring.v3.Aggregation.Builder getAggregationBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAggregationFieldBuilder().getBuilder();
     }
@@ -1926,7 +1950,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the secondaryAggregation field is set.
      */
     public boolean hasSecondaryAggregation() {
-      return secondaryAggregationBuilder_ != null || secondaryAggregation_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1965,11 +1989,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         secondaryAggregation_ = value;
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1986,11 +2010,11 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         com.google.monitoring.v3.Aggregation.Builder builderForValue) {
       if (secondaryAggregationBuilder_ == null) {
         secondaryAggregation_ = builderForValue.build();
-        onChanged();
       } else {
         secondaryAggregationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2005,19 +2029,18 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeSecondaryAggregation(com.google.monitoring.v3.Aggregation value) {
       if (secondaryAggregationBuilder_ == null) {
-        if (secondaryAggregation_ != null) {
-          secondaryAggregation_ =
-              com.google.monitoring.v3.Aggregation.newBuilder(secondaryAggregation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && secondaryAggregation_ != null
+            && secondaryAggregation_ != com.google.monitoring.v3.Aggregation.getDefaultInstance()) {
+          getSecondaryAggregationBuilder().mergeFrom(value);
         } else {
           secondaryAggregation_ = value;
         }
-        onChanged();
       } else {
         secondaryAggregationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2031,14 +2054,13 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
      */
     public Builder clearSecondaryAggregation() {
-      if (secondaryAggregationBuilder_ == null) {
-        secondaryAggregation_ = null;
-        onChanged();
-      } else {
-        secondaryAggregation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      secondaryAggregation_ = null;
+      if (secondaryAggregationBuilder_ != null) {
+        secondaryAggregationBuilder_.dispose();
         secondaryAggregationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2052,7 +2074,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.Aggregation secondary_aggregation = 11;</code>
      */
     public com.google.monitoring.v3.Aggregation.Builder getSecondaryAggregationBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getSecondaryAggregationFieldBuilder().getBuilder();
     }
@@ -2166,8 +2188,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       orderBy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2184,8 +2206,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearOrderBy() {
-
       orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2207,8 +2229,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orderBy_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2246,8 +2268,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2266,9 +2288,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView() {
-      @SuppressWarnings("deprecation")
       com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView result =
-          com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.valueOf(view_);
+          com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.forNumber(view_);
       return result == null
           ? com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView.UNRECOGNIZED
           : result;
@@ -2291,7 +2312,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -2310,7 +2331,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       view_ = 0;
       onChanged();
       return this;
@@ -2355,6 +2376,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2374,7 +2396,7 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -2447,8 +2469,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2466,8 +2488,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2490,8 +2512,8 @@ public final class ListTimeSeriesRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

@@ -116,7 +116,9 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.gkehub.v1beta.FeatureStateOrBuilder getStateOrBuilder() {
-    return getState();
+    return state_ == null
+        ? com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()
+        : state_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -321,10 +323,10 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (stateBuilder_ == null) {
-        state_ = null;
-      } else {
-        state_ = null;
+      bitField0_ = 0;
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
       return this;
@@ -354,13 +356,18 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.gkehub.v1beta.CommonFeatureState buildPartial() {
       com.google.cloud.gkehub.v1beta.CommonFeatureState result =
           new com.google.cloud.gkehub.v1beta.CommonFeatureState(this);
-      if (stateBuilder_ == null) {
-        result.state_ = state_;
-      } else {
-        result.state_ = stateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkehub.v1beta.CommonFeatureState result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.state_ = stateBuilder_ == null ? state_ : stateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -441,7 +448,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getStateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -460,6 +467,8 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.gkehub.v1beta.FeatureState state_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -481,7 +490,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return stateBuilder_ != null || state_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -522,11 +531,11 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         state_ = value;
-        onChanged();
       } else {
         stateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -543,11 +552,11 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
     public Builder setState(com.google.cloud.gkehub.v1beta.FeatureState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
-        onChanged();
       } else {
         stateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -563,19 +572,18 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeState(com.google.cloud.gkehub.v1beta.FeatureState value) {
       if (stateBuilder_ == null) {
-        if (state_ != null) {
-          state_ =
-              com.google.cloud.gkehub.v1beta.FeatureState.newBuilder(state_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && state_ != null
+            && state_ != com.google.cloud.gkehub.v1beta.FeatureState.getDefaultInstance()) {
+          getStateBuilder().mergeFrom(value);
         } else {
           state_ = value;
         }
-        onChanged();
       } else {
         stateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -590,14 +598,13 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearState() {
-      if (stateBuilder_ == null) {
-        state_ = null;
-        onChanged();
-      } else {
-        state_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      state_ = null;
+      if (stateBuilder_ != null) {
+        stateBuilder_.dispose();
         stateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -612,7 +619,7 @@ public final class CommonFeatureState extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.gkehub.v1beta.FeatureState.Builder getStateBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }

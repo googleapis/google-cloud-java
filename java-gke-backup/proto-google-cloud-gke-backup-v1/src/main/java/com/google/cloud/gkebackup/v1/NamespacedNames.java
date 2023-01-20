@@ -68,6 +68,8 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAMESPACED_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkebackup.v1.NamespacedName> namespacedNames_;
   /**
    *
@@ -336,6 +338,7 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (namespacedNamesBuilder_ == null) {
         namespacedNames_ = java.util.Collections.emptyList();
       } else {
@@ -370,7 +373,15 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.gkebackup.v1.NamespacedNames buildPartial() {
       com.google.cloud.gkebackup.v1.NamespacedNames result =
           new com.google.cloud.gkebackup.v1.NamespacedNames(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.gkebackup.v1.NamespacedNames result) {
       if (namespacedNamesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           namespacedNames_ = java.util.Collections.unmodifiableList(namespacedNames_);
@@ -380,8 +391,10 @@ public final class NamespacedNames extends com.google.protobuf.GeneratedMessageV
       } else {
         result.namespacedNames_ = namespacedNamesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkebackup.v1.NamespacedNames result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

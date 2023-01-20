@@ -301,7 +301,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -352,7 +354,9 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 11;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -452,11 +456,13 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public com.google.monitoring.v3.ServiceLevelIndicatorOrBuilder
       getServiceLevelIndicatorOrBuilder() {
-    return getServiceLevelIndicator();
+    return serviceLevelIndicator_ == null
+        ? com.google.monitoring.v3.ServiceLevelIndicator.getDefaultInstance()
+        : serviceLevelIndicator_;
   }
 
   public static final int GOAL_FIELD_NUMBER = 4;
-  private double goal_;
+  private double goal_ = 0D;
   /**
    *
    *
@@ -579,9 +585,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    */
   public com.google.type.CalendarPeriod getCalendarPeriod() {
     if (periodCase_ == 6) {
-      @SuppressWarnings("deprecation")
       com.google.type.CalendarPeriod result =
-          com.google.type.CalendarPeriod.valueOf((java.lang.Integer) period_);
+          com.google.type.CalendarPeriod.forNumber((java.lang.Integer) period_);
       return result == null ? com.google.type.CalendarPeriod.UNRECOGNIZED : result;
     }
     return com.google.type.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
@@ -600,6 +605,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
@@ -672,8 +678,10 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
    * <code>map&lt;string, string&gt; user_labels = 12;</code>
    */
   @java.lang.Override
-  public java.lang.String getUserLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1019,18 +1027,15 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
-      if (serviceLevelIndicatorBuilder_ == null) {
-        serviceLevelIndicator_ = null;
-      } else {
-        serviceLevelIndicator_ = null;
+      serviceLevelIndicator_ = null;
+      if (serviceLevelIndicatorBuilder_ != null) {
+        serviceLevelIndicatorBuilder_.dispose();
         serviceLevelIndicatorBuilder_ = null;
       }
       goal_ = 0D;
-
       if (rollingPeriodBuilder_ != null) {
         rollingPeriodBuilder_.clear();
       }
@@ -1064,30 +1069,43 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     public com.google.monitoring.v3.ServiceLevelObjective buildPartial() {
       com.google.monitoring.v3.ServiceLevelObjective result =
           new com.google.monitoring.v3.ServiceLevelObjective(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      if (serviceLevelIndicatorBuilder_ == null) {
-        result.serviceLevelIndicator_ = serviceLevelIndicator_;
-      } else {
-        result.serviceLevelIndicator_ = serviceLevelIndicatorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.goal_ = goal_;
-      if (periodCase_ == 5) {
-        if (rollingPeriodBuilder_ == null) {
-          result.period_ = period_;
-        } else {
-          result.period_ = rollingPeriodBuilder_.build();
-        }
-      }
-      if (periodCase_ == 6) {
-        result.period_ = period_;
-      }
-      result.userLabels_ = internalGetUserLabels();
-      result.userLabels_.makeImmutable();
-      result.periodCase_ = periodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.monitoring.v3.ServiceLevelObjective result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.serviceLevelIndicator_ =
+            serviceLevelIndicatorBuilder_ == null
+                ? serviceLevelIndicator_
+                : serviceLevelIndicatorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.goal_ = goal_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.monitoring.v3.ServiceLevelObjective result) {
+      result.periodCase_ = periodCase_;
+      result.period_ = this.period_;
+      if (periodCase_ == 5 && rollingPeriodBuilder_ != null) {
+        result.period_ = rollingPeriodBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1137,10 +1155,12 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (other == com.google.monitoring.v3.ServiceLevelObjective.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasServiceLevelIndicator()) {
@@ -1150,6 +1170,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
         setGoal(other.getGoal());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000040;
       switch (other.getPeriodCase()) {
         case ROLLING_PERIOD:
           {
@@ -1195,20 +1216,20 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     getServiceLevelIndicatorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 33:
               {
                 goal_ = input.readDouble();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 33
             case 42:
@@ -1227,7 +1248,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
             case 90:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 90
             case 98:
@@ -1239,6 +1260,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 98
             default:
@@ -1338,8 +1360,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1356,8 +1378,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1379,8 +1401,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1446,8 +1468,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1463,8 +1485,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1485,8 +1507,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1511,7 +1533,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * @return Whether the serviceLevelIndicator field is set.
      */
     public boolean hasServiceLevelIndicator() {
-      return serviceLevelIndicatorBuilder_ != null || serviceLevelIndicator_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1552,11 +1574,11 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         serviceLevelIndicator_ = value;
-        onChanged();
       } else {
         serviceLevelIndicatorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1574,11 +1596,11 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
         com.google.monitoring.v3.ServiceLevelIndicator.Builder builderForValue) {
       if (serviceLevelIndicatorBuilder_ == null) {
         serviceLevelIndicator_ = builderForValue.build();
-        onChanged();
       } else {
         serviceLevelIndicatorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1595,19 +1617,19 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     public Builder mergeServiceLevelIndicator(
         com.google.monitoring.v3.ServiceLevelIndicator value) {
       if (serviceLevelIndicatorBuilder_ == null) {
-        if (serviceLevelIndicator_ != null) {
-          serviceLevelIndicator_ =
-              com.google.monitoring.v3.ServiceLevelIndicator.newBuilder(serviceLevelIndicator_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && serviceLevelIndicator_ != null
+            && serviceLevelIndicator_
+                != com.google.monitoring.v3.ServiceLevelIndicator.getDefaultInstance()) {
+          getServiceLevelIndicatorBuilder().mergeFrom(value);
         } else {
           serviceLevelIndicator_ = value;
         }
-        onChanged();
       } else {
         serviceLevelIndicatorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1622,14 +1644,13 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * <code>.google.monitoring.v3.ServiceLevelIndicator service_level_indicator = 3;</code>
      */
     public Builder clearServiceLevelIndicator() {
-      if (serviceLevelIndicatorBuilder_ == null) {
-        serviceLevelIndicator_ = null;
-        onChanged();
-      } else {
-        serviceLevelIndicator_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      serviceLevelIndicator_ = null;
+      if (serviceLevelIndicatorBuilder_ != null) {
+        serviceLevelIndicatorBuilder_.dispose();
         serviceLevelIndicatorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1645,7 +1666,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      */
     public com.google.monitoring.v3.ServiceLevelIndicator.Builder
         getServiceLevelIndicatorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getServiceLevelIndicatorFieldBuilder().getBuilder();
     }
@@ -1731,6 +1752,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     public Builder setGoal(double value) {
 
       goal_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1747,7 +1769,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearGoal() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       goal_ = 0D;
       onChanged();
       return this;
@@ -1963,7 +1985,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       }
       periodCase_ = 5;
       onChanged();
-      ;
       return rollingPeriodBuilder_;
     }
 
@@ -2040,9 +2061,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public com.google.type.CalendarPeriod getCalendarPeriod() {
       if (periodCase_ == 6) {
-        @SuppressWarnings("deprecation")
         com.google.type.CalendarPeriod result =
-            com.google.type.CalendarPeriod.valueOf((java.lang.Integer) period_);
+            com.google.type.CalendarPeriod.forNumber((java.lang.Integer) period_);
         return result == null ? com.google.type.CalendarPeriod.UNRECOGNIZED : result;
       }
       return com.google.type.CalendarPeriod.CALENDAR_PERIOD_UNSPECIFIED;
@@ -2105,8 +2125,6 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableUserLabels() {
-      onChanged();
-      ;
       if (userLabels_ == null) {
         userLabels_ =
             com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
@@ -2114,6 +2132,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return userLabels_;
     }
 
@@ -2180,8 +2200,10 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      * <code>map&lt;string, string&gt; user_labels = 12;</code>
      */
     @java.lang.Override
-    public java.lang.String getUserLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2215,6 +2237,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     }
 
     public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -2242,6 +2265,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -2265,8 +2289,8 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2285,6 +2309,7 @@ public final class ServiceLevelObjective extends com.google.protobuf.GeneratedMe
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 

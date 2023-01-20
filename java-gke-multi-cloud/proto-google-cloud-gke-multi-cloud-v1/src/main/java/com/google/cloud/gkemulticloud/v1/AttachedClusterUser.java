@@ -68,7 +68,9 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
     public com.google.cloud.gkemulticloud.v1.AttachedClusterUser buildPartial() {
       com.google.cloud.gkemulticloud.v1.AttachedClusterUser result =
           new com.google.cloud.gkemulticloud.v1.AttachedClusterUser(this);
-      result.username_ = username_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AttachedClusterUser result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 username_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -508,8 +522,8 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class AttachedClusterUser extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

@@ -68,7 +68,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
   }
 
   public static final int MIN_NODE_COUNT_FIELD_NUMBER = 1;
-  private int minNodeCount_;
+  private int minNodeCount_ = 0;
   /**
    *
    *
@@ -87,7 +87,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
   }
 
   public static final int MAX_NODE_COUNT_FIELD_NUMBER = 2;
-  private int maxNodeCount_;
+  private int maxNodeCount_ = 0;
   /**
    *
    *
@@ -314,10 +314,9 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minNodeCount_ = 0;
-
       maxNodeCount_ = 0;
-
       return this;
     }
 
@@ -345,10 +344,21 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     public com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling buildPartial() {
       com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling result =
           new com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling(this);
-      result.minNodeCount_ = minNodeCount_;
-      result.maxNodeCount_ = maxNodeCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.gkemulticloud.v1.AzureNodePoolAutoscaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minNodeCount_ = minNodeCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxNodeCount_ = maxNodeCount_;
+      }
     }
 
     @java.lang.Override
@@ -432,13 +442,13 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
             case 8:
               {
                 minNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxNodeCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -457,6 +467,8 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minNodeCount_;
     /**
@@ -491,6 +503,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     public Builder setMinNodeCount(int value) {
 
       minNodeCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -507,7 +520,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minNodeCount_ = 0;
       onChanged();
       return this;
@@ -546,6 +559,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
     public Builder setMaxNodeCount(int value) {
 
       maxNodeCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -562,7 +576,7 @@ public final class AzureNodePoolAutoscaling extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearMaxNodeCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxNodeCount_ = 0;
       onChanged();
       return this;

@@ -71,7 +71,9 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -126,7 +128,9 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
   }
 
   public static final int DOMAIN_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object domainName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domainName_ = "";
   /**
    *
    *
@@ -245,7 +249,9 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1.DomainOrBuilder getDomainOrBuilder() {
-    return getDomain();
+    return domain_ == null
+        ? com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()
+        : domain_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -472,14 +478,12 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       domainName_ = "";
-
-      if (domainBuilder_ == null) {
-        domain_ = null;
-      } else {
-        domain_ = null;
+      domain_ = null;
+      if (domainBuilder_ != null) {
+        domainBuilder_.dispose();
         domainBuilder_ = null;
       }
       return this;
@@ -511,15 +515,25 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     public com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest buildPartial() {
       com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest result =
           new com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest(this);
-      result.parent_ = parent_;
-      result.domainName_ = domainName_;
-      if (domainBuilder_ == null) {
-        result.domain_ = domain_;
-      } else {
-        result.domain_ = domainBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domainName_ = domainName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.domain_ = domainBuilder_ == null ? domain_ : domainBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -573,10 +587,12 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDomainName().isEmpty()) {
         domainName_ = other.domainName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasDomain()) {
@@ -611,19 +627,19 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 domainName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDomainFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -642,6 +658,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -713,8 +731,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -733,8 +751,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -758,8 +776,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -855,8 +873,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
       if (value == null) {
         throw new NullPointerException();
       }
-
       domainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -882,8 +900,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearDomainName() {
-
       domainName_ = getDefaultInstance().getDomainName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -914,8 +932,8 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domainName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -940,7 +958,7 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
-      return domainBuilder_ != null || domain_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -981,11 +999,11 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         domain_ = value;
-        onChanged();
       } else {
         domainBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1002,11 +1020,11 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
     public Builder setDomain(com.google.cloud.managedidentities.v1.Domain.Builder builderForValue) {
       if (domainBuilder_ == null) {
         domain_ = builderForValue.build();
-        onChanged();
       } else {
         domainBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1022,19 +1040,18 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      */
     public Builder mergeDomain(com.google.cloud.managedidentities.v1.Domain value) {
       if (domainBuilder_ == null) {
-        if (domain_ != null) {
-          domain_ =
-              com.google.cloud.managedidentities.v1.Domain.newBuilder(domain_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && domain_ != null
+            && domain_ != com.google.cloud.managedidentities.v1.Domain.getDefaultInstance()) {
+          getDomainBuilder().mergeFrom(value);
         } else {
           domain_ = value;
         }
-        onChanged();
       } else {
         domainBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1049,14 +1066,13 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      * </code>
      */
     public Builder clearDomain() {
-      if (domainBuilder_ == null) {
-        domain_ = null;
-        onChanged();
-      } else {
-        domain_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      domain_ = null;
+      if (domainBuilder_ != null) {
+        domainBuilder_.dispose();
         domainBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1071,7 +1087,7 @@ public final class CreateMicrosoftAdDomainRequest extends com.google.protobuf.Ge
      * </code>
      */
     public com.google.cloud.managedidentities.v1.Domain.Builder getDomainBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDomainFieldBuilder().getBuilder();
     }

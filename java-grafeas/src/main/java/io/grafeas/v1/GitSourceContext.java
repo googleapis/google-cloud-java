@@ -68,7 +68,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int URL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object url_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
   /**
    *
    *
@@ -117,7 +119,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object revisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
   /**
    *
    *
@@ -367,10 +371,9 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       url_ = "";
-
       revisionId_ = "";
-
       return this;
     }
 
@@ -396,10 +399,21 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public io.grafeas.v1.GitSourceContext buildPartial() {
       io.grafeas.v1.GitSourceContext result = new io.grafeas.v1.GitSourceContext(this);
-      result.url_ = url_;
-      result.revisionId_ = revisionId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(io.grafeas.v1.GitSourceContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.url_ = url_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revisionId_ = revisionId_;
+      }
     }
 
     @java.lang.Override
@@ -449,10 +463,12 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
       if (other == io.grafeas.v1.GitSourceContext.getDefaultInstance()) return this;
       if (!other.getUrl().isEmpty()) {
         url_ = other.url_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRevisionId().isEmpty()) {
         revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -484,13 +500,13 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 url_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 revisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -509,6 +525,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object url_ = "";
     /**
@@ -571,8 +589,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,8 +606,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUrl() {
-
       url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -610,8 +628,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       url_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,8 +695,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -694,8 +712,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
-
       revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -716,8 +734,8 @@ public final class GitSourceContext extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

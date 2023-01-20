@@ -72,7 +72,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FORMATTED_ADDRESS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object formattedAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object formattedAddress_ = "";
   /**
    *
    *
@@ -167,10 +169,14 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.PostalAddressOrBuilder getPostalAddressOrBuilder() {
-    return getPostalAddress();
+    return postalAddress_ == null
+        ? com.google.type.PostalAddress.getDefaultInstance()
+        : postalAddress_;
   }
 
   public static final int ADDRESS_COMPONENTS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.maps.addressvalidation.v1.AddressComponent> addressComponents_;
   /**
    *
@@ -272,6 +278,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MISSING_COMPONENT_TYPES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList missingComponentTypes_;
   /**
    *
@@ -357,6 +365,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNCONFIRMED_COMPONENT_TYPES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList unconfirmedComponentTypes_;
   /**
    *
@@ -458,6 +468,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNRESOLVED_TOKENS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList unresolvedTokens_;
   /**
    *
@@ -808,12 +820,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       formattedAddress_ = "";
-
-      if (postalAddressBuilder_ == null) {
-        postalAddress_ = null;
-      } else {
-        postalAddress_ = null;
+      postalAddress_ = null;
+      if (postalAddressBuilder_ != null) {
+        postalAddressBuilder_.dispose();
         postalAddressBuilder_ = null;
       }
       if (addressComponentsBuilder_ == null) {
@@ -822,13 +833,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         addressComponents_ = null;
         addressComponentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
-      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
+      unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -856,39 +867,50 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public com.google.maps.addressvalidation.v1.Address buildPartial() {
       com.google.maps.addressvalidation.v1.Address result =
           new com.google.maps.addressvalidation.v1.Address(this);
-      int from_bitField0_ = bitField0_;
-      result.formattedAddress_ = formattedAddress_;
-      if (postalAddressBuilder_ == null) {
-        result.postalAddress_ = postalAddress_;
-      } else {
-        result.postalAddress_ = postalAddressBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.maps.addressvalidation.v1.Address result) {
       if (addressComponentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           addressComponents_ = java.util.Collections.unmodifiableList(addressComponents_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.addressComponents_ = addressComponents_;
       } else {
         result.addressComponents_ = addressComponentsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        missingComponentTypes_ = missingComponentTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.missingComponentTypes_ = missingComponentTypes_;
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unconfirmedComponentTypes_ = unconfirmedComponentTypes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unconfirmedComponentTypes_ = unconfirmedComponentTypes_;
       if (((bitField0_ & 0x00000008) != 0)) {
-        unresolvedTokens_ = unresolvedTokens_.getUnmodifiableView();
+        missingComponentTypes_ = missingComponentTypes_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
+      result.missingComponentTypes_ = missingComponentTypes_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        unconfirmedComponentTypes_ = unconfirmedComponentTypes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.unconfirmedComponentTypes_ = unconfirmedComponentTypes_;
+      if (((bitField0_ & 0x00000020) != 0)) {
+        unresolvedTokens_ = unresolvedTokens_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
       result.unresolvedTokens_ = unresolvedTokens_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.maps.addressvalidation.v1.Address result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.formattedAddress_ = formattedAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.postalAddress_ =
+            postalAddressBuilder_ == null ? postalAddress_ : postalAddressBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -938,6 +960,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.maps.addressvalidation.v1.Address.getDefaultInstance()) return this;
       if (!other.getFormattedAddress().isEmpty()) {
         formattedAddress_ = other.formattedAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPostalAddress()) {
@@ -947,7 +970,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         if (!other.addressComponents_.isEmpty()) {
           if (addressComponents_.isEmpty()) {
             addressComponents_ = other.addressComponents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAddressComponentsIsMutable();
             addressComponents_.addAll(other.addressComponents_);
@@ -960,7 +983,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             addressComponentsBuilder_.dispose();
             addressComponentsBuilder_ = null;
             addressComponents_ = other.addressComponents_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             addressComponentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAddressComponentsFieldBuilder()
@@ -973,7 +996,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.missingComponentTypes_.isEmpty()) {
         if (missingComponentTypes_.isEmpty()) {
           missingComponentTypes_ = other.missingComponentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureMissingComponentTypesIsMutable();
           missingComponentTypes_.addAll(other.missingComponentTypes_);
@@ -983,7 +1006,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.unconfirmedComponentTypes_.isEmpty()) {
         if (unconfirmedComponentTypes_.isEmpty()) {
           unconfirmedComponentTypes_ = other.unconfirmedComponentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureUnconfirmedComponentTypesIsMutable();
           unconfirmedComponentTypes_.addAll(other.unconfirmedComponentTypes_);
@@ -993,7 +1016,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (!other.unresolvedTokens_.isEmpty()) {
         if (unresolvedTokens_.isEmpty()) {
           unresolvedTokens_ = other.unresolvedTokens_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureUnresolvedTokensIsMutable();
           unresolvedTokens_.addAll(other.unresolvedTokens_);
@@ -1029,13 +1052,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 formattedAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPostalAddressFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
@@ -1156,8 +1179,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       formattedAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1174,8 +1197,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFormattedAddress() {
-
       formattedAddress_ = getDefaultInstance().getFormattedAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1197,8 +1220,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       formattedAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1221,7 +1244,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postalAddress field is set.
      */
     public boolean hasPostalAddress() {
-      return postalAddressBuilder_ != null || postalAddress_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1258,11 +1281,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postalAddress_ = value;
-        onChanged();
       } else {
         postalAddressBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1277,11 +1300,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostalAddress(com.google.type.PostalAddress.Builder builderForValue) {
       if (postalAddressBuilder_ == null) {
         postalAddress_ = builderForValue.build();
-        onChanged();
       } else {
         postalAddressBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1295,19 +1318,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePostalAddress(com.google.type.PostalAddress value) {
       if (postalAddressBuilder_ == null) {
-        if (postalAddress_ != null) {
-          postalAddress_ =
-              com.google.type.PostalAddress.newBuilder(postalAddress_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && postalAddress_ != null
+            && postalAddress_ != com.google.type.PostalAddress.getDefaultInstance()) {
+          getPostalAddressBuilder().mergeFrom(value);
         } else {
           postalAddress_ = value;
         }
-        onChanged();
       } else {
         postalAddressBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1320,14 +1342,13 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.PostalAddress postal_address = 3;</code>
      */
     public Builder clearPostalAddress() {
-      if (postalAddressBuilder_ == null) {
-        postalAddress_ = null;
-        onChanged();
-      } else {
-        postalAddress_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      postalAddress_ = null;
+      if (postalAddressBuilder_ != null) {
+        postalAddressBuilder_.dispose();
         postalAddressBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1340,7 +1361,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.PostalAddress postal_address = 3;</code>
      */
     public com.google.type.PostalAddress.Builder getPostalAddressBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPostalAddressFieldBuilder().getBuilder();
     }
@@ -1392,11 +1413,11 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         addressComponents_ = java.util.Collections.emptyList();
 
     private void ensureAddressComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         addressComponents_ =
             new java.util.ArrayList<com.google.maps.addressvalidation.v1.AddressComponent>(
                 addressComponents_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1683,7 +1704,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAddressComponents() {
       if (addressComponentsBuilder_ == null) {
         addressComponents_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         addressComponentsBuilder_.clear();
@@ -1853,7 +1874,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
                 com.google.maps.addressvalidation.v1.AddressComponent.Builder,
                 com.google.maps.addressvalidation.v1.AddressComponentOrBuilder>(
                 addressComponents_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         addressComponents_ = null;
@@ -1865,10 +1886,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMissingComponentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         missingComponentTypes_ =
             new com.google.protobuf.LazyStringArrayList(missingComponentTypes_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -2051,7 +2072,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMissingComponentTypes() {
       missingComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2088,10 +2109,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnconfirmedComponentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         unconfirmedComponentTypes_ =
             new com.google.protobuf.LazyStringArrayList(unconfirmedComponentTypes_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2306,7 +2327,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUnconfirmedComponentTypes() {
       unconfirmedComponentTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2347,9 +2368,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureUnresolvedTokensIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         unresolvedTokens_ = new com.google.protobuf.LazyStringArrayList(unresolvedTokens_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2516,7 +2537,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearUnresolvedTokens() {
       unresolvedTokens_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
