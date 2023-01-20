@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.28.3](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.2...v2.28.3) (2023-01-20)
+
+
+### Bug Fixes
+
+* Fix deadlock issue in ConnectionWorkerPool ([#1938](https://github.com/googleapis/java-bigquerystorage/issues/1938)) ([caf1e76](https://github.com/googleapis/java-bigquerystorage/commit/caf1e7603153b1b8de90d6294ac15c711076d8f4))
+* **java:** Skip fixing poms for special modules ([#1744](https://github.com/googleapis/java-bigquerystorage/issues/1744)) ([#1946](https://github.com/googleapis/java-bigquerystorage/issues/1946)) ([2863542](https://github.com/googleapis/java-bigquerystorage/commit/286354231eaf8e329bbea05e0c45b28e14f4a1e7))
+* Update BQTableSchemaToProtoDescriptor to unblock a protobuf change. ([#1942](https://github.com/googleapis/java-bigquerystorage/issues/1942)) ([62cc80a](https://github.com/googleapis/java-bigquerystorage/commit/62cc80a216ff4969a30e5fe93ff74b2c582e4677))
+* We should isolate the client used in StreamWriter and the client used in ConnectionWorker ([#1933](https://github.com/googleapis/java-bigquerystorage/issues/1933)) ([3530672](https://github.com/googleapis/java-bigquerystorage/commit/3530672f0bddfacb973fb0fc1d30aabb4ffefccb))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.1.2 ([#1949](https://github.com/googleapis/java-bigquerystorage/issues/1949)) ([23ec7fa](https://github.com/googleapis/java-bigquerystorage/commit/23ec7fa2c70c720fb995bdfac9416a29d77de2e2))
+
 ## [2.28.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.28.1...v2.28.2) (2023-01-18)
 
 
