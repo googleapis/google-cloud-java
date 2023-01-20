@@ -68,7 +68,9 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -170,7 +172,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.TenantOrBuilder getTenantOrBuilder() {
-    return getTenant();
+    return tenant_ == null ? com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance() : tenant_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -384,12 +386,11 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (tenantBuilder_ == null) {
-        tenant_ = null;
-      } else {
-        tenant_ = null;
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
         tenantBuilder_ = null;
       }
       return this;
@@ -419,14 +420,21 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.talent.v4beta1.CreateTenantRequest buildPartial() {
       com.google.cloud.talent.v4beta1.CreateTenantRequest result =
           new com.google.cloud.talent.v4beta1.CreateTenantRequest(this);
-      result.parent_ = parent_;
-      if (tenantBuilder_ == null) {
-        result.tenant_ = tenant_;
-      } else {
-        result.tenant_ = tenantBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.CreateTenantRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tenant_ = tenantBuilder_ == null ? tenant_ : tenantBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +485,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTenant()) {
@@ -511,13 +520,13 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTenantFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -536,6 +545,8 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -610,8 +621,8 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -631,8 +642,8 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +668,8 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -683,7 +694,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the tenant field is set.
      */
     public boolean hasTenant() {
-      return tenantBuilder_ != null || tenant_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -724,11 +735,11 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         tenant_ = value;
-        onChanged();
       } else {
         tenantBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -745,11 +756,11 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
     public Builder setTenant(com.google.cloud.talent.v4beta1.Tenant.Builder builderForValue) {
       if (tenantBuilder_ == null) {
         tenant_ = builderForValue.build();
-        onChanged();
       } else {
         tenantBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -765,19 +776,18 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeTenant(com.google.cloud.talent.v4beta1.Tenant value) {
       if (tenantBuilder_ == null) {
-        if (tenant_ != null) {
-          tenant_ =
-              com.google.cloud.talent.v4beta1.Tenant.newBuilder(tenant_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && tenant_ != null
+            && tenant_ != com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance()) {
+          getTenantBuilder().mergeFrom(value);
         } else {
           tenant_ = value;
         }
-        onChanged();
       } else {
         tenantBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -792,14 +802,13 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearTenant() {
-      if (tenantBuilder_ == null) {
-        tenant_ = null;
-        onChanged();
-      } else {
-        tenant_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
         tenantBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -814,7 +823,7 @@ public final class CreateTenantRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.talent.v4beta1.Tenant.Builder getTenantBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTenantFieldBuilder().getBuilder();
     }

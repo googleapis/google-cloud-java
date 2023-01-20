@@ -69,6 +69,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPANIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.Company> companies_;
   /**
    *
@@ -138,7 +140,9 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -234,7 +238,9 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -460,6 +466,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (companiesBuilder_ == null) {
         companies_ = java.util.Collections.emptyList();
       } else {
@@ -468,11 +475,9 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       nextPageToken_ = "";
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -502,7 +507,16 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.talent.v4beta1.ListCompaniesResponse buildPartial() {
       com.google.cloud.talent.v4beta1.ListCompaniesResponse result =
           new com.google.cloud.talent.v4beta1.ListCompaniesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4beta1.ListCompaniesResponse result) {
       if (companiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           companies_ = java.util.Collections.unmodifiableList(companies_);
@@ -512,14 +526,16 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.companies_ = companiesBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.ListCompaniesResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -597,6 +613,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasMetadata()) {
@@ -644,13 +661,13 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1082,8 +1099,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1099,8 +1116,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1121,8 +1138,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1146,7 +1163,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1185,11 +1202,11 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1206,11 +1223,11 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
         com.google.cloud.talent.v4beta1.ResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1225,19 +1242,18 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeMetadata(com.google.cloud.talent.v4beta1.ResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.talent.v4beta1.ResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1251,14 +1267,13 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1272,7 +1287,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 3;</code>
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

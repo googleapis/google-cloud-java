@@ -118,7 +118,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object eventId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventId_ = "";
   /**
    *
    *
@@ -265,7 +269,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int JOB_EVENT_FIELD_NUMBER = 5;
@@ -323,7 +327,9 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EVENT_NOTES_FIELD_NUMBER = 9;
-  private volatile java.lang.Object eventNotes_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventNotes_ = "";
   /**
    *
    *
@@ -629,21 +635,18 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       requestId_ = "";
-
       eventId_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       if (jobEventBuilder_ != null) {
         jobEventBuilder_.clear();
       }
       eventNotes_ = "";
-
       eventCase_ = 0;
       event_ = null;
       return this;
@@ -673,24 +676,36 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.ClientEvent buildPartial() {
       com.google.cloud.talent.v4.ClientEvent result =
           new com.google.cloud.talent.v4.ClientEvent(this);
-      result.requestId_ = requestId_;
-      result.eventId_ = eventId_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (eventCase_ == 5) {
-        if (jobEventBuilder_ == null) {
-          result.event_ = event_;
-        } else {
-          result.event_ = jobEventBuilder_.build();
-        }
-      }
-      result.eventNotes_ = eventNotes_;
-      result.eventCase_ = eventCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.ClientEvent result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventId_ = eventId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.eventNotes_ = eventNotes_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.talent.v4.ClientEvent result) {
+      result.eventCase_ = eventCase_;
+      result.event_ = this.event_;
+      if (eventCase_ == 5 && jobEventBuilder_ != null) {
+        result.event_ = jobEventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -740,10 +755,12 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.talent.v4.ClientEvent.getDefaultInstance()) return this;
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEventId().isEmpty()) {
         eventId_ = other.eventId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -751,6 +768,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEventNotes().isEmpty()) {
         eventNotes_ = other.eventNotes_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getEventCase()) {
@@ -793,19 +811,19 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 eventId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
@@ -817,7 +835,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 eventNotes_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
             default:
@@ -850,6 +868,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object requestId_ = "";
     /**
@@ -918,8 +938,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -937,8 +957,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -961,8 +981,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1028,8 +1048,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,8 +1065,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventId() {
-
       eventId_ = getDefaultInstance().getEventId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1067,8 +1087,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1092,7 +1112,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1131,11 +1151,11 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1151,11 +1171,11 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1170,17 +1190,18 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1194,14 +1215,13 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1215,7 +1235,7 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1476,7 +1496,6 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       }
       eventCase_ = 5;
       onChanged();
-      ;
       return jobEventBuilder_;
     }
 
@@ -1544,8 +1563,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventNotes_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1562,8 +1581,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEventNotes() {
-
       eventNotes_ = getDefaultInstance().getEventNotes();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1585,8 +1604,8 @@ public final class ClientEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventNotes_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

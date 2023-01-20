@@ -23,8 +23,9 @@ package com.google.cloud.talent.v4beta1;
  *
  * <pre>
  * A Job resource represents a job posting (also referred to as a "job listing"
- * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
- * entity responsible for the job.
+ * or "job requisition"). A job belongs to a
+ * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
+ * responsible for the job.
  * </pre>
  *
  * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -305,6 +306,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int EMAILS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList emails_;
     /**
      *
@@ -374,7 +377,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INSTRUCTION_FIELD_NUMBER = 2;
-    private volatile java.lang.Object instruction_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object instruction_ = "";
     /**
      *
      *
@@ -431,6 +436,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int URIS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList uris_;
     /**
      *
@@ -731,12 +738,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         emails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         instruction_ = "";
-
         uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -764,20 +771,33 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.talent.v4beta1.Job.ApplicationInfo buildPartial() {
         com.google.cloud.talent.v4beta1.Job.ApplicationInfo result =
             new com.google.cloud.talent.v4beta1.Job.ApplicationInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.talent.v4beta1.Job.ApplicationInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           emails_ = emails_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.emails_ = emails_;
-        result.instruction_ = instruction_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           uris_ = uris_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.uris_ = uris_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.talent.v4beta1.Job.ApplicationInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.instruction_ = instruction_;
+        }
       }
 
       @java.lang.Override
@@ -840,12 +860,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getInstruction().isEmpty()) {
           instruction_ = other.instruction_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.uris_.isEmpty()) {
           if (uris_.isEmpty()) {
             uris_ = other.uris_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUrisIsMutable();
             uris_.addAll(other.uris_);
@@ -888,7 +909,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               case 18:
                 {
                   instruction_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
@@ -1176,8 +1197,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         instruction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1197,8 +1218,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearInstruction() {
-
         instruction_ = getDefaultInstance().getInstruction();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1223,8 +1244,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         instruction_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1233,9 +1254,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureUrisIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           uris_ = new com.google.protobuf.LazyStringArrayList(uris_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1386,7 +1407,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearUris() {
         uris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1488,8 +1509,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1500,8 +1524,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1512,8 +1539,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1524,8 +1554,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1537,8 +1570,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1550,7 +1586,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1562,7 +1600,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1574,7 +1614,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1587,7 +1629,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1599,7 +1643,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1660,13 +1706,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int LOCATIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.cloud.talent.v4beta1.Location> locations_;
     /**
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1680,8 +1731,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1696,8 +1750,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1711,8 +1768,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1726,8 +1786,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+     * Structured locations of the job, resolved from
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+     * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+     * exactly matched to
+     * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
      * order.
      * </pre>
      *
@@ -1739,16 +1802,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int JOB_CATEGORIES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> jobCategories_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer, com.google.cloud.talent.v4beta1.JobCategory>
         jobCategories_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, com.google.cloud.talent.v4beta1.JobCategory>() {
               public com.google.cloud.talent.v4beta1.JobCategory convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.cloud.talent.v4beta1.JobCategory result =
-                    com.google.cloud.talent.v4beta1.JobCategory.valueOf(from);
+                    com.google.cloud.talent.v4beta1.JobCategory.forNumber(from);
                 return result == null
                     ? com.google.cloud.talent.v4beta1.JobCategory.UNRECOGNIZED
                     : result;
@@ -1758,7 +1823,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1775,7 +1842,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1790,7 +1859,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1806,7 +1877,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -1821,7 +1894,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+     * Job categories derived from
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2063,6 +2138,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (locationsBuilder_ == null) {
           locations_ = java.util.Collections.emptyList();
         } else {
@@ -2099,7 +2175,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.talent.v4beta1.Job.DerivedInfo buildPartial() {
         com.google.cloud.talent.v4beta1.Job.DerivedInfo result =
             new com.google.cloud.talent.v4beta1.Job.DerivedInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.talent.v4beta1.Job.DerivedInfo result) {
         if (locationsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             locations_ = java.util.Collections.unmodifiableList(locations_);
@@ -2114,8 +2199,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.jobCategories_ = jobCategories_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.talent.v4beta1.Job.DerivedInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2301,8 +2388,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2319,8 +2409,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2337,8 +2430,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2355,8 +2451,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2379,8 +2478,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2401,8 +2503,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2425,8 +2530,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2449,8 +2557,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2471,8 +2582,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2493,8 +2607,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2515,8 +2632,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2536,8 +2656,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2557,8 +2680,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2571,8 +2697,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2589,8 +2718,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2608,8 +2740,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2623,8 +2758,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2638,8 +2776,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Structured locations of the job, resolved from [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
-       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are exactly matched to [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
+       * Structured locations of the job, resolved from
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses].
+       * [locations][google.cloud.talent.v4beta1.Job.DerivedInfo.locations] are
+       * exactly matched to
+       * [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] in the same
        * order.
        * </pre>
        *
@@ -2679,7 +2820,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2695,7 +2838,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2709,7 +2854,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2724,7 +2871,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2747,7 +2896,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2768,7 +2919,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2789,7 +2942,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2806,7 +2961,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2820,7 +2977,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2835,7 +2994,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2854,7 +3015,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2872,7 +3035,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Job categories derived from [Job.title][google.cloud.talent.v4beta1.Job.title] and [Job.description][google.cloud.talent.v4beta1.Job.description].
+       * Job categories derived from
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] and
+       * [Job.description][google.cloud.talent.v4beta1.Job.description].
        * </pre>
        *
        * <code>repeated .google.cloud.talent.v4beta1.JobCategory job_categories = 3;</code>
@@ -2984,7 +3149,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to
+     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3004,7 +3170,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to
+     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3063,7 +3230,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISABLE_STREET_ADDRESS_RESOLUTION_FIELD_NUMBER = 1;
-    private boolean disableStreetAddressResolution_;
+    private boolean disableStreetAddressResolution_ = false;
     /**
      *
      *
@@ -3082,7 +3249,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HTML_SANITIZATION_FIELD_NUMBER = 2;
-    private int htmlSanitization_;
+    private int htmlSanitization_ = 0;
     /**
      *
      *
@@ -3095,7 +3262,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to
+     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3118,7 +3286,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * * responsibilities
      * HTML tags in these fields may be stripped if sanitiazation isn't
      * disabled.
-     * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+     * Defaults to
+     * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3127,9 +3296,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.HtmlSanitization result =
-          com.google.cloud.talent.v4beta1.HtmlSanitization.valueOf(htmlSanitization_);
+          com.google.cloud.talent.v4beta1.HtmlSanitization.forNumber(htmlSanitization_);
       return result == null
           ? com.google.cloud.talent.v4beta1.HtmlSanitization.UNRECOGNIZED
           : result;
@@ -3353,10 +3521,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         disableStreetAddressResolution_ = false;
-
         htmlSanitization_ = 0;
-
         return this;
       }
 
@@ -3384,10 +3551,21 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.talent.v4beta1.Job.ProcessingOptions buildPartial() {
         com.google.cloud.talent.v4beta1.Job.ProcessingOptions result =
             new com.google.cloud.talent.v4beta1.Job.ProcessingOptions(this);
-        result.disableStreetAddressResolution_ = disableStreetAddressResolution_;
-        result.htmlSanitization_ = htmlSanitization_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.talent.v4beta1.Job.ProcessingOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.disableStreetAddressResolution_ = disableStreetAddressResolution_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.htmlSanitization_ = htmlSanitization_;
+        }
       }
 
       @java.lang.Override
@@ -3473,13 +3651,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   disableStreetAddressResolution_ = input.readBool();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   htmlSanitization_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -3498,6 +3676,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private boolean disableStreetAddressResolution_;
       /**
@@ -3532,6 +3712,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       public Builder setDisableStreetAddressResolution(boolean value) {
 
         disableStreetAddressResolution_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3548,7 +3729,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisableStreetAddressResolution() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         disableStreetAddressResolution_ = false;
         onChanged();
         return this;
@@ -3567,7 +3748,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to
+       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3590,7 +3772,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to
+       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3599,8 +3782,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setHtmlSanitizationValue(int value) {
-
         htmlSanitization_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3616,7 +3799,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to
+       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3625,9 +3809,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.talent.v4beta1.HtmlSanitization getHtmlSanitization() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4beta1.HtmlSanitization result =
-            com.google.cloud.talent.v4beta1.HtmlSanitization.valueOf(htmlSanitization_);
+            com.google.cloud.talent.v4beta1.HtmlSanitization.forNumber(htmlSanitization_);
         return result == null
             ? com.google.cloud.talent.v4beta1.HtmlSanitization.UNRECOGNIZED
             : result;
@@ -3644,7 +3827,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to
+       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3656,7 +3840,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         htmlSanitization_ = value.getNumber();
         onChanged();
         return this;
@@ -3673,7 +3857,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * * responsibilities
        * HTML tags in these fields may be stripped if sanitiazation isn't
        * disabled.
-       * Defaults to [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
+       * Defaults to
+       * [HtmlSanitization.SIMPLE_FORMATTING_ONLY][google.cloud.talent.v4beta1.HtmlSanitization.SIMPLE_FORMATTING_ONLY].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.HtmlSanitization html_sanitization = 2;</code>
@@ -3681,7 +3866,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHtmlSanitization() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         htmlSanitization_ = 0;
         onChanged();
         return this;
@@ -3752,7 +3937,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -3766,7 +3953,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+   * value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3798,7 +3986,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * If tenant id is unspecified, the default tenant is used. For
    * example, "projects/foo/jobs/bar".
    * Use of this field in job queries and API calls is preferred over the use of
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+   * value is unique.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -3819,7 +4008,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPANY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object company_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object company_ = "";
   /**
    *
    *
@@ -3882,16 +4073,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUISITION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requisitionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requisitionId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-   * client to identify a job. This field is intended to be used by clients
-   * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is
+   * assigned by the client to identify a job. This field is intended to be used
+   * by clients for client identification and tracking of postings. A job isn't
+   * allowed to be created if there is another job with the same
+   * [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -3915,11 +4110,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-   * client to identify a job. This field is intended to be used by clients
-   * for client identification and tracking of postings. A job isn't allowed
-   * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * Required. The requisition ID, also referred to as the posting ID, is
+   * assigned by the client to identify a job. This field is intended to be used
+   * by clients for client identification and tracking of postings. A job isn't
+   * allowed to be created if there is another job with the same
+   * [company][google.cloud.talent.v4beta1.Job.name],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -3941,7 +4138,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TITLE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -3992,16 +4191,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
    * <pre>
-   * Required. The description of the job, which typically includes a multi-paragraph
-   * description of the company and related information. Separate fields are
-   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-   * these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a
+   * multi-paragraph description of the company and related information.
+   * Separate fields are provided on the job object for
+   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+   * job characteristics. Use of these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
@@ -4027,11 +4229,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The description of the job, which typically includes a multi-paragraph
-   * description of the company and related information. Separate fields are
-   * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-   * these separate job fields is recommended.
+   * Required. The description of the job, which typically includes a
+   * multi-paragraph description of the company and related information.
+   * Separate fields are provided on the job object for
+   * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+   * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+   * job characteristics. Use of these separate job fields is recommended.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 100,000.
@@ -4055,6 +4258,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADDRESSES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList addresses_;
   /**
    *
@@ -4066,12 +4271,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-   * be preserved, a custom field should be used for storage. It is also
-   * suggested to group the locations that close to each other in the same job
-   * for better search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+   * same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+   * allowed. If the original
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+   * preserved, a custom field should be used for storage. It is also suggested
+   * to group the locations that close to each other in the same job for better
+   * search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4092,12 +4301,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-   * be preserved, a custom field should be used for storage. It is also
-   * suggested to group the locations that close to each other in the same job
-   * for better search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+   * same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+   * allowed. If the original
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+   * preserved, a custom field should be used for storage. It is also suggested
+   * to group the locations that close to each other in the same job for better
+   * search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4118,12 +4331,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-   * be preserved, a custom field should be used for storage. It is also
-   * suggested to group the locations that close to each other in the same job
-   * for better search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+   * same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+   * allowed. If the original
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+   * preserved, a custom field should be used for storage. It is also suggested
+   * to group the locations that close to each other in the same job for better
+   * search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4145,12 +4362,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * better API results, especially job searches by commute time.
    * At most 50 locations are allowed for best search performance. If a job has
    * more locations, it is suggested to split it into multiple jobs with unique
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-   * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-   * be preserved, a custom field should be used for storage. It is also
-   * suggested to group the locations that close to each other in the same job
-   * for better search experience.
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+   * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+   * same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+   * allowed. If the original
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+   * preserved, a custom field should be used for storage. It is also suggested
+   * to group the locations that close to each other in the same job for better
+   * search experience.
    * The maximum number of allowed characters is 500.
    * </pre>
    *
@@ -4209,20 +4430,24 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ApplicationInfoOrBuilder
       getApplicationInfoOrBuilder() {
-    return getApplicationInfo();
+    return applicationInfo_ == null
+        ? com.google.cloud.talent.v4beta1.Job.ApplicationInfo.getDefaultInstance()
+        : applicationInfo_;
   }
 
   public static final int JOB_BENEFITS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> jobBenefits_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.talent.v4beta1.JobBenefit>
       jobBenefits_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.talent.v4beta1.JobBenefit>() {
             public com.google.cloud.talent.v4beta1.JobBenefit convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.talent.v4beta1.JobBenefit result =
-                  com.google.cloud.talent.v4beta1.JobBenefit.valueOf(from);
+                  com.google.cloud.talent.v4beta1.JobBenefit.forNumber(from);
               return result == null
                   ? com.google.cloud.talent.v4beta1.JobBenefit.UNRECOGNIZED
                   : result;
@@ -4358,7 +4583,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.CompensationInfoOrBuilder getCompensationInfoOrBuilder() {
-    return getCompensationInfo();
+    return compensationInfo_ == null
+        ? com.google.cloud.talent.v4beta1.CompensationInfo.getDefaultInstance()
+        : compensationInfo_;
   }
 
   public static final int CUSTOM_ATTRIBUTES_FIELD_NUMBER = 10;
@@ -4378,6 +4605,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                         com.google.cloud.talent.v4beta1.CustomAttribute.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
           java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
       customAttributes_;
@@ -4472,8 +4700,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
-      java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
+  public /* nullable */ com.google.cloud.talent.v4beta1.CustomAttribute
+      getCustomAttributesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -4515,16 +4746,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEGREE_TYPES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> degreeTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.talent.v4beta1.DegreeType>
       degreeTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.talent.v4beta1.DegreeType>() {
             public com.google.cloud.talent.v4beta1.DegreeType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.talent.v4beta1.DegreeType result =
-                  com.google.cloud.talent.v4beta1.DegreeType.valueOf(from);
+                  com.google.cloud.talent.v4beta1.DegreeType.forNumber(from);
               return result == null
                   ? com.google.cloud.talent.v4beta1.DegreeType.UNRECOGNIZED
                   : result;
@@ -4613,7 +4846,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   private int degreeTypesMemoizedSerializedSize;
 
   public static final int DEPARTMENT_FIELD_NUMBER = 12;
-  private volatile java.lang.Object department_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object department_ = "";
   /**
    *
    *
@@ -4666,16 +4901,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMPLOYMENT_TYPES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> employmentTypes_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.talent.v4beta1.EmploymentType>
       employmentTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.talent.v4beta1.EmploymentType>() {
             public com.google.cloud.talent.v4beta1.EmploymentType convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.talent.v4beta1.EmploymentType result =
-                  com.google.cloud.talent.v4beta1.EmploymentType.valueOf(from);
+                  com.google.cloud.talent.v4beta1.EmploymentType.forNumber(from);
               return result == null
                   ? com.google.cloud.talent.v4beta1.EmploymentType.UNRECOGNIZED
                   : result;
@@ -4774,7 +5011,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   private int employmentTypesMemoizedSerializedSize;
 
   public static final int INCENTIVES_FIELD_NUMBER = 14;
-  private volatile java.lang.Object incentives_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object incentives_ = "";
   /**
    *
    *
@@ -4827,7 +5066,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 15;
-  private volatile java.lang.Object languageCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
   /**
    *
    *
@@ -4838,9 +5079,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-   * defaults to 'en_US'.
+   * If this field is unspecified and
+   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+   * detected language code based on
+   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+   * otherwise defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
@@ -4869,9 +5112,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * For more information, see
    * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
    * class="external" target="_blank" }.
-   * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-   * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-   * defaults to 'en_US'.
+   * If this field is unspecified and
+   * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+   * detected language code based on
+   * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+   * otherwise defaults to 'en_US'.
    * </pre>
    *
    * <code>string language_code = 15;</code>
@@ -4892,7 +5137,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JOB_LEVEL_FIELD_NUMBER = 16;
-  private int jobLevel_;
+  private int jobLevel_ = 0;
   /**
    *
    *
@@ -4921,14 +5166,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.JobLevel result =
-        com.google.cloud.talent.v4beta1.JobLevel.valueOf(jobLevel_);
+        com.google.cloud.talent.v4beta1.JobLevel.forNumber(jobLevel_);
     return result == null ? com.google.cloud.talent.v4beta1.JobLevel.UNRECOGNIZED : result;
   }
 
   public static final int PROMOTION_VALUE_FIELD_NUMBER = 17;
-  private int promotionValue_;
+  private int promotionValue_ = 0;
   /**
    *
    *
@@ -4951,14 +5195,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUALIFICATIONS_FIELD_NUMBER = 18;
-  private volatile java.lang.Object qualifications_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object qualifications_ = "";
   /**
    *
    *
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general
+   * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -4986,7 +5233,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A description of the qualifications required to perform the
    * job. The use of this field is recommended
-   * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+   * as an alternative to using the more general
+   * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5010,14 +5258,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESPONSIBILITIES_FIELD_NUMBER = 19;
-  private volatile java.lang.Object responsibilities_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object responsibilities_ = "";
   /**
    *
    *
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-   * field.
+   * recommended as an alternative to using the more general
+   * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5044,8 +5294,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A description of job responsibilities. The use of this field is
-   * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-   * field.
+   * recommended as an alternative to using the more general
+   * [description][google.cloud.talent.v4beta1.Job.description] field.
    * This field accepts and sanitizes HTML input, and also accepts
    * bold, italic, ordered list, and unordered list markup tags.
    * The maximum number of allowed characters is 10,000.
@@ -5069,18 +5319,21 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POSTING_REGION_FIELD_NUMBER = 20;
-  private int postingRegion_;
+  private int postingRegion_ = 0;
   /**
    *
    *
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-   * in a search query within the job region finds this job posting if an
-   * exact location match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-   * is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+   * example, state, country) throughout which the job is available. If this
+   * field is set, a
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+   * query within the job region finds this job posting if an exact location
+   * match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+   * the same location level as this field is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -5095,13 +5348,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-   * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-   * in a search query within the job region finds this job posting if an
-   * exact location match isn't specified. If this field is set to
-   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-   * is strongly recommended.
+   * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+   * example, state, country) throughout which the job is available. If this
+   * field is set, a
+   * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+   * query within the job region finds this job posting if an exact location
+   * match isn't specified. If this field is set to
+   * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+   * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+   * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+   * the same location level as this field is strongly recommended.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -5110,27 +5366,28 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.PostingRegion result =
-        com.google.cloud.talent.v4beta1.PostingRegion.valueOf(postingRegion_);
+        com.google.cloud.talent.v4beta1.PostingRegion.forNumber(postingRegion_);
     return result == null ? com.google.cloud.talent.v4beta1.PostingRegion.UNRECOGNIZED : result;
   }
 
   public static final int VISIBILITY_FIELD_NUMBER = 21;
-  private int visibility_;
+  private int visibility_ = 0;
   /**
    *
    *
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+   * Defaults to
+   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+   * if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=275
+   *     google/cloud/talent/v4beta1/job.proto;l=296
    * @return The enum numeric value on the wire for visibility.
    */
   @java.lang.Override
@@ -5144,21 +5401,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Deprecated. The job is only visible to the owner.
    * The visibility of the job.
-   * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+   * Defaults to
+   * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+   * if not specified.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
    *
    * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-   *     google/cloud/talent/v4beta1/job.proto;l=275
+   *     google/cloud/talent/v4beta1/job.proto;l=296
    * @return The visibility.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Visibility result =
-        com.google.cloud.talent.v4beta1.Visibility.valueOf(visibility_);
+        com.google.cloud.talent.v4beta1.Visibility.forNumber(visibility_);
     return result == null ? com.google.cloud.talent.v4beta1.Visibility.UNRECOGNIZED : result;
   }
 
@@ -5210,7 +5468,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getJobStartTimeOrBuilder() {
-    return getJobStartTime();
+    return jobStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : jobStartTime_;
   }
 
   public static final int JOB_END_TIME_FIELD_NUMBER = 23;
@@ -5259,7 +5519,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getJobEndTimeOrBuilder() {
-    return getJobEndTime();
+    return jobEndTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : jobEndTime_;
   }
 
   public static final int POSTING_PUBLISH_TIME_FIELD_NUMBER = 24;
@@ -5313,7 +5573,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingPublishTimeOrBuilder() {
-    return getPostingPublishTime();
+    return postingPublishTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : postingPublishTime_;
   }
 
   public static final int POSTING_EXPIRE_TIME_FIELD_NUMBER = 25;
@@ -5325,13 +5587,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-   * be updated and opened again by using a future expiration timestamp.
-   * Updating an expired job fails if there is another existing open job with
-   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
+   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+   * expired job can be updated and opened again by using a future expiration
+   * timestamp. Updating an expired job fails if there is another existing open
+   * job with same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5342,21 +5609,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-   * that didn't exist in the system prior to becoming expired. If you
-   * want to modify a job that was expired on creation,
-   * delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-   * updated, the job posting expires after 30 days from the job's last
-   * update time. Otherwise the expiration date isn't updated.
+   * set by
+   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+   * If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+   * are empty meaning that every field is updated, the job posting expires
+   * after 30 days from the job's last update time. Otherwise the expiration
+   * date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -5374,13 +5645,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-   * be updated and opened again by using a future expiration timestamp.
-   * Updating an expired job fails if there is another existing open job with
-   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
+   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+   * expired job can be updated and opened again by using a future expiration
+   * timestamp. Updating an expired job fails if there is another existing open
+   * job with same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5391,21 +5667,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-   * that didn't exist in the system prior to becoming expired. If you
-   * want to modify a job that was expired on creation,
-   * delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-   * updated, the job posting expires after 30 days from the job's last
-   * update time. Otherwise the expiration date isn't updated.
+   * set by
+   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+   * If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+   * are empty meaning that every field is updated, the job posting expires
+   * after 30 days from the job's last update time. Otherwise the expiration
+   * date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -5425,13 +5705,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * Strongly recommended for the best service experience.
    * The expiration timestamp of the job. After this timestamp, the
    * job is marked as expired, and it no longer appears in search results. The
-   * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-   * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-   * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-   * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-   * be updated and opened again by using a future expiration timestamp.
-   * Updating an expired job fails if there is another existing open job with
-   * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+   * expired job can't be listed by the
+   * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+   * be retrieved with the
+   * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+   * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+   * deleted with the
+   * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+   * expired job can be updated and opened again by using a future expiration
+   * timestamp. Updating an expired job fails if there is another existing open
+   * job with same [company][google.cloud.talent.v4beta1.Job.company],
+   * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+   * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
    * The expired jobs are retained in our system for 90 days. However, the
    * overall expired job count cannot exceed 3 times the maximum number of
    * open jobs over previous 7 days. If this threshold is exceeded,
@@ -5442,28 +5727,34 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    * If the timestamp is before the instant request is made, the job
    * is treated as expired immediately on creation. This kind of job can
    * not be updated. And when creating a job with past timestamp, the
-   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-   * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-   * that didn't exist in the system prior to becoming expired. If you
-   * want to modify a job that was expired on creation,
-   * delete it and create a new one.
+   * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+   * must be set before
+   * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+   * The purpose of this feature is to allow other objects, such as
+   * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+   * didn't exist in the system prior to becoming expired. If you want to modify
+   * a job that was expired on creation, delete it and create a new one.
    * If this value isn't provided at the time of job creation or is invalid,
    * the job posting expires after 30 days from the job's creation time. For
    * example, if the job was created on 2017/01/01 13:00AM UTC with an
    * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
    * If this value isn't provided on job update, it depends on the field masks
-   * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-   * updated, the job posting expires after 30 days from the job's last
-   * update time. Otherwise the expiration date isn't updated.
+   * set by
+   * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+   * If the field masks include
+   * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+   * are empty meaning that every field is updated, the job posting expires
+   * after 30 days from the job's last update time. Otherwise the expiration
+   * date isn't updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingExpireTimeOrBuilder() {
-    return getPostingExpireTime();
+    return postingExpireTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : postingExpireTime_;
   }
 
   public static final int POSTING_CREATE_TIME_FIELD_NUMBER = 26;
@@ -5517,7 +5808,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingCreateTimeOrBuilder() {
-    return getPostingCreateTime();
+    return postingCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : postingCreateTime_;
   }
 
   public static final int POSTING_UPDATE_TIME_FIELD_NUMBER = 27;
@@ -5571,11 +5864,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getPostingUpdateTimeOrBuilder() {
-    return getPostingUpdateTime();
+    return postingUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : postingUpdateTime_;
   }
 
   public static final int COMPANY_DISPLAY_NAME_FIELD_NUMBER = 28;
-  private volatile java.lang.Object companyDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object companyDisplayName_ = "";
   /**
    *
    *
@@ -5674,7 +5971,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.DerivedInfoOrBuilder getDerivedInfoOrBuilder() {
-    return getDerivedInfo();
+    return derivedInfo_ == null
+        ? com.google.cloud.talent.v4beta1.Job.DerivedInfo.getDefaultInstance()
+        : derivedInfo_;
   }
 
   public static final int PROCESSING_OPTIONS_FIELD_NUMBER = 30;
@@ -5723,7 +6022,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.Job.ProcessingOptionsOrBuilder
       getProcessingOptionsOrBuilder() {
-    return getProcessingOptions();
+    return processingOptions_ == null
+        ? com.google.cloud.talent.v4beta1.Job.ProcessingOptions.getDefaultInstance()
+        : processingOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -6267,8 +6568,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Job resource represents a job posting (also referred to as a "job listing"
-   * or "job requisition"). A job belongs to a [Company][google.cloud.talent.v4beta1.Company], which is the hiring
-   * entity responsible for the job.
+   * or "job requisition"). A job belongs to a
+   * [Company][google.cloud.talent.v4beta1.Company], which is the hiring entity
+   * responsible for the job.
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.Job}
@@ -6322,103 +6624,79 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       company_ = "";
-
       requisitionId_ = "";
-
       title_ = "";
-
       description_ = "";
-
       addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (applicationInfoBuilder_ == null) {
-        applicationInfo_ = null;
-      } else {
-        applicationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      applicationInfo_ = null;
+      if (applicationInfoBuilder_ != null) {
+        applicationInfoBuilder_.dispose();
         applicationInfoBuilder_ = null;
       }
       jobBenefits_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (compensationInfoBuilder_ == null) {
-        compensationInfo_ = null;
-      } else {
-        compensationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      compensationInfo_ = null;
+      if (compensationInfoBuilder_ != null) {
+        compensationInfoBuilder_.dispose();
         compensationInfoBuilder_ = null;
       }
       internalGetMutableCustomAttributes().clear();
       degreeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000400);
       department_ = "";
-
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00001000);
       incentives_ = "";
-
       languageCode_ = "";
-
       jobLevel_ = 0;
-
       promotionValue_ = 0;
-
       qualifications_ = "";
-
       responsibilities_ = "";
-
       postingRegion_ = 0;
-
       visibility_ = 0;
-
-      if (jobStartTimeBuilder_ == null) {
-        jobStartTime_ = null;
-      } else {
-        jobStartTime_ = null;
+      jobStartTime_ = null;
+      if (jobStartTimeBuilder_ != null) {
+        jobStartTimeBuilder_.dispose();
         jobStartTimeBuilder_ = null;
       }
-      if (jobEndTimeBuilder_ == null) {
-        jobEndTime_ = null;
-      } else {
-        jobEndTime_ = null;
+      jobEndTime_ = null;
+      if (jobEndTimeBuilder_ != null) {
+        jobEndTimeBuilder_.dispose();
         jobEndTimeBuilder_ = null;
       }
-      if (postingPublishTimeBuilder_ == null) {
-        postingPublishTime_ = null;
-      } else {
-        postingPublishTime_ = null;
+      postingPublishTime_ = null;
+      if (postingPublishTimeBuilder_ != null) {
+        postingPublishTimeBuilder_.dispose();
         postingPublishTimeBuilder_ = null;
       }
-      if (postingExpireTimeBuilder_ == null) {
-        postingExpireTime_ = null;
-      } else {
-        postingExpireTime_ = null;
+      postingExpireTime_ = null;
+      if (postingExpireTimeBuilder_ != null) {
+        postingExpireTimeBuilder_.dispose();
         postingExpireTimeBuilder_ = null;
       }
-      if (postingCreateTimeBuilder_ == null) {
-        postingCreateTime_ = null;
-      } else {
-        postingCreateTime_ = null;
+      postingCreateTime_ = null;
+      if (postingCreateTimeBuilder_ != null) {
+        postingCreateTimeBuilder_.dispose();
         postingCreateTimeBuilder_ = null;
       }
-      if (postingUpdateTimeBuilder_ == null) {
-        postingUpdateTime_ = null;
-      } else {
-        postingUpdateTime_ = null;
+      postingUpdateTime_ = null;
+      if (postingUpdateTimeBuilder_ != null) {
+        postingUpdateTimeBuilder_.dispose();
         postingUpdateTimeBuilder_ = null;
       }
       companyDisplayName_ = "";
-
-      if (derivedInfoBuilder_ == null) {
-        derivedInfo_ = null;
-      } else {
-        derivedInfo_ = null;
+      derivedInfo_ = null;
+      if (derivedInfoBuilder_ != null) {
+        derivedInfoBuilder_.dispose();
         derivedInfoBuilder_ = null;
       }
-      if (processingOptionsBuilder_ == null) {
-        processingOptions_ = null;
-      } else {
-        processingOptions_ = null;
+      processingOptions_ = null;
+      if (processingOptionsBuilder_ != null) {
+        processingOptionsBuilder_.dispose();
         processingOptionsBuilder_ = null;
       }
       return this;
@@ -6447,96 +6725,137 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.Job buildPartial() {
       com.google.cloud.talent.v4beta1.Job result = new com.google.cloud.talent.v4beta1.Job(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.company_ = company_;
-      result.requisitionId_ = requisitionId_;
-      result.title_ = title_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        addresses_ = addresses_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.addresses_ = addresses_;
-      if (applicationInfoBuilder_ == null) {
-        result.applicationInfo_ = applicationInfo_;
-      } else {
-        result.applicationInfo_ = applicationInfoBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        jobBenefits_ = java.util.Collections.unmodifiableList(jobBenefits_);
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.jobBenefits_ = jobBenefits_;
-      if (compensationInfoBuilder_ == null) {
-        result.compensationInfo_ = compensationInfo_;
-      } else {
-        result.compensationInfo_ = compensationInfoBuilder_.build();
-      }
-      result.customAttributes_ = internalGetCustomAttributes();
-      result.customAttributes_.makeImmutable();
-      if (((bitField0_ & 0x00000008) != 0)) {
-        degreeTypes_ = java.util.Collections.unmodifiableList(degreeTypes_);
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.degreeTypes_ = degreeTypes_;
-      result.department_ = department_;
-      if (((bitField0_ & 0x00000010) != 0)) {
-        employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
-        bitField0_ = (bitField0_ & ~0x00000010);
-      }
-      result.employmentTypes_ = employmentTypes_;
-      result.incentives_ = incentives_;
-      result.languageCode_ = languageCode_;
-      result.jobLevel_ = jobLevel_;
-      result.promotionValue_ = promotionValue_;
-      result.qualifications_ = qualifications_;
-      result.responsibilities_ = responsibilities_;
-      result.postingRegion_ = postingRegion_;
-      result.visibility_ = visibility_;
-      if (jobStartTimeBuilder_ == null) {
-        result.jobStartTime_ = jobStartTime_;
-      } else {
-        result.jobStartTime_ = jobStartTimeBuilder_.build();
-      }
-      if (jobEndTimeBuilder_ == null) {
-        result.jobEndTime_ = jobEndTime_;
-      } else {
-        result.jobEndTime_ = jobEndTimeBuilder_.build();
-      }
-      if (postingPublishTimeBuilder_ == null) {
-        result.postingPublishTime_ = postingPublishTime_;
-      } else {
-        result.postingPublishTime_ = postingPublishTimeBuilder_.build();
-      }
-      if (postingExpireTimeBuilder_ == null) {
-        result.postingExpireTime_ = postingExpireTime_;
-      } else {
-        result.postingExpireTime_ = postingExpireTimeBuilder_.build();
-      }
-      if (postingCreateTimeBuilder_ == null) {
-        result.postingCreateTime_ = postingCreateTime_;
-      } else {
-        result.postingCreateTime_ = postingCreateTimeBuilder_.build();
-      }
-      if (postingUpdateTimeBuilder_ == null) {
-        result.postingUpdateTime_ = postingUpdateTime_;
-      } else {
-        result.postingUpdateTime_ = postingUpdateTimeBuilder_.build();
-      }
-      result.companyDisplayName_ = companyDisplayName_;
-      if (derivedInfoBuilder_ == null) {
-        result.derivedInfo_ = derivedInfo_;
-      } else {
-        result.derivedInfo_ = derivedInfoBuilder_.build();
-      }
-      if (processingOptionsBuilder_ == null) {
-        result.processingOptions_ = processingOptions_;
-      } else {
-        result.processingOptions_ = processingOptionsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.talent.v4beta1.Job result) {
+      if (((bitField0_ & 0x00000020) != 0)) {
+        addresses_ = addresses_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      }
+      result.addresses_ = addresses_;
+      if (((bitField0_ & 0x00000080) != 0)) {
+        jobBenefits_ = java.util.Collections.unmodifiableList(jobBenefits_);
+        bitField0_ = (bitField0_ & ~0x00000080);
+      }
+      result.jobBenefits_ = jobBenefits_;
+      if (((bitField0_ & 0x00000400) != 0)) {
+        degreeTypes_ = java.util.Collections.unmodifiableList(degreeTypes_);
+        bitField0_ = (bitField0_ & ~0x00000400);
+      }
+      result.degreeTypes_ = degreeTypes_;
+      if (((bitField0_ & 0x00001000) != 0)) {
+        employmentTypes_ = java.util.Collections.unmodifiableList(employmentTypes_);
+        bitField0_ = (bitField0_ & ~0x00001000);
+      }
+      result.employmentTypes_ = employmentTypes_;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.Job result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.company_ = company_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requisitionId_ = requisitionId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.applicationInfo_ =
+            applicationInfoBuilder_ == null ? applicationInfo_ : applicationInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.compensationInfo_ =
+            compensationInfoBuilder_ == null ? compensationInfo_ : compensationInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.customAttributes_ = internalGetCustomAttributes();
+        result.customAttributes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.department_ = department_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.incentives_ = incentives_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.jobLevel_ = jobLevel_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.promotionValue_ = promotionValue_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.qualifications_ = qualifications_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.responsibilities_ = responsibilities_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.postingRegion_ = postingRegion_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.visibility_ = visibility_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.jobStartTime_ =
+            jobStartTimeBuilder_ == null ? jobStartTime_ : jobStartTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.jobEndTime_ = jobEndTimeBuilder_ == null ? jobEndTime_ : jobEndTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.postingPublishTime_ =
+            postingPublishTimeBuilder_ == null
+                ? postingPublishTime_
+                : postingPublishTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.postingExpireTime_ =
+            postingExpireTimeBuilder_ == null
+                ? postingExpireTime_
+                : postingExpireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.postingCreateTime_ =
+            postingCreateTimeBuilder_ == null
+                ? postingCreateTime_
+                : postingCreateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.postingUpdateTime_ =
+            postingUpdateTimeBuilder_ == null
+                ? postingUpdateTime_
+                : postingUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.companyDisplayName_ = companyDisplayName_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.derivedInfo_ =
+            derivedInfoBuilder_ == null ? derivedInfo_ : derivedInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.processingOptions_ =
+            processingOptionsBuilder_ == null
+                ? processingOptions_
+                : processingOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6586,28 +6905,33 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.talent.v4beta1.Job.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getCompany().isEmpty()) {
         company_ = other.company_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getRequisitionId().isEmpty()) {
         requisitionId_ = other.requisitionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.addresses_.isEmpty()) {
         if (addresses_.isEmpty()) {
           addresses_ = other.addresses_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureAddressesIsMutable();
           addresses_.addAll(other.addresses_);
@@ -6620,7 +6944,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!other.jobBenefits_.isEmpty()) {
         if (jobBenefits_.isEmpty()) {
           jobBenefits_ = other.jobBenefits_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureJobBenefitsIsMutable();
           jobBenefits_.addAll(other.jobBenefits_);
@@ -6631,10 +6955,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         mergeCompensationInfo(other.getCompensationInfo());
       }
       internalGetMutableCustomAttributes().mergeFrom(other.internalGetCustomAttributes());
+      bitField0_ |= 0x00000200;
       if (!other.degreeTypes_.isEmpty()) {
         if (degreeTypes_.isEmpty()) {
           degreeTypes_ = other.degreeTypes_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           ensureDegreeTypesIsMutable();
           degreeTypes_.addAll(other.degreeTypes_);
@@ -6643,12 +6968,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDepartment().isEmpty()) {
         department_ = other.department_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.employmentTypes_.isEmpty()) {
         if (employmentTypes_.isEmpty()) {
           employmentTypes_ = other.employmentTypes_;
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00001000);
         } else {
           ensureEmploymentTypesIsMutable();
           employmentTypes_.addAll(other.employmentTypes_);
@@ -6657,10 +6983,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIncentives().isEmpty()) {
         incentives_ = other.incentives_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.jobLevel_ != 0) {
@@ -6671,10 +6999,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getQualifications().isEmpty()) {
         qualifications_ = other.qualifications_;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getResponsibilities().isEmpty()) {
         responsibilities_ = other.responsibilities_;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.postingRegion_ != 0) {
@@ -6703,6 +7033,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCompanyDisplayName().isEmpty()) {
         companyDisplayName_ = other.companyDisplayName_;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasDerivedInfo()) {
@@ -6740,31 +7071,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 company_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requisitionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -6777,7 +7108,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getApplicationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
@@ -6803,7 +7134,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCompensationInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
@@ -6817,6 +7148,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableCustomAttributes()
                     .getMutableMap()
                     .put(customAttributes__.getKey(), customAttributes__.getValue());
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
@@ -6841,7 +7173,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 department_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 104:
@@ -6866,108 +7198,108 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 incentives_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 languageCode_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 128:
               {
                 jobLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 128
             case 136:
               {
                 promotionValue_ = input.readInt32();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 136
             case 146:
               {
                 qualifications_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
             case 154:
               {
                 responsibilities_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 160:
               {
                 postingRegion_ = input.readEnum();
-
+                bitField0_ |= 0x00080000;
                 break;
               } // case 160
             case 168:
               {
                 visibility_ = input.readEnum();
-
+                bitField0_ |= 0x00100000;
                 break;
               } // case 168
             case 178:
               {
                 input.readMessage(getJobStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
             case 186:
               {
                 input.readMessage(getJobEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00400000;
                 break;
               } // case 186
             case 194:
               {
                 input.readMessage(
                     getPostingPublishTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00800000;
                 break;
               } // case 194
             case 202:
               {
                 input.readMessage(
                     getPostingExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x01000000;
                 break;
               } // case 202
             case 210:
               {
                 input.readMessage(
                     getPostingCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x02000000;
                 break;
               } // case 210
             case 218:
               {
                 input.readMessage(
                     getPostingUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x04000000;
                 break;
               } // case 218
             case 226:
               {
                 companyDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x08000000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(getDerivedInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x10000000;
                 break;
               } // case 234
             case 242:
               {
                 input.readMessage(
                     getProcessingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x20000000;
                 break;
               } // case 242
             default:
@@ -7003,7 +7335,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+     * value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7034,7 +7367,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+     * value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7065,7 +7399,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+     * value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7077,8 +7412,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7095,7 +7430,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+     * value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7103,8 +7439,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7121,7 +7457,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If tenant id is unspecified, the default tenant is used. For
      * example, "projects/foo/jobs/bar".
      * Use of this field in job queries and API calls is preferred over the use of
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this value is unique.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] since this
+     * value is unique.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -7134,8 +7471,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7222,8 +7559,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       company_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7246,8 +7583,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompany() {
-
       company_ = getDefaultInstance().getCompany();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -7275,8 +7612,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       company_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7286,11 +7623,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-     * client to identify a job. This field is intended to be used by clients
-     * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is
+     * assigned by the client to identify a job. This field is intended to be used
+     * by clients for client identification and tracking of postings. A job isn't
+     * allowed to be created if there is another job with the same
+     * [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7313,11 +7652,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-     * client to identify a job. This field is intended to be used by clients
-     * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is
+     * assigned by the client to identify a job. This field is intended to be used
+     * by clients for client identification and tracking of postings. A job isn't
+     * allowed to be created if there is another job with the same
+     * [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7340,11 +7681,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-     * client to identify a job. This field is intended to be used by clients
-     * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is
+     * assigned by the client to identify a job. This field is intended to be used
+     * by clients for client identification and tracking of postings. A job isn't
+     * allowed to be created if there is another job with the same
+     * [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7357,8 +7700,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       requisitionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7366,11 +7709,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-     * client to identify a job. This field is intended to be used by clients
-     * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is
+     * assigned by the client to identify a job. This field is intended to be used
+     * by clients for client identification and tracking of postings. A job isn't
+     * allowed to be created if there is another job with the same
+     * [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7379,8 +7724,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequisitionId() {
-
       requisitionId_ = getDefaultInstance().getRequisitionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -7388,11 +7733,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The requisition ID, also referred to as the posting ID, is assigned by the
-     * client to identify a job. This field is intended to be used by clients
-     * for client identification and tracking of postings. A job isn't allowed
-     * to be created if there is another job with the same [company][google.cloud.talent.v4beta1.Job.name],
-     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * Required. The requisition ID, also referred to as the posting ID, is
+     * assigned by the client to identify a job. This field is intended to be used
+     * by clients for client identification and tracking of postings. A job isn't
+     * allowed to be created if there is another job with the same
+     * [company][google.cloud.talent.v4beta1.Job.name],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -7406,8 +7753,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requisitionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7476,8 +7823,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7494,8 +7841,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -7517,8 +7864,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7528,11 +7875,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The description of the job, which typically includes a multi-paragraph
-     * description of the company and related information. Separate fields are
-     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-     * these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a
+     * multi-paragraph description of the company and related information.
+     * Separate fields are provided on the job object for
+     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+     * job characteristics. Use of these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7557,11 +7905,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The description of the job, which typically includes a multi-paragraph
-     * description of the company and related information. Separate fields are
-     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-     * these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a
+     * multi-paragraph description of the company and related information.
+     * Separate fields are provided on the job object for
+     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+     * job characteristics. Use of these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7586,11 +7935,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The description of the job, which typically includes a multi-paragraph
-     * description of the company and related information. Separate fields are
-     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-     * these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a
+     * multi-paragraph description of the company and related information.
+     * Separate fields are provided on the job object for
+     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+     * job characteristics. Use of these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7605,8 +7955,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7614,11 +7964,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The description of the job, which typically includes a multi-paragraph
-     * description of the company and related information. Separate fields are
-     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-     * these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a
+     * multi-paragraph description of the company and related information.
+     * Separate fields are provided on the job object for
+     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+     * job characteristics. Use of these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7629,8 +7980,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -7638,11 +7989,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The description of the job, which typically includes a multi-paragraph
-     * description of the company and related information. Separate fields are
-     * provided on the job object for [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
-     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other job characteristics. Use of
-     * these separate job fields is recommended.
+     * Required. The description of the job, which typically includes a
+     * multi-paragraph description of the company and related information.
+     * Separate fields are provided on the job object for
+     * [responsibilities][google.cloud.talent.v4beta1.Job.responsibilities],
+     * [qualifications][google.cloud.talent.v4beta1.Job.qualifications], and other
+     * job characteristics. Use of these separate job fields is recommended.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 100,000.
@@ -7658,8 +8010,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7668,9 +8020,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureAddressesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -7683,12 +8035,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7709,12 +8065,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7735,12 +8095,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7762,12 +8126,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7789,12 +8157,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7823,12 +8195,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7856,12 +8232,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7886,12 +8266,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7901,7 +8285,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearAddresses() {
       addresses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7915,12 +8299,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * better API results, especially job searches by commute time.
      * At most 50 locations are allowed for best search performance. If a job has
      * more locations, it is suggested to split it into multiple jobs with unique
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g. 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as
-     * multiple jobs with the same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and
-     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not allowed. If the original [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must
-     * be preserved, a custom field should be used for storage. It is also
-     * suggested to group the locations that close to each other in the same job
-     * for better search experience.
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id]s (e.g.
+     * 'ReqA' becomes 'ReqA-1', 'ReqA-2', and so on.) as multiple jobs with the
+     * same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] are not
+     * allowed. If the original
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id] must be
+     * preserved, a custom field should be used for storage. It is also suggested
+     * to group the locations that close to each other in the same job for better
+     * search experience.
      * The maximum number of allowed characters is 500.
      * </pre>
      *
@@ -7958,7 +8346,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the applicationInfo field is set.
      */
     public boolean hasApplicationInfo() {
-      return applicationInfoBuilder_ != null || applicationInfo_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -7995,11 +8383,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         applicationInfo_ = value;
-        onChanged();
       } else {
         applicationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8015,11 +8403,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.Job.ApplicationInfo.Builder builderForValue) {
       if (applicationInfoBuilder_ == null) {
         applicationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         applicationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8033,19 +8421,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeApplicationInfo(com.google.cloud.talent.v4beta1.Job.ApplicationInfo value) {
       if (applicationInfoBuilder_ == null) {
-        if (applicationInfo_ != null) {
-          applicationInfo_ =
-              com.google.cloud.talent.v4beta1.Job.ApplicationInfo.newBuilder(applicationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && applicationInfo_ != null
+            && applicationInfo_
+                != com.google.cloud.talent.v4beta1.Job.ApplicationInfo.getDefaultInstance()) {
+          getApplicationInfoBuilder().mergeFrom(value);
         } else {
           applicationInfo_ = value;
         }
-        onChanged();
       } else {
         applicationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -8058,14 +8446,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
      */
     public Builder clearApplicationInfo() {
-      if (applicationInfoBuilder_ == null) {
-        applicationInfo_ = null;
-        onChanged();
-      } else {
-        applicationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      applicationInfo_ = null;
+      if (applicationInfoBuilder_ != null) {
+        applicationInfoBuilder_.dispose();
         applicationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8078,7 +8465,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Job.ApplicationInfo application_info = 7;</code>
      */
     public com.google.cloud.talent.v4beta1.Job.ApplicationInfo.Builder getApplicationInfoBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getApplicationInfoFieldBuilder().getBuilder();
     }
@@ -8130,9 +8517,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> jobBenefits_ = java.util.Collections.emptyList();
 
     private void ensureJobBenefitsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         jobBenefits_ = new java.util.ArrayList<java.lang.Integer>(jobBenefits_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -8257,7 +8644,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobBenefits() {
       jobBenefits_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -8367,7 +8754,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the compensationInfo field is set.
      */
     public boolean hasCompensationInfo() {
-      return compensationInfoBuilder_ != null || compensationInfo_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -8406,11 +8793,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         compensationInfo_ = value;
-        onChanged();
       } else {
         compensationInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -8427,11 +8814,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.CompensationInfo.Builder builderForValue) {
       if (compensationInfoBuilder_ == null) {
         compensationInfo_ = builderForValue.build();
-        onChanged();
       } else {
         compensationInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -8446,19 +8833,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCompensationInfo(com.google.cloud.talent.v4beta1.CompensationInfo value) {
       if (compensationInfoBuilder_ == null) {
-        if (compensationInfo_ != null) {
-          compensationInfo_ =
-              com.google.cloud.talent.v4beta1.CompensationInfo.newBuilder(compensationInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && compensationInfo_ != null
+            && compensationInfo_
+                != com.google.cloud.talent.v4beta1.CompensationInfo.getDefaultInstance()) {
+          getCompensationInfoBuilder().mergeFrom(value);
         } else {
           compensationInfo_ = value;
         }
-        onChanged();
       } else {
         compensationInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -8472,14 +8859,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
      */
     public Builder clearCompensationInfo() {
-      if (compensationInfoBuilder_ == null) {
-        compensationInfo_ = null;
-        onChanged();
-      } else {
-        compensationInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      compensationInfo_ = null;
+      if (compensationInfoBuilder_ != null) {
+        compensationInfoBuilder_.dispose();
         compensationInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8493,7 +8879,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.CompensationInfo compensation_info = 9;</code>
      */
     public com.google.cloud.talent.v4beta1.CompensationInfo.Builder getCompensationInfoBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getCompensationInfoFieldBuilder().getBuilder();
     }
@@ -8561,8 +8947,6 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.MapField<
             java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         internalGetMutableCustomAttributes() {
-      onChanged();
-      ;
       if (customAttributes_ == null) {
         customAttributes_ =
             com.google.protobuf.MapField.newMapField(
@@ -8571,6 +8955,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (!customAttributes_.isMutable()) {
         customAttributes_ = customAttributes_.copy();
       }
+      bitField0_ |= 0x00000200;
+      onChanged();
       return customAttributes_;
     }
 
@@ -8654,8 +9040,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public com.google.cloud.talent.v4beta1.CustomAttribute getCustomAttributesOrDefault(
-        java.lang.String key, com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
+    public /* nullable */ com.google.cloud.talent.v4beta1.CustomAttribute
+        getCustomAttributesOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.talent.v4beta1.CustomAttribute defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -8697,6 +9086,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearCustomAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableCustomAttributes().getMutableMap().clear();
       return this;
     }
@@ -8730,6 +9120,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute>
         getMutableCustomAttributes() {
+      bitField0_ |= 0x00000200;
       return internalGetMutableCustomAttributes().getMutableMap();
     }
     /**
@@ -8759,8 +9150,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableCustomAttributes().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -8785,15 +9176,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllCustomAttributes(
         java.util.Map<java.lang.String, com.google.cloud.talent.v4beta1.CustomAttribute> values) {
       internalGetMutableCustomAttributes().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 
     private java.util.List<java.lang.Integer> degreeTypes_ = java.util.Collections.emptyList();
 
     private void ensureDegreeTypesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         degreeTypes_ = new java.util.ArrayList<java.lang.Integer>(degreeTypes_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000400;
       }
     }
     /**
@@ -8918,7 +9310,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDegreeTypes() {
       degreeTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -9076,8 +9468,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       department_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -9095,8 +9487,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDepartment() {
-
       department_ = getDefaultInstance().getDepartment();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -9119,8 +9511,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       department_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -9128,9 +9520,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> employmentTypes_ = java.util.Collections.emptyList();
 
     private void ensureEmploymentTypesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         employmentTypes_ = new java.util.ArrayList<java.lang.Integer>(employmentTypes_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00001000;
       }
     }
     /**
@@ -9270,7 +9662,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEmploymentTypes() {
       employmentTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -9438,8 +9830,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       incentives_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9457,8 +9849,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncentives() {
-
       incentives_ = getDefaultInstance().getIncentives();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -9481,8 +9873,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       incentives_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9498,9 +9890,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-     * defaults to 'en_US'.
+     * If this field is unspecified and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+     * detected language code based on
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+     * otherwise defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9528,9 +9922,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-     * defaults to 'en_US'.
+     * If this field is unspecified and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+     * detected language code based on
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+     * otherwise defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9558,9 +9954,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-     * defaults to 'en_US'.
+     * If this field is unspecified and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+     * detected language code based on
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+     * otherwise defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9572,8 +9970,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       languageCode_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9587,9 +9985,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-     * defaults to 'en_US'.
+     * If this field is unspecified and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+     * detected language code based on
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+     * otherwise defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9597,8 +9997,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLanguageCode() {
-
       languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -9612,9 +10012,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * For more information, see
      * [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47){:
      * class="external" target="_blank" }.
-     * If this field is unspecified and [Job.description][google.cloud.talent.v4beta1.Job.description] is present, detected
-     * language code based on [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned, otherwise
-     * defaults to 'en_US'.
+     * If this field is unspecified and
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is present,
+     * detected language code based on
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] is assigned,
+     * otherwise defaults to 'en_US'.
      * </pre>
      *
      * <code>string language_code = 15;</code>
@@ -9627,8 +10029,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       languageCode_ = value;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -9662,8 +10064,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setJobLevelValue(int value) {
-
       jobLevel_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -9680,9 +10082,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobLevel getJobLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.JobLevel result =
-          com.google.cloud.talent.v4beta1.JobLevel.valueOf(jobLevel_);
+          com.google.cloud.talent.v4beta1.JobLevel.forNumber(jobLevel_);
       return result == null ? com.google.cloud.talent.v4beta1.JobLevel.UNRECOGNIZED : result;
     }
     /**
@@ -9701,7 +10102,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       jobLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -9718,7 +10119,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearJobLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       jobLevel_ = 0;
       onChanged();
       return this;
@@ -9765,6 +10166,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setPromotionValue(int value) {
 
       promotionValue_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -9785,7 +10187,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPromotionValue() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       promotionValue_ = 0;
       onChanged();
       return this;
@@ -9798,7 +10200,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9825,7 +10228,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9852,7 +10256,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9867,8 +10272,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       qualifications_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9878,7 +10283,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9889,8 +10295,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQualifications() {
-
       qualifications_ = getDefaultInstance().getQualifications();
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -9900,7 +10306,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A description of the qualifications required to perform the
      * job. The use of this field is recommended
-     * as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description] field.
+     * as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9916,8 +10323,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       qualifications_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9928,8 +10335,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-     * field.
+     * recommended as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9955,8 +10362,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-     * field.
+     * recommended as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9982,8 +10389,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-     * field.
+     * recommended as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -9998,8 +10405,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       responsibilities_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10008,8 +10415,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-     * field.
+     * recommended as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10020,8 +10427,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResponsibilities() {
-
       responsibilities_ = getDefaultInstance().getResponsibilities();
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -10030,8 +10437,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A description of job responsibilities. The use of this field is
-     * recommended as an alternative to using the more general [description][google.cloud.talent.v4beta1.Job.description]
-     * field.
+     * recommended as an alternative to using the more general
+     * [description][google.cloud.talent.v4beta1.Job.description] field.
      * This field accepts and sanitizes HTML input, and also accepts
      * bold, italic, ordered list, and unordered list markup tags.
      * The maximum number of allowed characters is 10,000.
@@ -10047,8 +10454,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       responsibilities_ = value;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -10058,13 +10465,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-     * in a search query within the job region finds this job posting if an
-     * exact location match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-     * is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+     * the same location level as this field is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10079,13 +10489,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-     * in a search query within the job region finds this job posting if an
-     * exact location match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-     * is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+     * the same location level as this field is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10094,8 +10507,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPostingRegionValue(int value) {
-
       postingRegion_ = value;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -10103,13 +10516,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-     * in a search query within the job region finds this job posting if an
-     * exact location match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-     * is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+     * the same location level as this field is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10118,22 +10534,24 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.PostingRegion getPostingRegion() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.PostingRegion result =
-          com.google.cloud.talent.v4beta1.PostingRegion.valueOf(postingRegion_);
+          com.google.cloud.talent.v4beta1.PostingRegion.forNumber(postingRegion_);
       return result == null ? com.google.cloud.talent.v4beta1.PostingRegion.UNRECOGNIZED : result;
     }
     /**
      *
      *
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-     * in a search query within the job region finds this job posting if an
-     * exact location match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-     * is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+     * the same location level as this field is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10145,7 +10563,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00080000;
       postingRegion_ = value.getNumber();
       onChanged();
       return this;
@@ -10154,13 +10572,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for example, state, country) throughout
-     * which the job is available. If this field is set, a [LocationFilter][google.cloud.talent.v4beta1.LocationFilter]
-     * in a search query within the job region finds this job posting if an
-     * exact location match isn't specified. If this field is set to
-     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
-     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to the same location level as this field
-     * is strongly recommended.
+     * The job [PostingRegion][google.cloud.talent.v4beta1.PostingRegion] (for
+     * example, state, country) throughout which the job is available. If this
+     * field is set, a
+     * [LocationFilter][google.cloud.talent.v4beta1.LocationFilter] in a search
+     * query within the job region finds this job posting if an exact location
+     * match isn't specified. If this field is set to
+     * [PostingRegion.NATION][google.cloud.talent.v4beta1.PostingRegion.NATION] or
+     * [PostingRegion.ADMINISTRATIVE_AREA][google.cloud.talent.v4beta1.PostingRegion.ADMINISTRATIVE_AREA],
+     * setting job [Job.addresses][google.cloud.talent.v4beta1.Job.addresses] to
+     * the same location level as this field is strongly recommended.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.PostingRegion posting_region = 20;</code>
@@ -10168,7 +10589,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPostingRegion() {
-
+      bitField0_ = (bitField0_ & ~0x00080000);
       postingRegion_ = 0;
       onChanged();
       return this;
@@ -10181,13 +10602,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+     * Defaults to
+     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+     * if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=275
+     *     google/cloud/talent/v4beta1/job.proto;l=296
      * @return The enum numeric value on the wire for visibility.
      */
     @java.lang.Override
@@ -10201,20 +10624,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+     * Defaults to
+     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+     * if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=275
+     *     google/cloud/talent/v4beta1/job.proto;l=296
      * @param value The enum numeric value on the wire for visibility to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setVisibilityValue(int value) {
-
       visibility_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -10224,21 +10649,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+     * Defaults to
+     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+     * if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=275
+     *     google/cloud/talent/v4beta1/job.proto;l=296
      * @return The visibility.
      */
     @java.lang.Override
     @java.lang.Deprecated
     public com.google.cloud.talent.v4beta1.Visibility getVisibility() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Visibility result =
-          com.google.cloud.talent.v4beta1.Visibility.valueOf(visibility_);
+          com.google.cloud.talent.v4beta1.Visibility.forNumber(visibility_);
       return result == null ? com.google.cloud.talent.v4beta1.Visibility.UNRECOGNIZED : result;
     }
     /**
@@ -10247,13 +10673,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+     * Defaults to
+     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+     * if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=275
+     *     google/cloud/talent/v4beta1/job.proto;l=296
      * @param value The visibility to set.
      * @return This builder for chaining.
      */
@@ -10262,7 +10690,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00100000;
       visibility_ = value.getNumber();
       onChanged();
       return this;
@@ -10273,18 +10701,20 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Deprecated. The job is only visible to the owner.
      * The visibility of the job.
-     * Defaults to [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY] if not specified.
+     * Defaults to
+     * [Visibility.ACCOUNT_ONLY][google.cloud.talent.v4beta1.Visibility.ACCOUNT_ONLY]
+     * if not specified.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Visibility visibility = 21 [deprecated = true];</code>
      *
      * @deprecated google.cloud.talent.v4beta1.Job.visibility is deprecated. See
-     *     google/cloud/talent/v4beta1/job.proto;l=275
+     *     google/cloud/talent/v4beta1/job.proto;l=296
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearVisibility() {
-
+      bitField0_ = (bitField0_ & ~0x00100000);
       visibility_ = 0;
       onChanged();
       return this;
@@ -10309,7 +10739,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the jobStartTime field is set.
      */
     public boolean hasJobStartTime() {
-      return jobStartTimeBuilder_ != null || jobStartTime_ != null;
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -10348,11 +10778,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         jobStartTime_ = value;
-        onChanged();
       } else {
         jobStartTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00200000;
+      onChanged();
       return this;
     }
     /**
@@ -10368,11 +10798,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setJobStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (jobStartTimeBuilder_ == null) {
         jobStartTime_ = builderForValue.build();
-        onChanged();
       } else {
         jobStartTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00200000;
+      onChanged();
       return this;
     }
     /**
@@ -10387,19 +10817,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeJobStartTime(com.google.protobuf.Timestamp value) {
       if (jobStartTimeBuilder_ == null) {
-        if (jobStartTime_ != null) {
-          jobStartTime_ =
-              com.google.protobuf.Timestamp.newBuilder(jobStartTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00200000) != 0)
+            && jobStartTime_ != null
+            && jobStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getJobStartTimeBuilder().mergeFrom(value);
         } else {
           jobStartTime_ = value;
         }
-        onChanged();
       } else {
         jobStartTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00200000;
+      onChanged();
       return this;
     }
     /**
@@ -10413,14 +10842,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
      */
     public Builder clearJobStartTime() {
-      if (jobStartTimeBuilder_ == null) {
-        jobStartTime_ = null;
-        onChanged();
-      } else {
-        jobStartTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00200000);
+      jobStartTime_ = null;
+      if (jobStartTimeBuilder_ != null) {
+        jobStartTimeBuilder_.dispose();
         jobStartTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10434,7 +10862,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_start_time = 22;</code>
      */
     public com.google.protobuf.Timestamp.Builder getJobStartTimeBuilder() {
-
+      bitField0_ |= 0x00200000;
       onChanged();
       return getJobStartTimeFieldBuilder().getBuilder();
     }
@@ -10503,7 +10931,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the jobEndTime field is set.
      */
     public boolean hasJobEndTime() {
-      return jobEndTimeBuilder_ != null || jobEndTime_ != null;
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -10542,11 +10970,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         jobEndTime_ = value;
-        onChanged();
       } else {
         jobEndTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00400000;
+      onChanged();
       return this;
     }
     /**
@@ -10562,11 +10990,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setJobEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (jobEndTimeBuilder_ == null) {
         jobEndTime_ = builderForValue.build();
-        onChanged();
       } else {
         jobEndTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00400000;
+      onChanged();
       return this;
     }
     /**
@@ -10581,17 +11009,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeJobEndTime(com.google.protobuf.Timestamp value) {
       if (jobEndTimeBuilder_ == null) {
-        if (jobEndTime_ != null) {
-          jobEndTime_ =
-              com.google.protobuf.Timestamp.newBuilder(jobEndTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00400000) != 0)
+            && jobEndTime_ != null
+            && jobEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getJobEndTimeBuilder().mergeFrom(value);
         } else {
           jobEndTime_ = value;
         }
-        onChanged();
       } else {
         jobEndTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00400000;
+      onChanged();
       return this;
     }
     /**
@@ -10605,14 +11034,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
      */
     public Builder clearJobEndTime() {
-      if (jobEndTimeBuilder_ == null) {
-        jobEndTime_ = null;
-        onChanged();
-      } else {
-        jobEndTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00400000);
+      jobEndTime_ = null;
+      if (jobEndTimeBuilder_ != null) {
+        jobEndTimeBuilder_.dispose();
         jobEndTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10626,7 +11054,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp job_end_time = 23;</code>
      */
     public com.google.protobuf.Timestamp.Builder getJobEndTimeBuilder() {
-
+      bitField0_ |= 0x00400000;
       onChanged();
       return getJobEndTimeFieldBuilder().getBuilder();
     }
@@ -10696,7 +11124,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postingPublishTime field is set.
      */
     public boolean hasPostingPublishTime() {
-      return postingPublishTimeBuilder_ != null || postingPublishTime_ != null;
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -10737,11 +11165,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postingPublishTime_ = value;
-        onChanged();
       } else {
         postingPublishTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00800000;
+      onChanged();
       return this;
     }
     /**
@@ -10758,11 +11186,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostingPublishTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingPublishTimeBuilder_ == null) {
         postingPublishTime_ = builderForValue.build();
-        onChanged();
       } else {
         postingPublishTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00800000;
+      onChanged();
       return this;
     }
     /**
@@ -10778,19 +11206,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePostingPublishTime(com.google.protobuf.Timestamp value) {
       if (postingPublishTimeBuilder_ == null) {
-        if (postingPublishTime_ != null) {
-          postingPublishTime_ =
-              com.google.protobuf.Timestamp.newBuilder(postingPublishTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00800000) != 0)
+            && postingPublishTime_ != null
+            && postingPublishTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPostingPublishTimeBuilder().mergeFrom(value);
         } else {
           postingPublishTime_ = value;
         }
-        onChanged();
       } else {
         postingPublishTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00800000;
+      onChanged();
       return this;
     }
     /**
@@ -10805,14 +11232,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
      */
     public Builder clearPostingPublishTime() {
-      if (postingPublishTimeBuilder_ == null) {
-        postingPublishTime_ = null;
-        onChanged();
-      } else {
-        postingPublishTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00800000);
+      postingPublishTime_ = null;
+      if (postingPublishTimeBuilder_ != null) {
+        postingPublishTimeBuilder_.dispose();
         postingPublishTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -10827,7 +11253,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp posting_publish_time = 24;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingPublishTimeBuilder() {
-
+      bitField0_ |= 0x00800000;
       onChanged();
       return getPostingPublishTimeFieldBuilder().getBuilder();
     }
@@ -10892,13 +11318,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10909,21 +11340,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10931,7 +11366,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postingExpireTime field is set.
      */
     public boolean hasPostingExpireTime() {
-      return postingExpireTimeBuilder_ != null || postingExpireTime_ != null;
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -10940,13 +11375,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -10957,21 +11397,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -10994,13 +11438,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11011,21 +11460,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11036,11 +11489,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postingExpireTime_ = value;
-        onChanged();
       } else {
         postingExpireTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x01000000;
+      onChanged();
       return this;
     }
     /**
@@ -11050,13 +11503,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11067,21 +11525,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11089,11 +11551,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostingExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingExpireTimeBuilder_ == null) {
         postingExpireTime_ = builderForValue.build();
-        onChanged();
       } else {
         postingExpireTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x01000000;
+      onChanged();
       return this;
     }
     /**
@@ -11103,13 +11565,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11120,40 +11587,43 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
      */
     public Builder mergePostingExpireTime(com.google.protobuf.Timestamp value) {
       if (postingExpireTimeBuilder_ == null) {
-        if (postingExpireTime_ != null) {
-          postingExpireTime_ =
-              com.google.protobuf.Timestamp.newBuilder(postingExpireTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x01000000) != 0)
+            && postingExpireTime_ != null
+            && postingExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPostingExpireTimeBuilder().mergeFrom(value);
         } else {
           postingExpireTime_ = value;
         }
-        onChanged();
       } else {
         postingExpireTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x01000000;
+      onChanged();
       return this;
     }
     /**
@@ -11163,13 +11633,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11180,34 +11655,37 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
      */
     public Builder clearPostingExpireTime() {
-      if (postingExpireTimeBuilder_ == null) {
-        postingExpireTime_ = null;
-        onChanged();
-      } else {
-        postingExpireTime_ = null;
+      bitField0_ = (bitField0_ & ~0x01000000);
+      postingExpireTime_ = null;
+      if (postingExpireTimeBuilder_ != null) {
+        postingExpireTimeBuilder_.dispose();
         postingExpireTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11217,13 +11695,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11234,27 +11717,31 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingExpireTimeBuilder() {
-
+      bitField0_ |= 0x01000000;
       onChanged();
       return getPostingExpireTimeFieldBuilder().getBuilder();
     }
@@ -11265,13 +11752,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11282,21 +11774,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11317,13 +11813,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * Strongly recommended for the best service experience.
      * The expiration timestamp of the job. After this timestamp, the
      * job is marked as expired, and it no longer appears in search results. The
-     * expired job can't be listed by the [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API,
-     * but it can be retrieved with the [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or
-     * updated with the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or deleted with
-     * the [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An expired job can
-     * be updated and opened again by using a future expiration timestamp.
-     * Updating an expired job fails if there is another existing open job with
-     * same [company][google.cloud.talent.v4beta1.Job.company], [language_code][google.cloud.talent.v4beta1.Job.language_code] and [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
+     * expired job can't be listed by the
+     * [ListJobs][google.cloud.talent.v4beta1.JobService.ListJobs] API, but it can
+     * be retrieved with the
+     * [GetJob][google.cloud.talent.v4beta1.JobService.GetJob] API or updated with
+     * the [UpdateJob][google.cloud.talent.v4beta1.JobService.UpdateJob] API or
+     * deleted with the
+     * [DeleteJob][google.cloud.talent.v4beta1.JobService.DeleteJob] API. An
+     * expired job can be updated and opened again by using a future expiration
+     * timestamp. Updating an expired job fails if there is another existing open
+     * job with same [company][google.cloud.talent.v4beta1.Job.company],
+     * [language_code][google.cloud.talent.v4beta1.Job.language_code] and
+     * [requisition_id][google.cloud.talent.v4beta1.Job.requisition_id].
      * The expired jobs are retained in our system for 90 days. However, the
      * overall expired job count cannot exceed 3 times the maximum number of
      * open jobs over previous 7 days. If this threshold is exceeded,
@@ -11334,21 +11835,25 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * If the timestamp is before the instant request is made, the job
      * is treated as expired immediately on creation. This kind of job can
      * not be updated. And when creating a job with past timestamp, the
-     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time] must be set before
-     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time]. The purpose of this feature is
-     * to allow other objects, such as [Application][google.cloud.talent.v4beta1.Application], to refer a job
-     * that didn't exist in the system prior to becoming expired. If you
-     * want to modify a job that was expired on creation,
-     * delete it and create a new one.
+     * [posting_publish_time][google.cloud.talent.v4beta1.Job.posting_publish_time]
+     * must be set before
+     * [posting_expire_time][google.cloud.talent.v4beta1.Job.posting_expire_time].
+     * The purpose of this feature is to allow other objects, such as
+     * [Application][google.cloud.talent.v4beta1.Application], to refer a job that
+     * didn't exist in the system prior to becoming expired. If you want to modify
+     * a job that was expired on creation, delete it and create a new one.
      * If this value isn't provided at the time of job creation or is invalid,
      * the job posting expires after 30 days from the job's creation time. For
      * example, if the job was created on 2017/01/01 13:00AM UTC with an
      * unspecified expiration date, the job expires after 2017/01/31 13:00AM UTC.
      * If this value isn't provided on job update, it depends on the field masks
-     * set by [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask]. If the field masks include
-     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks are empty meaning that every field is
-     * updated, the job posting expires after 30 days from the job's last
-     * update time. Otherwise the expiration date isn't updated.
+     * set by
+     * [UpdateJobRequest.update_mask][google.cloud.talent.v4beta1.UpdateJobRequest.update_mask].
+     * If the field masks include
+     * [job_end_time][google.cloud.talent.v4beta1.Job.job_end_time], or the masks
+     * are empty meaning that every field is updated, the job posting expires
+     * after 30 days from the job's last update time. Otherwise the expiration
+     * date isn't updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp posting_expire_time = 25;</code>
@@ -11390,7 +11895,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postingCreateTime field is set.
      */
     public boolean hasPostingCreateTime() {
-      return postingCreateTimeBuilder_ != null || postingCreateTime_ != null;
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -11431,11 +11936,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postingCreateTime_ = value;
-        onChanged();
       } else {
         postingCreateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -11452,11 +11957,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostingCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingCreateTimeBuilder_ == null) {
         postingCreateTime_ = builderForValue.build();
-        onChanged();
       } else {
         postingCreateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -11472,19 +11977,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePostingCreateTime(com.google.protobuf.Timestamp value) {
       if (postingCreateTimeBuilder_ == null) {
-        if (postingCreateTime_ != null) {
-          postingCreateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(postingCreateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x02000000) != 0)
+            && postingCreateTime_ != null
+            && postingCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPostingCreateTimeBuilder().mergeFrom(value);
         } else {
           postingCreateTime_ = value;
         }
-        onChanged();
       } else {
         postingCreateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x02000000;
+      onChanged();
       return this;
     }
     /**
@@ -11499,14 +12003,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPostingCreateTime() {
-      if (postingCreateTimeBuilder_ == null) {
-        postingCreateTime_ = null;
-        onChanged();
-      } else {
-        postingCreateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x02000000);
+      postingCreateTime_ = null;
+      if (postingCreateTimeBuilder_ != null) {
+        postingCreateTimeBuilder_.dispose();
         postingCreateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11521,7 +12024,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingCreateTimeBuilder() {
-
+      bitField0_ |= 0x02000000;
       onChanged();
       return getPostingCreateTimeFieldBuilder().getBuilder();
     }
@@ -11593,7 +12096,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the postingUpdateTime field is set.
      */
     public boolean hasPostingUpdateTime() {
-      return postingUpdateTimeBuilder_ != null || postingUpdateTime_ != null;
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
@@ -11634,11 +12137,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         postingUpdateTime_ = value;
-        onChanged();
       } else {
         postingUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -11655,11 +12158,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder setPostingUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (postingUpdateTimeBuilder_ == null) {
         postingUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         postingUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -11675,19 +12178,18 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePostingUpdateTime(com.google.protobuf.Timestamp value) {
       if (postingUpdateTimeBuilder_ == null) {
-        if (postingUpdateTime_ != null) {
-          postingUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(postingUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x04000000) != 0)
+            && postingUpdateTime_ != null
+            && postingUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getPostingUpdateTimeBuilder().mergeFrom(value);
         } else {
           postingUpdateTime_ = value;
         }
-        onChanged();
       } else {
         postingUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x04000000;
+      onChanged();
       return this;
     }
     /**
@@ -11702,14 +12204,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPostingUpdateTime() {
-      if (postingUpdateTimeBuilder_ == null) {
-        postingUpdateTime_ = null;
-        onChanged();
-      } else {
-        postingUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x04000000);
+      postingUpdateTime_ = null;
+      if (postingUpdateTimeBuilder_ != null) {
+        postingUpdateTimeBuilder_.dispose();
         postingUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11724,7 +12225,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getPostingUpdateTimeBuilder() {
-
+      bitField0_ |= 0x04000000;
       onChanged();
       return getPostingUpdateTimeFieldBuilder().getBuilder();
     }
@@ -11837,8 +12338,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       companyDisplayName_ = value;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11854,8 +12355,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCompanyDisplayName() {
-
       companyDisplayName_ = getDefaultInstance().getCompanyDisplayName();
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -11876,8 +12377,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       companyDisplayName_ = value;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -11902,7 +12403,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the derivedInfo field is set.
      */
     public boolean hasDerivedInfo() {
-      return derivedInfoBuilder_ != null || derivedInfo_ != null;
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -11943,11 +12444,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         derivedInfo_ = value;
-        onChanged();
       } else {
         derivedInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -11965,11 +12466,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.Job.DerivedInfo.Builder builderForValue) {
       if (derivedInfoBuilder_ == null) {
         derivedInfo_ = builderForValue.build();
-        onChanged();
       } else {
         derivedInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -11985,19 +12486,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDerivedInfo(com.google.cloud.talent.v4beta1.Job.DerivedInfo value) {
       if (derivedInfoBuilder_ == null) {
-        if (derivedInfo_ != null) {
-          derivedInfo_ =
-              com.google.cloud.talent.v4beta1.Job.DerivedInfo.newBuilder(derivedInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x10000000) != 0)
+            && derivedInfo_ != null
+            && derivedInfo_
+                != com.google.cloud.talent.v4beta1.Job.DerivedInfo.getDefaultInstance()) {
+          getDerivedInfoBuilder().mergeFrom(value);
         } else {
           derivedInfo_ = value;
         }
-        onChanged();
       } else {
         derivedInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x10000000;
+      onChanged();
       return this;
     }
     /**
@@ -12012,14 +12513,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDerivedInfo() {
-      if (derivedInfoBuilder_ == null) {
-        derivedInfo_ = null;
-        onChanged();
-      } else {
-        derivedInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x10000000);
+      derivedInfo_ = null;
+      if (derivedInfoBuilder_ != null) {
+        derivedInfoBuilder_.dispose();
         derivedInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12034,7 +12534,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.talent.v4beta1.Job.DerivedInfo.Builder getDerivedInfoBuilder() {
-
+      bitField0_ |= 0x10000000;
       onChanged();
       return getDerivedInfoFieldBuilder().getBuilder();
     }
@@ -12104,7 +12604,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the processingOptions field is set.
      */
     public boolean hasProcessingOptions() {
-      return processingOptionsBuilder_ != null || processingOptions_ != null;
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -12142,11 +12642,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         processingOptions_ = value;
-        onChanged();
       } else {
         processingOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x20000000;
+      onChanged();
       return this;
     }
     /**
@@ -12162,11 +12662,11 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.talent.v4beta1.Job.ProcessingOptions.Builder builderForValue) {
       if (processingOptionsBuilder_ == null) {
         processingOptions_ = builderForValue.build();
-        onChanged();
       } else {
         processingOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x20000000;
+      onChanged();
       return this;
     }
     /**
@@ -12181,19 +12681,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeProcessingOptions(
         com.google.cloud.talent.v4beta1.Job.ProcessingOptions value) {
       if (processingOptionsBuilder_ == null) {
-        if (processingOptions_ != null) {
-          processingOptions_ =
-              com.google.cloud.talent.v4beta1.Job.ProcessingOptions.newBuilder(processingOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x20000000) != 0)
+            && processingOptions_ != null
+            && processingOptions_
+                != com.google.cloud.talent.v4beta1.Job.ProcessingOptions.getDefaultInstance()) {
+          getProcessingOptionsBuilder().mergeFrom(value);
         } else {
           processingOptions_ = value;
         }
-        onChanged();
       } else {
         processingOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x20000000;
+      onChanged();
       return this;
     }
     /**
@@ -12206,14 +12706,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.talent.v4beta1.Job.ProcessingOptions processing_options = 30;</code>
      */
     public Builder clearProcessingOptions() {
-      if (processingOptionsBuilder_ == null) {
-        processingOptions_ = null;
-        onChanged();
-      } else {
-        processingOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x20000000);
+      processingOptions_ = null;
+      if (processingOptionsBuilder_ != null) {
+        processingOptionsBuilder_.dispose();
         processingOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -12227,7 +12726,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.talent.v4beta1.Job.ProcessingOptions.Builder
         getProcessingOptionsBuilder() {
-
+      bitField0_ |= 0x20000000;
       onChanged();
       return getProcessingOptionsFieldBuilder().getBuilder();
     }

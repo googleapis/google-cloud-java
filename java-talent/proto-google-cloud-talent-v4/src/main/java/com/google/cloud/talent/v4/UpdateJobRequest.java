@@ -108,7 +108,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.JobOrBuilder getJobOrBuilder() {
-    return getJob();
+    return job_ == null ? com.google.cloud.talent.v4.Job.getDefaultInstance() : job_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -118,8 +118,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+   * provided, only the specified fields in
+   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+   * all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
    * </pre>
@@ -137,8 +139,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+   * provided, only the specified fields in
+   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+   * all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
    * </pre>
@@ -156,8 +160,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Strongly recommended for the best service experience.
-   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+   * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+   * provided, only the specified fields in
+   * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+   * all the fields are updated.
    * A field mask to restrict the fields that are updated. Only
    * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
    * </pre>
@@ -166,7 +172,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +391,15 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (jobBuilder_ == null) {
-        job_ = null;
-      } else {
-        job_ = null;
+      bitField0_ = 0;
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -424,18 +429,21 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.talent.v4.UpdateJobRequest buildPartial() {
       com.google.cloud.talent.v4.UpdateJobRequest result =
           new com.google.cloud.talent.v4.UpdateJobRequest(this);
-      if (jobBuilder_ == null) {
-        result.job_ = job_;
-      } else {
-        result.job_ = jobBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.UpdateJobRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -518,13 +526,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +552,8 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.talent.v4.Job job_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.talent.v4.Job,
@@ -562,7 +572,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the job field is set.
      */
     public boolean hasJob() {
-      return jobBuilder_ != null || job_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -597,11 +607,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         job_ = value;
-        onChanged();
       } else {
         jobBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -616,11 +626,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public Builder setJob(com.google.cloud.talent.v4.Job.Builder builderForValue) {
       if (jobBuilder_ == null) {
         job_ = builderForValue.build();
-        onChanged();
       } else {
         jobBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -634,16 +644,18 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeJob(com.google.cloud.talent.v4.Job value) {
       if (jobBuilder_ == null) {
-        if (job_ != null) {
-          job_ = com.google.cloud.talent.v4.Job.newBuilder(job_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && job_ != null
+            && job_ != com.google.cloud.talent.v4.Job.getDefaultInstance()) {
+          getJobBuilder().mergeFrom(value);
         } else {
           job_ = value;
         }
-        onChanged();
       } else {
         jobBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,14 +668,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.talent.v4.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearJob() {
-      if (jobBuilder_ == null) {
-        job_ = null;
-        onChanged();
-      } else {
-        job_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      job_ = null;
+      if (jobBuilder_ != null) {
+        jobBuilder_.dispose();
         jobBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -676,7 +687,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.talent.v4.Job job = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.talent.v4.Job.Builder getJobBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getJobFieldBuilder().getBuilder();
     }
@@ -733,8 +744,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -744,15 +757,17 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -775,8 +790,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -789,11 +806,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -801,8 +818,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -812,11 +831,11 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,8 +843,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -834,17 +855,18 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -852,8 +874,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -861,14 +885,13 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -876,8 +899,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -885,7 +910,7 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -894,8 +919,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>
@@ -916,8 +943,10 @@ public final class UpdateJobRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Strongly recommended for the best service experience.
-     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is provided, only the specified fields in
-     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise all the fields are updated.
+     * If [update_mask][google.cloud.talent.v4.UpdateJobRequest.update_mask] is
+     * provided, only the specified fields in
+     * [job][google.cloud.talent.v4.UpdateJobRequest.job] are updated. Otherwise
+     * all the fields are updated.
      * A field mask to restrict the fields that are updated. Only
      * top level fields of [Job][google.cloud.talent.v4.Job] are supported.
      * </pre>

@@ -258,8 +258,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest job titles for jobs autocomplete.
-     * For [CompletionType.JOB_TITLE][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.JOB_TITLE] type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are returned.
+     * For
+     * [CompletionType.JOB_TITLE][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.JOB_TITLE]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -270,9 +273,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest company names for jobs autocomplete.
-     * For [CompletionType.COMPANY_NAME][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMPANY_NAME] type,
-     * only companies having open jobs with the same [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are
-     * returned.
+     * For
+     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMPANY_NAME]
+     * type, only companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -283,9 +288,13 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest both job titles and company names for jobs autocomplete.
-     * For [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED] type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are returned.
+     * For
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>
@@ -309,8 +318,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest job titles for jobs autocomplete.
-     * For [CompletionType.JOB_TITLE][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.JOB_TITLE] type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are returned.
+     * For
+     * [CompletionType.JOB_TITLE][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.JOB_TITLE]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>JOB_TITLE = 1;</code>
@@ -321,9 +333,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest company names for jobs autocomplete.
-     * For [CompletionType.COMPANY_NAME][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMPANY_NAME] type,
-     * only companies having open jobs with the same [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are
-     * returned.
+     * For
+     * [CompletionType.COMPANY_NAME][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMPANY_NAME]
+     * type, only companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMPANY_NAME = 2;</code>
@@ -334,9 +348,13 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Suggest both job titles and company names for jobs autocomplete.
-     * For [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED] type, only open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] or companies having open jobs with the same
-     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes] are returned.
+     * For
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED]
+     * type, only open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * or companies having open jobs with the same
+     * [language_codes][google.cloud.talent.v4.CompleteQueryRequest.language_codes]
+     * are returned.
      * </pre>
      *
      * <code>COMBINED = 3;</code>
@@ -429,7 +447,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int TENANT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object tenant_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tenant_ = "";
   /**
    *
    *
@@ -486,7 +506,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object query_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object query_ = "";
   /**
    *
    *
@@ -537,6 +559,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LANGUAGE_CODES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList languageCodes_;
   /**
    *
@@ -614,7 +638,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 4;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -633,7 +657,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int COMPANY_FIELD_NUMBER = 5;
-  private volatile java.lang.Object company_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object company_ = "";
   /**
    *
    *
@@ -688,12 +714,13 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SCOPE_FIELD_NUMBER = 6;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
    * <pre>
-   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is
+   * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -708,7 +735,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+   * The scope of the completion. The defaults is
+   * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -717,21 +745,21 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope result =
-        com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.valueOf(scope_);
+        com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.forNumber(scope_);
     return result == null
         ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.UNRECOGNIZED
         : result;
   }
 
   public static final int TYPE_FIELD_NUMBER = 7;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
    * <pre>
-   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is
+   * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -746,7 +774,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+   * The completion topic. The default is
+   * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
    * </pre>
    *
    * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -755,9 +784,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType result =
-        com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.valueOf(type_);
+        com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.forNumber(type_);
     return result == null
         ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.UNRECOGNIZED
         : result;
@@ -1033,20 +1061,15 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       tenant_ = "";
-
       query_ = "";
-
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
-
       company_ = "";
-
       scope_ = 0;
-
       type_ = 0;
-
       return this;
     }
 
@@ -1074,20 +1097,43 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.talent.v4.CompleteQueryRequest buildPartial() {
       com.google.cloud.talent.v4.CompleteQueryRequest result =
           new com.google.cloud.talent.v4.CompleteQueryRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.tenant_ = tenant_;
-      result.query_ = query_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        languageCodes_ = languageCodes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.languageCodes_ = languageCodes_;
-      result.pageSize_ = pageSize_;
-      result.company_ = company_;
-      result.scope_ = scope_;
-      result.type_ = type_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4.CompleteQueryRequest result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        languageCodes_ = languageCodes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.languageCodes_ = languageCodes_;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CompleteQueryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tenant_ = tenant_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.query_ = query_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.company_ = company_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -1138,16 +1184,18 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getTenant().isEmpty()) {
         tenant_ = other.tenant_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.languageCodes_.isEmpty()) {
         if (languageCodes_.isEmpty()) {
           languageCodes_ = other.languageCodes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureLanguageCodesIsMutable();
           languageCodes_.addAll(other.languageCodes_);
@@ -1159,6 +1207,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getCompany().isEmpty()) {
         company_ = other.company_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.scope_ != 0) {
@@ -1196,13 +1245,13 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 tenant_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 query_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -1215,25 +1264,25 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
             case 32:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 company_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -1328,8 +1377,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       tenant_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1349,8 +1398,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearTenant() {
-
       tenant_ = getDefaultInstance().getTenant();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1375,8 +1424,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       tenant_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1445,8 +1494,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1463,8 +1512,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearQuery() {
-
       query_ = getDefaultInstance().getQuery();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1486,8 +1535,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       query_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1496,9 +1545,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureLanguageCodesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1665,7 +1714,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder clearLanguageCodes() {
       languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1729,6 +1778,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1745,7 +1795,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1821,8 +1871,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       company_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1841,8 +1891,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearCompany() {
-
       company_ = getDefaultInstance().getCompany();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1866,8 +1916,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       company_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1877,7 +1927,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is
+     * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -1892,7 +1943,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is
+     * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -1901,8 +1953,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1910,7 +1962,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is
+     * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -1919,9 +1972,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope result =
-          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.valueOf(scope_);
+          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.forNumber(scope_);
       return result == null
           ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.UNRECOGNIZED
           : result;
@@ -1930,7 +1982,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is
+     * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -1942,7 +1995,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -1951,7 +2004,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The scope of the completion. The defaults is [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
+     * The scope of the completion. The defaults is
+     * [CompletionScope.PUBLIC][google.cloud.talent.v4.CompleteQueryRequest.CompletionScope.PUBLIC].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionScope scope = 6;</code>
@@ -1959,7 +2013,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       scope_ = 0;
       onChanged();
       return this;
@@ -1970,7 +2024,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -1985,7 +2040,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -1994,8 +2050,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2003,7 +2059,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -2012,9 +2069,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType result =
-          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.valueOf(type_);
+          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.forNumber(type_);
       return result == null
           ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.UNRECOGNIZED
           : result;
@@ -2023,7 +2079,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -2035,7 +2092,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -2044,7 +2101,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The completion topic. The default is [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
+     * The completion topic. The default is
+     * [CompletionType.COMBINED][google.cloud.talent.v4.CompleteQueryRequest.CompletionType.COMBINED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompleteQueryRequest.CompletionType type = 7;</code>
@@ -2052,7 +2110,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
       onChanged();
       return this;

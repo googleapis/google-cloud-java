@@ -79,7 +79,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -91,7 +92,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -103,7 +105,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -141,9 +144,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-     * closely matching a search query's keywords, if available. The matching
-     * query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+     * matching a search query's keywords, if available. The matching query
+     * keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
@@ -155,9 +159,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-     * closely matching a search query's keywords, if available. The matching
-     * query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+     * matching a search query's keywords, if available. The matching query
+     * keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
@@ -170,10 +175,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-     * fields that most closely match a search query's keywords, if available.
-     * All HTML tags in the original fields are stripped when returned in this
-     * field, and matching query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+     * similar fields that most closely match a search query's keywords, if
+     * available. All HTML tags in the original fields are stripped when
+     * returned in this field, and matching query keywords are enclosed in HTML
+     * bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -185,10 +192,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-     * fields that most closely match a search query's keywords, if available.
-     * All HTML tags in the original fields are stripped when returned in this
-     * field, and matching query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+     * similar fields that most closely match a search query's keywords, if
+     * available. All HTML tags in the original fields are stripped when
+     * returned in this field, and matching query keywords are enclosed in HTML
+     * bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -240,7 +249,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+   * Job entry with metadata inside
+   * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
    * </pre>
    *
    * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -293,7 +303,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -308,7 +319,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -323,18 +335,21 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * Job resource that matches the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.JobOrBuilder getJobOrBuilder() {
-      return getJob();
+      return job_ == null ? com.google.cloud.talent.v4beta1.Job.getDefaultInstance() : job_;
     }
 
     public static final int JOB_SUMMARY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object jobSummary_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobSummary_ = "";
     /**
      *
      *
@@ -385,14 +400,17 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int JOB_TITLE_SNIPPET_FIELD_NUMBER = 3;
-    private volatile java.lang.Object jobTitleSnippet_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jobTitleSnippet_ = "";
     /**
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-     * closely matching a search query's keywords, if available. The matching
-     * query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+     * matching a search query's keywords, if available. The matching query
+     * keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
@@ -415,9 +433,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-     * closely matching a search query's keywords, if available. The matching
-     * query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+     * matching a search query's keywords, if available. The matching query
+     * keywords are enclosed in HTML bold tags.
      * </pre>
      *
      * <code>string job_title_snippet = 3;</code>
@@ -438,15 +457,19 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     public static final int SEARCH_TEXT_SNIPPET_FIELD_NUMBER = 4;
-    private volatile java.lang.Object searchTextSnippet_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object searchTextSnippet_ = "";
     /**
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-     * fields that most closely match a search query's keywords, if available.
-     * All HTML tags in the original fields are stripped when returned in this
-     * field, and matching query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+     * similar fields that most closely match a search query's keywords, if
+     * available. All HTML tags in the original fields are stripped when
+     * returned in this field, and matching query keywords are enclosed in HTML
+     * bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -469,10 +492,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-     * fields that most closely match a search query's keywords, if available.
-     * All HTML tags in the original fields are stripped when returned in this
-     * field, and matching query keywords are enclosed in HTML bold tags.
+     * Contains snippets of text from the
+     * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+     * similar fields that most closely match a search query's keywords, if
+     * available. All HTML tags in the original fields are stripped when
+     * returned in this field, and matching query keywords are enclosed in HTML
+     * bold tags.
      * </pre>
      *
      * <code>string search_text_snippet = 4;</code>
@@ -541,7 +566,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfoOrBuilder
         getCommuteInfoOrBuilder() {
-      return getCommuteInfo();
+      return commuteInfo_ == null
+          ? com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.getDefaultInstance()
+          : commuteInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -755,7 +782,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Job entry with metadata inside [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
+     * Job entry with metadata inside
+     * [SearchJobsResponse][google.cloud.talent.v4beta1.SearchJobsResponse].
      * </pre>
      *
      * Protobuf type {@code google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob}
@@ -790,22 +818,18 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jobBuilder_ == null) {
-          job_ = null;
-        } else {
-          job_ = null;
+        bitField0_ = 0;
+        job_ = null;
+        if (jobBuilder_ != null) {
+          jobBuilder_.dispose();
           jobBuilder_ = null;
         }
         jobSummary_ = "";
-
         jobTitleSnippet_ = "";
-
         searchTextSnippet_ = "";
-
-        if (commuteInfoBuilder_ == null) {
-          commuteInfo_ = null;
-        } else {
-          commuteInfo_ = null;
+        commuteInfo_ = null;
+        if (commuteInfoBuilder_ != null) {
+          commuteInfoBuilder_.dispose();
           commuteInfoBuilder_ = null;
         }
         return this;
@@ -836,21 +860,32 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob buildPartial() {
         com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob result =
             new com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob(this);
-        if (jobBuilder_ == null) {
-          result.job_ = job_;
-        } else {
-          result.job_ = jobBuilder_.build();
-        }
-        result.jobSummary_ = jobSummary_;
-        result.jobTitleSnippet_ = jobTitleSnippet_;
-        result.searchTextSnippet_ = searchTextSnippet_;
-        if (commuteInfoBuilder_ == null) {
-          result.commuteInfo_ = commuteInfo_;
-        } else {
-          result.commuteInfo_ = commuteInfoBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.job_ = jobBuilder_ == null ? job_ : jobBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.jobSummary_ = jobSummary_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.jobTitleSnippet_ = jobTitleSnippet_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.searchTextSnippet_ = searchTextSnippet_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.commuteInfo_ =
+              commuteInfoBuilder_ == null ? commuteInfo_ : commuteInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -908,14 +943,17 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         }
         if (!other.getJobSummary().isEmpty()) {
           jobSummary_ = other.jobSummary_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getJobTitleSnippet().isEmpty()) {
           jobTitleSnippet_ = other.jobTitleSnippet_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getSearchTextSnippet().isEmpty()) {
           searchTextSnippet_ = other.searchTextSnippet_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.hasCommuteInfo()) {
@@ -950,31 +988,31 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getJobFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   jobSummary_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   jobTitleSnippet_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   searchTextSnippet_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               case 42:
                 {
                   input.readMessage(getCommuteInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               default:
@@ -994,6 +1032,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.talent.v4beta1.Job job_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Job,
@@ -1004,7 +1044,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1012,13 +1053,14 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the job field is set.
        */
       public boolean hasJob() {
-        return jobBuilder_ != null || job_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1036,7 +1078,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1047,18 +1090,19 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           job_ = value;
-          onChanged();
         } else {
           jobBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1066,70 +1110,71 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public Builder setJob(com.google.cloud.talent.v4beta1.Job.Builder builderForValue) {
         if (jobBuilder_ == null) {
           job_ = builderForValue.build();
-          onChanged();
         } else {
           jobBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public Builder mergeJob(com.google.cloud.talent.v4beta1.Job value) {
         if (jobBuilder_ == null) {
-          if (job_ != null) {
-            job_ =
-                com.google.cloud.talent.v4beta1.Job.newBuilder(job_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && job_ != null
+              && job_ != com.google.cloud.talent.v4beta1.Job.getDefaultInstance()) {
+            getJobBuilder().mergeFrom(value);
           } else {
             job_ = value;
           }
-          onChanged();
         } else {
           jobBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public Builder clearJob() {
-        if (jobBuilder_ == null) {
-          job_ = null;
-          onChanged();
-        } else {
-          job_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        job_ = null;
+        if (jobBuilder_ != null) {
+          jobBuilder_.dispose();
           jobBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
        */
       public com.google.cloud.talent.v4beta1.Job.Builder getJobBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getJobFieldBuilder().getBuilder();
       }
@@ -1137,7 +1182,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1153,7 +1199,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Job resource that matches the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+       * Job resource that matches the specified
+       * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
        * </pre>
        *
        * <code>.google.cloud.talent.v4beta1.Job job = 1;</code>
@@ -1239,8 +1286,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobSummary_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1257,8 +1304,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearJobSummary() {
-
         jobSummary_ = getDefaultInstance().getJobSummary();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1280,8 +1327,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobSummary_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1291,9 +1338,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-       * closely matching a search query's keywords, if available. The matching
-       * query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+       * matching a search query's keywords, if available. The matching query
+       * keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
@@ -1315,9 +1363,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-       * closely matching a search query's keywords, if available. The matching
-       * query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+       * matching a search query's keywords, if available. The matching query
+       * keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
@@ -1339,9 +1388,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-       * closely matching a search query's keywords, if available. The matching
-       * query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+       * matching a search query's keywords, if available. The matching query
+       * keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
@@ -1353,8 +1403,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         jobTitleSnippet_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1362,9 +1412,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-       * closely matching a search query's keywords, if available. The matching
-       * query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+       * matching a search query's keywords, if available. The matching query
+       * keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
@@ -1372,8 +1423,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearJobTitleSnippet() {
-
         jobTitleSnippet_ = getDefaultInstance().getJobTitleSnippet();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1381,9 +1432,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.title][google.cloud.talent.v4beta1.Job.title] field most
-       * closely matching a search query's keywords, if available. The matching
-       * query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.title][google.cloud.talent.v4beta1.Job.title] field most closely
+       * matching a search query's keywords, if available. The matching query
+       * keywords are enclosed in HTML bold tags.
        * </pre>
        *
        * <code>string job_title_snippet = 3;</code>
@@ -1396,8 +1448,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         jobTitleSnippet_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1407,10 +1459,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-       * fields that most closely match a search query's keywords, if available.
-       * All HTML tags in the original fields are stripped when returned in this
-       * field, and matching query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+       * similar fields that most closely match a search query's keywords, if
+       * available. All HTML tags in the original fields are stripped when
+       * returned in this field, and matching query keywords are enclosed in HTML
+       * bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1432,10 +1486,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-       * fields that most closely match a search query's keywords, if available.
-       * All HTML tags in the original fields are stripped when returned in this
-       * field, and matching query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+       * similar fields that most closely match a search query's keywords, if
+       * available. All HTML tags in the original fields are stripped when
+       * returned in this field, and matching query keywords are enclosed in HTML
+       * bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1457,10 +1513,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-       * fields that most closely match a search query's keywords, if available.
-       * All HTML tags in the original fields are stripped when returned in this
-       * field, and matching query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+       * similar fields that most closely match a search query's keywords, if
+       * available. All HTML tags in the original fields are stripped when
+       * returned in this field, and matching query keywords are enclosed in HTML
+       * bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1472,8 +1530,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-
         searchTextSnippet_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1481,10 +1539,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-       * fields that most closely match a search query's keywords, if available.
-       * All HTML tags in the original fields are stripped when returned in this
-       * field, and matching query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+       * similar fields that most closely match a search query's keywords, if
+       * available. All HTML tags in the original fields are stripped when
+       * returned in this field, and matching query keywords are enclosed in HTML
+       * bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1492,8 +1552,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearSearchTextSnippet() {
-
         searchTextSnippet_ = getDefaultInstance().getSearchTextSnippet();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1501,10 +1561,12 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Contains snippets of text from the [Job.description][google.cloud.talent.v4beta1.Job.description] and similar
-       * fields that most closely match a search query's keywords, if available.
-       * All HTML tags in the original fields are stripped when returned in this
-       * field, and matching query keywords are enclosed in HTML bold tags.
+       * Contains snippets of text from the
+       * [Job.description][google.cloud.talent.v4beta1.Job.description] and
+       * similar fields that most closely match a search query's keywords, if
+       * available. All HTML tags in the original fields are stripped when
+       * returned in this field, and matching query keywords are enclosed in HTML
+       * bold tags.
        * </pre>
        *
        * <code>string search_text_snippet = 4;</code>
@@ -1517,8 +1579,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         searchTextSnippet_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1542,7 +1604,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the commuteInfo field is set.
        */
       public boolean hasCommuteInfo() {
-        return commuteInfoBuilder_ != null || commuteInfo_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -1582,11 +1644,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           commuteInfo_ = value;
-          onChanged();
         } else {
           commuteInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1603,11 +1665,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.Builder builderForValue) {
         if (commuteInfoBuilder_ == null) {
           commuteInfo_ = builderForValue.build();
-          onChanged();
         } else {
           commuteInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1623,20 +1685,20 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public Builder mergeCommuteInfo(
           com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo value) {
         if (commuteInfoBuilder_ == null) {
-          if (commuteInfo_ != null) {
-            commuteInfo_ =
-                com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.newBuilder(
-                        commuteInfo_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000010) != 0)
+              && commuteInfo_ != null
+              && commuteInfo_
+                  != com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo
+                      .getDefaultInstance()) {
+            getCommuteInfoBuilder().mergeFrom(value);
           } else {
             commuteInfo_ = value;
           }
-          onChanged();
         } else {
           commuteInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1650,14 +1712,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo commute_info = 5;</code>
        */
       public Builder clearCommuteInfo() {
-        if (commuteInfoBuilder_ == null) {
-          commuteInfo_ = null;
-          onChanged();
-        } else {
-          commuteInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        commuteInfo_ = null;
+        if (commuteInfoBuilder_ != null) {
+          commuteInfoBuilder_.dispose();
           commuteInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1672,7 +1733,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        */
       public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo.Builder
           getCommuteInfoBuilder() {
-
+        bitField0_ |= 0x00000010;
         onChanged();
         return getCommuteInfoFieldBuilder().getBuilder();
       }
@@ -1966,7 +2027,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.LocationOrBuilder getJobLocationOrBuilder() {
-      return getJobLocation();
+      return jobLocation_ == null
+          ? com.google.cloud.talent.v4beta1.Location.getDefaultInstance()
+          : jobLocation_;
     }
 
     public static final int TRAVEL_DURATION_FIELD_NUMBER = 2;
@@ -2023,7 +2086,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
-      return getTravelDuration();
+      return travelDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : travelDuration_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2245,16 +2310,15 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jobLocationBuilder_ == null) {
-          jobLocation_ = null;
-        } else {
-          jobLocation_ = null;
+        bitField0_ = 0;
+        jobLocation_ = null;
+        if (jobLocationBuilder_ != null) {
+          jobLocationBuilder_.dispose();
           jobLocationBuilder_ = null;
         }
-        if (travelDurationBuilder_ == null) {
-          travelDuration_ = null;
-        } else {
-          travelDuration_ = null;
+        travelDuration_ = null;
+        if (travelDurationBuilder_ != null) {
+          travelDurationBuilder_.dispose();
           travelDurationBuilder_ = null;
         }
         return this;
@@ -2285,18 +2349,24 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo buildPartial() {
         com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo result =
             new com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo(this);
-        if (jobLocationBuilder_ == null) {
-          result.jobLocation_ = jobLocation_;
-        } else {
-          result.jobLocation_ = jobLocationBuilder_.build();
-        }
-        if (travelDurationBuilder_ == null) {
-          result.travelDuration_ = travelDuration_;
-        } else {
-          result.travelDuration_ = travelDurationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4beta1.SearchJobsResponse.CommuteInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobLocation_ =
+              jobLocationBuilder_ == null ? jobLocation_ : jobLocationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.travelDuration_ =
+              travelDurationBuilder_ == null ? travelDuration_ : travelDurationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2384,14 +2454,14 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
               case 10:
                 {
                   input.readMessage(getJobLocationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getTravelDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2411,6 +2481,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.cloud.talent.v4beta1.Location jobLocation_;
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.talent.v4beta1.Location,
@@ -2429,7 +2501,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the jobLocation field is set.
        */
       public boolean hasJobLocation() {
-        return jobLocationBuilder_ != null || jobLocation_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2466,11 +2538,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           jobLocation_ = value;
-          onChanged();
         } else {
           jobLocationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2486,11 +2558,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           com.google.cloud.talent.v4beta1.Location.Builder builderForValue) {
         if (jobLocationBuilder_ == null) {
           jobLocation_ = builderForValue.build();
-          onChanged();
         } else {
           jobLocationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2504,19 +2576,18 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeJobLocation(com.google.cloud.talent.v4beta1.Location value) {
         if (jobLocationBuilder_ == null) {
-          if (jobLocation_ != null) {
-            jobLocation_ =
-                com.google.cloud.talent.v4beta1.Location.newBuilder(jobLocation_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && jobLocation_ != null
+              && jobLocation_ != com.google.cloud.talent.v4beta1.Location.getDefaultInstance()) {
+            getJobLocationBuilder().mergeFrom(value);
           } else {
             jobLocation_ = value;
           }
-          onChanged();
         } else {
           jobLocationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2529,14 +2600,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
        */
       public Builder clearJobLocation() {
-        if (jobLocationBuilder_ == null) {
-          jobLocation_ = null;
-          onChanged();
-        } else {
-          jobLocation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        jobLocation_ = null;
+        if (jobLocationBuilder_ != null) {
+          jobLocationBuilder_.dispose();
           jobLocationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2549,7 +2619,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.cloud.talent.v4beta1.Location job_location = 1;</code>
        */
       public com.google.cloud.talent.v4beta1.Location.Builder getJobLocationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getJobLocationFieldBuilder().getBuilder();
       }
@@ -2618,7 +2688,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * @return Whether the travelDuration field is set.
        */
       public boolean hasTravelDuration() {
-        return travelDurationBuilder_ != null || travelDuration_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2661,11 +2731,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             throw new NullPointerException();
           }
           travelDuration_ = value;
-          onChanged();
         } else {
           travelDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2683,11 +2753,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       public Builder setTravelDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (travelDurationBuilder_ == null) {
           travelDuration_ = builderForValue.build();
-          onChanged();
         } else {
           travelDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2704,19 +2774,18 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        */
       public Builder mergeTravelDuration(com.google.protobuf.Duration value) {
         if (travelDurationBuilder_ == null) {
-          if (travelDuration_ != null) {
-            travelDuration_ =
-                com.google.protobuf.Duration.newBuilder(travelDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && travelDuration_ != null
+              && travelDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getTravelDurationBuilder().mergeFrom(value);
           } else {
             travelDuration_ = value;
           }
-          onChanged();
         } else {
           travelDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2732,14 +2801,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
        */
       public Builder clearTravelDuration() {
-        if (travelDurationBuilder_ == null) {
-          travelDuration_ = null;
-          onChanged();
-        } else {
-          travelDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        travelDuration_ = null;
+        if (travelDurationBuilder_ != null) {
+          travelDurationBuilder_.dispose();
           travelDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2755,7 +2823,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
        * <code>.google.protobuf.Duration travel_duration = 2;</code>
        */
       public com.google.protobuf.Duration.Builder getTravelDurationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTravelDurationFieldBuilder().getBuilder();
       }
@@ -2877,13 +2945,16 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int MATCHING_JOBS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob>
       matchingJobs_;
   /**
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -2898,7 +2969,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -2914,7 +2986,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -2928,7 +3001,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -2942,7 +3016,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+   * The Job entities that match the specified
+   * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -2955,6 +3030,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int HISTOGRAM_QUERY_RESULTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.HistogramQueryResult>
       histogramQueryResults_;
   /**
@@ -3037,7 +3114,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object nextPageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
   /**
    *
    *
@@ -3088,13 +3167,17 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOCATION_FILTERS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4beta1.Location> locationFilters_;
   /**
    *
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -3109,7 +3192,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -3125,7 +3210,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -3140,7 +3227,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -3155,7 +3244,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The location filters that the service applied to the specified query. If
-   * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+   * any filters are lat-lng based, the
+   * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+   * is
    * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
    * </pre>
    *
@@ -3167,14 +3258,15 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ESTIMATED_TOTAL_SIZE_FIELD_NUMBER = 5;
-  private int estimatedTotalSize_;
+  private int estimatedTotalSize_ = 0;
   /**
    *
    *
    * <pre>
    * An estimation of the number of jobs that match the specified query.
    * This number isn't guaranteed to be accurate. For accurate results,
-   * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
+   * see
+   * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
    * </pre>
    *
    * <code>int32 estimated_total_size = 5;</code>
@@ -3187,7 +3279,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TOTAL_SIZE_FIELD_NUMBER = 6;
-  private int totalSize_;
+  private int totalSize_ = 0;
   /**
    *
    *
@@ -3252,11 +3344,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.ResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int BROADENED_QUERY_JOBS_COUNT_FIELD_NUMBER = 8;
-  private int broadenedQueryJobsCount_;
+  private int broadenedQueryJobsCount_ = 0;
   /**
    *
    *
@@ -3324,7 +3418,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.SpellingCorrectionOrBuilder getSpellCorrectionOrBuilder() {
-    return getSpellCorrection();
+    return spellCorrection_ == null
+        ? com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance()
+        : spellCorrection_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3614,6 +3710,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (matchingJobsBuilder_ == null) {
         matchingJobs_ = java.util.Collections.emptyList();
       } else {
@@ -3629,30 +3726,24 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       nextPageToken_ = "";
-
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
       } else {
         locationFilters_ = null;
         locationFiltersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       estimatedTotalSize_ = 0;
-
       totalSize_ = 0;
-
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       broadenedQueryJobsCount_ = 0;
-
-      if (spellCorrectionBuilder_ == null) {
-        spellCorrection_ = null;
-      } else {
-        spellCorrection_ = null;
+      spellCorrection_ = null;
+      if (spellCorrectionBuilder_ != null) {
+        spellCorrectionBuilder_.dispose();
         spellCorrectionBuilder_ = null;
       }
       return this;
@@ -3682,7 +3773,16 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4beta1.SearchJobsResponse buildPartial() {
       com.google.cloud.talent.v4beta1.SearchJobsResponse result =
           new com.google.cloud.talent.v4beta1.SearchJobsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4beta1.SearchJobsResponse result) {
       if (matchingJobsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           matchingJobs_ = java.util.Collections.unmodifiableList(matchingJobs_);
@@ -3701,31 +3801,38 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       } else {
         result.histogramQueryResults_ = histogramQueryResultsBuilder_.build();
       }
-      result.nextPageToken_ = nextPageToken_;
       if (locationFiltersBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           locationFilters_ = java.util.Collections.unmodifiableList(locationFilters_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.locationFilters_ = locationFilters_;
       } else {
         result.locationFilters_ = locationFiltersBuilder_.build();
       }
-      result.estimatedTotalSize_ = estimatedTotalSize_;
-      result.totalSize_ = totalSize_;
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.SearchJobsResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
       }
-      result.broadenedQueryJobsCount_ = broadenedQueryJobsCount_;
-      if (spellCorrectionBuilder_ == null) {
-        result.spellCorrection_ = spellCorrection_;
-      } else {
-        result.spellCorrection_ = spellCorrectionBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.estimatedTotalSize_ = estimatedTotalSize_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.totalSize_ = totalSize_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.broadenedQueryJobsCount_ = broadenedQueryJobsCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.spellCorrection_ =
+            spellCorrectionBuilder_ == null ? spellCorrection_ : spellCorrectionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3830,13 +3937,14 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getNextPageToken().isEmpty()) {
         nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (locationFiltersBuilder_ == null) {
         if (!other.locationFilters_.isEmpty()) {
           if (locationFilters_.isEmpty()) {
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureLocationFiltersIsMutable();
             locationFilters_.addAll(other.locationFilters_);
@@ -3849,7 +3957,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             locationFiltersBuilder_.dispose();
             locationFiltersBuilder_ = null;
             locationFilters_ = other.locationFilters_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             locationFiltersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocationFiltersFieldBuilder()
@@ -3931,7 +4039,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             case 26:
               {
                 nextPageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -3950,31 +4058,31 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
             case 40:
               {
                 estimatedTotalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 totalSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 broadenedQueryJobsCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(getSpellCorrectionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             default:
@@ -4018,7 +4126,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4036,7 +4145,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4053,7 +4163,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4071,7 +4182,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4095,7 +4207,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4117,7 +4230,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4141,7 +4255,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4165,7 +4280,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4186,7 +4302,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4208,7 +4325,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4230,7 +4348,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4250,7 +4369,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4270,7 +4390,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4284,7 +4405,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4302,7 +4424,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4321,7 +4444,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4337,7 +4461,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4354,7 +4479,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Job entities that match the specified [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
+     * The Job entities that match the specified
+     * [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4beta1.SearchJobsResponse.MatchingJob matching_jobs = 1;
@@ -4847,8 +4973,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4865,8 +4991,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearNextPageToken() {
-
       nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -4888,8 +5014,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nextPageToken_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4898,10 +5024,10 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureLocationFiltersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         locationFilters_ =
             new java.util.ArrayList<com.google.cloud.talent.v4beta1.Location>(locationFilters_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -4916,7 +5042,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4934,7 +5062,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4952,7 +5082,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4970,7 +5102,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -4994,7 +5128,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5016,7 +5152,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5040,7 +5178,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5064,7 +5204,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5086,7 +5228,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5108,7 +5252,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5130,7 +5276,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5139,7 +5287,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public Builder clearLocationFilters() {
       if (locationFiltersBuilder_ == null) {
         locationFilters_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         locationFiltersBuilder_.clear();
@@ -5151,7 +5299,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5172,7 +5322,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5186,7 +5338,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5205,7 +5359,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5224,7 +5380,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5239,7 +5397,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5254,7 +5414,9 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The location filters that the service applied to the specified query. If
-     * any filters are lat-lng based, the [Location.location_type][google.cloud.talent.v4beta1.Location.location_type] is
+     * any filters are lat-lng based, the
+     * [Location.location_type][google.cloud.talent.v4beta1.Location.location_type]
+     * is
      * [Location.LocationType.LOCATION_TYPE_UNSPECIFIED][google.cloud.talent.v4beta1.Location.LocationType.LOCATION_TYPE_UNSPECIFIED].
      * </pre>
      *
@@ -5277,7 +5439,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.talent.v4beta1.Location.Builder,
                 com.google.cloud.talent.v4beta1.LocationOrBuilder>(
                 locationFilters_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         locationFilters_ = null;
@@ -5292,7 +5454,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
+     * see
+     * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
@@ -5309,7 +5472,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
+     * see
+     * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
@@ -5320,6 +5484,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public Builder setEstimatedTotalSize(int value) {
 
       estimatedTotalSize_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5329,7 +5494,8 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <pre>
      * An estimation of the number of jobs that match the specified query.
      * This number isn't guaranteed to be accurate. For accurate results,
-     * see [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
+     * see
+     * [SearchJobsResponse.total_size][google.cloud.talent.v4beta1.SearchJobsResponse.total_size].
      * </pre>
      *
      * <code>int32 estimated_total_size = 5;</code>
@@ -5337,7 +5503,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEstimatedTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       estimatedTotalSize_ = 0;
       onChanged();
       return this;
@@ -5374,6 +5540,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public Builder setTotalSize(int value) {
 
       totalSize_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5389,7 +5556,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTotalSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       totalSize_ = 0;
       onChanged();
       return this;
@@ -5414,7 +5581,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -5453,11 +5620,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5474,11 +5641,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         com.google.cloud.talent.v4beta1.ResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5493,19 +5660,18 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeMetadata(com.google.cloud.talent.v4beta1.ResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.talent.v4beta1.ResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.talent.v4beta1.ResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5519,14 +5685,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5540,7 +5705,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4beta1.ResponseMetadata metadata = 7;</code>
      */
     public com.google.cloud.talent.v4beta1.ResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -5633,6 +5798,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
     public Builder setBroadenedQueryJobsCount(int value) {
 
       broadenedQueryJobsCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5654,7 +5820,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBroadenedQueryJobsCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       broadenedQueryJobsCount_ = 0;
       onChanged();
       return this;
@@ -5678,7 +5844,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the spellCorrection field is set.
      */
     public boolean hasSpellCorrection() {
-      return spellCorrectionBuilder_ != null || spellCorrection_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -5715,11 +5881,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         spellCorrection_ = value;
-        onChanged();
       } else {
         spellCorrectionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5735,11 +5901,11 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
         com.google.cloud.talent.v4beta1.SpellingCorrection.Builder builderForValue) {
       if (spellCorrectionBuilder_ == null) {
         spellCorrection_ = builderForValue.build();
-        onChanged();
       } else {
         spellCorrectionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5753,19 +5919,19 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeSpellCorrection(com.google.cloud.talent.v4beta1.SpellingCorrection value) {
       if (spellCorrectionBuilder_ == null) {
-        if (spellCorrection_ != null) {
-          spellCorrection_ =
-              com.google.cloud.talent.v4beta1.SpellingCorrection.newBuilder(spellCorrection_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && spellCorrection_ != null
+            && spellCorrection_
+                != com.google.cloud.talent.v4beta1.SpellingCorrection.getDefaultInstance()) {
+          getSpellCorrectionBuilder().mergeFrom(value);
         } else {
           spellCorrection_ = value;
         }
-        onChanged();
       } else {
         spellCorrectionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -5778,14 +5944,13 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
      */
     public Builder clearSpellCorrection() {
-      if (spellCorrectionBuilder_ == null) {
-        spellCorrection_ = null;
-        onChanged();
-      } else {
-        spellCorrection_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      spellCorrection_ = null;
+      if (spellCorrectionBuilder_ != null) {
+        spellCorrectionBuilder_.dispose();
         spellCorrectionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5798,7 +5963,7 @@ public final class SearchJobsResponse extends com.google.protobuf.GeneratedMessa
      * <code>.google.cloud.talent.v4beta1.SpellingCorrection spell_correction = 9;</code>
      */
     public com.google.cloud.talent.v4beta1.SpellingCorrection.Builder getSpellCorrectionBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSpellCorrectionFieldBuilder().getBuilder();
     }

@@ -201,7 +201,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     public static final int SUGGESTION_FIELD_NUMBER = 1;
-    private volatile java.lang.Object suggestion_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object suggestion_ = "";
     /**
      *
      *
@@ -250,7 +252,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -279,16 +281,17 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType result =
-          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.valueOf(type_);
+          com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.forNumber(type_);
       return result == null
           ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.UNRECOGNIZED
           : result;
     }
 
     public static final int IMAGE_URI_FIELD_NUMBER = 3;
-    private volatile java.lang.Object imageUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object imageUri_ = "";
     /**
      *
      *
@@ -564,12 +567,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         suggestion_ = "";
-
         type_ = 0;
-
         imageUri_ = "";
-
         return this;
       }
 
@@ -599,11 +600,25 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       public com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult buildPartial() {
         com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult result =
             new com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult(this);
-        result.suggestion_ = suggestion_;
-        result.type_ = type_;
-        result.imageUri_ = imageUri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.suggestion_ = suggestion_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.imageUri_ = imageUri_;
+        }
       }
 
       @java.lang.Override
@@ -659,6 +674,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 .getDefaultInstance()) return this;
         if (!other.getSuggestion().isEmpty()) {
           suggestion_ = other.suggestion_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -666,6 +682,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         if (!other.getImageUri().isEmpty()) {
           imageUri_ = other.imageUri_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -697,19 +714,19 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
               case 10:
                 {
                   suggestion_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   imageUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -728,6 +745,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object suggestion_ = "";
       /**
@@ -790,8 +809,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         suggestion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -807,8 +826,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearSuggestion() {
-
         suggestion_ = getDefaultInstance().getSuggestion();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -829,8 +848,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         suggestion_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -864,8 +883,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -882,9 +901,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        */
       @java.lang.Override
       public com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType result =
-            com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.valueOf(type_);
+            com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.forNumber(type_);
         return result == null
             ? com.google.cloud.talent.v4.CompleteQueryRequest.CompletionType.UNRECOGNIZED
             : result;
@@ -905,7 +923,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -922,7 +940,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -992,8 +1010,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (value == null) {
           throw new NullPointerException();
         }
-
         imageUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1010,8 +1028,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * @return This builder for chaining.
        */
       public Builder clearImageUri() {
-
         imageUri_ = getDefaultInstance().getImageUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1033,8 +1051,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         imageUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1107,6 +1125,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
   }
 
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.CompleteQueryResponse.CompletionResult>
       completionResults_;
   /**
@@ -1238,7 +1258,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.ResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.cloud.talent.v4.ResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1455,6 +1477,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (completionResultsBuilder_ == null) {
         completionResults_ = java.util.Collections.emptyList();
       } else {
@@ -1462,10 +1485,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         completionResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -1495,7 +1517,16 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.talent.v4.CompleteQueryResponse buildPartial() {
       com.google.cloud.talent.v4.CompleteQueryResponse result =
           new com.google.cloud.talent.v4.CompleteQueryResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.talent.v4.CompleteQueryResponse result) {
       if (completionResultsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           completionResults_ = java.util.Collections.unmodifiableList(completionResults_);
@@ -1505,13 +1536,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       } else {
         result.completionResults_ = completionResultsBuilder_.build();
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CompleteQueryResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -1633,7 +1664,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
             case 18:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -2085,7 +2116,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2124,11 +2155,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2145,11 +2176,11 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         com.google.cloud.talent.v4.ResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2164,19 +2195,18 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeMetadata(com.google.cloud.talent.v4.ResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.cloud.talent.v4.ResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && metadata_ != null
+            && metadata_ != com.google.cloud.talent.v4.ResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2190,14 +2220,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.talent.v4.ResponseMetadata metadata = 2;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2211,7 +2240,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.talent.v4.ResponseMetadata metadata = 2;</code>
      */
     public com.google.cloud.talent.v4.ResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

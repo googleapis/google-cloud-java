@@ -72,12 +72,16 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DOMAIN_FIELD_NUMBER = 1;
-  private volatile java.lang.Object domain_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object domain_ = "";
   /**
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -110,7 +114,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * The client-defined scope or source of the service call, which typically
    * is the domain on
    * which the service has been implemented and is currently being run.
@@ -141,12 +147,16 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int SESSION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object sessionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sessionId_ = "";
   /**
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -177,7 +187,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * A unique session identification string. A session is defined as the
    * duration of an end user's interaction with the service over a certain
    * period.
@@ -206,12 +218,16 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int USER_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object userId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object userId_ = "";
   /**
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -242,7 +258,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+   * Required if
+   * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+   * is unset or `false`.
    * A unique user identification string, as determined by the client.
    * To have the strongest positive impact on search quality
    * make sure the client-level is unique.
@@ -271,15 +289,20 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ALLOW_MISSING_IDS_FIELD_NUMBER = 4;
-  private boolean allowMissingIds_;
+  private boolean allowMissingIds_ = false;
   /**
    *
    *
    * <pre>
-   * Only set when any of [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't
-   * available for some reason. It is highly recommended not to set this field
-   * and provide accurate [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the
-   * best service experience.
+   * Only set when any of
+   * [domain][google.cloud.talent.v4.RequestMetadata.domain],
+   * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+   * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't available
+   * for some reason. It is highly recommended not to set this field and provide
+   * accurate [domain][google.cloud.talent.v4.RequestMetadata.domain],
+   * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+   * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the best
+   * service experience.
    * </pre>
    *
    * <code>bool allow_missing_ids = 4;</code>
@@ -339,7 +362,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
-    return getDeviceInfo();
+    return deviceInfo_ == null
+        ? com.google.cloud.talent.v4.DeviceInfo.getDefaultInstance()
+        : deviceInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -582,18 +607,14 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       domain_ = "";
-
       sessionId_ = "";
-
       userId_ = "";
-
       allowMissingIds_ = false;
-
-      if (deviceInfoBuilder_ == null) {
-        deviceInfo_ = null;
-      } else {
-        deviceInfo_ = null;
+      deviceInfo_ = null;
+      if (deviceInfoBuilder_ != null) {
+        deviceInfoBuilder_.dispose();
         deviceInfoBuilder_ = null;
       }
       return this;
@@ -623,17 +644,30 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.talent.v4.RequestMetadata buildPartial() {
       com.google.cloud.talent.v4.RequestMetadata result =
           new com.google.cloud.talent.v4.RequestMetadata(this);
-      result.domain_ = domain_;
-      result.sessionId_ = sessionId_;
-      result.userId_ = userId_;
-      result.allowMissingIds_ = allowMissingIds_;
-      if (deviceInfoBuilder_ == null) {
-        result.deviceInfo_ = deviceInfo_;
-      } else {
-        result.deviceInfo_ = deviceInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.RequestMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.domain_ = domain_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sessionId_ = sessionId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.userId_ = userId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowMissingIds_ = allowMissingIds_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.deviceInfo_ = deviceInfoBuilder_ == null ? deviceInfo_ : deviceInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -683,14 +717,17 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.talent.v4.RequestMetadata.getDefaultInstance()) return this;
       if (!other.getDomain().isEmpty()) {
         domain_ = other.domain_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getSessionId().isEmpty()) {
         sessionId_ = other.sessionId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getUserId().isEmpty()) {
         userId_ = other.userId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getAllowMissingIds() != false) {
@@ -728,31 +765,31 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 domain_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 sessionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 userId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 allowMissingIds_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getDeviceInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -772,12 +809,16 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object domain_ = "";
     /**
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -809,7 +850,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -841,7 +884,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -863,8 +908,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       domain_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -872,7 +917,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -890,8 +937,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearDomain() {
-
       domain_ = getDefaultInstance().getDomain();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -899,7 +946,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * The client-defined scope or source of the service call, which typically
      * is the domain on
      * which the service has been implemented and is currently being run.
@@ -922,8 +971,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       domain_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -933,7 +982,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -963,7 +1014,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -993,7 +1046,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -1013,8 +1068,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       sessionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1022,7 +1077,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -1038,8 +1095,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearSessionId() {
-
       sessionId_ = getDefaultInstance().getSessionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1047,7 +1104,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique session identification string. A session is defined as the
      * duration of an end user's interaction with the service over a certain
      * period.
@@ -1068,8 +1127,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sessionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1079,7 +1138,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1109,7 +1170,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1139,7 +1202,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1159,8 +1224,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       userId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1168,7 +1233,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1184,8 +1251,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
-
       userId_ = getDefaultInstance().getUserId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1193,7 +1260,9 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required if [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids] is unset or `false`.
+     * Required if
+     * [allow_missing_ids][google.cloud.talent.v4.RequestMetadata.allow_missing_ids]
+     * is unset or `false`.
      * A unique user identification string, as determined by the client.
      * To have the strongest positive impact on search quality
      * make sure the client-level is unique.
@@ -1214,8 +1283,8 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       userId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1225,10 +1294,15 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Only set when any of [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't
-     * available for some reason. It is highly recommended not to set this field
-     * and provide accurate [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the
-     * best service experience.
+     * Only set when any of
+     * [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't available
+     * for some reason. It is highly recommended not to set this field and provide
+     * accurate [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the best
+     * service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
@@ -1243,10 +1317,15 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Only set when any of [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't
-     * available for some reason. It is highly recommended not to set this field
-     * and provide accurate [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the
-     * best service experience.
+     * Only set when any of
+     * [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't available
+     * for some reason. It is highly recommended not to set this field and provide
+     * accurate [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the best
+     * service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
@@ -1257,6 +1336,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public Builder setAllowMissingIds(boolean value) {
 
       allowMissingIds_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1264,10 +1344,15 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Only set when any of [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't
-     * available for some reason. It is highly recommended not to set this field
-     * and provide accurate [domain][google.cloud.talent.v4.RequestMetadata.domain], [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the
-     * best service experience.
+     * Only set when any of
+     * [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] isn't available
+     * for some reason. It is highly recommended not to set this field and provide
+     * accurate [domain][google.cloud.talent.v4.RequestMetadata.domain],
+     * [session_id][google.cloud.talent.v4.RequestMetadata.session_id] and
+     * [user_id][google.cloud.talent.v4.RequestMetadata.user_id] for the best
+     * service experience.
      * </pre>
      *
      * <code>bool allow_missing_ids = 4;</code>
@@ -1275,7 +1360,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearAllowMissingIds() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowMissingIds_ = false;
       onChanged();
       return this;
@@ -1300,7 +1385,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * @return Whether the deviceInfo field is set.
      */
     public boolean hasDeviceInfo() {
-      return deviceInfoBuilder_ != null || deviceInfo_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1339,11 +1424,11 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         deviceInfo_ = value;
-        onChanged();
       } else {
         deviceInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1359,11 +1444,11 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
     public Builder setDeviceInfo(com.google.cloud.talent.v4.DeviceInfo.Builder builderForValue) {
       if (deviceInfoBuilder_ == null) {
         deviceInfo_ = builderForValue.build();
-        onChanged();
       } else {
         deviceInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1378,19 +1463,18 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeDeviceInfo(com.google.cloud.talent.v4.DeviceInfo value) {
       if (deviceInfoBuilder_ == null) {
-        if (deviceInfo_ != null) {
-          deviceInfo_ =
-              com.google.cloud.talent.v4.DeviceInfo.newBuilder(deviceInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && deviceInfo_ != null
+            && deviceInfo_ != com.google.cloud.talent.v4.DeviceInfo.getDefaultInstance()) {
+          getDeviceInfoBuilder().mergeFrom(value);
         } else {
           deviceInfo_ = value;
         }
-        onChanged();
       } else {
         deviceInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1404,14 +1488,13 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.talent.v4.DeviceInfo device_info = 5;</code>
      */
     public Builder clearDeviceInfo() {
-      if (deviceInfoBuilder_ == null) {
-        deviceInfo_ = null;
-        onChanged();
-      } else {
-        deviceInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      deviceInfo_ = null;
+      if (deviceInfoBuilder_ != null) {
+        deviceInfoBuilder_.dispose();
         deviceInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1425,7 +1508,7 @@ public final class RequestMetadata extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.talent.v4.DeviceInfo device_info = 5;</code>
      */
     public com.google.cloud.talent.v4.DeviceInfo.Builder getDeviceInfoBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDeviceInfoFieldBuilder().getBuilder();
     }

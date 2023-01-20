@@ -235,7 +235,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -292,12 +294,15 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object externalId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalId_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the
+   * tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -321,7 +326,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Client side tenant identifier, used to uniquely identify the tenant.
+   * Required. Client side tenant identifier, used to uniquely identify the
+   * tenant.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -343,14 +349,16 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int USAGE_TYPE_FIELD_NUMBER = 3;
-  private int usageType_;
+  private int usageType_ = 0;
   /**
    *
    *
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+   * Defaults behavior is
+   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+   * if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -367,7 +375,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Indicates whether data owned by this tenant may be used to provide product
    * improvements across other tenants.
-   * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+   * Defaults behavior is
+   * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+   * if it's unset.
    * </pre>
    *
    * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -376,23 +386,25 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4beta1.Tenant.DataUsageType result =
-        com.google.cloud.talent.v4beta1.Tenant.DataUsageType.valueOf(usageType_);
+        com.google.cloud.talent.v4beta1.Tenant.DataUsageType.forNumber(usageType_);
     return result == null
         ? com.google.cloud.talent.v4beta1.Tenant.DataUsageType.UNRECOGNIZED
         : result;
   }
 
   public static final int KEYWORD_SEARCHABLE_PROFILE_CUSTOM_ATTRIBUTES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList keywordSearchableProfileCustomAttributes_;
   /**
    *
    *
    * <pre>
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -409,9 +421,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -428,9 +441,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -448,9 +462,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-   * corresponding `string_values` are used in keyword searches. Profiles with
-   * `string_values` under these specified field keys are returned if any
+   * A list of keys of filterable
+   * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+   * whose corresponding `string_values` are used in keyword searches. Profiles
+   * with `string_values` under these specified field keys are returned if any
    * of the values match the search keyword. Custom field values with
    * parenthesis, brackets and special symbols are not searchable as-is,
    * and must be surrounded by quotes.
@@ -705,14 +720,12 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       externalId_ = "";
-
       usageType_ = 0;
-
       keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -740,18 +753,34 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4beta1.Tenant buildPartial() {
       com.google.cloud.talent.v4beta1.Tenant result =
           new com.google.cloud.talent.v4beta1.Tenant(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.externalId_ = externalId_;
-      result.usageType_ = usageType_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        keywordSearchableProfileCustomAttributes_ =
-            keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.talent.v4beta1.Tenant result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        keywordSearchableProfileCustomAttributes_ =
+            keywordSearchableProfileCustomAttributes_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.keywordSearchableProfileCustomAttributes_ = keywordSearchableProfileCustomAttributes_;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4beta1.Tenant result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.externalId_ = externalId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.usageType_ = usageType_;
+      }
     }
 
     @java.lang.Override
@@ -801,10 +830,12 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.talent.v4beta1.Tenant.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getExternalId().isEmpty()) {
         externalId_ = other.externalId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.usageType_ != 0) {
@@ -814,7 +845,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         if (keywordSearchableProfileCustomAttributes_.isEmpty()) {
           keywordSearchableProfileCustomAttributes_ =
               other.keywordSearchableProfileCustomAttributes_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureKeywordSearchableProfileCustomAttributesIsMutable();
           keywordSearchableProfileCustomAttributes_.addAll(
@@ -851,19 +882,19 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 externalId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 usageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
@@ -965,8 +996,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -986,8 +1017,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1012,8 +1043,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1023,7 +1054,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the
+     * tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1046,7 +1078,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the
+     * tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1069,7 +1102,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the
+     * tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1082,8 +1116,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       externalId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1091,7 +1125,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the
+     * tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1100,8 +1135,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExternalId() {
-
       externalId_ = getDefaultInstance().getExternalId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1109,7 +1144,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Client side tenant identifier, used to uniquely identify the tenant.
+     * Required. Client side tenant identifier, used to uniquely identify the
+     * tenant.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1123,8 +1159,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       externalId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1136,7 +1172,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+     * Defaults behavior is
+     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+     * if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -1153,7 +1191,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+     * Defaults behavior is
+     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+     * if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -1162,8 +1202,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setUsageTypeValue(int value) {
-
       usageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1173,7 +1213,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+     * Defaults behavior is
+     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+     * if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -1182,9 +1224,8 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4beta1.Tenant.DataUsageType getUsageType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4beta1.Tenant.DataUsageType result =
-          com.google.cloud.talent.v4beta1.Tenant.DataUsageType.valueOf(usageType_);
+          com.google.cloud.talent.v4beta1.Tenant.DataUsageType.forNumber(usageType_);
       return result == null
           ? com.google.cloud.talent.v4beta1.Tenant.DataUsageType.UNRECOGNIZED
           : result;
@@ -1195,7 +1236,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+     * Defaults behavior is
+     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+     * if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -1207,7 +1250,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       usageType_ = value.getNumber();
       onChanged();
       return this;
@@ -1218,7 +1261,9 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Indicates whether data owned by this tenant may be used to provide product
      * improvements across other tenants.
-     * Defaults behavior is [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED] if it's unset.
+     * Defaults behavior is
+     * [DataUsageType.ISOLATED][google.cloud.talent.v4beta1.Tenant.DataUsageType.ISOLATED]
+     * if it's unset.
      * </pre>
      *
      * <code>.google.cloud.talent.v4beta1.Tenant.DataUsageType usage_type = 3;</code>
@@ -1226,7 +1271,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUsageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       usageType_ = 0;
       onChanged();
       return this;
@@ -1236,19 +1281,20 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureKeywordSearchableProfileCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         keywordSearchableProfileCustomAttributes_ =
             new com.google.protobuf.LazyStringArrayList(keywordSearchableProfileCustomAttributes_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1266,9 +1312,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1285,9 +1332,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1305,9 +1353,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1326,9 +1375,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1353,9 +1403,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1379,9 +1430,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1404,9 +1456,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.
@@ -1418,7 +1471,7 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKeywordSearchableProfileCustomAttributes() {
       keywordSearchableProfileCustomAttributes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1426,9 +1479,10 @@ public final class Tenant extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of keys of filterable [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes], whose
-     * corresponding `string_values` are used in keyword searches. Profiles with
-     * `string_values` under these specified field keys are returned if any
+     * A list of keys of filterable
+     * [Profile.custom_attributes][google.cloud.talent.v4beta1.Profile.custom_attributes],
+     * whose corresponding `string_values` are used in keyword searches. Profiles
+     * with `string_values` under these specified field keys are returned if any
      * of the values match the search keyword. Custom field values with
      * parenthesis, brackets and special symbols are not searchable as-is,
      * and must be surrounded by quotes.

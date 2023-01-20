@@ -272,7 +272,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMMUTE_METHOD_FIELD_NUMBER = 1;
-  private int commuteMethod_;
+  private int commuteMethod_ = 0;
   /**
    *
    *
@@ -305,9 +305,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.CommuteMethod getCommuteMethod() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.CommuteMethod result =
-        com.google.cloud.talent.v4.CommuteMethod.valueOf(commuteMethod_);
+        com.google.cloud.talent.v4.CommuteMethod.forNumber(commuteMethod_);
     return result == null ? com.google.cloud.talent.v4.CommuteMethod.UNRECOGNIZED : result;
   }
 
@@ -362,7 +361,9 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.LatLngOrBuilder getStartCoordinatesOrBuilder() {
-    return getStartCoordinates();
+    return startCoordinates_ == null
+        ? com.google.type.LatLng.getDefaultInstance()
+        : startCoordinates_;
   }
 
   public static final int TRAVEL_DURATION_FIELD_NUMBER = 3;
@@ -371,8 +372,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -388,8 +389,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -407,8 +408,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-   * (one hour). Format is `123s`.
+   * Required. The maximum travel time in seconds. The maximum allowed value is
+   * `3600s` (one hour). Format is `123s`.
    * </pre>
    *
    * <code>.google.protobuf.Duration travel_duration = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -416,11 +417,13 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTravelDurationOrBuilder() {
-    return getTravelDuration();
+    return travelDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : travelDuration_;
   }
 
   public static final int ALLOW_IMPRECISE_ADDRESSES_FIELD_NUMBER = 4;
-  private boolean allowImpreciseAddresses_;
+  private boolean allowImpreciseAddresses_ = false;
   /**
    *
    *
@@ -486,9 +489,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.cloud.talent.v4.CommuteFilter.RoadTraffic getRoadTraffic() {
     if (trafficOptionCase_ == 5) {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CommuteFilter.RoadTraffic result =
-          com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.valueOf(
+          com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.forNumber(
               (java.lang.Integer) trafficOption_);
       return result == null
           ? com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.UNRECOGNIZED
@@ -828,22 +830,19 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       commuteMethod_ = 0;
-
-      if (startCoordinatesBuilder_ == null) {
-        startCoordinates_ = null;
-      } else {
-        startCoordinates_ = null;
+      startCoordinates_ = null;
+      if (startCoordinatesBuilder_ != null) {
+        startCoordinatesBuilder_.dispose();
         startCoordinatesBuilder_ = null;
       }
-      if (travelDurationBuilder_ == null) {
-        travelDuration_ = null;
-      } else {
-        travelDuration_ = null;
+      travelDuration_ = null;
+      if (travelDurationBuilder_ != null) {
+        travelDurationBuilder_.dispose();
         travelDurationBuilder_ = null;
       }
       allowImpreciseAddresses_ = false;
-
       if (departureTimeBuilder_ != null) {
         departureTimeBuilder_.clear();
       }
@@ -876,31 +875,38 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.CommuteFilter buildPartial() {
       com.google.cloud.talent.v4.CommuteFilter result =
           new com.google.cloud.talent.v4.CommuteFilter(this);
-      result.commuteMethod_ = commuteMethod_;
-      if (startCoordinatesBuilder_ == null) {
-        result.startCoordinates_ = startCoordinates_;
-      } else {
-        result.startCoordinates_ = startCoordinatesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (travelDurationBuilder_ == null) {
-        result.travelDuration_ = travelDuration_;
-      } else {
-        result.travelDuration_ = travelDurationBuilder_.build();
-      }
-      result.allowImpreciseAddresses_ = allowImpreciseAddresses_;
-      if (trafficOptionCase_ == 5) {
-        result.trafficOption_ = trafficOption_;
-      }
-      if (trafficOptionCase_ == 6) {
-        if (departureTimeBuilder_ == null) {
-          result.trafficOption_ = trafficOption_;
-        } else {
-          result.trafficOption_ = departureTimeBuilder_.build();
-        }
-      }
-      result.trafficOptionCase_ = trafficOptionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CommuteFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.commuteMethod_ = commuteMethod_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startCoordinates_ =
+            startCoordinatesBuilder_ == null ? startCoordinates_ : startCoordinatesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.travelDuration_ =
+            travelDurationBuilder_ == null ? travelDuration_ : travelDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.allowImpreciseAddresses_ = allowImpreciseAddresses_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.talent.v4.CommuteFilter result) {
+      result.trafficOptionCase_ = trafficOptionCase_;
+      result.trafficOption_ = this.trafficOption_;
+      if (trafficOptionCase_ == 6 && departureTimeBuilder_ != null) {
+        result.trafficOption_ = departureTimeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1005,26 +1011,26 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 commuteMethod_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getStartCoordinatesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getTravelDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 allowImpreciseAddresses_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
@@ -1071,6 +1077,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private int commuteMethod_ = 0;
     /**
      *
@@ -1104,8 +1112,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCommuteMethodValue(int value) {
-
       commuteMethod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1124,9 +1132,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CommuteMethod getCommuteMethod() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CommuteMethod result =
-          com.google.cloud.talent.v4.CommuteMethod.valueOf(commuteMethod_);
+          com.google.cloud.talent.v4.CommuteMethod.forNumber(commuteMethod_);
       return result == null ? com.google.cloud.talent.v4.CommuteMethod.UNRECOGNIZED : result;
     }
     /**
@@ -1147,7 +1154,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       commuteMethod_ = value.getNumber();
       onChanged();
       return this;
@@ -1166,7 +1173,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCommuteMethod() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       commuteMethod_ = 0;
       onChanged();
       return this;
@@ -1190,7 +1197,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startCoordinates field is set.
      */
     public boolean hasStartCoordinates() {
-      return startCoordinatesBuilder_ != null || startCoordinates_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1231,11 +1238,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         startCoordinates_ = value;
-        onChanged();
       } else {
         startCoordinatesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1252,11 +1259,11 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartCoordinates(com.google.type.LatLng.Builder builderForValue) {
       if (startCoordinatesBuilder_ == null) {
         startCoordinates_ = builderForValue.build();
-        onChanged();
       } else {
         startCoordinatesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1272,17 +1279,18 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartCoordinates(com.google.type.LatLng value) {
       if (startCoordinatesBuilder_ == null) {
-        if (startCoordinates_ != null) {
-          startCoordinates_ =
-              com.google.type.LatLng.newBuilder(startCoordinates_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && startCoordinates_ != null
+            && startCoordinates_ != com.google.type.LatLng.getDefaultInstance()) {
+          getStartCoordinatesBuilder().mergeFrom(value);
         } else {
           startCoordinates_ = value;
         }
-        onChanged();
       } else {
         startCoordinatesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1297,14 +1305,13 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStartCoordinates() {
-      if (startCoordinatesBuilder_ == null) {
-        startCoordinates_ = null;
-        onChanged();
-      } else {
-        startCoordinates_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      startCoordinates_ = null;
+      if (startCoordinatesBuilder_ != null) {
+        startCoordinatesBuilder_.dispose();
         startCoordinatesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1319,7 +1326,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.type.LatLng.Builder getStartCoordinatesBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getStartCoordinatesFieldBuilder().getBuilder();
     }
@@ -1379,8 +1386,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1390,14 +1397,14 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the travelDuration field is set.
      */
     public boolean hasTravelDuration() {
-      return travelDurationBuilder_ != null || travelDuration_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1419,8 +1426,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1433,19 +1440,19 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         travelDuration_ = value;
-        onChanged();
       } else {
         travelDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1455,19 +1462,19 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setTravelDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (travelDurationBuilder_ == null) {
         travelDuration_ = builderForValue.build();
-        onChanged();
       } else {
         travelDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1476,27 +1483,26 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTravelDuration(com.google.protobuf.Duration value) {
       if (travelDurationBuilder_ == null) {
-        if (travelDuration_ != null) {
-          travelDuration_ =
-              com.google.protobuf.Duration.newBuilder(travelDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && travelDuration_ != null
+            && travelDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTravelDurationBuilder().mergeFrom(value);
         } else {
           travelDuration_ = value;
         }
-        onChanged();
       } else {
         travelDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1504,22 +1510,21 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTravelDuration() {
-      if (travelDurationBuilder_ == null) {
-        travelDuration_ = null;
-        onChanged();
-      } else {
-        travelDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      travelDuration_ = null;
+      if (travelDurationBuilder_ != null) {
+        travelDurationBuilder_.dispose();
         travelDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1527,7 +1532,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Duration.Builder getTravelDurationBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getTravelDurationFieldBuilder().getBuilder();
     }
@@ -1535,8 +1540,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1556,8 +1561,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The maximum travel time in seconds. The maximum allowed value is `3600s`
-     * (one hour). Format is `123s`.
+     * Required. The maximum travel time in seconds. The maximum allowed value is
+     * `3600s` (one hour). Format is `123s`.
      * </pre>
      *
      * <code>
@@ -1620,6 +1625,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowImpreciseAddresses(boolean value) {
 
       allowImpreciseAddresses_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1639,7 +1645,7 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowImpreciseAddresses() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       allowImpreciseAddresses_ = false;
       onChanged();
       return this;
@@ -1710,9 +1716,8 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.talent.v4.CommuteFilter.RoadTraffic getRoadTraffic() {
       if (trafficOptionCase_ == 5) {
-        @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4.CommuteFilter.RoadTraffic result =
-            com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.valueOf(
+            com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.forNumber(
                 (java.lang.Integer) trafficOption_);
         return result == null
             ? com.google.cloud.talent.v4.CommuteFilter.RoadTraffic.UNRECOGNIZED
@@ -1981,7 +1986,6 @@ public final class CommuteFilter extends com.google.protobuf.GeneratedMessageV3
       }
       trafficOptionCase_ = 6;
       onChanged();
-      ;
       return departureTimeBuilder_;
     }
 

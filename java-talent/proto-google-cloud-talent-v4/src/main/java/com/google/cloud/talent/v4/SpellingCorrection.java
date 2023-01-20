@@ -69,7 +69,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CORRECTED_FIELD_NUMBER = 1;
-  private boolean corrected_;
+  private boolean corrected_ = false;
   /**
    *
    *
@@ -87,7 +87,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CORRECTED_TEXT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object correctedText_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object correctedText_ = "";
   /**
    *
    *
@@ -136,7 +138,9 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int CORRECTED_HTML_FIELD_NUMBER = 3;
-  private volatile java.lang.Object correctedHtml_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object correctedHtml_ = "";
   /**
    *
    *
@@ -409,12 +413,10 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       corrected_ = false;
-
       correctedText_ = "";
-
       correctedHtml_ = "";
-
       return this;
     }
 
@@ -442,11 +444,24 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.talent.v4.SpellingCorrection buildPartial() {
       com.google.cloud.talent.v4.SpellingCorrection result =
           new com.google.cloud.talent.v4.SpellingCorrection(this);
-      result.corrected_ = corrected_;
-      result.correctedText_ = correctedText_;
-      result.correctedHtml_ = correctedHtml_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.SpellingCorrection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.corrected_ = corrected_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.correctedText_ = correctedText_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.correctedHtml_ = correctedHtml_;
+      }
     }
 
     @java.lang.Override
@@ -499,10 +514,12 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getCorrectedText().isEmpty()) {
         correctedText_ = other.correctedText_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getCorrectedHtml().isEmpty()) {
         correctedHtml_ = other.correctedHtml_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -534,19 +551,19 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 corrected_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 correctedText_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 correctedHtml_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -565,6 +582,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean corrected_;
     /**
@@ -597,6 +616,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
     public Builder setCorrected(boolean value) {
 
       corrected_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -612,7 +632,7 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCorrected() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       corrected_ = false;
       onChanged();
       return this;
@@ -679,8 +699,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       correctedText_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -696,8 +716,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCorrectedText() {
-
       correctedText_ = getDefaultInstance().getCorrectedText();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -718,8 +738,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       correctedText_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -800,8 +820,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       correctedHtml_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -822,8 +842,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearCorrectedHtml() {
-
       correctedHtml_ = getDefaultInstance().getCorrectedHtml();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -849,8 +869,8 @@ public final class SpellingCorrection extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       correctedHtml_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

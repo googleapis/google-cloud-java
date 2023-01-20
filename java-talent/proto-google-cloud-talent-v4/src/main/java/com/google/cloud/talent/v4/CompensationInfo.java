@@ -73,17 +73,28 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The type of compensation.
    * For compensation amounts specified in non-monetary amounts,
-   * describe the compensation scheme in the [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description].
+   * describe the compensation scheme in the
+   * [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description].
    * For example, tipping format is described in
-   * [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description] (for example, "expect 15-20% tips based
-   * on customer bill.") and an estimate of the tips provided in
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or [CompensationEntry.range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range] ($10 per hour).
-   * For example, equity is described in [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description]
+   * [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description]
+   * (for example, "expect 15-20% tips based on customer bill.") and an estimate
+   * of the tips provided in
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * or
+   * [CompensationEntry.range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range]
+   * ($10 per hour).
+   * For example, equity is described in
+   * [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description]
    * (for example, "1% - 2% equity vesting over 4 years, 1 year cliff") and
-   * value estimated in [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or
-   * [CompensationEntry.range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range]. If no value estimate is possible, units are
-   * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED] and then further
-   * clarified in [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description] field.
+   * value estimated in
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * or
+   * [CompensationEntry.range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range].
+   * If no value estimate is possible, units are
+   * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED]
+   * and then further clarified in
+   * [CompensationEntry.description][google.cloud.talent.v4.CompensationInfo.CompensationEntry.description]
+   * field.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.talent.v4.CompensationInfo.CompensationType}
@@ -655,7 +666,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Compensation type.
-     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is
+     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -668,7 +680,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Compensation type.
-     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is
+     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -682,7 +695,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Frequency of the specified amount.
-     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is
+     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -695,7 +709,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Frequency of the specified amount.
-     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is
+     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -808,8 +823,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -827,8 +844,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -846,8 +865,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -869,9 +890,17 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * A compensation entry that represents one component of compensation, such
    * as base pay, bonus, or other compensation type.
    * Annualization: One compensation entry can be annualized if
-   * - it contains valid [amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range].
-   * - and its [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year] is set or can be derived.
-   * Its annualized range is determined as ([amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range]) times
+   * - it contains valid
+   * [amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * or
+   * [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range].
+   * - and its
+   * [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year]
+   * is set or can be derived. Its annualized range is determined as
+   * ([amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * or
+   * [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range])
+   * times
    * [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
    * </pre>
    *
@@ -967,13 +996,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
      * <pre>
      * Compensation type.
-     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is
+     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -989,7 +1019,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Compensation type.
-     * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+     * Default is
+     * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -998,22 +1029,22 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompensationInfo.CompensationType getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompensationInfo.CompensationType result =
-          com.google.cloud.talent.v4.CompensationInfo.CompensationType.valueOf(type_);
+          com.google.cloud.talent.v4.CompensationInfo.CompensationType.forNumber(type_);
       return result == null
           ? com.google.cloud.talent.v4.CompensationInfo.CompensationType.UNRECOGNIZED
           : result;
     }
 
     public static final int UNIT_FIELD_NUMBER = 2;
-    private int unit_;
+    private int unit_ = 0;
     /**
      *
      *
      * <pre>
      * Frequency of the specified amount.
-     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is
+     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1029,7 +1060,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Frequency of the specified amount.
-     * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+     * Default is
+     * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
      * </pre>
      *
      * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1038,9 +1070,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.CompensationInfo.CompensationUnit getUnit() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.CompensationInfo.CompensationUnit result =
-          com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.valueOf(unit_);
+          com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.forNumber(unit_);
       return result == null
           ? com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.UNRECOGNIZED
           : result;
@@ -1150,7 +1181,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int DESCRIPTION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object description_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
     /**
      *
      *
@@ -1209,8 +1242,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1231,8 +1266,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1255,8 +1292,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Expected number of units paid each year. If not specified, when
-     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-     * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+     * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+     * FULLTIME, a default value is inferred based on
+     * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+     * Default values:
      * - HOURLY: 2080
      * - DAILY: 260
      * - WEEKLY: 52
@@ -1268,7 +1307,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.protobuf.DoubleValueOrBuilder getExpectedUnitsPerYearOrBuilder() {
-      return getExpectedUnitsPerYear();
+      return expectedUnitsPerYear_ == null
+          ? com.google.protobuf.DoubleValue.getDefaultInstance()
+          : expectedUnitsPerYear_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1526,9 +1567,17 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * A compensation entry that represents one component of compensation, such
      * as base pay, bonus, or other compensation type.
      * Annualization: One compensation entry can be annualized if
-     * - it contains valid [amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range].
-     * - and its [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year] is set or can be derived.
-     * Its annualized range is determined as ([amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] or [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range]) times
+     * - it contains valid
+     * [amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * or
+     * [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range].
+     * - and its
+     * [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year]
+     * is set or can be derived. Its annualized range is determined as
+     * ([amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * or
+     * [range][google.cloud.talent.v4.CompensationInfo.CompensationEntry.range])
+     * times
      * [expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
      * </pre>
      *
@@ -1564,10 +1613,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         unit_ = 0;
-
         if (amountBuilder_ != null) {
           amountBuilder_.clear();
         }
@@ -1575,11 +1623,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           rangeBuilder_.clear();
         }
         description_ = "";
-
-        if (expectedUnitsPerYearBuilder_ == null) {
-          expectedUnitsPerYear_ = null;
-        } else {
-          expectedUnitsPerYear_ = null;
+        expectedUnitsPerYear_ = null;
+        if (expectedUnitsPerYearBuilder_ != null) {
+          expectedUnitsPerYearBuilder_.dispose();
           expectedUnitsPerYearBuilder_ = null;
         }
         compensationAmountCase_ = 0;
@@ -1612,31 +1658,44 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.talent.v4.CompensationInfo.CompensationEntry buildPartial() {
         com.google.cloud.talent.v4.CompensationInfo.CompensationEntry result =
             new com.google.cloud.talent.v4.CompensationInfo.CompensationEntry(this);
-        result.type_ = type_;
-        result.unit_ = unit_;
-        if (compensationAmountCase_ == 3) {
-          if (amountBuilder_ == null) {
-            result.compensationAmount_ = compensationAmount_;
-          } else {
-            result.compensationAmount_ = amountBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (compensationAmountCase_ == 4) {
-          if (rangeBuilder_ == null) {
-            result.compensationAmount_ = compensationAmount_;
-          } else {
-            result.compensationAmount_ = rangeBuilder_.build();
-          }
-        }
-        result.description_ = description_;
-        if (expectedUnitsPerYearBuilder_ == null) {
-          result.expectedUnitsPerYear_ = expectedUnitsPerYear_;
-        } else {
-          result.expectedUnitsPerYear_ = expectedUnitsPerYearBuilder_.build();
-        }
-        result.compensationAmountCase_ = compensationAmountCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4.CompensationInfo.CompensationEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.description_ = description_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.expectedUnitsPerYear_ =
+              expectedUnitsPerYearBuilder_ == null
+                  ? expectedUnitsPerYear_
+                  : expectedUnitsPerYearBuilder_.build();
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.talent.v4.CompensationInfo.CompensationEntry result) {
+        result.compensationAmountCase_ = compensationAmountCase_;
+        result.compensationAmount_ = this.compensationAmount_;
+        if (compensationAmountCase_ == 3 && amountBuilder_ != null) {
+          result.compensationAmount_ = amountBuilder_.build();
+        }
+        if (compensationAmountCase_ == 4 && rangeBuilder_ != null) {
+          result.compensationAmount_ = rangeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1697,6 +1756,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.hasExpectedUnitsPerYear()) {
@@ -1747,13 +1807,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               case 8:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   unit_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
@@ -1771,14 +1831,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
               case 42:
                 {
                   description_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
               case 50:
                 {
                   input.readMessage(
                       getExpectedUnitsPerYearFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 50
               default:
@@ -1812,13 +1872,16 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private int bitField0_;
+
       private int type_ = 0;
       /**
        *
        *
        * <pre>
        * Compensation type.
-       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is
+       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -1834,7 +1897,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Compensation type.
-       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is
+       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -1843,8 +1907,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1853,7 +1917,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Compensation type.
-       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is
+       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -1862,9 +1927,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.cloud.talent.v4.CompensationInfo.CompensationType getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4.CompensationInfo.CompensationType result =
-            com.google.cloud.talent.v4.CompensationInfo.CompensationType.valueOf(type_);
+            com.google.cloud.talent.v4.CompensationInfo.CompensationType.forNumber(type_);
         return result == null
             ? com.google.cloud.talent.v4.CompensationInfo.CompensationType.UNRECOGNIZED
             : result;
@@ -1874,7 +1938,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Compensation type.
-       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is
+       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -1886,7 +1951,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1896,7 +1961,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Compensation type.
-       * Default is [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
+       * Default is
+       * [CompensationType.COMPENSATION_TYPE_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationType.COMPENSATION_TYPE_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationType type = 1;</code>
@@ -1904,7 +1970,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -1916,7 +1982,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Frequency of the specified amount.
-       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is
+       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1932,7 +1999,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Frequency of the specified amount.
-       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is
+       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1941,8 +2009,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder setUnitValue(int value) {
-
         unit_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1951,7 +2019,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Frequency of the specified amount.
-       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is
+       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1960,9 +2029,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        */
       @java.lang.Override
       public com.google.cloud.talent.v4.CompensationInfo.CompensationUnit getUnit() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.talent.v4.CompensationInfo.CompensationUnit result =
-            com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.valueOf(unit_);
+            com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.forNumber(unit_);
         return result == null
             ? com.google.cloud.talent.v4.CompensationInfo.CompensationUnit.UNRECOGNIZED
             : result;
@@ -1972,7 +2040,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Frequency of the specified amount.
-       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is
+       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -1984,7 +2053,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         unit_ = value.getNumber();
         onChanged();
         return this;
@@ -1994,7 +2063,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Frequency of the specified amount.
-       * Default is [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
+       * Default is
+       * [CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED][google.cloud.talent.v4.CompensationInfo.CompensationUnit.COMPENSATION_UNIT_UNSPECIFIED].
        * </pre>
        *
        * <code>.google.cloud.talent.v4.CompensationInfo.CompensationUnit unit = 2;</code>
@@ -2002,7 +2072,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearUnit() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         unit_ = 0;
         onChanged();
         return this;
@@ -2206,7 +2276,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         compensationAmountCase_ = 3;
         onChanged();
-        ;
         return amountBuilder_;
       }
 
@@ -2426,7 +2495,6 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         }
         compensationAmountCase_ = 4;
         onChanged();
-        ;
         return rangeBuilder_;
       }
 
@@ -2497,8 +2565,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         if (value == null) {
           throw new NullPointerException();
         }
-
         description_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2516,8 +2584,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return This builder for chaining.
        */
       public Builder clearDescription() {
-
         description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2540,8 +2608,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         description_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2557,8 +2625,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2571,15 +2641,17 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return Whether the expectedUnitsPerYear field is set.
        */
       public boolean hasExpectedUnitsPerYear() {
-        return expectedUnitsPerYearBuilder_ != null || expectedUnitsPerYear_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2605,8 +2677,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2622,11 +2696,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           expectedUnitsPerYear_ = value;
-          onChanged();
         } else {
           expectedUnitsPerYearBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2634,8 +2708,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2649,11 +2725,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.DoubleValue.Builder builderForValue) {
         if (expectedUnitsPerYearBuilder_ == null) {
           expectedUnitsPerYear_ = builderForValue.build();
-          onChanged();
         } else {
           expectedUnitsPerYearBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2661,8 +2737,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2674,19 +2752,18 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeExpectedUnitsPerYear(com.google.protobuf.DoubleValue value) {
         if (expectedUnitsPerYearBuilder_ == null) {
-          if (expectedUnitsPerYear_ != null) {
-            expectedUnitsPerYear_ =
-                com.google.protobuf.DoubleValue.newBuilder(expectedUnitsPerYear_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && expectedUnitsPerYear_ != null
+              && expectedUnitsPerYear_ != com.google.protobuf.DoubleValue.getDefaultInstance()) {
+            getExpectedUnitsPerYearBuilder().mergeFrom(value);
           } else {
             expectedUnitsPerYear_ = value;
           }
-          onChanged();
         } else {
           expectedUnitsPerYearBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2694,8 +2771,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2706,14 +2785,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
        */
       public Builder clearExpectedUnitsPerYear() {
-        if (expectedUnitsPerYearBuilder_ == null) {
-          expectedUnitsPerYear_ = null;
-          onChanged();
-        } else {
-          expectedUnitsPerYear_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        expectedUnitsPerYear_ = null;
+        if (expectedUnitsPerYearBuilder_ != null) {
+          expectedUnitsPerYearBuilder_.dispose();
           expectedUnitsPerYearBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2721,8 +2799,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2733,7 +2813,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.DoubleValue expected_units_per_year = 6;</code>
        */
       public com.google.protobuf.DoubleValue.Builder getExpectedUnitsPerYearBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getExpectedUnitsPerYearFieldBuilder().getBuilder();
       }
@@ -2742,8 +2822,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -2767,8 +2849,10 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Expected number of units paid each year. If not specified, when
-       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is FULLTIME, a default value is inferred
-       * based on [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit]. Default values:
+       * [Job.employment_types][google.cloud.talent.v4.Job.employment_types] is
+       * FULLTIME, a default value is inferred based on
+       * [unit][google.cloud.talent.v4.CompensationInfo.CompensationEntry.unit].
+       * Default values:
        * - HOURLY: 2080
        * - DAILY: 260
        * - WEEKLY: 52
@@ -3053,7 +3137,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.type.MoneyOrBuilder getMaxCompensationOrBuilder() {
-      return getMaxCompensation();
+      return maxCompensation_ == null
+          ? com.google.type.Money.getDefaultInstance()
+          : maxCompensation_;
     }
 
     public static final int MIN_COMPENSATION_FIELD_NUMBER = 1;
@@ -3107,7 +3193,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.type.MoneyOrBuilder getMinCompensationOrBuilder() {
-      return getMinCompensation();
+      return minCompensation_ == null
+          ? com.google.type.Money.getDefaultInstance()
+          : minCompensation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3329,16 +3417,15 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (maxCompensationBuilder_ == null) {
-          maxCompensation_ = null;
-        } else {
-          maxCompensation_ = null;
+        bitField0_ = 0;
+        maxCompensation_ = null;
+        if (maxCompensationBuilder_ != null) {
+          maxCompensationBuilder_.dispose();
           maxCompensationBuilder_ = null;
         }
-        if (minCompensationBuilder_ == null) {
-          minCompensation_ = null;
-        } else {
-          minCompensation_ = null;
+        minCompensation_ = null;
+        if (minCompensationBuilder_ != null) {
+          minCompensationBuilder_.dispose();
           minCompensationBuilder_ = null;
         }
         return this;
@@ -3369,18 +3456,24 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.talent.v4.CompensationInfo.CompensationRange buildPartial() {
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange result =
             new com.google.cloud.talent.v4.CompensationInfo.CompensationRange(this);
-        if (maxCompensationBuilder_ == null) {
-          result.maxCompensation_ = maxCompensation_;
-        } else {
-          result.maxCompensation_ = maxCompensationBuilder_.build();
-        }
-        if (minCompensationBuilder_ == null) {
-          result.minCompensation_ = minCompensation_;
-        } else {
-          result.minCompensation_ = minCompensationBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.talent.v4.CompensationInfo.CompensationRange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxCompensation_ =
+              maxCompensationBuilder_ == null ? maxCompensation_ : maxCompensationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.minCompensation_ =
+              minCompensationBuilder_ == null ? minCompensation_ : minCompensationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3469,14 +3562,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       getMinCompensationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getMaxCompensationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -3495,6 +3588,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.type.Money maxCompensation_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3515,7 +3610,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return Whether the maxCompensation field is set.
        */
       public boolean hasMaxCompensation() {
-        return maxCompensationBuilder_ != null || maxCompensation_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -3558,11 +3653,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           maxCompensation_ = value;
-          onChanged();
         } else {
           maxCompensationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3580,11 +3675,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public Builder setMaxCompensation(com.google.type.Money.Builder builderForValue) {
         if (maxCompensationBuilder_ == null) {
           maxCompensation_ = builderForValue.build();
-          onChanged();
         } else {
           maxCompensationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3601,17 +3696,18 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeMaxCompensation(com.google.type.Money value) {
         if (maxCompensationBuilder_ == null) {
-          if (maxCompensation_ != null) {
-            maxCompensation_ =
-                com.google.type.Money.newBuilder(maxCompensation_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && maxCompensation_ != null
+              && maxCompensation_ != com.google.type.Money.getDefaultInstance()) {
+            getMaxCompensationBuilder().mergeFrom(value);
           } else {
             maxCompensation_ = value;
           }
-          onChanged();
         } else {
           maxCompensationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3627,14 +3723,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.type.Money max_compensation = 2;</code>
        */
       public Builder clearMaxCompensation() {
-        if (maxCompensationBuilder_ == null) {
-          maxCompensation_ = null;
-          onChanged();
-        } else {
-          maxCompensation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        maxCompensation_ = null;
+        if (maxCompensationBuilder_ != null) {
+          maxCompensationBuilder_.dispose();
           maxCompensationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3650,7 +3745,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.type.Money max_compensation = 2;</code>
        */
       public com.google.type.Money.Builder getMaxCompensationBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMaxCompensationFieldBuilder().getBuilder();
       }
@@ -3720,7 +3815,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * @return Whether the minCompensation field is set.
        */
       public boolean hasMinCompensation() {
-        return minCompensationBuilder_ != null || minCompensation_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -3761,11 +3856,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           minCompensation_ = value;
-          onChanged();
         } else {
           minCompensationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3782,11 +3877,11 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       public Builder setMinCompensation(com.google.type.Money.Builder builderForValue) {
         if (minCompensationBuilder_ == null) {
           minCompensation_ = builderForValue.build();
-          onChanged();
         } else {
           minCompensationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3802,17 +3897,18 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeMinCompensation(com.google.type.Money value) {
         if (minCompensationBuilder_ == null) {
-          if (minCompensation_ != null) {
-            minCompensation_ =
-                com.google.type.Money.newBuilder(minCompensation_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && minCompensation_ != null
+              && minCompensation_ != com.google.type.Money.getDefaultInstance()) {
+            getMinCompensationBuilder().mergeFrom(value);
           } else {
             minCompensation_ = value;
           }
-          onChanged();
         } else {
           minCompensationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -3827,14 +3923,13 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.type.Money min_compensation = 1;</code>
        */
       public Builder clearMinCompensation() {
-        if (minCompensationBuilder_ == null) {
-          minCompensation_ = null;
-          onChanged();
-        } else {
-          minCompensation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        minCompensation_ = null;
+        if (minCompensationBuilder_ != null) {
+          minCompensationBuilder_.dispose();
           minCompensationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3849,7 +3944,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
        * <code>.google.type.Money min_compensation = 1;</code>
        */
       public com.google.type.Money.Builder getMinCompensationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMinCompensationFieldBuilder().getBuilder();
       }
@@ -3967,6 +4062,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ENTRIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.talent.v4.CompensationInfo.CompensationEntry> entries_;
   /**
    *
@@ -3974,8 +4071,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -3991,8 +4088,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4009,8 +4106,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4025,8 +4122,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4041,8 +4138,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Job compensation information.
    * At most one entry can be of type
-   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-   * referred as **base compensation entry** for the job.
+   * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+   * which is referred as **base compensation entry** for the job.
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4060,10 +4157,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4080,10 +4181,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4103,10 +4208,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized base compensation range. Computed as base compensation entry's
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized base compensation range. Computed as base
+   * compensation entry's
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4116,7 +4225,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder
       getAnnualizedBaseCompensationRangeOrBuilder() {
-    return getAnnualizedBaseCompensationRange();
+    return annualizedBaseCompensationRange_ == null
+        ? com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance()
+        : annualizedBaseCompensationRange_;
   }
 
   public static final int ANNUALIZED_TOTAL_COMPENSATION_RANGE_FIELD_NUMBER = 3;
@@ -4126,10 +4237,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4146,10 +4261,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4169,10 +4288,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Annualized total compensation range. Computed as all compensation entries'
-   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+   * Output only. Annualized total compensation range. Computed as all
+   * compensation entries'
+   * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+   * times
    * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-   * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+   * See
+   * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+   * for explanation on compensation annualization.
    * </pre>
    *
    * <code>
@@ -4182,7 +4305,9 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.talent.v4.CompensationInfo.CompensationRangeOrBuilder
       getAnnualizedTotalCompensationRangeOrBuilder() {
-    return getAnnualizedTotalCompensationRange();
+    return annualizedTotalCompensationRange_ == null
+        ? com.google.cloud.talent.v4.CompensationInfo.CompensationRange.getDefaultInstance()
+        : annualizedTotalCompensationRange_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4420,6 +4545,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (entriesBuilder_ == null) {
         entries_ = java.util.Collections.emptyList();
       } else {
@@ -4427,16 +4553,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         entriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (annualizedBaseCompensationRangeBuilder_ == null) {
-        annualizedBaseCompensationRange_ = null;
-      } else {
-        annualizedBaseCompensationRange_ = null;
+      annualizedBaseCompensationRange_ = null;
+      if (annualizedBaseCompensationRangeBuilder_ != null) {
+        annualizedBaseCompensationRangeBuilder_.dispose();
         annualizedBaseCompensationRangeBuilder_ = null;
       }
-      if (annualizedTotalCompensationRangeBuilder_ == null) {
-        annualizedTotalCompensationRange_ = null;
-      } else {
-        annualizedTotalCompensationRange_ = null;
+      annualizedTotalCompensationRange_ = null;
+      if (annualizedTotalCompensationRangeBuilder_ != null) {
+        annualizedTotalCompensationRangeBuilder_.dispose();
         annualizedTotalCompensationRangeBuilder_ = null;
       }
       return this;
@@ -4466,7 +4590,15 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.talent.v4.CompensationInfo buildPartial() {
       com.google.cloud.talent.v4.CompensationInfo result =
           new com.google.cloud.talent.v4.CompensationInfo(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.talent.v4.CompensationInfo result) {
       if (entriesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -4476,18 +4608,22 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
       } else {
         result.entries_ = entriesBuilder_.build();
       }
-      if (annualizedBaseCompensationRangeBuilder_ == null) {
-        result.annualizedBaseCompensationRange_ = annualizedBaseCompensationRange_;
-      } else {
-        result.annualizedBaseCompensationRange_ = annualizedBaseCompensationRangeBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CompensationInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.annualizedBaseCompensationRange_ =
+            annualizedBaseCompensationRangeBuilder_ == null
+                ? annualizedBaseCompensationRange_
+                : annualizedBaseCompensationRangeBuilder_.build();
       }
-      if (annualizedTotalCompensationRangeBuilder_ == null) {
-        result.annualizedTotalCompensationRange_ = annualizedTotalCompensationRange_;
-      } else {
-        result.annualizedTotalCompensationRange_ = annualizedTotalCompensationRangeBuilder_.build();
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.annualizedTotalCompensationRange_ =
+            annualizedTotalCompensationRangeBuilder_ == null
+                ? annualizedTotalCompensationRange_
+                : annualizedTotalCompensationRangeBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -4613,7 +4749,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     getAnnualizedBaseCompensationRangeFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -4621,7 +4757,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     getAnnualizedTotalCompensationRangeFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -4667,8 +4803,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4687,8 +4823,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4706,8 +4842,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4725,8 +4861,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4751,8 +4887,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4775,8 +4911,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4800,8 +4936,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4826,8 +4962,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4849,8 +4985,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4873,8 +5009,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4897,8 +5033,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4919,8 +5055,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4941,8 +5077,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4957,8 +5093,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4977,8 +5113,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -4998,8 +5134,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -5016,8 +5152,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -5035,8 +5171,8 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Job compensation information.
      * At most one entry can be of type
-     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE], which is
-     * referred as **base compensation entry** for the job.
+     * [CompensationInfo.CompensationType.BASE][google.cloud.talent.v4.CompensationInfo.CompensationType.BASE],
+     * which is referred as **base compensation entry** for the job.
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.CompensationInfo.CompensationEntry entries = 1;</code>
@@ -5074,10 +5210,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5087,17 +5227,20 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the annualizedBaseCompensationRange field is set.
      */
     public boolean hasAnnualizedBaseCompensationRange() {
-      return annualizedBaseCompensationRangeBuilder_ != null
-          || annualizedBaseCompensationRange_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5120,10 +5263,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5137,21 +5284,25 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         annualizedBaseCompensationRange_ = value;
-        onChanged();
       } else {
         annualizedBaseCompensationRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5162,21 +5313,25 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder builderForValue) {
       if (annualizedBaseCompensationRangeBuilder_ == null) {
         annualizedBaseCompensationRange_ = builderForValue.build();
-        onChanged();
       } else {
         annualizedBaseCompensationRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5186,30 +5341,34 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public Builder mergeAnnualizedBaseCompensationRange(
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange value) {
       if (annualizedBaseCompensationRangeBuilder_ == null) {
-        if (annualizedBaseCompensationRange_ != null) {
-          annualizedBaseCompensationRange_ =
-              com.google.cloud.talent.v4.CompensationInfo.CompensationRange.newBuilder(
-                      annualizedBaseCompensationRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && annualizedBaseCompensationRange_ != null
+            && annualizedBaseCompensationRange_
+                != com.google.cloud.talent.v4.CompensationInfo.CompensationRange
+                    .getDefaultInstance()) {
+          getAnnualizedBaseCompensationRangeBuilder().mergeFrom(value);
         } else {
           annualizedBaseCompensationRange_ = value;
         }
-        onChanged();
       } else {
         annualizedBaseCompensationRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5217,24 +5376,27 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAnnualizedBaseCompensationRange() {
-      if (annualizedBaseCompensationRangeBuilder_ == null) {
-        annualizedBaseCompensationRange_ = null;
-        onChanged();
-      } else {
-        annualizedBaseCompensationRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      annualizedBaseCompensationRange_ = null;
+      if (annualizedBaseCompensationRangeBuilder_ != null) {
+        annualizedBaseCompensationRangeBuilder_.dispose();
         annualizedBaseCompensationRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5243,7 +5405,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder
         getAnnualizedBaseCompensationRangeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAnnualizedBaseCompensationRangeFieldBuilder().getBuilder();
     }
@@ -5251,10 +5413,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5275,10 +5441,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized base compensation range. Computed as base compensation entry's
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized base compensation range. Computed as base
+     * compensation entry's
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5313,10 +5483,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5326,17 +5500,20 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * @return Whether the annualizedTotalCompensationRange field is set.
      */
     public boolean hasAnnualizedTotalCompensationRange() {
-      return annualizedTotalCompensationRangeBuilder_ != null
-          || annualizedTotalCompensationRange_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5359,10 +5536,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5376,21 +5557,25 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         annualizedTotalCompensationRange_ = value;
-        onChanged();
       } else {
         annualizedTotalCompensationRangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5401,21 +5586,25 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder builderForValue) {
       if (annualizedTotalCompensationRangeBuilder_ == null) {
         annualizedTotalCompensationRange_ = builderForValue.build();
-        onChanged();
       } else {
         annualizedTotalCompensationRangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5425,30 +5614,34 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
     public Builder mergeAnnualizedTotalCompensationRange(
         com.google.cloud.talent.v4.CompensationInfo.CompensationRange value) {
       if (annualizedTotalCompensationRangeBuilder_ == null) {
-        if (annualizedTotalCompensationRange_ != null) {
-          annualizedTotalCompensationRange_ =
-              com.google.cloud.talent.v4.CompensationInfo.CompensationRange.newBuilder(
-                      annualizedTotalCompensationRange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && annualizedTotalCompensationRange_ != null
+            && annualizedTotalCompensationRange_
+                != com.google.cloud.talent.v4.CompensationInfo.CompensationRange
+                    .getDefaultInstance()) {
+          getAnnualizedTotalCompensationRangeBuilder().mergeFrom(value);
         } else {
           annualizedTotalCompensationRange_ = value;
         }
-        onChanged();
       } else {
         annualizedTotalCompensationRangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5456,24 +5649,27 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAnnualizedTotalCompensationRange() {
-      if (annualizedTotalCompensationRangeBuilder_ == null) {
-        annualizedTotalCompensationRange_ = null;
-        onChanged();
-      } else {
-        annualizedTotalCompensationRange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      annualizedTotalCompensationRange_ = null;
+      if (annualizedTotalCompensationRangeBuilder_ != null) {
+        annualizedTotalCompensationRangeBuilder_.dispose();
         annualizedTotalCompensationRangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5482,7 +5678,7 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.talent.v4.CompensationInfo.CompensationRange.Builder
         getAnnualizedTotalCompensationRangeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAnnualizedTotalCompensationRangeFieldBuilder().getBuilder();
     }
@@ -5490,10 +5686,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>
@@ -5514,10 +5714,14 @@ public final class CompensationInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Annualized total compensation range. Computed as all compensation entries'
-     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount] times
+     * Output only. Annualized total compensation range. Computed as all
+     * compensation entries'
+     * [CompensationEntry.amount][google.cloud.talent.v4.CompensationInfo.CompensationEntry.amount]
+     * times
      * [CompensationEntry.expected_units_per_year][google.cloud.talent.v4.CompensationInfo.CompensationEntry.expected_units_per_year].
-     * See [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry] for explanation on compensation annualization.
+     * See
+     * [CompensationEntry][google.cloud.talent.v4.CompensationInfo.CompensationEntry]
+     * for explanation on compensation annualization.
      * </pre>
      *
      * <code>

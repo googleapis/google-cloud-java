@@ -322,7 +322,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DEVICE_TYPE_FIELD_NUMBER = 1;
-  private int deviceType_;
+  private int deviceType_ = 0;
   /**
    *
    *
@@ -351,14 +351,15 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.DeviceInfo.DeviceType getDeviceType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.talent.v4.DeviceInfo.DeviceType result =
-        com.google.cloud.talent.v4.DeviceInfo.DeviceType.valueOf(deviceType_);
+        com.google.cloud.talent.v4.DeviceInfo.DeviceType.forNumber(deviceType_);
     return result == null ? com.google.cloud.talent.v4.DeviceInfo.DeviceType.UNRECOGNIZED : result;
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -616,10 +617,9 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       deviceType_ = 0;
-
       id_ = "";
-
       return this;
     }
 
@@ -647,10 +647,21 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.talent.v4.DeviceInfo buildPartial() {
       com.google.cloud.talent.v4.DeviceInfo result =
           new com.google.cloud.talent.v4.DeviceInfo(this);
-      result.deviceType_ = deviceType_;
-      result.id_ = id_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.DeviceInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.deviceType_ = deviceType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
     }
 
     @java.lang.Override
@@ -703,6 +714,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -734,13 +746,13 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 deviceType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -759,6 +771,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int deviceType_ = 0;
     /**
@@ -789,8 +803,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDeviceTypeValue(int value) {
-
       deviceType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -807,9 +821,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.talent.v4.DeviceInfo.DeviceType getDeviceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.talent.v4.DeviceInfo.DeviceType result =
-          com.google.cloud.talent.v4.DeviceInfo.DeviceType.valueOf(deviceType_);
+          com.google.cloud.talent.v4.DeviceInfo.DeviceType.forNumber(deviceType_);
       return result == null
           ? com.google.cloud.talent.v4.DeviceInfo.DeviceType.UNRECOGNIZED
           : result;
@@ -830,7 +843,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       deviceType_ = value.getNumber();
       onChanged();
       return this;
@@ -847,7 +860,7 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeviceType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       deviceType_ = 0;
       onChanged();
       return this;
@@ -917,8 +930,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -935,8 +948,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -958,8 +971,8 @@ public final class DeviceInfo extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

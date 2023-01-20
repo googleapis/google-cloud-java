@@ -68,7 +68,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -130,8 +132,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -148,8 +150,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -168,8 +170,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. Events issued when end user interacts with customer's application that
-   * uses Cloud Talent Solution.
+   * Required. Events issued when end user interacts with customer's application
+   * that uses Cloud Talent Solution.
    * </pre>
    *
    * <code>
@@ -178,7 +180,9 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.talent.v4.ClientEventOrBuilder getClientEventOrBuilder() {
-    return getClientEvent();
+    return clientEvent_ == null
+        ? com.google.cloud.talent.v4.ClientEvent.getDefaultInstance()
+        : clientEvent_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,12 +396,11 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (clientEventBuilder_ == null) {
-        clientEvent_ = null;
-      } else {
-        clientEvent_ = null;
+      clientEvent_ = null;
+      if (clientEventBuilder_ != null) {
+        clientEventBuilder_.dispose();
         clientEventBuilder_ = null;
       }
       return this;
@@ -427,14 +430,22 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
     public com.google.cloud.talent.v4.CreateClientEventRequest buildPartial() {
       com.google.cloud.talent.v4.CreateClientEventRequest result =
           new com.google.cloud.talent.v4.CreateClientEventRequest(this);
-      result.parent_ = parent_;
-      if (clientEventBuilder_ == null) {
-        result.clientEvent_ = clientEvent_;
-      } else {
-        result.clientEvent_ = clientEventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.talent.v4.CreateClientEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clientEvent_ =
+            clientEventBuilder_ == null ? clientEvent_ : clientEventBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -485,6 +496,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasClientEvent()) {
@@ -519,13 +531,13 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getClientEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -544,6 +556,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -618,8 +632,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -639,8 +653,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -665,8 +679,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,8 +695,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -692,14 +706,14 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * @return Whether the clientEvent field is set.
      */
     public boolean hasClientEvent() {
-      return clientEventBuilder_ != null || clientEvent_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -721,8 +735,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -735,19 +749,19 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         clientEvent_ = value;
-        onChanged();
       } else {
         clientEventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -757,19 +771,19 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
     public Builder setClientEvent(com.google.cloud.talent.v4.ClientEvent.Builder builderForValue) {
       if (clientEventBuilder_ == null) {
         clientEvent_ = builderForValue.build();
-        onChanged();
       } else {
         clientEventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -778,27 +792,26 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      */
     public Builder mergeClientEvent(com.google.cloud.talent.v4.ClientEvent value) {
       if (clientEventBuilder_ == null) {
-        if (clientEvent_ != null) {
-          clientEvent_ =
-              com.google.cloud.talent.v4.ClientEvent.newBuilder(clientEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && clientEvent_ != null
+            && clientEvent_ != com.google.cloud.talent.v4.ClientEvent.getDefaultInstance()) {
+          getClientEventBuilder().mergeFrom(value);
         } else {
           clientEvent_ = value;
         }
-        onChanged();
       } else {
         clientEventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -806,22 +819,21 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearClientEvent() {
-      if (clientEventBuilder_ == null) {
-        clientEvent_ = null;
-        onChanged();
-      } else {
-        clientEvent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      clientEvent_ = null;
+      if (clientEventBuilder_ != null) {
+        clientEventBuilder_.dispose();
         clientEventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -829,7 +841,7 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.talent.v4.ClientEvent.Builder getClientEventBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getClientEventFieldBuilder().getBuilder();
     }
@@ -837,8 +849,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
@@ -858,8 +870,8 @@ public final class CreateClientEventRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Events issued when end user interacts with customer's application that
-     * uses Cloud Talent Solution.
+     * Required. Events issued when end user interacts with customer's application
+     * that uses Cloud Talent Solution.
      * </pre>
      *
      * <code>
