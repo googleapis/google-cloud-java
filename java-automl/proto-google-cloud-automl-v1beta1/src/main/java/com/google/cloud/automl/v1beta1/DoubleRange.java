@@ -66,7 +66,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_FIELD_NUMBER = 1;
-  private double start_;
+  private double start_ = 0D;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_FIELD_NUMBER = 2;
-  private double end_;
+  private double end_ = 0D;
   /**
    *
    *
@@ -313,10 +313,9 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       start_ = 0D;
-
       end_ = 0D;
-
       return this;
     }
 
@@ -344,10 +343,21 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.DoubleRange buildPartial() {
       com.google.cloud.automl.v1beta1.DoubleRange result =
           new com.google.cloud.automl.v1beta1.DoubleRange(this);
-      result.start_ = start_;
-      result.end_ = end_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DoubleRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.start_ = start_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.end_ = end_;
+      }
     }
 
     @java.lang.Override
@@ -430,13 +440,13 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
             case 9:
               {
                 start_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             case 17:
               {
                 end_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -455,6 +465,8 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double start_;
     /**
@@ -487,6 +499,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setStart(double value) {
 
       start_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -502,7 +515,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStart() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       start_ = 0D;
       onChanged();
       return this;
@@ -539,6 +552,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnd(double value) {
 
       end_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -554,7 +568,7 @@ public final class DoubleRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnd() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       end_ = 0D;
       onChanged();
       return this;

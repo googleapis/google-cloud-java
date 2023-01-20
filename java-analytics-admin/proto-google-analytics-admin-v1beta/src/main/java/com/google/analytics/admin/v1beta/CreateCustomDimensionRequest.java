@@ -68,7 +68,9 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.CustomDimensionOrBuilder getCustomDimensionOrBuilder() {
-    return getCustomDimension();
+    return customDimension_ == null
+        ? com.google.analytics.admin.v1beta.CustomDimension.getDefaultInstance()
+        : customDimension_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (customDimensionBuilder_ == null) {
-        customDimension_ = null;
-      } else {
-        customDimension_ = null;
+      customDimension_ = null;
+      if (customDimensionBuilder_ != null) {
+        customDimensionBuilder_.dispose();
         customDimensionBuilder_ = null;
       }
       return this;
@@ -422,14 +425,23 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
     public com.google.analytics.admin.v1beta.CreateCustomDimensionRequest buildPartial() {
       com.google.analytics.admin.v1beta.CreateCustomDimensionRequest result =
           new com.google.analytics.admin.v1beta.CreateCustomDimensionRequest(this);
-      result.parent_ = parent_;
-      if (customDimensionBuilder_ == null) {
-        result.customDimension_ = customDimension_;
-      } else {
-        result.customDimension_ = customDimensionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1beta.CreateCustomDimensionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.customDimension_ =
+            customDimensionBuilder_ == null ? customDimension_ : customDimensionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +493,7 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCustomDimension()) {
@@ -515,13 +528,13 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCustomDimensionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +553,8 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -608,8 +623,8 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +642,8 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +666,8 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +692,7 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
      * @return Whether the customDimension field is set.
      */
     public boolean hasCustomDimension() {
-      return customDimensionBuilder_ != null || customDimension_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +733,11 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         customDimension_ = value;
-        onChanged();
       } else {
         customDimensionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +755,11 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
         com.google.analytics.admin.v1beta.CustomDimension.Builder builderForValue) {
       if (customDimensionBuilder_ == null) {
         customDimension_ = builderForValue.build();
-        onChanged();
       } else {
         customDimensionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,19 +775,19 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
      */
     public Builder mergeCustomDimension(com.google.analytics.admin.v1beta.CustomDimension value) {
       if (customDimensionBuilder_ == null) {
-        if (customDimension_ != null) {
-          customDimension_ =
-              com.google.analytics.admin.v1beta.CustomDimension.newBuilder(customDimension_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && customDimension_ != null
+            && customDimension_
+                != com.google.analytics.admin.v1beta.CustomDimension.getDefaultInstance()) {
+          getCustomDimensionBuilder().mergeFrom(value);
         } else {
           customDimension_ = value;
         }
-        onChanged();
       } else {
         customDimensionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +802,13 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearCustomDimension() {
-      if (customDimensionBuilder_ == null) {
-        customDimension_ = null;
-        onChanged();
-      } else {
-        customDimension_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      customDimension_ = null;
+      if (customDimensionBuilder_ != null) {
+        customDimensionBuilder_.dispose();
         customDimensionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -809,7 +823,7 @@ public final class CreateCustomDimensionRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.analytics.admin.v1beta.CustomDimension.Builder getCustomDimensionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCustomDimensionFieldBuilder().getBuilder();
     }

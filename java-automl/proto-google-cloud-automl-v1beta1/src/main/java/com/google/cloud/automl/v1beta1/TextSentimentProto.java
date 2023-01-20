@@ -105,7 +105,7 @@ public final class TextSentimentProto {
     }
 
     public static final int SENTIMENT_FIELD_NUMBER = 1;
-    private int sentiment_;
+    private int sentiment_ = 0;
     /**
      *
      *
@@ -342,8 +342,8 @@ public final class TextSentimentProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sentiment_ = 0;
-
         return this;
       }
 
@@ -375,9 +375,19 @@ public final class TextSentimentProto {
           buildPartial() {
         com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation result =
             new com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation(this);
-        result.sentiment_ = sentiment_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentAnnotation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sentiment_ = sentiment_;
+        }
       }
 
       @java.lang.Override
@@ -464,7 +474,7 @@ public final class TextSentimentProto {
               case 8:
                 {
                   sentiment_ = input.readInt32();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               default:
@@ -483,6 +493,8 @@ public final class TextSentimentProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int sentiment_;
       /**
@@ -537,6 +549,7 @@ public final class TextSentimentProto {
       public Builder setSentiment(int value) {
 
         sentiment_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,7 +576,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearSentiment() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         sentiment_ = 0;
         onChanged();
         return this;
@@ -909,7 +922,7 @@ public final class TextSentimentProto {
     }
 
     public static final int PRECISION_FIELD_NUMBER = 1;
-    private float precision_;
+    private float precision_ = 0F;
     /**
      *
      *
@@ -927,7 +940,7 @@ public final class TextSentimentProto {
     }
 
     public static final int RECALL_FIELD_NUMBER = 2;
-    private float recall_;
+    private float recall_ = 0F;
     /**
      *
      *
@@ -945,7 +958,7 @@ public final class TextSentimentProto {
     }
 
     public static final int F1_SCORE_FIELD_NUMBER = 3;
-    private float f1Score_;
+    private float f1Score_ = 0F;
     /**
      *
      *
@@ -963,7 +976,7 @@ public final class TextSentimentProto {
     }
 
     public static final int MEAN_ABSOLUTE_ERROR_FIELD_NUMBER = 4;
-    private float meanAbsoluteError_;
+    private float meanAbsoluteError_ = 0F;
     /**
      *
      *
@@ -982,7 +995,7 @@ public final class TextSentimentProto {
     }
 
     public static final int MEAN_SQUARED_ERROR_FIELD_NUMBER = 5;
-    private float meanSquaredError_;
+    private float meanSquaredError_ = 0F;
     /**
      *
      *
@@ -1001,7 +1014,7 @@ public final class TextSentimentProto {
     }
 
     public static final int LINEAR_KAPPA_FIELD_NUMBER = 6;
-    private float linearKappa_;
+    private float linearKappa_ = 0F;
     /**
      *
      *
@@ -1020,7 +1033,7 @@ public final class TextSentimentProto {
     }
 
     public static final int QUADRATIC_KAPPA_FIELD_NUMBER = 7;
-    private float quadraticKappa_;
+    private float quadraticKappa_ = 0F;
     /**
      *
      *
@@ -1102,10 +1115,15 @@ public final class TextSentimentProto {
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrixOrBuilder
         getConfusionMatrixOrBuilder() {
-      return getConfusionMatrix();
+      return confusionMatrix_ == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.getDefaultInstance()
+          : confusionMatrix_;
     }
 
     public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 9;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList annotationSpecId_;
     /**
      *
@@ -1485,28 +1503,21 @@ public final class TextSentimentProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         precision_ = 0F;
-
         recall_ = 0F;
-
         f1Score_ = 0F;
-
         meanAbsoluteError_ = 0F;
-
         meanSquaredError_ = 0F;
-
         linearKappa_ = 0F;
-
         quadraticKappa_ = 0F;
-
-        if (confusionMatrixBuilder_ == null) {
-          confusionMatrix_ = null;
-        } else {
-          confusionMatrix_ = null;
+        confusionMatrix_ = null;
+        if (confusionMatrixBuilder_ != null) {
+          confusionMatrixBuilder_.dispose();
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -1540,26 +1551,53 @@ public final class TextSentimentProto {
         com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics result =
             new com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.precision_ = precision_;
-        result.recall_ = recall_;
-        result.f1Score_ = f1Score_;
-        result.meanAbsoluteError_ = meanAbsoluteError_;
-        result.meanSquaredError_ = meanSquaredError_;
-        result.linearKappa_ = linearKappa_;
-        result.quadraticKappa_ = quadraticKappa_;
-        if (confusionMatrixBuilder_ == null) {
-          result.confusionMatrix_ = confusionMatrix_;
-        } else {
-          result.confusionMatrix_ = confusionMatrixBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.annotationSpecId_ = annotationSpecId_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
+              result) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.annotationSpecId_ = annotationSpecId_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.TextSentimentProto.TextSentimentEvaluationMetrics
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.precision_ = precision_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recall_ = recall_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.f1Score_ = f1Score_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.meanAbsoluteError_ = meanAbsoluteError_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.meanSquaredError_ = meanSquaredError_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.linearKappa_ = linearKappa_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.quadraticKappa_ = quadraticKappa_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.confusionMatrix_ =
+              confusionMatrixBuilder_ == null ? confusionMatrix_ : confusionMatrixBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1643,7 +1681,7 @@ public final class TextSentimentProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -1679,50 +1717,50 @@ public final class TextSentimentProto {
               case 13:
                 {
                   precision_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   recall_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   f1Score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 37:
                 {
                   meanAbsoluteError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 37
               case 45:
                 {
                   meanSquaredError_ = input.readFloat();
-
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 45
               case 53:
                 {
                   linearKappa_ = input.readFloat();
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 53
               case 61:
                 {
                   quadraticKappa_ = input.readFloat();
-
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 61
               case 66:
                 {
                   input.readMessage(
                       getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000080;
                   break;
                 } // case 66
               case 74:
@@ -1782,6 +1820,7 @@ public final class TextSentimentProto {
       public Builder setPrecision(float value) {
 
         precision_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1797,7 +1836,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearPrecision() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         precision_ = 0F;
         onChanged();
         return this;
@@ -1834,6 +1873,7 @@ public final class TextSentimentProto {
       public Builder setRecall(float value) {
 
         recall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1849,7 +1889,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearRecall() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         recall_ = 0F;
         onChanged();
         return this;
@@ -1886,6 +1926,7 @@ public final class TextSentimentProto {
       public Builder setF1Score(float value) {
 
         f1Score_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1901,7 +1942,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearF1Score() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         f1Score_ = 0F;
         onChanged();
         return this;
@@ -1940,6 +1981,7 @@ public final class TextSentimentProto {
       public Builder setMeanAbsoluteError(float value) {
 
         meanAbsoluteError_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1956,7 +1998,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearMeanAbsoluteError() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         meanAbsoluteError_ = 0F;
         onChanged();
         return this;
@@ -1995,6 +2037,7 @@ public final class TextSentimentProto {
       public Builder setMeanSquaredError(float value) {
 
         meanSquaredError_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2011,7 +2054,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearMeanSquaredError() {
-
+        bitField0_ = (bitField0_ & ~0x00000010);
         meanSquaredError_ = 0F;
         onChanged();
         return this;
@@ -2050,6 +2093,7 @@ public final class TextSentimentProto {
       public Builder setLinearKappa(float value) {
 
         linearKappa_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2066,7 +2110,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearLinearKappa() {
-
+        bitField0_ = (bitField0_ & ~0x00000020);
         linearKappa_ = 0F;
         onChanged();
         return this;
@@ -2105,6 +2149,7 @@ public final class TextSentimentProto {
       public Builder setQuadraticKappa(float value) {
 
         quadraticKappa_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2121,7 +2166,7 @@ public final class TextSentimentProto {
        * @return This builder for chaining.
        */
       public Builder clearQuadraticKappa() {
-
+        bitField0_ = (bitField0_ & ~0x00000040);
         quadraticKappa_ = 0F;
         onChanged();
         return this;
@@ -2154,7 +2199,7 @@ public final class TextSentimentProto {
        * @return Whether the confusionMatrix field is set.
        */
       public boolean hasConfusionMatrix() {
-        return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        *
@@ -2205,11 +2250,11 @@ public final class TextSentimentProto {
             throw new NullPointerException();
           }
           confusionMatrix_ = value;
-          onChanged();
         } else {
           confusionMatrixBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -2231,11 +2276,11 @@ public final class TextSentimentProto {
               builderForValue) {
         if (confusionMatrixBuilder_ == null) {
           confusionMatrix_ = builderForValue.build();
-          onChanged();
         } else {
           confusionMatrixBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -2256,20 +2301,20 @@ public final class TextSentimentProto {
                   .ConfusionMatrix
               value) {
         if (confusionMatrixBuilder_ == null) {
-          if (confusionMatrix_ != null) {
-            confusionMatrix_ =
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
-                    .ConfusionMatrix.newBuilder(confusionMatrix_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000080) != 0)
+              && confusionMatrix_ != null
+              && confusionMatrix_
+                  != com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance()) {
+            getConfusionMatrixBuilder().mergeFrom(value);
           } else {
             confusionMatrix_ = value;
           }
-          onChanged();
         } else {
           confusionMatrixBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -2286,14 +2331,13 @@ public final class TextSentimentProto {
        * </code>
        */
       public Builder clearConfusionMatrix() {
-        if (confusionMatrixBuilder_ == null) {
-          confusionMatrix_ = null;
-          onChanged();
-        } else {
-          confusionMatrix_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        confusionMatrix_ = null;
+        if (confusionMatrixBuilder_ != null) {
+          confusionMatrixBuilder_.dispose();
           confusionMatrixBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2312,7 +2356,7 @@ public final class TextSentimentProto {
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix.Builder
           getConfusionMatrixBuilder() {
-
+        bitField0_ |= 0x00000080;
         onChanged();
         return getConfusionMatrixFieldBuilder().getBuilder();
       }
@@ -2381,9 +2425,9 @@ public final class TextSentimentProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000100;
         }
       }
       /**
@@ -2550,7 +2594,7 @@ public final class TextSentimentProto {
       @java.lang.Deprecated
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }

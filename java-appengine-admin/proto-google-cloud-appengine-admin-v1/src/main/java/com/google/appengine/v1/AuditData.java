@@ -439,6 +439,7 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (updateServiceBuilder_ != null) {
         updateServiceBuilder_.clear();
       }
@@ -473,23 +474,27 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.AuditData buildPartial() {
       com.google.appengine.v1.AuditData result = new com.google.appengine.v1.AuditData(this);
-      if (methodCase_ == 1) {
-        if (updateServiceBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = updateServiceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (methodCase_ == 2) {
-        if (createVersionBuilder_ == null) {
-          result.method_ = method_;
-        } else {
-          result.method_ = createVersionBuilder_.build();
-        }
-      }
-      result.methodCase_ = methodCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.AuditData result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.appengine.v1.AuditData result) {
+      result.methodCase_ = methodCase_;
+      result.method_ = this.method_;
+      if (methodCase_ == 1 && updateServiceBuilder_ != null) {
+        result.method_ = updateServiceBuilder_.build();
+      }
+      if (methodCase_ == 2 && createVersionBuilder_ != null) {
+        result.method_ = createVersionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -621,6 +626,8 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.appengine.v1.UpdateServiceMethod,
@@ -828,7 +835,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
       methodCase_ = 1;
       onChanged();
-      ;
       return updateServiceBuilder_;
     }
 
@@ -1038,7 +1044,6 @@ public final class AuditData extends com.google.protobuf.GeneratedMessageV3
       }
       methodCase_ = 2;
       onChanged();
-      ;
       return createVersionBuilder_;
     }
 

@@ -292,7 +292,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BANDWIDTH_GBPS_FIELD_NUMBER = 1;
-    private double bandwidthGbps_;
+    private double bandwidthGbps_ = 0D;
     /**
      *
      *
@@ -513,8 +513,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bandwidthGbps_ = 0D;
-
         return this;
       }
 
@@ -542,9 +542,18 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.baremetalsolution.v2.VRF.QosPolicy buildPartial() {
         com.google.cloud.baremetalsolution.v2.VRF.QosPolicy result =
             new com.google.cloud.baremetalsolution.v2.VRF.QosPolicy(this);
-        result.bandwidthGbps_ = bandwidthGbps_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.baremetalsolution.v2.VRF.QosPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bandwidthGbps_ = bandwidthGbps_;
+        }
       }
 
       @java.lang.Override
@@ -627,7 +636,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
               case 9:
                 {
                   bandwidthGbps_ = input.readDouble();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 9
               default:
@@ -646,6 +655,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private double bandwidthGbps_;
       /**
@@ -678,6 +689,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public Builder setBandwidthGbps(double value) {
 
         bandwidthGbps_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -693,7 +705,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBandwidthGbps() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         bandwidthGbps_ = 0D;
         onChanged();
         return this;
@@ -882,7 +894,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PEER_VLAN_ID_FIELD_NUMBER = 1;
-    private long peerVlanId_;
+    private long peerVlanId_ = 0L;
     /**
      *
      *
@@ -900,7 +912,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PEER_IP_FIELD_NUMBER = 2;
-    private volatile java.lang.Object peerIp_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object peerIp_ = "";
     /**
      *
      *
@@ -949,7 +963,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ROUTER_IP_FIELD_NUMBER = 3;
-    private volatile java.lang.Object routerIp_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object routerIp_ = "";
     /**
      *
      *
@@ -1215,12 +1231,10 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         peerVlanId_ = 0L;
-
         peerIp_ = "";
-
         routerIp_ = "";
-
         return this;
       }
 
@@ -1248,11 +1262,24 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment buildPartial() {
         com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment result =
             new com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment(this);
-        result.peerVlanId_ = peerVlanId_;
-        result.peerIp_ = peerIp_;
-        result.routerIp_ = routerIp_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.peerVlanId_ = peerVlanId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.peerIp_ = peerIp_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.routerIp_ = routerIp_;
+        }
       }
 
       @java.lang.Override
@@ -1308,10 +1335,12 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getPeerIp().isEmpty()) {
           peerIp_ = other.peerIp_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getRouterIp().isEmpty()) {
           routerIp_ = other.routerIp_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1343,19 +1372,19 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   peerVlanId_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   peerIp_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   routerIp_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1374,6 +1403,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long peerVlanId_;
       /**
@@ -1406,6 +1437,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       public Builder setPeerVlanId(long value) {
 
         peerVlanId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1421,7 +1453,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPeerVlanId() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         peerVlanId_ = 0L;
         onChanged();
         return this;
@@ -1488,8 +1520,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         peerIp_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1505,8 +1537,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPeerIp() {
-
         peerIp_ = getDefaultInstance().getPeerIp();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1527,8 +1559,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         peerIp_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1594,8 +1626,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         routerIp_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1611,8 +1643,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRouterIp() {
-
         routerIp_ = getDefaultInstance().getRouterIp();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1633,8 +1665,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         routerIp_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1704,7 +1736,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1753,7 +1787,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -1782,9 +1816,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.VRF.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.VRF.State result =
-        com.google.cloud.baremetalsolution.v2.VRF.State.valueOf(state_);
+        com.google.cloud.baremetalsolution.v2.VRF.State.forNumber(state_);
     return result == null ? com.google.cloud.baremetalsolution.v2.VRF.State.UNRECOGNIZED : result;
   }
 
@@ -1833,10 +1866,14 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder getQosPolicyOrBuilder() {
-    return getQosPolicy();
+    return qosPolicy_ == null
+        ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
+        : qosPolicy_;
   }
 
   public static final int VLAN_ATTACHMENTS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment> vlanAttachments_;
   /**
    *
@@ -2143,14 +2180,12 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       state_ = 0;
-
-      if (qosPolicyBuilder_ == null) {
-        qosPolicy_ = null;
-      } else {
-        qosPolicy_ = null;
+      qosPolicy_ = null;
+      if (qosPolicyBuilder_ != null) {
+        qosPolicyBuilder_.dispose();
         qosPolicyBuilder_ = null;
       }
       if (vlanAttachmentsBuilder_ == null) {
@@ -2159,7 +2194,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         vlanAttachments_ = null;
         vlanAttachmentsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -2187,25 +2222,37 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.VRF buildPartial() {
       com.google.cloud.baremetalsolution.v2.VRF result =
           new com.google.cloud.baremetalsolution.v2.VRF(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.state_ = state_;
-      if (qosPolicyBuilder_ == null) {
-        result.qosPolicy_ = qosPolicy_;
-      } else {
-        result.qosPolicy_ = qosPolicyBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.baremetalsolution.v2.VRF result) {
       if (vlanAttachmentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           vlanAttachments_ = java.util.Collections.unmodifiableList(vlanAttachments_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.vlanAttachments_ = vlanAttachments_;
       } else {
         result.vlanAttachments_ = vlanAttachmentsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.VRF result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.qosPolicy_ = qosPolicyBuilder_ == null ? qosPolicy_ : qosPolicyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2255,6 +2302,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.baremetalsolution.v2.VRF.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2267,7 +2315,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         if (!other.vlanAttachments_.isEmpty()) {
           if (vlanAttachments_.isEmpty()) {
             vlanAttachments_ = other.vlanAttachments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureVlanAttachmentsIsMutable();
             vlanAttachments_.addAll(other.vlanAttachments_);
@@ -2280,7 +2328,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
             vlanAttachmentsBuilder_.dispose();
             vlanAttachmentsBuilder_ = null;
             vlanAttachments_ = other.vlanAttachments_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             vlanAttachmentsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVlanAttachmentsFieldBuilder()
@@ -2319,19 +2367,19 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 40:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getQosPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             case 58:
@@ -2428,8 +2476,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2445,8 +2493,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -2467,8 +2515,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2502,8 +2550,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2520,9 +2568,8 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.VRF.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.VRF.State result =
-          com.google.cloud.baremetalsolution.v2.VRF.State.valueOf(state_);
+          com.google.cloud.baremetalsolution.v2.VRF.State.forNumber(state_);
       return result == null ? com.google.cloud.baremetalsolution.v2.VRF.State.UNRECOGNIZED : result;
     }
     /**
@@ -2541,7 +2588,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2558,7 +2605,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -2582,7 +2629,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the qosPolicy field is set.
      */
     public boolean hasQosPolicy() {
-      return qosPolicyBuilder_ != null || qosPolicy_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2619,11 +2666,11 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         qosPolicy_ = value;
-        onChanged();
       } else {
         qosPolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2639,11 +2686,11 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder builderForValue) {
       if (qosPolicyBuilder_ == null) {
         qosPolicy_ = builderForValue.build();
-        onChanged();
       } else {
         qosPolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2657,19 +2704,19 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeQosPolicy(com.google.cloud.baremetalsolution.v2.VRF.QosPolicy value) {
       if (qosPolicyBuilder_ == null) {
-        if (qosPolicy_ != null) {
-          qosPolicy_ =
-              com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.newBuilder(qosPolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && qosPolicy_ != null
+            && qosPolicy_
+                != com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()) {
+          getQosPolicyBuilder().mergeFrom(value);
         } else {
           qosPolicy_ = value;
         }
-        onChanged();
       } else {
         qosPolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -2682,14 +2729,13 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
      */
     public Builder clearQosPolicy() {
-      if (qosPolicyBuilder_ == null) {
-        qosPolicy_ = null;
-        onChanged();
-      } else {
-        qosPolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      qosPolicy_ = null;
+      if (qosPolicyBuilder_ != null) {
+        qosPolicyBuilder_.dispose();
         qosPolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2702,7 +2748,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
      */
     public com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder getQosPolicyBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getQosPolicyFieldBuilder().getBuilder();
     }
@@ -2754,11 +2800,11 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         vlanAttachments_ = java.util.Collections.emptyList();
 
     private void ensureVlanAttachmentsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         vlanAttachments_ =
             new java.util.ArrayList<com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment>(
                 vlanAttachments_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2992,7 +3038,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     public Builder clearVlanAttachments() {
       if (vlanAttachmentsBuilder_ == null) {
         vlanAttachments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         vlanAttachmentsBuilder_.clear();
@@ -3129,7 +3175,7 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.baremetalsolution.v2.VRF.VlanAttachment.Builder,
                 com.google.cloud.baremetalsolution.v2.VRF.VlanAttachmentOrBuilder>(
                 vlanAttachments_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         vlanAttachments_ = null;

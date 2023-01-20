@@ -68,7 +68,9 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INPUT_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object inputUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object inputUri_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inputUri_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.BigQuerySource buildPartial() {
       com.google.cloud.automl.v1beta1.BigQuerySource result =
           new com.google.cloud.automl.v1beta1.BigQuerySource(this);
-      result.inputUri_ = inputUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.BigQuerySource result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputUri_ = inputUri_;
+      }
     }
 
     @java.lang.Override
@@ -398,6 +409,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.automl.v1beta1.BigQuerySource.getDefaultInstance()) return this;
       if (!other.getInputUri().isEmpty()) {
         inputUri_ = other.inputUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -429,7 +441,7 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 inputUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -448,6 +460,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object inputUri_ = "";
     /**
@@ -516,8 +530,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       inputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -535,8 +549,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInputUri() {
-
       inputUri_ = getDefaultInstance().getInputUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -559,8 +573,8 @@ public final class BigQuerySource extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       inputUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

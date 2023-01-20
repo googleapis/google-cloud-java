@@ -91,6 +91,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                     com.google.appengine.v1.FileInfo.getDefaultInstance());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, com.google.appengine.v1.FileInfo> files_;
 
   private com.google.protobuf.MapField<java.lang.String, com.google.appengine.v1.FileInfo>
@@ -155,8 +156,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
    */
   @java.lang.Override
-  public com.google.appengine.v1.FileInfo getFilesOrDefault(
-      java.lang.String key, com.google.appengine.v1.FileInfo defaultValue) {
+  public /* nullable */ com.google.appengine.v1.FileInfo getFilesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.appengine.v1.FileInfo defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -236,7 +239,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.ContainerInfoOrBuilder getContainerOrBuilder() {
-    return getContainer();
+    return container_ == null
+        ? com.google.appengine.v1.ContainerInfo.getDefaultInstance()
+        : container_;
   }
 
   public static final int ZIP_FIELD_NUMBER = 3;
@@ -282,7 +287,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.ZipInfoOrBuilder getZipOrBuilder() {
-    return getZip();
+    return zip_ == null ? com.google.appengine.v1.ZipInfo.getDefaultInstance() : zip_;
   }
 
   public static final int CLOUD_BUILD_OPTIONS_FIELD_NUMBER = 6;
@@ -339,7 +344,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.CloudBuildOptionsOrBuilder getCloudBuildOptionsOrBuilder() {
-    return getCloudBuildOptions();
+    return cloudBuildOptions_ == null
+        ? com.google.appengine.v1.CloudBuildOptions.getDefaultInstance()
+        : cloudBuildOptions_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -607,23 +614,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableFiles().clear();
-      if (containerBuilder_ == null) {
-        container_ = null;
-      } else {
-        container_ = null;
+      container_ = null;
+      if (containerBuilder_ != null) {
+        containerBuilder_.dispose();
         containerBuilder_ = null;
       }
-      if (zipBuilder_ == null) {
-        zip_ = null;
-      } else {
-        zip_ = null;
+      zip_ = null;
+      if (zipBuilder_ != null) {
+        zipBuilder_.dispose();
         zipBuilder_ = null;
       }
-      if (cloudBuildOptionsBuilder_ == null) {
-        cloudBuildOptions_ = null;
-      } else {
-        cloudBuildOptions_ = null;
+      cloudBuildOptions_ = null;
+      if (cloudBuildOptionsBuilder_ != null) {
+        cloudBuildOptionsBuilder_.dispose();
         cloudBuildOptionsBuilder_ = null;
       }
       return this;
@@ -652,26 +657,31 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Deployment buildPartial() {
       com.google.appengine.v1.Deployment result = new com.google.appengine.v1.Deployment(this);
-      int from_bitField0_ = bitField0_;
-      result.files_ = internalGetFiles();
-      result.files_.makeImmutable();
-      if (containerBuilder_ == null) {
-        result.container_ = container_;
-      } else {
-        result.container_ = containerBuilder_.build();
-      }
-      if (zipBuilder_ == null) {
-        result.zip_ = zip_;
-      } else {
-        result.zip_ = zipBuilder_.build();
-      }
-      if (cloudBuildOptionsBuilder_ == null) {
-        result.cloudBuildOptions_ = cloudBuildOptions_;
-      } else {
-        result.cloudBuildOptions_ = cloudBuildOptionsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Deployment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.files_ = internalGetFiles();
+        result.files_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.container_ = containerBuilder_ == null ? container_ : containerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.zip_ = zipBuilder_ == null ? zip_ : zipBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cloudBuildOptions_ =
+            cloudBuildOptionsBuilder_ == null
+                ? cloudBuildOptions_
+                : cloudBuildOptionsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -720,6 +730,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.appengine.v1.Deployment other) {
       if (other == com.google.appengine.v1.Deployment.getDefaultInstance()) return this;
       internalGetMutableFiles().mergeFrom(other.internalGetFiles());
+      bitField0_ |= 0x00000001;
       if (other.hasContainer()) {
         mergeContainer(other.getContainer());
       }
@@ -763,25 +774,26 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                             FilesDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 internalGetMutableFiles().getMutableMap().put(files__.getKey(), files__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getContainerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getZipFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 50:
               {
                 input.readMessage(
                     getCloudBuildOptionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             default:
@@ -815,14 +827,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, com.google.appengine.v1.FileInfo>
         internalGetMutableFiles() {
-      onChanged();
-      ;
       if (files_ == null) {
         files_ = com.google.protobuf.MapField.newMapField(FilesDefaultEntryHolder.defaultEntry);
       }
       if (!files_.isMutable()) {
         files_ = files_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return files_;
     }
 
@@ -880,8 +892,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, .google.appengine.v1.FileInfo&gt; files = 1;</code>
      */
     @java.lang.Override
-    public com.google.appengine.v1.FileInfo getFilesOrDefault(
-        java.lang.String key, com.google.appengine.v1.FileInfo defaultValue) {
+    public /* nullable */ com.google.appengine.v1.FileInfo getFilesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.appengine.v1.FileInfo defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -914,6 +928,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearFiles() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableFiles().getMutableMap().clear();
       return this;
     }
@@ -938,6 +953,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.appengine.v1.FileInfo> getMutableFiles() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableFiles().getMutableMap();
     }
     /**
@@ -958,8 +974,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableFiles().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -976,6 +992,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllFiles(
         java.util.Map<java.lang.String, com.google.appengine.v1.FileInfo> values) {
       internalGetMutableFiles().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -998,7 +1015,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the container field is set.
      */
     public boolean hasContainer() {
-      return containerBuilder_ != null || container_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1037,11 +1054,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         container_ = value;
-        onChanged();
       } else {
         containerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1057,11 +1074,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder setContainer(com.google.appengine.v1.ContainerInfo.Builder builderForValue) {
       if (containerBuilder_ == null) {
         container_ = builderForValue.build();
-        onChanged();
       } else {
         containerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1076,19 +1093,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeContainer(com.google.appengine.v1.ContainerInfo value) {
       if (containerBuilder_ == null) {
-        if (container_ != null) {
-          container_ =
-              com.google.appengine.v1.ContainerInfo.newBuilder(container_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && container_ != null
+            && container_ != com.google.appengine.v1.ContainerInfo.getDefaultInstance()) {
+          getContainerBuilder().mergeFrom(value);
         } else {
           container_ = value;
         }
-        onChanged();
       } else {
         containerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1102,14 +1118,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.ContainerInfo container = 2;</code>
      */
     public Builder clearContainer() {
-      if (containerBuilder_ == null) {
-        container_ = null;
-        onChanged();
-      } else {
-        container_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      container_ = null;
+      if (containerBuilder_ != null) {
+        containerBuilder_.dispose();
         containerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1123,7 +1138,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.ContainerInfo container = 2;</code>
      */
     public com.google.appengine.v1.ContainerInfo.Builder getContainerBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getContainerFieldBuilder().getBuilder();
     }
@@ -1191,7 +1206,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zip field is set.
      */
     public boolean hasZip() {
-      return zipBuilder_ != null || zip_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1226,11 +1241,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         zip_ = value;
-        onChanged();
       } else {
         zipBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1245,11 +1260,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public Builder setZip(com.google.appengine.v1.ZipInfo.Builder builderForValue) {
       if (zipBuilder_ == null) {
         zip_ = builderForValue.build();
-        onChanged();
       } else {
         zipBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1263,16 +1278,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeZip(com.google.appengine.v1.ZipInfo value) {
       if (zipBuilder_ == null) {
-        if (zip_ != null) {
-          zip_ = com.google.appengine.v1.ZipInfo.newBuilder(zip_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && zip_ != null
+            && zip_ != com.google.appengine.v1.ZipInfo.getDefaultInstance()) {
+          getZipBuilder().mergeFrom(value);
         } else {
           zip_ = value;
         }
-        onChanged();
       } else {
         zipBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1285,14 +1302,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.ZipInfo zip = 3;</code>
      */
     public Builder clearZip() {
-      if (zipBuilder_ == null) {
-        zip_ = null;
-        onChanged();
-      } else {
-        zip_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      zip_ = null;
+      if (zipBuilder_ != null) {
+        zipBuilder_.dispose();
         zipBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1305,7 +1321,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.ZipInfo zip = 3;</code>
      */
     public com.google.appengine.v1.ZipInfo.Builder getZipBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getZipFieldBuilder().getBuilder();
     }
@@ -1372,7 +1388,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cloudBuildOptions field is set.
      */
     public boolean hasCloudBuildOptions() {
-      return cloudBuildOptionsBuilder_ != null || cloudBuildOptions_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1415,11 +1431,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cloudBuildOptions_ = value;
-        onChanged();
       } else {
         cloudBuildOptionsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1438,11 +1454,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         com.google.appengine.v1.CloudBuildOptions.Builder builderForValue) {
       if (cloudBuildOptionsBuilder_ == null) {
         cloudBuildOptions_ = builderForValue.build();
-        onChanged();
       } else {
         cloudBuildOptionsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1459,19 +1475,19 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCloudBuildOptions(com.google.appengine.v1.CloudBuildOptions value) {
       if (cloudBuildOptionsBuilder_ == null) {
-        if (cloudBuildOptions_ != null) {
-          cloudBuildOptions_ =
-              com.google.appengine.v1.CloudBuildOptions.newBuilder(cloudBuildOptions_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && cloudBuildOptions_ != null
+            && cloudBuildOptions_
+                != com.google.appengine.v1.CloudBuildOptions.getDefaultInstance()) {
+          getCloudBuildOptionsBuilder().mergeFrom(value);
         } else {
           cloudBuildOptions_ = value;
         }
-        onChanged();
       } else {
         cloudBuildOptionsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1487,14 +1503,13 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.CloudBuildOptions cloud_build_options = 6;</code>
      */
     public Builder clearCloudBuildOptions() {
-      if (cloudBuildOptionsBuilder_ == null) {
-        cloudBuildOptions_ = null;
-        onChanged();
-      } else {
-        cloudBuildOptions_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      cloudBuildOptions_ = null;
+      if (cloudBuildOptionsBuilder_ != null) {
+        cloudBuildOptionsBuilder_.dispose();
         cloudBuildOptionsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1510,7 +1525,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.CloudBuildOptions cloud_build_options = 6;</code>
      */
     public com.google.appengine.v1.CloudBuildOptions.Builder getCloudBuildOptionsBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCloudBuildOptionsFieldBuilder().getBuilder();
     }

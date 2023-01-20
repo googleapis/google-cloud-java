@@ -69,7 +69,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -102,9 +102,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-        com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+        com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
         : result;
@@ -162,7 +161,9 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceFilterExpressionOrBuilder
       getFilterExpressionOrBuilder() {
-    return getFilterExpression();
+    return filterExpression_ == null
+        ? com.google.analytics.admin.v1alpha.AudienceFilterExpression.getDefaultInstance()
+        : filterExpression_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,12 +383,11 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = 0;
-
-      if (filterExpressionBuilder_ == null) {
-        filterExpression_ = null;
-      } else {
-        filterExpression_ = null;
+      filterExpression_ = null;
+      if (filterExpressionBuilder_ != null) {
+        filterExpressionBuilder_.dispose();
         filterExpressionBuilder_ = null;
       }
       return this;
@@ -417,14 +417,22 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     public com.google.analytics.admin.v1alpha.AudienceSimpleFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceSimpleFilter result =
           new com.google.analytics.admin.v1alpha.AudienceSimpleFilter(this);
-      result.scope_ = scope_;
-      if (filterExpressionBuilder_ == null) {
-        result.filterExpression_ = filterExpression_;
-      } else {
-        result.filterExpression_ = filterExpressionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceSimpleFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filterExpression_ =
+            filterExpressionBuilder_ == null ? filterExpression_ : filterExpressionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -508,14 +516,14 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +542,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int scope_ = 0;
     /**
@@ -568,8 +578,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -588,9 +598,8 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-          com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+          com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
           : result;
@@ -613,7 +622,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -632,7 +641,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       scope_ = 0;
       onChanged();
       return this;
@@ -658,7 +667,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      * @return Whether the filterExpression field is set.
      */
     public boolean hasFilterExpression() {
-      return filterExpressionBuilder_ != null || filterExpression_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -700,11 +709,11 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         filterExpression_ = value;
-        onChanged();
       } else {
         filterExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -722,11 +731,11 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
         com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder builderForValue) {
       if (filterExpressionBuilder_ == null) {
         filterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         filterExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -743,20 +752,20 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
     public Builder mergeFilterExpression(
         com.google.analytics.admin.v1alpha.AudienceFilterExpression value) {
       if (filterExpressionBuilder_ == null) {
-        if (filterExpression_ != null) {
-          filterExpression_ =
-              com.google.analytics.admin.v1alpha.AudienceFilterExpression.newBuilder(
-                      filterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && filterExpression_ != null
+            && filterExpression_
+                != com.google.analytics.admin.v1alpha.AudienceFilterExpression
+                    .getDefaultInstance()) {
+          getFilterExpressionBuilder().mergeFrom(value);
         } else {
           filterExpression_ = value;
         }
-        onChanged();
       } else {
         filterExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -771,14 +780,13 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearFilterExpression() {
-      if (filterExpressionBuilder_ == null) {
-        filterExpression_ = null;
-        onChanged();
-      } else {
-        filterExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      filterExpression_ = null;
+      if (filterExpressionBuilder_ != null) {
+        filterExpressionBuilder_.dispose();
         filterExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -794,7 +802,7 @@ public final class AudienceSimpleFilter extends com.google.protobuf.GeneratedMes
      */
     public com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder
         getFilterExpressionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFilterExpressionFieldBuilder().getBuilder();
     }

@@ -151,7 +151,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int THUMBNAIL_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object thumbnailUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object thumbnailUri_ = "";
   /**
    *
    *
@@ -419,8 +421,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       thumbnailUri_ = "";
-
       dataCase_ = 0;
       data_ = null;
       return this;
@@ -449,13 +451,24 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.automl.v1.Image buildPartial() {
       com.google.cloud.automl.v1.Image result = new com.google.cloud.automl.v1.Image(this);
-      if (dataCase_ == 1) {
-        result.data_ = data_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.thumbnailUri_ = thumbnailUri_;
-      result.dataCase_ = dataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.Image result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.thumbnailUri_ = thumbnailUri_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1.Image result) {
+      result.dataCase_ = dataCase_;
+      result.data_ = this.data_;
     }
 
     @java.lang.Override
@@ -505,6 +518,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.automl.v1.Image.getDefaultInstance()) return this;
       if (!other.getThumbnailUri().isEmpty()) {
         thumbnailUri_ = other.thumbnailUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getDataCase()) {
@@ -553,7 +567,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 thumbnailUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             default:
@@ -586,6 +600,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -728,8 +744,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       thumbnailUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -745,8 +761,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearThumbnailUri() {
-
       thumbnailUri_ = getDefaultInstance().getThumbnailUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -767,8 +783,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       thumbnailUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

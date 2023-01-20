@@ -122,7 +122,9 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.NfsShareOrBuilder getNfsShareOrBuilder() {
-    return getNfsShare();
+    return nfsShare_ == null
+        ? com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance()
+        : nfsShare_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -174,7 +176,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -394,16 +396,15 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nfsShareBuilder_ == null) {
-        nfsShare_ = null;
-      } else {
-        nfsShare_ = null;
+      bitField0_ = 0;
+      nfsShare_ = null;
+      if (nfsShareBuilder_ != null) {
+        nfsShareBuilder_.dispose();
         nfsShareBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -433,18 +434,21 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest buildPartial() {
       com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest result =
           new com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest(this);
-      if (nfsShareBuilder_ == null) {
-        result.nfsShare_ = nfsShare_;
-      } else {
-        result.nfsShare_ = nfsShareBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nfsShare_ = nfsShareBuilder_ == null ? nfsShare_ : nfsShareBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -528,13 +532,13 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getNfsShareFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -553,6 +557,8 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.baremetalsolution.v2.NfsShare nfsShare_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -576,7 +582,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the nfsShare field is set.
      */
     public boolean hasNfsShare() {
-      return nfsShareBuilder_ != null || nfsShare_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -621,11 +627,11 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         nfsShare_ = value;
-        onChanged();
       } else {
         nfsShareBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -645,11 +651,11 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.baremetalsolution.v2.NfsShare.Builder builderForValue) {
       if (nfsShareBuilder_ == null) {
         nfsShare_ = builderForValue.build();
-        onChanged();
       } else {
         nfsShareBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -667,19 +673,18 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeNfsShare(com.google.cloud.baremetalsolution.v2.NfsShare value) {
       if (nfsShareBuilder_ == null) {
-        if (nfsShare_ != null) {
-          nfsShare_ =
-              com.google.cloud.baremetalsolution.v2.NfsShare.newBuilder(nfsShare_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nfsShare_ != null
+            && nfsShare_ != com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance()) {
+          getNfsShareBuilder().mergeFrom(value);
         } else {
           nfsShare_ = value;
         }
-        onChanged();
       } else {
         nfsShareBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -696,14 +701,13 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearNfsShare() {
-      if (nfsShareBuilder_ == null) {
-        nfsShare_ = null;
-        onChanged();
-      } else {
-        nfsShare_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nfsShare_ = null;
+      if (nfsShareBuilder_ != null) {
+        nfsShareBuilder_.dispose();
         nfsShareBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -720,7 +724,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.baremetalsolution.v2.NfsShare.Builder getNfsShareBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNfsShareFieldBuilder().getBuilder();
     }
@@ -796,7 +800,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -837,11 +841,11 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,11 +862,11 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -878,17 +882,18 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,14 +908,13 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -925,7 +929,7 @@ public final class UpdateNfsShareRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

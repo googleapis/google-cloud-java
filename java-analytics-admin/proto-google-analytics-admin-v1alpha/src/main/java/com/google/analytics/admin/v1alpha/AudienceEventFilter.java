@@ -70,7 +70,9 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EVENT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object eventName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventName_ = "";
   /**
    *
    *
@@ -194,7 +196,9 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceFilterExpressionOrBuilder
       getEventParameterFilterExpressionOrBuilder() {
-    return getEventParameterFilterExpression();
+    return eventParameterFilterExpression_ == null
+        ? com.google.analytics.admin.v1alpha.AudienceFilterExpression.getDefaultInstance()
+        : eventParameterFilterExpression_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -415,12 +419,11 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       eventName_ = "";
-
-      if (eventParameterFilterExpressionBuilder_ == null) {
-        eventParameterFilterExpression_ = null;
-      } else {
-        eventParameterFilterExpression_ = null;
+      eventParameterFilterExpression_ = null;
+      if (eventParameterFilterExpressionBuilder_ != null) {
+        eventParameterFilterExpressionBuilder_.dispose();
         eventParameterFilterExpressionBuilder_ = null;
       }
       return this;
@@ -450,14 +453,24 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.AudienceEventFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceEventFilter result =
           new com.google.analytics.admin.v1alpha.AudienceEventFilter(this);
-      result.eventName_ = eventName_;
-      if (eventParameterFilterExpressionBuilder_ == null) {
-        result.eventParameterFilterExpression_ = eventParameterFilterExpression_;
-      } else {
-        result.eventParameterFilterExpression_ = eventParameterFilterExpressionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceEventFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventName_ = eventName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventParameterFilterExpression_ =
+            eventParameterFilterExpressionBuilder_ == null
+                ? eventParameterFilterExpression_
+                : eventParameterFilterExpressionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -508,6 +521,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getEventName().isEmpty()) {
         eventName_ = other.eventName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasEventParameterFilterExpression()) {
@@ -542,7 +556,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 eventName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -550,7 +564,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
                 input.readMessage(
                     getEventParameterFilterExpressionFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -569,6 +583,8 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object eventName_ = "";
     /**
@@ -637,8 +653,8 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -656,8 +672,8 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEventName() {
-
       eventName_ = getDefaultInstance().getEventName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -680,8 +696,8 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +729,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * @return Whether the eventParameterFilterExpression field is set.
      */
     public boolean hasEventParameterFilterExpression() {
-      return eventParameterFilterExpressionBuilder_ != null
-          || eventParameterFilterExpression_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -769,11 +784,11 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         eventParameterFilterExpression_ = value;
-        onChanged();
       } else {
         eventParameterFilterExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -797,11 +812,11 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
         com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder builderForValue) {
       if (eventParameterFilterExpressionBuilder_ == null) {
         eventParameterFilterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         eventParameterFilterExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,20 +839,20 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
     public Builder mergeEventParameterFilterExpression(
         com.google.analytics.admin.v1alpha.AudienceFilterExpression value) {
       if (eventParameterFilterExpressionBuilder_ == null) {
-        if (eventParameterFilterExpression_ != null) {
-          eventParameterFilterExpression_ =
-              com.google.analytics.admin.v1alpha.AudienceFilterExpression.newBuilder(
-                      eventParameterFilterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && eventParameterFilterExpression_ != null
+            && eventParameterFilterExpression_
+                != com.google.analytics.admin.v1alpha.AudienceFilterExpression
+                    .getDefaultInstance()) {
+          getEventParameterFilterExpressionBuilder().mergeFrom(value);
         } else {
           eventParameterFilterExpression_ = value;
         }
-        onChanged();
       } else {
         eventParameterFilterExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,14 +873,13 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearEventParameterFilterExpression() {
-      if (eventParameterFilterExpressionBuilder_ == null) {
-        eventParameterFilterExpression_ = null;
-        onChanged();
-      } else {
-        eventParameterFilterExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      eventParameterFilterExpression_ = null;
+      if (eventParameterFilterExpressionBuilder_ != null) {
+        eventParameterFilterExpressionBuilder_.dispose();
         eventParameterFilterExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -887,7 +901,7 @@ public final class AudienceEventFilter extends com.google.protobuf.GeneratedMess
      */
     public com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder
         getEventParameterFilterExpressionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getEventParameterFilterExpressionFieldBuilder().getBuilder();
     }

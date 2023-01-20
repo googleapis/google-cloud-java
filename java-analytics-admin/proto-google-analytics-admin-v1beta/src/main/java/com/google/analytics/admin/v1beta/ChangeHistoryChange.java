@@ -1235,6 +1235,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (accountBuilder_ != null) {
           accountBuilder_.clear();
         }
@@ -1292,65 +1293,47 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           buildPartial() {
         com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource result =
             new com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource(this);
-        if (resourceCase_ == 1) {
-          if (accountBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = accountBuilder_.build();
-          }
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (resourceCase_ == 2) {
-          if (propertyBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = propertyBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 6) {
-          if (firebaseLinkBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = firebaseLinkBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 7) {
-          if (googleAdsLinkBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = googleAdsLinkBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 11) {
-          if (conversionEventBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = conversionEventBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 12) {
-          if (measurementProtocolSecretBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = measurementProtocolSecretBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 15) {
-          if (dataRetentionSettingsBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = dataRetentionSettingsBuilder_.build();
-          }
-        }
-        if (resourceCase_ == 18) {
-          if (dataStreamBuilder_ == null) {
-            result.resource_ = resource_;
-          } else {
-            result.resource_ = dataStreamBuilder_.build();
-          }
-        }
-        result.resourceCase_ = resourceCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource result) {
+        result.resourceCase_ = resourceCase_;
+        result.resource_ = this.resource_;
+        if (resourceCase_ == 1 && accountBuilder_ != null) {
+          result.resource_ = accountBuilder_.build();
+        }
+        if (resourceCase_ == 2 && propertyBuilder_ != null) {
+          result.resource_ = propertyBuilder_.build();
+        }
+        if (resourceCase_ == 6 && firebaseLinkBuilder_ != null) {
+          result.resource_ = firebaseLinkBuilder_.build();
+        }
+        if (resourceCase_ == 7 && googleAdsLinkBuilder_ != null) {
+          result.resource_ = googleAdsLinkBuilder_.build();
+        }
+        if (resourceCase_ == 11 && conversionEventBuilder_ != null) {
+          result.resource_ = conversionEventBuilder_.build();
+        }
+        if (resourceCase_ == 12 && measurementProtocolSecretBuilder_ != null) {
+          result.resource_ = measurementProtocolSecretBuilder_.build();
+        }
+        if (resourceCase_ == 15 && dataRetentionSettingsBuilder_ != null) {
+          result.resource_ = dataRetentionSettingsBuilder_.build();
+        }
+        if (resourceCase_ == 18 && dataStreamBuilder_ != null) {
+          result.resource_ = dataStreamBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1560,6 +1543,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return this;
       }
 
+      private int bitField0_;
+
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.analytics.admin.v1beta.Account,
               com.google.analytics.admin.v1beta.Account.Builder,
@@ -1765,7 +1750,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 1;
         onChanged();
-        ;
         return accountBuilder_;
       }
 
@@ -1975,7 +1959,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 2;
         onChanged();
-        ;
         return propertyBuilder_;
       }
 
@@ -2185,7 +2168,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 6;
         onChanged();
-        ;
         return firebaseLinkBuilder_;
       }
 
@@ -2396,7 +2378,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 7;
         onChanged();
-        ;
         return googleAdsLinkBuilder_;
       }
 
@@ -2608,7 +2589,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 11;
         onChanged();
-        ;
         return conversionEventBuilder_;
       }
 
@@ -2844,7 +2824,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 12;
         onChanged();
-        ;
         return measurementProtocolSecretBuilder_;
       }
 
@@ -3069,7 +3048,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 15;
         onChanged();
-        ;
         return dataRetentionSettingsBuilder_;
       }
 
@@ -3279,7 +3257,6 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         resourceCase_ = 18;
         onChanged();
-        ;
         return dataStreamBuilder_;
       }
 
@@ -3352,7 +3329,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   }
 
   public static final int RESOURCE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object resource_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resource_ = "";
   /**
    *
    *
@@ -3401,7 +3380,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   }
 
   public static final int ACTION_FIELD_NUMBER = 2;
-  private int action_;
+  private int action_ = 0;
   /**
    *
    *
@@ -3430,9 +3409,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.ActionType getAction() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.ActionType result =
-        com.google.analytics.admin.v1beta.ActionType.valueOf(action_);
+        com.google.analytics.admin.v1beta.ActionType.forNumber(action_);
     return result == null ? com.google.analytics.admin.v1beta.ActionType.UNRECOGNIZED : result;
   }
 
@@ -3494,7 +3472,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResourceOrBuilder
       getResourceBeforeChangeOrBuilder() {
-    return getResourceBeforeChange();
+    return resourceBeforeChange_ == null
+        ? com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
+            .getDefaultInstance()
+        : resourceBeforeChange_;
   }
 
   public static final int RESOURCE_AFTER_CHANGE_FIELD_NUMBER = 4;
@@ -3555,7 +3536,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResourceOrBuilder
       getResourceAfterChangeOrBuilder() {
-    return getResourceAfterChange();
+    return resourceAfterChange_ == null
+        ? com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
+            .getDefaultInstance()
+        : resourceAfterChange_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3796,20 +3780,17 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       resource_ = "";
-
       action_ = 0;
-
-      if (resourceBeforeChangeBuilder_ == null) {
-        resourceBeforeChange_ = null;
-      } else {
-        resourceBeforeChange_ = null;
+      resourceBeforeChange_ = null;
+      if (resourceBeforeChangeBuilder_ != null) {
+        resourceBeforeChangeBuilder_.dispose();
         resourceBeforeChangeBuilder_ = null;
       }
-      if (resourceAfterChangeBuilder_ == null) {
-        resourceAfterChange_ = null;
-      } else {
-        resourceAfterChange_ = null;
+      resourceAfterChange_ = null;
+      if (resourceAfterChangeBuilder_ != null) {
+        resourceAfterChangeBuilder_.dispose();
         resourceAfterChangeBuilder_ = null;
       }
       return this;
@@ -3839,20 +3820,33 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1beta.ChangeHistoryChange buildPartial() {
       com.google.analytics.admin.v1beta.ChangeHistoryChange result =
           new com.google.analytics.admin.v1beta.ChangeHistoryChange(this);
-      result.resource_ = resource_;
-      result.action_ = action_;
-      if (resourceBeforeChangeBuilder_ == null) {
-        result.resourceBeforeChange_ = resourceBeforeChange_;
-      } else {
-        result.resourceBeforeChange_ = resourceBeforeChangeBuilder_.build();
-      }
-      if (resourceAfterChangeBuilder_ == null) {
-        result.resourceAfterChange_ = resourceAfterChange_;
-      } else {
-        result.resourceAfterChange_ = resourceAfterChangeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.ChangeHistoryChange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.resource_ = resource_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceBeforeChange_ =
+            resourceBeforeChangeBuilder_ == null
+                ? resourceBeforeChange_
+                : resourceBeforeChangeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.resourceAfterChange_ =
+            resourceAfterChangeBuilder_ == null
+                ? resourceAfterChange_
+                : resourceAfterChangeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3903,6 +3897,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.action_ != 0) {
@@ -3943,27 +3938,27 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 resource_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 action_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getResourceBeforeChangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getResourceAfterChangeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -3982,6 +3977,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object resource_ = "";
     /**
@@ -4044,8 +4041,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4061,8 +4058,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearResource() {
-
       resource_ = getDefaultInstance().getResource();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -4083,8 +4080,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       resource_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -4118,8 +4115,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setActionValue(int value) {
-
       action_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4136,9 +4133,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.ActionType getAction() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.ActionType result =
-          com.google.analytics.admin.v1beta.ActionType.valueOf(action_);
+          com.google.analytics.admin.v1beta.ActionType.forNumber(action_);
       return result == null ? com.google.analytics.admin.v1beta.ActionType.UNRECOGNIZED : result;
     }
     /**
@@ -4157,7 +4153,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       action_ = value.getNumber();
       onChanged();
       return this;
@@ -4174,7 +4170,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       action_ = 0;
       onChanged();
       return this;
@@ -4202,7 +4198,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the resourceBeforeChange field is set.
      */
     public boolean hasResourceBeforeChange() {
-      return resourceBeforeChangeBuilder_ != null || resourceBeforeChange_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4248,11 +4244,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         resourceBeforeChange_ = value;
-        onChanged();
       } else {
         resourceBeforeChangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4272,11 +4268,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (resourceBeforeChangeBuilder_ == null) {
         resourceBeforeChange_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBeforeChangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4294,20 +4290,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public Builder mergeResourceBeforeChange(
         com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource value) {
       if (resourceBeforeChangeBuilder_ == null) {
-        if (resourceBeforeChange_ != null) {
-          resourceBeforeChange_ =
-              com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
-                  .newBuilder(resourceBeforeChange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && resourceBeforeChange_ != null
+            && resourceBeforeChange_
+                != com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
+                    .getDefaultInstance()) {
+          getResourceBeforeChangeBuilder().mergeFrom(value);
         } else {
           resourceBeforeChange_ = value;
         }
-        onChanged();
       } else {
         resourceBeforeChangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4323,14 +4319,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearResourceBeforeChange() {
-      if (resourceBeforeChangeBuilder_ == null) {
-        resourceBeforeChange_ = null;
-        onChanged();
-      } else {
-        resourceBeforeChange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resourceBeforeChange_ = null;
+      if (resourceBeforeChangeBuilder_ != null) {
+        resourceBeforeChangeBuilder_.dispose();
         resourceBeforeChangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4347,7 +4342,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     public com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource.Builder
         getResourceBeforeChangeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceBeforeChangeFieldBuilder().getBuilder();
     }
@@ -4426,7 +4421,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the resourceAfterChange field is set.
      */
     public boolean hasResourceAfterChange() {
-      return resourceAfterChangeBuilder_ != null || resourceAfterChange_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -4472,11 +4467,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         resourceAfterChange_ = value;
-        onChanged();
       } else {
         resourceAfterChangeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4496,11 +4491,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             builderForValue) {
       if (resourceAfterChangeBuilder_ == null) {
         resourceAfterChange_ = builderForValue.build();
-        onChanged();
       } else {
         resourceAfterChangeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4518,20 +4513,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public Builder mergeResourceAfterChange(
         com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource value) {
       if (resourceAfterChangeBuilder_ == null) {
-        if (resourceAfterChange_ != null) {
-          resourceAfterChange_ =
-              com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
-                  .newBuilder(resourceAfterChange_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && resourceAfterChange_ != null
+            && resourceAfterChange_
+                != com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource
+                    .getDefaultInstance()) {
+          getResourceAfterChangeBuilder().mergeFrom(value);
         } else {
           resourceAfterChange_ = value;
         }
-        onChanged();
       } else {
         resourceAfterChangeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -4547,14 +4542,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearResourceAfterChange() {
-      if (resourceAfterChangeBuilder_ == null) {
-        resourceAfterChange_ = null;
-        onChanged();
-      } else {
-        resourceAfterChange_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      resourceAfterChange_ = null;
+      if (resourceAfterChangeBuilder_ != null) {
+        resourceAfterChangeBuilder_.dispose();
         resourceAfterChangeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4571,7 +4565,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     public com.google.analytics.admin.v1beta.ChangeHistoryChange.ChangeHistoryResource.Builder
         getResourceAfterChangeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getResourceAfterChangeFieldBuilder().getBuilder();
     }

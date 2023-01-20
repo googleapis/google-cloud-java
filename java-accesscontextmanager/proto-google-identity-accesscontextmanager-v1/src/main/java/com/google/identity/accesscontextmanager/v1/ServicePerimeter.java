@@ -229,7 +229,9 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -284,7 +286,9 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TITLE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object title_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
   /**
    *
    *
@@ -333,7 +337,9 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -426,7 +432,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
@@ -472,11 +478,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int PERIMETER_TYPE_FIELD_NUMBER = 6;
-  private int perimeterType_;
+  private int perimeterType_ = 0;
   /**
    *
    *
@@ -520,9 +526,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType
       getPerimeterType() {
-    @SuppressWarnings("deprecation")
     com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType result =
-        com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.valueOf(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.forNumber(
             perimeterType_);
     return result == null
         ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.UNRECOGNIZED
@@ -581,7 +586,9 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder
       getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null
+        ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
+        : status_;
   }
 
   public static final int SPEC_FIELD_NUMBER = 8;
@@ -639,11 +646,13 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfigOrBuilder
       getSpecOrBuilder() {
-    return getSpec();
+    return spec_ == null
+        ? com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.getDefaultInstance()
+        : spec_;
   }
 
   public static final int USE_EXPLICIT_DRY_RUN_SPEC_FIELD_NUMBER = 9;
-  private boolean useExplicitDryRunSpec_;
+  private boolean useExplicitDryRunSpec_ = false;
   /**
    *
    *
@@ -974,40 +983,32 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       title_ = "";
-
       description_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       perimeterType_ = 0;
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-      if (specBuilder_ == null) {
-        spec_ = null;
-      } else {
-        spec_ = null;
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
       useExplicitDryRunSpec_ = false;
-
       return this;
     }
 
@@ -1036,33 +1037,43 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter buildPartial() {
       com.google.identity.accesscontextmanager.v1.ServicePerimeter result =
           new com.google.identity.accesscontextmanager.v1.ServicePerimeter(this);
-      result.name_ = name_;
-      result.title_ = title_;
-      result.description_ = description_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.perimeterType_ = perimeterType_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
-      }
-      if (specBuilder_ == null) {
-        result.spec_ = spec_;
-      } else {
-        result.spec_ = specBuilder_.build();
-      }
-      result.useExplicitDryRunSpec_ = useExplicitDryRunSpec_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.ServicePerimeter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.title_ = title_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.perimeterType_ = perimeterType_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.spec_ = specBuilder_ == null ? spec_ : specBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.useExplicitDryRunSpec_ = useExplicitDryRunSpec_;
+      }
     }
 
     @java.lang.Override
@@ -1114,14 +1125,17 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getTitle().isEmpty()) {
         title_ = other.title_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1171,55 +1185,55 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 title_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 perimeterType_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getSpecFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 useExplicitDryRunSpec_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             default:
@@ -1238,6 +1252,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1309,8 +1325,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1329,8 +1345,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1354,8 +1370,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1421,8 +1437,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1438,8 +1454,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTitle() {
-
       title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1460,8 +1476,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       title_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1530,8 +1546,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1548,8 +1564,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1571,8 +1587,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1595,7 +1611,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1632,11 +1648,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1651,11 +1667,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1669,17 +1685,18 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1692,14 +1709,13 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1712,7 +1728,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1778,7 +1794,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1815,11 +1831,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1834,11 +1850,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1852,17 +1868,18 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1875,14 +1892,13 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1895,7 +1911,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1986,8 +2002,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setPerimeterTypeValue(int value) {
-
       perimeterType_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2012,9 +2028,8 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType
         getPerimeterType() {
-      @SuppressWarnings("deprecation")
       com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType result =
-          com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.valueOf(
+          com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.forNumber(
               perimeterType_);
       return result == null
           ? com.google.identity.accesscontextmanager.v1.ServicePerimeter.PerimeterType.UNRECOGNIZED
@@ -2044,7 +2059,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       perimeterType_ = value.getNumber();
       onChanged();
       return this;
@@ -2068,7 +2083,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPerimeterType() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       perimeterType_ = 0;
       onChanged();
       return this;
@@ -2094,7 +2109,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2137,11 +2152,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2160,11 +2175,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2181,19 +2196,20 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public Builder mergeStatus(
         com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ =
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.newBuilder(status_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && status_ != null
+            && status_
+                != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                    .getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2208,14 +2224,13 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeterConfig status = 7;</code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2231,7 +2246,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.Builder
         getStatusBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -2306,7 +2321,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return Whether the spec field is set.
      */
     public boolean hasSpec() {
-      return specBuilder_ != null || spec_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2351,11 +2366,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         spec_ = value;
-        onChanged();
       } else {
         specBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2375,11 +2390,11 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (specBuilder_ == null) {
         spec_ = builderForValue.build();
-        onChanged();
       } else {
         specBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2397,19 +2412,20 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public Builder mergeSpec(
         com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig value) {
       if (specBuilder_ == null) {
-        if (spec_ != null) {
-          spec_ =
-              com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.newBuilder(spec_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && spec_ != null
+            && spec_
+                != com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig
+                    .getDefaultInstance()) {
+          getSpecBuilder().mergeFrom(value);
         } else {
           spec_ = value;
         }
-        onChanged();
       } else {
         specBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2425,14 +2441,13 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * <code>.google.identity.accesscontextmanager.v1.ServicePerimeterConfig spec = 8;</code>
      */
     public Builder clearSpec() {
-      if (specBuilder_ == null) {
-        spec_ = null;
-        onChanged();
-      } else {
-        spec_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      spec_ = null;
+      if (specBuilder_ != null) {
+        specBuilder_.dispose();
         specBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2449,7 +2464,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      */
     public com.google.identity.accesscontextmanager.v1.ServicePerimeterConfig.Builder
         getSpecBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getSpecFieldBuilder().getBuilder();
     }
@@ -2554,6 +2569,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
     public Builder setUseExplicitDryRunSpec(boolean value) {
 
       useExplicitDryRunSpec_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2578,7 +2594,7 @@ public final class ServicePerimeter extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUseExplicitDryRunSpec() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       useExplicitDryRunSpec_ = false;
       onChanged();
       return this;

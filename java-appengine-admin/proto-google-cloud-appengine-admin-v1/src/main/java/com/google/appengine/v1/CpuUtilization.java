@@ -110,11 +110,13 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getAggregationWindowLengthOrBuilder() {
-    return getAggregationWindowLength();
+    return aggregationWindowLength_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : aggregationWindowLength_;
   }
 
   public static final int TARGET_UTILIZATION_FIELD_NUMBER = 2;
-  private double targetUtilization_;
+  private double targetUtilization_ = 0D;
   /**
    *
    *
@@ -347,14 +349,13 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (aggregationWindowLengthBuilder_ == null) {
-        aggregationWindowLength_ = null;
-      } else {
-        aggregationWindowLength_ = null;
+      bitField0_ = 0;
+      aggregationWindowLength_ = null;
+      if (aggregationWindowLengthBuilder_ != null) {
+        aggregationWindowLengthBuilder_.dispose();
         aggregationWindowLengthBuilder_ = null;
       }
       targetUtilization_ = 0D;
-
       return this;
     }
 
@@ -382,14 +383,24 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.CpuUtilization buildPartial() {
       com.google.appengine.v1.CpuUtilization result =
           new com.google.appengine.v1.CpuUtilization(this);
-      if (aggregationWindowLengthBuilder_ == null) {
-        result.aggregationWindowLength_ = aggregationWindowLength_;
-      } else {
-        result.aggregationWindowLength_ = aggregationWindowLengthBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.targetUtilization_ = targetUtilization_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CpuUtilization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.aggregationWindowLength_ =
+            aggregationWindowLengthBuilder_ == null
+                ? aggregationWindowLength_
+                : aggregationWindowLengthBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetUtilization_ = targetUtilization_;
+      }
     }
 
     @java.lang.Override
@@ -473,13 +484,13 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getAggregationWindowLengthFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 17:
               {
                 targetUtilization_ = input.readDouble();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 17
             default:
@@ -499,6 +510,8 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.Duration aggregationWindowLength_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -517,7 +530,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the aggregationWindowLength field is set.
      */
     public boolean hasAggregationWindowLength() {
-      return aggregationWindowLengthBuilder_ != null || aggregationWindowLength_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -554,11 +567,11 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         aggregationWindowLength_ = value;
-        onChanged();
       } else {
         aggregationWindowLengthBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -574,11 +587,11 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Duration.Builder builderForValue) {
       if (aggregationWindowLengthBuilder_ == null) {
         aggregationWindowLength_ = builderForValue.build();
-        onChanged();
       } else {
         aggregationWindowLengthBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -592,19 +605,18 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAggregationWindowLength(com.google.protobuf.Duration value) {
       if (aggregationWindowLengthBuilder_ == null) {
-        if (aggregationWindowLength_ != null) {
-          aggregationWindowLength_ =
-              com.google.protobuf.Duration.newBuilder(aggregationWindowLength_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && aggregationWindowLength_ != null
+            && aggregationWindowLength_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getAggregationWindowLengthBuilder().mergeFrom(value);
         } else {
           aggregationWindowLength_ = value;
         }
-        onChanged();
       } else {
         aggregationWindowLengthBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -617,14 +629,13 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration aggregation_window_length = 1;</code>
      */
     public Builder clearAggregationWindowLength() {
-      if (aggregationWindowLengthBuilder_ == null) {
-        aggregationWindowLength_ = null;
-        onChanged();
-      } else {
-        aggregationWindowLength_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      aggregationWindowLength_ = null;
+      if (aggregationWindowLengthBuilder_ != null) {
+        aggregationWindowLengthBuilder_.dispose();
         aggregationWindowLengthBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -637,7 +648,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration aggregation_window_length = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getAggregationWindowLengthBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAggregationWindowLengthFieldBuilder().getBuilder();
     }
@@ -718,6 +729,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
     public Builder setTargetUtilization(double value) {
 
       targetUtilization_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -734,7 +746,7 @@ public final class CpuUtilization extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTargetUtilization() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetUtilization_ = 0D;
       onChanged();
       return this;

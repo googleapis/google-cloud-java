@@ -164,7 +164,9 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -437,11 +439,11 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.clear();
       }
       parent_ = "";
-
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -472,17 +474,29 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
     public com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest buildPartial() {
       com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest result =
           new com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest(this);
-      if (sourceCase_ == 2) {
-        if (gcsSourceBuilder_ == null) {
-          result.source_ = source_;
-        } else {
-          result.source_ = gcsSourceBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parent_ = parent_;
-      result.sourceCase_ = sourceCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.devtools.artifactregistry.v1.ImportAptArtifactsRequest result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 2 && gcsSourceBuilder_ != null) {
+        result.source_ = gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,6 +549,7 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -577,7 +592,7 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
@@ -616,6 +631,8 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.artifactregistry.v1.ImportAptArtifactsGcsSource,
@@ -835,7 +852,6 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
       }
       sourceCase_ = 2;
       onChanged();
-      ;
       return gcsSourceBuilder_;
     }
 
@@ -900,8 +916,8 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -917,8 +933,8 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -939,8 +955,8 @@ public final class ImportAptArtifactsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

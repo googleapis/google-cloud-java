@@ -116,7 +116,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int METHOD_FIELD_NUMBER = 1;
-  private volatile java.lang.Object method_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object method_ = "";
   /**
    *
    *
@@ -214,7 +216,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getInsertTimeOrBuilder() {
-    return getInsertTime();
+    return insertTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : insertTime_;
   }
 
   public static final int END_TIME_FIELD_NUMBER = 3;
@@ -263,11 +265,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
-    return getEndTime();
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
   public static final int USER_FIELD_NUMBER = 4;
-  private volatile java.lang.Object user_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object user_ = "";
   /**
    *
    *
@@ -318,7 +322,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int TARGET_FIELD_NUMBER = 5;
-  private volatile java.lang.Object target_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object target_ = "";
   /**
    *
    *
@@ -371,7 +377,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int EPHEMERAL_MESSAGE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object ephemeralMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ephemeralMessage_ = "";
   /**
    *
    *
@@ -422,6 +430,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
   }
 
   public static final int WARNING_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList warning_;
   /**
    *
@@ -810,28 +820,23 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       method_ = "";
-
-      if (insertTimeBuilder_ == null) {
-        insertTime_ = null;
-      } else {
-        insertTime_ = null;
+      insertTime_ = null;
+      if (insertTimeBuilder_ != null) {
+        insertTimeBuilder_.dispose();
         insertTimeBuilder_ = null;
       }
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-      } else {
-        endTime_ = null;
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
       user_ = "";
-
       target_ = "";
-
       ephemeralMessage_ = "";
-
       warning_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (createVersionMetadataBuilder_ != null) {
         createVersionMetadataBuilder_.clear();
       }
@@ -864,36 +869,51 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public com.google.appengine.v1.OperationMetadataV1 buildPartial() {
       com.google.appengine.v1.OperationMetadataV1 result =
           new com.google.appengine.v1.OperationMetadataV1(this);
-      int from_bitField0_ = bitField0_;
-      result.method_ = method_;
-      if (insertTimeBuilder_ == null) {
-        result.insertTime_ = insertTime_;
-      } else {
-        result.insertTime_ = insertTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (endTimeBuilder_ == null) {
-        result.endTime_ = endTime_;
-      } else {
-        result.endTime_ = endTimeBuilder_.build();
-      }
-      result.user_ = user_;
-      result.target_ = target_;
-      result.ephemeralMessage_ = ephemeralMessage_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        warning_ = warning_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.warning_ = warning_;
-      if (methodMetadataCase_ == 8) {
-        if (createVersionMetadataBuilder_ == null) {
-          result.methodMetadata_ = methodMetadata_;
-        } else {
-          result.methodMetadata_ = createVersionMetadataBuilder_.build();
-        }
-      }
-      result.methodMetadataCase_ = methodMetadataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.appengine.v1.OperationMetadataV1 result) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        warning_ = warning_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.warning_ = warning_;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.OperationMetadataV1 result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.method_ = method_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.insertTime_ = insertTimeBuilder_ == null ? insertTime_ : insertTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.user_ = user_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.target_ = target_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ephemeralMessage_ = ephemeralMessage_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.appengine.v1.OperationMetadataV1 result) {
+      result.methodMetadataCase_ = methodMetadataCase_;
+      result.methodMetadata_ = this.methodMetadata_;
+      if (methodMetadataCase_ == 8 && createVersionMetadataBuilder_ != null) {
+        result.methodMetadata_ = createVersionMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -943,6 +963,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (other == com.google.appengine.v1.OperationMetadataV1.getDefaultInstance()) return this;
       if (!other.getMethod().isEmpty()) {
         method_ = other.method_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInsertTime()) {
@@ -953,20 +974,23 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       if (!other.getUser().isEmpty()) {
         user_ = other.user_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getEphemeralMessage().isEmpty()) {
         ephemeralMessage_ = other.ephemeralMessage_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.warning_.isEmpty()) {
         if (warning_.isEmpty()) {
           warning_ = other.warning_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureWarningIsMutable();
           warning_.addAll(other.warning_);
@@ -1013,37 +1037,37 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 method_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getInsertTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 user_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 target_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 ephemeralMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -1160,8 +1184,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       method_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1179,8 +1203,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMethod() {
-
       method_ = getDefaultInstance().getMethod();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1203,8 +1227,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       method_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1228,7 +1252,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return Whether the insertTime field is set.
      */
     public boolean hasInsertTime() {
-      return insertTimeBuilder_ != null || insertTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1267,11 +1291,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         insertTime_ = value;
-        onChanged();
       } else {
         insertTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1287,11 +1311,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder setInsertTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (insertTimeBuilder_ == null) {
         insertTime_ = builderForValue.build();
-        onChanged();
       } else {
         insertTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1306,17 +1330,18 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeInsertTime(com.google.protobuf.Timestamp value) {
       if (insertTimeBuilder_ == null) {
-        if (insertTime_ != null) {
-          insertTime_ =
-              com.google.protobuf.Timestamp.newBuilder(insertTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && insertTime_ != null
+            && insertTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getInsertTimeBuilder().mergeFrom(value);
         } else {
           insertTime_ = value;
         }
-        onChanged();
       } else {
         insertTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1330,14 +1355,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp insert_time = 2;</code>
      */
     public Builder clearInsertTime() {
-      if (insertTimeBuilder_ == null) {
-        insertTime_ = null;
-        onChanged();
-      } else {
-        insertTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      insertTime_ = null;
+      if (insertTimeBuilder_ != null) {
+        insertTimeBuilder_.dispose();
         insertTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1351,7 +1375,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp insert_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getInsertTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getInsertTimeFieldBuilder().getBuilder();
     }
@@ -1420,7 +1444,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return endTimeBuilder_ != null || endTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1457,11 +1481,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         endTime_ = value;
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1477,11 +1501,11 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
-        onChanged();
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1496,17 +1520,18 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (endTime_ != null) {
-          endTime_ =
-              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && endTime_ != null
+            && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getEndTimeBuilder().mergeFrom(value);
         } else {
           endTime_ = value;
         }
-        onChanged();
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1520,14 +1545,13 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public Builder clearEndTime() {
-      if (endTimeBuilder_ == null) {
-        endTime_ = null;
-        onChanged();
-      } else {
-        endTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      endTime_ = null;
+      if (endTimeBuilder_ != null) {
+        endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1541,7 +1565,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -1653,8 +1677,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       user_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1671,8 +1695,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearUser() {
-
       user_ = getDefaultInstance().getUser();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1694,8 +1718,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       user_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1767,8 +1791,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       target_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1786,8 +1810,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearTarget() {
-
       target_ = getDefaultInstance().getTarget();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1810,8 +1834,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       target_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1880,8 +1904,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       ephemeralMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1898,8 +1922,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearEphemeralMessage() {
-
       ephemeralMessage_ = getDefaultInstance().getEphemeralMessage();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1921,8 +1945,8 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ephemeralMessage_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1931,9 +1955,9 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWarningIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         warning_ = new com.google.protobuf.LazyStringArrayList(warning_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2076,7 +2100,7 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
      */
     public Builder clearWarning() {
       warning_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2246,7 +2270,6 @@ public final class OperationMetadataV1 extends com.google.protobuf.GeneratedMess
       }
       methodMetadataCase_ = 8;
       onChanged();
-      ;
       return createVersionMetadataBuilder_;
     }
 

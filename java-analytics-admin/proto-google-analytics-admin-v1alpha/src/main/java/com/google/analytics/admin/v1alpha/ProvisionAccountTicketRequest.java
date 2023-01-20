@@ -112,11 +112,15 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccountOrBuilder getAccountOrBuilder() {
-    return getAccount();
+    return account_ == null
+        ? com.google.analytics.admin.v1alpha.Account.getDefaultInstance()
+        : account_;
   }
 
   public static final int REDIRECT_URI_FIELD_NUMBER = 2;
-  private volatile java.lang.Object redirectUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object redirectUri_ = "";
   /**
    *
    *
@@ -378,14 +382,13 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (accountBuilder_ == null) {
-        account_ = null;
-      } else {
-        account_ = null;
+      bitField0_ = 0;
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
       redirectUri_ = "";
-
       return this;
     }
 
@@ -414,14 +417,22 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
     public com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest buildPartial() {
       com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest result =
           new com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest(this);
-      if (accountBuilder_ == null) {
-        result.account_ = account_;
-      } else {
-        result.account_ = accountBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.redirectUri_ = redirectUri_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.account_ = accountBuilder_ == null ? account_ : accountBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.redirectUri_ = redirectUri_;
+      }
     }
 
     @java.lang.Override
@@ -477,6 +488,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
       }
       if (!other.getRedirectUri().isEmpty()) {
         redirectUri_ = other.redirectUri_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -508,13 +520,13 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getAccountFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 redirectUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -534,6 +546,8 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.analytics.admin.v1alpha.Account account_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.Account,
@@ -552,7 +566,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      * @return Whether the account field is set.
      */
     public boolean hasAccount() {
-      return accountBuilder_ != null || account_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -589,11 +603,11 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         account_ = value;
-        onChanged();
       } else {
         accountBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -608,11 +622,11 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
     public Builder setAccount(com.google.analytics.admin.v1alpha.Account.Builder builderForValue) {
       if (accountBuilder_ == null) {
         account_ = builderForValue.build();
-        onChanged();
       } else {
         accountBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -626,19 +640,18 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      */
     public Builder mergeAccount(com.google.analytics.admin.v1alpha.Account value) {
       if (accountBuilder_ == null) {
-        if (account_ != null) {
-          account_ =
-              com.google.analytics.admin.v1alpha.Account.newBuilder(account_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && account_ != null
+            && account_ != com.google.analytics.admin.v1alpha.Account.getDefaultInstance()) {
+          getAccountBuilder().mergeFrom(value);
         } else {
           account_ = value;
         }
-        onChanged();
       } else {
         accountBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -651,14 +664,13 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      * <code>.google.analytics.admin.v1alpha.Account account = 1;</code>
      */
     public Builder clearAccount() {
-      if (accountBuilder_ == null) {
-        account_ = null;
-        onChanged();
-      } else {
-        account_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      account_ = null;
+      if (accountBuilder_ != null) {
+        accountBuilder_.dispose();
         accountBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -671,7 +683,7 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      * <code>.google.analytics.admin.v1alpha.Account account = 1;</code>
      */
     public com.google.analytics.admin.v1alpha.Account.Builder getAccountBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAccountFieldBuilder().getBuilder();
     }
@@ -783,8 +795,8 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,8 +813,8 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearRedirectUri() {
-
       redirectUri_ = getDefaultInstance().getRedirectUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -824,8 +836,8 @@ public final class ProvisionAccountTicketRequest extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       redirectUri_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

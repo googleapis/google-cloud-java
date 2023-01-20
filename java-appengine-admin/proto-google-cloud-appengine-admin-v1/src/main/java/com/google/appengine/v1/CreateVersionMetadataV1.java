@@ -69,7 +69,9 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
   }
 
   public static final int CLOUD_BUILD_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cloudBuildId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudBuildId_ = "";
   /**
    *
    *
@@ -317,8 +319,8 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cloudBuildId_ = "";
-
       return this;
     }
 
@@ -346,9 +348,18 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
     public com.google.appengine.v1.CreateVersionMetadataV1 buildPartial() {
       com.google.appengine.v1.CreateVersionMetadataV1 result =
           new com.google.appengine.v1.CreateVersionMetadataV1(this);
-      result.cloudBuildId_ = cloudBuildId_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CreateVersionMetadataV1 result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cloudBuildId_ = cloudBuildId_;
+      }
     }
 
     @java.lang.Override
@@ -399,6 +410,7 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
         return this;
       if (!other.getCloudBuildId().isEmpty()) {
         cloudBuildId_ = other.cloudBuildId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -430,7 +442,7 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
             case 10:
               {
                 cloudBuildId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -449,6 +461,8 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cloudBuildId_ = "";
     /**
@@ -514,8 +528,8 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudBuildId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -532,8 +546,8 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearCloudBuildId() {
-
       cloudBuildId_ = getDefaultInstance().getCloudBuildId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -555,8 +569,8 @@ public final class CreateVersionMetadataV1 extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudBuildId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

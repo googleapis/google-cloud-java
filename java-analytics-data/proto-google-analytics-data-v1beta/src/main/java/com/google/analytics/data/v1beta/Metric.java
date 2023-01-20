@@ -71,7 +71,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -138,7 +140,9 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXPRESSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object expression_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object expression_ = "";
   /**
    *
    *
@@ -189,7 +193,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INVISIBLE_FIELD_NUMBER = 3;
-  private boolean invisible_;
+  private boolean invisible_ = false;
   /**
    *
    *
@@ -424,12 +428,10 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       expression_ = "";
-
       invisible_ = false;
-
       return this;
     }
 
@@ -457,11 +459,24 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.Metric buildPartial() {
       com.google.analytics.data.v1beta.Metric result =
           new com.google.analytics.data.v1beta.Metric(this);
-      result.name_ = name_;
-      result.expression_ = expression_;
-      result.invisible_ = invisible_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.Metric result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.expression_ = expression_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.invisible_ = invisible_;
+      }
     }
 
     @java.lang.Override
@@ -511,10 +526,12 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.data.v1beta.Metric.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getExpression().isEmpty()) {
         expression_ = other.expression_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getInvisible() != false) {
@@ -549,19 +566,19 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 expression_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 invisible_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -580,6 +597,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -669,8 +688,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -695,8 +714,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -726,8 +745,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -796,8 +815,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       expression_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -814,8 +833,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExpression() {
-
       expression_ = getDefaultInstance().getExpression();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -837,8 +856,8 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       expression_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -878,6 +897,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
     public Builder setInvisible(boolean value) {
 
       invisible_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -895,7 +915,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInvisible() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       invisible_ = false;
       onChanged();
       return this;

@@ -241,7 +241,9 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -542,6 +544,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (imageObjectDetectionModelDeploymentMetadataBuilder_ != null) {
         imageObjectDetectionModelDeploymentMetadataBuilder_.clear();
       }
@@ -549,7 +552,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         imageClassificationModelDeploymentMetadataBuilder_.clear();
       }
       name_ = "";
-
       modelDeploymentMetadataCase_ = 0;
       modelDeploymentMetadata_ = null;
       return this;
@@ -579,26 +581,34 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.automl.v1beta1.DeployModelRequest buildPartial() {
       com.google.cloud.automl.v1beta1.DeployModelRequest result =
           new com.google.cloud.automl.v1beta1.DeployModelRequest(this);
-      if (modelDeploymentMetadataCase_ == 2) {
-        if (imageObjectDetectionModelDeploymentMetadataBuilder_ == null) {
-          result.modelDeploymentMetadata_ = modelDeploymentMetadata_;
-        } else {
-          result.modelDeploymentMetadata_ =
-              imageObjectDetectionModelDeploymentMetadataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (modelDeploymentMetadataCase_ == 4) {
-        if (imageClassificationModelDeploymentMetadataBuilder_ == null) {
-          result.modelDeploymentMetadata_ = modelDeploymentMetadata_;
-        } else {
-          result.modelDeploymentMetadata_ =
-              imageClassificationModelDeploymentMetadataBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.modelDeploymentMetadataCase_ = modelDeploymentMetadataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DeployModelRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.DeployModelRequest result) {
+      result.modelDeploymentMetadataCase_ = modelDeploymentMetadataCase_;
+      result.modelDeploymentMetadata_ = this.modelDeploymentMetadata_;
+      if (modelDeploymentMetadataCase_ == 2
+          && imageObjectDetectionModelDeploymentMetadataBuilder_ != null) {
+        result.modelDeploymentMetadata_ =
+            imageObjectDetectionModelDeploymentMetadataBuilder_.build();
+      }
+      if (modelDeploymentMetadataCase_ == 4
+          && imageClassificationModelDeploymentMetadataBuilder_ != null) {
+        result.modelDeploymentMetadata_ =
+            imageClassificationModelDeploymentMetadataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -649,6 +659,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getModelDeploymentMetadataCase()) {
@@ -698,7 +709,7 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -747,6 +758,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.ImageObjectDetectionModelDeploymentMetadata,
@@ -992,7 +1005,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       modelDeploymentMetadataCase_ = 2;
       onChanged();
-      ;
       return imageObjectDetectionModelDeploymentMetadataBuilder_;
     }
 
@@ -1239,7 +1251,6 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       }
       modelDeploymentMetadataCase_ = 4;
       onChanged();
-      ;
       return imageClassificationModelDeploymentMetadataBuilder_;
     }
 
@@ -1310,8 +1321,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1329,8 +1340,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1353,8 +1364,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

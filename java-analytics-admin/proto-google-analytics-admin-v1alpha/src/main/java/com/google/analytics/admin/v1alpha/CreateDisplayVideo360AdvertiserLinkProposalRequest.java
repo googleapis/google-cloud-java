@@ -73,7 +73,9 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -180,7 +182,10 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder
       getDisplayVideo360AdvertiserLinkProposalOrBuilder() {
-    return getDisplayVideo360AdvertiserLinkProposal();
+    return displayVideo360AdvertiserLinkProposal_ == null
+        ? com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+            .getDefaultInstance()
+        : displayVideo360AdvertiserLinkProposal_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -425,12 +430,11 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
-        displayVideo360AdvertiserLinkProposal_ = null;
-      } else {
-        displayVideo360AdvertiserLinkProposal_ = null;
+      displayVideo360AdvertiserLinkProposal_ = null;
+      if (displayVideo360AdvertiserLinkProposalBuilder_ != null) {
+        displayVideo360AdvertiserLinkProposalBuilder_.dispose();
         displayVideo360AdvertiserLinkProposalBuilder_ = null;
       }
       return this;
@@ -466,15 +470,26 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest result =
           new com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest(
               this);
-      result.parent_ = parent_;
-      if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
-        result.displayVideo360AdvertiserLinkProposal_ = displayVideo360AdvertiserLinkProposal_;
-      } else {
-        result.displayVideo360AdvertiserLinkProposal_ =
-            displayVideo360AdvertiserLinkProposalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayVideo360AdvertiserLinkProposal_ =
+            displayVideo360AdvertiserLinkProposalBuilder_ == null
+                ? displayVideo360AdvertiserLinkProposal_
+                : displayVideo360AdvertiserLinkProposalBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -532,6 +547,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDisplayVideo360AdvertiserLinkProposal()) {
@@ -567,7 +583,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -575,7 +591,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
                 input.readMessage(
                     getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder(),
                     extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -594,6 +610,8 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -662,8 +680,8 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,8 +699,8 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -732,8 +750,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
      * @return Whether the displayVideo360AdvertiserLinkProposal field is set.
      */
     public boolean hasDisplayVideo360AdvertiserLinkProposal() {
-      return displayVideo360AdvertiserLinkProposalBuilder_ != null
-          || displayVideo360AdvertiserLinkProposal_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -777,11 +794,11 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
           throw new NullPointerException();
         }
         displayVideo360AdvertiserLinkProposal_ = value;
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkProposalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -800,11 +817,11 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
             builderForValue) {
       if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
         displayVideo360AdvertiserLinkProposal_ = builderForValue.build();
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkProposalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -821,20 +838,20 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
     public Builder mergeDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal value) {
       if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
-        if (displayVideo360AdvertiserLinkProposal_ != null) {
-          displayVideo360AdvertiserLinkProposal_ =
-              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.newBuilder(
-                      displayVideo360AdvertiserLinkProposal_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && displayVideo360AdvertiserLinkProposal_ != null
+            && displayVideo360AdvertiserLinkProposal_
+                != com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
+                    .getDefaultInstance()) {
+          getDisplayVideo360AdvertiserLinkProposalBuilder().mergeFrom(value);
         } else {
           displayVideo360AdvertiserLinkProposal_ = value;
         }
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkProposalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -849,14 +866,13 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
      * </code>
      */
     public Builder clearDisplayVideo360AdvertiserLinkProposal() {
-      if (displayVideo360AdvertiserLinkProposalBuilder_ == null) {
-        displayVideo360AdvertiserLinkProposal_ = null;
-        onChanged();
-      } else {
-        displayVideo360AdvertiserLinkProposal_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      displayVideo360AdvertiserLinkProposal_ = null;
+      if (displayVideo360AdvertiserLinkProposalBuilder_ != null) {
+        displayVideo360AdvertiserLinkProposalBuilder_.dispose();
         displayVideo360AdvertiserLinkProposalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -872,7 +888,7 @@ public final class CreateDisplayVideo360AdvertiserLinkProposalRequest
      */
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder
         getDisplayVideo360AdvertiserLinkProposalBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder();
     }

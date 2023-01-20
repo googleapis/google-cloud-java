@@ -335,7 +335,6 @@ public interface ApiOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,
@@ -415,7 +414,6 @@ public interface ApiOrBuilder
    *
    * <code>map&lt;string, string&gt; annotations = 10;</code>
    */
-
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
       java.lang.String key,

@@ -68,6 +68,8 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
   }
 
   public static final int BLOCKERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList blockers_;
   /**
    *
@@ -339,6 +341,7 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       blockers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -370,14 +373,26 @@ public final class AnalyzeWorkloadMoveResponse extends com.google.protobuf.Gener
     public com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse buildPartial() {
       com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result =
           new com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         blockers_ = blockers_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.blockers_ = blockers_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -70,7 +70,9 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
   }
 
   public static final int APP_GATEWAY_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appGatewayId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appGatewayId_ = "";
   /**
    *
    *
@@ -230,11 +234,15 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.beyondcorp.appgateways.v1.AppGatewayOrBuilder getAppGatewayOrBuilder() {
-    return getAppGateway();
+    return appGateway_ == null
+        ? com.google.cloud.beyondcorp.appgateways.v1.AppGateway.getDefaultInstance()
+        : appGateway_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -303,7 +311,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -562,20 +570,16 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       appGatewayId_ = "";
-
-      if (appGatewayBuilder_ == null) {
-        appGateway_ = null;
-      } else {
-        appGateway_ = null;
+      appGateway_ = null;
+      if (appGatewayBuilder_ != null) {
+        appGatewayBuilder_.dispose();
         appGatewayBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -605,17 +609,31 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
     public com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest buildPartial() {
       com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest result =
           new com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest(this);
-      result.parent_ = parent_;
-      result.appGatewayId_ = appGatewayId_;
-      if (appGatewayBuilder_ == null) {
-        result.appGateway_ = appGateway_;
-      } else {
-        result.appGateway_ = appGatewayBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appGatewayId_ = appGatewayId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appGateway_ = appGatewayBuilder_ == null ? appGateway_ : appGatewayBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -669,10 +687,12 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppGatewayId().isEmpty()) {
         appGatewayId_ = other.appGatewayId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAppGateway()) {
@@ -680,6 +700,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -714,31 +735,31 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 appGatewayId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAppGatewayFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -757,6 +778,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -828,8 +851,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -848,8 +871,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -873,8 +896,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -949,8 +972,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       appGatewayId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -969,8 +992,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAppGatewayId() {
-
       appGatewayId_ = getDefaultInstance().getAppGatewayId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -994,8 +1017,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appGatewayId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1020,7 +1043,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * @return Whether the appGateway field is set.
      */
     public boolean hasAppGateway() {
-      return appGatewayBuilder_ != null || appGateway_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1061,11 +1084,11 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         appGateway_ = value;
-        onChanged();
       } else {
         appGatewayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1083,11 +1106,11 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
         com.google.cloud.beyondcorp.appgateways.v1.AppGateway.Builder builderForValue) {
       if (appGatewayBuilder_ == null) {
         appGateway_ = builderForValue.build();
-        onChanged();
       } else {
         appGatewayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1103,19 +1126,19 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      */
     public Builder mergeAppGateway(com.google.cloud.beyondcorp.appgateways.v1.AppGateway value) {
       if (appGatewayBuilder_ == null) {
-        if (appGateway_ != null) {
-          appGateway_ =
-              com.google.cloud.beyondcorp.appgateways.v1.AppGateway.newBuilder(appGateway_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && appGateway_ != null
+            && appGateway_
+                != com.google.cloud.beyondcorp.appgateways.v1.AppGateway.getDefaultInstance()) {
+          getAppGatewayBuilder().mergeFrom(value);
         } else {
           appGateway_ = value;
         }
-        onChanged();
       } else {
         appGatewayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1130,14 +1153,13 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearAppGateway() {
-      if (appGatewayBuilder_ == null) {
-        appGateway_ = null;
-        onChanged();
-      } else {
-        appGateway_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      appGateway_ = null;
+      if (appGatewayBuilder_ != null) {
+        appGatewayBuilder_.dispose();
         appGatewayBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1152,7 +1174,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.beyondcorp.appgateways.v1.AppGateway.Builder getAppGatewayBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAppGatewayFieldBuilder().getBuilder();
     }
@@ -1295,8 +1317,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1322,8 +1344,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1354,8 +1376,8 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1393,6 +1415,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1409,7 +1432,7 @@ public final class CreateAppGatewayRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

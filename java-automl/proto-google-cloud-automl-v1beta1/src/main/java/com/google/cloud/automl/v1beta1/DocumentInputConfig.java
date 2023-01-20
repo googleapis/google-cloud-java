@@ -119,7 +119,9 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
-    return getGcsSource();
+    return gcsSource_ == null
+        ? com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance()
+        : gcsSource_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -324,10 +326,10 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-      } else {
-        gcsSource_ = null;
+      bitField0_ = 0;
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
       return this;
@@ -357,13 +359,18 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.automl.v1beta1.DocumentInputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.DocumentInputConfig result =
           new com.google.cloud.automl.v1beta1.DocumentInputConfig(this);
-      if (gcsSourceBuilder_ == null) {
-        result.gcsSource_ = gcsSource_;
-      } else {
-        result.gcsSource_ = gcsSourceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DocumentInputConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcsSource_ = gcsSourceBuilder_ == null ? gcsSource_ : gcsSourceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -444,7 +451,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -463,6 +470,8 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1beta1.GcsSource gcsSource_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -485,7 +494,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
-      return gcsSourceBuilder_ != null || gcsSource_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -528,11 +537,11 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         gcsSource_ = value;
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -550,11 +559,11 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
     public Builder setGcsSource(com.google.cloud.automl.v1beta1.GcsSource.Builder builderForValue) {
       if (gcsSourceBuilder_ == null) {
         gcsSource_ = builderForValue.build();
-        onChanged();
       } else {
         gcsSourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -571,19 +580,18 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeGcsSource(com.google.cloud.automl.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
-        if (gcsSource_ != null) {
-          gcsSource_ =
-              com.google.cloud.automl.v1beta1.GcsSource.newBuilder(gcsSource_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && gcsSource_ != null
+            && gcsSource_ != com.google.cloud.automl.v1beta1.GcsSource.getDefaultInstance()) {
+          getGcsSourceBuilder().mergeFrom(value);
         } else {
           gcsSource_ = value;
         }
-        onChanged();
       } else {
         gcsSourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -599,14 +607,13 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public Builder clearGcsSource() {
-      if (gcsSourceBuilder_ == null) {
-        gcsSource_ = null;
-        onChanged();
-      } else {
-        gcsSource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      gcsSource_ = null;
+      if (gcsSourceBuilder_ != null) {
+        gcsSourceBuilder_.dispose();
         gcsSourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -622,7 +629,7 @@ public final class DocumentInputConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.automl.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public com.google.cloud.automl.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }

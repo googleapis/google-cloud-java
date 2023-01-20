@@ -283,7 +283,7 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ERROR_CODE_FIELD_NUMBER = 1;
-  private int errorCode_;
+  private int errorCode_ = 0;
   /**
    *
    *
@@ -312,14 +312,15 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.ErrorHandler.ErrorCode getErrorCode() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.ErrorHandler.ErrorCode result =
-        com.google.appengine.v1.ErrorHandler.ErrorCode.valueOf(errorCode_);
+        com.google.appengine.v1.ErrorHandler.ErrorCode.forNumber(errorCode_);
     return result == null ? com.google.appengine.v1.ErrorHandler.ErrorCode.UNRECOGNIZED : result;
   }
 
   public static final int STATIC_FILE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object staticFile_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object staticFile_ = "";
   /**
    *
    *
@@ -368,7 +369,9 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -631,12 +634,10 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       errorCode_ = 0;
-
       staticFile_ = "";
-
       mimeType_ = "";
-
       return this;
     }
 
@@ -663,11 +664,24 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.ErrorHandler buildPartial() {
       com.google.appengine.v1.ErrorHandler result = new com.google.appengine.v1.ErrorHandler(this);
-      result.errorCode_ = errorCode_;
-      result.staticFile_ = staticFile_;
-      result.mimeType_ = mimeType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ErrorHandler result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.errorCode_ = errorCode_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.staticFile_ = staticFile_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
     }
 
     @java.lang.Override
@@ -720,10 +734,12 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStaticFile().isEmpty()) {
         staticFile_ = other.staticFile_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -755,19 +771,19 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 errorCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 staticFile_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -786,6 +802,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int errorCode_ = 0;
     /**
@@ -816,8 +834,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setErrorCodeValue(int value) {
-
       errorCode_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -834,9 +852,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.ErrorHandler.ErrorCode getErrorCode() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.ErrorHandler.ErrorCode result =
-          com.google.appengine.v1.ErrorHandler.ErrorCode.valueOf(errorCode_);
+          com.google.appengine.v1.ErrorHandler.ErrorCode.forNumber(errorCode_);
       return result == null ? com.google.appengine.v1.ErrorHandler.ErrorCode.UNRECOGNIZED : result;
     }
     /**
@@ -855,7 +872,7 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       errorCode_ = value.getNumber();
       onChanged();
       return this;
@@ -872,7 +889,7 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearErrorCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       errorCode_ = 0;
       onChanged();
       return this;
@@ -939,8 +956,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       staticFile_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -956,8 +973,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStaticFile() {
-
       staticFile_ = getDefaultInstance().getStaticFile();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -978,8 +995,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       staticFile_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1045,8 +1062,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1062,8 +1079,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1084,8 +1101,8 @@ public final class ErrorHandler extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

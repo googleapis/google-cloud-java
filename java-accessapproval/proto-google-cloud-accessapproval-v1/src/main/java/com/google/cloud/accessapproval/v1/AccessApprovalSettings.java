@@ -71,7 +71,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -126,6 +128,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int NOTIFICATION_EMAILS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList notificationEmails_;
   /**
    *
@@ -199,6 +203,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENROLLED_SERVICES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.accessapproval.v1.EnrolledService> enrolledServices_;
   /**
    *
@@ -315,7 +321,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int ENROLLED_ANCESTOR_FIELD_NUMBER = 4;
-  private boolean enrolledAncestor_;
+  private boolean enrolledAncestor_ = false;
   /**
    *
    *
@@ -337,7 +343,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int ACTIVE_KEY_VERSION_FIELD_NUMBER = 6;
-  private volatile java.lang.Object activeKeyVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object activeKeyVersion_ = "";
   /**
    *
    *
@@ -392,7 +400,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int ANCESTOR_HAS_ACTIVE_KEY_VERSION_FIELD_NUMBER = 7;
-  private boolean ancestorHasActiveKeyVersion_;
+  private boolean ancestorHasActiveKeyVersion_ = false;
   /**
    *
    *
@@ -414,7 +422,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
   }
 
   public static final int INVALID_KEY_VERSION_FIELD_NUMBER = 8;
-  private boolean invalidKeyVersion_;
+  private boolean invalidKeyVersion_ = false;
   /**
    *
    *
@@ -699,25 +707,21 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (enrolledServicesBuilder_ == null) {
         enrolledServices_ = java.util.Collections.emptyList();
       } else {
         enrolledServices_ = null;
         enrolledServicesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       enrolledAncestor_ = false;
-
       activeKeyVersion_ = "";
-
       ancestorHasActiveKeyVersion_ = false;
-
       invalidKeyVersion_ = false;
-
       return this;
     }
 
@@ -745,28 +749,49 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public com.google.cloud.accessapproval.v1.AccessApprovalSettings buildPartial() {
       com.google.cloud.accessapproval.v1.AccessApprovalSettings result =
           new com.google.cloud.accessapproval.v1.AccessApprovalSettings(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.accessapproval.v1.AccessApprovalSettings result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         notificationEmails_ = notificationEmails_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.notificationEmails_ = notificationEmails_;
       if (enrolledServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           enrolledServices_ = java.util.Collections.unmodifiableList(enrolledServices_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.enrolledServices_ = enrolledServices_;
       } else {
         result.enrolledServices_ = enrolledServicesBuilder_.build();
       }
-      result.enrolledAncestor_ = enrolledAncestor_;
-      result.activeKeyVersion_ = activeKeyVersion_;
-      result.ancestorHasActiveKeyVersion_ = ancestorHasActiveKeyVersion_;
-      result.invalidKeyVersion_ = invalidKeyVersion_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.AccessApprovalSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enrolledAncestor_ = enrolledAncestor_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.activeKeyVersion_ = activeKeyVersion_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.ancestorHasActiveKeyVersion_ = ancestorHasActiveKeyVersion_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.invalidKeyVersion_ = invalidKeyVersion_;
+      }
     }
 
     @java.lang.Override
@@ -817,12 +842,13 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.notificationEmails_.isEmpty()) {
         if (notificationEmails_.isEmpty()) {
           notificationEmails_ = other.notificationEmails_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureNotificationEmailsIsMutable();
           notificationEmails_.addAll(other.notificationEmails_);
@@ -833,7 +859,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         if (!other.enrolledServices_.isEmpty()) {
           if (enrolledServices_.isEmpty()) {
             enrolledServices_ = other.enrolledServices_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEnrolledServicesIsMutable();
             enrolledServices_.addAll(other.enrolledServices_);
@@ -846,7 +872,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
             enrolledServicesBuilder_.dispose();
             enrolledServicesBuilder_ = null;
             enrolledServices_ = other.enrolledServices_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             enrolledServicesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEnrolledServicesFieldBuilder()
@@ -861,6 +887,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       }
       if (!other.getActiveKeyVersion().isEmpty()) {
         activeKeyVersion_ = other.activeKeyVersion_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getAncestorHasActiveKeyVersion() != false) {
@@ -898,7 +925,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -925,25 +952,25 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
             case 32:
               {
                 enrolledAncestor_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 50:
               {
                 activeKeyVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 56:
               {
                 ancestorHasActiveKeyVersion_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 56
             case 64:
               {
                 invalidKeyVersion_ = input.readBool();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 64
             default:
@@ -1035,8 +1062,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1055,8 +1082,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1080,8 +1107,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1090,9 +1117,9 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureNotificationEmailsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         notificationEmails_ = new com.google.protobuf.LazyStringArrayList(notificationEmails_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1251,7 +1278,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      */
     public Builder clearNotificationEmails() {
       notificationEmails_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1285,11 +1312,11 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureEnrolledServicesIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         enrolledServices_ =
             new java.util.ArrayList<com.google.cloud.accessapproval.v1.EnrolledService>(
                 enrolledServices_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1607,7 +1634,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder clearEnrolledServices() {
       if (enrolledServicesBuilder_ == null) {
         enrolledServices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         enrolledServicesBuilder_.clear();
@@ -1797,7 +1824,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
                 com.google.cloud.accessapproval.v1.EnrolledService.Builder,
                 com.google.cloud.accessapproval.v1.EnrolledServiceOrBuilder>(
                 enrolledServices_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         enrolledServices_ = null;
@@ -1844,6 +1871,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder setEnrolledAncestor(boolean value) {
 
       enrolledAncestor_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1863,7 +1891,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearEnrolledAncestor() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       enrolledAncestor_ = false;
       onChanged();
       return this;
@@ -1939,8 +1967,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       activeKeyVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1959,8 +1987,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearActiveKeyVersion() {
-
       activeKeyVersion_ = getDefaultInstance().getActiveKeyVersion();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1984,8 +2012,8 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       activeKeyVersion_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2029,6 +2057,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder setAncestorHasActiveKeyVersion(boolean value) {
 
       ancestorHasActiveKeyVersion_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2048,7 +2077,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearAncestorHasActiveKeyVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       ancestorHasActiveKeyVersion_ = false;
       onChanged();
       return this;
@@ -2097,6 +2126,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
     public Builder setInvalidKeyVersion(boolean value) {
 
       invalidKeyVersion_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2118,7 +2148,7 @@ public final class AccessApprovalSettings extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearInvalidKeyVersion() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       invalidKeyVersion_ = false;
       onChanged();
       return this;

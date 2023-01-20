@@ -71,7 +71,9 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -319,8 +321,8 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       return this;
     }
 
@@ -348,9 +350,18 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.data.v1alpha.DimensionHeader buildPartial() {
       com.google.analytics.data.v1alpha.DimensionHeader result =
           new com.google.analytics.data.v1alpha.DimensionHeader(this);
-      result.name_ = name_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.DimensionHeader result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
     }
 
     @java.lang.Override
@@ -401,6 +412,7 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -432,7 +444,7 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -451,6 +463,8 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -513,8 +527,8 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -530,8 +544,8 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -552,8 +566,8 @@ public final class DimensionHeader extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

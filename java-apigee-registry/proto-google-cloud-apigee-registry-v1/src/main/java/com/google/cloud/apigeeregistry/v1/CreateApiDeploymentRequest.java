@@ -69,7 +69,9 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiDeploymentOrBuilder getApiDeploymentOrBuilder() {
-    return getApiDeployment();
+    return apiDeployment_ == null
+        ? com.google.cloud.apigeeregistry.v1.ApiDeployment.getDefaultInstance()
+        : apiDeployment_;
   }
 
   public static final int API_DEPLOYMENT_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object apiDeploymentId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiDeploymentId_ = "";
   /**
    *
    *
@@ -455,16 +461,14 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (apiDeploymentBuilder_ == null) {
-        apiDeployment_ = null;
-      } else {
-        apiDeployment_ = null;
+      apiDeployment_ = null;
+      if (apiDeploymentBuilder_ != null) {
+        apiDeploymentBuilder_.dispose();
         apiDeploymentBuilder_ = null;
       }
       apiDeploymentId_ = "";
-
       return this;
     }
 
@@ -493,15 +497,26 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
     public com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest result =
           new com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest(this);
-      result.parent_ = parent_;
-      if (apiDeploymentBuilder_ == null) {
-        result.apiDeployment_ = apiDeployment_;
-      } else {
-        result.apiDeployment_ = apiDeploymentBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.apiDeploymentId_ = apiDeploymentId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiDeployment_ =
+            apiDeploymentBuilder_ == null ? apiDeployment_ : apiDeploymentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.apiDeploymentId_ = apiDeploymentId_;
+      }
     }
 
     @java.lang.Override
@@ -553,6 +568,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApiDeployment()) {
@@ -560,6 +576,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
       }
       if (!other.getApiDeploymentId().isEmpty()) {
         apiDeploymentId_ = other.apiDeploymentId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -591,19 +608,19 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApiDeploymentFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 apiDeploymentId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -622,6 +639,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -693,8 +712,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -713,8 +732,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -738,8 +757,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -764,7 +783,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      * @return Whether the apiDeployment field is set.
      */
     public boolean hasApiDeployment() {
-      return apiDeploymentBuilder_ != null || apiDeployment_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -805,11 +824,11 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         apiDeployment_ = value;
-        onChanged();
       } else {
         apiDeploymentBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -827,11 +846,11 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
         com.google.cloud.apigeeregistry.v1.ApiDeployment.Builder builderForValue) {
       if (apiDeploymentBuilder_ == null) {
         apiDeployment_ = builderForValue.build();
-        onChanged();
       } else {
         apiDeploymentBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -847,19 +866,19 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      */
     public Builder mergeApiDeployment(com.google.cloud.apigeeregistry.v1.ApiDeployment value) {
       if (apiDeploymentBuilder_ == null) {
-        if (apiDeployment_ != null) {
-          apiDeployment_ =
-              com.google.cloud.apigeeregistry.v1.ApiDeployment.newBuilder(apiDeployment_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && apiDeployment_ != null
+            && apiDeployment_
+                != com.google.cloud.apigeeregistry.v1.ApiDeployment.getDefaultInstance()) {
+          getApiDeploymentBuilder().mergeFrom(value);
         } else {
           apiDeployment_ = value;
         }
-        onChanged();
       } else {
         apiDeploymentBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -874,14 +893,13 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearApiDeployment() {
-      if (apiDeploymentBuilder_ == null) {
-        apiDeployment_ = null;
-        onChanged();
-      } else {
-        apiDeployment_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      apiDeployment_ = null;
+      if (apiDeploymentBuilder_ != null) {
+        apiDeploymentBuilder_.dispose();
         apiDeploymentBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -896,7 +914,7 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.ApiDeployment.Builder getApiDeploymentBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApiDeploymentFieldBuilder().getBuilder();
     }
@@ -1021,8 +1039,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiDeploymentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1042,8 +1060,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearApiDeploymentId() {
-
       apiDeploymentId_ = getDefaultInstance().getApiDeploymentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1068,8 +1086,8 @@ public final class CreateApiDeploymentRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiDeploymentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

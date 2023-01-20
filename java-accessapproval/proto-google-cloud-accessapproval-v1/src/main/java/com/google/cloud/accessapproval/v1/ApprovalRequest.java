@@ -116,7 +116,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -167,7 +169,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int REQUESTED_RESOURCE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestedResourceName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestedResourceName_ = "";
   /**
    *
    *
@@ -276,7 +280,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.accessapproval.v1.ResourcePropertiesOrBuilder
       getRequestedResourcePropertiesOrBuilder() {
-    return getRequestedResourceProperties();
+    return requestedResourceProperties_ == null
+        ? com.google.cloud.accessapproval.v1.ResourceProperties.getDefaultInstance()
+        : requestedResourceProperties_;
   }
 
   public static final int REQUESTED_REASON_FIELD_NUMBER = 3;
@@ -324,7 +330,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessReasonOrBuilder getRequestedReasonOrBuilder() {
-    return getRequestedReason();
+    return requestedReason_ == null
+        ? com.google.cloud.accessapproval.v1.AccessReason.getDefaultInstance()
+        : requestedReason_;
   }
 
   public static final int REQUESTED_LOCATIONS_FIELD_NUMBER = 4;
@@ -373,7 +381,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.cloud.accessapproval.v1.AccessLocationsOrBuilder
       getRequestedLocationsOrBuilder() {
-    return getRequestedLocations();
+    return requestedLocations_ == null
+        ? com.google.cloud.accessapproval.v1.AccessLocations.getDefaultInstance()
+        : requestedLocations_;
   }
 
   public static final int REQUEST_TIME_FIELD_NUMBER = 5;
@@ -419,7 +429,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestTimeOrBuilder() {
-    return getRequestTime();
+    return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
 
   public static final int REQUESTED_EXPIRATION_FIELD_NUMBER = 6;
@@ -470,7 +480,9 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRequestedExpirationOrBuilder() {
-    return getRequestedExpiration();
+    return requestedExpiration_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : requestedExpiration_;
   }
 
   public static final int APPROVE_FIELD_NUMBER = 7;
@@ -893,38 +905,32 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       requestedResourceName_ = "";
-
-      if (requestedResourcePropertiesBuilder_ == null) {
-        requestedResourceProperties_ = null;
-      } else {
-        requestedResourceProperties_ = null;
+      requestedResourceProperties_ = null;
+      if (requestedResourcePropertiesBuilder_ != null) {
+        requestedResourcePropertiesBuilder_.dispose();
         requestedResourcePropertiesBuilder_ = null;
       }
-      if (requestedReasonBuilder_ == null) {
-        requestedReason_ = null;
-      } else {
-        requestedReason_ = null;
+      requestedReason_ = null;
+      if (requestedReasonBuilder_ != null) {
+        requestedReasonBuilder_.dispose();
         requestedReasonBuilder_ = null;
       }
-      if (requestedLocationsBuilder_ == null) {
-        requestedLocations_ = null;
-      } else {
-        requestedLocations_ = null;
+      requestedLocations_ = null;
+      if (requestedLocationsBuilder_ != null) {
+        requestedLocationsBuilder_.dispose();
         requestedLocationsBuilder_ = null;
       }
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-      } else {
-        requestTime_ = null;
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-      if (requestedExpirationBuilder_ == null) {
-        requestedExpiration_ = null;
-      } else {
-        requestedExpiration_ = null;
+      requestedExpiration_ = null;
+      if (requestedExpirationBuilder_ != null) {
+        requestedExpirationBuilder_.dispose();
         requestedExpirationBuilder_ = null;
       }
       if (approveBuilder_ != null) {
@@ -962,50 +968,59 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.ApprovalRequest buildPartial() {
       com.google.cloud.accessapproval.v1.ApprovalRequest result =
           new com.google.cloud.accessapproval.v1.ApprovalRequest(this);
-      result.name_ = name_;
-      result.requestedResourceName_ = requestedResourceName_;
-      if (requestedResourcePropertiesBuilder_ == null) {
-        result.requestedResourceProperties_ = requestedResourceProperties_;
-      } else {
-        result.requestedResourceProperties_ = requestedResourcePropertiesBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (requestedReasonBuilder_ == null) {
-        result.requestedReason_ = requestedReason_;
-      } else {
-        result.requestedReason_ = requestedReasonBuilder_.build();
-      }
-      if (requestedLocationsBuilder_ == null) {
-        result.requestedLocations_ = requestedLocations_;
-      } else {
-        result.requestedLocations_ = requestedLocationsBuilder_.build();
-      }
-      if (requestTimeBuilder_ == null) {
-        result.requestTime_ = requestTime_;
-      } else {
-        result.requestTime_ = requestTimeBuilder_.build();
-      }
-      if (requestedExpirationBuilder_ == null) {
-        result.requestedExpiration_ = requestedExpiration_;
-      } else {
-        result.requestedExpiration_ = requestedExpirationBuilder_.build();
-      }
-      if (decisionCase_ == 7) {
-        if (approveBuilder_ == null) {
-          result.decision_ = decision_;
-        } else {
-          result.decision_ = approveBuilder_.build();
-        }
-      }
-      if (decisionCase_ == 8) {
-        if (dismissBuilder_ == null) {
-          result.decision_ = decision_;
-        } else {
-          result.decision_ = dismissBuilder_.build();
-        }
-      }
-      result.decisionCase_ = decisionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.ApprovalRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestedResourceName_ = requestedResourceName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestedResourceProperties_ =
+            requestedResourcePropertiesBuilder_ == null
+                ? requestedResourceProperties_
+                : requestedResourcePropertiesBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestedReason_ =
+            requestedReasonBuilder_ == null ? requestedReason_ : requestedReasonBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.requestedLocations_ =
+            requestedLocationsBuilder_ == null
+                ? requestedLocations_
+                : requestedLocationsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestTime_ =
+            requestTimeBuilder_ == null ? requestTime_ : requestTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requestedExpiration_ =
+            requestedExpirationBuilder_ == null
+                ? requestedExpiration_
+                : requestedExpirationBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.accessapproval.v1.ApprovalRequest result) {
+      result.decisionCase_ = decisionCase_;
+      result.decision_ = this.decision_;
+      if (decisionCase_ == 7 && approveBuilder_ != null) {
+        result.decision_ = approveBuilder_.build();
+      }
+      if (decisionCase_ == 8 && dismissBuilder_ != null) {
+        result.decision_ = dismissBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1056,10 +1071,12 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRequestedResourceName().isEmpty()) {
         requestedResourceName_ = other.requestedResourceName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasRequestedResourceProperties()) {
@@ -1122,39 +1139,39 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 requestedResourceName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getRequestedReasonFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getRequestedLocationsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getRequestTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getRequestedExpirationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1173,7 +1190,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
               {
                 input.readMessage(
                     getRequestedResourcePropertiesFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 74
             default:
@@ -1206,6 +1223,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -1271,8 +1290,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1289,8 +1308,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1312,8 +1331,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1397,8 +1416,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestedResourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1420,8 +1439,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearRequestedResourceName() {
-
       requestedResourceName_ = getDefaultInstance().getRequestedResourceName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1448,8 +1467,8 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestedResourceName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1473,7 +1492,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestedResourceProperties field is set.
      */
     public boolean hasRequestedResourceProperties() {
-      return requestedResourcePropertiesBuilder_ != null || requestedResourceProperties_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1513,11 +1532,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestedResourceProperties_ = value;
-        onChanged();
       } else {
         requestedResourcePropertiesBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1534,11 +1553,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.accessapproval.v1.ResourceProperties.Builder builderForValue) {
       if (requestedResourcePropertiesBuilder_ == null) {
         requestedResourceProperties_ = builderForValue.build();
-        onChanged();
       } else {
         requestedResourcePropertiesBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1554,20 +1573,19 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public Builder mergeRequestedResourceProperties(
         com.google.cloud.accessapproval.v1.ResourceProperties value) {
       if (requestedResourcePropertiesBuilder_ == null) {
-        if (requestedResourceProperties_ != null) {
-          requestedResourceProperties_ =
-              com.google.cloud.accessapproval.v1.ResourceProperties.newBuilder(
-                      requestedResourceProperties_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && requestedResourceProperties_ != null
+            && requestedResourceProperties_
+                != com.google.cloud.accessapproval.v1.ResourceProperties.getDefaultInstance()) {
+          getRequestedResourcePropertiesBuilder().mergeFrom(value);
         } else {
           requestedResourceProperties_ = value;
         }
-        onChanged();
       } else {
         requestedResourcePropertiesBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1581,14 +1599,13 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * </code>
      */
     public Builder clearRequestedResourceProperties() {
-      if (requestedResourcePropertiesBuilder_ == null) {
-        requestedResourceProperties_ = null;
-        onChanged();
-      } else {
-        requestedResourceProperties_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      requestedResourceProperties_ = null;
+      if (requestedResourcePropertiesBuilder_ != null) {
+        requestedResourcePropertiesBuilder_.dispose();
         requestedResourcePropertiesBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1603,7 +1620,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.accessapproval.v1.ResourceProperties.Builder
         getRequestedResourcePropertiesBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getRequestedResourcePropertiesFieldBuilder().getBuilder();
     }
@@ -1672,7 +1689,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestedReason field is set.
      */
     public boolean hasRequestedReason() {
-      return requestedReasonBuilder_ != null || requestedReason_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1709,11 +1726,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestedReason_ = value;
-        onChanged();
       } else {
         requestedReasonBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1729,11 +1746,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.accessapproval.v1.AccessReason.Builder builderForValue) {
       if (requestedReasonBuilder_ == null) {
         requestedReason_ = builderForValue.build();
-        onChanged();
       } else {
         requestedReasonBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1747,19 +1764,19 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRequestedReason(com.google.cloud.accessapproval.v1.AccessReason value) {
       if (requestedReasonBuilder_ == null) {
-        if (requestedReason_ != null) {
-          requestedReason_ =
-              com.google.cloud.accessapproval.v1.AccessReason.newBuilder(requestedReason_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && requestedReason_ != null
+            && requestedReason_
+                != com.google.cloud.accessapproval.v1.AccessReason.getDefaultInstance()) {
+          getRequestedReasonBuilder().mergeFrom(value);
         } else {
           requestedReason_ = value;
         }
-        onChanged();
       } else {
         requestedReasonBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1772,14 +1789,13 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.accessapproval.v1.AccessReason requested_reason = 3;</code>
      */
     public Builder clearRequestedReason() {
-      if (requestedReasonBuilder_ == null) {
-        requestedReason_ = null;
-        onChanged();
-      } else {
-        requestedReason_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      requestedReason_ = null;
+      if (requestedReasonBuilder_ != null) {
+        requestedReasonBuilder_.dispose();
         requestedReasonBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1792,7 +1808,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.accessapproval.v1.AccessReason requested_reason = 3;</code>
      */
     public com.google.cloud.accessapproval.v1.AccessReason.Builder getRequestedReasonBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRequestedReasonFieldBuilder().getBuilder();
     }
@@ -1858,7 +1874,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestedLocations field is set.
      */
     public boolean hasRequestedLocations() {
-      return requestedLocationsBuilder_ != null || requestedLocations_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1895,11 +1911,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestedLocations_ = value;
-        onChanged();
       } else {
         requestedLocationsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1915,11 +1931,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.accessapproval.v1.AccessLocations.Builder builderForValue) {
       if (requestedLocationsBuilder_ == null) {
         requestedLocations_ = builderForValue.build();
-        onChanged();
       } else {
         requestedLocationsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1934,19 +1950,19 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public Builder mergeRequestedLocations(
         com.google.cloud.accessapproval.v1.AccessLocations value) {
       if (requestedLocationsBuilder_ == null) {
-        if (requestedLocations_ != null) {
-          requestedLocations_ =
-              com.google.cloud.accessapproval.v1.AccessLocations.newBuilder(requestedLocations_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && requestedLocations_ != null
+            && requestedLocations_
+                != com.google.cloud.accessapproval.v1.AccessLocations.getDefaultInstance()) {
+          getRequestedLocationsBuilder().mergeFrom(value);
         } else {
           requestedLocations_ = value;
         }
-        onChanged();
       } else {
         requestedLocationsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1959,14 +1975,13 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.accessapproval.v1.AccessLocations requested_locations = 4;</code>
      */
     public Builder clearRequestedLocations() {
-      if (requestedLocationsBuilder_ == null) {
-        requestedLocations_ = null;
-        onChanged();
-      } else {
-        requestedLocations_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      requestedLocations_ = null;
+      if (requestedLocationsBuilder_ != null) {
+        requestedLocationsBuilder_.dispose();
         requestedLocationsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1980,7 +1995,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.accessapproval.v1.AccessLocations.Builder
         getRequestedLocationsBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getRequestedLocationsFieldBuilder().getBuilder();
     }
@@ -2047,7 +2062,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestTime field is set.
      */
     public boolean hasRequestTime() {
-      return requestTimeBuilder_ != null || requestTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2084,11 +2099,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestTime_ = value;
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2103,11 +2118,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setRequestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (requestTimeBuilder_ == null) {
         requestTime_ = builderForValue.build();
-        onChanged();
       } else {
         requestTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2121,19 +2136,18 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRequestTime(com.google.protobuf.Timestamp value) {
       if (requestTimeBuilder_ == null) {
-        if (requestTime_ != null) {
-          requestTime_ =
-              com.google.protobuf.Timestamp.newBuilder(requestTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && requestTime_ != null
+            && requestTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRequestTimeBuilder().mergeFrom(value);
         } else {
           requestTime_ = value;
         }
-        onChanged();
       } else {
         requestTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2146,14 +2160,13 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp request_time = 5;</code>
      */
     public Builder clearRequestTime() {
-      if (requestTimeBuilder_ == null) {
-        requestTime_ = null;
-        onChanged();
-      } else {
-        requestTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      requestTime_ = null;
+      if (requestTimeBuilder_ != null) {
+        requestTimeBuilder_.dispose();
         requestTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2166,7 +2179,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp request_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRequestTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
@@ -2233,7 +2246,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * @return Whether the requestedExpiration field is set.
      */
     public boolean hasRequestedExpiration() {
-      return requestedExpirationBuilder_ != null || requestedExpiration_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2272,11 +2285,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         requestedExpiration_ = value;
-        onChanged();
       } else {
         requestedExpirationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2292,11 +2305,11 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setRequestedExpiration(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (requestedExpirationBuilder_ == null) {
         requestedExpiration_ = builderForValue.build();
-        onChanged();
       } else {
         requestedExpirationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2311,19 +2324,18 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeRequestedExpiration(com.google.protobuf.Timestamp value) {
       if (requestedExpirationBuilder_ == null) {
-        if (requestedExpiration_ != null) {
-          requestedExpiration_ =
-              com.google.protobuf.Timestamp.newBuilder(requestedExpiration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && requestedExpiration_ != null
+            && requestedExpiration_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRequestedExpirationBuilder().mergeFrom(value);
         } else {
           requestedExpiration_ = value;
         }
-        onChanged();
       } else {
         requestedExpirationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2337,14 +2349,13 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp requested_expiration = 6;</code>
      */
     public Builder clearRequestedExpiration() {
-      if (requestedExpirationBuilder_ == null) {
-        requestedExpiration_ = null;
-        onChanged();
-      } else {
-        requestedExpiration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      requestedExpiration_ = null;
+      if (requestedExpirationBuilder_ != null) {
+        requestedExpirationBuilder_.dispose();
         requestedExpirationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2358,7 +2369,7 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
      * <code>.google.protobuf.Timestamp requested_expiration = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getRequestedExpirationBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getRequestedExpirationFieldBuilder().getBuilder();
     }
@@ -2615,7 +2626,6 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       decisionCase_ = 7;
       onChanged();
-      ;
       return approveBuilder_;
     }
 
@@ -2826,7 +2836,6 @@ public final class ApprovalRequest extends com.google.protobuf.GeneratedMessageV
       }
       decisionCase_ = 8;
       onChanged();
-      ;
       return dismissBuilder_;
     }
 

@@ -121,11 +121,13 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastRenewalTimeOrBuilder() {
-    return getLastRenewalTime();
+    return lastRenewalTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastRenewalTime_;
   }
 
   public static final int STATUS_FIELD_NUMBER = 2;
-  private int status_;
+  private int status_ = 0;
   /**
    *
    *
@@ -158,9 +160,8 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.appengine.v1.ManagementStatus getStatus() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.ManagementStatus result =
-        com.google.appengine.v1.ManagementStatus.valueOf(status_);
+        com.google.appengine.v1.ManagementStatus.forNumber(status_);
     return result == null ? com.google.appengine.v1.ManagementStatus.UNRECOGNIZED : result;
   }
 
@@ -377,14 +378,13 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (lastRenewalTimeBuilder_ == null) {
-        lastRenewalTime_ = null;
-      } else {
-        lastRenewalTime_ = null;
+      bitField0_ = 0;
+      lastRenewalTime_ = null;
+      if (lastRenewalTimeBuilder_ != null) {
+        lastRenewalTimeBuilder_.dispose();
         lastRenewalTimeBuilder_ = null;
       }
       status_ = 0;
-
       return this;
     }
 
@@ -412,14 +412,22 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.ManagedCertificate buildPartial() {
       com.google.appengine.v1.ManagedCertificate result =
           new com.google.appengine.v1.ManagedCertificate(this);
-      if (lastRenewalTimeBuilder_ == null) {
-        result.lastRenewalTime_ = lastRenewalTime_;
-      } else {
-        result.lastRenewalTime_ = lastRenewalTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.status_ = status_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ManagedCertificate result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.lastRenewalTime_ =
+            lastRenewalTimeBuilder_ == null ? lastRenewalTime_ : lastRenewalTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = status_;
+      }
     }
 
     @java.lang.Override
@@ -502,13 +510,13 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 input.readMessage(getLastRenewalTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 status_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -527,6 +535,8 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.Timestamp lastRenewalTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -549,7 +559,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * @return Whether the lastRenewalTime field is set.
      */
     public boolean hasLastRenewalTime() {
-      return lastRenewalTimeBuilder_ != null || lastRenewalTime_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -592,11 +602,11 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         lastRenewalTime_ = value;
-        onChanged();
       } else {
         lastRenewalTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -614,11 +624,11 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
     public Builder setLastRenewalTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastRenewalTimeBuilder_ == null) {
         lastRenewalTime_ = builderForValue.build();
-        onChanged();
       } else {
         lastRenewalTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -635,19 +645,18 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLastRenewalTime(com.google.protobuf.Timestamp value) {
       if (lastRenewalTimeBuilder_ == null) {
-        if (lastRenewalTime_ != null) {
-          lastRenewalTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastRenewalTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && lastRenewalTime_ != null
+            && lastRenewalTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastRenewalTimeBuilder().mergeFrom(value);
         } else {
           lastRenewalTime_ = value;
         }
-        onChanged();
       } else {
         lastRenewalTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +672,13 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp last_renewal_time = 1;</code>
      */
     public Builder clearLastRenewalTime() {
-      if (lastRenewalTimeBuilder_ == null) {
-        lastRenewalTime_ = null;
-        onChanged();
-      } else {
-        lastRenewalTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      lastRenewalTime_ = null;
+      if (lastRenewalTimeBuilder_ != null) {
+        lastRenewalTimeBuilder_.dispose();
         lastRenewalTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -686,7 +694,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * <code>.google.protobuf.Timestamp last_renewal_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRenewalTimeBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getLastRenewalTimeFieldBuilder().getBuilder();
     }
@@ -773,8 +781,8 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-
       status_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -793,9 +801,8 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public com.google.appengine.v1.ManagementStatus getStatus() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.ManagementStatus result =
-          com.google.appengine.v1.ManagementStatus.valueOf(status_);
+          com.google.appengine.v1.ManagementStatus.forNumber(status_);
       return result == null ? com.google.appengine.v1.ManagementStatus.UNRECOGNIZED : result;
     }
     /**
@@ -816,7 +823,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -835,7 +842,7 @@ public final class ManagedCertificate extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       status_ = 0;
       onChanged();
       return this;

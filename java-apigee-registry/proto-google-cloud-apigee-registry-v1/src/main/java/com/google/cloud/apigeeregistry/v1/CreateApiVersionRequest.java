@@ -69,7 +69,9 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -174,11 +176,15 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiVersionOrBuilder getApiVersionOrBuilder() {
-    return getApiVersion();
+    return apiVersion_ == null
+        ? com.google.cloud.apigeeregistry.v1.ApiVersion.getDefaultInstance()
+        : apiVersion_;
   }
 
   public static final int API_VERSION_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object apiVersionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiVersionId_ = "";
   /**
    *
    *
@@ -455,16 +461,14 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (apiVersionBuilder_ == null) {
-        apiVersion_ = null;
-      } else {
-        apiVersion_ = null;
+      apiVersion_ = null;
+      if (apiVersionBuilder_ != null) {
+        apiVersionBuilder_.dispose();
         apiVersionBuilder_ = null;
       }
       apiVersionId_ = "";
-
       return this;
     }
 
@@ -492,15 +496,24 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
     public com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest result =
           new com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest(this);
-      result.parent_ = parent_;
-      if (apiVersionBuilder_ == null) {
-        result.apiVersion_ = apiVersion_;
-      } else {
-        result.apiVersion_ = apiVersionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.apiVersionId_ = apiVersionId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.apiVersion_ = apiVersionBuilder_ == null ? apiVersion_ : apiVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.apiVersionId_ = apiVersionId_;
+      }
     }
 
     @java.lang.Override
@@ -551,6 +564,7 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApiVersion()) {
@@ -558,6 +572,7 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
       }
       if (!other.getApiVersionId().isEmpty()) {
         apiVersionId_ = other.apiVersionId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,19 +604,19 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApiVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 apiVersionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -620,6 +635,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -691,8 +708,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -711,8 +728,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -736,8 +753,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -762,7 +779,7 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      * @return Whether the apiVersion field is set.
      */
     public boolean hasApiVersion() {
-      return apiVersionBuilder_ != null || apiVersion_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -803,11 +820,11 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         apiVersion_ = value;
-        onChanged();
       } else {
         apiVersionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -825,11 +842,11 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
         com.google.cloud.apigeeregistry.v1.ApiVersion.Builder builderForValue) {
       if (apiVersionBuilder_ == null) {
         apiVersion_ = builderForValue.build();
-        onChanged();
       } else {
         apiVersionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,19 +862,18 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeApiVersion(com.google.cloud.apigeeregistry.v1.ApiVersion value) {
       if (apiVersionBuilder_ == null) {
-        if (apiVersion_ != null) {
-          apiVersion_ =
-              com.google.cloud.apigeeregistry.v1.ApiVersion.newBuilder(apiVersion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && apiVersion_ != null
+            && apiVersion_ != com.google.cloud.apigeeregistry.v1.ApiVersion.getDefaultInstance()) {
+          getApiVersionBuilder().mergeFrom(value);
         } else {
           apiVersion_ = value;
         }
-        onChanged();
       } else {
         apiVersionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -872,14 +888,13 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearApiVersion() {
-      if (apiVersionBuilder_ == null) {
-        apiVersion_ = null;
-        onChanged();
-      } else {
-        apiVersion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      apiVersion_ = null;
+      if (apiVersionBuilder_ != null) {
+        apiVersionBuilder_.dispose();
         apiVersionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -894,7 +909,7 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion.Builder getApiVersionBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApiVersionFieldBuilder().getBuilder();
     }
@@ -1019,8 +1034,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiVersionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1040,8 +1055,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearApiVersionId() {
-
       apiVersionId_ = getDefaultInstance().getApiVersionId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1066,8 +1081,8 @@ public final class CreateApiVersionRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiVersionId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

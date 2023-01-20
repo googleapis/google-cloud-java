@@ -914,7 +914,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-    private long resourceId_;
+    private long resourceId_ = 0L;
     /**
      *
      *
@@ -933,7 +933,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-    private int resourceType_;
+    private int resourceType_ = 0;
     /**
      *
      *
@@ -967,9 +967,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
         getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
-          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.forNumber(
               resourceType_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
@@ -1194,10 +1193,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         resourceId_ = 0L;
-
         resourceType_ = 0;
-
         return this;
       }
 
@@ -1226,10 +1224,22 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo(this);
-        result.resourceId_ = resourceId_;
-        result.resourceType_ = resourceType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.resourceId_ = resourceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.resourceType_ = resourceType_;
+        }
       }
 
       @java.lang.Override
@@ -1317,13 +1327,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   resourceId_ = input.readInt64();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   resourceType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1342,6 +1352,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private long resourceId_;
       /**
@@ -1376,6 +1388,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder setResourceId(long value) {
 
         resourceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1392,7 +1405,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceId() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         resourceId_ = 0L;
         onChanged();
         return this;
@@ -1431,8 +1444,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setResourceTypeValue(int value) {
-
         resourceType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1452,9 +1465,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
           getResourceType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
-            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.forNumber(
                 resourceType_);
         return result == null
             ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
@@ -1480,7 +1492,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         resourceType_ = value.getNumber();
         onChanged();
         return this;
@@ -1499,7 +1511,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         resourceType_ = 0;
         onChanged();
         return this;
@@ -1771,7 +1783,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getNextRotationTimeOrBuilder() {
-      return getNextRotationTime();
+      return nextRotationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nextRotationTime_;
     }
 
     public static final int ROTATION_PERIOD_FIELD_NUMBER = 2;
@@ -1831,7 +1845,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder() {
-      return getRotationPeriod();
+      return rotationPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : rotationPeriod_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2053,16 +2069,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nextRotationTimeBuilder_ == null) {
-          nextRotationTime_ = null;
-        } else {
-          nextRotationTime_ = null;
+        bitField0_ = 0;
+        nextRotationTime_ = null;
+        if (nextRotationTimeBuilder_ != null) {
+          nextRotationTimeBuilder_.dispose();
           nextRotationTimeBuilder_ = null;
         }
-        if (rotationPeriodBuilder_ == null) {
-          rotationPeriod_ = null;
-        } else {
-          rotationPeriod_ = null;
+        rotationPeriod_ = null;
+        if (rotationPeriodBuilder_ != null) {
+          rotationPeriodBuilder_.dispose();
           rotationPeriodBuilder_ = null;
         }
         return this;
@@ -2093,18 +2108,26 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings(this);
-        if (nextRotationTimeBuilder_ == null) {
-          result.nextRotationTime_ = nextRotationTime_;
-        } else {
-          result.nextRotationTime_ = nextRotationTimeBuilder_.build();
-        }
-        if (rotationPeriodBuilder_ == null) {
-          result.rotationPeriod_ = rotationPeriod_;
-        } else {
-          result.rotationPeriod_ = rotationPeriodBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextRotationTime_ =
+              nextRotationTimeBuilder_ == null
+                  ? nextRotationTime_
+                  : nextRotationTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rotationPeriod_ =
+              rotationPeriodBuilder_ == null ? rotationPeriod_ : rotationPeriodBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2193,14 +2216,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 {
                   input.readMessage(
                       getNextRotationTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getRotationPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2219,6 +2242,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.protobuf.Timestamp nextRotationTime_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -2241,7 +2266,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the nextRotationTime field is set.
        */
       public boolean hasNextRotationTime() {
-        return nextRotationTimeBuilder_ != null || nextRotationTime_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -2284,11 +2309,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           nextRotationTime_ = value;
-          onChanged();
         } else {
           nextRotationTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2306,11 +2331,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder setNextRotationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (nextRotationTimeBuilder_ == null) {
           nextRotationTime_ = builderForValue.build();
-          onChanged();
         } else {
           nextRotationTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2327,19 +2352,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeNextRotationTime(com.google.protobuf.Timestamp value) {
         if (nextRotationTimeBuilder_ == null) {
-          if (nextRotationTime_ != null) {
-            nextRotationTime_ =
-                com.google.protobuf.Timestamp.newBuilder(nextRotationTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && nextRotationTime_ != null
+              && nextRotationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getNextRotationTimeBuilder().mergeFrom(value);
           } else {
             nextRotationTime_ = value;
           }
-          onChanged();
         } else {
           nextRotationTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -2355,14 +2379,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearNextRotationTime() {
-        if (nextRotationTimeBuilder_ == null) {
-          nextRotationTime_ = null;
-          onChanged();
-        } else {
-          nextRotationTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nextRotationTime_ = null;
+        if (nextRotationTimeBuilder_ != null) {
+          nextRotationTimeBuilder_.dispose();
           nextRotationTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2378,7 +2401,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getNextRotationTimeBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getNextRotationTimeFieldBuilder().getBuilder();
       }
@@ -2454,7 +2477,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the rotationPeriod field is set.
        */
       public boolean hasRotationPeriod() {
-        return rotationPeriodBuilder_ != null || rotationPeriod_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -2499,11 +2522,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           rotationPeriod_ = value;
-          onChanged();
         } else {
           rotationPeriodBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2522,11 +2545,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder setRotationPeriod(com.google.protobuf.Duration.Builder builderForValue) {
         if (rotationPeriodBuilder_ == null) {
           rotationPeriod_ = builderForValue.build();
-          onChanged();
         } else {
           rotationPeriodBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2544,19 +2567,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeRotationPeriod(com.google.protobuf.Duration value) {
         if (rotationPeriodBuilder_ == null) {
-          if (rotationPeriod_ != null) {
-            rotationPeriod_ =
-                com.google.protobuf.Duration.newBuilder(rotationPeriod_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && rotationPeriod_ != null
+              && rotationPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getRotationPeriodBuilder().mergeFrom(value);
           } else {
             rotationPeriod_ = value;
           }
-          onChanged();
         } else {
           rotationPeriodBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -2573,14 +2595,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearRotationPeriod() {
-        if (rotationPeriodBuilder_ == null) {
-          rotationPeriod_ = null;
-          onChanged();
-        } else {
-          rotationPeriod_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rotationPeriod_ = null;
+        if (rotationPeriodBuilder_ != null) {
+          rotationPeriodBuilder_.dispose();
           rotationPeriodBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2597,7 +2618,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Duration.Builder getRotationPeriodBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRotationPeriodFieldBuilder().getBuilder();
       }
@@ -2868,7 +2889,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
-      return getKmsSettings();
+      return kmsSettings_ == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+          : kmsSettings_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3076,10 +3099,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = 0;
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
         return this;
@@ -3110,13 +3133,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings(this);
-        if (kmsSettingsBuilder_ == null) {
-          result.kmsSettings_ = kmsSettings_;
-        } else {
-          result.kmsSettings_ = kmsSettingsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.IL4Settings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsSettings_ =
+              kmsSettingsBuilder_ == null ? kmsSettings_ : kmsSettingsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3201,7 +3231,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -3220,6 +3250,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -3241,7 +3273,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the kmsSettings field is set.
        */
       public boolean hasKmsSettings() {
-        return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -3283,11 +3315,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           kmsSettings_ = value;
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3305,11 +3337,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
         if (kmsSettingsBuilder_ == null) {
           kmsSettings_ = builderForValue.build();
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3326,20 +3358,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeKmsSettings(
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
         if (kmsSettingsBuilder_ == null) {
-          if (kmsSettings_ != null) {
-            kmsSettings_ =
-                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
-                        kmsSettings_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && kmsSettings_ != null
+              && kmsSettings_
+                  != com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings
+                      .getDefaultInstance()) {
+            getKmsSettingsBuilder().mergeFrom(value);
           } else {
             kmsSettings_ = value;
           }
-          onChanged();
         } else {
           kmsSettingsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -3354,14 +3386,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearKmsSettings() {
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-          onChanged();
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -3377,7 +3408,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
           getKmsSettingsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getKmsSettingsFieldBuilder().getBuilder();
       }
@@ -3645,7 +3676,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
-      return getKmsSettings();
+      return kmsSettings_ == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+          : kmsSettings_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3855,10 +3888,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = 0;
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
         return this;
@@ -3889,13 +3922,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings(this);
-        if (kmsSettingsBuilder_ == null) {
-          result.kmsSettings_ = kmsSettings_;
-        } else {
-          result.kmsSettings_ = kmsSettingsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.CJISSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsSettings_ =
+              kmsSettingsBuilder_ == null ? kmsSettings_ : kmsSettingsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3980,7 +4020,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -3999,6 +4039,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4020,7 +4062,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the kmsSettings field is set.
        */
       public boolean hasKmsSettings() {
-        return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4062,11 +4104,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           kmsSettings_ = value;
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4084,11 +4126,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
         if (kmsSettingsBuilder_ == null) {
           kmsSettings_ = builderForValue.build();
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4105,20 +4147,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeKmsSettings(
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
         if (kmsSettingsBuilder_ == null) {
-          if (kmsSettings_ != null) {
-            kmsSettings_ =
-                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
-                        kmsSettings_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && kmsSettings_ != null
+              && kmsSettings_
+                  != com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings
+                      .getDefaultInstance()) {
+            getKmsSettingsBuilder().mergeFrom(value);
           } else {
             kmsSettings_ = value;
           }
-          onChanged();
         } else {
           kmsSettingsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4133,14 +4175,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearKmsSettings() {
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-          onChanged();
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4156,7 +4197,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
           getKmsSettingsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getKmsSettingsFieldBuilder().getBuilder();
       }
@@ -4424,7 +4465,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
-      return getKmsSettings();
+      return kmsSettings_ == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+          : kmsSettings_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4636,10 +4679,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = 0;
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
         return this;
@@ -4672,13 +4715,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings(this);
-        if (kmsSettingsBuilder_ == null) {
-          result.kmsSettings_ = kmsSettings_;
-        } else {
-          result.kmsSettings_ = kmsSettingsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampHighSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsSettings_ =
+              kmsSettingsBuilder_ == null ? kmsSettings_ : kmsSettingsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4765,7 +4815,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -4784,6 +4834,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -4805,7 +4857,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the kmsSettings field is set.
        */
       public boolean hasKmsSettings() {
-        return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -4847,11 +4899,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           kmsSettings_ = value;
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4869,11 +4921,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
         if (kmsSettingsBuilder_ == null) {
           kmsSettings_ = builderForValue.build();
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4890,20 +4942,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeKmsSettings(
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
         if (kmsSettingsBuilder_ == null) {
-          if (kmsSettings_ != null) {
-            kmsSettings_ =
-                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
-                        kmsSettings_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && kmsSettings_ != null
+              && kmsSettings_
+                  != com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings
+                      .getDefaultInstance()) {
+            getKmsSettingsBuilder().mergeFrom(value);
           } else {
             kmsSettings_ = value;
           }
-          onChanged();
         } else {
           kmsSettingsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -4918,14 +4970,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearKmsSettings() {
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-          onChanged();
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4941,7 +4992,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
           getKmsSettingsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getKmsSettingsFieldBuilder().getBuilder();
       }
@@ -5211,7 +5262,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
         getKmsSettingsOrBuilder() {
-      return getKmsSettings();
+      return kmsSettings_ == null
+          ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+          : kmsSettings_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5428,10 +5481,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = 0;
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
         return this;
@@ -5465,13 +5518,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings(this);
-        if (kmsSettingsBuilder_ == null) {
-          result.kmsSettings_ = kmsSettings_;
-        } else {
-          result.kmsSettings_ = kmsSettingsBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.FedrampModerateSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.kmsSettings_ =
+              kmsSettingsBuilder_ == null ? kmsSettings_ : kmsSettingsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -5558,7 +5618,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -5577,6 +5637,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings kmsSettings_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -5598,7 +5660,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the kmsSettings field is set.
        */
       public boolean hasKmsSettings() {
-        return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -5640,11 +5702,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           kmsSettings_ = value;
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5662,11 +5724,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
         if (kmsSettingsBuilder_ == null) {
           kmsSettings_ = builderForValue.build();
-          onChanged();
         } else {
           kmsSettingsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5683,20 +5745,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeKmsSettings(
           com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
         if (kmsSettingsBuilder_ == null) {
-          if (kmsSettings_ != null) {
-            kmsSettings_ =
-                com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
-                        kmsSettings_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && kmsSettings_ != null
+              && kmsSettings_
+                  != com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings
+                      .getDefaultInstance()) {
+            getKmsSettingsBuilder().mergeFrom(value);
           } else {
             kmsSettings_ = value;
           }
-          onChanged();
         } else {
           kmsSettingsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5711,14 +5773,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearKmsSettings() {
-        if (kmsSettingsBuilder_ == null) {
-          kmsSettings_ = null;
-          onChanged();
-        } else {
-          kmsSettings_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        kmsSettings_ = null;
+        if (kmsSettingsBuilder_ != null) {
+          kmsSettingsBuilder_.dispose();
           kmsSettingsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5734,7 +5795,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
           getKmsSettingsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getKmsSettingsFieldBuilder().getBuilder();
       }
@@ -6007,7 +6068,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object resourceId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resourceId_ = "";
     /**
      *
      *
@@ -6064,7 +6127,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
-    private int resourceType_;
+    private int resourceType_ = 0;
     /**
      *
      *
@@ -6102,9 +6165,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
         getResourceType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
-          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.forNumber(
               resourceType_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
@@ -6113,7 +6175,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object displayName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object displayName_ = "";
     /**
      *
      *
@@ -6391,12 +6455,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         resourceId_ = "";
-
         resourceType_ = 0;
-
         displayName_ = "";
-
         return this;
       }
 
@@ -6426,11 +6488,25 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings(this);
-        result.resourceId_ = resourceId_;
-        result.resourceType_ = resourceType_;
-        result.displayName_ = displayName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.resourceId_ = resourceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.resourceType_ = resourceType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.displayName_ = displayName_;
+        }
       }
 
       @java.lang.Override
@@ -6486,6 +6562,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getResourceId().isEmpty()) {
           resourceId_ = other.resourceId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.resourceType_ != 0) {
@@ -6493,6 +6570,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getDisplayName().isEmpty()) {
           displayName_ = other.displayName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -6524,19 +6602,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   resourceId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   resourceType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   displayName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -6555,6 +6633,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object resourceId_ = "";
       /**
@@ -6629,8 +6709,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         resourceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6650,8 +6730,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceId() {
-
         resourceId_ = getDefaultInstance().getResourceId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -6676,8 +6756,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         resourceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -6719,8 +6799,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setResourceTypeValue(int value) {
-
         resourceType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -6742,9 +6822,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
           getResourceType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType result =
-            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.valueOf(
+            com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType.forNumber(
                 resourceType_);
         return result == null
             ? com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.ResourceType
@@ -6772,7 +6851,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         resourceType_ = value.getNumber();
         onChanged();
         return this;
@@ -6793,7 +6872,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearResourceType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         resourceType_ = 0;
         onChanged();
         return this;
@@ -6866,8 +6945,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         displayName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -6885,8 +6964,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDisplayName() {
-
         displayName_ = getDefaultInstance().getDisplayName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -6909,8 +6988,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         displayName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7532,7 +7611,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
     public static final int SETUP_STATUS_FIELD_NUMBER = 1;
-    private int setupStatus_;
+    private int setupStatus_ = 0;
     /**
      *
      *
@@ -7583,10 +7662,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
         getSetupStatus() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState result =
           com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
-              .valueOf(setupStatus_);
+              .forNumber(setupStatus_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
               .UNRECOGNIZED
@@ -7594,7 +7672,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SETUP_ERRORS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> setupErrors_;
+
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
             java.lang.Integer,
             com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError>
@@ -7606,11 +7687,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
               public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
                       .SetupError
                   convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
                 com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupError
                     result =
                         com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
-                            .SetupError.valueOf(from);
+                            .SetupError.forNumber(from);
                 return result == null
                     ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
                         .SetupError.UNRECOGNIZED
@@ -7953,8 +8033,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         setupStatus_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
         setupErrors_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
@@ -7988,20 +8068,32 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           buildPartial() {
         com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse result =
             new com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          to_bitField0_ |= 0x00000001;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.setupStatus_ = setupStatus_;
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse result) {
         if (((bitField0_ & 0x00000002) != 0)) {
           setupErrors_ = java.util.Collections.unmodifiableList(setupErrors_);
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.setupErrors_ = setupErrors_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.setupStatus_ = setupStatus_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -8189,8 +8281,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setSetupStatusValue(int value) {
-        bitField0_ |= 0x00000001;
         setupStatus_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8210,10 +8302,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
           getSetupStatus() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState result =
             com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
-                .valueOf(setupStatus_);
+                .forNumber(setupStatus_);
         return result == null
             ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.SetupState
                 .UNRECOGNIZED
@@ -8649,7 +8740,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -8704,7 +8797,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -8761,6 +8856,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESOURCES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo>
       resources_;
   /**
@@ -8859,7 +8956,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPLIANCE_REGIME_FIELD_NUMBER = 4;
-  private int complianceRegime_;
+  private int complianceRegime_ = 0;
   /**
    *
    *
@@ -8892,9 +8989,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime getComplianceRegime() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime result =
-        com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.valueOf(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.forNumber(
             complianceRegime_);
     return result == null
         ? com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.UNRECOGNIZED
@@ -8950,11 +9046,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int BILLING_ACCOUNT_FIELD_NUMBER = 6;
-  private volatile java.lang.Object billingAccount_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingAccount_ = "";
   /**
    *
    *
@@ -9291,7 +9389,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ETAG_FIELD_NUMBER = 9;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -9354,6 +9454,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -9411,7 +9512,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -9440,7 +9544,9 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROVISIONED_RESOURCES_PARENT_FIELD_NUMBER = 13;
-  private volatile java.lang.Object provisionedResourcesParent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object provisionedResourcesParent_ = "";
   /**
    *
    *
@@ -9571,10 +9677,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Deprecated
   public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettingsOrBuilder
       getKmsSettingsOrBuilder() {
-    return getKmsSettings();
+    return kmsSettings_ == null
+        ? com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.getDefaultInstance()
+        : kmsSettings_;
   }
 
   public static final int RESOURCE_SETTINGS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>
       resourceSettings_;
   /**
@@ -9669,7 +9779,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KAJ_ENROLLMENT_STATE_FIELD_NUMBER = 17;
-  private int kajEnrollmentState_;
+  private int kajEnrollmentState_ = 0;
   /**
    *
    *
@@ -9703,9 +9813,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
       getKajEnrollmentState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState result =
-        com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.valueOf(
+        com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.forNumber(
             kajEnrollmentState_);
     return result == null
         ? com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.UNRECOGNIZED
@@ -9713,7 +9822,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_SOVEREIGN_CONTROLS_FIELD_NUMBER = 18;
-  private boolean enableSovereignControls_;
+  private boolean enableSovereignControls_ = false;
   /**
    *
    *
@@ -9792,10 +9901,15 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponseOrBuilder
       getSaaEnrollmentResponseOrBuilder() {
-    return getSaaEnrollmentResponse();
+    return saaEnrollmentResponse_ == null
+        ? com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+            .getDefaultInstance()
+        : saaEnrollmentResponse_;
   }
 
   public static final int COMPLIANT_BUT_DISALLOWED_SERVICES_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList compliantButDisallowedServices_;
   /**
    *
@@ -10362,27 +10476,23 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
       } else {
         resources_ = null;
         resourcesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       complianceRegime_ = 0;
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       billingAccount_ = "";
-
       if (il4SettingsBuilder_ != null) {
         il4SettingsBuilder_.clear();
       }
@@ -10396,14 +10506,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         fedrampModerateSettingsBuilder_.clear();
       }
       etag_ = "";
-
       internalGetMutableLabels().clear();
       provisionedResourcesParent_ = "";
-
-      if (kmsSettingsBuilder_ == null) {
-        kmsSettings_ = null;
-      } else {
-        kmsSettings_ = null;
+      kmsSettings_ = null;
+      if (kmsSettingsBuilder_ != null) {
+        kmsSettingsBuilder_.dispose();
         kmsSettingsBuilder_ = null;
       }
       if (resourceSettingsBuilder_ == null) {
@@ -10412,19 +10519,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         resourceSettings_ = null;
         resourceSettingsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00004000);
       kajEnrollmentState_ = 0;
-
       enableSovereignControls_ = false;
-
-      if (saaEnrollmentResponseBuilder_ == null) {
-        saaEnrollmentResponse_ = null;
-      } else {
-        saaEnrollmentResponse_ = null;
+      saaEnrollmentResponse_ = null;
+      if (saaEnrollmentResponseBuilder_ != null) {
+        saaEnrollmentResponseBuilder_.dispose();
         saaEnrollmentResponseBuilder_ = null;
       }
       compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00040000);
       complianceRegimeSettingsCase_ = 0;
       complianceRegimeSettings_ = null;
       return this;
@@ -10454,86 +10558,102 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.assuredworkloads.v1beta1.Workload buildPartial() {
       com.google.cloud.assuredworkloads.v1beta1.Workload result =
           new com.google.cloud.assuredworkloads.v1beta1.Workload(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.assuredworkloads.v1beta1.Workload result) {
       if (resourcesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           resources_ = java.util.Collections.unmodifiableList(resources_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.resources_ = resources_;
       } else {
         result.resources_ = resourcesBuilder_.build();
       }
-      result.complianceRegime_ = complianceRegime_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      result.billingAccount_ = billingAccount_;
-      if (complianceRegimeSettingsCase_ == 7) {
-        if (il4SettingsBuilder_ == null) {
-          result.complianceRegimeSettings_ = complianceRegimeSettings_;
-        } else {
-          result.complianceRegimeSettings_ = il4SettingsBuilder_.build();
-        }
-      }
-      if (complianceRegimeSettingsCase_ == 8) {
-        if (cjisSettingsBuilder_ == null) {
-          result.complianceRegimeSettings_ = complianceRegimeSettings_;
-        } else {
-          result.complianceRegimeSettings_ = cjisSettingsBuilder_.build();
-        }
-      }
-      if (complianceRegimeSettingsCase_ == 11) {
-        if (fedrampHighSettingsBuilder_ == null) {
-          result.complianceRegimeSettings_ = complianceRegimeSettings_;
-        } else {
-          result.complianceRegimeSettings_ = fedrampHighSettingsBuilder_.build();
-        }
-      }
-      if (complianceRegimeSettingsCase_ == 12) {
-        if (fedrampModerateSettingsBuilder_ == null) {
-          result.complianceRegimeSettings_ = complianceRegimeSettings_;
-        } else {
-          result.complianceRegimeSettings_ = fedrampModerateSettingsBuilder_.build();
-        }
-      }
-      result.etag_ = etag_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.provisionedResourcesParent_ = provisionedResourcesParent_;
-      if (kmsSettingsBuilder_ == null) {
-        result.kmsSettings_ = kmsSettings_;
-      } else {
-        result.kmsSettings_ = kmsSettingsBuilder_.build();
-      }
       if (resourceSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           resourceSettings_ = java.util.Collections.unmodifiableList(resourceSettings_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.resourceSettings_ = resourceSettings_;
       } else {
         result.resourceSettings_ = resourceSettingsBuilder_.build();
       }
-      result.kajEnrollmentState_ = kajEnrollmentState_;
-      result.enableSovereignControls_ = enableSovereignControls_;
-      if (saaEnrollmentResponseBuilder_ == null) {
-        result.saaEnrollmentResponse_ = saaEnrollmentResponse_;
-      } else {
-        result.saaEnrollmentResponse_ = saaEnrollmentResponseBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         compliantButDisallowedServices_ = compliantButDisallowedServices_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00040000);
       }
       result.compliantButDisallowedServices_ = compliantButDisallowedServices_;
+    }
+
+    private void buildPartial0(com.google.cloud.assuredworkloads.v1beta1.Workload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.complianceRegime_ = complianceRegime_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.billingAccount_ = billingAccount_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.provisionedResourcesParent_ = provisionedResourcesParent_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.kmsSettings_ =
+            kmsSettingsBuilder_ == null ? kmsSettings_ : kmsSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.kajEnrollmentState_ = kajEnrollmentState_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.enableSovereignControls_ = enableSovereignControls_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.saaEnrollmentResponse_ =
+            saaEnrollmentResponseBuilder_ == null
+                ? saaEnrollmentResponse_
+                : saaEnrollmentResponseBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.assuredworkloads.v1beta1.Workload result) {
       result.complianceRegimeSettingsCase_ = complianceRegimeSettingsCase_;
-      onBuilt();
-      return result;
+      result.complianceRegimeSettings_ = this.complianceRegimeSettings_;
+      if (complianceRegimeSettingsCase_ == 7 && il4SettingsBuilder_ != null) {
+        result.complianceRegimeSettings_ = il4SettingsBuilder_.build();
+      }
+      if (complianceRegimeSettingsCase_ == 8 && cjisSettingsBuilder_ != null) {
+        result.complianceRegimeSettings_ = cjisSettingsBuilder_.build();
+      }
+      if (complianceRegimeSettingsCase_ == 11 && fedrampHighSettingsBuilder_ != null) {
+        result.complianceRegimeSettings_ = fedrampHighSettingsBuilder_.build();
+      }
+      if (complianceRegimeSettingsCase_ == 12 && fedrampModerateSettingsBuilder_ != null) {
+        result.complianceRegimeSettings_ = fedrampModerateSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -10584,17 +10704,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (resourcesBuilder_ == null) {
         if (!other.resources_.isEmpty()) {
           if (resources_.isEmpty()) {
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureResourcesIsMutable();
             resources_.addAll(other.resources_);
@@ -10607,7 +10729,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             resourcesBuilder_.dispose();
             resourcesBuilder_ = null;
             resources_ = other.resources_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             resourcesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourcesFieldBuilder()
@@ -10625,15 +10747,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getBillingAccount().isEmpty()) {
         billingAccount_ = other.billingAccount_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000800;
       if (!other.getProvisionedResourcesParent().isEmpty()) {
         provisionedResourcesParent_ = other.provisionedResourcesParent_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasKmsSettings()) {
@@ -10643,7 +10769,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceSettings_.isEmpty()) {
           if (resourceSettings_.isEmpty()) {
             resourceSettings_ = other.resourceSettings_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureResourceSettingsIsMutable();
             resourceSettings_.addAll(other.resourceSettings_);
@@ -10656,7 +10782,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             resourceSettingsBuilder_.dispose();
             resourceSettingsBuilder_ = null;
             resourceSettings_ = other.resourceSettings_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00004000);
             resourceSettingsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourceSettingsFieldBuilder()
@@ -10678,7 +10804,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (!other.compliantButDisallowedServices_.isEmpty()) {
         if (compliantButDisallowedServices_.isEmpty()) {
           compliantButDisallowedServices_ = other.compliantButDisallowedServices_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           ensureCompliantButDisallowedServicesIsMutable();
           compliantButDisallowedServices_.addAll(other.compliantButDisallowedServices_);
@@ -10740,13 +10866,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -10766,19 +10892,19 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 complianceRegime_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 billingAccount_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -10796,7 +10922,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
@@ -10808,6 +10934,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
@@ -10827,13 +10954,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 provisionedResourcesParent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getKmsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
@@ -10854,20 +10981,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             case 136:
               {
                 kajEnrollmentState_ = input.readEnum();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 136
             case 144:
               {
                 enableSovereignControls_ = input.readBool();
-
+                bitField0_ |= 0x00010000;
                 break;
               } // case 144
             case 162:
               {
                 input.readMessage(
                     getSaaEnrollmentResponseFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00020000;
                 break;
               } // case 162
             case 194:
@@ -10980,8 +11107,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11000,8 +11127,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -11025,8 +11152,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11104,8 +11231,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11125,8 +11252,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -11151,8 +11278,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11161,11 +11288,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         resources_ = java.util.Collections.emptyList();
 
     private void ensureResourcesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         resources_ =
             new java.util.ArrayList<
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo>(resources_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -11444,7 +11571,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResources() {
       if (resourcesBuilder_ == null) {
         resources_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         resourcesBuilder_.clear();
@@ -11609,7 +11736,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo,
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfo.Builder,
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceInfoOrBuilder>(
-                resources_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                resources_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         resources_ = null;
       }
       return resourcesBuilder_;
@@ -11648,8 +11775,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setComplianceRegimeValue(int value) {
-
       complianceRegime_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11669,9 +11796,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime
         getComplianceRegime() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime result =
-          com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.valueOf(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.forNumber(
               complianceRegime_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime.UNRECOGNIZED
@@ -11696,7 +11822,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       complianceRegime_ = value.getNumber();
       onChanged();
       return this;
@@ -11715,7 +11841,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearComplianceRegime() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       complianceRegime_ = 0;
       onChanged();
       return this;
@@ -11741,7 +11867,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -11782,11 +11908,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11803,11 +11929,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11823,17 +11949,18 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -11848,14 +11975,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -11870,7 +11996,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -12004,8 +12130,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       billingAccount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12028,8 +12154,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBillingAccount() {
-
       billingAccount_ = getDefaultInstance().getBillingAccount();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -12057,8 +12183,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       billingAccount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12310,7 +12436,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       complianceRegimeSettingsCase_ = 7;
       onChanged();
-      ;
       return il4SettingsBuilder_;
     }
 
@@ -12561,7 +12686,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       complianceRegimeSettingsCase_ = 8;
       onChanged();
-      ;
       return cjisSettingsBuilder_;
     }
 
@@ -12818,7 +12942,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       complianceRegimeSettingsCase_ = 11;
       onChanged();
-      ;
       return fedrampHighSettingsBuilder_;
     }
 
@@ -13076,7 +13199,6 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       }
       complianceRegimeSettingsCase_ = 12;
       onChanged();
-      ;
       return fedrampModerateSettingsBuilder_;
     }
 
@@ -13144,8 +13266,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13162,8 +13284,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -13185,8 +13307,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13202,14 +13324,14 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000800;
+      onChanged();
       return labels_;
     }
 
@@ -13261,8 +13383,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -13291,6 +13415,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -13313,6 +13438,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000800;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -13331,8 +13457,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -13346,6 +13472,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -13428,8 +13555,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       provisionedResourcesParent_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13451,8 +13578,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvisionedResourcesParent() {
-
       provisionedResourcesParent_ = getDefaultInstance().getProvisionedResourcesParent();
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -13479,8 +13606,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       provisionedResourcesParent_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13512,7 +13639,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public boolean hasKmsSettings() {
-      return kmsSettingsBuilder_ != null || kmsSettings_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -13566,11 +13693,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         kmsSettings_ = value;
-        onChanged();
       } else {
         kmsSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -13593,11 +13720,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder builderForValue) {
       if (kmsSettingsBuilder_ == null) {
         kmsSettings_ = builderForValue.build();
-        onChanged();
       } else {
         kmsSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -13619,20 +13746,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeKmsSettings(
         com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings value) {
       if (kmsSettingsBuilder_ == null) {
-        if (kmsSettings_ != null) {
-          kmsSettings_ =
-              com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.newBuilder(
-                      kmsSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && kmsSettings_ != null
+            && kmsSettings_
+                != com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings
+                    .getDefaultInstance()) {
+          getKmsSettingsBuilder().mergeFrom(value);
         } else {
           kmsSettings_ = value;
         }
-        onChanged();
       } else {
         kmsSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -13652,14 +13779,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearKmsSettings() {
-      if (kmsSettingsBuilder_ == null) {
-        kmsSettings_ = null;
-        onChanged();
-      } else {
-        kmsSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      kmsSettings_ = null;
+      if (kmsSettingsBuilder_ != null) {
+        kmsSettingsBuilder_.dispose();
         kmsSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -13680,7 +13806,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KMSSettings.Builder
         getKmsSettingsBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getKmsSettingsFieldBuilder().getBuilder();
     }
@@ -13746,12 +13872,12 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         resourceSettings_ = java.util.Collections.emptyList();
 
     private void ensureResourceSettingsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         resourceSettings_ =
             new java.util.ArrayList<
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings>(
                 resourceSettings_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -14023,7 +14149,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResourceSettings() {
       if (resourceSettingsBuilder_ == null) {
         resourceSettings_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         resourceSettingsBuilder_.clear();
@@ -14185,7 +14311,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings.Builder,
                 com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettingsOrBuilder>(
                 resourceSettings_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         resourceSettings_ = null;
@@ -14226,8 +14352,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setKajEnrollmentStateValue(int value) {
-
       kajEnrollmentState_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -14247,9 +14373,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState
         getKajEnrollmentState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState result =
-          com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.valueOf(
+          com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.forNumber(
               kajEnrollmentState_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1beta1.Workload.KajEnrollmentState.UNRECOGNIZED
@@ -14274,7 +14399,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00008000;
       kajEnrollmentState_ = value.getNumber();
       onChanged();
       return this;
@@ -14293,7 +14418,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKajEnrollmentState() {
-
+      bitField0_ = (bitField0_ & ~0x00008000);
       kajEnrollmentState_ = 0;
       onChanged();
       return this;
@@ -14332,6 +14457,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableSovereignControls(boolean value) {
 
       enableSovereignControls_ = value;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -14348,7 +14474,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableSovereignControls() {
-
+      bitField0_ = (bitField0_ & ~0x00010000);
       enableSovereignControls_ = false;
       onChanged();
       return this;
@@ -14377,7 +14503,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the saaEnrollmentResponse field is set.
      */
     public boolean hasSaaEnrollmentResponse() {
-      return saaEnrollmentResponseBuilder_ != null || saaEnrollmentResponse_ != null;
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -14425,11 +14551,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         saaEnrollmentResponse_ = value;
-        onChanged();
       } else {
         saaEnrollmentResponseBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -14450,11 +14576,11 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (saaEnrollmentResponseBuilder_ == null) {
         saaEnrollmentResponse_ = builderForValue.build();
-        onChanged();
       } else {
         saaEnrollmentResponseBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -14473,20 +14599,20 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSaaEnrollmentResponse(
         com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse value) {
       if (saaEnrollmentResponseBuilder_ == null) {
-        if (saaEnrollmentResponse_ != null) {
-          saaEnrollmentResponse_ =
-              com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.newBuilder(
-                      saaEnrollmentResponse_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00020000) != 0)
+            && saaEnrollmentResponse_ != null
+            && saaEnrollmentResponse_
+                != com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse
+                    .getDefaultInstance()) {
+          getSaaEnrollmentResponseBuilder().mergeFrom(value);
         } else {
           saaEnrollmentResponse_ = value;
         }
-        onChanged();
       } else {
         saaEnrollmentResponseBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
     /**
@@ -14503,14 +14629,13 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSaaEnrollmentResponse() {
-      if (saaEnrollmentResponseBuilder_ == null) {
-        saaEnrollmentResponse_ = null;
-        onChanged();
-      } else {
-        saaEnrollmentResponse_ = null;
+      bitField0_ = (bitField0_ & ~0x00020000);
+      saaEnrollmentResponse_ = null;
+      if (saaEnrollmentResponseBuilder_ != null) {
+        saaEnrollmentResponseBuilder_.dispose();
         saaEnrollmentResponseBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -14528,7 +14653,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.assuredworkloads.v1beta1.Workload.SaaEnrollmentResponse.Builder
         getSaaEnrollmentResponseBuilder() {
-
+      bitField0_ |= 0x00020000;
       onChanged();
       return getSaaEnrollmentResponseFieldBuilder().getBuilder();
     }
@@ -14590,10 +14715,10 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureCompliantButDisallowedServicesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00040000) != 0)) {
         compliantButDisallowedServices_ =
             new com.google.protobuf.LazyStringArrayList(compliantButDisallowedServices_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00040000;
       }
     }
     /**
@@ -14770,7 +14895,7 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCompliantButDisallowedServices() {
       compliantButDisallowedServices_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }

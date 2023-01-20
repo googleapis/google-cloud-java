@@ -127,7 +127,9 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder
       getDisplayVideo360AdvertiserLinkOrBuilder() {
-    return getDisplayVideo360AdvertiserLink();
+    return displayVideo360AdvertiserLink_ == null
+        ? com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance()
+        : displayVideo360AdvertiserLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -364,10 +366,10 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (displayVideo360AdvertiserLinkBuilder_ == null) {
-        displayVideo360AdvertiserLink_ = null;
-      } else {
-        displayVideo360AdvertiserLink_ = null;
+      bitField0_ = 0;
+      displayVideo360AdvertiserLink_ = null;
+      if (displayVideo360AdvertiserLinkBuilder_ != null) {
+        displayVideo360AdvertiserLinkBuilder_.dispose();
         displayVideo360AdvertiserLinkBuilder_ = null;
       }
       return this;
@@ -404,13 +406,23 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
           result =
               new com.google.analytics.admin.v1alpha
                   .ApproveDisplayVideo360AdvertiserLinkProposalResponse(this);
-      if (displayVideo360AdvertiserLinkBuilder_ == null) {
-        result.displayVideo360AdvertiserLink_ = displayVideo360AdvertiserLink_;
-      } else {
-        result.displayVideo360AdvertiserLink_ = displayVideo360AdvertiserLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse
+            result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.displayVideo360AdvertiserLink_ =
+            displayVideo360AdvertiserLinkBuilder_ == null
+                ? displayVideo360AdvertiserLink_
+                : displayVideo360AdvertiserLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -500,7 +512,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
               {
                 input.readMessage(
                     getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -519,6 +531,8 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
         displayVideo360AdvertiserLink_;
@@ -542,8 +556,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
      * @return Whether the displayVideo360AdvertiserLink field is set.
      */
     public boolean hasDisplayVideo360AdvertiserLink() {
-      return displayVideo360AdvertiserLinkBuilder_ != null
-          || displayVideo360AdvertiserLink_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -588,11 +601,11 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
           throw new NullPointerException();
         }
         displayVideo360AdvertiserLink_ = value;
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -611,11 +624,11 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
         com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder builderForValue) {
       if (displayVideo360AdvertiserLinkBuilder_ == null) {
         displayVideo360AdvertiserLink_ = builderForValue.build();
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -633,20 +646,20 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
     public Builder mergeDisplayVideo360AdvertiserLink(
         com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink value) {
       if (displayVideo360AdvertiserLinkBuilder_ == null) {
-        if (displayVideo360AdvertiserLink_ != null) {
-          displayVideo360AdvertiserLink_ =
-              com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.newBuilder(
-                      displayVideo360AdvertiserLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && displayVideo360AdvertiserLink_ != null
+            && displayVideo360AdvertiserLink_
+                != com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
+                    .getDefaultInstance()) {
+          getDisplayVideo360AdvertiserLinkBuilder().mergeFrom(value);
         } else {
           displayVideo360AdvertiserLink_ = value;
         }
-        onChanged();
       } else {
         displayVideo360AdvertiserLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -662,14 +675,13 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
      * </code>
      */
     public Builder clearDisplayVideo360AdvertiserLink() {
-      if (displayVideo360AdvertiserLinkBuilder_ == null) {
-        displayVideo360AdvertiserLink_ = null;
-        onChanged();
-      } else {
-        displayVideo360AdvertiserLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      displayVideo360AdvertiserLink_ = null;
+      if (displayVideo360AdvertiserLinkBuilder_ != null) {
+        displayVideo360AdvertiserLinkBuilder_.dispose();
         displayVideo360AdvertiserLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -686,7 +698,7 @@ public final class ApproveDisplayVideo360AdvertiserLinkProposalResponse
      */
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder
         getDisplayVideo360AdvertiserLinkBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder();
     }

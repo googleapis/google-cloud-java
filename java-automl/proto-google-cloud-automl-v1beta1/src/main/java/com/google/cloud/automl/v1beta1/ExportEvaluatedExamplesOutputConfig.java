@@ -426,6 +426,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (bigqueryDestinationBuilder_ != null) {
         bigqueryDestinationBuilder_.clear();
       }
@@ -460,16 +461,26 @@ public final class ExportEvaluatedExamplesOutputConfig
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig buildPartial() {
       com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig result =
           new com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig(this);
-      if (destinationCase_ == 2) {
-        if (bigqueryDestinationBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = bigqueryDestinationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 2 && bigqueryDestinationBuilder_ != null) {
+        result.destination_ = bigqueryDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -595,6 +606,8 @@ public final class ExportEvaluatedExamplesOutputConfig
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.BigQueryDestination,
@@ -807,7 +820,6 @@ public final class ExportEvaluatedExamplesOutputConfig
       }
       destinationCase_ = 2;
       onChanged();
-      ;
       return bigqueryDestinationBuilder_;
     }
 

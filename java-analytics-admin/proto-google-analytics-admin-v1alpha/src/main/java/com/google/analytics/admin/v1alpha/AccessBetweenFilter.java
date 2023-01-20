@@ -110,7 +110,9 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.NumericValueOrBuilder getFromValueOrBuilder() {
-    return getFromValue();
+    return fromValue_ == null
+        ? com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()
+        : fromValue_;
   }
 
   public static final int TO_VALUE_FIELD_NUMBER = 2;
@@ -158,7 +160,9 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.NumericValueOrBuilder getToValueOrBuilder() {
-    return getToValue();
+    return toValue_ == null
+        ? com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()
+        : toValue_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -378,16 +382,15 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (fromValueBuilder_ == null) {
-        fromValue_ = null;
-      } else {
-        fromValue_ = null;
+      bitField0_ = 0;
+      fromValue_ = null;
+      if (fromValueBuilder_ != null) {
+        fromValueBuilder_.dispose();
         fromValueBuilder_ = null;
       }
-      if (toValueBuilder_ == null) {
-        toValue_ = null;
-      } else {
-        toValue_ = null;
+      toValue_ = null;
+      if (toValueBuilder_ != null) {
+        toValueBuilder_.dispose();
         toValueBuilder_ = null;
       }
       return this;
@@ -417,18 +420,21 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
     public com.google.analytics.admin.v1alpha.AccessBetweenFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AccessBetweenFilter result =
           new com.google.analytics.admin.v1alpha.AccessBetweenFilter(this);
-      if (fromValueBuilder_ == null) {
-        result.fromValue_ = fromValue_;
-      } else {
-        result.fromValue_ = fromValueBuilder_.build();
-      }
-      if (toValueBuilder_ == null) {
-        result.toValue_ = toValue_;
-      } else {
-        result.toValue_ = toValueBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessBetweenFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fromValue_ = fromValueBuilder_ == null ? fromValue_ : fromValueBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.toValue_ = toValueBuilder_ == null ? toValue_ : toValueBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -512,13 +518,13 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getFromValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getToValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +544,8 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.analytics.admin.v1alpha.NumericValue fromValue_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.NumericValue,
@@ -556,7 +564,7 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * @return Whether the fromValue field is set.
      */
     public boolean hasFromValue() {
-      return fromValueBuilder_ != null || fromValue_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -593,11 +601,11 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         fromValue_ = value;
-        onChanged();
       } else {
         fromValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -613,11 +621,11 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
         com.google.analytics.admin.v1alpha.NumericValue.Builder builderForValue) {
       if (fromValueBuilder_ == null) {
         fromValue_ = builderForValue.build();
-        onChanged();
       } else {
         fromValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -631,19 +639,18 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeFromValue(com.google.analytics.admin.v1alpha.NumericValue value) {
       if (fromValueBuilder_ == null) {
-        if (fromValue_ != null) {
-          fromValue_ =
-              com.google.analytics.admin.v1alpha.NumericValue.newBuilder(fromValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && fromValue_ != null
+            && fromValue_ != com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()) {
+          getFromValueBuilder().mergeFrom(value);
         } else {
           fromValue_ = value;
         }
-        onChanged();
       } else {
         fromValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -656,14 +663,13 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue from_value = 1;</code>
      */
     public Builder clearFromValue() {
-      if (fromValueBuilder_ == null) {
-        fromValue_ = null;
-        onChanged();
-      } else {
-        fromValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      fromValue_ = null;
+      if (fromValueBuilder_ != null) {
+        fromValueBuilder_.dispose();
         fromValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -676,7 +682,7 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue from_value = 1;</code>
      */
     public com.google.analytics.admin.v1alpha.NumericValue.Builder getFromValueBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getFromValueFieldBuilder().getBuilder();
     }
@@ -742,7 +748,7 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * @return Whether the toValue field is set.
      */
     public boolean hasToValue() {
-      return toValueBuilder_ != null || toValue_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -779,11 +785,11 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         toValue_ = value;
-        onChanged();
       } else {
         toValueBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -799,11 +805,11 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
         com.google.analytics.admin.v1alpha.NumericValue.Builder builderForValue) {
       if (toValueBuilder_ == null) {
         toValue_ = builderForValue.build();
-        onChanged();
       } else {
         toValueBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -817,19 +823,18 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeToValue(com.google.analytics.admin.v1alpha.NumericValue value) {
       if (toValueBuilder_ == null) {
-        if (toValue_ != null) {
-          toValue_ =
-              com.google.analytics.admin.v1alpha.NumericValue.newBuilder(toValue_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && toValue_ != null
+            && toValue_ != com.google.analytics.admin.v1alpha.NumericValue.getDefaultInstance()) {
+          getToValueBuilder().mergeFrom(value);
         } else {
           toValue_ = value;
         }
-        onChanged();
       } else {
         toValueBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,14 +847,13 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue to_value = 2;</code>
      */
     public Builder clearToValue() {
-      if (toValueBuilder_ == null) {
-        toValue_ = null;
-        onChanged();
-      } else {
-        toValue_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      toValue_ = null;
+      if (toValueBuilder_ != null) {
+        toValueBuilder_.dispose();
         toValueBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -862,7 +866,7 @@ public final class AccessBetweenFilter extends com.google.protobuf.GeneratedMess
      * <code>.google.analytics.admin.v1alpha.NumericValue to_value = 2;</code>
      */
     public com.google.analytics.admin.v1alpha.NumericValue.Builder getToValueBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getToValueFieldBuilder().getBuilder();
     }

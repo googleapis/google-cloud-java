@@ -71,7 +71,9 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -179,7 +181,9 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.GcpUserAccessBindingOrBuilder
       getGcpUserAccessBindingOrBuilder() {
-    return getGcpUserAccessBinding();
+    return gcpUserAccessBinding_ == null
+        ? com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.getDefaultInstance()
+        : gcpUserAccessBinding_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -405,12 +409,11 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (gcpUserAccessBindingBuilder_ == null) {
-        gcpUserAccessBinding_ = null;
-      } else {
-        gcpUserAccessBinding_ = null;
+      gcpUserAccessBinding_ = null;
+      if (gcpUserAccessBindingBuilder_ != null) {
+        gcpUserAccessBindingBuilder_.dispose();
         gcpUserAccessBindingBuilder_ = null;
       }
       return this;
@@ -444,14 +447,25 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
         buildPartial() {
       com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest result =
           new com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest(this);
-      result.parent_ = parent_;
-      if (gcpUserAccessBindingBuilder_ == null) {
-        result.gcpUserAccessBinding_ = gcpUserAccessBinding_;
-      } else {
-        result.gcpUserAccessBinding_ = gcpUserAccessBindingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gcpUserAccessBinding_ =
+            gcpUserAccessBindingBuilder_ == null
+                ? gcpUserAccessBinding_
+                : gcpUserAccessBindingBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -507,6 +521,7 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGcpUserAccessBinding()) {
@@ -541,14 +556,14 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     getGcpUserAccessBindingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -567,6 +582,8 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -635,8 +652,8 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,8 +671,8 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -678,8 +695,8 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,7 +722,7 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
      * @return Whether the gcpUserAccessBinding field is set.
      */
     public boolean hasGcpUserAccessBinding() {
-      return gcpUserAccessBindingBuilder_ != null || gcpUserAccessBinding_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -750,11 +767,11 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
           throw new NullPointerException();
         }
         gcpUserAccessBinding_ = value;
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -773,11 +790,11 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
         com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.Builder builderForValue) {
       if (gcpUserAccessBindingBuilder_ == null) {
         gcpUserAccessBinding_ = builderForValue.build();
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -795,20 +812,20 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
     public Builder mergeGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding value) {
       if (gcpUserAccessBindingBuilder_ == null) {
-        if (gcpUserAccessBinding_ != null) {
-          gcpUserAccessBinding_ =
-              com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.newBuilder(
-                      gcpUserAccessBinding_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && gcpUserAccessBinding_ != null
+            && gcpUserAccessBinding_
+                != com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding
+                    .getDefaultInstance()) {
+          getGcpUserAccessBindingBuilder().mergeFrom(value);
         } else {
           gcpUserAccessBinding_ = value;
         }
-        onChanged();
       } else {
         gcpUserAccessBindingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -824,14 +841,13 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
      * </code>
      */
     public Builder clearGcpUserAccessBinding() {
-      if (gcpUserAccessBindingBuilder_ == null) {
-        gcpUserAccessBinding_ = null;
-        onChanged();
-      } else {
-        gcpUserAccessBinding_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      gcpUserAccessBinding_ = null;
+      if (gcpUserAccessBindingBuilder_ != null) {
+        gcpUserAccessBindingBuilder_.dispose();
         gcpUserAccessBindingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -848,7 +864,7 @@ public final class CreateGcpUserAccessBindingRequest extends com.google.protobuf
      */
     public com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding.Builder
         getGcpUserAccessBindingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGcpUserAccessBindingFieldBuilder().getBuilder();
     }

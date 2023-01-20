@@ -384,7 +384,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
 
       private int bitField0_;
       public static final int METRIC_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object metricName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object metricName_ = "";
       /**
        *
        *
@@ -448,7 +450,10 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       }
 
       public static final int RESTRICTED_METRIC_TYPES_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<java.lang.Integer> restrictedMetricTypes_;
+
       private static final com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.analytics.data.v1beta.RestrictedMetricType>
           restrictedMetricTypes_converter_ =
@@ -456,9 +461,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
                   java.lang.Integer, com.google.analytics.data.v1beta.RestrictedMetricType>() {
                 public com.google.analytics.data.v1beta.RestrictedMetricType convert(
                     java.lang.Integer from) {
-                  @SuppressWarnings("deprecation")
                   com.google.analytics.data.v1beta.RestrictedMetricType result =
-                      com.google.analytics.data.v1beta.RestrictedMetricType.valueOf(from);
+                      com.google.analytics.data.v1beta.RestrictedMetricType.forNumber(from);
                   return result == null
                       ? com.google.analytics.data.v1beta.RestrictedMetricType.UNRECOGNIZED
                       : result;
@@ -824,8 +828,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           metricName_ = "";
-          bitField0_ = (bitField0_ & ~0x00000001);
           restrictedMetricTypes_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
@@ -867,20 +871,36 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
               result =
                   new com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
                       .ActiveMetricRestriction(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) != 0)) {
-            to_bitField0_ |= 0x00000001;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
-          result.metricName_ = metricName_;
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
+                    .ActiveMetricRestriction
+                result) {
           if (((bitField0_ & 0x00000002) != 0)) {
             restrictedMetricTypes_ = java.util.Collections.unmodifiableList(restrictedMetricTypes_);
             bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.restrictedMetricTypes_ = restrictedMetricTypes_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
+                    .ActiveMetricRestriction
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.metricName_ = metricName_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -942,8 +962,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
               == com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
                   .ActiveMetricRestriction.getDefaultInstance()) return this;
           if (other.hasMetricName()) {
-            bitField0_ |= 0x00000001;
             metricName_ = other.metricName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.restrictedMetricTypes_.isEmpty()) {
@@ -1101,8 +1121,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000001;
           metricName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1118,8 +1138,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
          * @return This builder for chaining.
          */
         public Builder clearMetricName() {
-          bitField0_ = (bitField0_ & ~0x00000001);
           metricName_ = getDefaultInstance().getMetricName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -1140,8 +1160,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-          bitField0_ |= 0x00000001;
           metricName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1472,6 +1492,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     }
 
     public static final int ACTIVE_METRIC_RESTRICTIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
                 .ActiveMetricRestriction>
@@ -1794,6 +1816,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (activeMetricRestrictionsBuilder_ == null) {
           activeMetricRestrictions_ = java.util.Collections.emptyList();
         } else {
@@ -1832,7 +1855,16 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
           buildPartial() {
         com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse result =
             new com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse result) {
         if (activeMetricRestrictionsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             activeMetricRestrictions_ =
@@ -1843,8 +1875,11 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         } else {
           result.activeMetricRestrictions_ = activeMetricRestrictionsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -2562,7 +2597,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int DATA_LOSS_FROM_OTHER_ROW_FIELD_NUMBER = 3;
-  private boolean dataLossFromOtherRow_;
+  private boolean dataLossFromOtherRow_ = false;
   /**
    *
    *
@@ -2648,7 +2683,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CURRENCY_CODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object currencyCode_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object currencyCode_ = "";
   /**
    *
    *
@@ -2736,7 +2773,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int TIME_ZONE_FIELD_NUMBER = 6;
-  private volatile java.lang.Object timeZone_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
   /**
    *
    *
@@ -2809,7 +2848,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int EMPTY_REASON_FIELD_NUMBER = 7;
-  private volatile java.lang.Object emptyReason_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object emptyReason_ = "";
   /**
    *
    *
@@ -2873,7 +2914,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SUBJECT_TO_THRESHOLDING_FIELD_NUMBER = 8;
-  private boolean subjectToThresholding_;
+  private boolean subjectToThresholding_ = false;
   /**
    *
    *
@@ -3198,22 +3239,17 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       dataLossFromOtherRow_ = false;
-
-      if (schemaRestrictionResponseBuilder_ == null) {
-        schemaRestrictionResponse_ = null;
-      } else {
-        schemaRestrictionResponseBuilder_.clear();
+      schemaRestrictionResponse_ = null;
+      if (schemaRestrictionResponseBuilder_ != null) {
+        schemaRestrictionResponseBuilder_.dispose();
+        schemaRestrictionResponseBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       currencyCode_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       timeZone_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
       emptyReason_ = "";
-      bitField0_ = (bitField0_ & ~0x00000008);
       subjectToThresholding_ = false;
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -3241,36 +3277,43 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1beta.ResponseMetaData buildPartial() {
       com.google.analytics.data.v1beta.ResponseMetaData result =
           new com.google.analytics.data.v1beta.ResponseMetaData(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.ResponseMetaData result) {
       int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.dataLossFromOtherRow_ = dataLossFromOtherRow_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (schemaRestrictionResponseBuilder_ == null) {
-          result.schemaRestrictionResponse_ = schemaRestrictionResponse_;
-        } else {
-          result.schemaRestrictionResponse_ = schemaRestrictionResponseBuilder_.build();
-        }
+        result.dataLossFromOtherRow_ = dataLossFromOtherRow_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.schemaRestrictionResponse_ =
+            schemaRestrictionResponseBuilder_ == null
+                ? schemaRestrictionResponse_
+                : schemaRestrictionResponseBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.currencyCode_ = currencyCode_;
         to_bitField0_ |= 0x00000002;
       }
-      result.currencyCode_ = currencyCode_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.timeZone_ = timeZone_;
         to_bitField0_ |= 0x00000004;
       }
-      result.timeZone_ = timeZone_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.emptyReason_ = emptyReason_;
         to_bitField0_ |= 0x00000008;
       }
-      result.emptyReason_ = emptyReason_;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.subjectToThresholding_ = subjectToThresholding_;
         to_bitField0_ |= 0x00000010;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -3326,18 +3369,18 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         mergeSchemaRestrictionResponse(other.getSchemaRestrictionResponse());
       }
       if (other.hasCurrencyCode()) {
-        bitField0_ |= 0x00000002;
         currencyCode_ = other.currencyCode_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasTimeZone()) {
-        bitField0_ |= 0x00000004;
         timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasEmptyReason()) {
-        bitField0_ |= 0x00000008;
         emptyReason_ = other.emptyReason_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSubjectToThresholding()) {
@@ -3372,38 +3415,38 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
             case 24:
               {
                 dataLossFromOtherRow_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 24
             case 34:
               {
                 input.readMessage(
                     getSchemaRestrictionResponseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 34
             case 42:
               {
                 currencyCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 42
             case 50:
               {
                 timeZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 50
             case 58:
               {
                 emptyReason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 58
             case 64:
               {
                 subjectToThresholding_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 64
             default:
@@ -3458,6 +3501,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     public Builder setDataLossFromOtherRow(boolean value) {
 
       dataLossFromOtherRow_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3474,7 +3518,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDataLossFromOtherRow() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       dataLossFromOtherRow_ = false;
       onChanged();
       return this;
@@ -3503,7 +3547,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return Whether the schemaRestrictionResponse field is set.
      */
     public boolean hasSchemaRestrictionResponse() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3551,11 +3595,11 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         schemaRestrictionResponse_ = value;
-        onChanged();
       } else {
         schemaRestrictionResponseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3576,11 +3620,11 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
             builderForValue) {
       if (schemaRestrictionResponseBuilder_ == null) {
         schemaRestrictionResponse_ = builderForValue.build();
-        onChanged();
       } else {
         schemaRestrictionResponseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3599,24 +3643,20 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     public Builder mergeSchemaRestrictionResponse(
         com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse value) {
       if (schemaRestrictionResponseBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && schemaRestrictionResponse_ != null
             && schemaRestrictionResponse_
                 != com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
                     .getDefaultInstance()) {
-          schemaRestrictionResponse_ =
-              com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse
-                  .newBuilder(schemaRestrictionResponse_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSchemaRestrictionResponseBuilder().mergeFrom(value);
         } else {
           schemaRestrictionResponse_ = value;
         }
-        onChanged();
       } else {
         schemaRestrictionResponseBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -3633,13 +3673,13 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSchemaRestrictionResponse() {
-      if (schemaRestrictionResponseBuilder_ == null) {
-        schemaRestrictionResponse_ = null;
-        onChanged();
-      } else {
-        schemaRestrictionResponseBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      schemaRestrictionResponse_ = null;
+      if (schemaRestrictionResponseBuilder_ != null) {
+        schemaRestrictionResponseBuilder_.dispose();
+        schemaRestrictionResponseBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -3657,7 +3697,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      */
     public com.google.analytics.data.v1beta.ResponseMetaData.SchemaRestrictionResponse.Builder
         getSchemaRestrictionResponseBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSchemaRestrictionResponseFieldBuilder().getBuilder();
     }
@@ -3737,7 +3777,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return Whether the currencyCode field is set.
      */
     public boolean hasCurrencyCode() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3823,8 +3863,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
       currencyCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3848,8 +3888,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCurrencyCode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       currencyCode_ = getDefaultInstance().getCurrencyCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -3878,8 +3918,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
       currencyCode_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -3900,7 +3940,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return Whether the timeZone field is set.
      */
     public boolean hasTimeZone() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3971,8 +4011,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
       timeZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3991,8 +4031,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTimeZone() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -4016,8 +4056,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
       timeZone_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4035,7 +4075,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return Whether the emptyReason field is set.
      */
     public boolean hasEmptyReason() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4097,8 +4137,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
       emptyReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4114,8 +4154,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEmptyReason() {
-      bitField0_ = (bitField0_ & ~0x00000008);
       emptyReason_ = getDefaultInstance().getEmptyReason();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4136,8 +4176,8 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
       emptyReason_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4163,7 +4203,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSubjectToThresholding() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -4207,8 +4247,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setSubjectToThresholding(boolean value) {
-      bitField0_ |= 0x00000010;
+
       subjectToThresholding_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4231,7 +4272,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSubjectToThresholding() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       subjectToThresholding_ = false;
       onChanged();
       return this;

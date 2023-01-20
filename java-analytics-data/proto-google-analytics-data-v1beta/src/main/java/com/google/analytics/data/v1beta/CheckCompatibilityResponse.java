@@ -69,6 +69,8 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
   }
 
   public static final int DIMENSION_COMPATIBILITIES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.DimensionCompatibility>
       dimensionCompatibilities_;
   /**
@@ -152,6 +154,8 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
   }
 
   public static final int METRIC_COMPATIBILITIES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.MetricCompatibility>
       metricCompatibilities_;
   /**
@@ -444,6 +448,7 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dimensionCompatibilitiesBuilder_ == null) {
         dimensionCompatibilities_ = java.util.Collections.emptyList();
       } else {
@@ -485,7 +490,16 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
     public com.google.analytics.data.v1beta.CheckCompatibilityResponse buildPartial() {
       com.google.analytics.data.v1beta.CheckCompatibilityResponse result =
           new com.google.analytics.data.v1beta.CheckCompatibilityResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.CheckCompatibilityResponse result) {
       if (dimensionCompatibilitiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensionCompatibilities_ =
@@ -505,8 +519,10 @@ public final class CheckCompatibilityResponse extends com.google.protobuf.Genera
       } else {
         result.metricCompatibilities_ = metricCompatibilitiesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.CheckCompatibilityResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

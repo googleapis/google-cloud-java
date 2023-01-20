@@ -69,7 +69,9 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -120,6 +122,8 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int REQUESTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.UpdateRowRequest> requests_;
   /**
    *
@@ -413,15 +417,15 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
       } else {
         requests_ = null;
         requestsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -449,19 +453,32 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     public com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest buildPartial() {
       com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest result =
           new com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest result) {
       if (requestsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           requests_ = java.util.Collections.unmodifiableList(requests_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.requests_ = requests_;
       } else {
         result.requests_ = requestsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -512,13 +529,14 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (requestsBuilder_ == null) {
         if (!other.requests_.isEmpty()) {
           if (requests_.isEmpty()) {
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRequestsIsMutable();
             requests_.addAll(other.requests_);
@@ -531,7 +549,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
             requestsBuilder_.dispose();
             requestsBuilder_ = null;
             requests_ = other.requests_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             requestsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRequestsFieldBuilder()
@@ -570,7 +588,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -670,8 +688,8 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -688,8 +706,8 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -711,8 +729,8 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -721,10 +739,10 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
         java.util.Collections.emptyList();
 
     private void ensureRequestsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         requests_ =
             new java.util.ArrayList<com.google.area120.tables.v1alpha1.UpdateRowRequest>(requests_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -975,7 +993,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
     public Builder clearRequests() {
       if (requestsBuilder_ == null) {
         requests_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         requestsBuilder_.clear();
@@ -1122,7 +1140,7 @@ public final class BatchUpdateRowsRequest extends com.google.protobuf.GeneratedM
                 com.google.area120.tables.v1alpha1.UpdateRowRequest,
                 com.google.area120.tables.v1alpha1.UpdateRowRequest.Builder,
                 com.google.area120.tables.v1alpha1.UpdateRowRequestOrBuilder>(
-                requests_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                requests_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         requests_ = null;
       }
       return requestsBuilder_;

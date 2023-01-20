@@ -121,7 +121,9 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder
       getAttributionSettingsOrBuilder() {
-    return getAttributionSettings();
+    return attributionSettings_ == null
+        ? com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance()
+        : attributionSettings_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -176,7 +178,7 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -398,16 +400,15 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (attributionSettingsBuilder_ == null) {
-        attributionSettings_ = null;
-      } else {
-        attributionSettings_ = null;
+      bitField0_ = 0;
+      attributionSettings_ = null;
+      if (attributionSettingsBuilder_ != null) {
+        attributionSettingsBuilder_.dispose();
         attributionSettingsBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -439,18 +440,25 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
     public com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest buildPartial() {
       com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest result =
           new com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest(this);
-      if (attributionSettingsBuilder_ == null) {
-        result.attributionSettings_ = attributionSettings_;
-      } else {
-        result.attributionSettings_ = attributionSettingsBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.attributionSettings_ =
+            attributionSettingsBuilder_ == null
+                ? attributionSettings_
+                : attributionSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -538,13 +546,13 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
               {
                 input.readMessage(
                     getAttributionSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -563,6 +571,8 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.AttributionSettings attributionSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -585,7 +595,7 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      * @return Whether the attributionSettings field is set.
      */
     public boolean hasAttributionSettings() {
-      return attributionSettingsBuilder_ != null || attributionSettings_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -629,11 +639,11 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         attributionSettings_ = value;
-        onChanged();
       } else {
         attributionSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -652,11 +662,11 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
         com.google.analytics.admin.v1alpha.AttributionSettings.Builder builderForValue) {
       if (attributionSettingsBuilder_ == null) {
         attributionSettings_ = builderForValue.build();
-        onChanged();
       } else {
         attributionSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,20 +684,19 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
     public Builder mergeAttributionSettings(
         com.google.analytics.admin.v1alpha.AttributionSettings value) {
       if (attributionSettingsBuilder_ == null) {
-        if (attributionSettings_ != null) {
-          attributionSettings_ =
-              com.google.analytics.admin.v1alpha.AttributionSettings.newBuilder(
-                      attributionSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && attributionSettings_ != null
+            && attributionSettings_
+                != com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance()) {
+          getAttributionSettingsBuilder().mergeFrom(value);
         } else {
           attributionSettings_ = value;
         }
-        onChanged();
       } else {
         attributionSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -703,14 +712,13 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearAttributionSettings() {
-      if (attributionSettingsBuilder_ == null) {
-        attributionSettings_ = null;
-        onChanged();
-      } else {
-        attributionSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      attributionSettings_ = null;
+      if (attributionSettingsBuilder_ != null) {
+        attributionSettingsBuilder_.dispose();
         attributionSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -727,7 +735,7 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      */
     public com.google.analytics.admin.v1alpha.AttributionSettings.Builder
         getAttributionSettingsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getAttributionSettingsFieldBuilder().getBuilder();
     }
@@ -803,7 +811,7 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -846,11 +854,11 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -868,11 +876,11 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -889,17 +897,18 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -915,14 +924,13 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -938,7 +946,7 @@ public final class UpdateAttributionSettingsRequest extends com.google.protobuf.
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

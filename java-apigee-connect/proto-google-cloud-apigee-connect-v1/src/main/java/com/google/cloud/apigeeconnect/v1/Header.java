@@ -69,7 +69,9 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int KEY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object key_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object key_ = "";
   /**
    * <code>string key = 1;</code>
    *
@@ -106,6 +108,8 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    * <code>repeated string values = 2;</code>
@@ -354,10 +358,10 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       key_ = "";
-
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -385,15 +389,27 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Header buildPartial() {
       com.google.cloud.apigeeconnect.v1.Header result =
           new com.google.cloud.apigeeconnect.v1.Header(this);
-      int from_bitField0_ = bitField0_;
-      result.key_ = key_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        values_ = values_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.values_ = values_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apigeeconnect.v1.Header result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        values_ = values_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.values_ = values_;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.Header result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.key_ = key_;
+      }
     }
 
     @java.lang.Override
@@ -443,12 +459,13 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeconnect.v1.Header.getDefaultInstance()) return this;
       if (!other.getKey().isEmpty()) {
         key_ = other.key_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
           values_ = other.values_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureValuesIsMutable();
           values_.addAll(other.values_);
@@ -484,7 +501,7 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 key_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -556,8 +573,8 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -567,8 +584,8 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKey() {
-
       key_ = getDefaultInstance().getKey();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -583,8 +600,8 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       key_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -593,9 +610,9 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         values_ = new com.google.protobuf.LazyStringArrayList(values_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -682,7 +699,7 @@ public final class Header extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValues() {
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }

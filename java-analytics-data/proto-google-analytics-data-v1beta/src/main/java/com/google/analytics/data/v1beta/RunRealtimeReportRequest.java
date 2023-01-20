@@ -73,7 +73,9 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int PROPERTY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object property_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object property_ = "";
   /**
    *
    *
@@ -130,6 +132,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int DIMENSIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Dimension> dimensions_;
   /**
    *
@@ -199,6 +203,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int METRICS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Metric> metrics_;
   /**
    *
@@ -312,7 +318,9 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.FilterExpressionOrBuilder getDimensionFilterOrBuilder() {
-    return getDimensionFilter();
+    return dimensionFilter_ == null
+        ? com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()
+        : dimensionFilter_;
   }
 
   public static final int METRIC_FILTER_FIELD_NUMBER = 5;
@@ -363,11 +371,13 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.FilterExpressionOrBuilder getMetricFilterOrBuilder() {
-    return getMetricFilter();
+    return metricFilter_ == null
+        ? com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()
+        : metricFilter_;
   }
 
   public static final int LIMIT_FIELD_NUMBER = 6;
-  private long limit_;
+  private long limit_ = 0L;
   /**
    *
    *
@@ -392,7 +402,10 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int METRIC_AGGREGATIONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> metricAggregations_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>
       metricAggregations_converter_ =
@@ -400,9 +413,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
               java.lang.Integer, com.google.analytics.data.v1beta.MetricAggregation>() {
             public com.google.analytics.data.v1beta.MetricAggregation convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.analytics.data.v1beta.MetricAggregation result =
-                  com.google.analytics.data.v1beta.MetricAggregation.valueOf(from);
+                  com.google.analytics.data.v1beta.MetricAggregation.forNumber(from);
               return result == null
                   ? com.google.analytics.data.v1beta.MetricAggregation.UNRECOGNIZED
                   : result;
@@ -497,6 +509,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   private int metricAggregationsMemoizedSerializedSize;
 
   public static final int ORDER_BYS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.OrderBy> orderBys_;
   /**
    *
@@ -566,7 +580,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int RETURN_PROPERTY_QUOTA_FIELD_NUMBER = 9;
-  private boolean returnPropertyQuota_;
+  private boolean returnPropertyQuota_ = false;
   /**
    *
    *
@@ -585,6 +599,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
   }
 
   public static final int MINUTE_RANGES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.MinuteRange> minuteRanges_;
   /**
    *
@@ -987,54 +1003,50 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       property_ = "";
-
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
       } else {
         dimensions_ = null;
         dimensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
       } else {
         metrics_ = null;
         metricsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
-      if (dimensionFilterBuilder_ == null) {
-        dimensionFilter_ = null;
-      } else {
-        dimensionFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dimensionFilter_ = null;
+      if (dimensionFilterBuilder_ != null) {
+        dimensionFilterBuilder_.dispose();
         dimensionFilterBuilder_ = null;
       }
-      if (metricFilterBuilder_ == null) {
-        metricFilter_ = null;
-      } else {
-        metricFilter_ = null;
+      metricFilter_ = null;
+      if (metricFilterBuilder_ != null) {
+        metricFilterBuilder_.dispose();
         metricFilterBuilder_ = null;
       }
       limit_ = 0L;
-
       metricAggregations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
       } else {
         orderBys_ = null;
         orderBysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000080);
       returnPropertyQuota_ = false;
-
       if (minuteRangesBuilder_ == null) {
         minuteRanges_ = java.util.Collections.emptyList();
       } else {
         minuteRanges_ = null;
         minuteRangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1062,63 +1074,78 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public com.google.analytics.data.v1beta.RunRealtimeReportRequest buildPartial() {
       com.google.analytics.data.v1beta.RunRealtimeReportRequest result =
           new com.google.analytics.data.v1beta.RunRealtimeReportRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.property_ = property_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.RunRealtimeReportRequest result) {
       if (dimensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.dimensions_ = dimensions_;
       } else {
         result.dimensions_ = dimensionsBuilder_.build();
       }
       if (metricsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           metrics_ = java.util.Collections.unmodifiableList(metrics_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.metrics_ = metrics_;
       } else {
         result.metrics_ = metricsBuilder_.build();
       }
-      if (dimensionFilterBuilder_ == null) {
-        result.dimensionFilter_ = dimensionFilter_;
-      } else {
-        result.dimensionFilter_ = dimensionFilterBuilder_.build();
-      }
-      if (metricFilterBuilder_ == null) {
-        result.metricFilter_ = metricFilter_;
-      } else {
-        result.metricFilter_ = metricFilterBuilder_.build();
-      }
-      result.limit_ = limit_;
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         metricAggregations_ = java.util.Collections.unmodifiableList(metricAggregations_);
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.metricAggregations_ = metricAggregations_;
       if (orderBysBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           orderBys_ = java.util.Collections.unmodifiableList(orderBys_);
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.orderBys_ = orderBys_;
       } else {
         result.orderBys_ = orderBysBuilder_.build();
       }
-      result.returnPropertyQuota_ = returnPropertyQuota_;
       if (minuteRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           minuteRanges_ = java.util.Collections.unmodifiableList(minuteRanges_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.minuteRanges_ = minuteRanges_;
       } else {
         result.minuteRanges_ = minuteRangesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.RunRealtimeReportRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = property_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.dimensionFilter_ =
+            dimensionFilterBuilder_ == null ? dimensionFilter_ : dimensionFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.metricFilter_ =
+            metricFilterBuilder_ == null ? metricFilter_ : metricFilterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.limit_ = limit_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.returnPropertyQuota_ = returnPropertyQuota_;
+      }
     }
 
     @java.lang.Override
@@ -1169,13 +1196,14 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         return this;
       if (!other.getProperty().isEmpty()) {
         property_ = other.property_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (dimensionsBuilder_ == null) {
         if (!other.dimensions_.isEmpty()) {
           if (dimensions_.isEmpty()) {
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDimensionsIsMutable();
             dimensions_.addAll(other.dimensions_);
@@ -1188,7 +1216,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             dimensionsBuilder_.dispose();
             dimensionsBuilder_ = null;
             dimensions_ = other.dimensions_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             dimensionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getDimensionsFieldBuilder()
@@ -1202,7 +1230,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         if (!other.metrics_.isEmpty()) {
           if (metrics_.isEmpty()) {
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMetricsIsMutable();
             metrics_.addAll(other.metrics_);
@@ -1215,7 +1243,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             metricsBuilder_.dispose();
             metricsBuilder_ = null;
             metrics_ = other.metrics_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             metricsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMetricsFieldBuilder()
@@ -1237,7 +1265,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       if (!other.metricAggregations_.isEmpty()) {
         if (metricAggregations_.isEmpty()) {
           metricAggregations_ = other.metricAggregations_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureMetricAggregationsIsMutable();
           metricAggregations_.addAll(other.metricAggregations_);
@@ -1248,7 +1276,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         if (!other.orderBys_.isEmpty()) {
           if (orderBys_.isEmpty()) {
             orderBys_ = other.orderBys_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureOrderBysIsMutable();
             orderBys_.addAll(other.orderBys_);
@@ -1261,7 +1289,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             orderBysBuilder_.dispose();
             orderBysBuilder_ = null;
             orderBys_ = other.orderBys_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000080);
             orderBysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getOrderBysFieldBuilder()
@@ -1278,7 +1306,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         if (!other.minuteRanges_.isEmpty()) {
           if (minuteRanges_.isEmpty()) {
             minuteRanges_ = other.minuteRanges_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureMinuteRangesIsMutable();
             minuteRanges_.addAll(other.minuteRanges_);
@@ -1291,7 +1319,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             minuteRangesBuilder_.dispose();
             minuteRangesBuilder_ = null;
             minuteRanges_ = other.minuteRanges_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000200);
             minuteRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getMinuteRangesFieldBuilder()
@@ -1330,7 +1358,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             case 10:
               {
                 property_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1362,19 +1390,19 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             case 34:
               {
                 input.readMessage(getDimensionFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getMetricFilterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 limit_ = input.readInt64();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
@@ -1412,7 +1440,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
             case 72:
               {
                 returnPropertyQuota_ = input.readBool();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
@@ -1520,8 +1548,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1541,8 +1569,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearProperty() {
-
       property_ = getDefaultInstance().getProperty();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1567,8 +1595,8 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       property_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1577,10 +1605,10 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureDimensionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         dimensions_ =
             new java.util.ArrayList<com.google.analytics.data.v1beta.Dimension>(dimensions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1796,7 +1824,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder clearDimensions() {
       if (dimensionsBuilder_ == null) {
         dimensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         dimensionsBuilder_.clear();
@@ -1918,7 +1946,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
                 com.google.analytics.data.v1beta.Dimension,
                 com.google.analytics.data.v1beta.Dimension.Builder,
                 com.google.analytics.data.v1beta.DimensionOrBuilder>(
-                dimensions_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                dimensions_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         dimensions_ = null;
       }
       return dimensionsBuilder_;
@@ -1928,9 +1956,9 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureMetricsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         metrics_ = new java.util.ArrayList<com.google.analytics.data.v1beta.Metric>(metrics_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2145,7 +2173,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder clearMetrics() {
       if (metricsBuilder_ == null) {
         metrics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         metricsBuilder_.clear();
@@ -2266,7 +2294,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
                 com.google.analytics.data.v1beta.Metric,
                 com.google.analytics.data.v1beta.Metric.Builder,
                 com.google.analytics.data.v1beta.MetricOrBuilder>(
-                metrics_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                metrics_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
@@ -2290,7 +2318,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * @return Whether the dimensionFilter field is set.
      */
     public boolean hasDimensionFilter() {
-      return dimensionFilterBuilder_ != null || dimensionFilter_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2327,11 +2355,11 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         dimensionFilter_ = value;
-        onChanged();
       } else {
         dimensionFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2347,11 +2375,11 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         com.google.analytics.data.v1beta.FilterExpression.Builder builderForValue) {
       if (dimensionFilterBuilder_ == null) {
         dimensionFilter_ = builderForValue.build();
-        onChanged();
       } else {
         dimensionFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2365,19 +2393,19 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      */
     public Builder mergeDimensionFilter(com.google.analytics.data.v1beta.FilterExpression value) {
       if (dimensionFilterBuilder_ == null) {
-        if (dimensionFilter_ != null) {
-          dimensionFilter_ =
-              com.google.analytics.data.v1beta.FilterExpression.newBuilder(dimensionFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && dimensionFilter_ != null
+            && dimensionFilter_
+                != com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()) {
+          getDimensionFilterBuilder().mergeFrom(value);
         } else {
           dimensionFilter_ = value;
         }
-        onChanged();
       } else {
         dimensionFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2390,14 +2418,13 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
      */
     public Builder clearDimensionFilter() {
-      if (dimensionFilterBuilder_ == null) {
-        dimensionFilter_ = null;
-        onChanged();
-      } else {
-        dimensionFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      dimensionFilter_ = null;
+      if (dimensionFilterBuilder_ != null) {
+        dimensionFilterBuilder_.dispose();
         dimensionFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2410,7 +2437,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * <code>.google.analytics.data.v1beta.FilterExpression dimension_filter = 4;</code>
      */
     public com.google.analytics.data.v1beta.FilterExpression.Builder getDimensionFilterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDimensionFilterFieldBuilder().getBuilder();
     }
@@ -2478,7 +2505,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * @return Whether the metricFilter field is set.
      */
     public boolean hasMetricFilter() {
-      return metricFilterBuilder_ != null || metricFilter_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2517,11 +2544,11 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         metricFilter_ = value;
-        onChanged();
       } else {
         metricFilterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2538,11 +2565,11 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         com.google.analytics.data.v1beta.FilterExpression.Builder builderForValue) {
       if (metricFilterBuilder_ == null) {
         metricFilter_ = builderForValue.build();
-        onChanged();
       } else {
         metricFilterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2557,19 +2584,19 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      */
     public Builder mergeMetricFilter(com.google.analytics.data.v1beta.FilterExpression value) {
       if (metricFilterBuilder_ == null) {
-        if (metricFilter_ != null) {
-          metricFilter_ =
-              com.google.analytics.data.v1beta.FilterExpression.newBuilder(metricFilter_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && metricFilter_ != null
+            && metricFilter_
+                != com.google.analytics.data.v1beta.FilterExpression.getDefaultInstance()) {
+          getMetricFilterBuilder().mergeFrom(value);
         } else {
           metricFilter_ = value;
         }
-        onChanged();
       } else {
         metricFilterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2583,14 +2610,13 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
      */
     public Builder clearMetricFilter() {
-      if (metricFilterBuilder_ == null) {
-        metricFilter_ = null;
-        onChanged();
-      } else {
-        metricFilter_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metricFilter_ = null;
+      if (metricFilterBuilder_ != null) {
+        metricFilterBuilder_.dispose();
         metricFilterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2604,7 +2630,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * <code>.google.analytics.data.v1beta.FilterExpression metric_filter = 5;</code>
      */
     public com.google.analytics.data.v1beta.FilterExpression.Builder getMetricFilterBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getMetricFilterFieldBuilder().getBuilder();
     }
@@ -2699,6 +2725,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder setLimit(long value) {
 
       limit_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2721,7 +2748,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       limit_ = 0L;
       onChanged();
       return this;
@@ -2731,9 +2758,9 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureMetricAggregationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         metricAggregations_ = new java.util.ArrayList<java.lang.Integer>(metricAggregations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2874,7 +2901,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      */
     public Builder clearMetricAggregations() {
       metricAggregations_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2979,9 +3006,9 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureOrderBysIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         orderBys_ = new java.util.ArrayList<com.google.analytics.data.v1beta.OrderBy>(orderBys_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -3196,7 +3223,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder clearOrderBys() {
       if (orderBysBuilder_ == null) {
         orderBys_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         orderBysBuilder_.clear();
@@ -3318,7 +3345,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
                 com.google.analytics.data.v1beta.OrderBy,
                 com.google.analytics.data.v1beta.OrderBy.Builder,
                 com.google.analytics.data.v1beta.OrderByOrBuilder>(
-                orderBys_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+                orderBys_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         orderBys_ = null;
       }
       return orderBysBuilder_;
@@ -3357,6 +3384,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder setReturnPropertyQuota(boolean value) {
 
       returnPropertyQuota_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3373,7 +3401,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearReturnPropertyQuota() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       returnPropertyQuota_ = false;
       onChanged();
       return this;
@@ -3383,10 +3411,10 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureMinuteRangesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         minuteRanges_ =
             new java.util.ArrayList<com.google.analytics.data.v1beta.MinuteRange>(minuteRanges_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -3646,7 +3674,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
     public Builder clearMinuteRanges() {
       if (minuteRangesBuilder_ == null) {
         minuteRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         minuteRangesBuilder_.clear();
@@ -3797,7 +3825,7 @@ public final class RunRealtimeReportRequest extends com.google.protobuf.Generate
                 com.google.analytics.data.v1beta.MinuteRange,
                 com.google.analytics.data.v1beta.MinuteRange.Builder,
                 com.google.analytics.data.v1beta.MinuteRangeOrBuilder>(
-                minuteRanges_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                minuteRanges_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         minuteRanges_ = null;
       }
       return minuteRangesBuilder_;

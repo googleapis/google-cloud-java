@@ -402,7 +402,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -459,7 +461,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 10;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -508,7 +512,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -537,16 +541,17 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Network.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Network.Type result =
-        com.google.cloud.baremetalsolution.v2.Network.Type.valueOf(type_);
+        com.google.cloud.baremetalsolution.v2.Network.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Network.Type.UNRECOGNIZED
         : result;
   }
 
   public static final int IP_ADDRESS_FIELD_NUMBER = 3;
-  private volatile java.lang.Object ipAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
   /**
    *
    *
@@ -595,6 +600,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAC_ADDRESS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList macAddress_;
   /**
    *
@@ -656,7 +663,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 6;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -685,16 +692,17 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.Network.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.baremetalsolution.v2.Network.State result =
-        com.google.cloud.baremetalsolution.v2.Network.State.valueOf(state_);
+        com.google.cloud.baremetalsolution.v2.Network.State.forNumber(state_);
     return result == null
         ? com.google.cloud.baremetalsolution.v2.Network.State.UNRECOGNIZED
         : result;
   }
 
   public static final int VLAN_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object vlanId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vlanId_ = "";
   /**
    *
    *
@@ -743,7 +751,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CIDR_FIELD_NUMBER = 8;
-  private volatile java.lang.Object cidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cidr_ = "";
   /**
    *
    *
@@ -834,7 +844,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.baremetalsolution.v2.VRFOrBuilder getVrfOrBuilder() {
-    return getVrf();
+    return vrf_ == null ? com.google.cloud.baremetalsolution.v2.VRF.getDefaultInstance() : vrf_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 11;
@@ -850,6 +860,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -907,7 +918,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -936,7 +950,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVICES_CIDR_FIELD_NUMBER = 12;
-  private volatile java.lang.Object servicesCidr_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object servicesCidr_ = "";
   /**
    *
    *
@@ -985,6 +1001,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESERVATIONS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NetworkAddressReservation>
       reservations_;
   /**
@@ -1413,38 +1431,30 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
       type_ = 0;
-
       ipAddress_ = "";
-
       macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
-
       vlanId_ = "";
-
       cidr_ = "";
-
-      if (vrfBuilder_ == null) {
-        vrf_ = null;
-      } else {
-        vrf_ = null;
+      vrf_ = null;
+      if (vrfBuilder_ != null) {
+        vrfBuilder_.dispose();
         vrfBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       servicesCidr_ = "";
-
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
       } else {
         reservations_ = null;
         reservationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1472,38 +1482,64 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.baremetalsolution.v2.Network buildPartial() {
       com.google.cloud.baremetalsolution.v2.Network result =
           new com.google.cloud.baremetalsolution.v2.Network(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      result.type_ = type_;
-      result.ipAddress_ = ipAddress_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.baremetalsolution.v2.Network result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         macAddress_ = macAddress_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
       }
       result.macAddress_ = macAddress_;
-      result.state_ = state_;
-      result.vlanId_ = vlanId_;
-      result.cidr_ = cidr_;
-      if (vrfBuilder_ == null) {
-        result.vrf_ = vrf_;
-      } else {
-        result.vrf_ = vrfBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.servicesCidr_ = servicesCidr_;
       if (reservationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           reservations_ = java.util.Collections.unmodifiableList(reservations_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.reservations_ = reservations_;
       } else {
         result.reservations_ = reservationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.Network result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.vlanId_ = vlanId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.cidr_ = cidr_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.vrf_ = vrfBuilder_ == null ? vrf_ : vrfBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.servicesCidr_ = servicesCidr_;
+      }
     }
 
     @java.lang.Override
@@ -1553,10 +1589,12 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.baremetalsolution.v2.Network.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -1564,12 +1602,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.macAddress_.isEmpty()) {
         if (macAddress_.isEmpty()) {
           macAddress_ = other.macAddress_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureMacAddressIsMutable();
           macAddress_.addAll(other.macAddress_);
@@ -1581,25 +1620,29 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getVlanId().isEmpty()) {
         vlanId_ = other.vlanId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getCidr().isEmpty()) {
         cidr_ = other.cidr_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasVrf()) {
         mergeVrf(other.getVrf());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000200;
       if (!other.getServicesCidr().isEmpty()) {
         servicesCidr_ = other.servicesCidr_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (reservationsBuilder_ == null) {
         if (!other.reservations_.isEmpty()) {
           if (reservations_.isEmpty()) {
             reservations_ = other.reservations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureReservationsIsMutable();
             reservations_.addAll(other.reservations_);
@@ -1612,7 +1655,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             reservationsBuilder_.dispose();
             reservationsBuilder_ = null;
             reservations_ = other.reservations_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000800);
             reservationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getReservationsFieldBuilder()
@@ -1651,13 +1694,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -1670,37 +1713,37 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
             case 42:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 42
             case 48:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 vlanId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 cidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getVrfFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 82:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 82
             case 90:
@@ -1712,12 +1755,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 servicesCidr_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
@@ -1826,8 +1870,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1847,8 +1891,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1873,8 +1917,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1940,8 +1984,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1957,8 +2001,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1979,8 +2023,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2014,8 +2058,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2032,9 +2076,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Network.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Network.Type result =
-          com.google.cloud.baremetalsolution.v2.Network.Type.valueOf(type_);
+          com.google.cloud.baremetalsolution.v2.Network.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Network.Type.UNRECOGNIZED
           : result;
@@ -2055,7 +2098,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -2072,7 +2115,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       type_ = 0;
       onChanged();
       return this;
@@ -2139,8 +2182,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2156,8 +2199,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpAddress() {
-
       ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2178,8 +2221,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       ipAddress_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2188,9 +2231,9 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMacAddressIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         macAddress_ = new com.google.protobuf.LazyStringArrayList(macAddress_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2325,7 +2368,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMacAddress() {
       macAddress_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2381,8 +2424,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2399,9 +2442,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.baremetalsolution.v2.Network.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.baremetalsolution.v2.Network.State result =
-          com.google.cloud.baremetalsolution.v2.Network.State.valueOf(state_);
+          com.google.cloud.baremetalsolution.v2.Network.State.forNumber(state_);
       return result == null
           ? com.google.cloud.baremetalsolution.v2.Network.State.UNRECOGNIZED
           : result;
@@ -2422,7 +2464,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2439,7 +2481,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2506,8 +2548,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       vlanId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2523,8 +2565,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearVlanId() {
-
       vlanId_ = getDefaultInstance().getVlanId();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2545,8 +2587,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       vlanId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2612,8 +2654,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       cidr_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2629,8 +2671,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCidr() {
-
       cidr_ = getDefaultInstance().getCidr();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2651,8 +2693,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cidr_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2675,7 +2717,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vrf field is set.
      */
     public boolean hasVrf() {
-      return vrfBuilder_ != null || vrf_ != null;
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2710,11 +2752,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         vrf_ = value;
-        onChanged();
       } else {
         vrfBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2729,11 +2771,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder setVrf(com.google.cloud.baremetalsolution.v2.VRF.Builder builderForValue) {
       if (vrfBuilder_ == null) {
         vrf_ = builderForValue.build();
-        onChanged();
       } else {
         vrfBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2747,24 +2789,18 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeVrf(com.google.cloud.baremetalsolution.v2.VRF value) {
       if (vrfBuilder_ == null) {
-        if (vrf_ != null) {
-          vrf_ =
-              com.google
-                  .cloud
-                  .baremetalsolution
-                  .v2
-                  .VRF
-                  .newBuilder(vrf_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000100) != 0)
+            && vrf_ != null
+            && vrf_ != com.google.cloud.baremetalsolution.v2.VRF.getDefaultInstance()) {
+          getVrfBuilder().mergeFrom(value);
         } else {
           vrf_ = value;
         }
-        onChanged();
       } else {
         vrfBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     /**
@@ -2777,14 +2813,13 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.VRF vrf = 9;</code>
      */
     public Builder clearVrf() {
-      if (vrfBuilder_ == null) {
-        vrf_ = null;
-        onChanged();
-      } else {
-        vrf_ = null;
+      bitField0_ = (bitField0_ & ~0x00000100);
+      vrf_ = null;
+      if (vrfBuilder_ != null) {
+        vrfBuilder_.dispose();
         vrfBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2797,7 +2832,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.baremetalsolution.v2.VRF vrf = 9;</code>
      */
     public com.google.cloud.baremetalsolution.v2.VRF.Builder getVrfBuilder() {
-
+      bitField0_ |= 0x00000100;
       onChanged();
       return getVrfFieldBuilder().getBuilder();
     }
@@ -2854,14 +2889,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000200;
+      onChanged();
       return labels_;
     }
 
@@ -2913,8 +2948,10 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2943,6 +2980,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2965,6 +3003,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2983,8 +3022,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -2998,6 +3037,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -3062,8 +3102,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       servicesCidr_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3079,8 +3119,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearServicesCidr() {
-
       servicesCidr_ = getDefaultInstance().getServicesCidr();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3101,8 +3141,8 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       servicesCidr_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3111,11 +3151,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
         reservations_ = java.util.Collections.emptyList();
 
     private void ensureReservationsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         reservations_ =
             new java.util.ArrayList<
                 com.google.cloud.baremetalsolution.v2.NetworkAddressReservation>(reservations_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -3384,7 +3424,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     public Builder clearReservations() {
       if (reservationsBuilder_ == null) {
         reservations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         reservationsBuilder_.clear();
@@ -3542,7 +3582,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.baremetalsolution.v2.NetworkAddressReservation,
                 com.google.cloud.baremetalsolution.v2.NetworkAddressReservation.Builder,
                 com.google.cloud.baremetalsolution.v2.NetworkAddressReservationOrBuilder>(
-                reservations_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                reservations_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         reservations_ = null;
       }
       return reservationsBuilder_;

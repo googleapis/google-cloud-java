@@ -110,7 +110,9 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.devtools.artifactregistry.v1.RepositoryOrBuilder getRepositoryOrBuilder() {
-    return getRepository();
+    return repository_ == null
+        ? com.google.devtools.artifactregistry.v1.Repository.getDefaultInstance()
+        : repository_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -162,7 +164,7 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,16 +384,15 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (repositoryBuilder_ == null) {
-        repository_ = null;
-      } else {
-        repository_ = null;
+      bitField0_ = 0;
+      repository_ = null;
+      if (repositoryBuilder_ != null) {
+        repositoryBuilder_.dispose();
         repositoryBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -422,18 +423,22 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
     public com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest buildPartial() {
       com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest result =
           new com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest(this);
-      if (repositoryBuilder_ == null) {
-        result.repository_ = repository_;
-      } else {
-        result.repository_ = repositoryBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1.UpdateRepositoryRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.repository_ = repositoryBuilder_ == null ? repository_ : repositoryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -519,13 +524,13 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getRepositoryFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -545,6 +550,8 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.devtools.artifactregistry.v1.Repository repository_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.devtools.artifactregistry.v1.Repository,
@@ -563,7 +570,7 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * @return Whether the repository field is set.
      */
     public boolean hasRepository() {
-      return repositoryBuilder_ != null || repository_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -600,11 +607,11 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         repository_ = value;
-        onChanged();
       } else {
         repositoryBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -620,11 +627,11 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
         com.google.devtools.artifactregistry.v1.Repository.Builder builderForValue) {
       if (repositoryBuilder_ == null) {
         repository_ = builderForValue.build();
-        onChanged();
       } else {
         repositoryBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -638,19 +645,19 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      */
     public Builder mergeRepository(com.google.devtools.artifactregistry.v1.Repository value) {
       if (repositoryBuilder_ == null) {
-        if (repository_ != null) {
-          repository_ =
-              com.google.devtools.artifactregistry.v1.Repository.newBuilder(repository_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && repository_ != null
+            && repository_
+                != com.google.devtools.artifactregistry.v1.Repository.getDefaultInstance()) {
+          getRepositoryBuilder().mergeFrom(value);
         } else {
           repository_ = value;
         }
-        onChanged();
       } else {
         repositoryBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -663,14 +670,13 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * <code>.google.devtools.artifactregistry.v1.Repository repository = 1;</code>
      */
     public Builder clearRepository() {
-      if (repositoryBuilder_ == null) {
-        repository_ = null;
-        onChanged();
-      } else {
-        repository_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      repository_ = null;
+      if (repositoryBuilder_ != null) {
+        repositoryBuilder_.dispose();
         repositoryBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -683,7 +689,7 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * <code>.google.devtools.artifactregistry.v1.Repository repository = 1;</code>
      */
     public com.google.devtools.artifactregistry.v1.Repository.Builder getRepositoryBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRepositoryFieldBuilder().getBuilder();
     }
@@ -751,7 +757,7 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +798,11 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -813,11 +819,11 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -833,17 +839,18 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -858,14 +865,13 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -880,7 +886,7 @@ public final class UpdateRepositoryRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

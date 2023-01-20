@@ -68,7 +68,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int CRAMERS_V_FIELD_NUMBER = 1;
-  private double cramersV_;
+  private double cramersV_ = 0D;
   /**
    *
    *
@@ -288,8 +288,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cramersV_ = 0D;
-
       return this;
     }
 
@@ -317,9 +317,18 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.automl.v1beta1.CorrelationStats buildPartial() {
       com.google.cloud.automl.v1beta1.CorrelationStats result =
           new com.google.cloud.automl.v1beta1.CorrelationStats(this);
-      result.cramersV_ = cramersV_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.CorrelationStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cramersV_ = cramersV_;
+      }
     }
 
     @java.lang.Override
@@ -400,7 +409,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
             case 9:
               {
                 cramersV_ = input.readDouble();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 9
             default:
@@ -419,6 +428,8 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private double cramersV_;
     /**
@@ -451,6 +462,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
     public Builder setCramersV(double value) {
 
       cramersV_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -466,7 +478,7 @@ public final class CorrelationStats extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearCramersV() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       cramersV_ = 0D;
       onChanged();
       return this;

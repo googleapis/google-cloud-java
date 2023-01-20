@@ -69,6 +69,8 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   }
 
   public static final int APT_ARTIFACTS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.AptArtifact> aptArtifacts_;
   /**
    *
@@ -140,6 +142,8 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
   }
 
   public static final int ERRORS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsErrorInfo>
       errors_;
   /**
@@ -438,6 +442,7 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (aptArtifactsBuilder_ == null) {
         aptArtifacts_ = java.util.Collections.emptyList();
       } else {
@@ -482,7 +487,16 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
     public com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse buildPartial() {
       com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse result =
           new com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse result) {
       if (aptArtifactsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           aptArtifacts_ = java.util.Collections.unmodifiableList(aptArtifacts_);
@@ -501,8 +515,11 @@ public final class ImportAptArtifactsResponse extends com.google.protobuf.Genera
       } else {
         result.errors_ = errorsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.devtools.artifactregistry.v1beta2.ImportAptArtifactsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

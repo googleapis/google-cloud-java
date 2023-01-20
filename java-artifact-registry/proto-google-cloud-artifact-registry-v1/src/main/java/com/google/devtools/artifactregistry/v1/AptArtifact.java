@@ -234,7 +234,9 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -283,7 +285,9 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object packageName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packageName_ = "";
   /**
    *
    *
@@ -332,7 +336,7 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PACKAGE_TYPE_FIELD_NUMBER = 3;
-  private int packageType_;
+  private int packageType_ = 0;
   /**
    *
    *
@@ -365,16 +369,17 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.devtools.artifactregistry.v1.AptArtifact.PackageType getPackageType() {
-    @SuppressWarnings("deprecation")
     com.google.devtools.artifactregistry.v1.AptArtifact.PackageType result =
-        com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.valueOf(packageType_);
+        com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.forNumber(packageType_);
     return result == null
         ? com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.UNRECOGNIZED
         : result;
   }
 
   public static final int ARCHITECTURE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object architecture_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object architecture_ = "";
   /**
    *
    *
@@ -423,7 +428,9 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPONENT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object component_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object component_ = "";
   /**
    *
    *
@@ -472,7 +479,7 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTROL_FILE_FIELD_NUMBER = 6;
-  private com.google.protobuf.ByteString controlFile_;
+  private com.google.protobuf.ByteString controlFile_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -737,18 +744,13 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       packageName_ = "";
-
       packageType_ = 0;
-
       architecture_ = "";
-
       component_ = "";
-
       controlFile_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -776,14 +778,33 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.devtools.artifactregistry.v1.AptArtifact buildPartial() {
       com.google.devtools.artifactregistry.v1.AptArtifact result =
           new com.google.devtools.artifactregistry.v1.AptArtifact(this);
-      result.name_ = name_;
-      result.packageName_ = packageName_;
-      result.packageType_ = packageType_;
-      result.architecture_ = architecture_;
-      result.component_ = component_;
-      result.controlFile_ = controlFile_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.devtools.artifactregistry.v1.AptArtifact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.packageName_ = packageName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.packageType_ = packageType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.architecture_ = architecture_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.component_ = component_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.controlFile_ = controlFile_;
+      }
     }
 
     @java.lang.Override
@@ -834,10 +855,12 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPackageName().isEmpty()) {
         packageName_ = other.packageName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.packageType_ != 0) {
@@ -845,10 +868,12 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getArchitecture().isEmpty()) {
         architecture_ = other.architecture_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getComponent().isEmpty()) {
         component_ = other.component_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getControlFile() != com.google.protobuf.ByteString.EMPTY) {
@@ -883,37 +908,37 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 packageName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 packageType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 architecture_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 component_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 controlFile_ = input.readBytes();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -932,6 +957,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -994,8 +1021,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1011,8 +1038,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1033,8 +1060,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1100,8 +1127,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       packageName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1117,8 +1144,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPackageName() {
-
       packageName_ = getDefaultInstance().getPackageName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1139,8 +1166,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       packageName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1178,8 +1205,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPackageTypeValue(int value) {
-
       packageType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1198,9 +1225,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.devtools.artifactregistry.v1.AptArtifact.PackageType getPackageType() {
-      @SuppressWarnings("deprecation")
       com.google.devtools.artifactregistry.v1.AptArtifact.PackageType result =
-          com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.valueOf(packageType_);
+          com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.forNumber(packageType_);
       return result == null
           ? com.google.devtools.artifactregistry.v1.AptArtifact.PackageType.UNRECOGNIZED
           : result;
@@ -1224,7 +1250,7 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       packageType_ = value.getNumber();
       onChanged();
       return this;
@@ -1243,7 +1269,7 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPackageType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       packageType_ = 0;
       onChanged();
       return this;
@@ -1310,8 +1336,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       architecture_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1327,8 +1353,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearArchitecture() {
-
       architecture_ = getDefaultInstance().getArchitecture();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1349,8 +1375,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       architecture_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1416,8 +1442,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       component_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1433,8 +1459,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearComponent() {
-
       component_ = getDefaultInstance().getComponent();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1455,8 +1481,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       component_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1493,8 +1519,8 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       controlFile_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1510,7 +1536,7 @@ public final class AptArtifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearControlFile() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       controlFile_ = getDefaultInstance().getControlFile();
       onChanged();
       return this;

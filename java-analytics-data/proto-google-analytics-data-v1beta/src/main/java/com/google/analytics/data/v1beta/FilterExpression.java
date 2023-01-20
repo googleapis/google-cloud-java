@@ -584,6 +584,7 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (andGroupBuilder_ != null) {
         andGroupBuilder_.clear();
       }
@@ -625,37 +626,33 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1beta.FilterExpression buildPartial() {
       com.google.analytics.data.v1beta.FilterExpression result =
           new com.google.analytics.data.v1beta.FilterExpression(this);
-      if (exprCase_ == 1) {
-        if (andGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = andGroupBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (exprCase_ == 2) {
-        if (orGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = orGroupBuilder_.build();
-        }
-      }
-      if (exprCase_ == 3) {
-        if (notExpressionBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = notExpressionBuilder_.build();
-        }
-      }
-      if (exprCase_ == 4) {
-        if (filterBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = filterBuilder_.build();
-        }
-      }
-      result.exprCase_ = exprCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.FilterExpression result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1beta.FilterExpression result) {
+      result.exprCase_ = exprCase_;
+      result.expr_ = this.expr_;
+      if (exprCase_ == 1 && andGroupBuilder_ != null) {
+        result.expr_ = andGroupBuilder_.build();
+      }
+      if (exprCase_ == 2 && orGroupBuilder_ != null) {
+        result.expr_ = orGroupBuilder_.build();
+      }
+      if (exprCase_ == 3 && notExpressionBuilder_ != null) {
+        result.expr_ = notExpressionBuilder_.build();
+      }
+      if (exprCase_ == 4 && filterBuilder_ != null) {
+        result.expr_ = filterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -810,6 +807,8 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1beta.FilterExpressionList,
@@ -1018,7 +1017,6 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       }
       exprCase_ = 1;
       onChanged();
-      ;
       return andGroupBuilder_;
     }
 
@@ -1229,7 +1227,6 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       }
       exprCase_ = 2;
       onChanged();
-      ;
       return orGroupBuilder_;
     }
 
@@ -1439,7 +1436,6 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       }
       exprCase_ = 3;
       onChanged();
-      ;
       return notExpressionBuilder_;
     }
 
@@ -1655,7 +1651,6 @@ public final class FilterExpression extends com.google.protobuf.GeneratedMessage
       }
       exprCase_ = 4;
       onChanged();
-      ;
       return filterBuilder_;
     }
 

@@ -70,7 +70,9 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -170,6 +174,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TABLES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.area120.tables.v1alpha1.Table> tables_;
   /**
    *
@@ -455,17 +461,16 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       if (tablesBuilder_ == null) {
         tables_ = java.util.Collections.emptyList();
       } else {
         tables_ = null;
         tablesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -493,20 +498,34 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     public com.google.area120.tables.v1alpha1.Workspace buildPartial() {
       com.google.area120.tables.v1alpha1.Workspace result =
           new com.google.area120.tables.v1alpha1.Workspace(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.area120.tables.v1alpha1.Workspace result) {
       if (tablesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           tables_ = java.util.Collections.unmodifiableList(tables_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.tables_ = tables_;
       } else {
         result.tables_ = tablesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.Workspace result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -556,17 +575,19 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.area120.tables.v1alpha1.Workspace.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (tablesBuilder_ == null) {
         if (!other.tables_.isEmpty()) {
           if (tables_.isEmpty()) {
             tables_ = other.tables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTablesIsMutable();
             tables_.addAll(other.tables_);
@@ -579,7 +600,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             tablesBuilder_.dispose();
             tablesBuilder_ = null;
             tables_ = other.tables_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             tablesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTablesFieldBuilder()
@@ -618,13 +639,13 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -723,8 +744,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -741,8 +762,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -764,8 +785,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -831,8 +852,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -848,8 +869,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -870,8 +891,8 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -880,9 +901,9 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTablesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         tables_ = new java.util.ArrayList<com.google.area120.tables.v1alpha1.Table>(tables_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1097,7 +1118,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTables() {
       if (tablesBuilder_ == null) {
         tables_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         tablesBuilder_.clear();
@@ -1218,7 +1239,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessageV3
                 com.google.area120.tables.v1alpha1.Table,
                 com.google.area120.tables.v1alpha1.Table.Builder,
                 com.google.area120.tables.v1alpha1.TableOrBuilder>(
-                tables_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                tables_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
         tables_ = null;
       }
       return tablesBuilder_;

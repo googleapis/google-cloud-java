@@ -75,6 +75,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IP_SUBNETWORKS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList ipSubnetworks_;
   /**
    *
@@ -212,10 +214,14 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.DevicePolicyOrBuilder
       getDevicePolicyOrBuilder() {
-    return getDevicePolicy();
+    return devicePolicy_ == null
+        ? com.google.identity.accesscontextmanager.v1.DevicePolicy.getDefaultInstance()
+        : devicePolicy_;
   }
 
   public static final int REQUIRED_ACCESS_LEVELS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList requiredAccessLevels_;
   /**
    *
@@ -293,7 +299,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEGATE_FIELD_NUMBER = 5;
-  private boolean negate_;
+  private boolean negate_ = false;
   /**
    *
    *
@@ -313,6 +319,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList members_;
   /**
    *
@@ -394,6 +402,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGIONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList regions_;
   /**
    *
@@ -739,22 +749,21 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       ipSubnetworks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (devicePolicyBuilder_ == null) {
-        devicePolicy_ = null;
-      } else {
-        devicePolicy_ = null;
+      devicePolicy_ = null;
+      if (devicePolicyBuilder_ != null) {
+        devicePolicyBuilder_.dispose();
         devicePolicyBuilder_ = null;
       }
       requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
-      negate_ = false;
-
-      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
+      negate_ = false;
+      members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000010);
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -782,35 +791,47 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.Condition buildPartial() {
       com.google.identity.accesscontextmanager.v1.Condition result =
           new com.google.identity.accesscontextmanager.v1.Condition(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.Condition result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         ipSubnetworks_ = ipSubnetworks_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.ipSubnetworks_ = ipSubnetworks_;
-      if (devicePolicyBuilder_ == null) {
-        result.devicePolicy_ = devicePolicy_;
-      } else {
-        result.devicePolicy_ = devicePolicyBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        requiredAccessLevels_ = requiredAccessLevels_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.requiredAccessLevels_ = requiredAccessLevels_;
-      result.negate_ = negate_;
       if (((bitField0_ & 0x00000004) != 0)) {
-        members_ = members_.getUnmodifiableView();
+        requiredAccessLevels_ = requiredAccessLevels_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000004);
       }
+      result.requiredAccessLevels_ = requiredAccessLevels_;
+      if (((bitField0_ & 0x00000010) != 0)) {
+        members_ = members_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
       result.members_ = members_;
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         regions_ = regions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
       }
       result.regions_ = regions_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.identity.accesscontextmanager.v1.Condition result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.devicePolicy_ =
+            devicePolicyBuilder_ == null ? devicePolicy_ : devicePolicyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.negate_ = negate_;
+      }
     }
 
     @java.lang.Override
@@ -875,7 +896,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.requiredAccessLevels_.isEmpty()) {
         if (requiredAccessLevels_.isEmpty()) {
           requiredAccessLevels_ = other.requiredAccessLevels_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureRequiredAccessLevelsIsMutable();
           requiredAccessLevels_.addAll(other.requiredAccessLevels_);
@@ -888,7 +909,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.members_.isEmpty()) {
         if (members_.isEmpty()) {
           members_ = other.members_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureMembersIsMutable();
           members_.addAll(other.members_);
@@ -898,7 +919,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
       if (!other.regions_.isEmpty()) {
         if (regions_.isEmpty()) {
           regions_ = other.regions_;
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           ensureRegionsIsMutable();
           regions_.addAll(other.regions_);
@@ -941,7 +962,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getDevicePolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -954,7 +975,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 negate_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 40
             case 50:
@@ -1240,7 +1261,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the devicePolicy field is set.
      */
     public boolean hasDevicePolicy() {
-      return devicePolicyBuilder_ != null || devicePolicy_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1279,11 +1300,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         devicePolicy_ = value;
-        onChanged();
       } else {
         devicePolicyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1300,11 +1321,11 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         com.google.identity.accesscontextmanager.v1.DevicePolicy.Builder builderForValue) {
       if (devicePolicyBuilder_ == null) {
         devicePolicy_ = builderForValue.build();
-        onChanged();
       } else {
         devicePolicyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1320,19 +1341,19 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDevicePolicy(
         com.google.identity.accesscontextmanager.v1.DevicePolicy value) {
       if (devicePolicyBuilder_ == null) {
-        if (devicePolicy_ != null) {
-          devicePolicy_ =
-              com.google.identity.accesscontextmanager.v1.DevicePolicy.newBuilder(devicePolicy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && devicePolicy_ != null
+            && devicePolicy_
+                != com.google.identity.accesscontextmanager.v1.DevicePolicy.getDefaultInstance()) {
+          getDevicePolicyBuilder().mergeFrom(value);
         } else {
           devicePolicy_ = value;
         }
-        onChanged();
       } else {
         devicePolicyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1346,14 +1367,13 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.identity.accesscontextmanager.v1.DevicePolicy device_policy = 2;</code>
      */
     public Builder clearDevicePolicy() {
-      if (devicePolicyBuilder_ == null) {
-        devicePolicy_ = null;
-        onChanged();
-      } else {
-        devicePolicy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      devicePolicy_ = null;
+      if (devicePolicyBuilder_ != null) {
+        devicePolicyBuilder_.dispose();
         devicePolicyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1368,7 +1388,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.identity.accesscontextmanager.v1.DevicePolicy.Builder
         getDevicePolicyBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDevicePolicyFieldBuilder().getBuilder();
     }
@@ -1423,9 +1443,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRequiredAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         requiredAccessLevels_ = new com.google.protobuf.LazyStringArrayList(requiredAccessLevels_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1592,7 +1612,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequiredAccessLevels() {
       requiredAccessLevels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1658,6 +1678,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
     public Builder setNegate(boolean value) {
 
       negate_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1675,7 +1696,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNegate() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       negate_ = false;
       onChanged();
       return this;
@@ -1685,9 +1706,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureMembersIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -1862,7 +1883,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMembers() {
       members_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1898,9 +1919,9 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRegionsIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         regions_ = new com.google.protobuf.LazyStringArrayList(regions_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
       }
     }
     /**
@@ -2043,7 +2064,7 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegions() {
       regions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }

@@ -68,7 +68,9 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceOrBuilder getAudienceOrBuilder() {
-    return getAudience();
+    return audience_ == null
+        ? com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()
+        : audience_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (audienceBuilder_ == null) {
-        audience_ = null;
-      } else {
-        audience_ = null;
+      audience_ = null;
+      if (audienceBuilder_ != null) {
+        audienceBuilder_.dispose();
         audienceBuilder_ = null;
       }
       return this;
@@ -421,14 +424,21 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.CreateAudienceRequest buildPartial() {
       com.google.analytics.admin.v1alpha.CreateAudienceRequest result =
           new com.google.analytics.admin.v1alpha.CreateAudienceRequest(this);
-      result.parent_ = parent_;
-      if (audienceBuilder_ == null) {
-        result.audience_ = audience_;
-      } else {
-        result.audience_ = audienceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.CreateAudienceRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.audience_ = audienceBuilder_ == null ? audience_ : audienceBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +489,7 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAudience()) {
@@ -513,13 +524,13 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getAudienceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +549,8 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -606,8 +619,8 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +638,8 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +662,8 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,7 +688,7 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the audience field is set.
      */
     public boolean hasAudience() {
-      return audienceBuilder_ != null || audience_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -716,11 +729,11 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         audience_ = value;
-        onChanged();
       } else {
         audienceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -738,11 +751,11 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
         com.google.analytics.admin.v1alpha.Audience.Builder builderForValue) {
       if (audienceBuilder_ == null) {
         audience_ = builderForValue.build();
-        onChanged();
       } else {
         audienceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,19 +771,18 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeAudience(com.google.analytics.admin.v1alpha.Audience value) {
       if (audienceBuilder_ == null) {
-        if (audience_ != null) {
-          audience_ =
-              com.google.analytics.admin.v1alpha.Audience.newBuilder(audience_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && audience_ != null
+            && audience_ != com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()) {
+          getAudienceBuilder().mergeFrom(value);
         } else {
           audience_ = value;
         }
-        onChanged();
       } else {
         audienceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +797,13 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearAudience() {
-      if (audienceBuilder_ == null) {
-        audience_ = null;
-        onChanged();
-      } else {
-        audience_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      audience_ = null;
+      if (audienceBuilder_ != null) {
+        audienceBuilder_.dispose();
         audienceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +818,7 @@ public final class CreateAudienceRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.analytics.admin.v1alpha.Audience.Builder getAudienceBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getAudienceFieldBuilder().getBuilder();
     }

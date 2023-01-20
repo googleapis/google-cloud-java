@@ -118,11 +118,15 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.ConversionEventOrBuilder getConversionEventOrBuilder() {
-    return getConversionEvent();
+    return conversionEvent_ == null
+        ? com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance()
+        : conversionEvent_;
   }
 
   public static final int PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -388,14 +392,13 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (conversionEventBuilder_ == null) {
-        conversionEvent_ = null;
-      } else {
-        conversionEvent_ = null;
+      bitField0_ = 0;
+      conversionEvent_ = null;
+      if (conversionEventBuilder_ != null) {
+        conversionEventBuilder_.dispose();
         conversionEventBuilder_ = null;
       }
       parent_ = "";
-
       return this;
     }
 
@@ -424,14 +427,23 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
     public com.google.analytics.admin.v1alpha.CreateConversionEventRequest buildPartial() {
       com.google.analytics.admin.v1alpha.CreateConversionEventRequest result =
           new com.google.analytics.admin.v1alpha.CreateConversionEventRequest(this);
-      if (conversionEventBuilder_ == null) {
-        result.conversionEvent_ = conversionEvent_;
-      } else {
-        result.conversionEvent_ = conversionEventBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.parent_ = parent_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.conversionEvent_ =
+            conversionEventBuilder_ == null ? conversionEvent_ : conversionEventBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+      }
     }
 
     @java.lang.Override
@@ -487,6 +499,7 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
       }
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -518,13 +531,13 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
             case 10:
               {
                 input.readMessage(getConversionEventFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -543,6 +556,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.ConversionEvent conversionEvent_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -564,7 +579,7 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      * @return Whether the conversionEvent field is set.
      */
     public boolean hasConversionEvent() {
-      return conversionEventBuilder_ != null || conversionEvent_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -605,11 +620,11 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         conversionEvent_ = value;
-        onChanged();
       } else {
         conversionEventBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -627,11 +642,11 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
         com.google.analytics.admin.v1alpha.ConversionEvent.Builder builderForValue) {
       if (conversionEventBuilder_ == null) {
         conversionEvent_ = builderForValue.build();
-        onChanged();
       } else {
         conversionEventBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -647,19 +662,19 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      */
     public Builder mergeConversionEvent(com.google.analytics.admin.v1alpha.ConversionEvent value) {
       if (conversionEventBuilder_ == null) {
-        if (conversionEvent_ != null) {
-          conversionEvent_ =
-              com.google.analytics.admin.v1alpha.ConversionEvent.newBuilder(conversionEvent_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && conversionEvent_ != null
+            && conversionEvent_
+                != com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance()) {
+          getConversionEventBuilder().mergeFrom(value);
         } else {
           conversionEvent_ = value;
         }
-        onChanged();
       } else {
         conversionEventBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -674,14 +689,13 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearConversionEvent() {
-      if (conversionEventBuilder_ == null) {
-        conversionEvent_ = null;
-        onChanged();
-      } else {
-        conversionEvent_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      conversionEvent_ = null;
+      if (conversionEventBuilder_ != null) {
+        conversionEventBuilder_.dispose();
         conversionEventBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -696,7 +710,7 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      * </code>
      */
     public com.google.analytics.admin.v1alpha.ConversionEvent.Builder getConversionEventBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getConversionEventFieldBuilder().getBuilder();
     }
@@ -819,8 +833,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -839,8 +853,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -864,8 +878,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

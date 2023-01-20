@@ -60,7 +60,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENDPOINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object endpoint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endpoint_ = "";
   /**
    *
    *
@@ -155,11 +157,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.apigeeconnect.v1.ClusterOrBuilder getClusterOrBuilder() {
-    return getCluster();
+    return cluster_ == null
+        ? com.google.cloud.apigeeconnect.v1.Cluster.getDefaultInstance()
+        : cluster_;
   }
 
   public static final int STREAM_COUNT_FIELD_NUMBER = 3;
-  private int streamCount_;
+  private int streamCount_ = 0;
   /**
    *
    *
@@ -388,16 +392,14 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       endpoint_ = "";
-
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-      } else {
-        cluster_ = null;
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
       streamCount_ = 0;
-
       return this;
     }
 
@@ -425,15 +427,24 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Connection buildPartial() {
       com.google.cloud.apigeeconnect.v1.Connection result =
           new com.google.cloud.apigeeconnect.v1.Connection(this);
-      result.endpoint_ = endpoint_;
-      if (clusterBuilder_ == null) {
-        result.cluster_ = cluster_;
-      } else {
-        result.cluster_ = clusterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.streamCount_ = streamCount_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.Connection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.endpoint_ = endpoint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cluster_ = clusterBuilder_ == null ? cluster_ : clusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.streamCount_ = streamCount_;
+      }
     }
 
     @java.lang.Override
@@ -483,6 +494,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeconnect.v1.Connection.getDefaultInstance()) return this;
       if (!other.getEndpoint().isEmpty()) {
         endpoint_ = other.endpoint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCluster()) {
@@ -520,19 +532,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 endpoint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 streamCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -551,6 +563,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object endpoint_ = "";
     /**
@@ -616,8 +630,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +648,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndpoint() {
-
       endpoint_ = getDefaultInstance().getEndpoint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -657,8 +671,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endpoint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -681,7 +695,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return clusterBuilder_ != null || cluster_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +732,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         cluster_ = value;
-        onChanged();
       } else {
         clusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -737,11 +751,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCluster(com.google.cloud.apigeeconnect.v1.Cluster.Builder builderForValue) {
       if (clusterBuilder_ == null) {
         cluster_ = builderForValue.build();
-        onChanged();
       } else {
         clusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -755,19 +769,18 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCluster(com.google.cloud.apigeeconnect.v1.Cluster value) {
       if (clusterBuilder_ == null) {
-        if (cluster_ != null) {
-          cluster_ =
-              com.google.cloud.apigeeconnect.v1.Cluster.newBuilder(cluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cluster_ != null
+            && cluster_ != com.google.cloud.apigeeconnect.v1.Cluster.getDefaultInstance()) {
+          getClusterBuilder().mergeFrom(value);
         } else {
           cluster_ = value;
         }
-        onChanged();
       } else {
         clusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -780,14 +793,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.Cluster cluster = 2;</code>
      */
     public Builder clearCluster() {
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-        onChanged();
-      } else {
-        cluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -800,7 +812,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.apigeeconnect.v1.Cluster cluster = 2;</code>
      */
     public com.google.cloud.apigeeconnect.v1.Cluster.Builder getClusterBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
@@ -879,6 +891,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setStreamCount(int value) {
 
       streamCount_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -894,7 +907,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStreamCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       streamCount_ = 0;
       onChanged();
       return this;

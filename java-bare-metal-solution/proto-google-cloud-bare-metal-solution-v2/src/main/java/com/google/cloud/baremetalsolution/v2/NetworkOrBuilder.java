@@ -334,7 +334,6 @@ public interface NetworkOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

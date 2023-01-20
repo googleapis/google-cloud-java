@@ -78,7 +78,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -172,7 +174,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -221,11 +223,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -284,7 +288,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 5;
-  private int sizeBytes_;
+  private int sizeBytes_ = 0;
   /**
    *
    *
@@ -303,7 +307,9 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HASH_FIELD_NUMBER = 6;
-  private volatile java.lang.Object hash_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hash_ = "";
   /**
    *
    *
@@ -354,7 +360,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENTS_FIELD_NUMBER = 7;
-  private com.google.protobuf.ByteString contents_;
+  private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -641,28 +647,22 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       mimeType_ = "";
-
       sizeBytes_ = 0;
-
       hash_ = "";
-
       contents_ = com.google.protobuf.ByteString.EMPTY;
-
       return this;
     }
 
@@ -690,23 +690,36 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeregistry.v1.Artifact buildPartial() {
       com.google.cloud.apigeeregistry.v1.Artifact result =
           new com.google.cloud.apigeeregistry.v1.Artifact(this);
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.mimeType_ = mimeType_;
-      result.sizeBytes_ = sizeBytes_;
-      result.hash_ = hash_;
-      result.contents_ = contents_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.Artifact result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.sizeBytes_ = sizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.hash_ = hash_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.contents_ = contents_;
+      }
     }
 
     @java.lang.Override
@@ -756,6 +769,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeregistry.v1.Artifact.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -766,6 +780,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getSizeBytes() != 0) {
@@ -773,6 +788,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHash().isEmpty()) {
         hash_ = other.hash_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getContents() != com.google.protobuf.ByteString.EMPTY) {
@@ -807,43 +823,43 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 sizeBytes_ = input.readInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 hash_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 contents_ = input.readBytes();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -862,6 +878,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -924,8 +942,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -941,8 +959,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -963,8 +981,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -989,7 +1007,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1030,11 +1048,11 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1051,11 +1069,11 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1071,17 +1089,18 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1096,14 +1115,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1118,7 +1136,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -1190,7 +1208,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1231,11 +1249,11 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1252,11 +1270,11 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1272,17 +1290,18 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1297,14 +1316,13 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1319,7 +1337,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1447,8 +1465,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1469,8 +1487,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1496,8 +1514,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1535,6 +1553,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeBytes(int value) {
 
       sizeBytes_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1551,7 +1570,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       sizeBytes_ = 0;
       onChanged();
       return this;
@@ -1621,8 +1640,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       hash_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1639,8 +1658,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHash() {
-
       hash_ = getDefaultInstance().getHash();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1662,8 +1681,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hash_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1704,8 +1723,8 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       contents_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1723,7 +1742,7 @@ public final class Artifact extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       contents_ = getDefaultInstance().getContents();
       onChanged();
       return this;

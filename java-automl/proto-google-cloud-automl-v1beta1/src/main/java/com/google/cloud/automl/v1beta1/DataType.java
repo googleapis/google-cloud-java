@@ -327,7 +327,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_CODE_FIELD_NUMBER = 1;
-  private int typeCode_;
+  private int typeCode_ = 0;
   /**
    *
    *
@@ -356,14 +356,13 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1beta1.TypeCode result =
-        com.google.cloud.automl.v1beta1.TypeCode.valueOf(typeCode_);
+        com.google.cloud.automl.v1beta1.TypeCode.forNumber(typeCode_);
     return result == null ? com.google.cloud.automl.v1beta1.TypeCode.UNRECOGNIZED : result;
   }
 
   public static final int NULLABLE_FIELD_NUMBER = 4;
-  private boolean nullable_;
+  private boolean nullable_ = false;
   /**
    *
    *
@@ -639,6 +638,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (listElementTypeBuilder_ != null) {
         listElementTypeBuilder_.clear();
       }
@@ -646,9 +646,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
         structTypeBuilder_.clear();
       }
       typeCode_ = 0;
-
       nullable_ = false;
-
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -678,28 +676,33 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.DataType buildPartial() {
       com.google.cloud.automl.v1beta1.DataType result =
           new com.google.cloud.automl.v1beta1.DataType(this);
-      if (detailsCase_ == 2) {
-        if (listElementTypeBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = listElementTypeBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailsCase_ == 3) {
-        if (structTypeBuilder_ == null) {
-          result.details_ = details_;
-        } else {
-          result.details_ = structTypeBuilder_.build();
-        }
-      }
-      if (detailsCase_ == 5) {
-        result.details_ = details_;
-      }
-      result.typeCode_ = typeCode_;
-      result.nullable_ = nullable_;
-      result.detailsCase_ = detailsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DataType result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.typeCode_ = typeCode_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.nullable_ = nullable_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.DataType result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 2 && listElementTypeBuilder_ != null) {
+        result.details_ = listElementTypeBuilder_.build();
+      }
+      if (detailsCase_ == 3 && structTypeBuilder_ != null) {
+        result.details_ = structTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -805,7 +808,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 typeCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 8
             case 18:
@@ -823,7 +826,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 nullable_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
@@ -863,6 +866,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.DataType,
@@ -1079,7 +1084,6 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 2;
       onChanged();
-      ;
       return listElementTypeBuilder_;
     }
 
@@ -1298,7 +1302,6 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       }
       detailsCase_ = 3;
       onChanged();
-      ;
       return structTypeBuilder_;
     }
 
@@ -1525,8 +1528,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeCodeValue(int value) {
-
       typeCode_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1543,9 +1546,8 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.TypeCode getTypeCode() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1beta1.TypeCode result =
-          com.google.cloud.automl.v1beta1.TypeCode.valueOf(typeCode_);
+          com.google.cloud.automl.v1beta1.TypeCode.forNumber(typeCode_);
       return result == null ? com.google.cloud.automl.v1beta1.TypeCode.UNRECOGNIZED : result;
     }
     /**
@@ -1564,7 +1566,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000008;
       typeCode_ = value.getNumber();
       onChanged();
       return this;
@@ -1581,7 +1583,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTypeCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       typeCode_ = 0;
       onChanged();
       return this;
@@ -1620,6 +1622,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
     public Builder setNullable(boolean value) {
 
       nullable_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1636,7 +1639,7 @@ public final class DataType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNullable() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       nullable_ = false;
       onChanged();
       return this;

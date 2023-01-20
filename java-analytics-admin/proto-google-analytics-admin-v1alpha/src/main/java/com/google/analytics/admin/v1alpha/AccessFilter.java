@@ -327,7 +327,9 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fieldName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    *
    *
@@ -641,6 +643,7 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stringFilterBuilder_ != null) {
         stringFilterBuilder_.clear();
       }
@@ -654,7 +657,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
         betweenFilterBuilder_.clear();
       }
       fieldName_ = "";
-
       oneFilterCase_ = 0;
       oneFilter_ = null;
       return this;
@@ -684,38 +686,36 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.AccessFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AccessFilter result =
           new com.google.analytics.admin.v1alpha.AccessFilter(this);
-      if (oneFilterCase_ == 2) {
-        if (stringFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = stringFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneFilterCase_ == 3) {
-        if (inListFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = inListFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 4) {
-        if (numericFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = numericFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 5) {
-        if (betweenFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = betweenFilterBuilder_.build();
-        }
-      }
-      result.fieldName_ = fieldName_;
-      result.oneFilterCase_ = oneFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.analytics.admin.v1alpha.AccessFilter result) {
+      result.oneFilterCase_ = oneFilterCase_;
+      result.oneFilter_ = this.oneFilter_;
+      if (oneFilterCase_ == 2 && stringFilterBuilder_ != null) {
+        result.oneFilter_ = stringFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 3 && inListFilterBuilder_ != null) {
+        result.oneFilter_ = inListFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 4 && numericFilterBuilder_ != null) {
+        result.oneFilter_ = numericFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 5 && betweenFilterBuilder_ != null) {
+        result.oneFilter_ = betweenFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -766,6 +766,7 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getOneFilterCase()) {
@@ -823,7 +824,7 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 fieldName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -880,6 +881,8 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.AccessStringFilter,
@@ -1089,7 +1092,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 2;
       onChanged();
-      ;
       return stringFilterBuilder_;
     }
 
@@ -1301,7 +1303,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 3;
       onChanged();
-      ;
       return inListFilterBuilder_;
     }
 
@@ -1515,7 +1516,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 4;
       onChanged();
-      ;
       return numericFilterBuilder_;
     }
 
@@ -1729,7 +1729,6 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 5;
       onChanged();
-      ;
       return betweenFilterBuilder_;
     }
 
@@ -1794,8 +1793,8 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fieldName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1811,8 +1810,8 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1833,8 +1832,8 @@ public final class AccessFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fieldName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

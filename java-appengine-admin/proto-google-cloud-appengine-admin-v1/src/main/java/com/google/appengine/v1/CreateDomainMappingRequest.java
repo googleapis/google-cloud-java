@@ -69,7 +69,9 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -162,11 +164,13 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.appengine.v1.DomainMappingOrBuilder getDomainMappingOrBuilder() {
-    return getDomainMapping();
+    return domainMapping_ == null
+        ? com.google.appengine.v1.DomainMapping.getDefaultInstance()
+        : domainMapping_;
   }
 
   public static final int OVERRIDE_STRATEGY_FIELD_NUMBER = 4;
-  private int overrideStrategy_;
+  private int overrideStrategy_ = 0;
   /**
    *
    *
@@ -197,9 +201,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.appengine.v1.DomainOverrideStrategy getOverrideStrategy() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.DomainOverrideStrategy result =
-        com.google.appengine.v1.DomainOverrideStrategy.valueOf(overrideStrategy_);
+        com.google.appengine.v1.DomainOverrideStrategy.forNumber(overrideStrategy_);
     return result == null ? com.google.appengine.v1.DomainOverrideStrategy.UNRECOGNIZED : result;
   }
 
@@ -427,16 +430,14 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (domainMappingBuilder_ == null) {
-        domainMapping_ = null;
-      } else {
-        domainMapping_ = null;
+      domainMapping_ = null;
+      if (domainMappingBuilder_ != null) {
+        domainMappingBuilder_.dispose();
         domainMappingBuilder_ = null;
       }
       overrideStrategy_ = 0;
-
       return this;
     }
 
@@ -464,15 +465,25 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
     public com.google.appengine.v1.CreateDomainMappingRequest buildPartial() {
       com.google.appengine.v1.CreateDomainMappingRequest result =
           new com.google.appengine.v1.CreateDomainMappingRequest(this);
-      result.parent_ = parent_;
-      if (domainMappingBuilder_ == null) {
-        result.domainMapping_ = domainMapping_;
-      } else {
-        result.domainMapping_ = domainMappingBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.overrideStrategy_ = overrideStrategy_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CreateDomainMappingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.domainMapping_ =
+            domainMappingBuilder_ == null ? domainMapping_ : domainMappingBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.overrideStrategy_ = overrideStrategy_;
+      }
     }
 
     @java.lang.Override
@@ -523,6 +534,7 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDomainMapping()) {
@@ -560,19 +572,19 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDomainMappingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 32:
               {
                 overrideStrategy_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -591,6 +603,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -653,8 +667,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -670,8 +684,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -692,8 +706,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -716,7 +730,7 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * @return Whether the domainMapping field is set.
      */
     public boolean hasDomainMapping() {
-      return domainMappingBuilder_ != null || domainMapping_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -753,11 +767,11 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         domainMapping_ = value;
-        onChanged();
       } else {
         domainMappingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -772,11 +786,11 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
     public Builder setDomainMapping(com.google.appengine.v1.DomainMapping.Builder builderForValue) {
       if (domainMappingBuilder_ == null) {
         domainMapping_ = builderForValue.build();
-        onChanged();
       } else {
         domainMappingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -790,19 +804,18 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      */
     public Builder mergeDomainMapping(com.google.appengine.v1.DomainMapping value) {
       if (domainMappingBuilder_ == null) {
-        if (domainMapping_ != null) {
-          domainMapping_ =
-              com.google.appengine.v1.DomainMapping.newBuilder(domainMapping_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && domainMapping_ != null
+            && domainMapping_ != com.google.appengine.v1.DomainMapping.getDefaultInstance()) {
+          getDomainMappingBuilder().mergeFrom(value);
         } else {
           domainMapping_ = value;
         }
-        onChanged();
       } else {
         domainMappingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -815,14 +828,13 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * <code>.google.appengine.v1.DomainMapping domain_mapping = 2;</code>
      */
     public Builder clearDomainMapping() {
-      if (domainMappingBuilder_ == null) {
-        domainMapping_ = null;
-        onChanged();
-      } else {
-        domainMapping_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      domainMapping_ = null;
+      if (domainMappingBuilder_ != null) {
+        domainMappingBuilder_.dispose();
         domainMappingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -835,7 +847,7 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * <code>.google.appengine.v1.DomainMapping domain_mapping = 2;</code>
      */
     public com.google.appengine.v1.DomainMapping.Builder getDomainMappingBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDomainMappingFieldBuilder().getBuilder();
     }
@@ -914,8 +926,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder setOverrideStrategyValue(int value) {
-
       overrideStrategy_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -933,9 +945,8 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public com.google.appengine.v1.DomainOverrideStrategy getOverrideStrategy() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.DomainOverrideStrategy result =
-          com.google.appengine.v1.DomainOverrideStrategy.valueOf(overrideStrategy_);
+          com.google.appengine.v1.DomainOverrideStrategy.forNumber(overrideStrategy_);
       return result == null ? com.google.appengine.v1.DomainOverrideStrategy.UNRECOGNIZED : result;
     }
     /**
@@ -955,7 +966,7 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       overrideStrategy_ = value.getNumber();
       onChanged();
       return this;
@@ -973,7 +984,7 @@ public final class CreateDomainMappingRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearOverrideStrategy() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       overrideStrategy_ = 0;
       onChanged();
       return this;

@@ -67,7 +67,7 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 1;
-  private int instances_;
+  private int instances_ = 0;
   /**
    *
    *
@@ -283,8 +283,8 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instances_ = 0;
-
       return this;
     }
 
@@ -312,9 +312,18 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.ManualScaling buildPartial() {
       com.google.appengine.v1.ManualScaling result =
           new com.google.appengine.v1.ManualScaling(this);
-      result.instances_ = instances_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.ManualScaling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instances_ = instances_;
+      }
     }
 
     @java.lang.Override
@@ -394,7 +403,7 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 instances_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -413,6 +422,8 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int instances_;
     /**
@@ -451,6 +462,7 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
     public Builder setInstances(int value) {
 
       instances_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -469,7 +481,7 @@ public final class ManualScaling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       instances_ = 0;
       onChanged();
       return this;

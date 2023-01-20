@@ -121,7 +121,9 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fieldName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    *
    *
@@ -639,8 +641,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fieldName_ = "";
-
       if (stringFilterBuilder_ != null) {
         stringFilterBuilder_.clear();
       }
@@ -682,38 +684,36 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
     public com.google.analytics.data.v1alpha.FunnelFieldFilter buildPartial() {
       com.google.analytics.data.v1alpha.FunnelFieldFilter result =
           new com.google.analytics.data.v1alpha.FunnelFieldFilter(this);
-      result.fieldName_ = fieldName_;
-      if (oneFilterCase_ == 4) {
-        if (stringFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = stringFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneFilterCase_ == 5) {
-        if (inListFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = inListFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 6) {
-        if (numericFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = numericFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 7) {
-        if (betweenFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = betweenFilterBuilder_.build();
-        }
-      }
-      result.oneFilterCase_ = oneFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelFieldFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1alpha.FunnelFieldFilter result) {
+      result.oneFilterCase_ = oneFilterCase_;
+      result.oneFilter_ = this.oneFilter_;
+      if (oneFilterCase_ == 4 && stringFilterBuilder_ != null) {
+        result.oneFilter_ = stringFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 5 && inListFilterBuilder_ != null) {
+        result.oneFilter_ = inListFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 6 && numericFilterBuilder_ != null) {
+        result.oneFilter_ = numericFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 7 && betweenFilterBuilder_ != null) {
+        result.oneFilter_ = betweenFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -764,6 +764,7 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       switch (other.getOneFilterCase()) {
@@ -821,7 +822,7 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 fieldName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
@@ -878,6 +879,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object fieldName_ = "";
     /**
@@ -940,8 +943,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -957,8 +960,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -979,8 +982,8 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1191,7 +1194,6 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       }
       oneFilterCase_ = 4;
       onChanged();
-      ;
       return stringFilterBuilder_;
     }
 
@@ -1401,7 +1403,6 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       }
       oneFilterCase_ = 5;
       onChanged();
-      ;
       return inListFilterBuilder_;
     }
 
@@ -1611,7 +1612,6 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       }
       oneFilterCase_ = 6;
       onChanged();
-      ;
       return numericFilterBuilder_;
     }
 
@@ -1821,7 +1821,6 @@ public final class FunnelFieldFilter extends com.google.protobuf.GeneratedMessag
       }
       oneFilterCase_ = 7;
       onChanged();
-      ;
       return betweenFilterBuilder_;
     }
 

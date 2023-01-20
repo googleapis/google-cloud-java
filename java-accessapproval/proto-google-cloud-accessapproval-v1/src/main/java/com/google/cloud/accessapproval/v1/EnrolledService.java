@@ -69,7 +69,9 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int CLOUD_PRODUCT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cloudProduct_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object cloudProduct_ = "";
   /**
    *
    *
@@ -228,7 +230,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ENROLLMENT_LEVEL_FIELD_NUMBER = 2;
-  private int enrollmentLevel_;
+  private int enrollmentLevel_ = 0;
   /**
    *
    *
@@ -257,9 +259,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.accessapproval.v1.EnrollmentLevel getEnrollmentLevel() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.accessapproval.v1.EnrollmentLevel result =
-        com.google.cloud.accessapproval.v1.EnrollmentLevel.valueOf(enrollmentLevel_);
+        com.google.cloud.accessapproval.v1.EnrollmentLevel.forNumber(enrollmentLevel_);
     return result == null
         ? com.google.cloud.accessapproval.v1.EnrollmentLevel.UNRECOGNIZED
         : result;
@@ -475,10 +476,9 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       cloudProduct_ = "";
-
       enrollmentLevel_ = 0;
-
       return this;
     }
 
@@ -506,10 +506,21 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.EnrolledService buildPartial() {
       com.google.cloud.accessapproval.v1.EnrolledService result =
           new com.google.cloud.accessapproval.v1.EnrolledService(this);
-      result.cloudProduct_ = cloudProduct_;
-      result.enrollmentLevel_ = enrollmentLevel_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.EnrolledService result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.cloudProduct_ = cloudProduct_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enrollmentLevel_ = enrollmentLevel_;
+      }
     }
 
     @java.lang.Override
@@ -560,6 +571,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getCloudProduct().isEmpty()) {
         cloudProduct_ = other.cloudProduct_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.enrollmentLevel_ != 0) {
@@ -594,13 +606,13 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 cloudProduct_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 enrollmentLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -619,6 +631,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object cloudProduct_ = "";
     /**
@@ -846,8 +860,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       cloudProduct_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -918,8 +932,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearCloudProduct() {
-
       cloudProduct_ = getDefaultInstance().getCloudProduct();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -995,8 +1009,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       cloudProduct_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1030,8 +1044,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder setEnrollmentLevelValue(int value) {
-
       enrollmentLevel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1048,9 +1062,8 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      */
     @java.lang.Override
     public com.google.cloud.accessapproval.v1.EnrollmentLevel getEnrollmentLevel() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.accessapproval.v1.EnrollmentLevel result =
-          com.google.cloud.accessapproval.v1.EnrollmentLevel.valueOf(enrollmentLevel_);
+          com.google.cloud.accessapproval.v1.EnrollmentLevel.forNumber(enrollmentLevel_);
       return result == null
           ? com.google.cloud.accessapproval.v1.EnrollmentLevel.UNRECOGNIZED
           : result;
@@ -1071,7 +1084,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       enrollmentLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -1088,7 +1101,7 @@ public final class EnrolledService extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearEnrollmentLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enrollmentLevel_ = 0;
       onChanged();
       return this;

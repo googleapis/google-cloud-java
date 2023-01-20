@@ -147,7 +147,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METRIC_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object metricName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metricName_ = "";
     /**
      *
      *
@@ -395,8 +397,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metricName_ = "";
-
         return this;
       }
 
@@ -424,9 +426,18 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1beta.OrderBy.MetricOrderBy buildPartial() {
         com.google.analytics.data.v1beta.OrderBy.MetricOrderBy result =
             new com.google.analytics.data.v1beta.OrderBy.MetricOrderBy(this);
-        result.metricName_ = metricName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.analytics.data.v1beta.OrderBy.MetricOrderBy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metricName_ = metricName_;
+        }
       }
 
       @java.lang.Override
@@ -479,6 +490,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMetricName().isEmpty()) {
           metricName_ = other.metricName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -510,7 +522,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   metricName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -529,6 +541,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object metricName_ = "";
       /**
@@ -591,8 +605,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         metricName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -608,8 +622,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetricName() {
-
         metricName_ = getDefaultInstance().getMetricName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -630,8 +644,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         metricName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -997,7 +1011,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DIMENSION_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dimensionName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dimensionName_ = "";
     /**
      *
      *
@@ -1046,7 +1062,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ORDER_TYPE_FIELD_NUMBER = 2;
-    private int orderType_;
+    private int orderType_ = 0;
     /**
      *
      *
@@ -1075,9 +1091,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType getOrderType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType result =
-          com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.valueOf(orderType_);
+          com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.forNumber(orderType_);
       return result == null
           ? com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.UNRECOGNIZED
           : result;
@@ -1298,10 +1313,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dimensionName_ = "";
-
         orderType_ = 0;
-
         return this;
       }
 
@@ -1329,10 +1343,21 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy buildPartial() {
         com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy result =
             new com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy(this);
-        result.dimensionName_ = dimensionName_;
-        result.orderType_ = orderType_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dimensionName_ = dimensionName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.orderType_ = orderType_;
+        }
       }
 
       @java.lang.Override
@@ -1385,6 +1410,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getDimensionName().isEmpty()) {
           dimensionName_ = other.dimensionName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.orderType_ != 0) {
@@ -1419,13 +1445,13 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   dimensionName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   orderType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -1444,6 +1470,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object dimensionName_ = "";
       /**
@@ -1506,8 +1534,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         dimensionName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1523,8 +1551,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDimensionName() {
-
         dimensionName_ = getDefaultInstance().getDimensionName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1545,8 +1573,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dimensionName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1582,8 +1610,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setOrderTypeValue(int value) {
-
         orderType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1601,9 +1629,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType getOrderType() {
-        @SuppressWarnings("deprecation")
         com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType result =
-            com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.valueOf(orderType_);
+            com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.forNumber(
+                orderType_);
         return result == null
             ? com.google.analytics.data.v1beta.OrderBy.DimensionOrderBy.OrderType.UNRECOGNIZED
             : result;
@@ -1626,7 +1654,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000002;
         orderType_ = value.getNumber();
         onChanged();
         return this;
@@ -1644,7 +1672,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         orderType_ = 0;
         onChanged();
         return this;
@@ -1996,7 +2024,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DIMENSION_NAME_FIELD_NUMBER = 1;
-      private volatile java.lang.Object dimensionName_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object dimensionName_ = "";
       /**
        *
        *
@@ -2045,7 +2075,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DIMENSION_VALUE_FIELD_NUMBER = 2;
-      private volatile java.lang.Object dimensionValue_;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object dimensionValue_ = "";
       /**
        *
        *
@@ -2320,10 +2352,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           dimensionName_ = "";
-
           dimensionValue_ = "";
-
           return this;
         }
 
@@ -2354,10 +2385,22 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         public com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection buildPartial() {
           com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection result =
               new com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection(this);
-          result.dimensionName_ = dimensionName_;
-          result.dimensionValue_ = dimensionValue_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.dimensionName_ = dimensionName_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.dimensionValue_ = dimensionValue_;
+          }
         }
 
         @java.lang.Override
@@ -2414,10 +2457,12 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getDimensionName().isEmpty()) {
             dimensionName_ = other.dimensionName_;
+            bitField0_ |= 0x00000001;
             onChanged();
           }
           if (!other.getDimensionValue().isEmpty()) {
             dimensionValue_ = other.dimensionValue_;
+            bitField0_ |= 0x00000002;
             onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2449,13 +2494,13 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     dimensionName_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     dimensionValue_ = input.readStringRequireUtf8();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -2474,6 +2519,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private java.lang.Object dimensionName_ = "";
         /**
@@ -2536,8 +2583,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           dimensionName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2553,8 +2600,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDimensionName() {
-
           dimensionName_ = getDefaultInstance().getDimensionName();
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
           return this;
         }
@@ -2575,8 +2622,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           dimensionName_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -2642,8 +2689,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-
           dimensionValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2659,8 +2706,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearDimensionValue() {
-
           dimensionValue_ = getDefaultInstance().getDimensionValue();
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
           return this;
         }
@@ -2681,8 +2728,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           checkByteStringIsUtf8(value);
-
           dimensionValue_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -2756,7 +2803,9 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int METRIC_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object metricName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object metricName_ = "";
     /**
      *
      *
@@ -2807,6 +2856,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PIVOT_SELECTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private java.util.List<com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection>
         pivotSelections_;
     /**
@@ -3117,15 +3168,15 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         metricName_ = "";
-
         if (pivotSelectionsBuilder_ == null) {
           pivotSelections_ = java.util.Collections.emptyList();
         } else {
           pivotSelections_ = null;
           pivotSelectionsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3153,19 +3204,32 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.data.v1beta.OrderBy.PivotOrderBy buildPartial() {
         com.google.analytics.data.v1beta.OrderBy.PivotOrderBy result =
             new com.google.analytics.data.v1beta.OrderBy.PivotOrderBy(this);
-        int from_bitField0_ = bitField0_;
-        result.metricName_ = metricName_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.analytics.data.v1beta.OrderBy.PivotOrderBy result) {
         if (pivotSelectionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             pivotSelections_ = java.util.Collections.unmodifiableList(pivotSelections_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.pivotSelections_ = pivotSelections_;
         } else {
           result.pivotSelections_ = pivotSelectionsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(com.google.analytics.data.v1beta.OrderBy.PivotOrderBy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.metricName_ = metricName_;
+        }
       }
 
       @java.lang.Override
@@ -3218,13 +3282,14 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMetricName().isEmpty()) {
           metricName_ = other.metricName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (pivotSelectionsBuilder_ == null) {
           if (!other.pivotSelections_.isEmpty()) {
             if (pivotSelections_.isEmpty()) {
               pivotSelections_ = other.pivotSelections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePivotSelectionsIsMutable();
               pivotSelections_.addAll(other.pivotSelections_);
@@ -3237,7 +3302,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
               pivotSelectionsBuilder_.dispose();
               pivotSelectionsBuilder_ = null;
               pivotSelections_ = other.pivotSelections_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               pivotSelectionsBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getPivotSelectionsFieldBuilder()
@@ -3276,7 +3341,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   metricName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -3377,8 +3442,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         metricName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3395,8 +3460,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMetricName() {
-
         metricName_ = getDefaultInstance().getMetricName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -3418,8 +3483,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         metricName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3428,12 +3493,12 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
           pivotSelections_ = java.util.Collections.emptyList();
 
       private void ensurePivotSelectionsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           pivotSelections_ =
               new java.util.ArrayList<
                   com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection>(
                   pivotSelections_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
 
@@ -3716,7 +3781,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       public Builder clearPivotSelections() {
         if (pivotSelectionsBuilder_ == null) {
           pivotSelections_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           pivotSelectionsBuilder_.clear();
@@ -3886,7 +3951,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
                   com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelection.Builder,
                   com.google.analytics.data.v1beta.OrderBy.PivotOrderBy.PivotSelectionOrBuilder>(
                   pivotSelections_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           pivotSelections_ = null;
@@ -4163,7 +4228,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESC_FIELD_NUMBER = 4;
-  private boolean desc_;
+  private boolean desc_ = false;
   /**
    *
    *
@@ -4433,6 +4498,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (metricBuilder_ != null) {
         metricBuilder_.clear();
       }
@@ -4443,7 +4509,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
         pivotBuilder_.clear();
       }
       desc_ = false;
-
       oneOrderByCase_ = 0;
       oneOrderBy_ = null;
       return this;
@@ -4473,31 +4538,33 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.OrderBy buildPartial() {
       com.google.analytics.data.v1beta.OrderBy result =
           new com.google.analytics.data.v1beta.OrderBy(this);
-      if (oneOrderByCase_ == 1) {
-        if (metricBuilder_ == null) {
-          result.oneOrderBy_ = oneOrderBy_;
-        } else {
-          result.oneOrderBy_ = metricBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneOrderByCase_ == 2) {
-        if (dimensionBuilder_ == null) {
-          result.oneOrderBy_ = oneOrderBy_;
-        } else {
-          result.oneOrderBy_ = dimensionBuilder_.build();
-        }
-      }
-      if (oneOrderByCase_ == 3) {
-        if (pivotBuilder_ == null) {
-          result.oneOrderBy_ = oneOrderBy_;
-        } else {
-          result.oneOrderBy_ = pivotBuilder_.build();
-        }
-      }
-      result.desc_ = desc_;
-      result.oneOrderByCase_ = oneOrderByCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.OrderBy result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.desc_ = desc_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1beta.OrderBy result) {
+      result.oneOrderByCase_ = oneOrderByCase_;
+      result.oneOrderBy_ = this.oneOrderBy_;
+      if (oneOrderByCase_ == 1 && metricBuilder_ != null) {
+        result.oneOrderBy_ = metricBuilder_.build();
+      }
+      if (oneOrderByCase_ == 2 && dimensionBuilder_ != null) {
+        result.oneOrderBy_ = dimensionBuilder_.build();
+      }
+      if (oneOrderByCase_ == 3 && pivotBuilder_ != null) {
+        result.oneOrderBy_ = pivotBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4616,7 +4683,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 desc_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -4649,6 +4716,8 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1beta.OrderBy.MetricOrderBy,
@@ -4857,7 +4926,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       oneOrderByCase_ = 1;
       onChanged();
-      ;
       return metricBuilder_;
     }
 
@@ -5070,7 +5138,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       oneOrderByCase_ = 2;
       onChanged();
-      ;
       return dimensionBuilder_;
     }
 
@@ -5281,7 +5348,6 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
       }
       oneOrderByCase_ = 3;
       onChanged();
-      ;
       return pivotBuilder_;
     }
 
@@ -5316,6 +5382,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
     public Builder setDesc(boolean value) {
 
       desc_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5331,7 +5398,7 @@ public final class OrderBy extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesc() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       desc_ = false;
       onChanged();
       return this;

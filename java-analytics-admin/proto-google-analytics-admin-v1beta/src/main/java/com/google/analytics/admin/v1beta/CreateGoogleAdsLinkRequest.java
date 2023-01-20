@@ -68,7 +68,9 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.GoogleAdsLinkOrBuilder getGoogleAdsLinkOrBuilder() {
-    return getGoogleAdsLink();
+    return googleAdsLink_ == null
+        ? com.google.analytics.admin.v1beta.GoogleAdsLink.getDefaultInstance()
+        : googleAdsLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (googleAdsLinkBuilder_ == null) {
-        googleAdsLink_ = null;
-      } else {
-        googleAdsLink_ = null;
+      googleAdsLink_ = null;
+      if (googleAdsLinkBuilder_ != null) {
+        googleAdsLinkBuilder_.dispose();
         googleAdsLinkBuilder_ = null;
       }
       return this;
@@ -422,14 +425,23 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     public com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest buildPartial() {
       com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest result =
           new com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest(this);
-      result.parent_ = parent_;
-      if (googleAdsLinkBuilder_ == null) {
-        result.googleAdsLink_ = googleAdsLink_;
-      } else {
-        result.googleAdsLink_ = googleAdsLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1beta.CreateGoogleAdsLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.googleAdsLink_ =
+            googleAdsLinkBuilder_ == null ? googleAdsLink_ : googleAdsLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -481,6 +493,7 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasGoogleAdsLink()) {
@@ -515,13 +528,13 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getGoogleAdsLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -540,6 +553,8 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -608,8 +623,8 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -627,8 +642,8 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -651,8 +666,8 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -677,7 +692,7 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * @return Whether the googleAdsLink field is set.
      */
     public boolean hasGoogleAdsLink() {
-      return googleAdsLinkBuilder_ != null || googleAdsLink_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -718,11 +733,11 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         googleAdsLink_ = value;
-        onChanged();
       } else {
         googleAdsLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -740,11 +755,11 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
         com.google.analytics.admin.v1beta.GoogleAdsLink.Builder builderForValue) {
       if (googleAdsLinkBuilder_ == null) {
         googleAdsLink_ = builderForValue.build();
-        onChanged();
       } else {
         googleAdsLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -760,19 +775,19 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      */
     public Builder mergeGoogleAdsLink(com.google.analytics.admin.v1beta.GoogleAdsLink value) {
       if (googleAdsLinkBuilder_ == null) {
-        if (googleAdsLink_ != null) {
-          googleAdsLink_ =
-              com.google.analytics.admin.v1beta.GoogleAdsLink.newBuilder(googleAdsLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && googleAdsLink_ != null
+            && googleAdsLink_
+                != com.google.analytics.admin.v1beta.GoogleAdsLink.getDefaultInstance()) {
+          getGoogleAdsLinkBuilder().mergeFrom(value);
         } else {
           googleAdsLink_ = value;
         }
-        onChanged();
       } else {
         googleAdsLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -787,14 +802,13 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearGoogleAdsLink() {
-      if (googleAdsLinkBuilder_ == null) {
-        googleAdsLink_ = null;
-        onChanged();
-      } else {
-        googleAdsLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      googleAdsLink_ = null;
+      if (googleAdsLinkBuilder_ != null) {
+        googleAdsLinkBuilder_.dispose();
         googleAdsLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -809,7 +823,7 @@ public final class CreateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.analytics.admin.v1beta.GoogleAdsLink.Builder getGoogleAdsLinkBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getGoogleAdsLinkFieldBuilder().getBuilder();
     }

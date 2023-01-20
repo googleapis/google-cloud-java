@@ -70,7 +70,9 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STATE_FIELD_NUMBER = 3;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -152,16 +154,15 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.GoogleSignalsState getState() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.GoogleSignalsState result =
-        com.google.analytics.admin.v1alpha.GoogleSignalsState.valueOf(state_);
+        com.google.analytics.admin.v1alpha.GoogleSignalsState.forNumber(state_);
     return result == null
         ? com.google.analytics.admin.v1alpha.GoogleSignalsState.UNRECOGNIZED
         : result;
   }
 
   public static final int CONSENT_FIELD_NUMBER = 4;
-  private int consent_;
+  private int consent_ = 0;
   /**
    *
    *
@@ -194,9 +195,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.GoogleSignalsConsent getConsent() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.GoogleSignalsConsent result =
-        com.google.analytics.admin.v1alpha.GoogleSignalsConsent.valueOf(consent_);
+        com.google.analytics.admin.v1alpha.GoogleSignalsConsent.forNumber(consent_);
     return result == null
         ? com.google.analytics.admin.v1alpha.GoogleSignalsConsent.UNRECOGNIZED
         : result;
@@ -428,12 +428,10 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       state_ = 0;
-
       consent_ = 0;
-
       return this;
     }
 
@@ -461,11 +459,24 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.GoogleSignalsSettings buildPartial() {
       com.google.analytics.admin.v1alpha.GoogleSignalsSettings result =
           new com.google.analytics.admin.v1alpha.GoogleSignalsSettings(this);
-      result.name_ = name_;
-      result.state_ = state_;
-      result.consent_ = consent_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.GoogleSignalsSettings result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consent_ = consent_;
+      }
     }
 
     @java.lang.Override
@@ -516,6 +527,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -553,19 +565,19 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 24:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 24
             case 32:
               {
                 consent_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 32
             default:
@@ -584,6 +596,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -652,8 +666,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -671,8 +685,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -695,8 +709,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -730,8 +744,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -748,9 +762,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.GoogleSignalsState getState() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.GoogleSignalsState result =
-          com.google.analytics.admin.v1alpha.GoogleSignalsState.valueOf(state_);
+          com.google.analytics.admin.v1alpha.GoogleSignalsState.forNumber(state_);
       return result == null
           ? com.google.analytics.admin.v1alpha.GoogleSignalsState.UNRECOGNIZED
           : result;
@@ -771,7 +784,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -788,7 +801,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       state_ = 0;
       onChanged();
       return this;
@@ -827,8 +840,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder setConsentValue(int value) {
-
       consent_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -847,9 +860,8 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.GoogleSignalsConsent getConsent() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.GoogleSignalsConsent result =
-          com.google.analytics.admin.v1alpha.GoogleSignalsConsent.valueOf(consent_);
+          com.google.analytics.admin.v1alpha.GoogleSignalsConsent.forNumber(consent_);
       return result == null
           ? com.google.analytics.admin.v1alpha.GoogleSignalsConsent.UNRECOGNIZED
           : result;
@@ -872,7 +884,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       consent_ = value.getNumber();
       onChanged();
       return this;
@@ -891,7 +903,7 @@ public final class GoogleSignalsSettings extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearConsent() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       consent_ = 0;
       onChanged();
       return this;

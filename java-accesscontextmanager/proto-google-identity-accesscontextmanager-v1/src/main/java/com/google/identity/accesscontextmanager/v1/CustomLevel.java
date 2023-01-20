@@ -110,7 +110,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.type.ExprOrBuilder getExprOrBuilder() {
-    return getExpr();
+    return expr_ == null ? com.google.type.Expr.getDefaultInstance() : expr_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +318,10 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (exprBuilder_ == null) {
-        expr_ = null;
-      } else {
-        expr_ = null;
+      bitField0_ = 0;
+      expr_ = null;
+      if (exprBuilder_ != null) {
+        exprBuilder_.dispose();
         exprBuilder_ = null;
       }
       return this;
@@ -351,13 +351,18 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.CustomLevel buildPartial() {
       com.google.identity.accesscontextmanager.v1.CustomLevel result =
           new com.google.identity.accesscontextmanager.v1.CustomLevel(this);
-      if (exprBuilder_ == null) {
-        result.expr_ = expr_;
-      } else {
-        result.expr_ = exprBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.identity.accesscontextmanager.v1.CustomLevel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.expr_ = exprBuilder_ == null ? expr_ : exprBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -438,7 +443,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getExprFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -458,6 +463,8 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.type.Expr expr_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
@@ -474,7 +481,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expr field is set.
      */
     public boolean hasExpr() {
-      return exprBuilder_ != null || expr_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -509,11 +516,11 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         expr_ = value;
-        onChanged();
       } else {
         exprBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -528,11 +535,11 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
     public Builder setExpr(com.google.type.Expr.Builder builderForValue) {
       if (exprBuilder_ == null) {
         expr_ = builderForValue.build();
-        onChanged();
       } else {
         exprBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -546,16 +553,18 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpr(com.google.type.Expr value) {
       if (exprBuilder_ == null) {
-        if (expr_ != null) {
-          expr_ = com.google.type.Expr.newBuilder(expr_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && expr_ != null
+            && expr_ != com.google.type.Expr.getDefaultInstance()) {
+          getExprBuilder().mergeFrom(value);
         } else {
           expr_ = value;
         }
-        onChanged();
       } else {
         exprBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -568,14 +577,13 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Expr expr = 1;</code>
      */
     public Builder clearExpr() {
-      if (exprBuilder_ == null) {
-        expr_ = null;
-        onChanged();
-      } else {
-        expr_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      expr_ = null;
+      if (exprBuilder_ != null) {
+        exprBuilder_.dispose();
         exprBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -588,7 +596,7 @@ public final class CustomLevel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.Expr expr = 1;</code>
      */
     public com.google.type.Expr.Builder getExprBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getExprFieldBuilder().getBuilder();
     }

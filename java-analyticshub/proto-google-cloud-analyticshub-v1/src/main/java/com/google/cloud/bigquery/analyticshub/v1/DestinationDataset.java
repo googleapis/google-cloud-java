@@ -131,7 +131,9 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReferenceOrBuilder
       getDatasetReferenceOrBuilder() {
-    return getDatasetReference();
+    return datasetReference_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference.getDefaultInstance()
+        : datasetReference_;
   }
 
   public static final int FRIENDLY_NAME_FIELD_NUMBER = 2;
@@ -182,7 +184,9 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getFriendlyNameOrBuilder() {
-    return getFriendlyName();
+    return friendlyName_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : friendlyName_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
@@ -233,7 +237,9 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public com.google.protobuf.StringValueOrBuilder getDescriptionOrBuilder() {
-    return getDescription();
+    return description_ == null
+        ? com.google.protobuf.StringValue.getDefaultInstance()
+        : description_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -249,6 +255,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -318,7 +325,10 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -351,7 +361,9 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int LOCATION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object location_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
   /**
    *
    *
@@ -680,27 +692,24 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (datasetReferenceBuilder_ == null) {
-        datasetReference_ = null;
-      } else {
-        datasetReference_ = null;
+      bitField0_ = 0;
+      datasetReference_ = null;
+      if (datasetReferenceBuilder_ != null) {
+        datasetReferenceBuilder_.dispose();
         datasetReferenceBuilder_ = null;
       }
-      if (friendlyNameBuilder_ == null) {
-        friendlyName_ = null;
-      } else {
-        friendlyName_ = null;
+      friendlyName_ = null;
+      if (friendlyNameBuilder_ != null) {
+        friendlyNameBuilder_.dispose();
         friendlyNameBuilder_ = null;
       }
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-      } else {
-        description_ = null;
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       location_ = "";
-
       return this;
     }
 
@@ -729,27 +738,35 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.bigquery.analyticshub.v1.DestinationDataset buildPartial() {
       com.google.cloud.bigquery.analyticshub.v1.DestinationDataset result =
           new com.google.cloud.bigquery.analyticshub.v1.DestinationDataset(this);
-      int from_bitField0_ = bitField0_;
-      if (datasetReferenceBuilder_ == null) {
-        result.datasetReference_ = datasetReference_;
-      } else {
-        result.datasetReference_ = datasetReferenceBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (friendlyNameBuilder_ == null) {
-        result.friendlyName_ = friendlyName_;
-      } else {
-        result.friendlyName_ = friendlyNameBuilder_.build();
-      }
-      if (descriptionBuilder_ == null) {
-        result.description_ = description_;
-      } else {
-        result.description_ = descriptionBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.location_ = location_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.analyticshub.v1.DestinationDataset result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.datasetReference_ =
+            datasetReferenceBuilder_ == null ? datasetReference_ : datasetReferenceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.friendlyName_ =
+            friendlyNameBuilder_ == null ? friendlyName_ : friendlyNameBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ =
+            descriptionBuilder_ == null ? description_ : descriptionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -809,8 +826,10 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         mergeDescription(other.getDescription());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getLocation().isEmpty()) {
         location_ = other.location_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -843,19 +862,19 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getDatasetReferenceFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getFriendlyNameFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -867,12 +886,13 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 location_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -914,7 +934,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * @return Whether the datasetReference field is set.
      */
     public boolean hasDatasetReference() {
-      return datasetReferenceBuilder_ != null || datasetReference_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -958,11 +978,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         datasetReference_ = value;
-        onChanged();
       } else {
         datasetReferenceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -981,11 +1001,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
             builderForValue) {
       if (datasetReferenceBuilder_ == null) {
         datasetReference_ = builderForValue.build();
-        onChanged();
       } else {
         datasetReferenceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1002,20 +1022,20 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public Builder mergeDatasetReference(
         com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference value) {
       if (datasetReferenceBuilder_ == null) {
-        if (datasetReference_ != null) {
-          datasetReference_ =
-              com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference.newBuilder(
-                      datasetReference_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && datasetReference_ != null
+            && datasetReference_
+                != com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference
+                    .getDefaultInstance()) {
+          getDatasetReferenceBuilder().mergeFrom(value);
         } else {
           datasetReference_ = value;
         }
-        onChanged();
       } else {
         datasetReferenceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1030,14 +1050,13 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDatasetReference() {
-      if (datasetReferenceBuilder_ == null) {
-        datasetReference_ = null;
-        onChanged();
-      } else {
-        datasetReference_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      datasetReference_ = null;
+      if (datasetReferenceBuilder_ != null) {
+        datasetReferenceBuilder_.dispose();
         datasetReferenceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1053,7 +1072,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReference.Builder
         getDatasetReferenceBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getDatasetReferenceFieldBuilder().getBuilder();
     }
@@ -1127,7 +1146,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * @return Whether the friendlyName field is set.
      */
     public boolean hasFriendlyName() {
-      return friendlyNameBuilder_ != null || friendlyName_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1168,11 +1187,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         friendlyName_ = value;
-        onChanged();
       } else {
         friendlyNameBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1189,11 +1208,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public Builder setFriendlyName(com.google.protobuf.StringValue.Builder builderForValue) {
       if (friendlyNameBuilder_ == null) {
         friendlyName_ = builderForValue.build();
-        onChanged();
       } else {
         friendlyNameBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1209,19 +1228,18 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeFriendlyName(com.google.protobuf.StringValue value) {
       if (friendlyNameBuilder_ == null) {
-        if (friendlyName_ != null) {
-          friendlyName_ =
-              com.google.protobuf.StringValue.newBuilder(friendlyName_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && friendlyName_ != null
+            && friendlyName_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getFriendlyNameBuilder().mergeFrom(value);
         } else {
           friendlyName_ = value;
         }
-        onChanged();
       } else {
         friendlyNameBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1236,14 +1254,13 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearFriendlyName() {
-      if (friendlyNameBuilder_ == null) {
-        friendlyName_ = null;
-        onChanged();
-      } else {
-        friendlyName_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      friendlyName_ = null;
+      if (friendlyNameBuilder_ != null) {
+        friendlyNameBuilder_.dispose();
         friendlyNameBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1258,7 +1275,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.StringValue.Builder getFriendlyNameBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getFriendlyNameFieldBuilder().getBuilder();
     }
@@ -1329,7 +1346,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * @return Whether the description field is set.
      */
     public boolean hasDescription() {
-      return descriptionBuilder_ != null || description_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1368,11 +1385,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         description_ = value;
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1388,11 +1405,11 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     public Builder setDescription(com.google.protobuf.StringValue.Builder builderForValue) {
       if (descriptionBuilder_ == null) {
         description_ = builderForValue.build();
-        onChanged();
       } else {
         descriptionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1407,19 +1424,18 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDescription(com.google.protobuf.StringValue value) {
       if (descriptionBuilder_ == null) {
-        if (description_ != null) {
-          description_ =
-              com.google.protobuf.StringValue.newBuilder(description_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && description_ != null
+            && description_ != com.google.protobuf.StringValue.getDefaultInstance()) {
+          getDescriptionBuilder().mergeFrom(value);
         } else {
           description_ = value;
         }
-        onChanged();
       } else {
         descriptionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1433,14 +1449,13 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDescription() {
-      if (descriptionBuilder_ == null) {
-        description_ = null;
-        onChanged();
-      } else {
-        description_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      description_ = null;
+      if (descriptionBuilder_ != null) {
+        descriptionBuilder_.dispose();
         descriptionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1454,7 +1469,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.StringValue.Builder getDescriptionBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }
@@ -1515,14 +1530,14 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1586,8 +1601,10 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1620,6 +1637,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1646,6 +1664,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1668,8 +1687,8 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1687,6 +1706,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1757,8 +1777,8 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       location_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1776,8 +1796,8 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearLocation() {
-
       location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1800,8 +1820,8 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       location_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

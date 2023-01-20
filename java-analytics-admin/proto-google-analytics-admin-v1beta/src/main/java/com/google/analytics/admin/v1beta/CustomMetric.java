@@ -707,7 +707,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -758,7 +760,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PARAMETER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parameterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parameterName_ = "";
   /**
    *
    *
@@ -819,7 +823,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -876,7 +882,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -927,7 +935,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEASUREMENT_UNIT_FIELD_NUMBER = 5;
-  private int measurementUnit_;
+  private int measurementUnit_ = 0;
   /**
    *
    *
@@ -960,16 +968,15 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit getMeasurementUnit() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit result =
-        com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.valueOf(measurementUnit_);
+        com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.forNumber(measurementUnit_);
     return result == null
         ? com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.UNRECOGNIZED
         : result;
   }
 
   public static final int SCOPE_FIELD_NUMBER = 6;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -1002,16 +1009,18 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.CustomMetric.MetricScope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.CustomMetric.MetricScope result =
-        com.google.analytics.admin.v1beta.CustomMetric.MetricScope.valueOf(scope_);
+        com.google.analytics.admin.v1beta.CustomMetric.MetricScope.forNumber(scope_);
     return result == null
         ? com.google.analytics.admin.v1beta.CustomMetric.MetricScope.UNRECOGNIZED
         : result;
   }
 
   public static final int RESTRICTED_METRIC_TYPE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> restrictedMetricType_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType>
       restrictedMetricType_converter_ =
@@ -1020,9 +1029,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
               com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType>() {
             public com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType result =
-                  com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType.valueOf(from);
+                  com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType.forNumber(
+                      from);
               return result == null
                   ? com.google.analytics.admin.v1beta.CustomMetric.RestrictedMetricType.UNRECOGNIZED
                   : result;
@@ -1411,20 +1420,15 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       parameterName_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       measurementUnit_ = 0;
-
       scope_ = 0;
-
       restrictedMetricType_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -1452,20 +1456,42 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1beta.CustomMetric buildPartial() {
       com.google.analytics.admin.v1beta.CustomMetric result =
           new com.google.analytics.admin.v1beta.CustomMetric(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.parameterName_ = parameterName_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.measurementUnit_ = measurementUnit_;
-      result.scope_ = scope_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        restrictedMetricType_ = java.util.Collections.unmodifiableList(restrictedMetricType_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.restrictedMetricType_ = restrictedMetricType_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.admin.v1beta.CustomMetric result) {
+      if (((bitField0_ & 0x00000040) != 0)) {
+        restrictedMetricType_ = java.util.Collections.unmodifiableList(restrictedMetricType_);
+        bitField0_ = (bitField0_ & ~0x00000040);
+      }
+      result.restrictedMetricType_ = restrictedMetricType_;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.CustomMetric result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parameterName_ = parameterName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.measurementUnit_ = measurementUnit_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.scope_ = scope_;
+      }
     }
 
     @java.lang.Override
@@ -1515,18 +1541,22 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.admin.v1beta.CustomMetric.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getParameterName().isEmpty()) {
         parameterName_ = other.parameterName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.measurementUnit_ != 0) {
@@ -1538,7 +1568,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (!other.restrictedMetricType_.isEmpty()) {
         if (restrictedMetricType_.isEmpty()) {
           restrictedMetricType_ = other.restrictedMetricType_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureRestrictedMetricTypeIsMutable();
           restrictedMetricType_.addAll(other.restrictedMetricType_);
@@ -1574,37 +1604,37 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 parameterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 measurementUnit_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 64:
@@ -1709,8 +1739,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1727,8 +1757,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1750,8 +1780,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1835,8 +1865,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       parameterName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1858,8 +1888,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearParameterName() {
-
       parameterName_ = getDefaultInstance().getParameterName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1886,8 +1916,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parameterName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1965,8 +1995,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1986,8 +2016,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2012,8 +2042,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2082,8 +2112,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2100,8 +2130,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2123,8 +2153,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2162,8 +2192,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setMeasurementUnitValue(int value) {
-
       measurementUnit_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2182,9 +2212,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit getMeasurementUnit() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit result =
-          com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.valueOf(measurementUnit_);
+          com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.forNumber(
+              measurementUnit_);
       return result == null
           ? com.google.analytics.admin.v1beta.CustomMetric.MeasurementUnit.UNRECOGNIZED
           : result;
@@ -2208,7 +2238,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       measurementUnit_ = value.getNumber();
       onChanged();
       return this;
@@ -2227,7 +2257,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMeasurementUnit() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       measurementUnit_ = 0;
       onChanged();
       return this;
@@ -2266,8 +2296,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2286,9 +2316,8 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.CustomMetric.MetricScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.CustomMetric.MetricScope result =
-          com.google.analytics.admin.v1beta.CustomMetric.MetricScope.valueOf(scope_);
+          com.google.analytics.admin.v1beta.CustomMetric.MetricScope.forNumber(scope_);
       return result == null
           ? com.google.analytics.admin.v1beta.CustomMetric.MetricScope.UNRECOGNIZED
           : result;
@@ -2311,7 +2340,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -2330,7 +2359,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       scope_ = 0;
       onChanged();
       return this;
@@ -2340,9 +2369,9 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRestrictedMetricTypeIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         restrictedMetricType_ = new java.util.ArrayList<java.lang.Integer>(restrictedMetricType_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000040;
       }
     }
     /**
@@ -2501,7 +2530,7 @@ public final class CustomMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRestrictedMetricType() {
       restrictedMetricType_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }

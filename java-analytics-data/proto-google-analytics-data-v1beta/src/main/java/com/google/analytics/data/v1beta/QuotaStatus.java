@@ -66,7 +66,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONSUMED_FIELD_NUMBER = 1;
-  private int consumed_;
+  private int consumed_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMAINING_FIELD_NUMBER = 2;
-  private int remaining_;
+  private int remaining_ = 0;
   /**
    *
    *
@@ -307,10 +307,9 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       consumed_ = 0;
-
       remaining_ = 0;
-
       return this;
     }
 
@@ -338,10 +337,21 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.QuotaStatus buildPartial() {
       com.google.analytics.data.v1beta.QuotaStatus result =
           new com.google.analytics.data.v1beta.QuotaStatus(this);
-      result.consumed_ = consumed_;
-      result.remaining_ = remaining_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.QuotaStatus result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.consumed_ = consumed_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.remaining_ = remaining_;
+      }
     }
 
     @java.lang.Override
@@ -424,13 +434,13 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 consumed_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 remaining_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -449,6 +459,8 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int consumed_;
     /**
@@ -481,6 +493,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setConsumed(int value) {
 
       consumed_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -496,7 +509,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConsumed() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       consumed_ = 0;
       onChanged();
       return this;
@@ -533,6 +546,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder setRemaining(int value) {
 
       remaining_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -548,7 +562,7 @@ public final class QuotaStatus extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemaining() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       remaining_ = 0;
       onChanged();
       return this;

@@ -259,7 +259,7 @@ public final class ClassificationProto {
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private float score_;
+    private float score_ = 0F;
     /**
      *
      *
@@ -491,8 +491,8 @@ public final class ClassificationProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0F;
-
         return this;
       }
 
@@ -524,9 +524,19 @@ public final class ClassificationProto {
           buildPartial() {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result =
             new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation(this);
-        result.score_ = score_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
       }
 
       @java.lang.Override
@@ -614,7 +624,7 @@ public final class ClassificationProto {
               case 13:
                 {
                   score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               default:
@@ -633,6 +643,8 @@ public final class ClassificationProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float score_;
       /**
@@ -673,6 +685,7 @@ public final class ClassificationProto {
       public Builder setScore(float value) {
 
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -692,7 +705,7 @@ public final class ClassificationProto {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0F;
         onChanged();
         return this;
@@ -967,7 +980,9 @@ public final class ClassificationProto {
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object type_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      *
      *
@@ -1105,7 +1120,10 @@ public final class ClassificationProto {
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
         getClassificationAnnotationOrBuilder() {
-      return getClassificationAnnotation();
+      return classificationAnnotation_ == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+              .getDefaultInstance()
+          : classificationAnnotation_;
     }
 
     public static final int TIME_SEGMENT_FIELD_NUMBER = 3;
@@ -1156,7 +1174,9 @@ public final class ClassificationProto {
      */
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.TimeSegmentOrBuilder getTimeSegmentOrBuilder() {
-      return getTimeSegment();
+      return timeSegment_ == null
+          ? com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()
+          : timeSegment_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1402,18 +1422,16 @@ public final class ClassificationProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = "";
-
-        if (classificationAnnotationBuilder_ == null) {
-          classificationAnnotation_ = null;
-        } else {
-          classificationAnnotation_ = null;
+        classificationAnnotation_ = null;
+        if (classificationAnnotationBuilder_ != null) {
+          classificationAnnotationBuilder_.dispose();
           classificationAnnotationBuilder_ = null;
         }
-        if (timeSegmentBuilder_ == null) {
-          timeSegment_ = null;
-        } else {
-          timeSegment_ = null;
+        timeSegment_ = null;
+        if (timeSegmentBuilder_ != null) {
+          timeSegmentBuilder_.dispose();
           timeSegmentBuilder_ = null;
         }
         return this;
@@ -1449,19 +1467,30 @@ public final class ClassificationProto {
         com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation result =
             new com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation(
                 this);
-        result.type_ = type_;
-        if (classificationAnnotationBuilder_ == null) {
-          result.classificationAnnotation_ = classificationAnnotation_;
-        } else {
-          result.classificationAnnotation_ = classificationAnnotationBuilder_.build();
-        }
-        if (timeSegmentBuilder_ == null) {
-          result.timeSegment_ = timeSegment_;
-        } else {
-          result.timeSegment_ = timeSegmentBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.ClassificationProto.VideoClassificationAnnotation
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.classificationAnnotation_ =
+              classificationAnnotationBuilder_ == null
+                  ? classificationAnnotation_
+                  : classificationAnnotationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timeSegment_ =
+              timeSegmentBuilder_ == null ? timeSegment_ : timeSegmentBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1520,6 +1549,7 @@ public final class ClassificationProto {
                 .getDefaultInstance()) return this;
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.hasClassificationAnnotation()) {
@@ -1557,20 +1587,20 @@ public final class ClassificationProto {
               case 10:
                 {
                   type_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(
                       getClassificationAnnotationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(getTimeSegmentFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1589,6 +1619,8 @@ public final class ClassificationProto {
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object type_ = "";
       /**
@@ -1708,8 +1740,8 @@ public final class ClassificationProto {
         if (value == null) {
           throw new NullPointerException();
         }
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1744,8 +1776,8 @@ public final class ClassificationProto {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1785,8 +1817,8 @@ public final class ClassificationProto {
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1811,7 +1843,7 @@ public final class ClassificationProto {
        * @return Whether the classificationAnnotation field is set.
        */
       public boolean hasClassificationAnnotation() {
-        return classificationAnnotationBuilder_ != null || classificationAnnotation_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -1853,11 +1885,11 @@ public final class ClassificationProto {
             throw new NullPointerException();
           }
           classificationAnnotation_ = value;
-          onChanged();
         } else {
           classificationAnnotationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1875,11 +1907,11 @@ public final class ClassificationProto {
               builderForValue) {
         if (classificationAnnotationBuilder_ == null) {
           classificationAnnotation_ = builderForValue.build();
-          onChanged();
         } else {
           classificationAnnotationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1895,20 +1927,20 @@ public final class ClassificationProto {
       public Builder mergeClassificationAnnotation(
           com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
         if (classificationAnnotationBuilder_ == null) {
-          if (classificationAnnotation_ != null) {
-            classificationAnnotation_ =
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
-                    .newBuilder(classificationAnnotation_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && classificationAnnotation_ != null
+              && classificationAnnotation_
+                  != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                      .getDefaultInstance()) {
+            getClassificationAnnotationBuilder().mergeFrom(value);
           } else {
             classificationAnnotation_ = value;
           }
-          onChanged();
         } else {
           classificationAnnotationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1922,14 +1954,13 @@ public final class ClassificationProto {
        * </code>
        */
       public Builder clearClassificationAnnotation() {
-        if (classificationAnnotationBuilder_ == null) {
-          classificationAnnotation_ = null;
-          onChanged();
-        } else {
-          classificationAnnotation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        classificationAnnotation_ = null;
+        if (classificationAnnotationBuilder_ != null) {
+          classificationAnnotationBuilder_.dispose();
           classificationAnnotationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1944,7 +1975,7 @@ public final class ClassificationProto {
        */
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
           getClassificationAnnotationBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getClassificationAnnotationFieldBuilder().getBuilder();
       }
@@ -2017,7 +2048,7 @@ public final class ClassificationProto {
        * @return Whether the timeSegment field is set.
        */
       public boolean hasTimeSegment() {
-        return timeSegmentBuilder_ != null || timeSegment_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -2056,11 +2087,11 @@ public final class ClassificationProto {
             throw new NullPointerException();
           }
           timeSegment_ = value;
-          onChanged();
         } else {
           timeSegmentBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2077,11 +2108,11 @@ public final class ClassificationProto {
           com.google.cloud.automl.v1beta1.TimeSegment.Builder builderForValue) {
         if (timeSegmentBuilder_ == null) {
           timeSegment_ = builderForValue.build();
-          onChanged();
         } else {
           timeSegmentBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2096,19 +2127,18 @@ public final class ClassificationProto {
        */
       public Builder mergeTimeSegment(com.google.cloud.automl.v1beta1.TimeSegment value) {
         if (timeSegmentBuilder_ == null) {
-          if (timeSegment_ != null) {
-            timeSegment_ =
-                com.google.cloud.automl.v1beta1.TimeSegment.newBuilder(timeSegment_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && timeSegment_ != null
+              && timeSegment_ != com.google.cloud.automl.v1beta1.TimeSegment.getDefaultInstance()) {
+            getTimeSegmentBuilder().mergeFrom(value);
           } else {
             timeSegment_ = value;
           }
-          onChanged();
         } else {
           timeSegmentBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -2122,14 +2152,13 @@ public final class ClassificationProto {
        * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
        */
       public Builder clearTimeSegment() {
-        if (timeSegmentBuilder_ == null) {
-          timeSegment_ = null;
-          onChanged();
-        } else {
-          timeSegment_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        timeSegment_ = null;
+        if (timeSegmentBuilder_ != null) {
+          timeSegmentBuilder_.dispose();
           timeSegmentBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -2143,7 +2172,7 @@ public final class ClassificationProto {
        * <code>.google.cloud.automl.v1beta1.TimeSegment time_segment = 3;</code>
        */
       public com.google.cloud.automl.v1beta1.TimeSegment.Builder getTimeSegmentBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTimeSegmentFieldBuilder().getBuilder();
       }
@@ -2841,7 +2870,7 @@ public final class ClassificationProto {
       }
 
       public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-      private float confidenceThreshold_;
+      private float confidenceThreshold_ = 0F;
       /**
        *
        *
@@ -2860,7 +2889,7 @@ public final class ClassificationProto {
       }
 
       public static final int POSITION_THRESHOLD_FIELD_NUMBER = 14;
-      private int positionThreshold_;
+      private int positionThreshold_ = 0;
       /**
        *
        *
@@ -2880,7 +2909,7 @@ public final class ClassificationProto {
       }
 
       public static final int RECALL_FIELD_NUMBER = 2;
-      private float recall_;
+      private float recall_ = 0F;
       /**
        *
        *
@@ -2899,7 +2928,7 @@ public final class ClassificationProto {
       }
 
       public static final int PRECISION_FIELD_NUMBER = 3;
-      private float precision_;
+      private float precision_ = 0F;
       /**
        *
        *
@@ -2917,7 +2946,7 @@ public final class ClassificationProto {
       }
 
       public static final int FALSE_POSITIVE_RATE_FIELD_NUMBER = 8;
-      private float falsePositiveRate_;
+      private float falsePositiveRate_ = 0F;
       /**
        *
        *
@@ -2935,7 +2964,7 @@ public final class ClassificationProto {
       }
 
       public static final int F1_SCORE_FIELD_NUMBER = 4;
-      private float f1Score_;
+      private float f1Score_ = 0F;
       /**
        *
        *
@@ -2953,7 +2982,7 @@ public final class ClassificationProto {
       }
 
       public static final int RECALL_AT1_FIELD_NUMBER = 5;
-      private float recallAt1_;
+      private float recallAt1_ = 0F;
       /**
        *
        *
@@ -2973,7 +3002,7 @@ public final class ClassificationProto {
       }
 
       public static final int PRECISION_AT1_FIELD_NUMBER = 6;
-      private float precisionAt1_;
+      private float precisionAt1_ = 0F;
       /**
        *
        *
@@ -2993,7 +3022,7 @@ public final class ClassificationProto {
       }
 
       public static final int FALSE_POSITIVE_RATE_AT1_FIELD_NUMBER = 9;
-      private float falsePositiveRateAt1_;
+      private float falsePositiveRateAt1_ = 0F;
       /**
        *
        *
@@ -3013,7 +3042,7 @@ public final class ClassificationProto {
       }
 
       public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
-      private float f1ScoreAt1_;
+      private float f1ScoreAt1_ = 0F;
       /**
        *
        *
@@ -3031,7 +3060,7 @@ public final class ClassificationProto {
       }
 
       public static final int TRUE_POSITIVE_COUNT_FIELD_NUMBER = 10;
-      private long truePositiveCount_;
+      private long truePositiveCount_ = 0L;
       /**
        *
        *
@@ -3050,7 +3079,7 @@ public final class ClassificationProto {
       }
 
       public static final int FALSE_POSITIVE_COUNT_FIELD_NUMBER = 11;
-      private long falsePositiveCount_;
+      private long falsePositiveCount_ = 0L;
       /**
        *
        *
@@ -3069,7 +3098,7 @@ public final class ClassificationProto {
       }
 
       public static final int FALSE_NEGATIVE_COUNT_FIELD_NUMBER = 12;
-      private long falseNegativeCount_;
+      private long falseNegativeCount_ = 0L;
       /**
        *
        *
@@ -3088,7 +3117,7 @@ public final class ClassificationProto {
       }
 
       public static final int TRUE_NEGATIVE_COUNT_FIELD_NUMBER = 13;
-      private long trueNegativeCount_;
+      private long trueNegativeCount_ = 0L;
       /**
        *
        *
@@ -3466,34 +3495,21 @@ public final class ClassificationProto {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           confidenceThreshold_ = 0F;
-
           positionThreshold_ = 0;
-
           recall_ = 0F;
-
           precision_ = 0F;
-
           falsePositiveRate_ = 0F;
-
           f1Score_ = 0F;
-
           recallAt1_ = 0F;
-
           precisionAt1_ = 0F;
-
           falsePositiveRateAt1_ = 0F;
-
           f1ScoreAt1_ = 0F;
-
           truePositiveCount_ = 0L;
-
           falsePositiveCount_ = 0L;
-
           falseNegativeCount_ = 0L;
-
           trueNegativeCount_ = 0L;
-
           return this;
         }
 
@@ -3533,22 +3549,60 @@ public final class ClassificationProto {
               result =
                   new com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry(this);
-          result.confidenceThreshold_ = confidenceThreshold_;
-          result.positionThreshold_ = positionThreshold_;
-          result.recall_ = recall_;
-          result.precision_ = precision_;
-          result.falsePositiveRate_ = falsePositiveRate_;
-          result.f1Score_ = f1Score_;
-          result.recallAt1_ = recallAt1_;
-          result.precisionAt1_ = precisionAt1_;
-          result.falsePositiveRateAt1_ = falsePositiveRateAt1_;
-          result.f1ScoreAt1_ = f1ScoreAt1_;
-          result.truePositiveCount_ = truePositiveCount_;
-          result.falsePositiveCount_ = falsePositiveCount_;
-          result.falseNegativeCount_ = falseNegativeCount_;
-          result.trueNegativeCount_ = trueNegativeCount_;
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.confidenceThreshold_ = confidenceThreshold_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.positionThreshold_ = positionThreshold_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.recall_ = recall_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.precision_ = precision_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.falsePositiveRate_ = falsePositiveRate_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.f1Score_ = f1Score_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.recallAt1_ = recallAt1_;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.precisionAt1_ = precisionAt1_;
+          }
+          if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.falsePositiveRateAt1_ = falsePositiveRateAt1_;
+          }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
+            result.f1ScoreAt1_ = f1ScoreAt1_;
+          }
+          if (((from_bitField0_ & 0x00000400) != 0)) {
+            result.truePositiveCount_ = truePositiveCount_;
+          }
+          if (((from_bitField0_ & 0x00000800) != 0)) {
+            result.falsePositiveCount_ = falsePositiveCount_;
+          }
+          if (((from_bitField0_ & 0x00001000) != 0)) {
+            result.falseNegativeCount_ = falseNegativeCount_;
+          }
+          if (((from_bitField0_ & 0x00002000) != 0)) {
+            result.trueNegativeCount_ = trueNegativeCount_;
+          }
         }
 
         @java.lang.Override
@@ -3680,85 +3734,85 @@ public final class ClassificationProto {
                 case 13:
                   {
                     confidenceThreshold_ = input.readFloat();
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 13
                 case 21:
                   {
                     recall_ = input.readFloat();
-
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 21
                 case 29:
                   {
                     precision_ = input.readFloat();
-
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 29
                 case 37:
                   {
                     f1Score_ = input.readFloat();
-
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 37
                 case 45:
                   {
                     recallAt1_ = input.readFloat();
-
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 45
                 case 53:
                   {
                     precisionAt1_ = input.readFloat();
-
+                    bitField0_ |= 0x00000080;
                     break;
                   } // case 53
                 case 61:
                   {
                     f1ScoreAt1_ = input.readFloat();
-
+                    bitField0_ |= 0x00000200;
                     break;
                   } // case 61
                 case 69:
                   {
                     falsePositiveRate_ = input.readFloat();
-
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 69
                 case 77:
                   {
                     falsePositiveRateAt1_ = input.readFloat();
-
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 77
                 case 80:
                   {
                     truePositiveCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000400;
                     break;
                   } // case 80
                 case 88:
                   {
                     falsePositiveCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00000800;
                     break;
                   } // case 88
                 case 96:
                   {
                     falseNegativeCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00001000;
                     break;
                   } // case 96
                 case 104:
                   {
                     trueNegativeCount_ = input.readInt64();
-
+                    bitField0_ |= 0x00002000;
                     break;
                   } // case 104
                 case 112:
                   {
                     positionThreshold_ = input.readInt32();
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 112
                 default:
@@ -3777,6 +3831,8 @@ public final class ClassificationProto {
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private float confidenceThreshold_;
         /**
@@ -3811,6 +3867,7 @@ public final class ClassificationProto {
         public Builder setConfidenceThreshold(float value) {
 
           confidenceThreshold_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -3827,7 +3884,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearConfidenceThreshold() {
-
+          bitField0_ = (bitField0_ & ~0x00000001);
           confidenceThreshold_ = 0F;
           onChanged();
           return this;
@@ -3868,6 +3925,7 @@ public final class ClassificationProto {
         public Builder setPositionThreshold(int value) {
 
           positionThreshold_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -3885,7 +3943,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearPositionThreshold() {
-
+          bitField0_ = (bitField0_ & ~0x00000002);
           positionThreshold_ = 0;
           onChanged();
           return this;
@@ -3924,6 +3982,7 @@ public final class ClassificationProto {
         public Builder setRecall(float value) {
 
           recall_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -3940,7 +3999,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearRecall() {
-
+          bitField0_ = (bitField0_ & ~0x00000004);
           recall_ = 0F;
           onChanged();
           return this;
@@ -3977,6 +4036,7 @@ public final class ClassificationProto {
         public Builder setPrecision(float value) {
 
           precision_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3992,7 +4052,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearPrecision() {
-
+          bitField0_ = (bitField0_ & ~0x00000008);
           precision_ = 0F;
           onChanged();
           return this;
@@ -4029,6 +4089,7 @@ public final class ClassificationProto {
         public Builder setFalsePositiveRate(float value) {
 
           falsePositiveRate_ = value;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -4044,7 +4105,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearFalsePositiveRate() {
-
+          bitField0_ = (bitField0_ & ~0x00000010);
           falsePositiveRate_ = 0F;
           onChanged();
           return this;
@@ -4081,6 +4142,7 @@ public final class ClassificationProto {
         public Builder setF1Score(float value) {
 
           f1Score_ = value;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -4096,7 +4158,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearF1Score() {
-
+          bitField0_ = (bitField0_ & ~0x00000020);
           f1Score_ = 0F;
           onChanged();
           return this;
@@ -4137,6 +4199,7 @@ public final class ClassificationProto {
         public Builder setRecallAt1(float value) {
 
           recallAt1_ = value;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -4154,7 +4217,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearRecallAt1() {
-
+          bitField0_ = (bitField0_ & ~0x00000040);
           recallAt1_ = 0F;
           onChanged();
           return this;
@@ -4195,6 +4258,7 @@ public final class ClassificationProto {
         public Builder setPrecisionAt1(float value) {
 
           precisionAt1_ = value;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -4212,7 +4276,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearPrecisionAt1() {
-
+          bitField0_ = (bitField0_ & ~0x00000080);
           precisionAt1_ = 0F;
           onChanged();
           return this;
@@ -4253,6 +4317,7 @@ public final class ClassificationProto {
         public Builder setFalsePositiveRateAt1(float value) {
 
           falsePositiveRateAt1_ = value;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -4270,7 +4335,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearFalsePositiveRateAt1() {
-
+          bitField0_ = (bitField0_ & ~0x00000100);
           falsePositiveRateAt1_ = 0F;
           onChanged();
           return this;
@@ -4307,6 +4372,7 @@ public final class ClassificationProto {
         public Builder setF1ScoreAt1(float value) {
 
           f1ScoreAt1_ = value;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -4322,7 +4388,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearF1ScoreAt1() {
-
+          bitField0_ = (bitField0_ & ~0x00000200);
           f1ScoreAt1_ = 0F;
           onChanged();
           return this;
@@ -4361,6 +4427,7 @@ public final class ClassificationProto {
         public Builder setTruePositiveCount(long value) {
 
           truePositiveCount_ = value;
+          bitField0_ |= 0x00000400;
           onChanged();
           return this;
         }
@@ -4377,7 +4444,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearTruePositiveCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000400);
           truePositiveCount_ = 0L;
           onChanged();
           return this;
@@ -4416,6 +4483,7 @@ public final class ClassificationProto {
         public Builder setFalsePositiveCount(long value) {
 
           falsePositiveCount_ = value;
+          bitField0_ |= 0x00000800;
           onChanged();
           return this;
         }
@@ -4432,7 +4500,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearFalsePositiveCount() {
-
+          bitField0_ = (bitField0_ & ~0x00000800);
           falsePositiveCount_ = 0L;
           onChanged();
           return this;
@@ -4471,6 +4539,7 @@ public final class ClassificationProto {
         public Builder setFalseNegativeCount(long value) {
 
           falseNegativeCount_ = value;
+          bitField0_ |= 0x00001000;
           onChanged();
           return this;
         }
@@ -4487,7 +4556,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearFalseNegativeCount() {
-
+          bitField0_ = (bitField0_ & ~0x00001000);
           falseNegativeCount_ = 0L;
           onChanged();
           return this;
@@ -4526,6 +4595,7 @@ public final class ClassificationProto {
         public Builder setTrueNegativeCount(long value) {
 
           trueNegativeCount_ = value;
+          bitField0_ |= 0x00002000;
           onChanged();
           return this;
         }
@@ -4542,7 +4612,7 @@ public final class ClassificationProto {
          * @return This builder for chaining.
          */
         public Builder clearTrueNegativeCount() {
-
+          bitField0_ = (bitField0_ & ~0x00002000);
           trueNegativeCount_ = 0L;
           onChanged();
           return this;
@@ -5010,6 +5080,8 @@ public final class ClassificationProto {
         }
 
         public static final int EXAMPLE_COUNT_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.Internal.IntList exampleCount_;
         /**
          *
@@ -5322,8 +5394,8 @@ public final class ClassificationProto {
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             exampleCount_ = emptyIntList();
-            bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
 
@@ -5363,14 +5435,30 @@ public final class ClassificationProto {
                 result =
                     new com.google.cloud.automl.v1beta1.ClassificationProto
                         .ClassificationEvaluationMetrics.ConfusionMatrix.Row(this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                      .ConfusionMatrix.Row
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               exampleCount_.makeImmutable();
               bitField0_ = (bitField0_ & ~0x00000001);
             }
             result.exampleCount_ = exampleCount_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                      .ConfusionMatrix.Row
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -5584,6 +5672,7 @@ public final class ClassificationProto {
            * @return This builder for chaining.
            */
           public Builder setExampleCount(int index, int value) {
+
             ensureExampleCountIsMutable();
             exampleCount_.setInt(index, value);
             onChanged();
@@ -5605,6 +5694,7 @@ public final class ClassificationProto {
            * @return This builder for chaining.
            */
           public Builder addExampleCount(int value) {
+
             ensureExampleCountIsMutable();
             exampleCount_.addInt(value);
             onChanged();
@@ -5726,6 +5816,8 @@ public final class ClassificationProto {
       }
 
       public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList annotationSpecId_;
       /**
        *
@@ -5799,6 +5891,8 @@ public final class ClassificationProto {
       }
 
       public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringList displayName_;
       /**
        *
@@ -5880,6 +5974,8 @@ public final class ClassificationProto {
       }
 
       public static final int ROW_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
       private java.util.List<
               com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                   .ConfusionMatrix.Row>
@@ -6260,6 +6356,7 @@ public final class ClassificationProto {
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000001);
           displayName_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -6310,7 +6407,18 @@ public final class ClassificationProto {
               result =
                   new com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfusionMatrix(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix
+                result) {
           if (((bitField0_ & 0x00000001) != 0)) {
             annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -6330,8 +6438,13 @@ public final class ClassificationProto {
           } else {
             result.row_ = rowBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix
+                result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -7514,7 +7627,7 @@ public final class ClassificationProto {
     }
 
     public static final int AU_PRC_FIELD_NUMBER = 1;
-    private float auPrc_;
+    private float auPrc_ = 0F;
     /**
      *
      *
@@ -7533,7 +7646,7 @@ public final class ClassificationProto {
     }
 
     public static final int BASE_AU_PRC_FIELD_NUMBER = 2;
-    private float baseAuPrc_;
+    private float baseAuPrc_ = 0F;
     /**
      *
      *
@@ -7556,7 +7669,7 @@ public final class ClassificationProto {
     }
 
     public static final int AU_ROC_FIELD_NUMBER = 6;
-    private float auRoc_;
+    private float auRoc_ = 0F;
     /**
      *
      *
@@ -7575,7 +7688,7 @@ public final class ClassificationProto {
     }
 
     public static final int LOG_LOSS_FIELD_NUMBER = 7;
-    private float logLoss_;
+    private float logLoss_ = 0F;
     /**
      *
      *
@@ -7593,6 +7706,8 @@ public final class ClassificationProto {
     }
 
     public static final int CONFIDENCE_METRICS_ENTRY_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
     private java.util.List<
             com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
                 .ConfidenceMetricsEntry>
@@ -7781,10 +7896,15 @@ public final class ClassificationProto {
     public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
             .ConfusionMatrixOrBuilder
         getConfusionMatrixOrBuilder() {
-      return getConfusionMatrix();
+      return confusionMatrix_ == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.getDefaultInstance()
+          : confusionMatrix_;
     }
 
     public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList annotationSpecId_;
     /**
      *
@@ -8147,29 +8267,25 @@ public final class ClassificationProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         auPrc_ = 0F;
-
         baseAuPrc_ = 0F;
-
         auRoc_ = 0F;
-
         logLoss_ = 0F;
-
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
         } else {
           confidenceMetricsEntry_ = null;
           confidenceMetricsEntryBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (confusionMatrixBuilder_ == null) {
-          confusionMatrix_ = null;
-        } else {
-          confusionMatrix_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        confusionMatrix_ = null;
+        if (confusionMatrixBuilder_ != null) {
+          confusionMatrixBuilder_.dispose();
           confusionMatrixBuilder_ = null;
         }
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -8203,33 +8319,54 @@ public final class ClassificationProto {
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result =
             new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(
                 this);
-        int from_bitField0_ = bitField0_;
-        result.auPrc_ = auPrc_;
-        result.baseAuPrc_ = baseAuPrc_;
-        result.auRoc_ = auRoc_;
-        result.logLoss_ = logLoss_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              result) {
         if (confidenceMetricsEntryBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             confidenceMetricsEntry_ =
                 java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.confidenceMetricsEntry_ = confidenceMetricsEntry_;
         } else {
           result.confidenceMetricsEntry_ = confidenceMetricsEntryBuilder_.build();
         }
-        if (confusionMatrixBuilder_ == null) {
-          result.confusionMatrix_ = confusionMatrix_;
-        } else {
-          result.confusionMatrix_ = confusionMatrixBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.annotationSpecId_ = annotationSpecId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.auPrc_ = auPrc_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.baseAuPrc_ = baseAuPrc_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.auRoc_ = auRoc_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.logLoss_ = logLoss_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.confusionMatrix_ =
+              confusionMatrixBuilder_ == null ? confusionMatrix_ : confusionMatrixBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -8303,7 +8440,7 @@ public final class ClassificationProto {
           if (!other.confidenceMetricsEntry_.isEmpty()) {
             if (confidenceMetricsEntry_.isEmpty()) {
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureConfidenceMetricsEntryIsMutable();
               confidenceMetricsEntry_.addAll(other.confidenceMetricsEntry_);
@@ -8316,7 +8453,7 @@ public final class ClassificationProto {
               confidenceMetricsEntryBuilder_.dispose();
               confidenceMetricsEntryBuilder_ = null;
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               confidenceMetricsEntryBuilder_ =
                   com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                       ? getConfidenceMetricsEntryFieldBuilder()
@@ -8332,7 +8469,7 @@ public final class ClassificationProto {
         if (!other.annotationSpecId_.isEmpty()) {
           if (annotationSpecId_.isEmpty()) {
             annotationSpecId_ = other.annotationSpecId_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureAnnotationSpecIdIsMutable();
             annotationSpecId_.addAll(other.annotationSpecId_);
@@ -8368,13 +8505,13 @@ public final class ClassificationProto {
               case 13:
                 {
                   auPrc_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   baseAuPrc_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 26:
@@ -8398,7 +8535,7 @@ public final class ClassificationProto {
                 {
                   input.readMessage(
                       getConfusionMatrixFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 34
               case 42:
@@ -8411,13 +8548,13 @@ public final class ClassificationProto {
               case 53:
                 {
                   auRoc_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 53
               case 61:
                 {
                   logLoss_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 61
               default:
@@ -8472,6 +8609,7 @@ public final class ClassificationProto {
       public Builder setAuPrc(float value) {
 
         auPrc_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -8488,7 +8626,7 @@ public final class ClassificationProto {
        * @return This builder for chaining.
        */
       public Builder clearAuPrc() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         auPrc_ = 0F;
         onChanged();
         return this;
@@ -8535,6 +8673,7 @@ public final class ClassificationProto {
       public Builder setBaseAuPrc(float value) {
 
         baseAuPrc_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -8555,7 +8694,7 @@ public final class ClassificationProto {
        */
       @java.lang.Deprecated
       public Builder clearBaseAuPrc() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         baseAuPrc_ = 0F;
         onChanged();
         return this;
@@ -8594,6 +8733,7 @@ public final class ClassificationProto {
       public Builder setAuRoc(float value) {
 
         auRoc_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -8610,7 +8750,7 @@ public final class ClassificationProto {
        * @return This builder for chaining.
        */
       public Builder clearAuRoc() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         auRoc_ = 0F;
         onChanged();
         return this;
@@ -8647,6 +8787,7 @@ public final class ClassificationProto {
       public Builder setLogLoss(float value) {
 
         logLoss_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -8662,7 +8803,7 @@ public final class ClassificationProto {
        * @return This builder for chaining.
        */
       public Builder clearLogLoss() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         logLoss_ = 0F;
         onChanged();
         return this;
@@ -8674,13 +8815,13 @@ public final class ClassificationProto {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
 
       private void ensureConfidenceMetricsEntryIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           confidenceMetricsEntry_ =
               new java.util.ArrayList<
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(
                   confidenceMetricsEntry_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
         }
       }
 
@@ -9015,7 +9156,7 @@ public final class ClassificationProto {
       public Builder clearConfidenceMetricsEntry() {
         if (confidenceMetricsEntryBuilder_ == null) {
           confidenceMetricsEntry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           confidenceMetricsEntryBuilder_.clear();
@@ -9218,7 +9359,7 @@ public final class ClassificationProto {
                   com.google.cloud.automl.v1beta1.ClassificationProto
                       .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
                   confidenceMetricsEntry_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           confidenceMetricsEntry_ = null;
@@ -9254,7 +9395,7 @@ public final class ClassificationProto {
        * @return Whether the confusionMatrix field is set.
        */
       public boolean hasConfusionMatrix() {
-        return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -9307,11 +9448,11 @@ public final class ClassificationProto {
             throw new NullPointerException();
           }
           confusionMatrix_ = value;
-          onChanged();
         } else {
           confusionMatrixBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -9334,11 +9475,11 @@ public final class ClassificationProto {
               builderForValue) {
         if (confusionMatrixBuilder_ == null) {
           confusionMatrix_ = builderForValue.build();
-          onChanged();
         } else {
           confusionMatrixBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -9360,20 +9501,20 @@ public final class ClassificationProto {
                   .ConfusionMatrix
               value) {
         if (confusionMatrixBuilder_ == null) {
-          if (confusionMatrix_ != null) {
-            confusionMatrix_ =
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
-                    .ConfusionMatrix.newBuilder(confusionMatrix_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000020) != 0)
+              && confusionMatrix_ != null
+              && confusionMatrix_
+                  != com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance()) {
+            getConfusionMatrixBuilder().mergeFrom(value);
           } else {
             confusionMatrix_ = value;
           }
-          onChanged();
         } else {
           confusionMatrixBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -9391,14 +9532,13 @@ public final class ClassificationProto {
        * </code>
        */
       public Builder clearConfusionMatrix() {
-        if (confusionMatrixBuilder_ == null) {
-          confusionMatrix_ = null;
-          onChanged();
-        } else {
-          confusionMatrix_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        confusionMatrix_ = null;
+        if (confusionMatrixBuilder_ != null) {
+          confusionMatrixBuilder_.dispose();
           confusionMatrixBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -9418,7 +9558,7 @@ public final class ClassificationProto {
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
               .ConfusionMatrix.Builder
           getConfusionMatrixBuilder() {
-
+        bitField0_ |= 0x00000020;
         onChanged();
         return getConfusionMatrixFieldBuilder().getBuilder();
       }
@@ -9489,9 +9629,9 @@ public final class ClassificationProto {
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureAnnotationSpecIdIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000040;
         }
       }
       /**
@@ -9626,7 +9766,7 @@ public final class ClassificationProto {
        */
       public Builder clearAnnotationSpecId() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }

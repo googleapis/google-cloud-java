@@ -70,7 +70,9 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    *
    *
@@ -221,10 +225,14 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.SslSettingsOrBuilder getSslSettingsOrBuilder() {
-    return getSslSettings();
+    return sslSettings_ == null
+        ? com.google.appengine.v1.SslSettings.getDefaultInstance()
+        : sslSettings_;
   }
 
   public static final int RESOURCE_RECORDS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.ResourceRecord> resourceRecords_;
   /**
    *
@@ -537,14 +545,12 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       id_ = "";
-
-      if (sslSettingsBuilder_ == null) {
-        sslSettings_ = null;
-      } else {
-        sslSettings_ = null;
+      sslSettings_ = null;
+      if (sslSettingsBuilder_ != null) {
+        sslSettingsBuilder_.dispose();
         sslSettingsBuilder_ = null;
       }
       if (resourceRecordsBuilder_ == null) {
@@ -553,7 +559,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         resourceRecords_ = null;
         resourceRecordsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -581,25 +587,38 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     public com.google.appengine.v1.DomainMapping buildPartial() {
       com.google.appengine.v1.DomainMapping result =
           new com.google.appengine.v1.DomainMapping(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.id_ = id_;
-      if (sslSettingsBuilder_ == null) {
-        result.sslSettings_ = sslSettings_;
-      } else {
-        result.sslSettings_ = sslSettingsBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.appengine.v1.DomainMapping result) {
       if (resourceRecordsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           resourceRecords_ = java.util.Collections.unmodifiableList(resourceRecords_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.resourceRecords_ = resourceRecords_;
       } else {
         result.resourceRecords_ = resourceRecordsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.DomainMapping result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sslSettings_ =
+            sslSettingsBuilder_ == null ? sslSettings_ : sslSettingsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -649,10 +668,12 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.DomainMapping.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasSslSettings()) {
@@ -662,7 +683,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         if (!other.resourceRecords_.isEmpty()) {
           if (resourceRecords_.isEmpty()) {
             resourceRecords_ = other.resourceRecords_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureResourceRecordsIsMutable();
             resourceRecords_.addAll(other.resourceRecords_);
@@ -675,7 +696,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
             resourceRecordsBuilder_.dispose();
             resourceRecordsBuilder_ = null;
             resourceRecords_ = other.resourceRecords_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             resourceRecordsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getResourceRecordsFieldBuilder()
@@ -714,19 +735,19 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 id_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getSslSettingsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -828,8 +849,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -847,8 +868,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -871,8 +892,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -941,8 +962,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -959,8 +980,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -982,8 +1003,8 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1007,7 +1028,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sslSettings field is set.
      */
     public boolean hasSslSettings() {
-      return sslSettingsBuilder_ != null || sslSettings_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1046,11 +1067,11 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         sslSettings_ = value;
-        onChanged();
       } else {
         sslSettingsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1066,11 +1087,11 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     public Builder setSslSettings(com.google.appengine.v1.SslSettings.Builder builderForValue) {
       if (sslSettingsBuilder_ == null) {
         sslSettings_ = builderForValue.build();
-        onChanged();
       } else {
         sslSettingsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1085,19 +1106,18 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSslSettings(com.google.appengine.v1.SslSettings value) {
       if (sslSettingsBuilder_ == null) {
-        if (sslSettings_ != null) {
-          sslSettings_ =
-              com.google.appengine.v1.SslSettings.newBuilder(sslSettings_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && sslSettings_ != null
+            && sslSettings_ != com.google.appengine.v1.SslSettings.getDefaultInstance()) {
+          getSslSettingsBuilder().mergeFrom(value);
         } else {
           sslSettings_ = value;
         }
-        onChanged();
       } else {
         sslSettingsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1111,14 +1131,13 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.SslSettings ssl_settings = 3;</code>
      */
     public Builder clearSslSettings() {
-      if (sslSettingsBuilder_ == null) {
-        sslSettings_ = null;
-        onChanged();
-      } else {
-        sslSettings_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sslSettings_ = null;
+      if (sslSettingsBuilder_ != null) {
+        sslSettingsBuilder_.dispose();
         sslSettingsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1132,7 +1151,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.appengine.v1.SslSettings ssl_settings = 3;</code>
      */
     public com.google.appengine.v1.SslSettings.Builder getSslSettingsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getSslSettingsFieldBuilder().getBuilder();
     }
@@ -1186,10 +1205,10 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureResourceRecordsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         resourceRecords_ =
             new java.util.ArrayList<com.google.appengine.v1.ResourceRecord>(resourceRecords_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1438,7 +1457,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResourceRecords() {
       if (resourceRecordsBuilder_ == null) {
         resourceRecords_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         resourceRecordsBuilder_.clear();
@@ -1582,7 +1601,7 @@ public final class DomainMapping extends com.google.protobuf.GeneratedMessageV3
                 com.google.appengine.v1.ResourceRecord.Builder,
                 com.google.appengine.v1.ResourceRecordOrBuilder>(
                 resourceRecords_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         resourceRecords_ = null;

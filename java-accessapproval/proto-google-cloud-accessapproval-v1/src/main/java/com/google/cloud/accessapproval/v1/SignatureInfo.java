@@ -115,7 +115,7 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIGNATURE_FIELD_NUMBER = 1;
-  private com.google.protobuf.ByteString signature_;
+  private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -510,8 +510,8 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       signature_ = com.google.protobuf.ByteString.EMPTY;
-
       verificationInfoCase_ = 0;
       verificationInfo_ = null;
       return this;
@@ -541,16 +541,24 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.accessapproval.v1.SignatureInfo buildPartial() {
       com.google.cloud.accessapproval.v1.SignatureInfo result =
           new com.google.cloud.accessapproval.v1.SignatureInfo(this);
-      result.signature_ = signature_;
-      if (verificationInfoCase_ == 2) {
-        result.verificationInfo_ = verificationInfo_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (verificationInfoCase_ == 3) {
-        result.verificationInfo_ = verificationInfo_;
-      }
-      result.verificationInfoCase_ = verificationInfoCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.SignatureInfo result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.signature_ = signature_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.accessapproval.v1.SignatureInfo result) {
+      result.verificationInfoCase_ = verificationInfoCase_;
+      result.verificationInfo_ = this.verificationInfo_;
     }
 
     @java.lang.Override
@@ -651,7 +659,7 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 signature_ = input.readBytes();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -699,6 +707,8 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
      *
@@ -731,8 +741,8 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       signature_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -748,7 +758,7 @@ public final class SignatureInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSignature() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       signature_ = getDefaultInstance().getSignature();
       onChanged();
       return this;

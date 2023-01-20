@@ -577,7 +577,6 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; beta_settings = 13;</code>
    */
-
   /* nullable */
   java.lang.String getBetaSettingsOrDefault(
       java.lang.String key,
@@ -1085,7 +1084,6 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; env_variables = 104;</code>
    */
-
   /* nullable */
   java.lang.String getEnvVariablesOrDefault(
       java.lang.String key,
@@ -1149,7 +1147,6 @@ public interface VersionOrBuilder
    *
    * <code>map&lt;string, string&gt; build_env_variables = 125;</code>
    */
-
   /* nullable */
   java.lang.String getBuildEnvVariablesOrDefault(
       java.lang.String key,

@@ -110,7 +110,9 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.appengine.v1.UpdateServiceRequestOrBuilder getRequestOrBuilder() {
-    return getRequest();
+    return request_ == null
+        ? com.google.appengine.v1.UpdateServiceRequest.getDefaultInstance()
+        : request_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (requestBuilder_ == null) {
-        request_ = null;
-      } else {
-        request_ = null;
+      bitField0_ = 0;
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
       return this;
@@ -348,13 +350,18 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
     public com.google.appengine.v1.UpdateServiceMethod buildPartial() {
       com.google.appengine.v1.UpdateServiceMethod result =
           new com.google.appengine.v1.UpdateServiceMethod(this);
-      if (requestBuilder_ == null) {
-        result.request_ = request_;
-      } else {
-        result.request_ = requestBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.UpdateServiceMethod result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.request_ = requestBuilder_ == null ? request_ : requestBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -434,7 +441,7 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 input.readMessage(getRequestFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +461,8 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.appengine.v1.UpdateServiceRequest request_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.appengine.v1.UpdateServiceRequest,
@@ -472,7 +481,7 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
      * @return Whether the request field is set.
      */
     public boolean hasRequest() {
-      return requestBuilder_ != null || request_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -509,11 +518,11 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         request_ = value;
-        onChanged();
       } else {
         requestBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -529,11 +538,11 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
         com.google.appengine.v1.UpdateServiceRequest.Builder builderForValue) {
       if (requestBuilder_ == null) {
         request_ = builderForValue.build();
-        onChanged();
       } else {
         requestBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -547,19 +556,18 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeRequest(com.google.appengine.v1.UpdateServiceRequest value) {
       if (requestBuilder_ == null) {
-        if (request_ != null) {
-          request_ =
-              com.google.appengine.v1.UpdateServiceRequest.newBuilder(request_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && request_ != null
+            && request_ != com.google.appengine.v1.UpdateServiceRequest.getDefaultInstance()) {
+          getRequestBuilder().mergeFrom(value);
         } else {
           request_ = value;
         }
-        onChanged();
       } else {
         requestBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,14 +580,13 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
      * <code>.google.appengine.v1.UpdateServiceRequest request = 1;</code>
      */
     public Builder clearRequest() {
-      if (requestBuilder_ == null) {
-        request_ = null;
-        onChanged();
-      } else {
-        request_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      request_ = null;
+      if (requestBuilder_ != null) {
+        requestBuilder_.dispose();
         requestBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -592,7 +599,7 @@ public final class UpdateServiceMethod extends com.google.protobuf.GeneratedMess
      * <code>.google.appengine.v1.UpdateServiceRequest request = 1;</code>
      */
     public com.google.appengine.v1.UpdateServiceRequest.Builder getRequestBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }

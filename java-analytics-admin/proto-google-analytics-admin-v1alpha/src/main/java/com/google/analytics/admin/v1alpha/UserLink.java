@@ -71,7 +71,9 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -120,7 +122,9 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EMAIL_ADDRESS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object emailAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object emailAddress_ = "";
   /**
    *
    *
@@ -169,6 +173,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DIRECT_ROLES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList directRoles_;
   /**
    *
@@ -496,12 +502,11 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       emailAddress_ = "";
-
       directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -529,16 +534,30 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.UserLink buildPartial() {
       com.google.analytics.admin.v1alpha.UserLink result =
           new com.google.analytics.admin.v1alpha.UserLink(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.emailAddress_ = emailAddress_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        directRoles_ = directRoles_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.directRoles_ = directRoles_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.admin.v1alpha.UserLink result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        directRoles_ = directRoles_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.directRoles_ = directRoles_;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.UserLink result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.emailAddress_ = emailAddress_;
+      }
     }
 
     @java.lang.Override
@@ -588,16 +607,18 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEmailAddress().isEmpty()) {
         emailAddress_ = other.emailAddress_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.directRoles_.isEmpty()) {
         if (directRoles_.isEmpty()) {
           directRoles_ = other.directRoles_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureDirectRolesIsMutable();
           directRoles_.addAll(other.directRoles_);
@@ -633,13 +654,13 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 emailAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -729,8 +750,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -746,8 +767,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -768,8 +789,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -835,8 +856,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       emailAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -852,8 +873,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmailAddress() {
-
       emailAddress_ = getDefaultInstance().getEmailAddress();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -874,8 +895,8 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       emailAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -884,9 +905,9 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDirectRolesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         directRoles_ = new com.google.protobuf.LazyStringArrayList(directRoles_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1109,7 +1130,7 @@ public final class UserLink extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDirectRoles() {
       directRoles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

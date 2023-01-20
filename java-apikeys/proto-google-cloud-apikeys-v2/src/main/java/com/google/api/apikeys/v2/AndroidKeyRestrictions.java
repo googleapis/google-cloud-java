@@ -68,6 +68,8 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
   }
 
   public static final int ALLOWED_APPLICATIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.api.apikeys.v2.AndroidApplication> allowedApplications_;
   /**
    *
@@ -342,6 +344,7 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (allowedApplicationsBuilder_ == null) {
         allowedApplications_ = java.util.Collections.emptyList();
       } else {
@@ -376,7 +379,16 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
     public com.google.api.apikeys.v2.AndroidKeyRestrictions buildPartial() {
       com.google.api.apikeys.v2.AndroidKeyRestrictions result =
           new com.google.api.apikeys.v2.AndroidKeyRestrictions(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.api.apikeys.v2.AndroidKeyRestrictions result) {
       if (allowedApplicationsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           allowedApplications_ = java.util.Collections.unmodifiableList(allowedApplications_);
@@ -386,8 +398,10 @@ public final class AndroidKeyRestrictions extends com.google.protobuf.GeneratedM
       } else {
         result.allowedApplications_ = allowedApplicationsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.AndroidKeyRestrictions result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -66,7 +66,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
   }
 
   public static final int SENTIMENT_MAX_FIELD_NUMBER = 1;
-  private int sentimentMax_;
+  private int sentimentMax_ = 0;
   /**
    *
    *
@@ -286,8 +286,8 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sentimentMax_ = 0;
-
       return this;
     }
 
@@ -315,9 +315,18 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     public com.google.cloud.automl.v1.TextSentimentDatasetMetadata buildPartial() {
       com.google.cloud.automl.v1.TextSentimentDatasetMetadata result =
           new com.google.cloud.automl.v1.TextSentimentDatasetMetadata(this);
-      result.sentimentMax_ = sentimentMax_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.TextSentimentDatasetMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sentimentMax_ = sentimentMax_;
+      }
     }
 
     @java.lang.Override
@@ -398,7 +407,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
             case 8:
               {
                 sentimentMax_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -417,6 +426,8 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int sentimentMax_;
     /**
@@ -459,6 +470,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
     public Builder setSentimentMax(int value) {
 
       sentimentMax_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -479,7 +491,7 @@ public final class TextSentimentDatasetMetadata extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearSentimentMax() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       sentimentMax_ = 0;
       onChanged();
       return this;

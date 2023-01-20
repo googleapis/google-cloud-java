@@ -68,7 +68,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.OutputConfigOrBuilder getOutputConfigOrBuilder() {
-    return getOutputConfig();
+    return outputConfig_ == null
+        ? com.google.cloud.automl.v1.OutputConfig.getDefaultInstance()
+        : outputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,12 +389,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-      } else {
-        outputConfig_ = null;
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
       return this;
@@ -420,14 +423,22 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1.ExportDataRequest buildPartial() {
       com.google.cloud.automl.v1.ExportDataRequest result =
           new com.google.cloud.automl.v1.ExportDataRequest(this);
-      result.name_ = name_;
-      if (outputConfigBuilder_ == null) {
-        result.outputConfig_ = outputConfig_;
-      } else {
-        result.outputConfig_ = outputConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.ExportDataRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputConfig_ =
+            outputConfigBuilder_ == null ? outputConfig_ : outputConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -477,6 +488,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.automl.v1.ExportDataRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOutputConfig()) {
@@ -511,13 +523,13 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(getOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -536,6 +548,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -604,8 +618,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -623,8 +637,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -647,8 +661,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -673,7 +687,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the outputConfig field is set.
      */
     public boolean hasOutputConfig() {
-      return outputConfigBuilder_ != null || outputConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -714,11 +728,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         outputConfig_ = value;
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -736,11 +750,11 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
         com.google.cloud.automl.v1.OutputConfig.Builder builderForValue) {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         outputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -756,19 +770,18 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeOutputConfig(com.google.cloud.automl.v1.OutputConfig value) {
       if (outputConfigBuilder_ == null) {
-        if (outputConfig_ != null) {
-          outputConfig_ =
-              com.google.cloud.automl.v1.OutputConfig.newBuilder(outputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && outputConfig_ != null
+            && outputConfig_ != com.google.cloud.automl.v1.OutputConfig.getDefaultInstance()) {
+          getOutputConfigBuilder().mergeFrom(value);
         } else {
           outputConfig_ = value;
         }
-        onChanged();
       } else {
         outputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -783,14 +796,13 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearOutputConfig() {
-      if (outputConfigBuilder_ == null) {
-        outputConfig_ = null;
-        onChanged();
-      } else {
-        outputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputConfig_ = null;
+      if (outputConfigBuilder_ != null) {
+        outputConfigBuilder_.dispose();
         outputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -805,7 +817,7 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.automl.v1.OutputConfig.Builder getOutputConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOutputConfigFieldBuilder().getBuilder();
     }

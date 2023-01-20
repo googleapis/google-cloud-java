@@ -69,6 +69,8 @@ public final class ReplaceAccessLevelsResponse extends com.google.protobuf.Gener
   }
 
   public static final int ACCESS_LEVELS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.AccessLevel> accessLevels_;
   /**
    *
@@ -348,6 +350,7 @@ public final class ReplaceAccessLevelsResponse extends com.google.protobuf.Gener
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (accessLevelsBuilder_ == null) {
         accessLevels_ = java.util.Collections.emptyList();
       } else {
@@ -385,7 +388,16 @@ public final class ReplaceAccessLevelsResponse extends com.google.protobuf.Gener
     public com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse buildPartial() {
       com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse result =
           new com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse result) {
       if (accessLevelsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           accessLevels_ = java.util.Collections.unmodifiableList(accessLevels_);
@@ -395,8 +407,11 @@ public final class ReplaceAccessLevelsResponse extends com.google.protobuf.Gener
       } else {
         result.accessLevels_ = accessLevelsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

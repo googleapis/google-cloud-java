@@ -67,7 +67,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TARGET_WRITE_BYTES_PER_SECOND_FIELD_NUMBER = 14;
-  private int targetWriteBytesPerSecond_;
+  private int targetWriteBytesPerSecond_ = 0;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TARGET_WRITE_OPS_PER_SECOND_FIELD_NUMBER = 15;
-  private int targetWriteOpsPerSecond_;
+  private int targetWriteOpsPerSecond_ = 0;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TARGET_READ_BYTES_PER_SECOND_FIELD_NUMBER = 16;
-  private int targetReadBytesPerSecond_;
+  private int targetReadBytesPerSecond_ = 0;
   /**
    *
    *
@@ -121,7 +121,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TARGET_READ_OPS_PER_SECOND_FIELD_NUMBER = 17;
-  private int targetReadOpsPerSecond_;
+  private int targetReadOpsPerSecond_ = 0;
   /**
    *
    *
@@ -363,14 +363,11 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetWriteBytesPerSecond_ = 0;
-
       targetWriteOpsPerSecond_ = 0;
-
       targetReadBytesPerSecond_ = 0;
-
       targetReadOpsPerSecond_ = 0;
-
       return this;
     }
 
@@ -398,12 +395,27 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public com.google.appengine.v1.DiskUtilization buildPartial() {
       com.google.appengine.v1.DiskUtilization result =
           new com.google.appengine.v1.DiskUtilization(this);
-      result.targetWriteBytesPerSecond_ = targetWriteBytesPerSecond_;
-      result.targetWriteOpsPerSecond_ = targetWriteOpsPerSecond_;
-      result.targetReadBytesPerSecond_ = targetReadBytesPerSecond_;
-      result.targetReadOpsPerSecond_ = targetReadOpsPerSecond_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.DiskUtilization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetWriteBytesPerSecond_ = targetWriteBytesPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetWriteOpsPerSecond_ = targetWriteOpsPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetReadBytesPerSecond_ = targetReadBytesPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetReadOpsPerSecond_ = targetReadOpsPerSecond_;
+      }
     }
 
     @java.lang.Override
@@ -492,25 +504,25 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
             case 112:
               {
                 targetWriteBytesPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 112
             case 120:
               {
                 targetWriteOpsPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 120
             case 128:
               {
                 targetReadBytesPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 128
             case 136:
               {
                 targetReadOpsPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 136
             default:
@@ -529,6 +541,8 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int targetWriteBytesPerSecond_;
     /**
@@ -561,6 +575,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public Builder setTargetWriteBytesPerSecond(int value) {
 
       targetWriteBytesPerSecond_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,7 +591,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetWriteBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetWriteBytesPerSecond_ = 0;
       onChanged();
       return this;
@@ -613,6 +628,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public Builder setTargetWriteOpsPerSecond(int value) {
 
       targetWriteOpsPerSecond_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -628,7 +644,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetWriteOpsPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetWriteOpsPerSecond_ = 0;
       onChanged();
       return this;
@@ -665,6 +681,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public Builder setTargetReadBytesPerSecond(int value) {
 
       targetReadBytesPerSecond_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -680,7 +697,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetReadBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       targetReadBytesPerSecond_ = 0;
       onChanged();
       return this;
@@ -717,6 +734,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
     public Builder setTargetReadOpsPerSecond(int value) {
 
       targetReadOpsPerSecond_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -732,7 +750,7 @@ public final class DiskUtilization extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearTargetReadOpsPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       targetReadOpsPerSecond_ = 0;
       onChanged();
       return this;

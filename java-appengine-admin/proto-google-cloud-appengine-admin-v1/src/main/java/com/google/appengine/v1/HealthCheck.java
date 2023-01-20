@@ -70,7 +70,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISABLE_HEALTH_CHECK_FIELD_NUMBER = 1;
-  private boolean disableHealthCheck_;
+  private boolean disableHealthCheck_ = false;
   /**
    *
    *
@@ -88,7 +88,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HOST_FIELD_NUMBER = 2;
-  private volatile java.lang.Object host_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object host_ = "";
   /**
    *
    *
@@ -139,7 +141,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HEALTHY_THRESHOLD_FIELD_NUMBER = 3;
-  private int healthyThreshold_;
+  private int healthyThreshold_ = 0;
   /**
    *
    *
@@ -158,7 +160,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNHEALTHY_THRESHOLD_FIELD_NUMBER = 4;
-  private int unhealthyThreshold_;
+  private int unhealthyThreshold_ = 0;
   /**
    *
    *
@@ -177,7 +179,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESTART_THRESHOLD_FIELD_NUMBER = 5;
-  private int restartThreshold_;
+  private int restartThreshold_ = 0;
   /**
    *
    *
@@ -240,7 +242,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCheckIntervalOrBuilder() {
-    return getCheckInterval();
+    return checkInterval_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : checkInterval_;
   }
 
   public static final int TIMEOUT_FIELD_NUMBER = 7;
@@ -286,7 +290,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder() {
-    return getTimeout();
+    return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -550,26 +554,20 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       disableHealthCheck_ = false;
-
       host_ = "";
-
       healthyThreshold_ = 0;
-
       unhealthyThreshold_ = 0;
-
       restartThreshold_ = 0;
-
-      if (checkIntervalBuilder_ == null) {
-        checkInterval_ = null;
-      } else {
-        checkInterval_ = null;
+      checkInterval_ = null;
+      if (checkIntervalBuilder_ != null) {
+        checkIntervalBuilder_.dispose();
         checkIntervalBuilder_ = null;
       }
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-      } else {
-        timeout_ = null;
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
       return this;
@@ -598,23 +596,37 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.HealthCheck buildPartial() {
       com.google.appengine.v1.HealthCheck result = new com.google.appengine.v1.HealthCheck(this);
-      result.disableHealthCheck_ = disableHealthCheck_;
-      result.host_ = host_;
-      result.healthyThreshold_ = healthyThreshold_;
-      result.unhealthyThreshold_ = unhealthyThreshold_;
-      result.restartThreshold_ = restartThreshold_;
-      if (checkIntervalBuilder_ == null) {
-        result.checkInterval_ = checkInterval_;
-      } else {
-        result.checkInterval_ = checkIntervalBuilder_.build();
-      }
-      if (timeoutBuilder_ == null) {
-        result.timeout_ = timeout_;
-      } else {
-        result.timeout_ = timeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.HealthCheck result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.disableHealthCheck_ = disableHealthCheck_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.healthyThreshold_ = healthyThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.unhealthyThreshold_ = unhealthyThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.restartThreshold_ = restartThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.checkInterval_ =
+            checkIntervalBuilder_ == null ? checkInterval_ : checkIntervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -667,6 +679,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getHealthyThreshold() != 0) {
@@ -713,43 +726,43 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 disableHealthCheck_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 host_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 healthyThreshold_ = input.readUInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 32:
               {
                 unhealthyThreshold_ = input.readUInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 restartThreshold_ = input.readUInt32();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getCheckIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -768,6 +781,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean disableHealthCheck_;
     /**
@@ -800,6 +815,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisableHealthCheck(boolean value) {
 
       disableHealthCheck_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -815,7 +831,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisableHealthCheck() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       disableHealthCheck_ = false;
       onChanged();
       return this;
@@ -885,8 +901,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -903,8 +919,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHost() {
-
       host_ = getDefaultInstance().getHost();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -926,8 +942,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       host_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -965,6 +981,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setHealthyThreshold(int value) {
 
       healthyThreshold_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -981,7 +998,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHealthyThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       healthyThreshold_ = 0;
       onChanged();
       return this;
@@ -1020,6 +1037,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setUnhealthyThreshold(int value) {
 
       unhealthyThreshold_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1036,7 +1054,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUnhealthyThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       unhealthyThreshold_ = 0;
       onChanged();
       return this;
@@ -1075,6 +1093,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setRestartThreshold(int value) {
 
       restartThreshold_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1091,7 +1110,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRestartThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       restartThreshold_ = 0;
       onChanged();
       return this;
@@ -1115,7 +1134,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the checkInterval field is set.
      */
     public boolean hasCheckInterval() {
-      return checkIntervalBuilder_ != null || checkInterval_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1152,11 +1171,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkInterval_ = value;
-        onChanged();
       } else {
         checkIntervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1171,11 +1190,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setCheckInterval(com.google.protobuf.Duration.Builder builderForValue) {
       if (checkIntervalBuilder_ == null) {
         checkInterval_ = builderForValue.build();
-        onChanged();
       } else {
         checkIntervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1189,19 +1208,18 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCheckInterval(com.google.protobuf.Duration value) {
       if (checkIntervalBuilder_ == null) {
-        if (checkInterval_ != null) {
-          checkInterval_ =
-              com.google.protobuf.Duration.newBuilder(checkInterval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && checkInterval_ != null
+            && checkInterval_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCheckIntervalBuilder().mergeFrom(value);
         } else {
           checkInterval_ = value;
         }
-        onChanged();
       } else {
         checkIntervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1214,14 +1232,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration check_interval = 6;</code>
      */
     public Builder clearCheckInterval() {
-      if (checkIntervalBuilder_ == null) {
-        checkInterval_ = null;
-        onChanged();
-      } else {
-        checkInterval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      checkInterval_ = null;
+      if (checkIntervalBuilder_ != null) {
+        checkIntervalBuilder_.dispose();
         checkIntervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1234,7 +1251,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration check_interval = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getCheckIntervalBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCheckIntervalFieldBuilder().getBuilder();
     }
@@ -1300,7 +1317,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return timeoutBuilder_ != null || timeout_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1335,11 +1352,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         timeout_ = value;
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1354,11 +1371,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
-        onChanged();
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1372,17 +1389,18 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (timeout_ != null) {
-          timeout_ =
-              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && timeout_ != null
+            && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeoutBuilder().mergeFrom(value);
         } else {
           timeout_ = value;
         }
-        onChanged();
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1395,14 +1413,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 7;</code>
      */
     public Builder clearTimeout() {
-      if (timeoutBuilder_ == null) {
-        timeout_ = null;
-        onChanged();
-      } else {
-        timeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      timeout_ = null;
+      if (timeoutBuilder_ != null) {
+        timeoutBuilder_.dispose();
         timeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1415,7 +1432,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }

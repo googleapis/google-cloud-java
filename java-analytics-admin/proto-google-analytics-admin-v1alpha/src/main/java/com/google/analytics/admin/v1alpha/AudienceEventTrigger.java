@@ -230,7 +230,9 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
   }
 
   public static final int EVENT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object eventName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventName_ = "";
   /**
    *
    *
@@ -279,7 +281,7 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
   }
 
   public static final int LOG_CONDITION_FIELD_NUMBER = 2;
-  private int logCondition_;
+  private int logCondition_ = 0;
   /**
    *
    *
@@ -312,9 +314,9 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition getLogCondition() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition result =
-        com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.valueOf(logCondition_);
+        com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.forNumber(
+            logCondition_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.UNRECOGNIZED
         : result;
@@ -533,10 +535,9 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       eventName_ = "";
-
       logCondition_ = 0;
-
       return this;
     }
 
@@ -564,10 +565,21 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
     public com.google.analytics.admin.v1alpha.AudienceEventTrigger buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceEventTrigger result =
           new com.google.analytics.admin.v1alpha.AudienceEventTrigger(this);
-      result.eventName_ = eventName_;
-      result.logCondition_ = logCondition_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceEventTrigger result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventName_ = eventName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.logCondition_ = logCondition_;
+      }
     }
 
     @java.lang.Override
@@ -618,6 +630,7 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getEventName().isEmpty()) {
         eventName_ = other.eventName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.logCondition_ != 0) {
@@ -652,13 +665,13 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 eventName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 logCondition_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -677,6 +690,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object eventName_ = "";
     /**
@@ -739,8 +754,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -756,8 +771,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearEventName() {
-
       eventName_ = getDefaultInstance().getEventName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -778,8 +793,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,8 +832,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setLogConditionValue(int value) {
-
       logCondition_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -837,9 +852,8 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition getLogCondition() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition result =
-          com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.valueOf(
+          com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.forNumber(
               logCondition_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceEventTrigger.LogCondition.UNRECOGNIZED
@@ -864,7 +878,7 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       logCondition_ = value.getNumber();
       onChanged();
       return this;
@@ -883,7 +897,7 @@ public final class AudienceEventTrigger extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearLogCondition() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       logCondition_ = 0;
       onChanged();
       return this;

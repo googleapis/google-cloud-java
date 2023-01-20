@@ -535,7 +535,6 @@ public interface ModelOrBuilder
    *
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

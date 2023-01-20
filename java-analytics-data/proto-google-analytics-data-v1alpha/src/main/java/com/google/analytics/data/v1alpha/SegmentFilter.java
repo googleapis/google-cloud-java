@@ -121,7 +121,9 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fieldName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    *
    *
@@ -419,7 +421,9 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.data.v1alpha.SegmentFilterScopingOrBuilder
       getFilterScopingOrBuilder() {
-    return getFilterScoping();
+    return filterScoping_ == null
+        ? com.google.analytics.data.v1alpha.SegmentFilterScoping.getDefaultInstance()
+        : filterScoping_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -702,8 +706,8 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       fieldName_ = "";
-
       if (stringFilterBuilder_ != null) {
         stringFilterBuilder_.clear();
       }
@@ -716,10 +720,9 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       if (betweenFilterBuilder_ != null) {
         betweenFilterBuilder_.clear();
       }
-      if (filterScopingBuilder_ == null) {
-        filterScoping_ = null;
-      } else {
-        filterScoping_ = null;
+      filterScoping_ = null;
+      if (filterScopingBuilder_ != null) {
+        filterScopingBuilder_.dispose();
         filterScopingBuilder_ = null;
       }
       oneFilterCase_ = 0;
@@ -751,43 +754,40 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.SegmentFilter buildPartial() {
       com.google.analytics.data.v1alpha.SegmentFilter result =
           new com.google.analytics.data.v1alpha.SegmentFilter(this);
-      result.fieldName_ = fieldName_;
-      if (oneFilterCase_ == 4) {
-        if (stringFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = stringFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneFilterCase_ == 5) {
-        if (inListFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = inListFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 6) {
-        if (numericFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = numericFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 7) {
-        if (betweenFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = betweenFilterBuilder_.build();
-        }
-      }
-      if (filterScopingBuilder_ == null) {
-        result.filterScoping_ = filterScoping_;
-      } else {
-        result.filterScoping_ = filterScopingBuilder_.build();
-      }
-      result.oneFilterCase_ = oneFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.SegmentFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.filterScoping_ =
+            filterScopingBuilder_ == null ? filterScoping_ : filterScopingBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1alpha.SegmentFilter result) {
+      result.oneFilterCase_ = oneFilterCase_;
+      result.oneFilter_ = this.oneFilter_;
+      if (oneFilterCase_ == 4 && stringFilterBuilder_ != null) {
+        result.oneFilter_ = stringFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 5 && inListFilterBuilder_ != null) {
+        result.oneFilter_ = inListFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 6 && numericFilterBuilder_ != null) {
+        result.oneFilter_ = numericFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 7 && betweenFilterBuilder_ != null) {
+        result.oneFilter_ = betweenFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -838,6 +838,7 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasFilterScoping()) {
@@ -898,7 +899,7 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 fieldName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 34:
@@ -928,7 +929,7 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getFilterScopingFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             default:
@@ -961,6 +962,8 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object fieldName_ = "";
     /**
@@ -1023,8 +1026,8 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1040,8 +1043,8 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1062,8 +1065,8 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fieldName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1274,7 +1277,6 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 4;
       onChanged();
-      ;
       return stringFilterBuilder_;
     }
 
@@ -1484,7 +1486,6 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 5;
       onChanged();
-      ;
       return inListFilterBuilder_;
     }
 
@@ -1694,7 +1695,6 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 6;
       onChanged();
-      ;
       return numericFilterBuilder_;
     }
 
@@ -1904,7 +1904,6 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
       }
       oneFilterCase_ = 7;
       onChanged();
-      ;
       return betweenFilterBuilder_;
     }
 
@@ -1926,7 +1925,7 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the filterScoping field is set.
      */
     public boolean hasFilterScoping() {
-      return filterScopingBuilder_ != null || filterScoping_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1963,11 +1962,11 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         filterScoping_ = value;
-        onChanged();
       } else {
         filterScopingBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1983,11 +1982,11 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.data.v1alpha.SegmentFilterScoping.Builder builderForValue) {
       if (filterScopingBuilder_ == null) {
         filterScoping_ = builderForValue.build();
-        onChanged();
       } else {
         filterScopingBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2002,19 +2001,19 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFilterScoping(
         com.google.analytics.data.v1alpha.SegmentFilterScoping value) {
       if (filterScopingBuilder_ == null) {
-        if (filterScoping_ != null) {
-          filterScoping_ =
-              com.google.analytics.data.v1alpha.SegmentFilterScoping.newBuilder(filterScoping_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && filterScoping_ != null
+            && filterScoping_
+                != com.google.analytics.data.v1alpha.SegmentFilterScoping.getDefaultInstance()) {
+          getFilterScopingBuilder().mergeFrom(value);
         } else {
           filterScoping_ = value;
         }
-        onChanged();
       } else {
         filterScopingBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2027,14 +2026,13 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1alpha.SegmentFilterScoping filter_scoping = 8;</code>
      */
     public Builder clearFilterScoping() {
-      if (filterScopingBuilder_ == null) {
-        filterScoping_ = null;
-        onChanged();
-      } else {
-        filterScoping_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      filterScoping_ = null;
+      if (filterScopingBuilder_ != null) {
+        filterScopingBuilder_.dispose();
         filterScopingBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2048,7 +2046,7 @@ public final class SegmentFilter extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.data.v1alpha.SegmentFilterScoping.Builder
         getFilterScopingBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getFilterScopingFieldBuilder().getBuilder();
     }

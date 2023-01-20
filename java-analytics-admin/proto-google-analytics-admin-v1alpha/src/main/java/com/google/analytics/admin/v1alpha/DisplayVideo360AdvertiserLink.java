@@ -70,7 +70,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
   }
 
   public static final int ADVERTISER_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object advertiserId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertiserId_ = "";
   /**
    *
    *
@@ -172,7 +176,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
   }
 
   public static final int ADVERTISER_DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object advertiserDisplayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertiserDisplayName_ = "";
   /**
    *
    *
@@ -268,7 +274,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getAdsPersonalizationEnabledOrBuilder() {
-    return getAdsPersonalizationEnabled();
+    return adsPersonalizationEnabled_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : adsPersonalizationEnabled_;
   }
 
   public static final int CAMPAIGN_DATA_SHARING_ENABLED_FIELD_NUMBER = 5;
@@ -331,7 +339,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getCampaignDataSharingEnabledOrBuilder() {
-    return getCampaignDataSharingEnabled();
+    return campaignDataSharingEnabled_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : campaignDataSharingEnabled_;
   }
 
   public static final int COST_DATA_SHARING_ENABLED_FIELD_NUMBER = 6;
@@ -397,7 +407,9 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.BoolValueOrBuilder getCostDataSharingEnabledOrBuilder() {
-    return getCostDataSharingEnabled();
+    return costDataSharingEnabled_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : costDataSharingEnabled_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -665,28 +677,23 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       advertiserId_ = "";
-
       advertiserDisplayName_ = "";
-
-      if (adsPersonalizationEnabledBuilder_ == null) {
-        adsPersonalizationEnabled_ = null;
-      } else {
-        adsPersonalizationEnabled_ = null;
+      adsPersonalizationEnabled_ = null;
+      if (adsPersonalizationEnabledBuilder_ != null) {
+        adsPersonalizationEnabledBuilder_.dispose();
         adsPersonalizationEnabledBuilder_ = null;
       }
-      if (campaignDataSharingEnabledBuilder_ == null) {
-        campaignDataSharingEnabled_ = null;
-      } else {
-        campaignDataSharingEnabled_ = null;
+      campaignDataSharingEnabled_ = null;
+      if (campaignDataSharingEnabledBuilder_ != null) {
+        campaignDataSharingEnabledBuilder_.dispose();
         campaignDataSharingEnabledBuilder_ = null;
       }
-      if (costDataSharingEnabledBuilder_ == null) {
-        costDataSharingEnabled_ = null;
-      } else {
-        costDataSharingEnabled_ = null;
+      costDataSharingEnabled_ = null;
+      if (costDataSharingEnabledBuilder_ != null) {
+        costDataSharingEnabledBuilder_.dispose();
         costDataSharingEnabledBuilder_ = null;
       }
       return this;
@@ -717,26 +724,43 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink buildPartial() {
       com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink result =
           new com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink(this);
-      result.name_ = name_;
-      result.advertiserId_ = advertiserId_;
-      result.advertiserDisplayName_ = advertiserDisplayName_;
-      if (adsPersonalizationEnabledBuilder_ == null) {
-        result.adsPersonalizationEnabled_ = adsPersonalizationEnabled_;
-      } else {
-        result.adsPersonalizationEnabled_ = adsPersonalizationEnabledBuilder_.build();
-      }
-      if (campaignDataSharingEnabledBuilder_ == null) {
-        result.campaignDataSharingEnabled_ = campaignDataSharingEnabled_;
-      } else {
-        result.campaignDataSharingEnabled_ = campaignDataSharingEnabledBuilder_.build();
-      }
-      if (costDataSharingEnabledBuilder_ == null) {
-        result.costDataSharingEnabled_ = costDataSharingEnabled_;
-      } else {
-        result.costDataSharingEnabled_ = costDataSharingEnabledBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.advertiserId_ = advertiserId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.advertiserDisplayName_ = advertiserDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.adsPersonalizationEnabled_ =
+            adsPersonalizationEnabledBuilder_ == null
+                ? adsPersonalizationEnabled_
+                : adsPersonalizationEnabledBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.campaignDataSharingEnabled_ =
+            campaignDataSharingEnabledBuilder_ == null
+                ? campaignDataSharingEnabled_
+                : campaignDataSharingEnabledBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.costDataSharingEnabled_ =
+            costDataSharingEnabledBuilder_ == null
+                ? costDataSharingEnabled_
+                : costDataSharingEnabledBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -789,14 +813,17 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAdvertiserId().isEmpty()) {
         advertiserId_ = other.advertiserId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getAdvertiserDisplayName().isEmpty()) {
         advertiserDisplayName_ = other.advertiserDisplayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasAdsPersonalizationEnabled()) {
@@ -837,40 +864,40 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 advertiserId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 advertiserDisplayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getAdsPersonalizationEnabledFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     getCampaignDataSharingEnabledFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getCostDataSharingEnabledFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             default:
@@ -889,6 +916,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -957,8 +986,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -976,8 +1005,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1000,8 +1029,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1067,8 +1096,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       advertiserId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1084,8 +1113,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAdvertiserId() {
-
       advertiserId_ = getDefaultInstance().getAdvertiserId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1106,8 +1135,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       advertiserId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1173,8 +1202,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       advertiserDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1190,8 +1219,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearAdvertiserDisplayName() {
-
       advertiserDisplayName_ = getDefaultInstance().getAdvertiserDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1212,8 +1241,8 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       advertiserDisplayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1237,7 +1266,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return Whether the adsPersonalizationEnabled field is set.
      */
     public boolean hasAdsPersonalizationEnabled() {
-      return adsPersonalizationEnabledBuilder_ != null || adsPersonalizationEnabled_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1276,11 +1305,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         adsPersonalizationEnabled_ = value;
-        onChanged();
       } else {
         adsPersonalizationEnabledBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1297,11 +1326,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         com.google.protobuf.BoolValue.Builder builderForValue) {
       if (adsPersonalizationEnabledBuilder_ == null) {
         adsPersonalizationEnabled_ = builderForValue.build();
-        onChanged();
       } else {
         adsPersonalizationEnabledBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1316,19 +1345,18 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      */
     public Builder mergeAdsPersonalizationEnabled(com.google.protobuf.BoolValue value) {
       if (adsPersonalizationEnabledBuilder_ == null) {
-        if (adsPersonalizationEnabled_ != null) {
-          adsPersonalizationEnabled_ =
-              com.google.protobuf.BoolValue.newBuilder(adsPersonalizationEnabled_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && adsPersonalizationEnabled_ != null
+            && adsPersonalizationEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getAdsPersonalizationEnabledBuilder().mergeFrom(value);
         } else {
           adsPersonalizationEnabled_ = value;
         }
-        onChanged();
       } else {
         adsPersonalizationEnabledBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1342,14 +1370,13 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * <code>.google.protobuf.BoolValue ads_personalization_enabled = 4;</code>
      */
     public Builder clearAdsPersonalizationEnabled() {
-      if (adsPersonalizationEnabledBuilder_ == null) {
-        adsPersonalizationEnabled_ = null;
-        onChanged();
-      } else {
-        adsPersonalizationEnabled_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      adsPersonalizationEnabled_ = null;
+      if (adsPersonalizationEnabledBuilder_ != null) {
+        adsPersonalizationEnabledBuilder_.dispose();
         adsPersonalizationEnabledBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1363,7 +1390,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * <code>.google.protobuf.BoolValue ads_personalization_enabled = 4;</code>
      */
     public com.google.protobuf.BoolValue.Builder getAdsPersonalizationEnabledBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAdsPersonalizationEnabledFieldBuilder().getBuilder();
     }
@@ -1436,7 +1463,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return Whether the campaignDataSharingEnabled field is set.
      */
     public boolean hasCampaignDataSharingEnabled() {
-      return campaignDataSharingEnabledBuilder_ != null || campaignDataSharingEnabled_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1483,11 +1510,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         campaignDataSharingEnabled_ = value;
-        onChanged();
       } else {
         campaignDataSharingEnabledBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1508,11 +1535,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         com.google.protobuf.BoolValue.Builder builderForValue) {
       if (campaignDataSharingEnabledBuilder_ == null) {
         campaignDataSharingEnabled_ = builderForValue.build();
-        onChanged();
       } else {
         campaignDataSharingEnabledBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1531,19 +1558,18 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      */
     public Builder mergeCampaignDataSharingEnabled(com.google.protobuf.BoolValue value) {
       if (campaignDataSharingEnabledBuilder_ == null) {
-        if (campaignDataSharingEnabled_ != null) {
-          campaignDataSharingEnabled_ =
-              com.google.protobuf.BoolValue.newBuilder(campaignDataSharingEnabled_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && campaignDataSharingEnabled_ != null
+            && campaignDataSharingEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getCampaignDataSharingEnabledBuilder().mergeFrom(value);
         } else {
           campaignDataSharingEnabled_ = value;
         }
-        onChanged();
       } else {
         campaignDataSharingEnabledBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1561,14 +1587,13 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearCampaignDataSharingEnabled() {
-      if (campaignDataSharingEnabledBuilder_ == null) {
-        campaignDataSharingEnabled_ = null;
-        onChanged();
-      } else {
-        campaignDataSharingEnabled_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      campaignDataSharingEnabled_ = null;
+      if (campaignDataSharingEnabledBuilder_ != null) {
+        campaignDataSharingEnabledBuilder_.dispose();
         campaignDataSharingEnabledBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1586,7 +1611,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.BoolValue.Builder getCampaignDataSharingEnabledBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCampaignDataSharingEnabledFieldBuilder().getBuilder();
     }
@@ -1668,7 +1693,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * @return Whether the costDataSharingEnabled field is set.
      */
     public boolean hasCostDataSharingEnabled() {
-      return costDataSharingEnabledBuilder_ != null || costDataSharingEnabled_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1717,11 +1742,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         costDataSharingEnabled_ = value;
-        onChanged();
       } else {
         costDataSharingEnabledBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1743,11 +1768,11 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
         com.google.protobuf.BoolValue.Builder builderForValue) {
       if (costDataSharingEnabledBuilder_ == null) {
         costDataSharingEnabled_ = builderForValue.build();
-        onChanged();
       } else {
         costDataSharingEnabledBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1767,19 +1792,18 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      */
     public Builder mergeCostDataSharingEnabled(com.google.protobuf.BoolValue value) {
       if (costDataSharingEnabledBuilder_ == null) {
-        if (costDataSharingEnabled_ != null) {
-          costDataSharingEnabled_ =
-              com.google.protobuf.BoolValue.newBuilder(costDataSharingEnabled_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && costDataSharingEnabled_ != null
+            && costDataSharingEnabled_ != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getCostDataSharingEnabledBuilder().mergeFrom(value);
         } else {
           costDataSharingEnabled_ = value;
         }
-        onChanged();
       } else {
         costDataSharingEnabledBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1798,14 +1822,13 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearCostDataSharingEnabled() {
-      if (costDataSharingEnabledBuilder_ == null) {
-        costDataSharingEnabled_ = null;
-        onChanged();
-      } else {
-        costDataSharingEnabled_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      costDataSharingEnabled_ = null;
+      if (costDataSharingEnabledBuilder_ != null) {
+        costDataSharingEnabledBuilder_.dispose();
         costDataSharingEnabledBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1824,7 +1847,7 @@ public final class DisplayVideo360AdvertiserLink extends com.google.protobuf.Gen
      * </code>
      */
     public com.google.protobuf.BoolValue.Builder getCostDataSharingEnabledBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCostDataSharingEnabledFieldBuilder().getBuilder();
     }

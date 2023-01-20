@@ -69,7 +69,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
   }
 
   public static final int CLASSIFICATION_TYPE_FIELD_NUMBER = 1;
-  private int classificationType_;
+  private int classificationType_ = 0;
   /**
    *
    *
@@ -98,9 +98,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.automl.v1.ClassificationType result =
-        com.google.cloud.automl.v1.ClassificationType.valueOf(classificationType_);
+        com.google.cloud.automl.v1.ClassificationType.forNumber(classificationType_);
     return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
   }
 
@@ -306,8 +305,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       classificationType_ = 0;
-
       return this;
     }
 
@@ -336,9 +335,19 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     public com.google.cloud.automl.v1.TextClassificationDatasetMetadata buildPartial() {
       com.google.cloud.automl.v1.TextClassificationDatasetMetadata result =
           new com.google.cloud.automl.v1.TextClassificationDatasetMetadata(this);
-      result.classificationType_ = classificationType_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1.TextClassificationDatasetMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.classificationType_ = classificationType_;
+      }
     }
 
     @java.lang.Override
@@ -420,7 +429,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
             case 8:
               {
                 classificationType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             default:
@@ -439,6 +448,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int classificationType_ = 0;
     /**
@@ -469,8 +480,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder setClassificationTypeValue(int value) {
-
       classificationType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -487,9 +498,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      */
     @java.lang.Override
     public com.google.cloud.automl.v1.ClassificationType getClassificationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.automl.v1.ClassificationType result =
-          com.google.cloud.automl.v1.ClassificationType.valueOf(classificationType_);
+          com.google.cloud.automl.v1.ClassificationType.forNumber(classificationType_);
       return result == null ? com.google.cloud.automl.v1.ClassificationType.UNRECOGNIZED : result;
     }
     /**
@@ -508,7 +518,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       classificationType_ = value.getNumber();
       onChanged();
       return this;
@@ -525,7 +535,7 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
      * @return This builder for chaining.
      */
     public Builder clearClassificationType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       classificationType_ = 0;
       onChanged();
       return this;

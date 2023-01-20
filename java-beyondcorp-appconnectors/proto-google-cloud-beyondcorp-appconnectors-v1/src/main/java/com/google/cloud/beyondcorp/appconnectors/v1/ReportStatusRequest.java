@@ -69,7 +69,9 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int APP_CONNECTOR_FIELD_NUMBER = 1;
-  private volatile java.lang.Object appConnector_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appConnector_ = "";
   /**
    *
    *
@@ -175,11 +177,15 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoOrBuilder
       getResourceInfoOrBuilder() {
-    return getResourceInfo();
+    return resourceInfo_ == null
+        ? com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.getDefaultInstance()
+        : resourceInfo_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -248,7 +254,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -496,18 +502,15 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       appConnector_ = "";
-
-      if (resourceInfoBuilder_ == null) {
-        resourceInfo_ = null;
-      } else {
-        resourceInfo_ = null;
+      resourceInfo_ = null;
+      if (resourceInfoBuilder_ != null) {
+        resourceInfoBuilder_.dispose();
         resourceInfoBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -536,16 +539,29 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest buildPartial() {
       com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest result =
           new com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest(this);
-      result.appConnector_ = appConnector_;
-      if (resourceInfoBuilder_ == null) {
-        result.resourceInfo_ = resourceInfo_;
-      } else {
-        result.resourceInfo_ = resourceInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.appConnector_ = appConnector_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.resourceInfo_ =
+            resourceInfoBuilder_ == null ? resourceInfo_ : resourceInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -598,6 +614,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getAppConnector().isEmpty()) {
         appConnector_ = other.appConnector_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasResourceInfo()) {
@@ -605,6 +622,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -639,25 +657,25 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 appConnector_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getResourceInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             default:
@@ -676,6 +694,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object appConnector_ = "";
     /**
@@ -747,8 +767,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       appConnector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -767,8 +787,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAppConnector() {
-
       appConnector_ = getDefaultInstance().getAppConnector();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -792,8 +812,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appConnector_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -818,7 +838,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the resourceInfo field is set.
      */
     public boolean hasResourceInfo() {
-      return resourceInfoBuilder_ != null || resourceInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -860,11 +880,11 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         resourceInfo_ = value;
-        onChanged();
       } else {
         resourceInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -882,11 +902,11 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.Builder builderForValue) {
       if (resourceInfoBuilder_ == null) {
         resourceInfo_ = builderForValue.build();
-        onChanged();
       } else {
         resourceInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -903,19 +923,19 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeResourceInfo(
         com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo value) {
       if (resourceInfoBuilder_ == null) {
-        if (resourceInfo_ != null) {
-          resourceInfo_ =
-              com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.newBuilder(resourceInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && resourceInfo_ != null
+            && resourceInfo_
+                != com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.getDefaultInstance()) {
+          getResourceInfoBuilder().mergeFrom(value);
         } else {
           resourceInfo_ = value;
         }
-        onChanged();
       } else {
         resourceInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -930,14 +950,13 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearResourceInfo() {
-      if (resourceInfoBuilder_ == null) {
-        resourceInfo_ = null;
-        onChanged();
-      } else {
-        resourceInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      resourceInfo_ = null;
+      if (resourceInfoBuilder_ != null) {
+        resourceInfoBuilder_.dispose();
         resourceInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -953,7 +972,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfo.Builder
         getResourceInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getResourceInfoFieldBuilder().getBuilder();
     }
@@ -1097,8 +1116,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1124,8 +1143,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1156,8 +1175,8 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1195,6 +1214,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1211,7 +1231,7 @@ public final class ReportStatusRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       validateOnly_ = false;
       onChanged();
       return this;

@@ -70,7 +70,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   }
 
   public static final int LINK_PROPOSAL_INITIATING_PRODUCT_FIELD_NUMBER = 1;
-  private int linkProposalInitiatingProduct_;
+  private int linkProposalInitiatingProduct_ = 0;
   /**
    *
    *
@@ -104,9 +104,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct
       getLinkProposalInitiatingProduct() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct result =
-        com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.valueOf(
+        com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.forNumber(
             linkProposalInitiatingProduct_);
     return result == null
         ? com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.UNRECOGNIZED
@@ -114,7 +113,9 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   }
 
   public static final int REQUESTOR_EMAIL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object requestorEmail_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestorEmail_ = "";
   /**
    *
    *
@@ -163,7 +164,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
   }
 
   public static final int LINK_PROPOSAL_STATE_FIELD_NUMBER = 3;
-  private int linkProposalState_;
+  private int linkProposalState_ = 0;
   /**
    *
    *
@@ -196,9 +197,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.LinkProposalState getLinkProposalState() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.LinkProposalState result =
-        com.google.analytics.admin.v1alpha.LinkProposalState.valueOf(linkProposalState_);
+        com.google.analytics.admin.v1alpha.LinkProposalState.forNumber(linkProposalState_);
     return result == null
         ? com.google.analytics.admin.v1alpha.LinkProposalState.UNRECOGNIZED
         : result;
@@ -431,12 +431,10 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       linkProposalInitiatingProduct_ = 0;
-
       requestorEmail_ = "";
-
       linkProposalState_ = 0;
-
       return this;
     }
 
@@ -465,11 +463,25 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     public com.google.analytics.admin.v1alpha.LinkProposalStatusDetails buildPartial() {
       com.google.analytics.admin.v1alpha.LinkProposalStatusDetails result =
           new com.google.analytics.admin.v1alpha.LinkProposalStatusDetails(this);
-      result.linkProposalInitiatingProduct_ = linkProposalInitiatingProduct_;
-      result.requestorEmail_ = requestorEmail_;
-      result.linkProposalState_ = linkProposalState_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.LinkProposalStatusDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.linkProposalInitiatingProduct_ = linkProposalInitiatingProduct_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.requestorEmail_ = requestorEmail_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.linkProposalState_ = linkProposalState_;
+      }
     }
 
     @java.lang.Override
@@ -524,6 +536,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       }
       if (!other.getRequestorEmail().isEmpty()) {
         requestorEmail_ = other.requestorEmail_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.linkProposalState_ != 0) {
@@ -558,19 +571,19 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
             case 8:
               {
                 linkProposalInitiatingProduct_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 requestorEmail_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 linkProposalState_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -589,6 +602,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int linkProposalInitiatingProduct_ = 0;
     /**
@@ -623,8 +638,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setLinkProposalInitiatingProductValue(int value) {
-
       linkProposalInitiatingProduct_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -644,9 +659,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct
         getLinkProposalInitiatingProduct() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct result =
-          com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.valueOf(
+          com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.forNumber(
               linkProposalInitiatingProduct_);
       return result == null
           ? com.google.analytics.admin.v1alpha.LinkProposalInitiatingProduct.UNRECOGNIZED
@@ -671,7 +685,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       linkProposalInitiatingProduct_ = value.getNumber();
       onChanged();
       return this;
@@ -690,7 +704,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLinkProposalInitiatingProduct() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       linkProposalInitiatingProduct_ = 0;
       onChanged();
       return this;
@@ -757,8 +771,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestorEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -774,8 +788,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestorEmail() {
-
       requestorEmail_ = getDefaultInstance().getRequestorEmail();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -796,8 +810,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestorEmail_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,8 +849,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder setLinkProposalStateValue(int value) {
-
       linkProposalState_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -855,9 +869,8 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.LinkProposalState getLinkProposalState() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.LinkProposalState result =
-          com.google.analytics.admin.v1alpha.LinkProposalState.valueOf(linkProposalState_);
+          com.google.analytics.admin.v1alpha.LinkProposalState.forNumber(linkProposalState_);
       return result == null
           ? com.google.analytics.admin.v1alpha.LinkProposalState.UNRECOGNIZED
           : result;
@@ -881,7 +894,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       linkProposalState_ = value.getNumber();
       onChanged();
       return this;
@@ -900,7 +913,7 @@ public final class LinkProposalStatusDetails extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearLinkProposalState() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       linkProposalState_ = 0;
       onChanged();
       return this;

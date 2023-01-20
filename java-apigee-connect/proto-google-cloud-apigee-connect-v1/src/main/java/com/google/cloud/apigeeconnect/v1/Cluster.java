@@ -61,7 +61,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -110,7 +112,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REGION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -356,10 +360,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       region_ = "";
-
       return this;
     }
 
@@ -387,10 +390,21 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeconnect.v1.Cluster buildPartial() {
       com.google.cloud.apigeeconnect.v1.Cluster result =
           new com.google.cloud.apigeeconnect.v1.Cluster(this);
-      result.name_ = name_;
-      result.region_ = region_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeconnect.v1.Cluster result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
     }
 
     @java.lang.Override
@@ -440,10 +454,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeconnect.v1.Cluster.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -475,13 +491,13 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -500,6 +516,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -562,8 +580,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -579,8 +597,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -601,8 +619,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -668,8 +686,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -685,8 +703,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -707,8 +725,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

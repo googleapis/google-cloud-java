@@ -156,7 +156,9 @@ public final class ExportEvaluatedExamplesOperationMetadata
     }
 
     public static final int BIGQUERY_OUTPUT_DATASET_FIELD_NUMBER = 2;
-    private volatile java.lang.Object bigqueryOutputDataset_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bigqueryOutputDataset_ = "";
     /**
      *
      *
@@ -440,8 +442,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bigqueryOutputDataset_ = "";
-
         return this;
       }
 
@@ -481,9 +483,21 @@ public final class ExportEvaluatedExamplesOperationMetadata
             result =
                 new com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
                     .ExportEvaluatedExamplesOutputInfo(this);
-        result.bigqueryOutputDataset_ = bigqueryOutputDataset_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+                  .ExportEvaluatedExamplesOutputInfo
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bigqueryOutputDataset_ = bigqueryOutputDataset_;
+        }
       }
 
       @java.lang.Override
@@ -546,6 +560,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
                 .ExportEvaluatedExamplesOutputInfo.getDefaultInstance()) return this;
         if (!other.getBigqueryOutputDataset().isEmpty()) {
           bigqueryOutputDataset_ = other.bigqueryOutputDataset_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -577,7 +592,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
               case 18:
                 {
                   bigqueryOutputDataset_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 18
               default:
@@ -596,6 +611,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object bigqueryOutputDataset_ = "";
       /**
@@ -661,8 +678,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
         if (value == null) {
           throw new NullPointerException();
         }
-
         bigqueryOutputDataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -679,8 +696,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
        * @return This builder for chaining.
        */
       public Builder clearBigqueryOutputDataset() {
-
         bigqueryOutputDataset_ = getDefaultInstance().getBigqueryOutputDataset();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -702,8 +719,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bigqueryOutputDataset_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -841,7 +858,10 @@ public final class ExportEvaluatedExamplesOperationMetadata
   public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
           .ExportEvaluatedExamplesOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
-    return getOutputInfo();
+    return outputInfo_ == null
+        ? com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+            .ExportEvaluatedExamplesOutputInfo.getDefaultInstance()
+        : outputInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1051,10 +1071,10 @@ public final class ExportEvaluatedExamplesOperationMetadata
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-      } else {
-        outputInfo_ = null;
+      bitField0_ = 0;
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
       return this;
@@ -1087,13 +1107,19 @@ public final class ExportEvaluatedExamplesOperationMetadata
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata result =
           new com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata(this);
-      if (outputInfoBuilder_ == null) {
-        result.outputInfo_ = outputInfo_;
-      } else {
-        result.outputInfo_ = outputInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputInfo_ = outputInfoBuilder_ == null ? outputInfo_ : outputInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1178,7 +1204,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
             case 18:
               {
                 input.readMessage(getOutputInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -1197,6 +1223,8 @@ public final class ExportEvaluatedExamplesOperationMetadata
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
             .ExportEvaluatedExamplesOutputInfo
@@ -1224,7 +1252,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
-      return outputInfoBuilder_ != null || outputInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1273,11 +1301,11 @@ public final class ExportEvaluatedExamplesOperationMetadata
           throw new NullPointerException();
         }
         outputInfo_ = value;
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1298,11 +1326,11 @@ public final class ExportEvaluatedExamplesOperationMetadata
             builderForValue) {
       if (outputInfoBuilder_ == null) {
         outputInfo_ = builderForValue.build();
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1322,20 +1350,20 @@ public final class ExportEvaluatedExamplesOperationMetadata
                 .ExportEvaluatedExamplesOutputInfo
             value) {
       if (outputInfoBuilder_ == null) {
-        if (outputInfo_ != null) {
-          outputInfo_ =
-              com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
-                  .ExportEvaluatedExamplesOutputInfo.newBuilder(outputInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && outputInfo_ != null
+            && outputInfo_
+                != com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
+                    .ExportEvaluatedExamplesOutputInfo.getDefaultInstance()) {
+          getOutputInfoBuilder().mergeFrom(value);
         } else {
           outputInfo_ = value;
         }
-        onChanged();
       } else {
         outputInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1351,14 +1379,13 @@ public final class ExportEvaluatedExamplesOperationMetadata
      * </code>
      */
     public Builder clearOutputInfo() {
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-        onChanged();
-      } else {
-        outputInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1376,7 +1403,7 @@ public final class ExportEvaluatedExamplesOperationMetadata
     public com.google.cloud.automl.v1beta1.ExportEvaluatedExamplesOperationMetadata
             .ExportEvaluatedExamplesOutputInfo.Builder
         getOutputInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }

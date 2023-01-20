@@ -69,6 +69,8 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
   }
 
   public static final int SAMPLING_METADATAS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.SamplingMetadata> samplingMetadatas_;
   /**
    *
@@ -371,6 +373,7 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (samplingMetadatasBuilder_ == null) {
         samplingMetadatas_ = java.util.Collections.emptyList();
       } else {
@@ -405,7 +408,16 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1alpha.FunnelResponseMetadata buildPartial() {
       com.google.analytics.data.v1alpha.FunnelResponseMetadata result =
           new com.google.analytics.data.v1alpha.FunnelResponseMetadata(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.FunnelResponseMetadata result) {
       if (samplingMetadatasBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           samplingMetadatas_ = java.util.Collections.unmodifiableList(samplingMetadatas_);
@@ -415,8 +427,10 @@ public final class FunnelResponseMetadata extends com.google.protobuf.GeneratedM
       } else {
         result.samplingMetadatas_ = samplingMetadatasBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelResponseMetadata result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

@@ -79,6 +79,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PAYLOAD_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1beta1.AnnotationPayload> payload_;
   /**
    *
@@ -209,7 +211,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder getPreprocessedInputOrBuilder() {
-    return getPreprocessedInput();
+    return preprocessedInput_ == null
+        ? com.google.cloud.automl.v1beta1.ExamplePayload.getDefaultInstance()
+        : preprocessedInput_;
   }
 
   public static final int METADATA_FIELD_NUMBER = 2;
@@ -225,6 +229,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
@@ -318,8 +323,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    * <code>map&lt;string, string&gt; metadata = 2;</code>
    */
   @java.lang.Override
-  public java.lang.String getMetadataOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -609,6 +616,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (payloadBuilder_ == null) {
         payload_ = java.util.Collections.emptyList();
       } else {
@@ -616,10 +624,9 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         payloadBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      if (preprocessedInputBuilder_ == null) {
-        preprocessedInput_ = null;
-      } else {
-        preprocessedInput_ = null;
+      preprocessedInput_ = null;
+      if (preprocessedInputBuilder_ != null) {
+        preprocessedInputBuilder_.dispose();
         preprocessedInputBuilder_ = null;
       }
       internalGetMutableMetadata().clear();
@@ -650,7 +657,16 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.automl.v1beta1.PredictResponse buildPartial() {
       com.google.cloud.automl.v1beta1.PredictResponse result =
           new com.google.cloud.automl.v1beta1.PredictResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.automl.v1beta1.PredictResponse result) {
       if (payloadBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           payload_ = java.util.Collections.unmodifiableList(payload_);
@@ -660,15 +676,20 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       } else {
         result.payload_ = payloadBuilder_.build();
       }
-      if (preprocessedInputBuilder_ == null) {
-        result.preprocessedInput_ = preprocessedInput_;
-      } else {
-        result.preprocessedInput_ = preprocessedInputBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.PredictResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.preprocessedInput_ =
+            preprocessedInputBuilder_ == null
+                ? preprocessedInput_
+                : preprocessedInputBuilder_.build();
       }
-      result.metadata_ = internalGetMetadata();
-      result.metadata_.makeImmutable();
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -748,6 +769,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         mergePreprocessedInput(other.getPreprocessedInput());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -797,13 +819,14 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getPreprocessedInputFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             default:
@@ -1218,7 +1241,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * @return Whether the preprocessedInput field is set.
      */
     public boolean hasPreprocessedInput() {
-      return preprocessedInputBuilder_ != null || preprocessedInput_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1263,11 +1286,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         preprocessedInput_ = value;
-        onChanged();
       } else {
         preprocessedInputBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1287,11 +1310,11 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
         com.google.cloud.automl.v1beta1.ExamplePayload.Builder builderForValue) {
       if (preprocessedInputBuilder_ == null) {
         preprocessedInput_ = builderForValue.build();
-        onChanged();
       } else {
         preprocessedInputBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1309,19 +1332,19 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergePreprocessedInput(com.google.cloud.automl.v1beta1.ExamplePayload value) {
       if (preprocessedInputBuilder_ == null) {
-        if (preprocessedInput_ != null) {
-          preprocessedInput_ =
-              com.google.cloud.automl.v1beta1.ExamplePayload.newBuilder(preprocessedInput_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && preprocessedInput_ != null
+            && preprocessedInput_
+                != com.google.cloud.automl.v1beta1.ExamplePayload.getDefaultInstance()) {
+          getPreprocessedInputBuilder().mergeFrom(value);
         } else {
           preprocessedInput_ = value;
         }
-        onChanged();
       } else {
         preprocessedInputBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1338,14 +1361,13 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
      */
     public Builder clearPreprocessedInput() {
-      if (preprocessedInputBuilder_ == null) {
-        preprocessedInput_ = null;
-        onChanged();
-      } else {
-        preprocessedInput_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      preprocessedInput_ = null;
+      if (preprocessedInputBuilder_ != null) {
+        preprocessedInputBuilder_.dispose();
         preprocessedInputBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1362,7 +1384,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.automl.v1beta1.ExamplePayload preprocessed_input = 3;</code>
      */
     public com.google.cloud.automl.v1beta1.ExamplePayload.Builder getPreprocessedInputBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPreprocessedInputFieldBuilder().getBuilder();
     }
@@ -1429,8 +1451,6 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableMetadata() {
-      onChanged();
-      ;
       if (metadata_ == null) {
         metadata_ =
             com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
@@ -1438,6 +1458,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return metadata_;
     }
 
@@ -1525,8 +1547,10 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      * <code>map&lt;string, string&gt; metadata = 2;</code>
      */
     @java.lang.Override
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1567,6 +1591,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     }
 
     public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1601,6 +1626,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
@@ -1631,8 +1657,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableMetadata().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1658,6 +1684,7 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

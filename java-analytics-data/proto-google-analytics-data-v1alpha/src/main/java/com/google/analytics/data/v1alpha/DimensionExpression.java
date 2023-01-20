@@ -150,7 +150,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DIMENSION_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object dimensionName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dimensionName_ = "";
     /**
      *
      *
@@ -402,8 +404,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dimensionName_ = "";
-
         return this;
       }
 
@@ -434,9 +436,19 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       public com.google.analytics.data.v1alpha.DimensionExpression.CaseExpression buildPartial() {
         com.google.analytics.data.v1alpha.DimensionExpression.CaseExpression result =
             new com.google.analytics.data.v1alpha.DimensionExpression.CaseExpression(this);
-        result.dimensionName_ = dimensionName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.data.v1alpha.DimensionExpression.CaseExpression result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dimensionName_ = dimensionName_;
+        }
       }
 
       @java.lang.Override
@@ -492,6 +504,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
                 .getDefaultInstance()) return this;
         if (!other.getDimensionName().isEmpty()) {
           dimensionName_ = other.dimensionName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -523,7 +536,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
               case 10:
                 {
                   dimensionName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -542,6 +555,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object dimensionName_ = "";
       /**
@@ -607,8 +622,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         dimensionName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -625,8 +640,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearDimensionName() {
-
         dimensionName_ = getDefaultInstance().getDimensionName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -648,8 +663,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         dimensionName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -868,6 +883,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DIMENSION_NAMES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList dimensionNames_;
     /**
      *
@@ -933,7 +950,9 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DELIMITER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object delimiter_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object delimiter_ = "";
     /**
      *
      *
@@ -1216,10 +1235,10 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dimensionNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         delimiter_ = "";
-
         return this;
       }
 
@@ -1251,15 +1270,29 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           buildPartial() {
         com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result =
             new com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensionNames_ = dimensionNames_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.dimensionNames_ = dimensionNames_;
-        result.delimiter_ = delimiter_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.data.v1alpha.DimensionExpression.ConcatenateExpression result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.delimiter_ = delimiter_;
+        }
       }
 
       @java.lang.Override
@@ -1327,6 +1360,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         }
         if (!other.getDelimiter().isEmpty()) {
           delimiter_ = other.delimiter_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1365,7 +1399,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
               case 18:
                 {
                   delimiter_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1640,8 +1674,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
         if (value == null) {
           throw new NullPointerException();
         }
-
         delimiter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1662,8 +1696,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
        * @return This builder for chaining.
        */
       public Builder clearDelimiter() {
-
         delimiter_ = getDefaultInstance().getDelimiter();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1689,8 +1723,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         delimiter_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2241,6 +2275,7 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (lowerCaseBuilder_ != null) {
         lowerCaseBuilder_.clear();
       }
@@ -2279,30 +2314,30 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
     public com.google.analytics.data.v1alpha.DimensionExpression buildPartial() {
       com.google.analytics.data.v1alpha.DimensionExpression result =
           new com.google.analytics.data.v1alpha.DimensionExpression(this);
-      if (oneExpressionCase_ == 4) {
-        if (lowerCaseBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = lowerCaseBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneExpressionCase_ == 5) {
-        if (upperCaseBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = upperCaseBuilder_.build();
-        }
-      }
-      if (oneExpressionCase_ == 6) {
-        if (concatenateBuilder_ == null) {
-          result.oneExpression_ = oneExpression_;
-        } else {
-          result.oneExpression_ = concatenateBuilder_.build();
-        }
-      }
-      result.oneExpressionCase_ = oneExpressionCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.DimensionExpression result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1alpha.DimensionExpression result) {
+      result.oneExpressionCase_ = oneExpressionCase_;
+      result.oneExpression_ = this.oneExpression_;
+      if (oneExpressionCase_ == 4 && lowerCaseBuilder_ != null) {
+        result.oneExpression_ = lowerCaseBuilder_.build();
+      }
+      if (oneExpressionCase_ == 5 && upperCaseBuilder_ != null) {
+        result.oneExpression_ = upperCaseBuilder_.build();
+      }
+      if (oneExpressionCase_ == 6 && concatenateBuilder_ != null) {
+        result.oneExpression_ = concatenateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2446,6 +2481,8 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.data.v1alpha.DimensionExpression.CaseExpression,
@@ -2678,7 +2715,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       oneExpressionCase_ = 4;
       onChanged();
-      ;
       return lowerCaseBuilder_;
     }
 
@@ -2913,7 +2949,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       oneExpressionCase_ = 5;
       onChanged();
-      ;
       return upperCaseBuilder_;
     }
 
@@ -3169,7 +3204,6 @@ public final class DimensionExpression extends com.google.protobuf.GeneratedMess
       }
       oneExpressionCase_ = 6;
       onChanged();
-      ;
       return concatenateBuilder_;
     }
 

@@ -509,6 +509,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         outputLocationCase_ = 0;
         outputLocation_ = null;
         return this;
@@ -544,12 +545,23 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo result =
             new com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo(
                 this);
-        if (outputLocationCase_ == 1) {
-          result.outputLocation_ = outputLocation_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        result.outputLocationCase_ = outputLocationCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo result) {
+        result.outputLocationCase_ = outputLocationCase_;
+        result.outputLocation_ = this.outputLocation_;
       }
 
       @java.lang.Override
@@ -682,6 +694,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         onChanged();
         return this;
       }
+
+      private int bitField0_;
 
       /**
        *
@@ -940,7 +954,9 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictInputConfigOrBuilder getInputConfigOrBuilder() {
-    return getInputConfig();
+    return inputConfig_ == null
+        ? com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()
+        : inputConfig_;
   }
 
   public static final int OUTPUT_INFO_FIELD_NUMBER = 2;
@@ -998,7 +1014,10 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
   @java.lang.Override
   public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
-    return getOutputInfo();
+    return outputInfo_ == null
+        ? com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
+            .getDefaultInstance()
+        : outputInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1218,16 +1237,15 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-      } else {
-        inputConfig_ = null;
+      bitField0_ = 0;
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-      } else {
-        outputInfo_ = null;
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
       return this;
@@ -1257,18 +1275,22 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     public com.google.cloud.automl.v1.BatchPredictOperationMetadata buildPartial() {
       com.google.cloud.automl.v1.BatchPredictOperationMetadata result =
           new com.google.cloud.automl.v1.BatchPredictOperationMetadata(this);
-      if (inputConfigBuilder_ == null) {
-        result.inputConfig_ = inputConfig_;
-      } else {
-        result.inputConfig_ = inputConfigBuilder_.build();
-      }
-      if (outputInfoBuilder_ == null) {
-        result.outputInfo_ = outputInfo_;
-      } else {
-        result.outputInfo_ = outputInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.BatchPredictOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.outputInfo_ = outputInfoBuilder_ == null ? outputInfo_ : outputInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1352,13 +1374,13 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             case 10:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getOutputInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -1377,6 +1399,8 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1.BatchPredictInputConfig inputConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1397,7 +1421,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return inputConfigBuilder_ != null || inputConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1436,11 +1460,11 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         inputConfig_ = value;
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1457,11 +1481,11 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
         com.google.cloud.automl.v1.BatchPredictInputConfig.Builder builderForValue) {
       if (inputConfigBuilder_ == null) {
         inputConfig_ = builderForValue.build();
-        onChanged();
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1476,19 +1500,19 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      */
     public Builder mergeInputConfig(com.google.cloud.automl.v1.BatchPredictInputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (inputConfig_ != null) {
-          inputConfig_ =
-              com.google.cloud.automl.v1.BatchPredictInputConfig.newBuilder(inputConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.automl.v1.BatchPredictInputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
         } else {
           inputConfig_ = value;
         }
-        onChanged();
       } else {
         inputConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1502,14 +1526,13 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
      */
     public Builder clearInputConfig() {
-      if (inputConfigBuilder_ == null) {
-        inputConfig_ = null;
-        onChanged();
-      } else {
-        inputConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
         inputConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1523,7 +1546,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * <code>.google.cloud.automl.v1.BatchPredictInputConfig input_config = 1;</code>
      */
     public com.google.cloud.automl.v1.BatchPredictInputConfig.Builder getInputConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -1595,7 +1618,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
-      return outputInfoBuilder_ != null || outputInfo_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -1639,11 +1662,11 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         outputInfo_ = value;
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1662,11 +1685,11 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
             builderForValue) {
       if (outputInfoBuilder_ == null) {
         outputInfo_ = builderForValue.build();
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1683,20 +1706,20 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
     public Builder mergeOutputInfo(
         com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo value) {
       if (outputInfoBuilder_ == null) {
-        if (outputInfo_ != null) {
-          outputInfo_ =
-              com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
-                  .newBuilder(outputInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && outputInfo_ != null
+            && outputInfo_
+                != com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo
+                    .getDefaultInstance()) {
+          getOutputInfoBuilder().mergeFrom(value);
         } else {
           outputInfo_ = value;
         }
-        onChanged();
       } else {
         outputInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1711,14 +1734,13 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      * </code>
      */
     public Builder clearOutputInfo() {
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-        onChanged();
-      } else {
-        outputInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1734,7 +1756,7 @@ public final class BatchPredictOperationMetadata extends com.google.protobuf.Gen
      */
     public com.google.cloud.automl.v1.BatchPredictOperationMetadata.BatchPredictOutputInfo.Builder
         getOutputInfoBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }

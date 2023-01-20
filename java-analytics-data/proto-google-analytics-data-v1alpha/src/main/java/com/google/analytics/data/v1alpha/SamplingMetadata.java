@@ -71,7 +71,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SAMPLES_READ_COUNT_FIELD_NUMBER = 1;
-  private long samplesReadCount_;
+  private long samplesReadCount_ = 0L;
   /**
    *
    *
@@ -91,7 +91,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SAMPLING_SPACE_SIZE_FIELD_NUMBER = 2;
-  private long samplingSpaceSize_;
+  private long samplingSpaceSize_ = 0L;
   /**
    *
    *
@@ -324,10 +324,9 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       samplesReadCount_ = 0L;
-
       samplingSpaceSize_ = 0L;
-
       return this;
     }
 
@@ -355,10 +354,21 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1alpha.SamplingMetadata buildPartial() {
       com.google.analytics.data.v1alpha.SamplingMetadata result =
           new com.google.analytics.data.v1alpha.SamplingMetadata(this);
-      result.samplesReadCount_ = samplesReadCount_;
-      result.samplingSpaceSize_ = samplingSpaceSize_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.SamplingMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.samplesReadCount_ = samplesReadCount_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.samplingSpaceSize_ = samplingSpaceSize_;
+      }
     }
 
     @java.lang.Override
@@ -442,13 +452,13 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
             case 8:
               {
                 samplesReadCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 samplingSpaceSize_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -467,6 +477,8 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private long samplesReadCount_;
     /**
@@ -503,6 +515,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setSamplesReadCount(long value) {
 
       samplesReadCount_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -520,7 +533,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSamplesReadCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       samplesReadCount_ = 0L;
       onChanged();
       return this;
@@ -567,6 +580,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setSamplingSpaceSize(long value) {
 
       samplingSpaceSize_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -587,7 +601,7 @@ public final class SamplingMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSamplingSpaceSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       samplingSpaceSize_ = 0L;
       onChanged();
       return this;

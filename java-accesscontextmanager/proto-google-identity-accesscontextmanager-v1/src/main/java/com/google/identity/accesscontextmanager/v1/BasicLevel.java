@@ -211,6 +211,8 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONDITIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.Condition> conditions_;
   /**
    *
@@ -281,7 +283,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMBINING_FUNCTION_FIELD_NUMBER = 2;
-  private int combiningFunction_;
+  private int combiningFunction_ = 0;
   /**
    *
    *
@@ -323,9 +325,8 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
       getCombiningFunction() {
-    @SuppressWarnings("deprecation")
     com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction result =
-        com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction.valueOf(
+        com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction.forNumber(
             combiningFunction_);
     return result == null
         ? com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
@@ -546,6 +547,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
       } else {
@@ -554,7 +556,6 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000001);
       combiningFunction_ = 0;
-
       return this;
     }
 
@@ -582,7 +583,16 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.BasicLevel buildPartial() {
       com.google.identity.accesscontextmanager.v1.BasicLevel result =
           new com.google.identity.accesscontextmanager.v1.BasicLevel(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.BasicLevel result) {
       if (conditionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
@@ -592,9 +602,13 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.conditions_ = conditionsBuilder_.build();
       }
-      result.combiningFunction_ = combiningFunction_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.identity.accesscontextmanager.v1.BasicLevel result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.combiningFunction_ = combiningFunction_;
+      }
     }
 
     @java.lang.Override
@@ -716,7 +730,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
             case 16:
               {
                 combiningFunction_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -1139,8 +1153,8 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setCombiningFunctionValue(int value) {
-
       combiningFunction_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1164,10 +1178,9 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
         getCombiningFunction() {
-      @SuppressWarnings("deprecation")
       com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction result =
-          com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction.valueOf(
-              combiningFunction_);
+          com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
+              .forNumber(combiningFunction_);
       return result == null
           ? com.google.identity.accesscontextmanager.v1.BasicLevel.ConditionCombiningFunction
               .UNRECOGNIZED
@@ -1196,7 +1209,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       combiningFunction_ = value.getNumber();
       onChanged();
       return this;
@@ -1219,7 +1232,7 @@ public final class BasicLevel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCombiningFunction() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       combiningFunction_ = 0;
       onChanged();
       return this;

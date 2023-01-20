@@ -72,7 +72,9 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ACCOUNT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object account_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object account_ = "";
   /**
    *
    *
@@ -178,7 +182,9 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -227,6 +233,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int PROPERTY_SUMMARIES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1beta.PropertySummary> propertySummaries_;
   /**
    *
@@ -525,19 +533,17 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       account_ = "";
-
       displayName_ = "";
-
       if (propertySummariesBuilder_ == null) {
         propertySummaries_ = java.util.Collections.emptyList();
       } else {
         propertySummaries_ = null;
         propertySummariesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -565,21 +571,38 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1beta.AccountSummary buildPartial() {
       com.google.analytics.admin.v1beta.AccountSummary result =
           new com.google.analytics.admin.v1beta.AccountSummary(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.account_ = account_;
-      result.displayName_ = displayName_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1beta.AccountSummary result) {
       if (propertySummariesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           propertySummaries_ = java.util.Collections.unmodifiableList(propertySummaries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.propertySummaries_ = propertySummaries_;
       } else {
         result.propertySummaries_ = propertySummariesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.AccountSummary result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.account_ = account_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
     }
 
     @java.lang.Override
@@ -630,21 +653,24 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAccount().isEmpty()) {
         account_ = other.account_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (propertySummariesBuilder_ == null) {
         if (!other.propertySummaries_.isEmpty()) {
           if (propertySummaries_.isEmpty()) {
             propertySummaries_ = other.propertySummaries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensurePropertySummariesIsMutable();
             propertySummaries_.addAll(other.propertySummaries_);
@@ -657,7 +683,7 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
             propertySummariesBuilder_.dispose();
             propertySummariesBuilder_ = null;
             propertySummaries_ = other.propertySummaries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             propertySummariesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPropertySummariesFieldBuilder()
@@ -696,19 +722,19 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 account_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -811,8 +837,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -830,8 +856,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -854,8 +880,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -927,8 +953,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       account_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -946,8 +972,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-
       account_ = getDefaultInstance().getAccount();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -970,8 +996,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       account_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1037,8 +1063,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1054,8 +1080,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1076,8 +1102,8 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1086,11 +1112,11 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePropertySummariesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         propertySummaries_ =
             new java.util.ArrayList<com.google.analytics.admin.v1beta.PropertySummary>(
                 propertySummaries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1309,7 +1335,7 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPropertySummaries() {
       if (propertySummariesBuilder_ == null) {
         propertySummaries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         propertySummariesBuilder_.clear();
@@ -1436,7 +1462,7 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessageV3
                 com.google.analytics.admin.v1beta.PropertySummary.Builder,
                 com.google.analytics.admin.v1beta.PropertySummaryOrBuilder>(
                 propertySummaries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         propertySummaries_ = null;

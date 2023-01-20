@@ -444,7 +444,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 1;
-    private int matchType_;
+    private int matchType_ = 0;
     /**
      *
      *
@@ -478,11 +478,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter.MatchType
         getMatchType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter.MatchType
           result =
               com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter
-                  .MatchType.valueOf(matchType_);
+                  .MatchType.forNumber(matchType_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter
               .MatchType.UNRECOGNIZED
@@ -490,7 +489,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object value_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
     /**
      *
      *
@@ -539,7 +540,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int CASE_SENSITIVE_FIELD_NUMBER = 3;
-    private boolean caseSensitive_;
+    private boolean caseSensitive_ = false;
     /**
      *
      *
@@ -793,12 +794,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         matchType_ = 0;
-
         value_ = "";
-
         caseSensitive_ = false;
-
         return this;
       }
 
@@ -832,11 +831,25 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter(
                 this);
-        result.matchType_ = matchType_;
-        result.value_ = value_;
-        result.caseSensitive_ = caseSensitive_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.matchType_ = matchType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.caseSensitive_ = caseSensitive_;
+        }
       }
 
       @java.lang.Override
@@ -898,6 +911,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         }
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getCaseSensitive() != false) {
@@ -932,19 +946,19 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               case 8:
                 {
                   matchType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   value_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 24:
                 {
                   caseSensitive_ = input.readBool();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -963,6 +977,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int matchType_ = 0;
       /**
@@ -997,8 +1013,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder setMatchTypeValue(int value) {
-
         matchType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1019,11 +1035,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter
               .MatchType
           getMatchType() {
-        @SuppressWarnings("deprecation")
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter.MatchType
             result =
                 com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter
-                    .MatchType.valueOf(matchType_);
+                    .MatchType.forNumber(matchType_);
         return result == null
             ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter
                 .MatchType.UNRECOGNIZED
@@ -1049,7 +1064,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         matchType_ = value.getNumber();
         onChanged();
         return this;
@@ -1068,7 +1083,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         matchType_ = 0;
         onChanged();
         return this;
@@ -1135,8 +1150,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         if (value == null) {
           throw new NullPointerException();
         }
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1152,8 +1167,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-
         value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1174,8 +1189,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1213,6 +1228,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder setCaseSensitive(boolean value) {
 
         caseSensitive_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1229,7 +1245,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearCaseSensitive() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         caseSensitive_ = false;
         onChanged();
         return this;
@@ -1426,6 +1442,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int VALUES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList values_;
     /**
      *
@@ -1487,7 +1505,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int CASE_SENSITIVE_FIELD_NUMBER = 2;
-    private boolean caseSensitive_;
+    private boolean caseSensitive_ = false;
     /**
      *
      *
@@ -1733,10 +1751,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
         caseSensitive_ = false;
-
         return this;
       }
 
@@ -1770,15 +1788,29 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter(
                 this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           values_ = values_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.values_ = values_;
-        result.caseSensitive_ = caseSensitive_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.InListFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.caseSensitive_ = caseSensitive_;
+        }
       }
 
       @java.lang.Override
@@ -1884,7 +1916,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               case 16:
                 {
                   caseSensitive_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -2107,6 +2139,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder setCaseSensitive(boolean value) {
 
         caseSensitive_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2123,7 +2156,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearCaseSensitive() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         caseSensitive_ = false;
         onChanged();
         return this;
@@ -2669,6 +2702,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         oneValueCase_ = 0;
         oneValue_ = null;
         return this;
@@ -2704,15 +2738,23 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue(
                 this);
-        if (oneValueCase_ == 1) {
-          result.oneValue_ = oneValue_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (oneValueCase_ == 2) {
-          result.oneValue_ = oneValue_;
-        }
-        result.oneValueCase_ = oneValueCase_;
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue result) {
+        result.oneValueCase_ = oneValueCase_;
+        result.oneValue_ = this.oneValue_;
       }
 
       @java.lang.Override
@@ -2854,6 +2896,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         return this;
       }
 
+      private int bitField0_;
+
       /**
        *
        *
@@ -2898,6 +2942,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder setInt64Value(long value) {
+
         oneValueCase_ = 1;
         oneValue_ = value;
         onChanged();
@@ -2967,6 +3012,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder setDoubleValue(double value) {
+
         oneValueCase_ = 2;
         oneValue_ = value;
         onChanged();
@@ -3418,7 +3464,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     }
 
     public static final int OPERATION_FIELD_NUMBER = 1;
-    private int operation_;
+    private int operation_ = 0;
     /**
      *
      *
@@ -3453,11 +3499,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
             .Operation
         getOperation() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter.Operation
           result =
               com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
-                  .Operation.valueOf(operation_);
+                  .Operation.forNumber(operation_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
               .Operation.UNRECOGNIZED
@@ -3518,7 +3563,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValueOrBuilder
         getValueOrBuilder() {
-      return getValue();
+      return value_ == null
+          ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+              .getDefaultInstance()
+          : value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3754,12 +3802,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         operation_ = 0;
-
-        if (valueBuilder_ == null) {
-          value_ = null;
-        } else {
-          value_ = null;
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
         return this;
@@ -3795,14 +3842,22 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter(
                 this);
-        result.operation_ = operation_;
-        if (valueBuilder_ == null) {
-          result.value_ = value_;
-        } else {
-          result.value_ = valueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.operation_ = operation_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = valueBuilder_ == null ? value_ : valueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3894,13 +3949,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               case 8:
                 {
                   operation_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   input.readMessage(getValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -3919,6 +3974,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int operation_ = 0;
       /**
@@ -3953,8 +4010,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder setOperationValue(int value) {
-
         operation_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3975,11 +4032,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
               .Operation
           getOperation() {
-        @SuppressWarnings("deprecation")
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter.Operation
             result =
                 com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
-                    .Operation.valueOf(operation_);
+                    .Operation.forNumber(operation_);
         return result == null
             ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericFilter
                 .Operation.UNRECOGNIZED
@@ -4005,7 +4061,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         operation_ = value.getNumber();
         onChanged();
         return this;
@@ -4024,7 +4080,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return This builder for chaining.
        */
       public Builder clearOperation() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         operation_ = 0;
         onChanged();
         return this;
@@ -4053,7 +4109,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return Whether the value field is set.
        */
       public boolean hasValue() {
-        return valueBuilder_ != null || value_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -4097,11 +4153,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             throw new NullPointerException();
           }
           value_ = value;
-          onChanged();
         } else {
           valueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4120,11 +4176,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               builderForValue) {
         if (valueBuilder_ == null) {
           value_ = builderForValue.build();
-          onChanged();
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4141,20 +4197,20 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder mergeValue(
           com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue value) {
         if (valueBuilder_ == null) {
-          if (value_ != null) {
-            value_ =
-                com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
-                    .newBuilder(value_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && value_ != null
+              && value_
+                  != com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+                      .getDefaultInstance()) {
+            getValueBuilder().mergeFrom(value);
           } else {
             value_ = value;
           }
-          onChanged();
         } else {
           valueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -4169,14 +4225,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * </code>
        */
       public Builder clearValue() {
-        if (valueBuilder_ == null) {
-          value_ = null;
-          onChanged();
-        } else {
-          value_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = null;
+        if (valueBuilder_ != null) {
+          valueBuilder_.dispose();
           valueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -4192,7 +4247,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        */
       public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue.Builder
           getValueBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -4514,7 +4569,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValueOrBuilder
         getFromValueOrBuilder() {
-      return getFromValue();
+      return fromValue_ == null
+          ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+              .getDefaultInstance()
+          : fromValue_;
     }
 
     public static final int TO_VALUE_FIELD_NUMBER = 2;
@@ -4572,7 +4630,10 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValueOrBuilder
         getToValueOrBuilder() {
-      return getToValue();
+      return toValue_ == null
+          ? com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+              .getDefaultInstance()
+          : toValue_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4808,16 +4869,15 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (fromValueBuilder_ == null) {
-          fromValue_ = null;
-        } else {
-          fromValue_ = null;
+        bitField0_ = 0;
+        fromValue_ = null;
+        if (fromValueBuilder_ != null) {
+          fromValueBuilder_.dispose();
           fromValueBuilder_ = null;
         }
-        if (toValueBuilder_ == null) {
-          toValue_ = null;
-        } else {
-          toValue_ = null;
+        toValue_ = null;
+        if (toValueBuilder_ != null) {
+          toValueBuilder_.dispose();
           toValueBuilder_ = null;
         }
         return this;
@@ -4853,18 +4913,22 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.BetweenFilter result =
             new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.BetweenFilter(
                 this);
-        if (fromValueBuilder_ == null) {
-          result.fromValue_ = fromValue_;
-        } else {
-          result.fromValue_ = fromValueBuilder_.build();
-        }
-        if (toValueBuilder_ == null) {
-          result.toValue_ = toValue_;
-        } else {
-          result.toValue_ = toValueBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.BetweenFilter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fromValue_ = fromValueBuilder_ == null ? fromValue_ : fromValueBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.toValue_ = toValueBuilder_ == null ? toValue_ : toValueBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4956,13 +5020,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               case 10:
                 {
                   input.readMessage(getFromValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   input.readMessage(getToValueFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -4981,6 +5045,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
           fromValue_;
@@ -5005,7 +5071,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return Whether the fromValue field is set.
        */
       public boolean hasFromValue() {
-        return fromValueBuilder_ != null || fromValue_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -5049,11 +5115,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             throw new NullPointerException();
           }
           fromValue_ = value;
-          onChanged();
         } else {
           fromValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5072,11 +5138,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               builderForValue) {
         if (fromValueBuilder_ == null) {
           fromValue_ = builderForValue.build();
-          onChanged();
         } else {
           fromValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5093,20 +5159,20 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder mergeFromValue(
           com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue value) {
         if (fromValueBuilder_ == null) {
-          if (fromValue_ != null) {
-            fromValue_ =
-                com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
-                    .newBuilder(fromValue_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && fromValue_ != null
+              && fromValue_
+                  != com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+                      .getDefaultInstance()) {
+            getFromValueBuilder().mergeFrom(value);
           } else {
             fromValue_ = value;
           }
-          onChanged();
         } else {
           fromValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5121,14 +5187,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * </code>
        */
       public Builder clearFromValue() {
-        if (fromValueBuilder_ == null) {
-          fromValue_ = null;
-          onChanged();
-        } else {
-          fromValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fromValue_ = null;
+        if (fromValueBuilder_ != null) {
+          fromValueBuilder_.dispose();
           fromValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5144,7 +5209,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        */
       public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue.Builder
           getFromValueBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFromValueFieldBuilder().getBuilder();
       }
@@ -5225,7 +5290,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * @return Whether the toValue field is set.
        */
       public boolean hasToValue() {
-        return toValueBuilder_ != null || toValue_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        *
@@ -5269,11 +5334,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             throw new NullPointerException();
           }
           toValue_ = value;
-          onChanged();
         } else {
           toValueBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5292,11 +5357,11 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               builderForValue) {
         if (toValueBuilder_ == null) {
           toValue_ = builderForValue.build();
-          onChanged();
         } else {
           toValueBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5313,20 +5378,20 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       public Builder mergeToValue(
           com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue value) {
         if (toValueBuilder_ == null) {
-          if (toValue_ != null) {
-            toValue_ =
-                com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
-                    .newBuilder(toValue_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000002) != 0)
+              && toValue_ != null
+              && toValue_
+                  != com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue
+                      .getDefaultInstance()) {
+            getToValueBuilder().mergeFrom(value);
           } else {
             toValue_ = value;
           }
-          onChanged();
         } else {
           toValueBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -5341,14 +5406,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        * </code>
        */
       public Builder clearToValue() {
-        if (toValueBuilder_ == null) {
-          toValue_ = null;
-          onChanged();
-        } else {
-          toValue_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        toValue_ = null;
+        if (toValueBuilder_ != null) {
+          toValueBuilder_.dispose();
           toValueBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5364,7 +5428,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
        */
       public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.NumericValue.Builder
           getToValueBuilder() {
-
+        bitField0_ |= 0x00000002;
         onChanged();
         return getToValueFieldBuilder().getBuilder();
       }
@@ -5803,7 +5867,9 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
   }
 
   public static final int FIELD_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object fieldName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fieldName_ = "";
   /**
    *
    *
@@ -5856,7 +5922,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
   }
 
   public static final int AT_ANY_POINT_IN_TIME_FIELD_NUMBER = 6;
-  private boolean atAnyPointInTime_;
+  private boolean atAnyPointInTime_ = false;
   /**
    *
    *
@@ -5879,7 +5945,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
   }
 
   public static final int IN_ANY_N_DAY_PERIOD_FIELD_NUMBER = 7;
-  private int inAnyNDayPeriod_;
+  private int inAnyNDayPeriod_ = 0;
   /**
    *
    *
@@ -6210,6 +6276,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stringFilterBuilder_ != null) {
         stringFilterBuilder_.clear();
       }
@@ -6223,11 +6290,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         betweenFilterBuilder_.clear();
       }
       fieldName_ = "";
-
       atAnyPointInTime_ = false;
-
       inAnyNDayPeriod_ = 0;
-
       oneFilterCase_ = 0;
       oneFilter_ = null;
       return this;
@@ -6259,40 +6323,44 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     public com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter result =
           new com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter(this);
-      if (oneFilterCase_ == 2) {
-        if (stringFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = stringFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneFilterCase_ == 3) {
-        if (inListFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = inListFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 4) {
-        if (numericFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = numericFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 5) {
-        if (betweenFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = betweenFilterBuilder_.build();
-        }
-      }
-      result.fieldName_ = fieldName_;
-      result.atAnyPointInTime_ = atAnyPointInTime_;
-      result.inAnyNDayPeriod_ = inAnyNDayPeriod_;
-      result.oneFilterCase_ = oneFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fieldName_ = fieldName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.atAnyPointInTime_ = atAnyPointInTime_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.inAnyNDayPeriod_ = inAnyNDayPeriod_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter result) {
+      result.oneFilterCase_ = oneFilterCase_;
+      result.oneFilter_ = this.oneFilter_;
+      if (oneFilterCase_ == 2 && stringFilterBuilder_ != null) {
+        result.oneFilter_ = stringFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 3 && inListFilterBuilder_ != null) {
+        result.oneFilter_ = inListFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 4 && numericFilterBuilder_ != null) {
+        result.oneFilter_ = numericFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 5 && betweenFilterBuilder_ != null) {
+        result.oneFilter_ = betweenFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -6346,6 +6414,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
               .getDefaultInstance()) return this;
       if (!other.getFieldName().isEmpty()) {
         fieldName_ = other.fieldName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.getAtAnyPointInTime() != false) {
@@ -6409,7 +6478,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             case 10:
               {
                 fieldName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -6439,13 +6508,13 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
             case 48:
               {
                 atAnyPointInTime_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 inAnyNDayPeriod_ = input.readInt32();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -6478,6 +6547,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.AudienceDimensionOrMetricFilter.StringFilter,
@@ -6726,7 +6797,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       }
       oneFilterCase_ = 2;
       onChanged();
-      ;
       return stringFilterBuilder_;
     }
 
@@ -6986,7 +7056,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       }
       oneFilterCase_ = 3;
       onChanged();
-      ;
       return inListFilterBuilder_;
     }
 
@@ -7239,7 +7308,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       }
       oneFilterCase_ = 4;
       onChanged();
-      ;
       return numericFilterBuilder_;
     }
 
@@ -7501,7 +7569,6 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       }
       oneFilterCase_ = 5;
       onChanged();
-      ;
       return betweenFilterBuilder_;
     }
 
@@ -7572,8 +7639,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       fieldName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7591,8 +7658,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearFieldName() {
-
       fieldName_ = getDefaultInstance().getFieldName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -7615,8 +7682,8 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       fieldName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7662,6 +7729,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     public Builder setAtAnyPointInTime(boolean value) {
 
       atAnyPointInTime_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7682,7 +7750,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearAtAnyPointInTime() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       atAnyPointInTime_ = false;
       onChanged();
       return this;
@@ -7733,6 +7801,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
     public Builder setInAnyNDayPeriod(int value) {
 
       inAnyNDayPeriod_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7755,7 +7824,7 @@ public final class AudienceDimensionOrMetricFilter extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearInAnyNDayPeriod() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       inAnyNDayPeriod_ = 0;
       onChanged();
       return this;

@@ -68,6 +68,8 @@ public final class AudienceFilterExpressionList extends com.google.protobuf.Gene
   }
 
   public static final int FILTER_EXPRESSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AudienceFilterExpression>
       filterExpressions_;
   /**
@@ -347,6 +349,7 @@ public final class AudienceFilterExpressionList extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (filterExpressionsBuilder_ == null) {
         filterExpressions_ = java.util.Collections.emptyList();
       } else {
@@ -382,7 +385,16 @@ public final class AudienceFilterExpressionList extends com.google.protobuf.Gene
     public com.google.analytics.admin.v1alpha.AudienceFilterExpressionList buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceFilterExpressionList result =
           new com.google.analytics.admin.v1alpha.AudienceFilterExpressionList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.AudienceFilterExpressionList result) {
       if (filterExpressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           filterExpressions_ = java.util.Collections.unmodifiableList(filterExpressions_);
@@ -392,8 +404,11 @@ public final class AudienceFilterExpressionList extends com.google.protobuf.Gene
       } else {
         result.filterExpressions_ = filterExpressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1alpha.AudienceFilterExpressionList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

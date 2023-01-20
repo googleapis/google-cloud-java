@@ -67,7 +67,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_SENT_BYTES_PER_SECOND_FIELD_NUMBER = 1;
-  private int targetSentBytesPerSecond_;
+  private int targetSentBytesPerSecond_ = 0;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_SENT_PACKETS_PER_SECOND_FIELD_NUMBER = 11;
-  private int targetSentPacketsPerSecond_;
+  private int targetSentPacketsPerSecond_ = 0;
   /**
    *
    *
@@ -103,7 +103,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_RECEIVED_BYTES_PER_SECOND_FIELD_NUMBER = 12;
-  private int targetReceivedBytesPerSecond_;
+  private int targetReceivedBytesPerSecond_ = 0;
   /**
    *
    *
@@ -121,7 +121,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TARGET_RECEIVED_PACKETS_PER_SECOND_FIELD_NUMBER = 13;
-  private int targetReceivedPacketsPerSecond_;
+  private int targetReceivedPacketsPerSecond_ = 0;
   /**
    *
    *
@@ -368,14 +368,11 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       targetSentBytesPerSecond_ = 0;
-
       targetSentPacketsPerSecond_ = 0;
-
       targetReceivedBytesPerSecond_ = 0;
-
       targetReceivedPacketsPerSecond_ = 0;
-
       return this;
     }
 
@@ -403,12 +400,27 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public com.google.appengine.v1.NetworkUtilization buildPartial() {
       com.google.appengine.v1.NetworkUtilization result =
           new com.google.appengine.v1.NetworkUtilization(this);
-      result.targetSentBytesPerSecond_ = targetSentBytesPerSecond_;
-      result.targetSentPacketsPerSecond_ = targetSentPacketsPerSecond_;
-      result.targetReceivedBytesPerSecond_ = targetReceivedBytesPerSecond_;
-      result.targetReceivedPacketsPerSecond_ = targetReceivedPacketsPerSecond_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.NetworkUtilization result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.targetSentBytesPerSecond_ = targetSentBytesPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.targetSentPacketsPerSecond_ = targetSentPacketsPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetReceivedBytesPerSecond_ = targetReceivedBytesPerSecond_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.targetReceivedPacketsPerSecond_ = targetReceivedPacketsPerSecond_;
+      }
     }
 
     @java.lang.Override
@@ -497,25 +509,25 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
             case 8:
               {
                 targetSentBytesPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 88:
               {
                 targetSentPacketsPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 88
             case 96:
               {
                 targetReceivedBytesPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 96
             case 104:
               {
                 targetReceivedPacketsPerSecond_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 104
             default:
@@ -534,6 +546,8 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int targetSentBytesPerSecond_;
     /**
@@ -566,6 +580,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetSentBytesPerSecond(int value) {
 
       targetSentBytesPerSecond_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -581,7 +596,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetSentBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       targetSentBytesPerSecond_ = 0;
       onChanged();
       return this;
@@ -618,6 +633,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetSentPacketsPerSecond(int value) {
 
       targetSentPacketsPerSecond_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -633,7 +649,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetSentPacketsPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       targetSentPacketsPerSecond_ = 0;
       onChanged();
       return this;
@@ -670,6 +686,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetReceivedBytesPerSecond(int value) {
 
       targetReceivedBytesPerSecond_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -685,7 +702,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetReceivedBytesPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       targetReceivedBytesPerSecond_ = 0;
       onChanged();
       return this;
@@ -722,6 +739,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
     public Builder setTargetReceivedPacketsPerSecond(int value) {
 
       targetReceivedPacketsPerSecond_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -737,7 +755,7 @@ public final class NetworkUtilization extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTargetReceivedPacketsPerSecond() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       targetReceivedPacketsPerSecond_ = 0;
       onChanged();
       return this;

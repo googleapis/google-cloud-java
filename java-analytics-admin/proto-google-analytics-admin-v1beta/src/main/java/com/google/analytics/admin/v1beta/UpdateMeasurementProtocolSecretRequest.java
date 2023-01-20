@@ -120,7 +120,9 @@ public final class UpdateMeasurementProtocolSecretRequest
   @java.lang.Override
   public com.google.analytics.admin.v1beta.MeasurementProtocolSecretOrBuilder
       getMeasurementProtocolSecretOrBuilder() {
-    return getMeasurementProtocolSecret();
+    return measurementProtocolSecret_ == null
+        ? com.google.analytics.admin.v1beta.MeasurementProtocolSecret.getDefaultInstance()
+        : measurementProtocolSecret_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -166,7 +168,7 @@ public final class UpdateMeasurementProtocolSecretRequest
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -393,16 +395,15 @@ public final class UpdateMeasurementProtocolSecretRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (measurementProtocolSecretBuilder_ == null) {
-        measurementProtocolSecret_ = null;
-      } else {
-        measurementProtocolSecret_ = null;
+      bitField0_ = 0;
+      measurementProtocolSecret_ = null;
+      if (measurementProtocolSecretBuilder_ != null) {
+        measurementProtocolSecretBuilder_.dispose();
         measurementProtocolSecretBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -435,18 +436,25 @@ public final class UpdateMeasurementProtocolSecretRequest
     public com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest buildPartial() {
       com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest result =
           new com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest(this);
-      if (measurementProtocolSecretBuilder_ == null) {
-        result.measurementProtocolSecret_ = measurementProtocolSecret_;
-      } else {
-        result.measurementProtocolSecret_ = measurementProtocolSecretBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1beta.UpdateMeasurementProtocolSecretRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.measurementProtocolSecret_ =
+            measurementProtocolSecretBuilder_ == null
+                ? measurementProtocolSecret_
+                : measurementProtocolSecretBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -535,13 +543,13 @@ public final class UpdateMeasurementProtocolSecretRequest
               {
                 input.readMessage(
                     getMeasurementProtocolSecretFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -560,6 +568,8 @@ public final class UpdateMeasurementProtocolSecretRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1beta.MeasurementProtocolSecret measurementProtocolSecret_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -581,7 +591,7 @@ public final class UpdateMeasurementProtocolSecretRequest
      * @return Whether the measurementProtocolSecret field is set.
      */
     public boolean hasMeasurementProtocolSecret() {
-      return measurementProtocolSecretBuilder_ != null || measurementProtocolSecret_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -624,11 +634,11 @@ public final class UpdateMeasurementProtocolSecretRequest
           throw new NullPointerException();
         }
         measurementProtocolSecret_ = value;
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -646,11 +656,11 @@ public final class UpdateMeasurementProtocolSecretRequest
         com.google.analytics.admin.v1beta.MeasurementProtocolSecret.Builder builderForValue) {
       if (measurementProtocolSecretBuilder_ == null) {
         measurementProtocolSecret_ = builderForValue.build();
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -667,20 +677,20 @@ public final class UpdateMeasurementProtocolSecretRequest
     public Builder mergeMeasurementProtocolSecret(
         com.google.analytics.admin.v1beta.MeasurementProtocolSecret value) {
       if (measurementProtocolSecretBuilder_ == null) {
-        if (measurementProtocolSecret_ != null) {
-          measurementProtocolSecret_ =
-              com.google.analytics.admin.v1beta.MeasurementProtocolSecret.newBuilder(
-                      measurementProtocolSecret_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && measurementProtocolSecret_ != null
+            && measurementProtocolSecret_
+                != com.google.analytics.admin.v1beta.MeasurementProtocolSecret
+                    .getDefaultInstance()) {
+          getMeasurementProtocolSecretBuilder().mergeFrom(value);
         } else {
           measurementProtocolSecret_ = value;
         }
-        onChanged();
       } else {
         measurementProtocolSecretBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -695,14 +705,13 @@ public final class UpdateMeasurementProtocolSecretRequest
      * </code>
      */
     public Builder clearMeasurementProtocolSecret() {
-      if (measurementProtocolSecretBuilder_ == null) {
-        measurementProtocolSecret_ = null;
-        onChanged();
-      } else {
-        measurementProtocolSecret_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      measurementProtocolSecret_ = null;
+      if (measurementProtocolSecretBuilder_ != null) {
+        measurementProtocolSecretBuilder_.dispose();
         measurementProtocolSecretBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -718,7 +727,7 @@ public final class UpdateMeasurementProtocolSecretRequest
      */
     public com.google.analytics.admin.v1beta.MeasurementProtocolSecret.Builder
         getMeasurementProtocolSecretBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMeasurementProtocolSecretFieldBuilder().getBuilder();
     }
@@ -789,7 +798,7 @@ public final class UpdateMeasurementProtocolSecretRequest
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -826,11 +835,11 @@ public final class UpdateMeasurementProtocolSecretRequest
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -845,11 +854,11 @@ public final class UpdateMeasurementProtocolSecretRequest
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,17 +872,18 @@ public final class UpdateMeasurementProtocolSecretRequest
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -886,14 +896,13 @@ public final class UpdateMeasurementProtocolSecretRequest
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -906,7 +915,7 @@ public final class UpdateMeasurementProtocolSecretRequest
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

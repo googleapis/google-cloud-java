@@ -66,7 +66,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int STANDARD_ENVIRONMENT_AVAILABLE_FIELD_NUMBER = 2;
-  private boolean standardEnvironmentAvailable_;
+  private boolean standardEnvironmentAvailable_ = false;
   /**
    *
    *
@@ -85,7 +85,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int FLEXIBLE_ENVIRONMENT_AVAILABLE_FIELD_NUMBER = 4;
-  private boolean flexibleEnvironmentAvailable_;
+  private boolean flexibleEnvironmentAvailable_ = false;
   /**
    *
    *
@@ -104,7 +104,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SEARCH_API_AVAILABLE_FIELD_NUMBER = 6;
-  private boolean searchApiAvailable_;
+  private boolean searchApiAvailable_ = false;
   /**
    *
    *
@@ -340,12 +340,10 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       standardEnvironmentAvailable_ = false;
-
       flexibleEnvironmentAvailable_ = false;
-
       searchApiAvailable_ = false;
-
       return this;
     }
 
@@ -373,11 +371,24 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public com.google.appengine.v1.LocationMetadata buildPartial() {
       com.google.appengine.v1.LocationMetadata result =
           new com.google.appengine.v1.LocationMetadata(this);
-      result.standardEnvironmentAvailable_ = standardEnvironmentAvailable_;
-      result.flexibleEnvironmentAvailable_ = flexibleEnvironmentAvailable_;
-      result.searchApiAvailable_ = searchApiAvailable_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.LocationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.standardEnvironmentAvailable_ = standardEnvironmentAvailable_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.flexibleEnvironmentAvailable_ = flexibleEnvironmentAvailable_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchApiAvailable_ = searchApiAvailable_;
+      }
     }
 
     @java.lang.Override
@@ -463,19 +474,19 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
             case 16:
               {
                 standardEnvironmentAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 16
             case 32:
               {
                 flexibleEnvironmentAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 32
             case 48:
               {
                 searchApiAvailable_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 48
             default:
@@ -494,6 +505,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private boolean standardEnvironmentAvailable_;
     /**
@@ -528,6 +541,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setStandardEnvironmentAvailable(boolean value) {
 
       standardEnvironmentAvailable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -544,7 +558,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStandardEnvironmentAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       standardEnvironmentAvailable_ = false;
       onChanged();
       return this;
@@ -583,6 +597,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setFlexibleEnvironmentAvailable(boolean value) {
 
       flexibleEnvironmentAvailable_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -599,7 +614,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearFlexibleEnvironmentAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       flexibleEnvironmentAvailable_ = false;
       onChanged();
       return this;
@@ -638,6 +653,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder setSearchApiAvailable(boolean value) {
 
       searchApiAvailable_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -654,7 +670,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSearchApiAvailable() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       searchApiAvailable_ = false;
       onChanged();
       return this;

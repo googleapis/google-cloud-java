@@ -68,7 +68,9 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -171,7 +173,9 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.DataStreamOrBuilder getDataStreamOrBuilder() {
-    return getDataStream();
+    return dataStream_ == null
+        ? com.google.analytics.admin.v1beta.DataStream.getDefaultInstance()
+        : dataStream_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,12 +390,11 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (dataStreamBuilder_ == null) {
-        dataStream_ = null;
-      } else {
-        dataStream_ = null;
+      dataStream_ = null;
+      if (dataStreamBuilder_ != null) {
+        dataStreamBuilder_.dispose();
         dataStreamBuilder_ = null;
       }
       return this;
@@ -421,14 +424,21 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
     public com.google.analytics.admin.v1beta.CreateDataStreamRequest buildPartial() {
       com.google.analytics.admin.v1beta.CreateDataStreamRequest result =
           new com.google.analytics.admin.v1beta.CreateDataStreamRequest(this);
-      result.parent_ = parent_;
-      if (dataStreamBuilder_ == null) {
-        result.dataStream_ = dataStream_;
-      } else {
-        result.dataStream_ = dataStreamBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.CreateDataStreamRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataStream_ = dataStreamBuilder_ == null ? dataStream_ : dataStreamBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -479,6 +489,7 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasDataStream()) {
@@ -513,13 +524,13 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDataStreamFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -538,6 +549,8 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -606,8 +619,8 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -625,8 +638,8 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -649,8 +662,8 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -675,7 +688,7 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
      * @return Whether the dataStream field is set.
      */
     public boolean hasDataStream() {
-      return dataStreamBuilder_ != null || dataStream_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -716,11 +729,11 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         dataStream_ = value;
-        onChanged();
       } else {
         dataStreamBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -738,11 +751,11 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
         com.google.analytics.admin.v1beta.DataStream.Builder builderForValue) {
       if (dataStreamBuilder_ == null) {
         dataStream_ = builderForValue.build();
-        onChanged();
       } else {
         dataStreamBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -758,19 +771,18 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
      */
     public Builder mergeDataStream(com.google.analytics.admin.v1beta.DataStream value) {
       if (dataStreamBuilder_ == null) {
-        if (dataStream_ != null) {
-          dataStream_ =
-              com.google.analytics.admin.v1beta.DataStream.newBuilder(dataStream_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && dataStream_ != null
+            && dataStream_ != com.google.analytics.admin.v1beta.DataStream.getDefaultInstance()) {
+          getDataStreamBuilder().mergeFrom(value);
         } else {
           dataStream_ = value;
         }
-        onChanged();
       } else {
         dataStreamBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -785,14 +797,13 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearDataStream() {
-      if (dataStreamBuilder_ == null) {
-        dataStream_ = null;
-        onChanged();
-      } else {
-        dataStream_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataStream_ = null;
+      if (dataStreamBuilder_ != null) {
+        dataStreamBuilder_.dispose();
         dataStreamBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -807,7 +818,7 @@ public final class CreateDataStreamRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.analytics.admin.v1beta.DataStream.Builder getDataStreamBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getDataStreamFieldBuilder().getBuilder();
     }

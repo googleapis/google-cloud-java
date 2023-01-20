@@ -68,7 +68,9 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENT_FIELD_NUMBER = 3;
-  private volatile java.lang.Object content_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object content_ = "";
   /**
    *
    *
@@ -117,7 +119,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_OFFSET_FIELD_NUMBER = 1;
-  private long startOffset_;
+  private long startOffset_ = 0L;
   /**
    *
    *
@@ -136,7 +138,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_OFFSET_FIELD_NUMBER = 2;
-  private long endOffset_;
+  private long endOffset_ = 0L;
   /**
    *
    *
@@ -370,12 +372,10 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       content_ = "";
-
       startOffset_ = 0L;
-
       endOffset_ = 0L;
-
       return this;
     }
 
@@ -403,11 +403,24 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.TextSegment buildPartial() {
       com.google.cloud.automl.v1beta1.TextSegment result =
           new com.google.cloud.automl.v1beta1.TextSegment(this);
-      result.content_ = content_;
-      result.startOffset_ = startOffset_;
-      result.endOffset_ = endOffset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.TextSegment result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.content_ = content_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startOffset_ = startOffset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endOffset_ = endOffset_;
+      }
     }
 
     @java.lang.Override
@@ -457,6 +470,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.automl.v1beta1.TextSegment.getDefaultInstance()) return this;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getStartOffset() != 0L) {
@@ -494,19 +508,19 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 startOffset_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 8
             case 16:
               {
                 endOffset_ = input.readInt64();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 content_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 26
             default:
@@ -525,6 +539,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object content_ = "";
     /**
@@ -587,8 +603,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -604,8 +620,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContent() {
-
       content_ = getDefaultInstance().getContent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -626,8 +642,8 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       content_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -665,6 +681,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartOffset(long value) {
 
       startOffset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -681,7 +698,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startOffset_ = 0L;
       onChanged();
       return this;
@@ -722,6 +739,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndOffset(long value) {
 
       endOffset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -739,7 +757,7 @@ public final class TextSegment extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       endOffset_ = 0L;
       onChanged();
       return this;

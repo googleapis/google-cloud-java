@@ -79,7 +79,9 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -185,7 +187,9 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExamplePayloadOrBuilder getPayloadOrBuilder() {
-    return getPayload();
+    return payload_ == null
+        ? com.google.cloud.automl.v1beta1.ExamplePayload.getDefaultInstance()
+        : payload_;
   }
 
   public static final int PARAMS_FIELD_NUMBER = 3;
@@ -201,6 +205,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> params_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParams() {
@@ -306,7 +311,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; params = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getParamsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getParamsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -598,12 +606,11 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-      } else {
-        payload_ = null;
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
       internalGetMutableParams().clear();
@@ -634,17 +641,25 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.PredictRequest buildPartial() {
       com.google.cloud.automl.v1beta1.PredictRequest result =
           new com.google.cloud.automl.v1beta1.PredictRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (payloadBuilder_ == null) {
-        result.payload_ = payload_;
-      } else {
-        result.payload_ = payloadBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.params_ = internalGetParams();
-      result.params_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.PredictRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.payload_ = payloadBuilder_ == null ? payload_ : payloadBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.params_ = internalGetParams();
+        result.params_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -694,12 +709,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.automl.v1beta1.PredictRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
       }
       internalGetMutableParams().mergeFrom(other.internalGetParams());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -729,13 +746,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getPayloadFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -747,6 +764,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableParams()
                     .getMutableMap()
                     .put(params__.getKey(), params__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -835,8 +853,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,8 +872,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -878,8 +896,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -905,7 +923,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the payload field is set.
      */
     public boolean hasPayload() {
-      return payloadBuilder_ != null || payload_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -948,11 +966,11 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         payload_ = value;
-        onChanged();
       } else {
         payloadBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -971,11 +989,11 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.automl.v1beta1.ExamplePayload.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
-        onChanged();
       } else {
         payloadBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -992,19 +1010,18 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePayload(com.google.cloud.automl.v1beta1.ExamplePayload value) {
       if (payloadBuilder_ == null) {
-        if (payload_ != null) {
-          payload_ =
-              com.google.cloud.automl.v1beta1.ExamplePayload.newBuilder(payload_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && payload_ != null
+            && payload_ != com.google.cloud.automl.v1beta1.ExamplePayload.getDefaultInstance()) {
+          getPayloadBuilder().mergeFrom(value);
         } else {
           payload_ = value;
         }
-        onChanged();
       } else {
         payloadBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1020,14 +1037,13 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPayload() {
-      if (payloadBuilder_ == null) {
-        payload_ = null;
-        onChanged();
-      } else {
-        payload_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      payload_ = null;
+      if (payloadBuilder_ != null) {
+        payloadBuilder_.dispose();
         payloadBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1043,7 +1059,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.automl.v1beta1.ExamplePayload.Builder getPayloadBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
@@ -1108,14 +1124,14 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableParams() {
-      onChanged();
-      ;
       if (params_ == null) {
         params_ = com.google.protobuf.MapField.newMapField(ParamsDefaultEntryHolder.defaultEntry);
       }
       if (!params_.isMutable()) {
         params_ = params_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return params_;
     }
 
@@ -1215,8 +1231,10 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; params = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getParamsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getParamsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1261,6 +1279,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableParams().getMutableMap().clear();
       return this;
     }
@@ -1299,6 +1318,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParams() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableParams().getMutableMap();
     }
     /**
@@ -1333,8 +1353,8 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableParams().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1364,6 +1384,7 @@ public final class PredictRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllParams(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableParams().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

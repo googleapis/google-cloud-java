@@ -327,7 +327,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int URL_REGEX_FIELD_NUMBER = 1;
-  private volatile java.lang.Object urlRegex_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object urlRegex_ = "";
   /**
    *
    *
@@ -541,7 +543,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SECURITY_LEVEL_FIELD_NUMBER = 5;
-  private int securityLevel_;
+  private int securityLevel_ = 0;
   /**
    *
    *
@@ -570,14 +572,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.SecurityLevel getSecurityLevel() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.SecurityLevel result =
-        com.google.appengine.v1.SecurityLevel.valueOf(securityLevel_);
+        com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
     return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
   }
 
   public static final int LOGIN_FIELD_NUMBER = 6;
-  private int login_;
+  private int login_ = 0;
   /**
    *
    *
@@ -608,14 +609,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.LoginRequirement getLogin() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.LoginRequirement result =
-        com.google.appengine.v1.LoginRequirement.valueOf(login_);
+        com.google.appengine.v1.LoginRequirement.forNumber(login_);
     return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
   }
 
   public static final int AUTH_FAIL_ACTION_FIELD_NUMBER = 7;
-  private int authFailAction_;
+  private int authFailAction_ = 0;
   /**
    *
    *
@@ -646,14 +646,13 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.AuthFailAction getAuthFailAction() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.AuthFailAction result =
-        com.google.appengine.v1.AuthFailAction.valueOf(authFailAction_);
+        com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
     return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
   }
 
   public static final int REDIRECT_HTTP_RESPONSE_CODE_FIELD_NUMBER = 8;
-  private int redirectHttpResponseCode_;
+  private int redirectHttpResponseCode_ = 0;
   /**
    *
    *
@@ -686,9 +685,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.appengine.v1.UrlMap.RedirectHttpResponseCode getRedirectHttpResponseCode() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.UrlMap.RedirectHttpResponseCode result =
-        com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.valueOf(redirectHttpResponseCode_);
+        com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.forNumber(
+            redirectHttpResponseCode_);
     return result == null
         ? com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.UNRECOGNIZED
         : result;
@@ -988,8 +987,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       urlRegex_ = "";
-
       if (staticFilesBuilder_ != null) {
         staticFilesBuilder_.clear();
       }
@@ -1000,13 +999,9 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         apiEndpointBuilder_.clear();
       }
       securityLevel_ = 0;
-
       login_ = 0;
-
       authFailAction_ = 0;
-
       redirectHttpResponseCode_ = 0;
-
       handlerTypeCase_ = 0;
       handlerType_ = null;
       return this;
@@ -1035,35 +1030,45 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.UrlMap buildPartial() {
       com.google.appengine.v1.UrlMap result = new com.google.appengine.v1.UrlMap(this);
-      result.urlRegex_ = urlRegex_;
-      if (handlerTypeCase_ == 2) {
-        if (staticFilesBuilder_ == null) {
-          result.handlerType_ = handlerType_;
-        } else {
-          result.handlerType_ = staticFilesBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (handlerTypeCase_ == 3) {
-        if (scriptBuilder_ == null) {
-          result.handlerType_ = handlerType_;
-        } else {
-          result.handlerType_ = scriptBuilder_.build();
-        }
-      }
-      if (handlerTypeCase_ == 4) {
-        if (apiEndpointBuilder_ == null) {
-          result.handlerType_ = handlerType_;
-        } else {
-          result.handlerType_ = apiEndpointBuilder_.build();
-        }
-      }
-      result.securityLevel_ = securityLevel_;
-      result.login_ = login_;
-      result.authFailAction_ = authFailAction_;
-      result.redirectHttpResponseCode_ = redirectHttpResponseCode_;
-      result.handlerTypeCase_ = handlerTypeCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.UrlMap result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.urlRegex_ = urlRegex_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.securityLevel_ = securityLevel_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.login_ = login_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.authFailAction_ = authFailAction_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.redirectHttpResponseCode_ = redirectHttpResponseCode_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.appengine.v1.UrlMap result) {
+      result.handlerTypeCase_ = handlerTypeCase_;
+      result.handlerType_ = this.handlerType_;
+      if (handlerTypeCase_ == 2 && staticFilesBuilder_ != null) {
+        result.handlerType_ = staticFilesBuilder_.build();
+      }
+      if (handlerTypeCase_ == 3 && scriptBuilder_ != null) {
+        result.handlerType_ = scriptBuilder_.build();
+      }
+      if (handlerTypeCase_ == 4 && apiEndpointBuilder_ != null) {
+        result.handlerType_ = apiEndpointBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1113,6 +1118,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.appengine.v1.UrlMap.getDefaultInstance()) return this;
       if (!other.getUrlRegex().isEmpty()) {
         urlRegex_ = other.urlRegex_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.securityLevel_ != 0) {
@@ -1177,7 +1183,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 urlRegex_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -1201,25 +1207,25 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 securityLevel_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 48:
               {
                 login_ = input.readEnum();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 56:
               {
                 authFailAction_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 redirectHttpResponseCode_ = input.readEnum();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             default:
@@ -1252,6 +1258,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object urlRegex_ = "";
     /**
@@ -1323,8 +1331,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       urlRegex_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1343,8 +1351,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUrlRegex() {
-
       urlRegex_ = getDefaultInstance().getUrlRegex();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1368,8 +1376,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       urlRegex_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1580,7 +1588,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       handlerTypeCase_ = 2;
       onChanged();
-      ;
       return staticFilesBuilder_;
     }
 
@@ -1807,7 +1814,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       handlerTypeCase_ = 3;
       onChanged();
-      ;
       return scriptBuilder_;
     }
 
@@ -2017,7 +2023,6 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       }
       handlerTypeCase_ = 4;
       onChanged();
-      ;
       return apiEndpointBuilder_;
     }
 
@@ -2050,8 +2055,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setSecurityLevelValue(int value) {
-
       securityLevel_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2068,9 +2073,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.SecurityLevel getSecurityLevel() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.SecurityLevel result =
-          com.google.appengine.v1.SecurityLevel.valueOf(securityLevel_);
+          com.google.appengine.v1.SecurityLevel.forNumber(securityLevel_);
       return result == null ? com.google.appengine.v1.SecurityLevel.UNRECOGNIZED : result;
     }
     /**
@@ -2089,7 +2093,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       securityLevel_ = value.getNumber();
       onChanged();
       return this;
@@ -2106,7 +2110,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSecurityLevel() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       securityLevel_ = 0;
       onChanged();
       return this;
@@ -2143,8 +2147,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setLoginValue(int value) {
-
       login_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2162,9 +2166,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.LoginRequirement getLogin() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.LoginRequirement result =
-          com.google.appengine.v1.LoginRequirement.valueOf(login_);
+          com.google.appengine.v1.LoginRequirement.forNumber(login_);
       return result == null ? com.google.appengine.v1.LoginRequirement.UNRECOGNIZED : result;
     }
     /**
@@ -2184,7 +2187,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000020;
       login_ = value.getNumber();
       onChanged();
       return this;
@@ -2202,7 +2205,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLogin() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       login_ = 0;
       onChanged();
       return this;
@@ -2239,8 +2242,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setAuthFailActionValue(int value) {
-
       authFailAction_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2258,9 +2261,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.AuthFailAction getAuthFailAction() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.AuthFailAction result =
-          com.google.appengine.v1.AuthFailAction.valueOf(authFailAction_);
+          com.google.appengine.v1.AuthFailAction.forNumber(authFailAction_);
       return result == null ? com.google.appengine.v1.AuthFailAction.UNRECOGNIZED : result;
     }
     /**
@@ -2280,7 +2282,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       authFailAction_ = value.getNumber();
       onChanged();
       return this;
@@ -2298,7 +2300,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuthFailAction() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       authFailAction_ = 0;
       onChanged();
       return this;
@@ -2337,8 +2339,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRedirectHttpResponseCodeValue(int value) {
-
       redirectHttpResponseCode_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2357,9 +2359,8 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.appengine.v1.UrlMap.RedirectHttpResponseCode getRedirectHttpResponseCode() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.UrlMap.RedirectHttpResponseCode result =
-          com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.valueOf(
+          com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.forNumber(
               redirectHttpResponseCode_);
       return result == null
           ? com.google.appengine.v1.UrlMap.RedirectHttpResponseCode.UNRECOGNIZED
@@ -2384,7 +2385,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000080;
       redirectHttpResponseCode_ = value.getNumber();
       onChanged();
       return this;
@@ -2403,7 +2404,7 @@ public final class UrlMap extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRedirectHttpResponseCode() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       redirectHttpResponseCode_ = 0;
       onChanged();
       return this;

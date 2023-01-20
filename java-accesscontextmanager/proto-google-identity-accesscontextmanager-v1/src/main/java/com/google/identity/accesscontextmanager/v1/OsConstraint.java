@@ -69,7 +69,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OS_TYPE_FIELD_NUMBER = 1;
-  private int osType_;
+  private int osType_ = 0;
   /**
    *
    *
@@ -98,16 +98,17 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.identity.accesscontextmanager.type.OsType getOsType() {
-    @SuppressWarnings("deprecation")
     com.google.identity.accesscontextmanager.type.OsType result =
-        com.google.identity.accesscontextmanager.type.OsType.valueOf(osType_);
+        com.google.identity.accesscontextmanager.type.OsType.forNumber(osType_);
     return result == null
         ? com.google.identity.accesscontextmanager.type.OsType.UNRECOGNIZED
         : result;
   }
 
   public static final int MINIMUM_VERSION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object minimumVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minimumVersion_ = "";
   /**
    *
    *
@@ -160,7 +161,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REQUIRE_VERIFIED_CHROME_OS_FIELD_NUMBER = 3;
-  private boolean requireVerifiedChromeOs_;
+  private boolean requireVerifiedChromeOs_ = false;
   /**
    *
    *
@@ -398,12 +399,10 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       osType_ = 0;
-
       minimumVersion_ = "";
-
       requireVerifiedChromeOs_ = false;
-
       return this;
     }
 
@@ -431,11 +430,24 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     public com.google.identity.accesscontextmanager.v1.OsConstraint buildPartial() {
       com.google.identity.accesscontextmanager.v1.OsConstraint result =
           new com.google.identity.accesscontextmanager.v1.OsConstraint(this);
-      result.osType_ = osType_;
-      result.minimumVersion_ = minimumVersion_;
-      result.requireVerifiedChromeOs_ = requireVerifiedChromeOs_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.identity.accesscontextmanager.v1.OsConstraint result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.osType_ = osType_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.minimumVersion_ = minimumVersion_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requireVerifiedChromeOs_ = requireVerifiedChromeOs_;
+      }
     }
 
     @java.lang.Override
@@ -489,6 +501,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMinimumVersion().isEmpty()) {
         minimumVersion_ = other.minimumVersion_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getRequireVerifiedChromeOs() != false) {
@@ -523,19 +536,19 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 osType_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 minimumVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 requireVerifiedChromeOs_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -554,6 +567,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int osType_ = 0;
     /**
@@ -584,8 +599,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setOsTypeValue(int value) {
-
       osType_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -602,9 +617,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.identity.accesscontextmanager.type.OsType getOsType() {
-      @SuppressWarnings("deprecation")
       com.google.identity.accesscontextmanager.type.OsType result =
-          com.google.identity.accesscontextmanager.type.OsType.valueOf(osType_);
+          com.google.identity.accesscontextmanager.type.OsType.forNumber(osType_);
       return result == null
           ? com.google.identity.accesscontextmanager.type.OsType.UNRECOGNIZED
           : result;
@@ -625,7 +639,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       osType_ = value.getNumber();
       onChanged();
       return this;
@@ -642,7 +656,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOsType() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       osType_ = 0;
       onChanged();
       return this;
@@ -715,8 +729,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       minimumVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -734,8 +748,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinimumVersion() {
-
       minimumVersion_ = getDefaultInstance().getMinimumVersion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -758,8 +772,8 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       minimumVersion_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -801,6 +815,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequireVerifiedChromeOs(boolean value) {
 
       requireVerifiedChromeOs_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -819,7 +834,7 @@ public final class OsConstraint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequireVerifiedChromeOs() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       requireVerifiedChromeOs_ = false;
       onChanged();
       return this;

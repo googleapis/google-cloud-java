@@ -119,7 +119,9 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.PropertyOrBuilder getPropertyOrBuilder() {
-    return getProperty();
+    return property_ == null
+        ? com.google.analytics.admin.v1alpha.Property.getDefaultInstance()
+        : property_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -325,10 +327,10 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (propertyBuilder_ == null) {
-        property_ = null;
-      } else {
-        property_ = null;
+      bitField0_ = 0;
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
       return this;
@@ -358,13 +360,18 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.CreatePropertyRequest buildPartial() {
       com.google.analytics.admin.v1alpha.CreatePropertyRequest result =
           new com.google.analytics.admin.v1alpha.CreatePropertyRequest(this);
-      if (propertyBuilder_ == null) {
-        result.property_ = property_;
-      } else {
-        result.property_ = propertyBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.CreatePropertyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.property_ = propertyBuilder_ == null ? property_ : propertyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -445,7 +452,7 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getPropertyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -464,6 +471,8 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.Property property_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -486,7 +495,7 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the property field is set.
      */
     public boolean hasProperty() {
-      return propertyBuilder_ != null || property_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -529,11 +538,11 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         property_ = value;
-        onChanged();
       } else {
         propertyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -552,11 +561,11 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
         com.google.analytics.admin.v1alpha.Property.Builder builderForValue) {
       if (propertyBuilder_ == null) {
         property_ = builderForValue.build();
-        onChanged();
       } else {
         propertyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -573,19 +582,18 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeProperty(com.google.analytics.admin.v1alpha.Property value) {
       if (propertyBuilder_ == null) {
-        if (property_ != null) {
-          property_ =
-              com.google.analytics.admin.v1alpha.Property.newBuilder(property_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && property_ != null
+            && property_ != com.google.analytics.admin.v1alpha.Property.getDefaultInstance()) {
+          getPropertyBuilder().mergeFrom(value);
         } else {
           property_ = value;
         }
-        onChanged();
       } else {
         propertyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -601,14 +609,13 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearProperty() {
-      if (propertyBuilder_ == null) {
-        property_ = null;
-        onChanged();
-      } else {
-        property_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      property_ = null;
+      if (propertyBuilder_ != null) {
+        propertyBuilder_.dispose();
         propertyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -624,7 +631,7 @@ public final class CreatePropertyRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.analytics.admin.v1alpha.Property.Builder getPropertyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }

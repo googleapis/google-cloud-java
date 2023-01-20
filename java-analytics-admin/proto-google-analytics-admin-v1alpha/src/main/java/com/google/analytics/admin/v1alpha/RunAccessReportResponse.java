@@ -70,6 +70,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
   }
 
   public static final int DIMENSION_HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessDimensionHeader>
       dimensionHeaders_;
   /**
@@ -157,6 +159,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
   }
 
   public static final int METRIC_HEADERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessMetricHeader> metricHeaders_;
   /**
    *
@@ -238,6 +242,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
   }
 
   public static final int ROWS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AccessRow> rows_;
   /**
    *
@@ -307,7 +313,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
   }
 
   public static final int ROW_COUNT_FIELD_NUMBER = 4;
-  private int rowCount_;
+  private int rowCount_ = 0;
   /**
    *
    *
@@ -375,7 +381,9 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessQuotaOrBuilder getQuotaOrBuilder() {
-    return getQuota();
+    return quota_ == null
+        ? com.google.analytics.admin.v1alpha.AccessQuota.getDefaultInstance()
+        : quota_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -623,6 +631,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dimensionHeadersBuilder_ == null) {
         dimensionHeaders_ = java.util.Collections.emptyList();
       } else {
@@ -645,11 +654,9 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       rowCount_ = 0;
-
-      if (quotaBuilder_ == null) {
-        quota_ = null;
-      } else {
-        quota_ = null;
+      quota_ = null;
+      if (quotaBuilder_ != null) {
+        quotaBuilder_.dispose();
         quotaBuilder_ = null;
       }
       return this;
@@ -679,7 +686,16 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
     public com.google.analytics.admin.v1alpha.RunAccessReportResponse buildPartial() {
       com.google.analytics.admin.v1alpha.RunAccessReportResponse result =
           new com.google.analytics.admin.v1alpha.RunAccessReportResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.RunAccessReportResponse result) {
       if (dimensionHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
@@ -707,14 +723,16 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
       } else {
         result.rows_ = rowsBuilder_.build();
       }
-      result.rowCount_ = rowCount_;
-      if (quotaBuilder_ == null) {
-        result.quota_ = quota_;
-      } else {
-        result.quota_ = quotaBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.RunAccessReportResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rowCount_ = rowCount_;
       }
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.quota_ = quotaBuilder_ == null ? quota_ : quotaBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -920,13 +938,13 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
             case 32:
               {
                 rowCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(getQuotaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -2162,6 +2180,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
     public Builder setRowCount(int value) {
 
       rowCount_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2183,7 +2202,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearRowCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       rowCount_ = 0;
       onChanged();
       return this;
@@ -2207,7 +2226,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      * @return Whether the quota field is set.
      */
     public boolean hasQuota() {
-      return quotaBuilder_ != null || quota_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2244,11 +2263,11 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         quota_ = value;
-        onChanged();
       } else {
         quotaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2264,11 +2283,11 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
         com.google.analytics.admin.v1alpha.AccessQuota.Builder builderForValue) {
       if (quotaBuilder_ == null) {
         quota_ = builderForValue.build();
-        onChanged();
       } else {
         quotaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2282,19 +2301,18 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      */
     public Builder mergeQuota(com.google.analytics.admin.v1alpha.AccessQuota value) {
       if (quotaBuilder_ == null) {
-        if (quota_ != null) {
-          quota_ =
-              com.google.analytics.admin.v1alpha.AccessQuota.newBuilder(quota_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && quota_ != null
+            && quota_ != com.google.analytics.admin.v1alpha.AccessQuota.getDefaultInstance()) {
+          getQuotaBuilder().mergeFrom(value);
         } else {
           quota_ = value;
         }
-        onChanged();
       } else {
         quotaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2307,14 +2325,13 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
      */
     public Builder clearQuota() {
-      if (quotaBuilder_ == null) {
-        quota_ = null;
-        onChanged();
-      } else {
-        quota_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      quota_ = null;
+      if (quotaBuilder_ != null) {
+        quotaBuilder_.dispose();
         quotaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2327,7 +2344,7 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
      */
     public com.google.analytics.admin.v1alpha.AccessQuota.Builder getQuotaBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getQuotaFieldBuilder().getBuilder();
     }

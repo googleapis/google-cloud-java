@@ -70,7 +70,9 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -181,11 +183,13 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1.TimeWindowOrBuilder getIntervalOrBuilder() {
-    return getInterval();
+    return interval_ == null
+        ? com.google.cloud.assuredworkloads.v1.TimeWindow.getDefaultInstance()
+        : interval_;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
-  private int pageSize_;
+  private int pageSize_ = 0;
   /**
    *
    *
@@ -203,7 +207,9 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
-  private volatile java.lang.Object pageToken_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pageToken_ = "";
   /**
    *
    *
@@ -252,7 +258,9 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
-  private volatile java.lang.Object filter_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
   /**
    *
    *
@@ -539,20 +547,16 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-      } else {
-        interval_ = null;
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
       pageSize_ = 0;
-
       pageToken_ = "";
-
       filter_ = "";
-
       return this;
     }
 
@@ -580,17 +584,30 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.assuredworkloads.v1.ListViolationsRequest buildPartial() {
       com.google.cloud.assuredworkloads.v1.ListViolationsRequest result =
           new com.google.cloud.assuredworkloads.v1.ListViolationsRequest(this);
-      result.parent_ = parent_;
-      if (intervalBuilder_ == null) {
-        result.interval_ = interval_;
-      } else {
-        result.interval_ = intervalBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
-      result.filter_ = filter_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.assuredworkloads.v1.ListViolationsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.interval_ = intervalBuilder_ == null ? interval_ : intervalBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.pageSize_ = pageSize_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.pageToken_ = pageToken_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -641,6 +658,7 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasInterval()) {
@@ -651,10 +669,12 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -686,31 +706,31 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getIntervalFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 pageSize_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             case 34:
               {
                 pageToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 filter_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -729,6 +749,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -800,8 +822,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -820,8 +842,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -845,8 +867,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -873,7 +895,7 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the interval field is set.
      */
     public boolean hasInterval() {
-      return intervalBuilder_ != null || interval_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -918,11 +940,11 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         interval_ = value;
-        onChanged();
       } else {
         intervalBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -942,11 +964,11 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
         com.google.cloud.assuredworkloads.v1.TimeWindow.Builder builderForValue) {
       if (intervalBuilder_ == null) {
         interval_ = builderForValue.build();
-        onChanged();
       } else {
         intervalBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -964,19 +986,18 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeInterval(com.google.cloud.assuredworkloads.v1.TimeWindow value) {
       if (intervalBuilder_ == null) {
-        if (interval_ != null) {
-          interval_ =
-              com.google.cloud.assuredworkloads.v1.TimeWindow.newBuilder(interval_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && interval_ != null
+            && interval_ != com.google.cloud.assuredworkloads.v1.TimeWindow.getDefaultInstance()) {
+          getIntervalBuilder().mergeFrom(value);
         } else {
           interval_ = value;
         }
-        onChanged();
       } else {
         intervalBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -993,14 +1014,13 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearInterval() {
-      if (intervalBuilder_ == null) {
-        interval_ = null;
-        onChanged();
-      } else {
-        interval_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      interval_ = null;
+      if (intervalBuilder_ != null) {
+        intervalBuilder_.dispose();
         intervalBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1017,7 +1037,7 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.cloud.assuredworkloads.v1.TimeWindow.Builder getIntervalBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIntervalFieldBuilder().getBuilder();
     }
@@ -1104,6 +1124,7 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1119,7 +1140,7 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1186,8 +1207,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1203,8 +1224,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearPageToken() {
-
       pageToken_ = getDefaultInstance().getPageToken();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1225,8 +1246,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       pageToken_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1292,8 +1313,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-
       filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1309,8 +1330,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearFilter() {
-
       filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1331,8 +1352,8 @@ public final class ListViolationsRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filter_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

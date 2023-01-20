@@ -268,7 +268,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     }
 
     public static final int SCOPE_FIELD_NUMBER = 1;
-    private int scope_;
+    private int scope_ = 0;
     /**
      *
      *
@@ -301,16 +301,15 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-          com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+          com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
           : result;
     }
 
     public static final int IMMEDIATELY_FOLLOWS_FIELD_NUMBER = 2;
-    private boolean immediatelyFollows_;
+    private boolean immediatelyFollows_ = false;
     /**
      *
      *
@@ -391,7 +390,9 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getConstraintDurationOrBuilder() {
-      return getConstraintDuration();
+      return constraintDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : constraintDuration_;
     }
 
     public static final int FILTER_EXPRESSION_FIELD_NUMBER = 4;
@@ -449,7 +450,9 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceFilterExpressionOrBuilder
         getFilterExpressionOrBuilder() {
-      return getFilterExpression();
+      return filterExpression_ == null
+          ? com.google.analytics.admin.v1alpha.AudienceFilterExpression.getDefaultInstance()
+          : filterExpression_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -709,20 +712,17 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scope_ = 0;
-
         immediatelyFollows_ = false;
-
-        if (constraintDurationBuilder_ == null) {
-          constraintDuration_ = null;
-        } else {
-          constraintDuration_ = null;
+        constraintDuration_ = null;
+        if (constraintDurationBuilder_ != null) {
+          constraintDurationBuilder_.dispose();
           constraintDurationBuilder_ = null;
         }
-        if (filterExpressionBuilder_ == null) {
-          filterExpression_ = null;
-        } else {
-          filterExpression_ = null;
+        filterExpression_ = null;
+        if (filterExpressionBuilder_ != null) {
+          filterExpressionBuilder_.dispose();
           filterExpressionBuilder_ = null;
         }
         return this;
@@ -758,20 +758,34 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep result =
             new com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep(
                 this);
-        result.scope_ = scope_;
-        result.immediatelyFollows_ = immediatelyFollows_;
-        if (constraintDurationBuilder_ == null) {
-          result.constraintDuration_ = constraintDuration_;
-        } else {
-          result.constraintDuration_ = constraintDurationBuilder_.build();
-        }
-        if (filterExpressionBuilder_ == null) {
-          result.filterExpression_ = filterExpression_;
-        } else {
-          result.filterExpression_ = filterExpressionBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scope_ = scope_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.immediatelyFollows_ = immediatelyFollows_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.constraintDuration_ =
+              constraintDurationBuilder_ == null
+                  ? constraintDuration_
+                  : constraintDurationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.filterExpression_ =
+              filterExpressionBuilder_ == null
+                  ? filterExpression_
+                  : filterExpressionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -869,27 +883,27 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
               case 8:
                 {
                   scope_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 16:
                 {
                   immediatelyFollows_ = input.readBool();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               case 26:
                 {
                   input.readMessage(
                       getConstraintDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               case 34:
                 {
                   input.readMessage(
                       getFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 34
               default:
@@ -908,6 +922,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int scope_ = 0;
       /**
@@ -942,8 +958,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder setScopeValue(int value) {
-
         scope_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -962,9 +978,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        */
       @java.lang.Override
       public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-        @SuppressWarnings("deprecation")
         com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-            com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+            com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
         return result == null
             ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
             : result;
@@ -987,7 +1002,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         scope_ = value.getNumber();
         onChanged();
         return this;
@@ -1006,7 +1021,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearScope() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         scope_ = 0;
         onChanged();
         return this;
@@ -1051,6 +1066,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       public Builder setImmediatelyFollows(boolean value) {
 
         immediatelyFollows_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1070,7 +1086,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * @return This builder for chaining.
        */
       public Builder clearImmediatelyFollows() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         immediatelyFollows_ = false;
         onChanged();
         return this;
@@ -1099,7 +1115,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * @return Whether the constraintDuration field is set.
        */
       public boolean hasConstraintDuration() {
-        return constraintDurationBuilder_ != null || constraintDuration_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1146,11 +1162,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
             throw new NullPointerException();
           }
           constraintDuration_ = value;
-          onChanged();
         } else {
           constraintDurationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1170,11 +1186,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       public Builder setConstraintDuration(com.google.protobuf.Duration.Builder builderForValue) {
         if (constraintDurationBuilder_ == null) {
           constraintDuration_ = builderForValue.build();
-          onChanged();
         } else {
           constraintDurationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1193,19 +1209,18 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        */
       public Builder mergeConstraintDuration(com.google.protobuf.Duration value) {
         if (constraintDurationBuilder_ == null) {
-          if (constraintDuration_ != null) {
-            constraintDuration_ =
-                com.google.protobuf.Duration.newBuilder(constraintDuration_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && constraintDuration_ != null
+              && constraintDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getConstraintDurationBuilder().mergeFrom(value);
           } else {
             constraintDuration_ = value;
           }
-          onChanged();
         } else {
           constraintDurationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1223,14 +1238,13 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * </code>
        */
       public Builder clearConstraintDuration() {
-        if (constraintDurationBuilder_ == null) {
-          constraintDuration_ = null;
-          onChanged();
-        } else {
-          constraintDuration_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        constraintDuration_ = null;
+        if (constraintDurationBuilder_ != null) {
+          constraintDurationBuilder_.dispose();
           constraintDurationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1248,7 +1262,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * </code>
        */
       public com.google.protobuf.Duration.Builder getConstraintDurationBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getConstraintDurationFieldBuilder().getBuilder();
       }
@@ -1327,7 +1341,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * @return Whether the filterExpression field is set.
        */
       public boolean hasFilterExpression() {
-        return filterExpressionBuilder_ != null || filterExpression_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -1371,11 +1385,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
             throw new NullPointerException();
           }
           filterExpression_ = value;
-          onChanged();
         } else {
           filterExpressionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1394,11 +1408,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
           com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder builderForValue) {
         if (filterExpressionBuilder_ == null) {
           filterExpression_ = builderForValue.build();
-          onChanged();
         } else {
           filterExpressionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1416,20 +1430,20 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       public Builder mergeFilterExpression(
           com.google.analytics.admin.v1alpha.AudienceFilterExpression value) {
         if (filterExpressionBuilder_ == null) {
-          if (filterExpression_ != null) {
-            filterExpression_ =
-                com.google.analytics.admin.v1alpha.AudienceFilterExpression.newBuilder(
-                        filterExpression_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000008) != 0)
+              && filterExpression_ != null
+              && filterExpression_
+                  != com.google.analytics.admin.v1alpha.AudienceFilterExpression
+                      .getDefaultInstance()) {
+            getFilterExpressionBuilder().mergeFrom(value);
           } else {
             filterExpression_ = value;
           }
-          onChanged();
         } else {
           filterExpressionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1445,14 +1459,13 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        * </code>
        */
       public Builder clearFilterExpression() {
-        if (filterExpressionBuilder_ == null) {
-          filterExpression_ = null;
-          onChanged();
-        } else {
-          filterExpression_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        filterExpression_ = null;
+        if (filterExpressionBuilder_ != null) {
+          filterExpressionBuilder_.dispose();
           filterExpressionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1469,7 +1482,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
        */
       public com.google.analytics.admin.v1alpha.AudienceFilterExpression.Builder
           getFilterExpressionBuilder() {
-
+        bitField0_ |= 0x00000008;
         onChanged();
         return getFilterExpressionFieldBuilder().getBuilder();
       }
@@ -1594,7 +1607,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
   }
 
   public static final int SCOPE_FIELD_NUMBER = 1;
-  private int scope_;
+  private int scope_ = 0;
   /**
    *
    *
@@ -1627,9 +1640,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-        com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+        com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
         : result;
@@ -1686,10 +1698,14 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getSequenceMaximumDurationOrBuilder() {
-    return getSequenceMaximumDuration();
+    return sequenceMaximumDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : sequenceMaximumDuration_;
   }
 
   public static final int SEQUENCE_STEPS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep>
       sequenceSteps_;
@@ -2011,12 +2027,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       scope_ = 0;
-
-      if (sequenceMaximumDurationBuilder_ == null) {
-        sequenceMaximumDuration_ = null;
-      } else {
-        sequenceMaximumDuration_ = null;
+      sequenceMaximumDuration_ = null;
+      if (sequenceMaximumDurationBuilder_ != null) {
+        sequenceMaximumDurationBuilder_.dispose();
         sequenceMaximumDurationBuilder_ = null;
       }
       if (sequenceStepsBuilder_ == null) {
@@ -2025,7 +2040,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         sequenceSteps_ = null;
         sequenceStepsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -2053,24 +2068,38 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     public com.google.analytics.admin.v1alpha.AudienceSequenceFilter buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceSequenceFilter result =
           new com.google.analytics.admin.v1alpha.AudienceSequenceFilter(this);
-      int from_bitField0_ = bitField0_;
-      result.scope_ = scope_;
-      if (sequenceMaximumDurationBuilder_ == null) {
-        result.sequenceMaximumDuration_ = sequenceMaximumDuration_;
-      } else {
-        result.sequenceMaximumDuration_ = sequenceMaximumDurationBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.admin.v1alpha.AudienceSequenceFilter result) {
       if (sequenceStepsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           sequenceSteps_ = java.util.Collections.unmodifiableList(sequenceSteps_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.sequenceSteps_ = sequenceSteps_;
       } else {
         result.sequenceSteps_ = sequenceStepsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceSequenceFilter result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sequenceMaximumDuration_ =
+            sequenceMaximumDurationBuilder_ == null
+                ? sequenceMaximumDuration_
+                : sequenceMaximumDurationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2129,7 +2158,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         if (!other.sequenceSteps_.isEmpty()) {
           if (sequenceSteps_.isEmpty()) {
             sequenceSteps_ = other.sequenceSteps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSequenceStepsIsMutable();
             sequenceSteps_.addAll(other.sequenceSteps_);
@@ -2142,7 +2171,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
             sequenceStepsBuilder_.dispose();
             sequenceStepsBuilder_ = null;
             sequenceSteps_ = other.sequenceSteps_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             sequenceStepsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSequenceStepsFieldBuilder()
@@ -2181,14 +2210,14 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
             case 8:
               {
                 scope_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
               {
                 input.readMessage(
                     getSequenceMaximumDurationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -2258,8 +2287,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setScopeValue(int value) {
-
       scope_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2278,9 +2307,8 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceFilterScope getScope() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceFilterScope result =
-          com.google.analytics.admin.v1alpha.AudienceFilterScope.valueOf(scope_);
+          com.google.analytics.admin.v1alpha.AudienceFilterScope.forNumber(scope_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceFilterScope.UNRECOGNIZED
           : result;
@@ -2303,7 +2331,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -2322,7 +2350,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       scope_ = 0;
       onChanged();
       return this;
@@ -2348,7 +2376,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      * @return Whether the sequenceMaximumDuration field is set.
      */
     public boolean hasSequenceMaximumDuration() {
-      return sequenceMaximumDurationBuilder_ != null || sequenceMaximumDuration_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2389,11 +2417,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         sequenceMaximumDuration_ = value;
-        onChanged();
       } else {
         sequenceMaximumDurationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2411,11 +2439,11 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         com.google.protobuf.Duration.Builder builderForValue) {
       if (sequenceMaximumDurationBuilder_ == null) {
         sequenceMaximumDuration_ = builderForValue.build();
-        onChanged();
       } else {
         sequenceMaximumDurationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2431,19 +2459,18 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      */
     public Builder mergeSequenceMaximumDuration(com.google.protobuf.Duration value) {
       if (sequenceMaximumDurationBuilder_ == null) {
-        if (sequenceMaximumDuration_ != null) {
-          sequenceMaximumDuration_ =
-              com.google.protobuf.Duration.newBuilder(sequenceMaximumDuration_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && sequenceMaximumDuration_ != null
+            && sequenceMaximumDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getSequenceMaximumDurationBuilder().mergeFrom(value);
         } else {
           sequenceMaximumDuration_ = value;
         }
-        onChanged();
       } else {
         sequenceMaximumDurationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -2458,14 +2485,13 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearSequenceMaximumDuration() {
-      if (sequenceMaximumDurationBuilder_ == null) {
-        sequenceMaximumDuration_ = null;
-        onChanged();
-      } else {
-        sequenceMaximumDuration_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sequenceMaximumDuration_ = null;
+      if (sequenceMaximumDurationBuilder_ != null) {
+        sequenceMaximumDurationBuilder_.dispose();
         sequenceMaximumDurationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2480,7 +2506,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Duration.Builder getSequenceMaximumDurationBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getSequenceMaximumDurationFieldBuilder().getBuilder();
     }
@@ -2537,12 +2563,12 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
         sequenceSteps_ = java.util.Collections.emptyList();
 
     private void ensureSequenceStepsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         sequenceSteps_ =
             new java.util.ArrayList<
                 com.google.analytics.admin.v1alpha.AudienceSequenceFilter.AudienceSequenceStep>(
                 sequenceSteps_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -2807,7 +2833,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
     public Builder clearSequenceSteps() {
       if (sequenceStepsBuilder_ == null) {
         sequenceSteps_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         sequenceStepsBuilder_.clear();
@@ -2966,7 +2992,7 @@ public final class AudienceSequenceFilter extends com.google.protobuf.GeneratedM
                 com.google.analytics.admin.v1alpha.AudienceSequenceFilter
                     .AudienceSequenceStepOrBuilder>(
                 sequenceSteps_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         sequenceSteps_ = null;

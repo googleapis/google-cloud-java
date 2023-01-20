@@ -70,7 +70,9 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
   }
 
   public static final int START_ADDRESS_FIELD_NUMBER = 1;
-  private volatile java.lang.Object startAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startAddress_ = "";
   /**
    *
    *
@@ -121,7 +123,9 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
   }
 
   public static final int END_ADDRESS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object endAddress_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object endAddress_ = "";
   /**
    *
    *
@@ -176,7 +180,9 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
   }
 
   public static final int NOTE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object note_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object note_ = "";
   /**
    *
    *
@@ -440,12 +446,10 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       startAddress_ = "";
-
       endAddress_ = "";
-
       note_ = "";
-
       return this;
     }
 
@@ -474,11 +478,25 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
     public com.google.cloud.baremetalsolution.v2.NetworkAddressReservation buildPartial() {
       com.google.cloud.baremetalsolution.v2.NetworkAddressReservation result =
           new com.google.cloud.baremetalsolution.v2.NetworkAddressReservation(this);
-      result.startAddress_ = startAddress_;
-      result.endAddress_ = endAddress_;
-      result.note_ = note_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.baremetalsolution.v2.NetworkAddressReservation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.startAddress_ = startAddress_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.endAddress_ = endAddress_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.note_ = note_;
+      }
     }
 
     @java.lang.Override
@@ -531,14 +549,17 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
         return this;
       if (!other.getStartAddress().isEmpty()) {
         startAddress_ = other.startAddress_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getEndAddress().isEmpty()) {
         endAddress_ = other.endAddress_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getNote().isEmpty()) {
         note_ = other.note_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -570,19 +591,19 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
             case 10:
               {
                 startAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 endAddress_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 note_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -601,6 +622,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object startAddress_ = "";
     /**
@@ -666,8 +689,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       startAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -684,8 +707,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearStartAddress() {
-
       startAddress_ = getDefaultInstance().getStartAddress();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -707,8 +730,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       startAddress_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -783,8 +806,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       endAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -803,8 +826,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearEndAddress() {
-
       endAddress_ = getDefaultInstance().getEndAddress();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -828,8 +851,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       endAddress_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -895,8 +918,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       note_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -912,8 +935,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearNote() {
-
       note_ = getDefaultInstance().getNote();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -934,8 +957,8 @@ public final class NetworkAddressReservation extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       note_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -164,7 +164,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
   }
 
   public static final int SCORE_FIELD_NUMBER = 1;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -404,11 +404,11 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (textSegmentBuilder_ != null) {
         textSegmentBuilder_.clear();
       }
       score_ = 0F;
-
       annotationCase_ = 0;
       annotation_ = null;
       return this;
@@ -438,17 +438,27 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public com.google.cloud.automl.v1.TextExtractionAnnotation buildPartial() {
       com.google.cloud.automl.v1.TextExtractionAnnotation result =
           new com.google.cloud.automl.v1.TextExtractionAnnotation(this);
-      if (annotationCase_ == 3) {
-        if (textSegmentBuilder_ == null) {
-          result.annotation_ = annotation_;
-        } else {
-          result.annotation_ = textSegmentBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.score_ = score_;
-      result.annotationCase_ = annotationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.TextExtractionAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.score_ = score_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1.TextExtractionAnnotation result) {
+      result.annotationCase_ = annotationCase_;
+      result.annotation_ = this.annotation_;
+      if (annotationCase_ == 3 && textSegmentBuilder_ != null) {
+        result.annotation_ = textSegmentBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -540,7 +550,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
             case 13:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 13
             case 26:
@@ -579,6 +589,8 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.TextSegment,
@@ -794,7 +806,6 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
       }
       annotationCase_ = 3;
       onChanged();
-      ;
       return textSegmentBuilder_;
     }
 
@@ -831,6 +842,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,7 +859,7 @@ public final class TextExtractionAnnotation extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       score_ = 0F;
       onChanged();
       return this;

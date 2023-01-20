@@ -68,7 +68,7 @@ public final class SegmentParameterFilterScoping extends com.google.protobuf.Gen
 
   private int bitField0_;
   public static final int IN_ANY_N_DAY_PERIOD_FIELD_NUMBER = 1;
-  private long inAnyNDayPeriod_;
+  private long inAnyNDayPeriod_ = 0L;
   /**
    *
    *
@@ -344,8 +344,8 @@ public final class SegmentParameterFilterScoping extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       inAnyNDayPeriod_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -374,15 +374,22 @@ public final class SegmentParameterFilterScoping extends com.google.protobuf.Gen
     public com.google.analytics.data.v1alpha.SegmentParameterFilterScoping buildPartial() {
       com.google.analytics.data.v1alpha.SegmentParameterFilterScoping result =
           new com.google.analytics.data.v1alpha.SegmentParameterFilterScoping(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.SegmentParameterFilterScoping result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.inAnyNDayPeriod_ = inAnyNDayPeriod_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -591,8 +598,9 @@ public final class SegmentParameterFilterScoping extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder setInAnyNDayPeriod(long value) {
-      bitField0_ |= 0x00000001;
+
       inAnyNDayPeriod_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

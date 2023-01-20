@@ -113,7 +113,9 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.DataStatsOrBuilder getMemberStatsOrBuilder() {
-    return getMemberStats();
+    return memberStats_ == null
+        ? com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()
+        : memberStats_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -318,10 +320,10 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (memberStatsBuilder_ == null) {
-        memberStats_ = null;
-      } else {
-        memberStats_ = null;
+      bitField0_ = 0;
+      memberStats_ = null;
+      if (memberStatsBuilder_ != null) {
+        memberStatsBuilder_.dispose();
         memberStatsBuilder_ = null;
       }
       return this;
@@ -351,13 +353,19 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.ArrayStats buildPartial() {
       com.google.cloud.automl.v1beta1.ArrayStats result =
           new com.google.cloud.automl.v1beta1.ArrayStats(this);
-      if (memberStatsBuilder_ == null) {
-        result.memberStats_ = memberStats_;
-      } else {
-        result.memberStats_ = memberStatsBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.ArrayStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.memberStats_ =
+            memberStatsBuilder_ == null ? memberStats_ : memberStatsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -437,7 +445,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
             case 18:
               {
                 input.readMessage(getMemberStatsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -456,6 +464,8 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1beta1.DataStats memberStats_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -476,7 +486,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the memberStats field is set.
      */
     public boolean hasMemberStats() {
-      return memberStatsBuilder_ != null || memberStats_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -515,11 +525,11 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         memberStats_ = value;
-        onChanged();
       } else {
         memberStatsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -536,11 +546,11 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.automl.v1beta1.DataStats.Builder builderForValue) {
       if (memberStatsBuilder_ == null) {
         memberStats_ = builderForValue.build();
-        onChanged();
       } else {
         memberStatsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -555,19 +565,18 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMemberStats(com.google.cloud.automl.v1beta1.DataStats value) {
       if (memberStatsBuilder_ == null) {
-        if (memberStats_ != null) {
-          memberStats_ =
-              com.google.cloud.automl.v1beta1.DataStats.newBuilder(memberStats_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && memberStats_ != null
+            && memberStats_ != com.google.cloud.automl.v1beta1.DataStats.getDefaultInstance()) {
+          getMemberStatsBuilder().mergeFrom(value);
         } else {
           memberStats_ = value;
         }
-        onChanged();
       } else {
         memberStatsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -581,14 +590,13 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
      */
     public Builder clearMemberStats() {
-      if (memberStatsBuilder_ == null) {
-        memberStats_ = null;
-        onChanged();
-      } else {
-        memberStats_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      memberStats_ = null;
+      if (memberStatsBuilder_ != null) {
+        memberStatsBuilder_.dispose();
         memberStatsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -602,7 +610,7 @@ public final class ArrayStats extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.automl.v1beta1.DataStats member_stats = 2;</code>
      */
     public com.google.cloud.automl.v1beta1.DataStats.Builder getMemberStatsBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getMemberStatsFieldBuilder().getBuilder();
     }

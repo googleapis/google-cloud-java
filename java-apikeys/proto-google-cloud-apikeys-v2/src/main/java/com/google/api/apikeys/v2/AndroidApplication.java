@@ -69,7 +69,9 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int SHA1_FINGERPRINT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object sha1Fingerprint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sha1Fingerprint_ = "";
   /**
    *
    *
@@ -124,7 +126,9 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int PACKAGE_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object packageName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packageName_ = "";
   /**
    *
    *
@@ -378,10 +382,9 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       sha1Fingerprint_ = "";
-
       packageName_ = "";
-
       return this;
     }
 
@@ -409,10 +412,21 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
     public com.google.api.apikeys.v2.AndroidApplication buildPartial() {
       com.google.api.apikeys.v2.AndroidApplication result =
           new com.google.api.apikeys.v2.AndroidApplication(this);
-      result.sha1Fingerprint_ = sha1Fingerprint_;
-      result.packageName_ = packageName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.api.apikeys.v2.AndroidApplication result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.sha1Fingerprint_ = sha1Fingerprint_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.packageName_ = packageName_;
+      }
     }
 
     @java.lang.Override
@@ -462,10 +476,12 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
       if (other == com.google.api.apikeys.v2.AndroidApplication.getDefaultInstance()) return this;
       if (!other.getSha1Fingerprint().isEmpty()) {
         sha1Fingerprint_ = other.sha1Fingerprint_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPackageName().isEmpty()) {
         packageName_ = other.packageName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -497,13 +513,13 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
             case 10:
               {
                 sha1Fingerprint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 packageName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -522,6 +538,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object sha1Fingerprint_ = "";
     /**
@@ -593,8 +611,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       sha1Fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -613,8 +631,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSha1Fingerprint() {
-
       sha1Fingerprint_ = getDefaultInstance().getSha1Fingerprint();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -638,8 +656,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sha1Fingerprint_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +723,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-
       packageName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -722,8 +740,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPackageName() {
-
       packageName_ = getDefaultInstance().getPackageName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -744,8 +762,8 @@ public final class AndroidApplication extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       packageName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

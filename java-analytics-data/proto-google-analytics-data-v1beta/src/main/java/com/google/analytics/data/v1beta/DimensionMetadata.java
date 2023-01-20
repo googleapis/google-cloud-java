@@ -72,7 +72,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int API_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object apiName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiName_ = "";
   /**
    *
    *
@@ -123,7 +125,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int UI_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uiName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uiName_ = "";
   /**
    *
    *
@@ -174,7 +178,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -223,6 +229,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DEPRECATED_API_NAMES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList deprecatedApiNames_;
   /**
    *
@@ -296,7 +304,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CUSTOM_DEFINITION_FIELD_NUMBER = 5;
-  private boolean customDefinition_;
+  private boolean customDefinition_ = false;
   /**
    *
    *
@@ -314,7 +322,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 7;
-  private volatile java.lang.Object category_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object category_ = "";
   /**
    *
    *
@@ -613,18 +623,14 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       apiName_ = "";
-
       uiName_ = "";
-
       description_ = "";
-
       deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       customDefinition_ = false;
-
       category_ = "";
-
       return this;
     }
 
@@ -652,19 +658,40 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.analytics.data.v1beta.DimensionMetadata buildPartial() {
       com.google.analytics.data.v1beta.DimensionMetadata result =
           new com.google.analytics.data.v1beta.DimensionMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.apiName_ = apiName_;
-      result.uiName_ = uiName_;
-      result.description_ = description_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.deprecatedApiNames_ = deprecatedApiNames_;
-      result.customDefinition_ = customDefinition_;
-      result.category_ = category_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.DimensionMetadata result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        deprecatedApiNames_ = deprecatedApiNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.deprecatedApiNames_ = deprecatedApiNames_;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.DimensionMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.apiName_ = apiName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uiName_ = uiName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.customDefinition_ = customDefinition_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.category_ = category_;
+      }
     }
 
     @java.lang.Override
@@ -715,20 +742,23 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getApiName().isEmpty()) {
         apiName_ = other.apiName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUiName().isEmpty()) {
         uiName_ = other.uiName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.deprecatedApiNames_.isEmpty()) {
         if (deprecatedApiNames_.isEmpty()) {
           deprecatedApiNames_ = other.deprecatedApiNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           ensureDeprecatedApiNamesIsMutable();
           deprecatedApiNames_.addAll(other.deprecatedApiNames_);
@@ -740,6 +770,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -771,19 +802,19 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 apiName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uiName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -796,13 +827,13 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
             case 40:
               {
                 customDefinition_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 58:
               {
                 category_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -888,8 +919,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -906,8 +937,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearApiName() {
-
       apiName_ = getDefaultInstance().getApiName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -929,8 +960,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -999,8 +1030,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       uiName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1017,8 +1048,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearUiName() {
-
       uiName_ = getDefaultInstance().getUiName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1040,8 +1071,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uiName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1107,8 +1138,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1124,8 +1155,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1146,8 +1177,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1156,9 +1187,9 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureDeprecatedApiNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         deprecatedApiNames_ = new com.google.protobuf.LazyStringArrayList(deprecatedApiNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
     /**
@@ -1317,7 +1348,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearDeprecatedApiNames() {
       deprecatedApiNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1378,6 +1409,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setCustomDefinition(boolean value) {
 
       customDefinition_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1393,7 +1425,7 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCustomDefinition() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       customDefinition_ = false;
       onChanged();
       return this;
@@ -1463,8 +1495,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       category_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1481,8 +1513,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
       category_ = getDefaultInstance().getCategory();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1504,8 +1536,8 @@ public final class DimensionMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       category_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -70,7 +70,9 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
   }
 
   public static final int VIEW_FIELD_NUMBER = 2;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -150,9 +152,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
    */
   @java.lang.Override
   public com.google.appengine.v1.AuthorizedCertificateView getView() {
-    @SuppressWarnings("deprecation")
     com.google.appengine.v1.AuthorizedCertificateView result =
-        com.google.appengine.v1.AuthorizedCertificateView.valueOf(view_);
+        com.google.appengine.v1.AuthorizedCertificateView.forNumber(view_);
     return result == null ? com.google.appengine.v1.AuthorizedCertificateView.UNRECOGNIZED : result;
   }
 
@@ -363,10 +364,9 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       view_ = 0;
-
       return this;
     }
 
@@ -394,10 +394,21 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
     public com.google.appengine.v1.GetAuthorizedCertificateRequest buildPartial() {
       com.google.appengine.v1.GetAuthorizedCertificateRequest result =
           new com.google.appengine.v1.GetAuthorizedCertificateRequest(this);
-      result.name_ = name_;
-      result.view_ = view_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.GetAuthorizedCertificateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -448,6 +459,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.view_ != 0) {
@@ -482,13 +494,13 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -507,6 +519,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -572,8 +586,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -590,8 +604,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -613,8 +627,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -648,8 +662,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -666,9 +680,8 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
      */
     @java.lang.Override
     public com.google.appengine.v1.AuthorizedCertificateView getView() {
-      @SuppressWarnings("deprecation")
       com.google.appengine.v1.AuthorizedCertificateView result =
-          com.google.appengine.v1.AuthorizedCertificateView.valueOf(view_);
+          com.google.appengine.v1.AuthorizedCertificateView.forNumber(view_);
       return result == null
           ? com.google.appengine.v1.AuthorizedCertificateView.UNRECOGNIZED
           : result;
@@ -689,7 +702,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000002;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -706,7 +719,7 @@ public final class GetAuthorizedCertificateRequest extends com.google.protobuf.G
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       view_ = 0;
       onChanged();
       return this;

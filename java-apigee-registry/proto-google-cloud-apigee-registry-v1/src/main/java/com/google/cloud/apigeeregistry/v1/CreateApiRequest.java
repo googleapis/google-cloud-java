@@ -69,7 +69,9 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -169,11 +171,13 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiOrBuilder getApiOrBuilder() {
-    return getApi();
+    return api_ == null ? com.google.cloud.apigeeregistry.v1.Api.getDefaultInstance() : api_;
   }
 
   public static final int API_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object apiId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object apiId_ = "";
   /**
    *
    *
@@ -449,16 +453,14 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (apiBuilder_ == null) {
-        api_ = null;
-      } else {
-        api_ = null;
+      api_ = null;
+      if (apiBuilder_ != null) {
+        apiBuilder_.dispose();
         apiBuilder_ = null;
       }
       apiId_ = "";
-
       return this;
     }
 
@@ -486,15 +488,24 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.apigeeregistry.v1.CreateApiRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.CreateApiRequest result =
           new com.google.cloud.apigeeregistry.v1.CreateApiRequest(this);
-      result.parent_ = parent_;
-      if (apiBuilder_ == null) {
-        result.api_ = api_;
-      } else {
-        result.api_ = apiBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.apiId_ = apiId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.CreateApiRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.api_ = apiBuilder_ == null ? api_ : apiBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.apiId_ = apiId_;
+      }
     }
 
     @java.lang.Override
@@ -545,6 +556,7 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasApi()) {
@@ -552,6 +564,7 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getApiId().isEmpty()) {
         apiId_ = other.apiId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -583,19 +596,19 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getApiFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 apiId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -614,6 +627,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -685,8 +700,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -705,8 +720,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +745,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -755,7 +770,7 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the api field is set.
      */
     public boolean hasApi() {
-      return apiBuilder_ != null || api_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -792,11 +807,11 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         api_ = value;
-        onChanged();
       } else {
         apiBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -812,11 +827,11 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
     public Builder setApi(com.google.cloud.apigeeregistry.v1.Api.Builder builderForValue) {
       if (apiBuilder_ == null) {
         api_ = builderForValue.build();
-        onChanged();
       } else {
         apiBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -831,19 +846,18 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeApi(com.google.cloud.apigeeregistry.v1.Api value) {
       if (apiBuilder_ == null) {
-        if (api_ != null) {
-          api_ =
-              com.google.cloud.apigeeregistry.v1.Api.newBuilder(api_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && api_ != null
+            && api_ != com.google.cloud.apigeeregistry.v1.Api.getDefaultInstance()) {
+          getApiBuilder().mergeFrom(value);
         } else {
           api_ = value;
         }
-        onChanged();
       } else {
         apiBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -857,14 +871,13 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearApi() {
-      if (apiBuilder_ == null) {
-        api_ = null;
-        onChanged();
-      } else {
-        api_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      api_ = null;
+      if (apiBuilder_ != null) {
+        apiBuilder_.dispose();
         apiBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -878,7 +891,7 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.Api.Builder getApiBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getApiFieldBuilder().getBuilder();
     }
@@ -999,8 +1012,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       apiId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1020,8 +1033,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearApiId() {
-
       apiId_ = getDefaultInstance().getApiId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1046,8 +1059,8 @@ public final class CreateApiRequest extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       apiId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

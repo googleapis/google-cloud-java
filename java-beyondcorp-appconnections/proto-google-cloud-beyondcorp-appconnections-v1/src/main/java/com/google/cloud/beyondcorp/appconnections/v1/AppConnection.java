@@ -548,7 +548,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HOST_FIELD_NUMBER = 1;
-    private volatile java.lang.Object host_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object host_ = "";
     /**
      *
      *
@@ -597,7 +599,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PORT_FIELD_NUMBER = 2;
-    private int port_;
+    private int port_ = 0;
     /**
      *
      *
@@ -835,10 +837,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         host_ = "";
-
         port_ = 0;
-
         return this;
       }
 
@@ -872,10 +873,22 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint result =
             new com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint(
                 this);
-        result.host_ = host_;
-        result.port_ = port_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.host_ = host_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.port_ = port_;
+        }
       }
 
       @java.lang.Override
@@ -934,6 +947,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getHost().isEmpty()) {
           host_ = other.host_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getPort() != 0) {
@@ -968,13 +982,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   host_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 16:
                 {
                   port_ = input.readInt32();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 16
               default:
@@ -993,6 +1007,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object host_ = "";
       /**
@@ -1055,8 +1071,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         host_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1072,8 +1088,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearHost() {
-
         host_ = getDefaultInstance().getHost();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1094,8 +1110,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         host_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1131,6 +1147,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       public Builder setPort(int value) {
 
         port_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1146,7 +1163,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPort() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         port_ = 0;
         onChanged();
         return this;
@@ -1515,7 +1532,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_;
+    private int type_ = 0;
     /**
      *
      *
@@ -1548,16 +1565,17 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type result =
-          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.valueOf(type_);
+          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.UNRECOGNIZED
           : result;
     }
 
     public static final int URI_FIELD_NUMBER = 3;
-    private volatile java.lang.Object uri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
     /**
      *
      *
@@ -1606,7 +1624,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int INGRESS_PORT_FIELD_NUMBER = 4;
-    private int ingressPort_;
+    private int ingressPort_ = 0;
     /**
      *
      *
@@ -1625,7 +1643,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int APP_GATEWAY_FIELD_NUMBER = 5;
-    private volatile java.lang.Object appGateway_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object appGateway_ = "";
     /**
      *
      *
@@ -1915,14 +1935,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         uri_ = "";
-
         ingressPort_ = 0;
-
         appGateway_ = "";
-
         return this;
       }
 
@@ -1952,12 +1969,28 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway buildPartial() {
         com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway result =
             new com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway(this);
-        result.type_ = type_;
-        result.uri_ = uri_;
-        result.ingressPort_ = ingressPort_;
-        result.appGateway_ = appGateway_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ingressPort_ = ingressPort_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.appGateway_ = appGateway_;
+        }
       }
 
       @java.lang.Override
@@ -2016,6 +2049,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getUri().isEmpty()) {
           uri_ = other.uri_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getIngressPort() != 0) {
@@ -2023,6 +2057,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getAppGateway().isEmpty()) {
           appGateway_ = other.appGateway_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2054,25 +2089,25 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   type_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 16
               case 26:
                 {
                   uri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 26
               case 32:
                 {
                   ingressPort_ = input.readInt32();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 32
               case 42:
                 {
                   appGateway_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 42
               default:
@@ -2091,6 +2126,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -2125,8 +2162,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2145,9 +2182,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type getType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type result =
-            com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.valueOf(type_);
+            com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.forNumber(
+                type_);
         return result == null
             ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Type.UNRECOGNIZED
             : result;
@@ -2171,7 +2208,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -2190,7 +2227,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearType() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -2257,8 +2294,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         uri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2274,8 +2311,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearUri() {
-
         uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2296,8 +2333,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         uri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2335,6 +2372,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       public Builder setIngressPort(int value) {
 
         ingressPort_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2351,7 +2389,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearIngressPort() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         ingressPort_ = 0;
         onChanged();
         return this;
@@ -2427,8 +2465,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         appGateway_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2447,8 +2485,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearAppGateway() {
-
         appGateway_ = getDefaultInstance().getAppGateway();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -2472,8 +2510,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         appGateway_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2546,7 +2584,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -2642,7 +2682,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
@@ -2691,7 +2731,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -2707,6 +2747,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2764,7 +2805,10 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2793,7 +2837,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -2844,7 +2890,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UID_FIELD_NUMBER = 6;
-  private volatile java.lang.Object uid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
   /**
    *
    *
@@ -2895,7 +2943,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 7;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -2928,9 +2976,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type getType() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type result =
-        com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.valueOf(type_);
+        com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.forNumber(type_);
     return result == null
         ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.UNRECOGNIZED
         : result;
@@ -2994,10 +3041,15 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpointOrBuilder
       getApplicationEndpointOrBuilder() {
-    return getApplicationEndpoint();
+    return applicationEndpoint_ == null
+        ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint
+            .getDefaultInstance()
+        : applicationEndpoint_;
   }
 
   public static final int CONNECTORS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList connectors_;
   /**
    *
@@ -3063,7 +3115,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 10;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -3096,9 +3148,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State result =
-        com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.valueOf(state_);
+        com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.forNumber(state_);
     return result == null
         ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.UNRECOGNIZED
         : result;
@@ -3156,7 +3207,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.GatewayOrBuilder
       getGatewayOrBuilder() {
-    return getGateway();
+    return gateway_ == null
+        ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.getDefaultInstance()
+        : gateway_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3513,41 +3566,33 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
       displayName_ = "";
-
       uid_ = "";
-
       type_ = 0;
-
-      if (applicationEndpointBuilder_ == null) {
-        applicationEndpoint_ = null;
-      } else {
-        applicationEndpoint_ = null;
+      applicationEndpoint_ = null;
+      if (applicationEndpointBuilder_ != null) {
+        applicationEndpointBuilder_.dispose();
         applicationEndpointBuilder_ = null;
       }
       connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = 0;
-
-      if (gatewayBuilder_ == null) {
-        gateway_ = null;
-      } else {
-        gateway_ = null;
+      gateway_ = null;
+      if (gatewayBuilder_ != null) {
+        gatewayBuilder_.dispose();
         gatewayBuilder_ = null;
       }
       return this;
@@ -3577,41 +3622,59 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection buildPartial() {
       com.google.cloud.beyondcorp.appconnections.v1.AppConnection result =
           new com.google.cloud.beyondcorp.appconnections.v1.AppConnection(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.displayName_ = displayName_;
-      result.uid_ = uid_;
-      result.type_ = type_;
-      if (applicationEndpointBuilder_ == null) {
-        result.applicationEndpoint_ = applicationEndpoint_;
-      } else {
-        result.applicationEndpoint_ = applicationEndpointBuilder_.build();
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        connectors_ = connectors_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.connectors_ = connectors_;
-      result.state_ = state_;
-      if (gatewayBuilder_ == null) {
-        result.gateway_ = gateway_;
-      } else {
-        result.gateway_ = gatewayBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.beyondcorp.appconnections.v1.AppConnection result) {
+      if (((bitField0_ & 0x00000100) != 0)) {
+        connectors_ = connectors_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      }
+      result.connectors_ = connectors_;
+    }
+
+    private void buildPartial0(com.google.cloud.beyondcorp.appconnections.v1.AppConnection result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.applicationEndpoint_ =
+            applicationEndpointBuilder_ == null
+                ? applicationEndpoint_
+                : applicationEndpointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.gateway_ = gatewayBuilder_ == null ? gateway_ : gatewayBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3662,6 +3725,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3671,12 +3735,15 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getUid().isEmpty()) {
         uid_ = other.uid_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -3688,7 +3755,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (!other.connectors_.isEmpty()) {
         if (connectors_.isEmpty()) {
           connectors_ = other.connectors_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureConnectorsIsMutable();
           connectors_.addAll(other.connectors_);
@@ -3730,19 +3797,19 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -3754,31 +3821,32 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 uid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getApplicationEndpointFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 74:
@@ -3791,13 +3859,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
             case 80:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(getGatewayFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             default:
@@ -3883,8 +3951,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3901,8 +3969,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3924,8 +3992,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3950,7 +4018,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -3991,11 +4059,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4012,11 +4080,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4032,17 +4100,18 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -4057,14 +4126,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4079,7 +4147,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4151,7 +4219,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -4192,11 +4260,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4213,11 +4281,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4233,17 +4301,18 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -4258,14 +4327,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4280,7 +4348,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4343,14 +4411,14 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -4402,8 +4470,10 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -4432,6 +4502,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -4454,6 +4525,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -4472,8 +4544,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -4487,6 +4559,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -4554,8 +4627,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4572,8 +4645,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4595,8 +4668,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4665,8 +4738,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uid_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4683,8 +4756,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-
       uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4706,8 +4779,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uid_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4745,8 +4818,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4765,9 +4838,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type getType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type result =
-          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.valueOf(type_);
+          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.forNumber(type_);
       return result == null
           ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Type.UNRECOGNIZED
           : result;
@@ -4790,7 +4862,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -4809,7 +4881,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
       onChanged();
       return this;
@@ -4838,7 +4910,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the applicationEndpoint field is set.
      */
     public boolean hasApplicationEndpoint() {
-      return applicationEndpointBuilder_ != null || applicationEndpoint_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4884,11 +4956,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         applicationEndpoint_ = value;
-        onChanged();
       } else {
         applicationEndpointBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4908,11 +4980,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (applicationEndpointBuilder_ == null) {
         applicationEndpoint_ = builderForValue.build();
-        onChanged();
       } else {
         applicationEndpointBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4930,20 +5002,20 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeApplicationEndpoint(
         com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint value) {
       if (applicationEndpointBuilder_ == null) {
-        if (applicationEndpoint_ != null) {
-          applicationEndpoint_ =
-              com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint
-                  .newBuilder(applicationEndpoint_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && applicationEndpoint_ != null
+            && applicationEndpoint_
+                != com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint
+                    .getDefaultInstance()) {
+          getApplicationEndpointBuilder().mergeFrom(value);
         } else {
           applicationEndpoint_ = value;
         }
-        onChanged();
       } else {
         applicationEndpointBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4959,14 +5031,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearApplicationEndpoint() {
-      if (applicationEndpointBuilder_ == null) {
-        applicationEndpoint_ = null;
-        onChanged();
-      } else {
-        applicationEndpoint_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      applicationEndpoint_ = null;
+      if (applicationEndpointBuilder_ != null) {
+        applicationEndpointBuilder_.dispose();
         applicationEndpointBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4983,7 +5054,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.ApplicationEndpoint.Builder
         getApplicationEndpointBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getApplicationEndpointFieldBuilder().getBuilder();
     }
@@ -5046,9 +5117,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureConnectorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         connectors_ = new com.google.protobuf.LazyStringArrayList(connectors_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -5191,7 +5262,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearConnectors() {
       connectors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -5252,8 +5323,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5272,9 +5343,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State result =
-          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.valueOf(state_);
+          com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.forNumber(state_);
       return result == null
           ? com.google.cloud.beyondcorp.appconnections.v1.AppConnection.State.UNRECOGNIZED
           : result;
@@ -5298,7 +5368,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000200;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5317,7 +5387,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000200);
       state_ = 0;
       onChanged();
       return this;
@@ -5343,7 +5413,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gateway field is set.
      */
     public boolean hasGateway() {
-      return gatewayBuilder_ != null || gateway_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -5386,11 +5456,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         gateway_ = value;
-        onChanged();
       } else {
         gatewayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5409,11 +5479,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
             builderForValue) {
       if (gatewayBuilder_ == null) {
         gateway_ = builderForValue.build();
-        onChanged();
       } else {
         gatewayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5430,20 +5500,20 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeGateway(
         com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway value) {
       if (gatewayBuilder_ == null) {
-        if (gateway_ != null) {
-          gateway_ =
-              com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.newBuilder(
-                      gateway_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && gateway_ != null
+            && gateway_
+                != com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway
+                    .getDefaultInstance()) {
+          getGatewayBuilder().mergeFrom(value);
         } else {
           gateway_ = value;
         }
-        onChanged();
       } else {
         gatewayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5458,14 +5528,13 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearGateway() {
-      if (gatewayBuilder_ == null) {
-        gateway_ = null;
-        onChanged();
-      } else {
-        gateway_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      gateway_ = null;
+      if (gatewayBuilder_ != null) {
+        gatewayBuilder_.dispose();
         gatewayBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5481,7 +5550,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection.Gateway.Builder
         getGatewayBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getGatewayFieldBuilder().getBuilder();
     }

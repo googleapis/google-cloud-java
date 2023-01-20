@@ -115,7 +115,9 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder getTokensPerDayOrBuilder() {
-    return getTokensPerDay();
+    return tokensPerDay_ == null
+        ? com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()
+        : tokensPerDay_;
   }
 
   public static final int TOKENS_PER_HOUR_FIELD_NUMBER = 2;
@@ -169,7 +171,9 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder getTokensPerHourOrBuilder() {
-    return getTokensPerHour();
+    return tokensPerHour_ == null
+        ? com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()
+        : tokensPerHour_;
   }
 
   public static final int CONCURRENT_REQUESTS_FIELD_NUMBER = 3;
@@ -218,7 +222,9 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder
       getConcurrentRequestsOrBuilder() {
-    return getConcurrentRequests();
+    return concurrentRequests_ == null
+        ? com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()
+        : concurrentRequests_;
   }
 
   public static final int SERVER_ERRORS_PER_PROJECT_PER_HOUR_FIELD_NUMBER = 4;
@@ -273,7 +279,9 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AccessQuotaStatusOrBuilder
       getServerErrorsPerProjectPerHourOrBuilder() {
-    return getServerErrorsPerProjectPerHour();
+    return serverErrorsPerProjectPerHour_ == null
+        ? com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()
+        : serverErrorsPerProjectPerHour_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -526,28 +534,25 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (tokensPerDayBuilder_ == null) {
-        tokensPerDay_ = null;
-      } else {
-        tokensPerDay_ = null;
+      bitField0_ = 0;
+      tokensPerDay_ = null;
+      if (tokensPerDayBuilder_ != null) {
+        tokensPerDayBuilder_.dispose();
         tokensPerDayBuilder_ = null;
       }
-      if (tokensPerHourBuilder_ == null) {
-        tokensPerHour_ = null;
-      } else {
-        tokensPerHour_ = null;
+      tokensPerHour_ = null;
+      if (tokensPerHourBuilder_ != null) {
+        tokensPerHourBuilder_.dispose();
         tokensPerHourBuilder_ = null;
       }
-      if (concurrentRequestsBuilder_ == null) {
-        concurrentRequests_ = null;
-      } else {
-        concurrentRequests_ = null;
+      concurrentRequests_ = null;
+      if (concurrentRequestsBuilder_ != null) {
+        concurrentRequestsBuilder_.dispose();
         concurrentRequestsBuilder_ = null;
       }
-      if (serverErrorsPerProjectPerHourBuilder_ == null) {
-        serverErrorsPerProjectPerHour_ = null;
-      } else {
-        serverErrorsPerProjectPerHour_ = null;
+      serverErrorsPerProjectPerHour_ = null;
+      if (serverErrorsPerProjectPerHourBuilder_ != null) {
+        serverErrorsPerProjectPerHourBuilder_.dispose();
         serverErrorsPerProjectPerHourBuilder_ = null;
       }
       return this;
@@ -577,28 +582,35 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.AccessQuota buildPartial() {
       com.google.analytics.admin.v1alpha.AccessQuota result =
           new com.google.analytics.admin.v1alpha.AccessQuota(this);
-      if (tokensPerDayBuilder_ == null) {
-        result.tokensPerDay_ = tokensPerDay_;
-      } else {
-        result.tokensPerDay_ = tokensPerDayBuilder_.build();
-      }
-      if (tokensPerHourBuilder_ == null) {
-        result.tokensPerHour_ = tokensPerHour_;
-      } else {
-        result.tokensPerHour_ = tokensPerHourBuilder_.build();
-      }
-      if (concurrentRequestsBuilder_ == null) {
-        result.concurrentRequests_ = concurrentRequests_;
-      } else {
-        result.concurrentRequests_ = concurrentRequestsBuilder_.build();
-      }
-      if (serverErrorsPerProjectPerHourBuilder_ == null) {
-        result.serverErrorsPerProjectPerHour_ = serverErrorsPerProjectPerHour_;
-      } else {
-        result.serverErrorsPerProjectPerHour_ = serverErrorsPerProjectPerHourBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AccessQuota result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.tokensPerDay_ =
+            tokensPerDayBuilder_ == null ? tokensPerDay_ : tokensPerDayBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tokensPerHour_ =
+            tokensPerHourBuilder_ == null ? tokensPerHour_ : tokensPerHourBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.concurrentRequests_ =
+            concurrentRequestsBuilder_ == null
+                ? concurrentRequests_
+                : concurrentRequestsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.serverErrorsPerProjectPerHour_ =
+            serverErrorsPerProjectPerHourBuilder_ == null
+                ? serverErrorsPerProjectPerHour_
+                : serverErrorsPerProjectPerHourBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -687,27 +699,27 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getTokensPerDayFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTokensPerHourFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getConcurrentRequestsFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getServerErrorsPerProjectPerHourFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -726,6 +738,8 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.AccessQuotaStatus tokensPerDay_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -746,7 +760,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tokensPerDay field is set.
      */
     public boolean hasTokensPerDay() {
-      return tokensPerDayBuilder_ != null || tokensPerDay_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -785,11 +799,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tokensPerDay_ = value;
-        onChanged();
       } else {
         tokensPerDayBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -806,11 +820,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder builderForValue) {
       if (tokensPerDayBuilder_ == null) {
         tokensPerDay_ = builderForValue.build();
-        onChanged();
       } else {
         tokensPerDayBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -825,19 +839,19 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTokensPerDay(com.google.analytics.admin.v1alpha.AccessQuotaStatus value) {
       if (tokensPerDayBuilder_ == null) {
-        if (tokensPerDay_ != null) {
-          tokensPerDay_ =
-              com.google.analytics.admin.v1alpha.AccessQuotaStatus.newBuilder(tokensPerDay_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && tokensPerDay_ != null
+            && tokensPerDay_
+                != com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()) {
+          getTokensPerDayBuilder().mergeFrom(value);
         } else {
           tokensPerDay_ = value;
         }
-        onChanged();
       } else {
         tokensPerDayBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -851,14 +865,13 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_day = 1;</code>
      */
     public Builder clearTokensPerDay() {
-      if (tokensPerDayBuilder_ == null) {
-        tokensPerDay_ = null;
-        onChanged();
-      } else {
-        tokensPerDay_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      tokensPerDay_ = null;
+      if (tokensPerDayBuilder_ != null) {
+        tokensPerDayBuilder_.dispose();
         tokensPerDayBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -872,7 +885,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_day = 1;</code>
      */
     public com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder getTokensPerDayBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getTokensPerDayFieldBuilder().getBuilder();
     }
@@ -943,7 +956,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tokensPerHour field is set.
      */
     public boolean hasTokensPerHour() {
-      return tokensPerHourBuilder_ != null || tokensPerHour_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -984,11 +997,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         tokensPerHour_ = value;
-        onChanged();
       } else {
         tokensPerHourBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1006,11 +1019,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder builderForValue) {
       if (tokensPerHourBuilder_ == null) {
         tokensPerHour_ = builderForValue.build();
-        onChanged();
       } else {
         tokensPerHourBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1026,19 +1039,19 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTokensPerHour(com.google.analytics.admin.v1alpha.AccessQuotaStatus value) {
       if (tokensPerHourBuilder_ == null) {
-        if (tokensPerHour_ != null) {
-          tokensPerHour_ =
-              com.google.analytics.admin.v1alpha.AccessQuotaStatus.newBuilder(tokensPerHour_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && tokensPerHour_ != null
+            && tokensPerHour_
+                != com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()) {
+          getTokensPerHourBuilder().mergeFrom(value);
         } else {
           tokensPerHour_ = value;
         }
-        onChanged();
       } else {
         tokensPerHourBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1053,14 +1066,13 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_hour = 2;</code>
      */
     public Builder clearTokensPerHour() {
-      if (tokensPerHourBuilder_ == null) {
-        tokensPerHour_ = null;
-        onChanged();
-      } else {
-        tokensPerHour_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tokensPerHour_ = null;
+      if (tokensPerHourBuilder_ != null) {
+        tokensPerHourBuilder_.dispose();
         tokensPerHourBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1075,7 +1087,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus tokens_per_hour = 2;</code>
      */
     public com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder getTokensPerHourBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTokensPerHourFieldBuilder().getBuilder();
     }
@@ -1146,7 +1158,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the concurrentRequests field is set.
      */
     public boolean hasConcurrentRequests() {
-      return concurrentRequestsBuilder_ != null || concurrentRequests_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1184,11 +1196,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         concurrentRequests_ = value;
-        onChanged();
       } else {
         concurrentRequestsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1204,11 +1216,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder builderForValue) {
       if (concurrentRequestsBuilder_ == null) {
         concurrentRequests_ = builderForValue.build();
-        onChanged();
       } else {
         concurrentRequestsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1223,19 +1235,19 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeConcurrentRequests(
         com.google.analytics.admin.v1alpha.AccessQuotaStatus value) {
       if (concurrentRequestsBuilder_ == null) {
-        if (concurrentRequests_ != null) {
-          concurrentRequests_ =
-              com.google.analytics.admin.v1alpha.AccessQuotaStatus.newBuilder(concurrentRequests_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && concurrentRequests_ != null
+            && concurrentRequests_
+                != com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()) {
+          getConcurrentRequestsBuilder().mergeFrom(value);
         } else {
           concurrentRequests_ = value;
         }
-        onChanged();
       } else {
         concurrentRequestsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1248,14 +1260,13 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.admin.v1alpha.AccessQuotaStatus concurrent_requests = 3;</code>
      */
     public Builder clearConcurrentRequests() {
-      if (concurrentRequestsBuilder_ == null) {
-        concurrentRequests_ = null;
-        onChanged();
-      } else {
-        concurrentRequests_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      concurrentRequests_ = null;
+      if (concurrentRequestsBuilder_ != null) {
+        concurrentRequestsBuilder_.dispose();
         concurrentRequestsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1269,7 +1280,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder
         getConcurrentRequestsBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getConcurrentRequestsFieldBuilder().getBuilder();
     }
@@ -1339,8 +1350,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serverErrorsPerProjectPerHour field is set.
      */
     public boolean hasServerErrorsPerProjectPerHour() {
-      return serverErrorsPerProjectPerHourBuilder_ != null
-          || serverErrorsPerProjectPerHour_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1384,11 +1394,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         serverErrorsPerProjectPerHour_ = value;
-        onChanged();
       } else {
         serverErrorsPerProjectPerHourBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1407,11 +1417,11 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder builderForValue) {
       if (serverErrorsPerProjectPerHourBuilder_ == null) {
         serverErrorsPerProjectPerHour_ = builderForValue.build();
-        onChanged();
       } else {
         serverErrorsPerProjectPerHourBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1429,20 +1439,19 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeServerErrorsPerProjectPerHour(
         com.google.analytics.admin.v1alpha.AccessQuotaStatus value) {
       if (serverErrorsPerProjectPerHourBuilder_ == null) {
-        if (serverErrorsPerProjectPerHour_ != null) {
-          serverErrorsPerProjectPerHour_ =
-              com.google.analytics.admin.v1alpha.AccessQuotaStatus.newBuilder(
-                      serverErrorsPerProjectPerHour_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && serverErrorsPerProjectPerHour_ != null
+            && serverErrorsPerProjectPerHour_
+                != com.google.analytics.admin.v1alpha.AccessQuotaStatus.getDefaultInstance()) {
+          getServerErrorsPerProjectPerHourBuilder().mergeFrom(value);
         } else {
           serverErrorsPerProjectPerHour_ = value;
         }
-        onChanged();
       } else {
         serverErrorsPerProjectPerHourBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1458,14 +1467,13 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearServerErrorsPerProjectPerHour() {
-      if (serverErrorsPerProjectPerHourBuilder_ == null) {
-        serverErrorsPerProjectPerHour_ = null;
-        onChanged();
-      } else {
-        serverErrorsPerProjectPerHour_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      serverErrorsPerProjectPerHour_ = null;
+      if (serverErrorsPerProjectPerHourBuilder_ != null) {
+        serverErrorsPerProjectPerHourBuilder_.dispose();
         serverErrorsPerProjectPerHourBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1482,7 +1490,7 @@ public final class AccessQuota extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.admin.v1alpha.AccessQuotaStatus.Builder
         getServerErrorsPerProjectPerHourBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getServerErrorsPerProjectPerHourFieldBuilder().getBuilder();
     }

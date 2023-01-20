@@ -116,7 +116,9 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.identity.accesscontextmanager.v1.AccessPolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null
+        ? com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance()
+        : policy_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -387,16 +389,15 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      bitField0_ = 0;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -428,18 +429,22 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
     public com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest buildPartial() {
       com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest result =
           new com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest(this);
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -526,13 +531,13 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
             case 10:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -551,6 +556,8 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.identity.accesscontextmanager.v1.AccessPolicy policy_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -572,7 +579,7 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -613,11 +620,11 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -635,11 +642,11 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
         com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -655,19 +662,19 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      */
     public Builder mergePolicy(com.google.identity.accesscontextmanager.v1.AccessPolicy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-              com.google.identity.accesscontextmanager.v1.AccessPolicy.newBuilder(policy_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && policy_ != null
+            && policy_
+                != com.google.identity.accesscontextmanager.v1.AccessPolicy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -682,14 +689,13 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -704,7 +710,7 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.identity.accesscontextmanager.v1.AccessPolicy.Builder getPolicyBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -775,7 +781,7 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -814,11 +820,11 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -834,11 +840,11 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -853,17 +859,18 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -877,14 +884,13 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -898,7 +904,7 @@ public final class UpdateAccessPolicyRequest extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

@@ -164,7 +164,9 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -443,11 +445,11 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (destinationDatasetBuilder_ != null) {
         destinationDatasetBuilder_.clear();
       }
       name_ = "";
-
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -478,17 +480,29 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
     public com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest buildPartial() {
       com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest result =
           new com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest(this);
-      if (destinationCase_ == 3) {
-        if (destinationDatasetBuilder_ == null) {
-          result.destination_ = destination_;
-        } else {
-          result.destination_ = destinationDatasetBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.name_ = name_;
-      result.destinationCase_ = destinationCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest result) {
+      result.destinationCase_ = destinationCase_;
+      result.destination_ = this.destination_;
+      if (destinationCase_ == 3 && destinationDatasetBuilder_ != null) {
+        result.destination_ = destinationDatasetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -541,6 +555,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       switch (other.getDestinationCase()) {
@@ -583,7 +598,7 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 26:
@@ -623,6 +638,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.analyticshub.v1.DestinationDataset,
@@ -846,7 +863,6 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       }
       destinationCase_ = 3;
       onChanged();
-      ;
       return destinationDatasetBuilder_;
     }
 
@@ -920,8 +936,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -940,8 +956,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -965,8 +981,8 @@ public final class SubscribeListingRequest extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

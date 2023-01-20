@@ -386,7 +386,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MEASUREMENT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object measurementId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object measurementId_ = "";
     /**
      *
      *
@@ -437,7 +439,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIREBASE_APP_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object firebaseAppId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object firebaseAppId_ = "";
     /**
      *
      *
@@ -488,7 +492,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int DEFAULT_URI_FIELD_NUMBER = 3;
-    private volatile java.lang.Object defaultUri_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object defaultUri_ = "";
     /**
      *
      *
@@ -756,12 +762,10 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         measurementId_ = "";
-
         firebaseAppId_ = "";
-
         defaultUri_ = "";
-
         return this;
       }
 
@@ -790,11 +794,25 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.admin.v1beta.DataStream.WebStreamData buildPartial() {
         com.google.analytics.admin.v1beta.DataStream.WebStreamData result =
             new com.google.analytics.admin.v1beta.DataStream.WebStreamData(this);
-        result.measurementId_ = measurementId_;
-        result.firebaseAppId_ = firebaseAppId_;
-        result.defaultUri_ = defaultUri_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1beta.DataStream.WebStreamData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.measurementId_ = measurementId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.firebaseAppId_ = firebaseAppId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.defaultUri_ = defaultUri_;
+        }
       }
 
       @java.lang.Override
@@ -848,14 +866,17 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getMeasurementId().isEmpty()) {
           measurementId_ = other.measurementId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getFirebaseAppId().isEmpty()) {
           firebaseAppId_ = other.firebaseAppId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getDefaultUri().isEmpty()) {
           defaultUri_ = other.defaultUri_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -887,19 +908,19 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   measurementId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   firebaseAppId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   defaultUri_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -918,6 +939,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object measurementId_ = "";
       /**
@@ -983,8 +1006,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         measurementId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1001,8 +1024,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMeasurementId() {
-
         measurementId_ = getDefaultInstance().getMeasurementId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1024,8 +1047,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         measurementId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1094,8 +1117,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1112,8 +1135,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFirebaseAppId() {
-
         firebaseAppId_ = getDefaultInstance().getFirebaseAppId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1135,8 +1158,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1205,8 +1228,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         defaultUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1223,8 +1246,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearDefaultUri() {
-
         defaultUri_ = getDefaultInstance().getDefaultUri();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1246,8 +1269,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         defaultUri_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1427,7 +1450,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIREBASE_APP_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object firebaseAppId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object firebaseAppId_ = "";
     /**
      *
      *
@@ -1478,7 +1503,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int PACKAGE_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object packageName_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object packageName_ = "";
     /**
      *
      *
@@ -1739,10 +1766,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         firebaseAppId_ = "";
-
         packageName_ = "";
-
         return this;
       }
 
@@ -1772,10 +1798,22 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.admin.v1beta.DataStream.AndroidAppStreamData buildPartial() {
         com.google.analytics.admin.v1beta.DataStream.AndroidAppStreamData result =
             new com.google.analytics.admin.v1beta.DataStream.AndroidAppStreamData(this);
-        result.firebaseAppId_ = firebaseAppId_;
-        result.packageName_ = packageName_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1beta.DataStream.AndroidAppStreamData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.firebaseAppId_ = firebaseAppId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.packageName_ = packageName_;
+        }
       }
 
       @java.lang.Override
@@ -1831,10 +1869,12 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance()) return this;
         if (!other.getFirebaseAppId().isEmpty()) {
           firebaseAppId_ = other.firebaseAppId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPackageName().isEmpty()) {
           packageName_ = other.packageName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1866,13 +1906,13 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   firebaseAppId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   packageName_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -1891,6 +1931,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object firebaseAppId_ = "";
       /**
@@ -1956,8 +1998,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1974,8 +2016,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFirebaseAppId() {
-
         firebaseAppId_ = getDefaultInstance().getFirebaseAppId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1997,8 +2039,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2067,8 +2109,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         packageName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2085,8 +2127,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearPackageName() {
-
         packageName_ = getDefaultInstance().getPackageName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2108,8 +2150,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         packageName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2295,7 +2337,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int FIREBASE_APP_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object firebaseAppId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object firebaseAppId_ = "";
     /**
      *
      *
@@ -2346,7 +2390,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BUNDLE_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object bundleId_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object bundleId_ = "";
     /**
      *
      *
@@ -2609,10 +2655,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         firebaseAppId_ = "";
-
         bundleId_ = "";
-
         return this;
       }
 
@@ -2641,10 +2686,22 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.analytics.admin.v1beta.DataStream.IosAppStreamData buildPartial() {
         com.google.analytics.admin.v1beta.DataStream.IosAppStreamData result =
             new com.google.analytics.admin.v1beta.DataStream.IosAppStreamData(this);
-        result.firebaseAppId_ = firebaseAppId_;
-        result.bundleId_ = bundleId_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.analytics.admin.v1beta.DataStream.IosAppStreamData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.firebaseAppId_ = firebaseAppId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bundleId_ = bundleId_;
+        }
       }
 
       @java.lang.Override
@@ -2699,10 +2756,12 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (!other.getFirebaseAppId().isEmpty()) {
           firebaseAppId_ = other.firebaseAppId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getBundleId().isEmpty()) {
           bundleId_ = other.bundleId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2734,13 +2793,13 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   firebaseAppId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
                 {
                   bundleId_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               default:
@@ -2759,6 +2818,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object firebaseAppId_ = "";
       /**
@@ -2824,8 +2885,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2842,8 +2903,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFirebaseAppId() {
-
         firebaseAppId_ = getDefaultInstance().getFirebaseAppId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2865,8 +2926,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         firebaseAppId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2941,8 +3002,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         bundleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2961,8 +3022,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearBundleId() {
-
         bundleId_ = getDefaultInstance().getBundleId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2986,8 +3047,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         bundleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3285,7 +3346,9 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -3338,7 +3401,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    *
    *
@@ -3371,16 +3434,17 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.DataStream.DataStreamType getType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1beta.DataStream.DataStreamType result =
-        com.google.analytics.admin.v1beta.DataStream.DataStreamType.valueOf(type_);
+        com.google.analytics.admin.v1beta.DataStream.DataStreamType.forNumber(type_);
     return result == null
         ? com.google.analytics.admin.v1beta.DataStream.DataStreamType.UNRECOGNIZED
         : result;
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -3478,7 +3542,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
@@ -3527,7 +3591,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3834,6 +3898,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (webStreamDataBuilder_ != null) {
         webStreamDataBuilder_.clear();
       }
@@ -3844,21 +3909,16 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         iosAppStreamDataBuilder_.clear();
       }
       name_ = "";
-
       type_ = 0;
-
       displayName_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
       streamDataCase_ = 0;
@@ -3890,43 +3950,45 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1beta.DataStream buildPartial() {
       com.google.analytics.admin.v1beta.DataStream result =
           new com.google.analytics.admin.v1beta.DataStream(this);
-      if (streamDataCase_ == 6) {
-        if (webStreamDataBuilder_ == null) {
-          result.streamData_ = streamData_;
-        } else {
-          result.streamData_ = webStreamDataBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (streamDataCase_ == 7) {
-        if (androidAppStreamDataBuilder_ == null) {
-          result.streamData_ = streamData_;
-        } else {
-          result.streamData_ = androidAppStreamDataBuilder_.build();
-        }
-      }
-      if (streamDataCase_ == 8) {
-        if (iosAppStreamDataBuilder_ == null) {
-          result.streamData_ = streamData_;
-        } else {
-          result.streamData_ = iosAppStreamDataBuilder_.build();
-        }
-      }
-      result.name_ = name_;
-      result.type_ = type_;
-      result.displayName_ = displayName_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
-      }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      result.streamDataCase_ = streamDataCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1beta.DataStream result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.analytics.admin.v1beta.DataStream result) {
+      result.streamDataCase_ = streamDataCase_;
+      result.streamData_ = this.streamData_;
+      if (streamDataCase_ == 6 && webStreamDataBuilder_ != null) {
+        result.streamData_ = webStreamDataBuilder_.build();
+      }
+      if (streamDataCase_ == 7 && androidAppStreamDataBuilder_ != null) {
+        result.streamData_ = androidAppStreamDataBuilder_.build();
+      }
+      if (streamDataCase_ == 8 && iosAppStreamDataBuilder_ != null) {
+        result.streamData_ = iosAppStreamDataBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3976,6 +4038,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.admin.v1beta.DataStream.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -3983,6 +4046,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -4041,31 +4105,31 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 16:
               {
                 type_ = input.readEnum();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 16
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 50:
@@ -4118,6 +4182,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1beta.DataStream.WebStreamData,
@@ -4341,7 +4407,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       streamDataCase_ = 6;
       onChanged();
-      ;
       return webStreamDataBuilder_;
     }
 
@@ -4591,7 +4656,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       streamDataCase_ = 7;
       onChanged();
-      ;
       return androidAppStreamDataBuilder_;
     }
 
@@ -4826,7 +4890,6 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       }
       streamDataCase_ = 8;
       onChanged();
-      ;
       return iosAppStreamDataBuilder_;
     }
 
@@ -4897,8 +4960,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4916,8 +4979,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -4940,8 +5003,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4979,8 +5042,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-
       type_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4999,9 +5062,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.admin.v1beta.DataStream.DataStreamType getType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1beta.DataStream.DataStreamType result =
-          com.google.analytics.admin.v1beta.DataStream.DataStreamType.valueOf(type_);
+          com.google.analytics.admin.v1beta.DataStream.DataStreamType.forNumber(type_);
       return result == null
           ? com.google.analytics.admin.v1beta.DataStream.DataStreamType.UNRECOGNIZED
           : result;
@@ -5024,7 +5086,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000010;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -5043,7 +5105,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       type_ = 0;
       onChanged();
       return this;
@@ -5116,8 +5178,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5135,8 +5197,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -5159,8 +5221,8 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5185,7 +5247,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -5226,11 +5288,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5247,11 +5309,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5267,17 +5329,18 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -5292,14 +5355,13 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5314,7 +5376,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -5386,7 +5448,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -5427,11 +5489,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -5448,11 +5510,11 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -5468,17 +5530,18 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -5493,14 +5556,13 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5515,7 +5577,7 @@ public final class DataStream extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

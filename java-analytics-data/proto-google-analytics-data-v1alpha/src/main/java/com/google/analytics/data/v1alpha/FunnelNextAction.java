@@ -131,11 +131,13 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.DimensionOrBuilder getNextActionDimensionOrBuilder() {
-    return getNextActionDimension();
+    return nextActionDimension_ == null
+        ? com.google.analytics.data.v1alpha.Dimension.getDefaultInstance()
+        : nextActionDimension_;
   }
 
   public static final int LIMIT_FIELD_NUMBER = 2;
-  private long limit_;
+  private long limit_ = 0L;
   /**
    *
    *
@@ -392,14 +394,13 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (nextActionDimensionBuilder_ == null) {
-        nextActionDimension_ = null;
-      } else {
-        nextActionDimension_ = null;
+      bitField0_ = 0;
+      nextActionDimension_ = null;
+      if (nextActionDimensionBuilder_ != null) {
+        nextActionDimensionBuilder_.dispose();
         nextActionDimensionBuilder_ = null;
       }
       limit_ = 0L;
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -427,20 +428,27 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
     public com.google.analytics.data.v1alpha.FunnelNextAction buildPartial() {
       com.google.analytics.data.v1alpha.FunnelNextAction result =
           new com.google.analytics.data.v1alpha.FunnelNextAction(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (nextActionDimensionBuilder_ == null) {
-        result.nextActionDimension_ = nextActionDimension_;
-      } else {
-        result.nextActionDimension_ = nextActionDimensionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelNextAction result) {
+      int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nextActionDimension_ =
+            nextActionDimensionBuilder_ == null
+                ? nextActionDimension_
+                : nextActionDimensionBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.limit_ = limit_;
         to_bitField0_ |= 0x00000001;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -525,13 +533,13 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     getNextActionDimensionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 limit_ = input.readInt64();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -576,7 +584,7 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the nextActionDimension field is set.
      */
     public boolean hasNextActionDimension() {
-      return nextActionDimensionBuilder_ != null || nextActionDimension_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -623,11 +631,11 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         nextActionDimension_ = value;
-        onChanged();
       } else {
         nextActionDimensionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -648,11 +656,11 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
         com.google.analytics.data.v1alpha.Dimension.Builder builderForValue) {
       if (nextActionDimensionBuilder_ == null) {
         nextActionDimension_ = builderForValue.build();
-        onChanged();
       } else {
         nextActionDimensionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -671,19 +679,19 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeNextActionDimension(com.google.analytics.data.v1alpha.Dimension value) {
       if (nextActionDimensionBuilder_ == null) {
-        if (nextActionDimension_ != null) {
-          nextActionDimension_ =
-              com.google.analytics.data.v1alpha.Dimension.newBuilder(nextActionDimension_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && nextActionDimension_ != null
+            && nextActionDimension_
+                != com.google.analytics.data.v1alpha.Dimension.getDefaultInstance()) {
+          getNextActionDimensionBuilder().mergeFrom(value);
         } else {
           nextActionDimension_ = value;
         }
-        onChanged();
       } else {
         nextActionDimensionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -701,14 +709,13 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      * <code>.google.analytics.data.v1alpha.Dimension next_action_dimension = 1;</code>
      */
     public Builder clearNextActionDimension() {
-      if (nextActionDimensionBuilder_ == null) {
-        nextActionDimension_ = null;
-        onChanged();
-      } else {
-        nextActionDimension_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      nextActionDimension_ = null;
+      if (nextActionDimensionBuilder_ != null) {
+        nextActionDimensionBuilder_.dispose();
         nextActionDimensionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -726,7 +733,7 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      * <code>.google.analytics.data.v1alpha.Dimension next_action_dimension = 1;</code>
      */
     public com.google.analytics.data.v1alpha.Dimension.Builder getNextActionDimensionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getNextActionDimensionFieldBuilder().getBuilder();
     }
@@ -800,7 +807,7 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasLimit() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -834,8 +841,9 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setLimit(long value) {
-      bitField0_ |= 0x00000001;
+
       limit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +861,7 @@ public final class FunnelNextAction extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLimit() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       limit_ = 0L;
       onChanged();
       return this;

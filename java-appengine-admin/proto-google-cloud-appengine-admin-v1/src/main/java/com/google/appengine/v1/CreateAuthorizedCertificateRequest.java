@@ -69,7 +69,9 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -162,7 +164,9 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
    */
   @java.lang.Override
   public com.google.appengine.v1.AuthorizedCertificateOrBuilder getCertificateOrBuilder() {
-    return getCertificate();
+    return certificate_ == null
+        ? com.google.appengine.v1.AuthorizedCertificate.getDefaultInstance()
+        : certificate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -377,12 +381,11 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (certificateBuilder_ == null) {
-        certificate_ = null;
-      } else {
-        certificate_ = null;
+      certificate_ = null;
+      if (certificateBuilder_ != null) {
+        certificateBuilder_.dispose();
         certificateBuilder_ = null;
       }
       return this;
@@ -412,14 +415,22 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
     public com.google.appengine.v1.CreateAuthorizedCertificateRequest buildPartial() {
       com.google.appengine.v1.CreateAuthorizedCertificateRequest result =
           new com.google.appengine.v1.CreateAuthorizedCertificateRequest(this);
-      result.parent_ = parent_;
-      if (certificateBuilder_ == null) {
-        result.certificate_ = certificate_;
-      } else {
-        result.certificate_ = certificateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CreateAuthorizedCertificateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.certificate_ =
+            certificateBuilder_ == null ? certificate_ : certificateBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -470,6 +481,7 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
         return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasCertificate()) {
@@ -504,13 +516,13 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getCertificateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -529,6 +541,8 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -591,8 +605,8 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -608,8 +622,8 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -630,8 +644,8 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -654,7 +668,7 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
      * @return Whether the certificate field is set.
      */
     public boolean hasCertificate() {
-      return certificateBuilder_ != null || certificate_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -691,11 +705,11 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
           throw new NullPointerException();
         }
         certificate_ = value;
-        onChanged();
       } else {
         certificateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -711,11 +725,11 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
         com.google.appengine.v1.AuthorizedCertificate.Builder builderForValue) {
       if (certificateBuilder_ == null) {
         certificate_ = builderForValue.build();
-        onChanged();
       } else {
         certificateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -729,19 +743,18 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
      */
     public Builder mergeCertificate(com.google.appengine.v1.AuthorizedCertificate value) {
       if (certificateBuilder_ == null) {
-        if (certificate_ != null) {
-          certificate_ =
-              com.google.appengine.v1.AuthorizedCertificate.newBuilder(certificate_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && certificate_ != null
+            && certificate_ != com.google.appengine.v1.AuthorizedCertificate.getDefaultInstance()) {
+          getCertificateBuilder().mergeFrom(value);
         } else {
           certificate_ = value;
         }
-        onChanged();
       } else {
         certificateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -754,14 +767,13 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
      * <code>.google.appengine.v1.AuthorizedCertificate certificate = 2;</code>
      */
     public Builder clearCertificate() {
-      if (certificateBuilder_ == null) {
-        certificate_ = null;
-        onChanged();
-      } else {
-        certificate_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      certificate_ = null;
+      if (certificateBuilder_ != null) {
+        certificateBuilder_.dispose();
         certificateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -774,7 +786,7 @@ public final class CreateAuthorizedCertificateRequest extends com.google.protobu
      * <code>.google.appengine.v1.AuthorizedCertificate certificate = 2;</code>
      */
     public com.google.appengine.v1.AuthorizedCertificate.Builder getCertificateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCertificateFieldBuilder().getBuilder();
     }

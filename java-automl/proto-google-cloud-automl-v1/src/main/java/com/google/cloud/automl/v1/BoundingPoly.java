@@ -70,6 +70,8 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NORMALIZED_VERTICES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1.NormalizedVertex> normalizedVertices_;
   /**
    *
@@ -340,6 +342,7 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (normalizedVerticesBuilder_ == null) {
         normalizedVertices_ = java.util.Collections.emptyList();
       } else {
@@ -374,7 +377,15 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1.BoundingPoly buildPartial() {
       com.google.cloud.automl.v1.BoundingPoly result =
           new com.google.cloud.automl.v1.BoundingPoly(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.automl.v1.BoundingPoly result) {
       if (normalizedVerticesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           normalizedVertices_ = java.util.Collections.unmodifiableList(normalizedVertices_);
@@ -384,8 +395,10 @@ public final class BoundingPoly extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.normalizedVertices_ = normalizedVerticesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.BoundingPoly result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

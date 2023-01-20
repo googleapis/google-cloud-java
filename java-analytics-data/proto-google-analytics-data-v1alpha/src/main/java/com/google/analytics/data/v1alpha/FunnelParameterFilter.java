@@ -844,6 +844,7 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (stringFilterBuilder_ != null) {
         stringFilterBuilder_.clear();
       }
@@ -887,44 +888,36 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
     public com.google.analytics.data.v1alpha.FunnelParameterFilter buildPartial() {
       com.google.analytics.data.v1alpha.FunnelParameterFilter result =
           new com.google.analytics.data.v1alpha.FunnelParameterFilter(this);
-      if (oneParameterCase_ == 1) {
-        result.oneParameter_ = oneParameter_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneParameterCase_ == 2) {
-        result.oneParameter_ = oneParameter_;
-      }
-      if (oneFilterCase_ == 4) {
-        if (stringFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = stringFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 5) {
-        if (inListFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = inListFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 6) {
-        if (numericFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = numericFilterBuilder_.build();
-        }
-      }
-      if (oneFilterCase_ == 7) {
-        if (betweenFilterBuilder_ == null) {
-          result.oneFilter_ = oneFilter_;
-        } else {
-          result.oneFilter_ = betweenFilterBuilder_.build();
-        }
-      }
-      result.oneParameterCase_ = oneParameterCase_;
-      result.oneFilterCase_ = oneFilterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelParameterFilter result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.data.v1alpha.FunnelParameterFilter result) {
+      result.oneParameterCase_ = oneParameterCase_;
+      result.oneParameter_ = this.oneParameter_;
+      result.oneFilterCase_ = oneFilterCase_;
+      result.oneFilter_ = this.oneFilter_;
+      if (oneFilterCase_ == 4 && stringFilterBuilder_ != null) {
+        result.oneFilter_ = stringFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 5 && inListFilterBuilder_ != null) {
+        result.oneFilter_ = inListFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 6 && numericFilterBuilder_ != null) {
+        result.oneFilter_ = numericFilterBuilder_.build();
+      }
+      if (oneFilterCase_ == 7 && betweenFilterBuilder_ != null) {
+        result.oneFilter_ = betweenFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1127,6 +1120,8 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *
@@ -1686,7 +1681,6 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
       }
       oneFilterCase_ = 4;
       onChanged();
-      ;
       return stringFilterBuilder_;
     }
 
@@ -1896,7 +1890,6 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
       }
       oneFilterCase_ = 5;
       onChanged();
-      ;
       return inListFilterBuilder_;
     }
 
@@ -2106,7 +2099,6 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
       }
       oneFilterCase_ = 6;
       onChanged();
-      ;
       return numericFilterBuilder_;
     }
 
@@ -2316,7 +2308,6 @@ public final class FunnelParameterFilter extends com.google.protobuf.GeneratedMe
       }
       oneFilterCase_ = 7;
       onChanged();
-      ;
       return betweenFilterBuilder_;
     }
 

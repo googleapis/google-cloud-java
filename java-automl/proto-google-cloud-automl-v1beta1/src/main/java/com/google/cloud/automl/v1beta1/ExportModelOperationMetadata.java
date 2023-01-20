@@ -152,7 +152,9 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     }
 
     public static final int GCS_OUTPUT_DIRECTORY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object gcsOutputDirectory_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object gcsOutputDirectory_ = "";
     /**
      *
      *
@@ -418,8 +420,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gcsOutputDirectory_ = "";
-
         return this;
       }
 
@@ -453,9 +455,20 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo result =
             new com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo(
                 this);
-        result.gcsOutputDirectory_ = gcsOutputDirectory_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcsOutputDirectory_ = gcsOutputDirectory_;
+        }
       }
 
       @java.lang.Override
@@ -515,6 +528,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
                 .getDefaultInstance()) return this;
         if (!other.getGcsOutputDirectory().isEmpty()) {
           gcsOutputDirectory_ = other.gcsOutputDirectory_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -546,7 +560,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
               case 10:
                 {
                   gcsOutputDirectory_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               default:
@@ -565,6 +579,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object gcsOutputDirectory_ = "";
       /**
@@ -630,8 +646,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
         if (value == null) {
           throw new NullPointerException();
         }
-
         gcsOutputDirectory_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -648,8 +664,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
        * @return This builder for chaining.
        */
       public Builder clearGcsOutputDirectory() {
-
         gcsOutputDirectory_ = getDefaultInstance().getGcsOutputDirectory();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -671,8 +687,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         gcsOutputDirectory_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -804,7 +820,10 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfoOrBuilder
       getOutputInfoOrBuilder() {
-    return getOutputInfo();
+    return outputInfo_ == null
+        ? com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo
+            .getDefaultInstance()
+        : outputInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1010,10 +1029,10 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-      } else {
-        outputInfo_ = null;
+      bitField0_ = 0;
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
       return this;
@@ -1044,13 +1063,19 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata buildPartial() {
       com.google.cloud.automl.v1beta1.ExportModelOperationMetadata result =
           new com.google.cloud.automl.v1beta1.ExportModelOperationMetadata(this);
-      if (outputInfoBuilder_ == null) {
-        result.outputInfo_ = outputInfo_;
-      } else {
-        result.outputInfo_ = outputInfoBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.ExportModelOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.outputInfo_ = outputInfoBuilder_ == null ? outputInfo_ : outputInfoBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1132,7 +1157,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
             case 18:
               {
                 input.readMessage(getOutputInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -1151,6 +1176,8 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo
         outputInfo_;
@@ -1176,7 +1203,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * @return Whether the outputInfo field is set.
      */
     public boolean hasOutputInfo() {
-      return outputInfoBuilder_ != null || outputInfo_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -1222,11 +1249,11 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
           throw new NullPointerException();
         }
         outputInfo_ = value;
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1246,11 +1273,11 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
             builderForValue) {
       if (outputInfoBuilder_ == null) {
         outputInfo_ = builderForValue.build();
-        onChanged();
       } else {
         outputInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1268,20 +1295,20 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     public Builder mergeOutputInfo(
         com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo value) {
       if (outputInfoBuilder_ == null) {
-        if (outputInfo_ != null) {
-          outputInfo_ =
-              com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo
-                  .newBuilder(outputInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && outputInfo_ != null
+            && outputInfo_
+                != com.google.cloud.automl.v1beta1.ExportModelOperationMetadata
+                    .ExportModelOutputInfo.getDefaultInstance()) {
+          getOutputInfoBuilder().mergeFrom(value);
         } else {
           outputInfo_ = value;
         }
-        onChanged();
       } else {
         outputInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -1297,14 +1324,13 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
      * </code>
      */
     public Builder clearOutputInfo() {
-      if (outputInfoBuilder_ == null) {
-        outputInfo_ = null;
-        onChanged();
-      } else {
-        outputInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      outputInfo_ = null;
+      if (outputInfoBuilder_ != null) {
+        outputInfoBuilder_.dispose();
         outputInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1322,7 +1348,7 @@ public final class ExportModelOperationMetadata extends com.google.protobuf.Gene
     public com.google.cloud.automl.v1beta1.ExportModelOperationMetadata.ExportModelOutputInfo
             .Builder
         getOutputInfoBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getOutputInfoFieldBuilder().getBuilder();
     }

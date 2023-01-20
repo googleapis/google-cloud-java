@@ -387,7 +387,7 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLAUSE_TYPE_FIELD_NUMBER = 1;
-  private int clauseType_;
+  private int clauseType_ = 0;
   /**
    *
    *
@@ -421,9 +421,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType
       getClauseType() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType result =
-        com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.valueOf(
+        com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.forNumber(
             clauseType_);
     return result == null
         ? com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.UNRECOGNIZED
@@ -676,6 +675,7 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (simpleFilterBuilder_ != null) {
         simpleFilterBuilder_.clear();
       }
@@ -683,7 +683,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
         sequenceFilterBuilder_.clear();
       }
       clauseType_ = 0;
-
       filterCase_ = 0;
       filter_ = null;
       return this;
@@ -713,24 +712,31 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     public com.google.analytics.admin.v1alpha.AudienceFilterClause buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceFilterClause result =
           new com.google.analytics.admin.v1alpha.AudienceFilterClause(this);
-      if (filterCase_ == 2) {
-        if (simpleFilterBuilder_ == null) {
-          result.filter_ = filter_;
-        } else {
-          result.filter_ = simpleFilterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (filterCase_ == 3) {
-        if (sequenceFilterBuilder_ == null) {
-          result.filter_ = filter_;
-        } else {
-          result.filter_ = sequenceFilterBuilder_.build();
-        }
-      }
-      result.clauseType_ = clauseType_;
-      result.filterCase_ = filterCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceFilterClause result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clauseType_ = clauseType_;
+      }
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.admin.v1alpha.AudienceFilterClause result) {
+      result.filterCase_ = filterCase_;
+      result.filter_ = this.filter_;
+      if (filterCase_ == 2 && simpleFilterBuilder_ != null) {
+        result.filter_ = simpleFilterBuilder_.build();
+      }
+      if (filterCase_ == 3 && sequenceFilterBuilder_ != null) {
+        result.filter_ = sequenceFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -827,7 +833,7 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
             case 8:
               {
                 clauseType_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 8
             case 18:
@@ -872,6 +878,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.AudienceSimpleFilter,
@@ -1083,7 +1091,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       }
       filterCase_ = 2;
       onChanged();
-      ;
       return simpleFilterBuilder_;
     }
 
@@ -1307,7 +1314,6 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       }
       filterCase_ = 3;
       onChanged();
-      ;
       return sequenceFilterBuilder_;
     }
 
@@ -1344,8 +1350,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder setClauseTypeValue(int value) {
-
       clauseType_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1365,9 +1371,8 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType
         getClauseType() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType result =
-          com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.valueOf(
+          com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.forNumber(
               clauseType_);
       return result == null
           ? com.google.analytics.admin.v1alpha.AudienceFilterClause.AudienceClauseType.UNRECOGNIZED
@@ -1392,7 +1397,7 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       clauseType_ = value.getNumber();
       onChanged();
       return this;
@@ -1411,7 +1416,7 @@ public final class AudienceFilterClause extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClauseType() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       clauseType_ = 0;
       onChanged();
       return this;

@@ -413,6 +413,7 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       oneValueCase_ = 0;
       oneValue_ = null;
       return this;
@@ -442,15 +443,21 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.NumericValue buildPartial() {
       com.google.analytics.data.v1alpha.NumericValue result =
           new com.google.analytics.data.v1alpha.NumericValue(this);
-      if (oneValueCase_ == 1) {
-        result.oneValue_ = oneValue_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (oneValueCase_ == 2) {
-        result.oneValue_ = oneValue_;
-      }
-      result.oneValueCase_ = oneValueCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.NumericValue result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.analytics.data.v1alpha.NumericValue result) {
+      result.oneValueCase_ = oneValueCase_;
+      result.oneValue_ = this.oneValue_;
     }
 
     @java.lang.Override
@@ -583,6 +590,8 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     /**
      *
      *
@@ -627,6 +636,7 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setInt64Value(long value) {
+
       oneValueCase_ = 1;
       oneValue_ = value;
       onChanged();
@@ -696,6 +706,7 @@ public final class NumericValue extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setDoubleValue(double value) {
+
       oneValueCase_ = 2;
       oneValue_ = value;
       onChanged();

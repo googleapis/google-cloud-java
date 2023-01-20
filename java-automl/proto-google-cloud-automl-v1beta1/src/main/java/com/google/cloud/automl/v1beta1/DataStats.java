@@ -431,7 +431,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISTINCT_VALUE_COUNT_FIELD_NUMBER = 1;
-  private long distinctValueCount_;
+  private long distinctValueCount_ = 0L;
   /**
    *
    *
@@ -449,7 +449,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NULL_VALUE_COUNT_FIELD_NUMBER = 2;
-  private long nullValueCount_;
+  private long nullValueCount_ = 0L;
   /**
    *
    *
@@ -467,7 +467,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALID_VALUE_COUNT_FIELD_NUMBER = 9;
-  private long validValueCount_;
+  private long validValueCount_ = 0L;
   /**
    *
    *
@@ -798,6 +798,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (float64StatsBuilder_ != null) {
         float64StatsBuilder_.clear();
       }
@@ -817,11 +818,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
         categoryStatsBuilder_.clear();
       }
       distinctValueCount_ = 0L;
-
       nullValueCount_ = 0L;
-
       validValueCount_ = 0L;
-
       statsCase_ = 0;
       stats_ = null;
       return this;
@@ -851,54 +849,48 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.automl.v1beta1.DataStats buildPartial() {
       com.google.cloud.automl.v1beta1.DataStats result =
           new com.google.cloud.automl.v1beta1.DataStats(this);
-      if (statsCase_ == 3) {
-        if (float64StatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = float64StatsBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (statsCase_ == 4) {
-        if (stringStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = stringStatsBuilder_.build();
-        }
-      }
-      if (statsCase_ == 5) {
-        if (timestampStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = timestampStatsBuilder_.build();
-        }
-      }
-      if (statsCase_ == 6) {
-        if (arrayStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = arrayStatsBuilder_.build();
-        }
-      }
-      if (statsCase_ == 7) {
-        if (structStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = structStatsBuilder_.build();
-        }
-      }
-      if (statsCase_ == 8) {
-        if (categoryStatsBuilder_ == null) {
-          result.stats_ = stats_;
-        } else {
-          result.stats_ = categoryStatsBuilder_.build();
-        }
-      }
-      result.distinctValueCount_ = distinctValueCount_;
-      result.nullValueCount_ = nullValueCount_;
-      result.validValueCount_ = validValueCount_;
-      result.statsCase_ = statsCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.DataStats result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.distinctValueCount_ = distinctValueCount_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.nullValueCount_ = nullValueCount_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.validValueCount_ = validValueCount_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.DataStats result) {
+      result.statsCase_ = statsCase_;
+      result.stats_ = this.stats_;
+      if (statsCase_ == 3 && float64StatsBuilder_ != null) {
+        result.stats_ = float64StatsBuilder_.build();
+      }
+      if (statsCase_ == 4 && stringStatsBuilder_ != null) {
+        result.stats_ = stringStatsBuilder_.build();
+      }
+      if (statsCase_ == 5 && timestampStatsBuilder_ != null) {
+        result.stats_ = timestampStatsBuilder_.build();
+      }
+      if (statsCase_ == 6 && arrayStatsBuilder_ != null) {
+        result.stats_ = arrayStatsBuilder_.build();
+      }
+      if (statsCase_ == 7 && structStatsBuilder_ != null) {
+        result.stats_ = structStatsBuilder_.build();
+      }
+      if (statsCase_ == 8 && categoryStatsBuilder_ != null) {
+        result.stats_ = categoryStatsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1020,13 +1012,13 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 distinctValueCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 8
             case 16:
               {
                 nullValueCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 16
             case 26:
@@ -1068,7 +1060,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 validValueCount_ = input.readInt64();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             default:
@@ -1101,6 +1093,8 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.Float64Stats,
@@ -1308,7 +1302,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 3;
       onChanged();
-      ;
       return float64StatsBuilder_;
     }
 
@@ -1518,7 +1511,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 4;
       onChanged();
-      ;
       return stringStatsBuilder_;
     }
 
@@ -1728,7 +1720,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 5;
       onChanged();
-      ;
       return timestampStatsBuilder_;
     }
 
@@ -1938,7 +1929,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 6;
       onChanged();
-      ;
       return arrayStatsBuilder_;
     }
 
@@ -2148,7 +2138,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 7;
       onChanged();
-      ;
       return structStatsBuilder_;
     }
 
@@ -2358,7 +2347,6 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
       }
       statsCase_ = 8;
       onChanged();
-      ;
       return categoryStatsBuilder_;
     }
 
@@ -2393,6 +2381,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setDistinctValueCount(long value) {
 
       distinctValueCount_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2408,7 +2397,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDistinctValueCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       distinctValueCount_ = 0L;
       onChanged();
       return this;
@@ -2445,6 +2434,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setNullValueCount(long value) {
 
       nullValueCount_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2460,7 +2450,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNullValueCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000080);
       nullValueCount_ = 0L;
       onChanged();
       return this;
@@ -2497,6 +2487,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
     public Builder setValidValueCount(long value) {
 
       validValueCount_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2512,7 +2503,7 @@ public final class DataStats extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearValidValueCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       validValueCount_ = 0L;
       onChanged();
       return this;

@@ -387,6 +387,7 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       commandCase_ = 0;
       command_ = null;
       return this;
@@ -415,12 +416,21 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.appengine.v1.Entrypoint buildPartial() {
       com.google.appengine.v1.Entrypoint result = new com.google.appengine.v1.Entrypoint(this);
-      if (commandCase_ == 1) {
-        result.command_ = command_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.commandCase_ = commandCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.Entrypoint result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.appengine.v1.Entrypoint result) {
+      result.commandCase_ = commandCase_;
+      result.command_ = this.command_;
     }
 
     @java.lang.Override
@@ -544,6 +554,8 @@ public final class Entrypoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     /**
      *

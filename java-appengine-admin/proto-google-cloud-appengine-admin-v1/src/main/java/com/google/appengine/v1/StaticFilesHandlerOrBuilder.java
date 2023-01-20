@@ -121,7 +121,6 @@ public interface StaticFilesHandlerOrBuilder
    *
    * <code>map&lt;string, string&gt; http_headers = 3;</code>
    */
-
   /* nullable */
   java.lang.String getHttpHeadersOrDefault(
       java.lang.String key,

@@ -571,7 +571,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object annotationSpecId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object annotationSpecId_ = "";
   /**
    *
    *
@@ -624,7 +626,9 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -1030,6 +1034,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (translationBuilder_ != null) {
         translationBuilder_.clear();
       }
@@ -1055,9 +1060,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         tablesBuilder_.clear();
       }
       annotationSpecId_ = "";
-
       displayName_ = "";
-
       detailCase_ = 0;
       detail_ = null;
       return this;
@@ -1087,67 +1090,51 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.automl.v1beta1.AnnotationPayload buildPartial() {
       com.google.cloud.automl.v1beta1.AnnotationPayload result =
           new com.google.cloud.automl.v1beta1.AnnotationPayload(this);
-      if (detailCase_ == 2) {
-        if (translationBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = translationBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (detailCase_ == 3) {
-        if (classificationBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = classificationBuilder_.build();
-        }
-      }
-      if (detailCase_ == 4) {
-        if (imageObjectDetectionBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = imageObjectDetectionBuilder_.build();
-        }
-      }
-      if (detailCase_ == 9) {
-        if (videoClassificationBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = videoClassificationBuilder_.build();
-        }
-      }
-      if (detailCase_ == 8) {
-        if (videoObjectTrackingBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = videoObjectTrackingBuilder_.build();
-        }
-      }
-      if (detailCase_ == 6) {
-        if (textExtractionBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = textExtractionBuilder_.build();
-        }
-      }
-      if (detailCase_ == 7) {
-        if (textSentimentBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = textSentimentBuilder_.build();
-        }
-      }
-      if (detailCase_ == 10) {
-        if (tablesBuilder_ == null) {
-          result.detail_ = detail_;
-        } else {
-          result.detail_ = tablesBuilder_.build();
-        }
-      }
-      result.annotationSpecId_ = annotationSpecId_;
-      result.displayName_ = displayName_;
-      result.detailCase_ = detailCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.AnnotationPayload result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.annotationSpecId_ = annotationSpecId_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.displayName_ = displayName_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.automl.v1beta1.AnnotationPayload result) {
+      result.detailCase_ = detailCase_;
+      result.detail_ = this.detail_;
+      if (detailCase_ == 2 && translationBuilder_ != null) {
+        result.detail_ = translationBuilder_.build();
+      }
+      if (detailCase_ == 3 && classificationBuilder_ != null) {
+        result.detail_ = classificationBuilder_.build();
+      }
+      if (detailCase_ == 4 && imageObjectDetectionBuilder_ != null) {
+        result.detail_ = imageObjectDetectionBuilder_.build();
+      }
+      if (detailCase_ == 9 && videoClassificationBuilder_ != null) {
+        result.detail_ = videoClassificationBuilder_.build();
+      }
+      if (detailCase_ == 8 && videoObjectTrackingBuilder_ != null) {
+        result.detail_ = videoObjectTrackingBuilder_.build();
+      }
+      if (detailCase_ == 6 && textExtractionBuilder_ != null) {
+        result.detail_ = textExtractionBuilder_.build();
+      }
+      if (detailCase_ == 7 && textSentimentBuilder_ != null) {
+        result.detail_ = textSentimentBuilder_.build();
+      }
+      if (detailCase_ == 10 && tablesBuilder_ != null) {
+        result.detail_ = tablesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1198,10 +1185,12 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getAnnotationSpecId().isEmpty()) {
         annotationSpecId_ = other.annotationSpecId_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getDetailCase()) {
@@ -1279,7 +1268,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 annotationSpecId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 10
             case 18:
@@ -1304,7 +1293,7 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 50:
@@ -1369,6 +1358,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1beta1.TranslationAnnotation,
@@ -1578,7 +1569,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 2;
       onChanged();
-      ;
       return translationBuilder_;
     }
 
@@ -1808,7 +1798,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 3;
       onChanged();
-      ;
       return classificationBuilder_;
     }
 
@@ -2035,7 +2024,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 4;
       onChanged();
-      ;
       return imageObjectDetectionBuilder_;
     }
 
@@ -2289,7 +2277,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 9;
       onChanged();
-      ;
       return videoClassificationBuilder_;
     }
 
@@ -2515,7 +2502,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 8;
       onChanged();
-      ;
       return videoObjectTrackingBuilder_;
     }
 
@@ -2730,7 +2716,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 6;
       onChanged();
-      ;
       return textExtractionBuilder_;
     }
 
@@ -2958,7 +2943,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 7;
       onChanged();
-      ;
       return textSentimentBuilder_;
     }
 
@@ -3168,7 +3152,6 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       }
       detailCase_ = 10;
       onChanged();
-      ;
       return tablesBuilder_;
     }
 
@@ -3239,8 +3222,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       annotationSpecId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3258,8 +3241,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAnnotationSpecId() {
-
       annotationSpecId_ = getDefaultInstance().getAnnotationSpecId();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3282,8 +3265,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       annotationSpecId_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3364,8 +3347,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3386,8 +3369,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3413,8 +3396,8 @@ public final class AnnotationPayload extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

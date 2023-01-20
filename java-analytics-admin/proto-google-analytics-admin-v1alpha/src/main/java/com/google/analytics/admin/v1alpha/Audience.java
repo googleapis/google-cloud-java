@@ -235,7 +235,9 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -286,7 +288,9 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object displayName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
   /**
    *
    *
@@ -335,7 +339,9 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -384,7 +390,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MEMBERSHIP_DURATION_DAYS_FIELD_NUMBER = 4;
-  private int membershipDurationDays_;
+  private int membershipDurationDays_ = 0;
   /**
    *
    *
@@ -405,7 +411,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADS_PERSONALIZATION_ENABLED_FIELD_NUMBER = 5;
-  private boolean adsPersonalizationEnabled_;
+  private boolean adsPersonalizationEnabled_ = false;
   /**
    *
    *
@@ -478,11 +484,13 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.AudienceEventTriggerOrBuilder
       getEventTriggerOrBuilder() {
-    return getEventTrigger();
+    return eventTrigger_ == null
+        ? com.google.analytics.admin.v1alpha.AudienceEventTrigger.getDefaultInstance()
+        : eventTrigger_;
   }
 
   public static final int EXCLUSION_DURATION_MODE_FIELD_NUMBER = 7;
-  private int exclusionDurationMode_;
+  private int exclusionDurationMode_ = 0;
   /**
    *
    *
@@ -520,9 +528,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode
       getExclusionDurationMode() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode result =
-        com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.valueOf(
+        com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.forNumber(
             exclusionDurationMode_);
     return result == null
         ? com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.UNRECOGNIZED
@@ -530,6 +537,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_CLAUSES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.AudienceFilterClause> filterClauses_;
   /**
    *
@@ -888,31 +897,25 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       displayName_ = "";
-
       description_ = "";
-
       membershipDurationDays_ = 0;
-
       adsPersonalizationEnabled_ = false;
-
-      if (eventTriggerBuilder_ == null) {
-        eventTrigger_ = null;
-      } else {
-        eventTrigger_ = null;
+      eventTrigger_ = null;
+      if (eventTriggerBuilder_ != null) {
+        eventTriggerBuilder_.dispose();
         eventTriggerBuilder_ = null;
       }
       exclusionDurationMode_ = 0;
-
       if (filterClausesBuilder_ == null) {
         filterClauses_ = java.util.Collections.emptyList();
       } else {
         filterClauses_ = null;
         filterClausesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -940,29 +943,50 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.admin.v1alpha.Audience buildPartial() {
       com.google.analytics.admin.v1alpha.Audience result =
           new com.google.analytics.admin.v1alpha.Audience(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.displayName_ = displayName_;
-      result.description_ = description_;
-      result.membershipDurationDays_ = membershipDurationDays_;
-      result.adsPersonalizationEnabled_ = adsPersonalizationEnabled_;
-      if (eventTriggerBuilder_ == null) {
-        result.eventTrigger_ = eventTrigger_;
-      } else {
-        result.eventTrigger_ = eventTriggerBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.exclusionDurationMode_ = exclusionDurationMode_;
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.analytics.admin.v1alpha.Audience result) {
       if (filterClausesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           filterClauses_ = java.util.Collections.unmodifiableList(filterClauses_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.filterClauses_ = filterClauses_;
       } else {
         result.filterClauses_ = filterClausesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.Audience result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.membershipDurationDays_ = membershipDurationDays_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.adsPersonalizationEnabled_ = adsPersonalizationEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.eventTrigger_ =
+            eventTriggerBuilder_ == null ? eventTrigger_ : eventTriggerBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.exclusionDurationMode_ = exclusionDurationMode_;
+      }
     }
 
     @java.lang.Override
@@ -1012,14 +1036,17 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.admin.v1alpha.Audience.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.getMembershipDurationDays() != 0) {
@@ -1038,7 +1065,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         if (!other.filterClauses_.isEmpty()) {
           if (filterClauses_.isEmpty()) {
             filterClauses_ = other.filterClauses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureFilterClausesIsMutable();
             filterClauses_.addAll(other.filterClauses_);
@@ -1051,7 +1078,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
             filterClausesBuilder_.dispose();
             filterClausesBuilder_ = null;
             filterClauses_ = other.filterClauses_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
             filterClausesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFilterClausesFieldBuilder()
@@ -1090,43 +1117,43 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 32:
               {
                 membershipDurationDays_ = input.readInt32();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 32
             case 40:
               {
                 adsPersonalizationEnabled_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(getEventTriggerFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 exclusionDurationMode_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
@@ -1226,8 +1253,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1244,8 +1271,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1267,8 +1294,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1334,8 +1361,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1351,8 +1378,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisplayName() {
-
       displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1373,8 +1400,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       displayName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1440,8 +1467,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1457,8 +1484,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1479,8 +1506,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1522,6 +1549,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder setMembershipDurationDays(int value) {
 
       membershipDurationDays_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1540,7 +1568,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMembershipDurationDays() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       membershipDurationDays_ = 0;
       onChanged();
       return this;
@@ -1581,6 +1609,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder setAdsPersonalizationEnabled(boolean value) {
 
       adsPersonalizationEnabled_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1598,7 +1627,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAdsPersonalizationEnabled() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       adsPersonalizationEnabled_ = false;
       onChanged();
       return this;
@@ -1625,7 +1654,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the eventTrigger field is set.
      */
     public boolean hasEventTrigger() {
-      return eventTriggerBuilder_ != null || eventTrigger_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1668,11 +1697,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         eventTrigger_ = value;
-        onChanged();
       } else {
         eventTriggerBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1691,11 +1720,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.admin.v1alpha.AudienceEventTrigger.Builder builderForValue) {
       if (eventTriggerBuilder_ == null) {
         eventTrigger_ = builderForValue.build();
-        onChanged();
       } else {
         eventTriggerBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1713,19 +1742,19 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEventTrigger(
         com.google.analytics.admin.v1alpha.AudienceEventTrigger value) {
       if (eventTriggerBuilder_ == null) {
-        if (eventTrigger_ != null) {
-          eventTrigger_ =
-              com.google.analytics.admin.v1alpha.AudienceEventTrigger.newBuilder(eventTrigger_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && eventTrigger_ != null
+            && eventTrigger_
+                != com.google.analytics.admin.v1alpha.AudienceEventTrigger.getDefaultInstance()) {
+          getEventTriggerBuilder().mergeFrom(value);
         } else {
           eventTrigger_ = value;
         }
-        onChanged();
       } else {
         eventTriggerBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1741,14 +1770,13 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEventTrigger() {
-      if (eventTriggerBuilder_ == null) {
-        eventTrigger_ = null;
-        onChanged();
-      } else {
-        eventTrigger_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      eventTrigger_ = null;
+      if (eventTriggerBuilder_ != null) {
+        eventTriggerBuilder_.dispose();
         eventTriggerBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1765,7 +1793,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.admin.v1alpha.AudienceEventTrigger.Builder
         getEventTriggerBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEventTriggerFieldBuilder().getBuilder();
     }
@@ -1857,8 +1885,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setExclusionDurationModeValue(int value) {
-
       exclusionDurationMode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1880,9 +1908,8 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode
         getExclusionDurationMode() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode result =
-          com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.valueOf(
+          com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.forNumber(
               exclusionDurationMode_);
       return result == null
           ? com.google.analytics.admin.v1alpha.Audience.AudienceExclusionDurationMode.UNRECOGNIZED
@@ -1909,7 +1936,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       exclusionDurationMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1930,7 +1957,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExclusionDurationMode() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       exclusionDurationMode_ = 0;
       onChanged();
       return this;
@@ -1940,11 +1967,11 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFilterClausesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         filterClauses_ =
             new java.util.ArrayList<com.google.analytics.admin.v1alpha.AudienceFilterClause>(
                 filterClauses_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2199,7 +2226,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFilterClauses() {
       if (filterClausesBuilder_ == null) {
         filterClauses_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         filterClausesBuilder_.clear();
@@ -2349,7 +2376,7 @@ public final class Audience extends com.google.protobuf.GeneratedMessageV3
                 com.google.analytics.admin.v1alpha.AudienceFilterClause.Builder,
                 com.google.analytics.admin.v1alpha.AudienceFilterClauseOrBuilder>(
                 filterClauses_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         filterClauses_ = null;

@@ -69,6 +69,8 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
   }
 
   public static final int INGRESS_RULES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.appengine.v1.firewall.FirewallRule> ingressRules_;
   /**
    *
@@ -338,6 +340,7 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (ingressRulesBuilder_ == null) {
         ingressRules_ = java.util.Collections.emptyList();
       } else {
@@ -372,7 +375,16 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
     public com.google.appengine.v1.BatchUpdateIngressRulesResponse buildPartial() {
       com.google.appengine.v1.BatchUpdateIngressRulesResponse result =
           new com.google.appengine.v1.BatchUpdateIngressRulesResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.appengine.v1.BatchUpdateIngressRulesResponse result) {
       if (ingressRulesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           ingressRules_ = java.util.Collections.unmodifiableList(ingressRules_);
@@ -382,8 +394,10 @@ public final class BatchUpdateIngressRulesResponse extends com.google.protobuf.G
       } else {
         result.ingressRules_ = ingressRulesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.BatchUpdateIngressRulesResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

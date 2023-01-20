@@ -122,7 +122,9 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.cloud.apigeeregistry.v1.ApiVersionOrBuilder getApiVersionOrBuilder() {
-    return getApiVersion();
+    return apiVersion_ == null
+        ? com.google.cloud.apigeeregistry.v1.ApiVersion.getDefaultInstance()
+        : apiVersion_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -177,11 +179,11 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
-  private boolean allowMissing_;
+  private boolean allowMissing_ = false;
   /**
    *
    *
@@ -425,20 +427,18 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (apiVersionBuilder_ == null) {
-        apiVersion_ = null;
-      } else {
-        apiVersion_ = null;
+      bitField0_ = 0;
+      apiVersion_ = null;
+      if (apiVersionBuilder_ != null) {
+        apiVersionBuilder_.dispose();
         apiVersionBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       allowMissing_ = false;
-
       return this;
     }
 
@@ -466,19 +466,24 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
     public com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest buildPartial() {
       com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest result =
           new com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest(this);
-      if (apiVersionBuilder_ == null) {
-        result.apiVersion_ = apiVersion_;
-      } else {
-        result.apiVersion_ = apiVersionBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.apiVersion_ = apiVersionBuilder_ == null ? apiVersion_ : apiVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.allowMissing_ = allowMissing_;
+      }
     }
 
     @java.lang.Override
@@ -565,19 +570,19 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
             case 10:
               {
                 input.readMessage(getApiVersionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 allowMissing_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -596,6 +601,8 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.apigeeregistry.v1.ApiVersion apiVersion_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -619,7 +626,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * @return Whether the apiVersion field is set.
      */
     public boolean hasApiVersion() {
-      return apiVersionBuilder_ != null || apiVersion_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -664,11 +671,11 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         apiVersion_ = value;
-        onChanged();
       } else {
         apiVersionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -688,11 +695,11 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
         com.google.cloud.apigeeregistry.v1.ApiVersion.Builder builderForValue) {
       if (apiVersionBuilder_ == null) {
         apiVersion_ = builderForValue.build();
-        onChanged();
       } else {
         apiVersionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -710,19 +717,18 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeApiVersion(com.google.cloud.apigeeregistry.v1.ApiVersion value) {
       if (apiVersionBuilder_ == null) {
-        if (apiVersion_ != null) {
-          apiVersion_ =
-              com.google.cloud.apigeeregistry.v1.ApiVersion.newBuilder(apiVersion_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && apiVersion_ != null
+            && apiVersion_ != com.google.cloud.apigeeregistry.v1.ApiVersion.getDefaultInstance()) {
+          getApiVersionBuilder().mergeFrom(value);
         } else {
           apiVersion_ = value;
         }
-        onChanged();
       } else {
         apiVersionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -739,14 +745,13 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearApiVersion() {
-      if (apiVersionBuilder_ == null) {
-        apiVersion_ = null;
-        onChanged();
-      } else {
-        apiVersion_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      apiVersion_ = null;
+      if (apiVersionBuilder_ != null) {
+        apiVersionBuilder_.dispose();
         apiVersionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -763,7 +768,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * </code>
      */
     public com.google.cloud.apigeeregistry.v1.ApiVersion.Builder getApiVersionBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getApiVersionFieldBuilder().getBuilder();
     }
@@ -840,7 +845,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -883,11 +888,11 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -905,11 +910,11 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -926,17 +931,18 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -952,14 +958,13 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -975,7 +980,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1062,6 +1067,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
     public Builder setAllowMissing(boolean value) {
 
       allowMissing_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1078,7 +1084,7 @@ public final class UpdateApiVersionRequest extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearAllowMissing() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       allowMissing_ = false;
       onChanged();
       return this;

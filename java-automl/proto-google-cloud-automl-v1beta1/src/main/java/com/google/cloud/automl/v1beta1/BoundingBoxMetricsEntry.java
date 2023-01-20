@@ -175,7 +175,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     }
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
-    private float confidenceThreshold_;
+    private float confidenceThreshold_ = 0F;
     /**
      *
      *
@@ -193,7 +193,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     }
 
     public static final int RECALL_FIELD_NUMBER = 2;
-    private float recall_;
+    private float recall_ = 0F;
     /**
      *
      *
@@ -211,7 +211,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     }
 
     public static final int PRECISION_FIELD_NUMBER = 3;
-    private float precision_;
+    private float precision_ = 0F;
     /**
      *
      *
@@ -229,7 +229,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     }
 
     public static final int F1_SCORE_FIELD_NUMBER = 4;
-    private float f1Score_;
+    private float f1Score_ = 0F;
     /**
      *
      *
@@ -489,14 +489,11 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         confidenceThreshold_ = 0F;
-
         recall_ = 0F;
-
         precision_ = 0F;
-
         f1Score_ = 0F;
-
         return this;
       }
 
@@ -530,12 +527,28 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry result =
             new com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry(
                 this);
-        result.confidenceThreshold_ = confidenceThreshold_;
-        result.recall_ = recall_;
-        result.precision_ = precision_;
-        result.f1Score_ = f1Score_;
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.confidenceThreshold_ = confidenceThreshold_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recall_ = recall_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.precision_ = precision_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.f1Score_ = f1Score_;
+        }
       }
 
       @java.lang.Override
@@ -633,25 +646,25 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
               case 13:
                 {
                   confidenceThreshold_ = input.readFloat();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 13
               case 21:
                 {
                   recall_ = input.readFloat();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 21
               case 29:
                 {
                   precision_ = input.readFloat();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 29
               case 37:
                 {
                   f1Score_ = input.readFloat();
-
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 37
               default:
@@ -670,6 +683,8 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private float confidenceThreshold_;
       /**
@@ -702,6 +717,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public Builder setConfidenceThreshold(float value) {
 
         confidenceThreshold_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -717,7 +733,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearConfidenceThreshold() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         confidenceThreshold_ = 0F;
         onChanged();
         return this;
@@ -754,6 +770,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public Builder setRecall(float value) {
 
         recall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -769,7 +786,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearRecall() {
-
+        bitField0_ = (bitField0_ & ~0x00000002);
         recall_ = 0F;
         onChanged();
         return this;
@@ -806,6 +823,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public Builder setPrecision(float value) {
 
         precision_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -821,7 +839,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearPrecision() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         precision_ = 0F;
         onChanged();
         return this;
@@ -858,6 +876,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public Builder setF1Score(float value) {
 
         f1Score_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -873,7 +892,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
        * @return This builder for chaining.
        */
       public Builder clearF1Score() {
-
+        bitField0_ = (bitField0_ & ~0x00000008);
         f1Score_ = 0F;
         onChanged();
         return this;
@@ -949,7 +968,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
   }
 
   public static final int IOU_THRESHOLD_FIELD_NUMBER = 1;
-  private float iouThreshold_;
+  private float iouThreshold_ = 0F;
   /**
    *
    *
@@ -968,7 +987,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
   }
 
   public static final int MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 2;
-  private float meanAveragePrecision_;
+  private float meanAveragePrecision_ = 0F;
   /**
    *
    *
@@ -986,6 +1005,8 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
   }
 
   public static final int CONFIDENCE_METRICS_ENTRIES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<
           com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry>
       confidenceMetricsEntries_;
@@ -1307,17 +1328,16 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       iouThreshold_ = 0F;
-
       meanAveragePrecision_ = 0F;
-
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
       } else {
         confidenceMetricsEntries_ = null;
         confidenceMetricsEntriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -1345,21 +1365,36 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry buildPartial() {
       com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry result =
           new com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry(this);
-      int from_bitField0_ = bitField0_;
-      result.iouThreshold_ = iouThreshold_;
-      result.meanAveragePrecision_ = meanAveragePrecision_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry result) {
       if (confidenceMetricsEntriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           confidenceMetricsEntries_ =
               java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.confidenceMetricsEntries_ = confidenceMetricsEntries_;
       } else {
         result.confidenceMetricsEntries_ = confidenceMetricsEntriesBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.iouThreshold_ = iouThreshold_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.meanAveragePrecision_ = meanAveragePrecision_;
+      }
     }
 
     @java.lang.Override
@@ -1418,7 +1453,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         if (!other.confidenceMetricsEntries_.isEmpty()) {
           if (confidenceMetricsEntries_.isEmpty()) {
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureConfidenceMetricsEntriesIsMutable();
             confidenceMetricsEntries_.addAll(other.confidenceMetricsEntries_);
@@ -1431,7 +1466,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
             confidenceMetricsEntriesBuilder_.dispose();
             confidenceMetricsEntriesBuilder_ = null;
             confidenceMetricsEntries_ = other.confidenceMetricsEntries_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
             confidenceMetricsEntriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConfidenceMetricsEntriesFieldBuilder()
@@ -1470,13 +1505,13 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
             case 13:
               {
                 iouThreshold_ = input.readFloat();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 13
             case 21:
               {
                 meanAveragePrecision_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             case 26:
@@ -1546,6 +1581,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public Builder setIouThreshold(float value) {
 
       iouThreshold_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1562,7 +1598,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearIouThreshold() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       iouThreshold_ = 0F;
       onChanged();
       return this;
@@ -1599,6 +1635,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public Builder setMeanAveragePrecision(float value) {
 
       meanAveragePrecision_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1614,7 +1651,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearMeanAveragePrecision() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       meanAveragePrecision_ = 0F;
       onChanged();
       return this;
@@ -1625,12 +1662,12 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
 
     private void ensureConfidenceMetricsEntriesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         confidenceMetricsEntries_ =
             new java.util.ArrayList<
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry>(
                 confidenceMetricsEntries_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -1906,7 +1943,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public Builder clearConfidenceMetricsEntries() {
       if (confidenceMetricsEntriesBuilder_ == null) {
         confidenceMetricsEntries_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         confidenceMetricsEntriesBuilder_.clear();
@@ -2072,7 +2109,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
                 com.google.cloud.automl.v1beta1.BoundingBoxMetricsEntry
                     .ConfidenceMetricsEntryOrBuilder>(
                 confidenceMetricsEntries_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         confidenceMetricsEntries_ = null;

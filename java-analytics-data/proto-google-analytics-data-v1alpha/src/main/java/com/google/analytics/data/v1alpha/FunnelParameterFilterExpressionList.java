@@ -70,6 +70,8 @@ public final class FunnelParameterFilterExpressionList
   }
 
   public static final int EXPRESSIONS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.FunnelParameterFilterExpression>
       expressions_;
   /**
@@ -350,6 +352,7 @@ public final class FunnelParameterFilterExpressionList
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (expressionsBuilder_ == null) {
         expressions_ = java.util.Collections.emptyList();
       } else {
@@ -386,7 +389,16 @@ public final class FunnelParameterFilterExpressionList
     public com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList buildPartial() {
       com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList result =
           new com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList result) {
       if (expressionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           expressions_ = java.util.Collections.unmodifiableList(expressions_);
@@ -396,8 +408,11 @@ public final class FunnelParameterFilterExpressionList
       } else {
         result.expressions_ = expressionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.data.v1alpha.FunnelParameterFilterExpressionList result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

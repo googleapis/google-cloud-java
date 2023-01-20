@@ -110,7 +110,9 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.appengine.v1.ApplicationOrBuilder getApplicationOrBuilder() {
-    return getApplication();
+    return application_ == null
+        ? com.google.appengine.v1.Application.getDefaultInstance()
+        : application_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -315,10 +317,10 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (applicationBuilder_ == null) {
-        application_ = null;
-      } else {
-        application_ = null;
+      bitField0_ = 0;
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
         applicationBuilder_ = null;
       }
       return this;
@@ -348,13 +350,19 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     public com.google.appengine.v1.CreateApplicationRequest buildPartial() {
       com.google.appengine.v1.CreateApplicationRequest result =
           new com.google.appengine.v1.CreateApplicationRequest(this);
-      if (applicationBuilder_ == null) {
-        result.application_ = application_;
-      } else {
-        result.application_ = applicationBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.appengine.v1.CreateApplicationRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.application_ =
+            applicationBuilder_ == null ? application_ : applicationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -435,7 +443,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
             case 18:
               {
                 input.readMessage(getApplicationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -455,6 +463,8 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.appengine.v1.Application application_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.appengine.v1.Application,
@@ -473,7 +483,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * @return Whether the application field is set.
      */
     public boolean hasApplication() {
-      return applicationBuilder_ != null || application_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -510,11 +520,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         application_ = value;
-        onChanged();
       } else {
         applicationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -529,11 +539,11 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
     public Builder setApplication(com.google.appengine.v1.Application.Builder builderForValue) {
       if (applicationBuilder_ == null) {
         application_ = builderForValue.build();
-        onChanged();
       } else {
         applicationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -547,19 +557,18 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      */
     public Builder mergeApplication(com.google.appengine.v1.Application value) {
       if (applicationBuilder_ == null) {
-        if (application_ != null) {
-          application_ =
-              com.google.appengine.v1.Application.newBuilder(application_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && application_ != null
+            && application_ != com.google.appengine.v1.Application.getDefaultInstance()) {
+          getApplicationBuilder().mergeFrom(value);
         } else {
           application_ = value;
         }
-        onChanged();
       } else {
         applicationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,14 +581,13 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * <code>.google.appengine.v1.Application application = 2;</code>
      */
     public Builder clearApplication() {
-      if (applicationBuilder_ == null) {
-        application_ = null;
-        onChanged();
-      } else {
-        application_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      application_ = null;
+      if (applicationBuilder_ != null) {
+        applicationBuilder_.dispose();
         applicationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -592,7 +600,7 @@ public final class CreateApplicationRequest extends com.google.protobuf.Generate
      * <code>.google.appengine.v1.Application application = 2;</code>
      */
     public com.google.appengine.v1.Application.Builder getApplicationBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getApplicationFieldBuilder().getBuilder();
     }

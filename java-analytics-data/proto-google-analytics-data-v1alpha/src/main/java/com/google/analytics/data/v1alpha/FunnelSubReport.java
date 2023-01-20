@@ -71,6 +71,8 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int DIMENSION_HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.DimensionHeader> dimensionHeaders_;
   /**
    *
@@ -152,6 +154,8 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int METRIC_HEADERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.MetricHeader> metricHeaders_;
   /**
    *
@@ -232,6 +236,8 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int ROWS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1alpha.Row> rows_;
   /**
    *
@@ -345,7 +351,9 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
    */
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FunnelResponseMetadataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.analytics.data.v1alpha.FunnelResponseMetadata.getDefaultInstance()
+        : metadata_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -584,6 +592,7 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (dimensionHeadersBuilder_ == null) {
         dimensionHeaders_ = java.util.Collections.emptyList();
       } else {
@@ -605,10 +614,9 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
         rowsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
       return this;
@@ -638,7 +646,16 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
     public com.google.analytics.data.v1alpha.FunnelSubReport buildPartial() {
       com.google.analytics.data.v1alpha.FunnelSubReport result =
           new com.google.analytics.data.v1alpha.FunnelSubReport(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1alpha.FunnelSubReport result) {
       if (dimensionHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           dimensionHeaders_ = java.util.Collections.unmodifiableList(dimensionHeaders_);
@@ -666,13 +683,13 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
       } else {
         result.rows_ = rowsBuilder_.build();
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelSubReport result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
-      onBuilt();
-      return result;
     }
 
     @java.lang.Override
@@ -874,7 +891,7 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
             case 34:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -2055,7 +2072,7 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -2092,11 +2109,11 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2112,11 +2129,11 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
         com.google.analytics.data.v1alpha.FunnelResponseMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2130,19 +2147,19 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeMetadata(com.google.analytics.data.v1alpha.FunnelResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.analytics.data.v1alpha.FunnelResponseMetadata.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.analytics.data.v1alpha.FunnelResponseMetadata.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -2155,14 +2172,13 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
      * <code>.google.analytics.data.v1alpha.FunnelResponseMetadata metadata = 4;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2175,7 +2191,7 @@ public final class FunnelSubReport extends com.google.protobuf.GeneratedMessageV
      * <code>.google.analytics.data.v1alpha.FunnelResponseMetadata metadata = 4;</code>
      */
     public com.google.analytics.data.v1alpha.FunnelResponseMetadata.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }

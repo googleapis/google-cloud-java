@@ -72,7 +72,9 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
 
   private int bitField0_;
   public static final int EVENT_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object eventName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventName_ = "";
   /**
    *
    *
@@ -438,14 +440,13 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       eventName_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (segmentParameterFilterExpressionBuilder_ == null) {
-        segmentParameterFilterExpression_ = null;
-      } else {
-        segmentParameterFilterExpressionBuilder_.clear();
+      segmentParameterFilterExpression_ = null;
+      if (segmentParameterFilterExpressionBuilder_ != null) {
+        segmentParameterFilterExpressionBuilder_.dispose();
+        segmentParameterFilterExpressionBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -473,24 +474,28 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
     public com.google.analytics.data.v1alpha.SegmentEventFilter buildPartial() {
       com.google.analytics.data.v1alpha.SegmentEventFilter result =
           new com.google.analytics.data.v1alpha.SegmentEventFilter(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.SegmentEventFilter result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.eventName_ = eventName_;
         to_bitField0_ |= 0x00000001;
       }
-      result.eventName_ = eventName_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        if (segmentParameterFilterExpressionBuilder_ == null) {
-          result.segmentParameterFilterExpression_ = segmentParameterFilterExpression_;
-        } else {
-          result.segmentParameterFilterExpression_ =
-              segmentParameterFilterExpressionBuilder_.build();
-        }
+        result.segmentParameterFilterExpression_ =
+            segmentParameterFilterExpressionBuilder_ == null
+                ? segmentParameterFilterExpression_
+                : segmentParameterFilterExpressionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -540,8 +545,8 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       if (other == com.google.analytics.data.v1alpha.SegmentEventFilter.getDefaultInstance())
         return this;
       if (other.hasEventName()) {
-        bitField0_ |= 0x00000001;
         eventName_ = other.eventName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasSegmentParameterFilterExpression()) {
@@ -685,8 +690,8 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000001;
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -703,8 +708,8 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearEventName() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       eventName_ = getDefaultInstance().getEventName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -726,8 +731,8 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
       eventName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -806,11 +811,11 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
           throw new NullPointerException();
         }
         segmentParameterFilterExpression_ = value;
-        onChanged();
       } else {
         segmentParameterFilterExpressionBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -832,11 +837,11 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
             builderForValue) {
       if (segmentParameterFilterExpressionBuilder_ == null) {
         segmentParameterFilterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         segmentParameterFilterExpressionBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -861,19 +866,15 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
             && segmentParameterFilterExpression_
                 != com.google.analytics.data.v1alpha.SegmentParameterFilterExpression
                     .getDefaultInstance()) {
-          segmentParameterFilterExpression_ =
-              com.google.analytics.data.v1alpha.SegmentParameterFilterExpression.newBuilder(
-                      segmentParameterFilterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getSegmentParameterFilterExpressionBuilder().mergeFrom(value);
         } else {
           segmentParameterFilterExpression_ = value;
         }
-        onChanged();
       } else {
         segmentParameterFilterExpressionBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,13 +892,13 @@ public final class SegmentEventFilter extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearSegmentParameterFilterExpression() {
-      if (segmentParameterFilterExpressionBuilder_ == null) {
-        segmentParameterFilterExpression_ = null;
-        onChanged();
-      } else {
-        segmentParameterFilterExpressionBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000002);
+      segmentParameterFilterExpression_ = null;
+      if (segmentParameterFilterExpressionBuilder_ != null) {
+        segmentParameterFilterExpressionBuilder_.dispose();
+        segmentParameterFilterExpressionBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**

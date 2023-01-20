@@ -71,7 +71,9 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -128,7 +130,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IS_DIRECTLY_FOLLOWED_BY_FIELD_NUMBER = 2;
-  private boolean isDirectlyFollowedBy_;
+  private boolean isDirectlyFollowedBy_ = false;
   /**
    *
    *
@@ -264,7 +266,9 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.analytics.data.v1alpha.FunnelFilterExpressionOrBuilder
       getFilterExpressionOrBuilder() {
-    return getFilterExpression();
+    return filterExpression_ == null
+        ? com.google.analytics.data.v1alpha.FunnelFilterExpression.getDefaultInstance()
+        : filterExpression_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -509,26 +513,24 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWithinDurationFromPriorStepFieldBuilder();
+        getFilterExpressionFieldBuilder();
       }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       isDirectlyFollowedBy_ = false;
-
-      if (withinDurationFromPriorStepBuilder_ == null) {
-        withinDurationFromPriorStep_ = null;
-      } else {
-        withinDurationFromPriorStepBuilder_.clear();
+      withinDurationFromPriorStep_ = null;
+      if (withinDurationFromPriorStepBuilder_ != null) {
+        withinDurationFromPriorStepBuilder_.dispose();
+        withinDurationFromPriorStepBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (filterExpressionBuilder_ == null) {
-        filterExpression_ = null;
-      } else {
-        filterExpression_ = null;
+      filterExpression_ = null;
+      if (filterExpressionBuilder_ != null) {
+        filterExpressionBuilder_.dispose();
         filterExpressionBuilder_ = null;
       }
       return this;
@@ -558,26 +560,34 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1alpha.FunnelStep buildPartial() {
       com.google.analytics.data.v1alpha.FunnelStep result =
           new com.google.analytics.data.v1alpha.FunnelStep(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.name_ = name_;
-      result.isDirectlyFollowedBy_ = isDirectlyFollowedBy_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (withinDurationFromPriorStepBuilder_ == null) {
-          result.withinDurationFromPriorStep_ = withinDurationFromPriorStep_;
-        } else {
-          result.withinDurationFromPriorStep_ = withinDurationFromPriorStepBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (filterExpressionBuilder_ == null) {
-        result.filterExpression_ = filterExpression_;
-      } else {
-        result.filterExpression_ = filterExpressionBuilder_.build();
-      }
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1alpha.FunnelStep result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.isDirectlyFollowedBy_ = isDirectlyFollowedBy_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.withinDurationFromPriorStep_ =
+            withinDurationFromPriorStepBuilder_ == null
+                ? withinDurationFromPriorStep_
+                : withinDurationFromPriorStepBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.filterExpression_ =
+            filterExpressionBuilder_ == null ? filterExpression_ : filterExpressionBuilder_.build();
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -627,6 +637,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.analytics.data.v1alpha.FunnelStep.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getIsDirectlyFollowedBy() != false) {
@@ -667,27 +678,27 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 isDirectlyFollowedBy_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 input.readMessage(
                     getWithinDurationFromPriorStepFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getFilterExpressionFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -782,8 +793,8 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -803,8 +814,8 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -829,8 +840,8 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -870,6 +881,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
     public Builder setIsDirectlyFollowedBy(boolean value) {
 
       isDirectlyFollowedBy_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -887,7 +899,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIsDirectlyFollowedBy() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       isDirectlyFollowedBy_ = false;
       onChanged();
       return this;
@@ -917,7 +929,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the withinDurationFromPriorStep field is set.
      */
     public boolean hasWithinDurationFromPriorStep() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -966,11 +978,11 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         withinDurationFromPriorStep_ = value;
-        onChanged();
       } else {
         withinDurationFromPriorStepBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -992,11 +1004,11 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.Duration.Builder builderForValue) {
       if (withinDurationFromPriorStepBuilder_ == null) {
         withinDurationFromPriorStep_ = builderForValue.build();
-        onChanged();
       } else {
         withinDurationFromPriorStepBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1016,21 +1028,18 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeWithinDurationFromPriorStep(com.google.protobuf.Duration value) {
       if (withinDurationFromPriorStepBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && withinDurationFromPriorStep_ != null
             && withinDurationFromPriorStep_ != com.google.protobuf.Duration.getDefaultInstance()) {
-          withinDurationFromPriorStep_ =
-              com.google.protobuf.Duration.newBuilder(withinDurationFromPriorStep_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getWithinDurationFromPriorStepBuilder().mergeFrom(value);
         } else {
           withinDurationFromPriorStep_ = value;
         }
-        onChanged();
       } else {
         withinDurationFromPriorStepBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1049,13 +1058,13 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.protobuf.Duration within_duration_from_prior_step = 3;</code>
      */
     public Builder clearWithinDurationFromPriorStep() {
-      if (withinDurationFromPriorStepBuilder_ == null) {
-        withinDurationFromPriorStep_ = null;
-        onChanged();
-      } else {
-        withinDurationFromPriorStepBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      withinDurationFromPriorStep_ = null;
+      if (withinDurationFromPriorStepBuilder_ != null) {
+        withinDurationFromPriorStepBuilder_.dispose();
+        withinDurationFromPriorStepBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -1074,7 +1083,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.protobuf.Duration within_duration_from_prior_step = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getWithinDurationFromPriorStepBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getWithinDurationFromPriorStepFieldBuilder().getBuilder();
     }
@@ -1153,7 +1162,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the filterExpression field is set.
      */
     public boolean hasFilterExpression() {
-      return filterExpressionBuilder_ != null || filterExpression_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1193,11 +1202,11 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         filterExpression_ = value;
-        onChanged();
       } else {
         filterExpressionBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1214,11 +1223,11 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
         com.google.analytics.data.v1alpha.FunnelFilterExpression.Builder builderForValue) {
       if (filterExpressionBuilder_ == null) {
         filterExpression_ = builderForValue.build();
-        onChanged();
       } else {
         filterExpressionBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1234,19 +1243,19 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFilterExpression(
         com.google.analytics.data.v1alpha.FunnelFilterExpression value) {
       if (filterExpressionBuilder_ == null) {
-        if (filterExpression_ != null) {
-          filterExpression_ =
-              com.google.analytics.data.v1alpha.FunnelFilterExpression.newBuilder(filterExpression_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && filterExpression_ != null
+            && filterExpression_
+                != com.google.analytics.data.v1alpha.FunnelFilterExpression.getDefaultInstance()) {
+          getFilterExpressionBuilder().mergeFrom(value);
         } else {
           filterExpression_ = value;
         }
-        onChanged();
       } else {
         filterExpressionBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1260,14 +1269,13 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.analytics.data.v1alpha.FunnelFilterExpression filter_expression = 4;</code>
      */
     public Builder clearFilterExpression() {
-      if (filterExpressionBuilder_ == null) {
-        filterExpression_ = null;
-        onChanged();
-      } else {
-        filterExpression_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      filterExpression_ = null;
+      if (filterExpressionBuilder_ != null) {
+        filterExpressionBuilder_.dispose();
         filterExpressionBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1282,7 +1290,7 @@ public final class FunnelStep extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.analytics.data.v1alpha.FunnelFilterExpression.Builder
         getFilterExpressionBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getFilterExpressionFieldBuilder().getBuilder();
     }

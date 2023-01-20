@@ -110,7 +110,9 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.analytics.admin.v1beta.GoogleAdsLinkOrBuilder getGoogleAdsLinkOrBuilder() {
-    return getGoogleAdsLink();
+    return googleAdsLink_ == null
+        ? com.google.analytics.admin.v1beta.GoogleAdsLink.getDefaultInstance()
+        : googleAdsLink_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -165,7 +167,7 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -385,16 +387,15 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (googleAdsLinkBuilder_ == null) {
-        googleAdsLink_ = null;
-      } else {
-        googleAdsLink_ = null;
+      bitField0_ = 0;
+      googleAdsLink_ = null;
+      if (googleAdsLinkBuilder_ != null) {
+        googleAdsLinkBuilder_.dispose();
         googleAdsLinkBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       return this;
@@ -425,18 +426,23 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     public com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest buildPartial() {
       com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest result =
           new com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest(this);
-      if (googleAdsLinkBuilder_ == null) {
-        result.googleAdsLink_ = googleAdsLink_;
-      } else {
-        result.googleAdsLink_ = googleAdsLinkBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.analytics.admin.v1beta.UpdateGoogleAdsLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.googleAdsLink_ =
+            googleAdsLinkBuilder_ == null ? googleAdsLink_ : googleAdsLinkBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -521,13 +527,13 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
             case 10:
               {
                 input.readMessage(getGoogleAdsLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -547,6 +553,8 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.analytics.admin.v1beta.GoogleAdsLink googleAdsLink_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1beta.GoogleAdsLink,
@@ -565,7 +573,7 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * @return Whether the googleAdsLink field is set.
      */
     public boolean hasGoogleAdsLink() {
-      return googleAdsLinkBuilder_ != null || googleAdsLink_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -602,11 +610,11 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         googleAdsLink_ = value;
-        onChanged();
       } else {
         googleAdsLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -622,11 +630,11 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
         com.google.analytics.admin.v1beta.GoogleAdsLink.Builder builderForValue) {
       if (googleAdsLinkBuilder_ == null) {
         googleAdsLink_ = builderForValue.build();
-        onChanged();
       } else {
         googleAdsLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -640,19 +648,19 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      */
     public Builder mergeGoogleAdsLink(com.google.analytics.admin.v1beta.GoogleAdsLink value) {
       if (googleAdsLinkBuilder_ == null) {
-        if (googleAdsLink_ != null) {
-          googleAdsLink_ =
-              com.google.analytics.admin.v1beta.GoogleAdsLink.newBuilder(googleAdsLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && googleAdsLink_ != null
+            && googleAdsLink_
+                != com.google.analytics.admin.v1beta.GoogleAdsLink.getDefaultInstance()) {
+          getGoogleAdsLinkBuilder().mergeFrom(value);
         } else {
           googleAdsLink_ = value;
         }
-        onChanged();
       } else {
         googleAdsLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -665,14 +673,13 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * <code>.google.analytics.admin.v1beta.GoogleAdsLink google_ads_link = 1;</code>
      */
     public Builder clearGoogleAdsLink() {
-      if (googleAdsLinkBuilder_ == null) {
-        googleAdsLink_ = null;
-        onChanged();
-      } else {
-        googleAdsLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      googleAdsLink_ = null;
+      if (googleAdsLinkBuilder_ != null) {
+        googleAdsLinkBuilder_.dispose();
         googleAdsLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -685,7 +692,7 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * <code>.google.analytics.admin.v1beta.GoogleAdsLink google_ads_link = 1;</code>
      */
     public com.google.analytics.admin.v1beta.GoogleAdsLink.Builder getGoogleAdsLinkBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getGoogleAdsLinkFieldBuilder().getBuilder();
     }
@@ -754,7 +761,7 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -797,11 +804,11 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -819,11 +826,11 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -840,17 +847,18 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -866,14 +874,13 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -889,7 +896,7 @@ public final class UpdateGoogleAdsLinkRequest extends com.google.protobuf.Genera
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }

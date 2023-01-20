@@ -113,7 +113,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.RowOrBuilder getRowOrBuilder() {
-    return getRow();
+    return row_ == null ? com.google.area120.tables.v1alpha1.Row.getDefaultInstance() : row_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
@@ -159,11 +159,11 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int VIEW_FIELD_NUMBER = 3;
-  private int view_;
+  private int view_ = 0;
   /**
    *
    *
@@ -196,9 +196,8 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public com.google.area120.tables.v1alpha1.View getView() {
-    @SuppressWarnings("deprecation")
     com.google.area120.tables.v1alpha1.View result =
-        com.google.area120.tables.v1alpha1.View.valueOf(view_);
+        com.google.area120.tables.v1alpha1.View.forNumber(view_);
     return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
   }
 
@@ -427,20 +426,18 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (rowBuilder_ == null) {
-        row_ = null;
-      } else {
-        row_ = null;
+      bitField0_ = 0;
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       view_ = 0;
-
       return this;
     }
 
@@ -468,19 +465,24 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
     public com.google.area120.tables.v1alpha1.UpdateRowRequest buildPartial() {
       com.google.area120.tables.v1alpha1.UpdateRowRequest result =
           new com.google.area120.tables.v1alpha1.UpdateRowRequest(this);
-      if (rowBuilder_ == null) {
-        result.row_ = row_;
-      } else {
-        result.row_ = rowBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.view_ = view_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.UpdateRowRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.row_ = rowBuilder_ == null ? row_ : rowBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.view_ = view_;
+      }
     }
 
     @java.lang.Override
@@ -567,19 +569,19 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 input.readMessage(getRowFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 view_ = input.readEnum();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -598,6 +600,8 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.area120.tables.v1alpha1.Row row_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -618,7 +622,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the row field is set.
      */
     public boolean hasRow() {
-      return rowBuilder_ != null || row_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -655,11 +659,11 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         row_ = value;
-        onChanged();
       } else {
         rowBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -675,11 +679,11 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
     public Builder setRow(com.google.area120.tables.v1alpha1.Row.Builder builderForValue) {
       if (rowBuilder_ == null) {
         row_ = builderForValue.build();
-        onChanged();
       } else {
         rowBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -694,19 +698,18 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRow(com.google.area120.tables.v1alpha1.Row value) {
       if (rowBuilder_ == null) {
-        if (row_ != null) {
-          row_ =
-              com.google.area120.tables.v1alpha1.Row.newBuilder(row_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && row_ != null
+            && row_ != com.google.area120.tables.v1alpha1.Row.getDefaultInstance()) {
+          getRowBuilder().mergeFrom(value);
         } else {
           row_ = value;
         }
-        onChanged();
       } else {
         rowBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -720,14 +723,13 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRow() {
-      if (rowBuilder_ == null) {
-        row_ = null;
-        onChanged();
-      } else {
-        row_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      row_ = null;
+      if (rowBuilder_ != null) {
+        rowBuilder_.dispose();
         rowBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -741,7 +743,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.area120.tables.v1alpha1.Row.Builder getRowBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getRowFieldBuilder().getBuilder();
     }
@@ -807,7 +809,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -844,11 +846,11 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,11 +865,11 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -881,17 +883,18 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -904,14 +907,13 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -924,7 +926,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -1007,8 +1009,8 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder setViewValue(int value) {
-
       view_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1028,9 +1030,8 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public com.google.area120.tables.v1alpha1.View getView() {
-      @SuppressWarnings("deprecation")
       com.google.area120.tables.v1alpha1.View result =
-          com.google.area120.tables.v1alpha1.View.valueOf(view_);
+          com.google.area120.tables.v1alpha1.View.forNumber(view_);
       return result == null ? com.google.area120.tables.v1alpha1.View.UNRECOGNIZED : result;
     }
     /**
@@ -1052,7 +1053,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000004;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -1072,7 +1073,7 @@ public final class UpdateRowRequest extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearView() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       view_ = 0;
       onChanged();
       return this;

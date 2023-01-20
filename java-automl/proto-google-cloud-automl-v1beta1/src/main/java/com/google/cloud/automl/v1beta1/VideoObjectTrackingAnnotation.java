@@ -68,7 +68,9 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
   }
 
   public static final int INSTANCE_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object instanceId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceId_ = "";
   /**
    *
    *
@@ -174,7 +176,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    return getTimeOffset();
+    return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 3;
@@ -225,11 +227,13 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
    */
   @java.lang.Override
   public com.google.cloud.automl.v1beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
-    return getBoundingBox();
+    return boundingBox_ == null
+        ? com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()
+        : boundingBox_;
   }
 
   public static final int SCORE_FIELD_NUMBER = 4;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -486,22 +490,19 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       instanceId_ = "";
-
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-      } else {
-        timeOffset_ = null;
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-      } else {
-        boundingBox_ = null;
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
       score_ = 0F;
-
       return this;
     }
 
@@ -530,20 +531,29 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation buildPartial() {
       com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation result =
           new com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation(this);
-      result.instanceId_ = instanceId_;
-      if (timeOffsetBuilder_ == null) {
-        result.timeOffset_ = timeOffset_;
-      } else {
-        result.timeOffset_ = timeOffsetBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (boundingBoxBuilder_ == null) {
-        result.boundingBox_ = boundingBox_;
-      } else {
-        result.boundingBox_ = boundingBoxBuilder_.build();
-      }
-      result.score_ = score_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.automl.v1beta1.VideoObjectTrackingAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.instanceId_ = instanceId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timeOffset_ = timeOffsetBuilder_ == null ? timeOffset_ : timeOffsetBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.boundingBox_ =
+            boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.score_ = score_;
+      }
     }
 
     @java.lang.Override
@@ -595,6 +605,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         return this;
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTimeOffset()) {
@@ -635,25 +646,25 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
             case 10:
               {
                 instanceId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 37:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 37
             default:
@@ -672,6 +683,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object instanceId_ = "";
     /**
@@ -752,8 +765,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
       if (value == null) {
         throw new NullPointerException();
       }
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -775,8 +788,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearInstanceId() {
-
       instanceId_ = getDefaultInstance().getInstanceId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -803,8 +816,8 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       instanceId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -828,7 +841,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * @return Whether the timeOffset field is set.
      */
     public boolean hasTimeOffset() {
-      return timeOffsetBuilder_ != null || timeOffset_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -867,11 +880,11 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         timeOffset_ = value;
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -887,11 +900,11 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
-        onChanged();
       } else {
         timeOffsetBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -906,17 +919,18 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      */
     public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
       if (timeOffsetBuilder_ == null) {
-        if (timeOffset_ != null) {
-          timeOffset_ =
-              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && timeOffset_ != null
+            && timeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTimeOffsetBuilder().mergeFrom(value);
         } else {
           timeOffset_ = value;
         }
-        onChanged();
       } else {
         timeOffsetBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -930,14 +944,13 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        timeOffset_ = null;
-        onChanged();
-      } else {
-        timeOffset_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      timeOffset_ = null;
+      if (timeOffsetBuilder_ != null) {
+        timeOffsetBuilder_.dispose();
         timeOffsetBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -951,7 +964,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
@@ -1020,7 +1033,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
-      return boundingBoxBuilder_ != null || boundingBox_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1059,11 +1072,11 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
           throw new NullPointerException();
         }
         boundingBox_ = value;
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1080,11 +1093,11 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
         com.google.cloud.automl.v1beta1.BoundingPoly.Builder builderForValue) {
       if (boundingBoxBuilder_ == null) {
         boundingBox_ = builderForValue.build();
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1099,19 +1112,18 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      */
     public Builder mergeBoundingBox(com.google.cloud.automl.v1beta1.BoundingPoly value) {
       if (boundingBoxBuilder_ == null) {
-        if (boundingBox_ != null) {
-          boundingBox_ =
-              com.google.cloud.automl.v1beta1.BoundingPoly.newBuilder(boundingBox_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && boundingBox_ != null
+            && boundingBox_ != com.google.cloud.automl.v1beta1.BoundingPoly.getDefaultInstance()) {
+          getBoundingBoxBuilder().mergeFrom(value);
         } else {
           boundingBox_ = value;
         }
-        onChanged();
       } else {
         boundingBoxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1125,14 +1137,13 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
      */
     public Builder clearBoundingBox() {
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-        onChanged();
-      } else {
-        boundingBox_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1146,7 +1157,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * <code>.google.cloud.automl.v1beta1.BoundingPoly bounding_box = 3;</code>
      */
     public com.google.cloud.automl.v1beta1.BoundingPoly.Builder getBoundingBoxBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
@@ -1235,6 +1246,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1254,7 +1266,7 @@ public final class VideoObjectTrackingAnnotation extends com.google.protobuf.Gen
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000008);
       score_ = 0F;
       onChanged();
       return this;

@@ -95,7 +95,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -144,7 +146,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILENAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object filename_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filename_ = "";
   /**
    *
    *
@@ -193,7 +197,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -242,7 +248,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REVISION_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object revisionId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
   /**
    *
    *
@@ -344,7 +352,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int REVISION_CREATE_TIME_FIELD_NUMBER = 6;
@@ -398,7 +406,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRevisionCreateTimeOrBuilder() {
-    return getRevisionCreateTime();
+    return revisionCreateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : revisionCreateTime_;
   }
 
   public static final int REVISION_UPDATE_TIME_FIELD_NUMBER = 7;
@@ -452,11 +462,15 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getRevisionUpdateTimeOrBuilder() {
-    return getRevisionUpdateTime();
+    return revisionUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : revisionUpdateTime_;
   }
 
   public static final int MIME_TYPE_FIELD_NUMBER = 8;
-  private volatile java.lang.Object mimeType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
   /**
    *
    *
@@ -519,7 +533,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SIZE_BYTES_FIELD_NUMBER = 9;
-  private int sizeBytes_;
+  private int sizeBytes_ = 0;
   /**
    *
    *
@@ -538,7 +552,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HASH_FIELD_NUMBER = 10;
-  private volatile java.lang.Object hash_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hash_ = "";
   /**
    *
    *
@@ -589,7 +605,9 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SOURCE_URI_FIELD_NUMBER = 11;
-  private volatile java.lang.Object sourceUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceUri_ = "";
   /**
    *
    *
@@ -644,7 +662,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CONTENTS_FIELD_NUMBER = 12;
-  private com.google.protobuf.ByteString contents_;
+  private com.google.protobuf.ByteString contents_ = com.google.protobuf.ByteString.EMPTY;
   /**
    *
    *
@@ -676,6 +694,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -760,7 +779,10 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 14;</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -810,6 +832,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> annotations_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -877,8 +900,10 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; annotations = 15;</code>
    */
   @java.lang.Override
-  public java.lang.String getAnnotationsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getAnnotationsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -1285,42 +1310,31 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       filename_ = "";
-
       description_ = "";
-
       revisionId_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-      } else {
-        revisionCreateTime_ = null;
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
-      if (revisionUpdateTimeBuilder_ == null) {
-        revisionUpdateTime_ = null;
-      } else {
-        revisionUpdateTime_ = null;
+      revisionUpdateTime_ = null;
+      if (revisionUpdateTimeBuilder_ != null) {
+        revisionUpdateTimeBuilder_.dispose();
         revisionUpdateTimeBuilder_ = null;
       }
       mimeType_ = "";
-
       sizeBytes_ = 0;
-
       hash_ = "";
-
       sourceUri_ = "";
-
       contents_ = com.google.protobuf.ByteString.EMPTY;
-
       internalGetMutableLabels().clear();
       internalGetMutableAnnotations().clear();
       return this;
@@ -1350,37 +1364,65 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apigeeregistry.v1.ApiSpec buildPartial() {
       com.google.cloud.apigeeregistry.v1.ApiSpec result =
           new com.google.cloud.apigeeregistry.v1.ApiSpec(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.filename_ = filename_;
-      result.description_ = description_;
-      result.revisionId_ = revisionId_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (revisionCreateTimeBuilder_ == null) {
-        result.revisionCreateTime_ = revisionCreateTime_;
-      } else {
-        result.revisionCreateTime_ = revisionCreateTimeBuilder_.build();
-      }
-      if (revisionUpdateTimeBuilder_ == null) {
-        result.revisionUpdateTime_ = revisionUpdateTime_;
-      } else {
-        result.revisionUpdateTime_ = revisionUpdateTimeBuilder_.build();
-      }
-      result.mimeType_ = mimeType_;
-      result.sizeBytes_ = sizeBytes_;
-      result.hash_ = hash_;
-      result.sourceUri_ = sourceUri_;
-      result.contents_ = contents_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.apigeeregistry.v1.ApiSpec result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filename_ = filename_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.revisionId_ = revisionId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.revisionCreateTime_ =
+            revisionCreateTimeBuilder_ == null
+                ? revisionCreateTime_
+                : revisionCreateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.revisionUpdateTime_ =
+            revisionUpdateTimeBuilder_ == null
+                ? revisionUpdateTime_
+                : revisionUpdateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sizeBytes_ = sizeBytes_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.hash_ = hash_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.sourceUri_ = sourceUri_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.contents_ = contents_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1430,18 +1472,22 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.apigeeregistry.v1.ApiSpec.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getFilename().isEmpty()) {
         filename_ = other.filename_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRevisionId().isEmpty()) {
         revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1455,6 +1501,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getSizeBytes() != 0) {
@@ -1462,17 +1509,21 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHash().isEmpty()) {
         hash_ = other.hash_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getSourceUri().isEmpty()) {
         sourceUri_ = other.sourceUri_;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.getContents() != com.google.protobuf.ByteString.EMPTY) {
         setContents(other.getContents());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00001000;
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
+      bitField0_ |= 0x00002000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1502,75 +1553,75 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 filename_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 revisionId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getRevisionCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     getRevisionUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 mimeType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 sizeBytes_ = input.readInt32();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
               {
                 hash_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 sourceUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 contents_ = input.readBytes();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 114:
@@ -1582,6 +1633,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00001000;
                 break;
               } // case 114
             case 122:
@@ -1593,6 +1645,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
+                bitField0_ |= 0x00002000;
                 break;
               } // case 122
             default:
@@ -1675,8 +1728,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1692,8 +1745,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1714,8 +1767,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1781,8 +1834,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       filename_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1798,8 +1851,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFilename() {
-
       filename_ = getDefaultInstance().getFilename();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1820,8 +1873,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       filename_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1887,8 +1940,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1904,8 +1957,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1926,8 +1979,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2005,8 +2058,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       revisionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2026,8 +2079,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRevisionId() {
-
       revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -2052,8 +2105,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       revisionId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2078,7 +2131,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2119,11 +2172,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2140,11 +2193,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2160,17 +2213,18 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2185,14 +2239,13 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2207,7 +2260,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2279,7 +2332,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the revisionCreateTime field is set.
      */
     public boolean hasRevisionCreateTime() {
-      return revisionCreateTimeBuilder_ != null || revisionCreateTime_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2320,11 +2373,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         revisionCreateTime_ = value;
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2341,11 +2394,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setRevisionCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (revisionCreateTimeBuilder_ == null) {
         revisionCreateTime_ = builderForValue.build();
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2361,19 +2414,18 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRevisionCreateTime(com.google.protobuf.Timestamp value) {
       if (revisionCreateTimeBuilder_ == null) {
-        if (revisionCreateTime_ != null) {
-          revisionCreateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(revisionCreateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && revisionCreateTime_ != null
+            && revisionCreateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRevisionCreateTimeBuilder().mergeFrom(value);
         } else {
           revisionCreateTime_ = value;
         }
-        onChanged();
       } else {
         revisionCreateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2388,14 +2440,13 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRevisionCreateTime() {
-      if (revisionCreateTimeBuilder_ == null) {
-        revisionCreateTime_ = null;
-        onChanged();
-      } else {
-        revisionCreateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      revisionCreateTime_ = null;
+      if (revisionCreateTimeBuilder_ != null) {
+        revisionCreateTimeBuilder_.dispose();
         revisionCreateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2410,7 +2461,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRevisionCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
@@ -2482,7 +2533,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the revisionUpdateTime field is set.
      */
     public boolean hasRevisionUpdateTime() {
-      return revisionUpdateTimeBuilder_ != null || revisionUpdateTime_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2523,11 +2574,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         revisionUpdateTime_ = value;
-        onChanged();
       } else {
         revisionUpdateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2544,11 +2595,11 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setRevisionUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (revisionUpdateTimeBuilder_ == null) {
         revisionUpdateTime_ = builderForValue.build();
-        onChanged();
       } else {
         revisionUpdateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2564,19 +2615,18 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRevisionUpdateTime(com.google.protobuf.Timestamp value) {
       if (revisionUpdateTimeBuilder_ == null) {
-        if (revisionUpdateTime_ != null) {
-          revisionUpdateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(revisionUpdateTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && revisionUpdateTime_ != null
+            && revisionUpdateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getRevisionUpdateTimeBuilder().mergeFrom(value);
         } else {
           revisionUpdateTime_ = value;
         }
-        onChanged();
       } else {
         revisionUpdateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -2591,14 +2641,13 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRevisionUpdateTime() {
-      if (revisionUpdateTimeBuilder_ == null) {
-        revisionUpdateTime_ = null;
-        onChanged();
-      } else {
-        revisionUpdateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      revisionUpdateTime_ = null;
+      if (revisionUpdateTimeBuilder_ != null) {
+        revisionUpdateTimeBuilder_.dispose();
         revisionUpdateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2613,7 +2662,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getRevisionUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getRevisionUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2747,8 +2796,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       mimeType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2771,8 +2820,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMimeType() {
-
       mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2800,8 +2849,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       mimeType_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2839,6 +2888,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     public Builder setSizeBytes(int value) {
 
       sizeBytes_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2855,7 +2905,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSizeBytes() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       sizeBytes_ = 0;
       onChanged();
       return this;
@@ -2925,8 +2975,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       hash_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2943,8 +2993,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHash() {
-
       hash_ = getDefaultInstance().getHash();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2966,8 +3016,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       hash_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3042,8 +3092,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3062,8 +3112,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSourceUri() {
-
       sourceUri_ = getDefaultInstance().getSourceUri();
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3087,8 +3137,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       sourceUri_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3129,8 +3179,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       contents_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3148,7 +3198,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearContents() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       contents_ = getDefaultInstance().getContents();
       onChanged();
       return this;
@@ -3165,14 +3215,14 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00001000;
+      onChanged();
       return labels_;
     }
 
@@ -3251,8 +3301,10 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 14;</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3290,6 +3342,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3321,6 +3374,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3348,8 +3402,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -3372,6 +3426,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -3388,8 +3443,6 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableAnnotations() {
-      onChanged();
-      ;
       if (annotations_ == null) {
         annotations_ =
             com.google.protobuf.MapField.newMapField(AnnotationsDefaultEntryHolder.defaultEntry);
@@ -3397,6 +3450,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00002000;
+      onChanged();
       return annotations_;
     }
 
@@ -3457,8 +3512,10 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; annotations = 15;</code>
      */
     @java.lang.Override
-    public java.lang.String getAnnotationsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getAnnotationsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -3490,6 +3547,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -3515,6 +3573,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
+      bitField0_ |= 0x00002000;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -3536,8 +3595,8 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableAnnotations().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -3554,6 +3613,7 @@ public final class ApiSpec extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
       return this;
     }
 

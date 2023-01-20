@@ -111,11 +111,13 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public com.google.cloud.automl.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
-    return getBoundingBox();
+    return boundingBox_ == null
+        ? com.google.cloud.automl.v1.BoundingPoly.getDefaultInstance()
+        : boundingBox_;
   }
 
   public static final int SCORE_FIELD_NUMBER = 2;
-  private float score_;
+  private float score_ = 0F;
   /**
    *
    *
@@ -346,14 +348,13 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-      } else {
-        boundingBox_ = null;
+      bitField0_ = 0;
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
       score_ = 0F;
-
       return this;
     }
 
@@ -381,14 +382,22 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     public com.google.cloud.automl.v1.ImageObjectDetectionAnnotation buildPartial() {
       com.google.cloud.automl.v1.ImageObjectDetectionAnnotation result =
           new com.google.cloud.automl.v1.ImageObjectDetectionAnnotation(this);
-      if (boundingBoxBuilder_ == null) {
-        result.boundingBox_ = boundingBox_;
-      } else {
-        result.boundingBox_ = boundingBoxBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.score_ = score_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.automl.v1.ImageObjectDetectionAnnotation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.boundingBox_ =
+            boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.score_ = score_;
+      }
     }
 
     @java.lang.Override
@@ -472,13 +481,13 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
             case 10:
               {
                 input.readMessage(getBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 21:
               {
                 score_ = input.readFloat();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 21
             default:
@@ -498,6 +507,8 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
       return this;
     }
 
+    private int bitField0_;
+
     private com.google.cloud.automl.v1.BoundingPoly boundingBox_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.automl.v1.BoundingPoly,
@@ -516,7 +527,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * @return Whether the boundingBox field is set.
      */
     public boolean hasBoundingBox() {
-      return boundingBoxBuilder_ != null || boundingBox_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -553,11 +564,11 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
           throw new NullPointerException();
         }
         boundingBox_ = value;
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -572,11 +583,11 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     public Builder setBoundingBox(com.google.cloud.automl.v1.BoundingPoly.Builder builderForValue) {
       if (boundingBoxBuilder_ == null) {
         boundingBox_ = builderForValue.build();
-        onChanged();
       } else {
         boundingBoxBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -590,19 +601,18 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      */
     public Builder mergeBoundingBox(com.google.cloud.automl.v1.BoundingPoly value) {
       if (boundingBoxBuilder_ == null) {
-        if (boundingBox_ != null) {
-          boundingBox_ =
-              com.google.cloud.automl.v1.BoundingPoly.newBuilder(boundingBox_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && boundingBox_ != null
+            && boundingBox_ != com.google.cloud.automl.v1.BoundingPoly.getDefaultInstance()) {
+          getBoundingBoxBuilder().mergeFrom(value);
         } else {
           boundingBox_ = value;
         }
-        onChanged();
       } else {
         boundingBoxBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -615,14 +625,13 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
      */
     public Builder clearBoundingBox() {
-      if (boundingBoxBuilder_ == null) {
-        boundingBox_ = null;
-        onChanged();
-      } else {
-        boundingBox_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      boundingBox_ = null;
+      if (boundingBoxBuilder_ != null) {
+        boundingBoxBuilder_.dispose();
         boundingBoxBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -635,7 +644,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * <code>.google.cloud.automl.v1.BoundingPoly bounding_box = 1;</code>
      */
     public com.google.cloud.automl.v1.BoundingPoly.Builder getBoundingBoxBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
@@ -716,6 +725,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
     public Builder setScore(float value) {
 
       score_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -732,7 +742,7 @@ public final class ImageObjectDetectionAnnotation extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearScore() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       score_ = 0F;
       onChanged();
       return this;

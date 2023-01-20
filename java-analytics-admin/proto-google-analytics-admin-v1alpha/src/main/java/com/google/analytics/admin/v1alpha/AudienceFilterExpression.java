@@ -684,6 +684,7 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (andGroupBuilder_ != null) {
         andGroupBuilder_.clear();
       }
@@ -728,44 +729,37 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
     public com.google.analytics.admin.v1alpha.AudienceFilterExpression buildPartial() {
       com.google.analytics.admin.v1alpha.AudienceFilterExpression result =
           new com.google.analytics.admin.v1alpha.AudienceFilterExpression(this);
-      if (exprCase_ == 1) {
-        if (andGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = andGroupBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (exprCase_ == 2) {
-        if (orGroupBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = orGroupBuilder_.build();
-        }
-      }
-      if (exprCase_ == 3) {
-        if (notExpressionBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = notExpressionBuilder_.build();
-        }
-      }
-      if (exprCase_ == 4) {
-        if (dimensionOrMetricFilterBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = dimensionOrMetricFilterBuilder_.build();
-        }
-      }
-      if (exprCase_ == 5) {
-        if (eventFilterBuilder_ == null) {
-          result.expr_ = expr_;
-        } else {
-          result.expr_ = eventFilterBuilder_.build();
-        }
-      }
-      result.exprCase_ = exprCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.AudienceFilterExpression result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(
+        com.google.analytics.admin.v1alpha.AudienceFilterExpression result) {
+      result.exprCase_ = exprCase_;
+      result.expr_ = this.expr_;
+      if (exprCase_ == 1 && andGroupBuilder_ != null) {
+        result.expr_ = andGroupBuilder_.build();
+      }
+      if (exprCase_ == 2 && orGroupBuilder_ != null) {
+        result.expr_ = orGroupBuilder_.build();
+      }
+      if (exprCase_ == 3 && notExpressionBuilder_ != null) {
+        result.expr_ = notExpressionBuilder_.build();
+      }
+      if (exprCase_ == 4 && dimensionOrMetricFilterBuilder_ != null) {
+        result.expr_ = dimensionOrMetricFilterBuilder_.build();
+      }
+      if (exprCase_ == 5 && eventFilterBuilder_ != null) {
+        result.expr_ = eventFilterBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -932,6 +926,8 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.analytics.admin.v1alpha.AudienceFilterExpressionList,
@@ -1164,7 +1160,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       }
       exprCase_ = 1;
       onChanged();
-      ;
       return andGroupBuilder_;
     }
 
@@ -1390,7 +1385,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       }
       exprCase_ = 2;
       onChanged();
-      ;
       return orGroupBuilder_;
     }
 
@@ -1624,7 +1618,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       }
       exprCase_ = 3;
       onChanged();
-      ;
       return notExpressionBuilder_;
     }
 
@@ -1874,7 +1867,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       }
       exprCase_ = 4;
       onChanged();
-      ;
       return dimensionOrMetricFilterBuilder_;
     }
 
@@ -2095,7 +2087,6 @@ public final class AudienceFilterExpression extends com.google.protobuf.Generate
       }
       exprCase_ = 5;
       onChanged();
-      ;
       return eventFilterBuilder_;
     }
 

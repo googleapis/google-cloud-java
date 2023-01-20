@@ -68,7 +68,9 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
   }
 
   public static final int LINKED_TABLE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object linkedTable_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object linkedTable_ = "";
   /**
    *
    *
@@ -314,8 +316,8 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       linkedTable_ = "";
-
       return this;
     }
 
@@ -343,9 +345,18 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
     public com.google.area120.tables.v1alpha1.RelationshipDetails buildPartial() {
       com.google.area120.tables.v1alpha1.RelationshipDetails result =
           new com.google.area120.tables.v1alpha1.RelationshipDetails(this);
-      result.linkedTable_ = linkedTable_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.area120.tables.v1alpha1.RelationshipDetails result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.linkedTable_ = linkedTable_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getLinkedTable().isEmpty()) {
         linkedTable_ = other.linkedTable_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 linkedTable_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object linkedTable_ = "";
     /**
@@ -508,8 +522,8 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       linkedTable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -525,8 +539,8 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearLinkedTable() {
-
       linkedTable_ = getDefaultInstance().getLinkedTable();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -547,8 +561,8 @@ public final class RelationshipDetails extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       linkedTable_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

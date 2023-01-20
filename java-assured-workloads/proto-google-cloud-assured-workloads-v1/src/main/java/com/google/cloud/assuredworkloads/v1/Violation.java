@@ -1005,6 +1005,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int GCLOUD_COMMANDS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList gcloudCommands_;
         /**
          *
@@ -1066,6 +1068,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int STEPS_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList steps_;
         /**
          *
@@ -1127,6 +1131,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ADDITIONAL_LINKS_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList additionalLinks_;
         /**
          *
@@ -1447,6 +1453,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             gcloudCommands_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000001);
             steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1486,7 +1493,17 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud result =
                 new com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud(
                     this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               gcloudCommands_ = gcloudCommands_.getUnmodifiableView();
               bitField0_ = (bitField0_ & ~0x00000001);
@@ -1502,8 +1519,12 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               bitField0_ = (bitField0_ & ~0x00000004);
             }
             result.additionalLinks_ = additionalLinks_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -2443,6 +2464,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int CONSOLE_URIS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList consoleUris_;
         /**
          *
@@ -2504,6 +2527,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int STEPS_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList steps_;
         /**
          *
@@ -2565,6 +2590,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         }
 
         public static final int ADDITIONAL_LINKS_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
         private com.google.protobuf.LazyStringList additionalLinks_;
         /**
          *
@@ -2896,6 +2923,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           @java.lang.Override
           public Builder clear() {
             super.clear();
+            bitField0_ = 0;
             consoleUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000001);
             steps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2935,7 +2963,17 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console result =
                 new com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console(
                     this);
-            int from_bitField0_ = bitField0_;
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
+                  result) {
             if (((bitField0_ & 0x00000001) != 0)) {
               consoleUris_ = consoleUris_.getUnmodifiableView();
               bitField0_ = (bitField0_ & ~0x00000001);
@@ -2951,8 +2989,12 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               bitField0_ = (bitField0_ & ~0x00000004);
             }
             result.additionalLinks_ = additionalLinks_;
-            onBuilt();
-            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
+                  result) {
+            int from_bitField0_ = bitField0_;
           }
 
           @java.lang.Override
@@ -3735,7 +3777,10 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.GcloudOrBuilder
           getGcloudInstructionsOrBuilder() {
-        return getGcloudInstructions();
+        return gcloudInstructions_ == null
+            ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
+                .getDefaultInstance()
+            : gcloudInstructions_;
       }
 
       public static final int CONSOLE_INSTRUCTIONS_FIELD_NUMBER = 2;
@@ -3794,7 +3839,10 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions
               .ConsoleOrBuilder
           getConsoleInstructionsOrBuilder() {
-        return getConsoleInstructions();
+        return consoleInstructions_ == null
+            ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
+                .getDefaultInstance()
+            : consoleInstructions_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -4029,16 +4077,15 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          if (gcloudInstructionsBuilder_ == null) {
-            gcloudInstructions_ = null;
-          } else {
-            gcloudInstructions_ = null;
+          bitField0_ = 0;
+          gcloudInstructions_ = null;
+          if (gcloudInstructionsBuilder_ != null) {
+            gcloudInstructionsBuilder_.dispose();
             gcloudInstructionsBuilder_ = null;
           }
-          if (consoleInstructionsBuilder_ == null) {
-            consoleInstructions_ = null;
-          } else {
-            consoleInstructions_ = null;
+          consoleInstructions_ = null;
+          if (consoleInstructionsBuilder_ != null) {
+            consoleInstructionsBuilder_.dispose();
             consoleInstructionsBuilder_ = null;
           }
           return this;
@@ -4072,18 +4119,28 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             buildPartial() {
           com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions result =
               new com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions(this);
-          if (gcloudInstructionsBuilder_ == null) {
-            result.gcloudInstructions_ = gcloudInstructions_;
-          } else {
-            result.gcloudInstructions_ = gcloudInstructionsBuilder_.build();
-          }
-          if (consoleInstructionsBuilder_ == null) {
-            result.consoleInstructions_ = consoleInstructions_;
-          } else {
-            result.consoleInstructions_ = consoleInstructionsBuilder_.build();
+          if (bitField0_ != 0) {
+            buildPartial0(result);
           }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.gcloudInstructions_ =
+                gcloudInstructionsBuilder_ == null
+                    ? gcloudInstructions_
+                    : gcloudInstructionsBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.consoleInstructions_ =
+                consoleInstructionsBuilder_ == null
+                    ? consoleInstructions_
+                    : consoleInstructionsBuilder_.build();
+          }
         }
 
         @java.lang.Override
@@ -4174,14 +4231,14 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                   {
                     input.readMessage(
                         getGcloudInstructionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000001;
                     break;
                   } // case 10
                 case 18:
                   {
                     input.readMessage(
                         getConsoleInstructionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                    bitField0_ |= 0x00000002;
                     break;
                   } // case 18
                 default:
@@ -4200,6 +4257,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           } // finally
           return this;
         }
+
+        private int bitField0_;
 
         private com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
             gcloudInstructions_;
@@ -4224,7 +4283,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the gcloudInstructions field is set.
          */
         public boolean hasGcloudInstructions() {
-          return gcloudInstructionsBuilder_ != null || gcloudInstructions_ != null;
+          return ((bitField0_ & 0x00000001) != 0);
         }
         /**
          *
@@ -4268,11 +4327,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             gcloudInstructions_ = value;
-            onChanged();
           } else {
             gcloudInstructionsBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -4291,11 +4350,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (gcloudInstructionsBuilder_ == null) {
             gcloudInstructions_ = builderForValue.build();
-            onChanged();
           } else {
             gcloudInstructionsBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -4312,20 +4371,20 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeGcloudInstructions(
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud value) {
           if (gcloudInstructionsBuilder_ == null) {
-            if (gcloudInstructions_ != null) {
-              gcloudInstructions_ =
-                  com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
-                      .newBuilder(gcloudInstructions_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000001) != 0)
+                && gcloudInstructions_ != null
+                && gcloudInstructions_
+                    != com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions
+                        .Gcloud.getDefaultInstance()) {
+              getGcloudInstructionsBuilder().mergeFrom(value);
             } else {
               gcloudInstructions_ = value;
             }
-            onChanged();
           } else {
             gcloudInstructionsBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000001;
+          onChanged();
           return this;
         }
         /**
@@ -4340,14 +4399,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearGcloudInstructions() {
-          if (gcloudInstructionsBuilder_ == null) {
-            gcloudInstructions_ = null;
-            onChanged();
-          } else {
-            gcloudInstructions_ = null;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          gcloudInstructions_ = null;
+          if (gcloudInstructionsBuilder_ != null) {
+            gcloudInstructionsBuilder_.dispose();
             gcloudInstructionsBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -4364,7 +4422,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Gcloud
                 .Builder
             getGcloudInstructionsBuilder() {
-
+          bitField0_ |= 0x00000001;
           onChanged();
           return getGcloudInstructionsFieldBuilder().getBuilder();
         }
@@ -4446,7 +4504,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the consoleInstructions field is set.
          */
         public boolean hasConsoleInstructions() {
-          return consoleInstructionsBuilder_ != null || consoleInstructions_ != null;
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          *
@@ -4490,11 +4548,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               throw new NullPointerException();
             }
             consoleInstructions_ = value;
-            onChanged();
           } else {
             consoleInstructionsBuilder_.setMessage(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -4513,11 +4571,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
                 builderForValue) {
           if (consoleInstructionsBuilder_ == null) {
             consoleInstructions_ = builderForValue.build();
-            onChanged();
           } else {
             consoleInstructionsBuilder_.setMessage(builderForValue.build());
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -4534,20 +4592,20 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public Builder mergeConsoleInstructions(
             com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console value) {
           if (consoleInstructionsBuilder_ == null) {
-            if (consoleInstructions_ != null) {
-              consoleInstructions_ =
-                  com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
-                      .newBuilder(consoleInstructions_)
-                      .mergeFrom(value)
-                      .buildPartial();
+            if (((bitField0_ & 0x00000002) != 0)
+                && consoleInstructions_ != null
+                && consoleInstructions_
+                    != com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions
+                        .Console.getDefaultInstance()) {
+              getConsoleInstructionsBuilder().mergeFrom(value);
             } else {
               consoleInstructions_ = value;
             }
-            onChanged();
           } else {
             consoleInstructionsBuilder_.mergeFrom(value);
           }
-
+          bitField0_ |= 0x00000002;
+          onChanged();
           return this;
         }
         /**
@@ -4562,14 +4620,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearConsoleInstructions() {
-          if (consoleInstructionsBuilder_ == null) {
-            consoleInstructions_ = null;
-            onChanged();
-          } else {
-            consoleInstructions_ = null;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          consoleInstructions_ = null;
+          if (consoleInstructionsBuilder_ != null) {
+            consoleInstructionsBuilder_.dispose();
             consoleInstructionsBuilder_ = null;
           }
-
+          onChanged();
           return this;
         }
         /**
@@ -4586,7 +4643,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Console
                 .Builder
             getConsoleInstructionsBuilder() {
-
+          bitField0_ |= 0x00000002;
           onChanged();
           return getConsoleInstructionsFieldBuilder().getBuilder();
         }
@@ -4767,10 +4824,15 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1.Violation.Remediation.InstructionsOrBuilder
         getInstructionsOrBuilder() {
-      return getInstructions();
+      return instructions_ == null
+          ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions
+              .getDefaultInstance()
+          : instructions_;
     }
 
     public static final int COMPLIANT_VALUES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringList compliantValues_;
     /**
      *
@@ -4840,7 +4902,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int REMEDIATION_TYPE_FIELD_NUMBER = 3;
-    private int remediationType_;
+    private int remediationType_ = 0;
     /**
      *
      *
@@ -4874,9 +4936,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType
         getRemediationType() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType result =
-          com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType.valueOf(
+          com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType.forNumber(
               remediationType_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType.UNRECOGNIZED
@@ -5120,16 +5181,15 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (instructionsBuilder_ == null) {
-          instructions_ = null;
-        } else {
-          instructions_ = null;
+        bitField0_ = 0;
+        instructions_ = null;
+        if (instructionsBuilder_ != null) {
+          instructionsBuilder_.dispose();
           instructionsBuilder_ = null;
         }
         compliantValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         remediationType_ = 0;
-
         return this;
       }
 
@@ -5158,20 +5218,33 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation buildPartial() {
         com.google.cloud.assuredworkloads.v1.Violation.Remediation result =
             new com.google.cloud.assuredworkloads.v1.Violation.Remediation(this);
-        int from_bitField0_ = bitField0_;
-        if (instructionsBuilder_ == null) {
-          result.instructions_ = instructions_;
-        } else {
-          result.instructions_ = instructionsBuilder_.build();
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          compliantValues_ = compliantValues_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.compliantValues_ = compliantValues_;
-        result.remediationType_ = remediationType_;
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.assuredworkloads.v1.Violation.Remediation result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          compliantValues_ = compliantValues_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.compliantValues_ = compliantValues_;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.assuredworkloads.v1.Violation.Remediation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.instructions_ =
+              instructionsBuilder_ == null ? instructions_ : instructionsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.remediationType_ = remediationType_;
+        }
       }
 
       @java.lang.Override
@@ -5229,7 +5302,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         if (!other.compliantValues_.isEmpty()) {
           if (compliantValues_.isEmpty()) {
             compliantValues_ = other.compliantValues_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCompliantValuesIsMutable();
             compliantValues_.addAll(other.compliantValues_);
@@ -5268,7 +5341,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               case 10:
                 {
                   input.readMessage(getInstructionsFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 10
               case 18:
@@ -5281,7 +5354,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               case 24:
                 {
                   remediationType_ = input.readEnum();
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 24
               default:
@@ -5323,7 +5396,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the instructions field is set.
        */
       public boolean hasInstructions() {
-        return instructionsBuilder_ != null || instructions_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        *
@@ -5367,11 +5440,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           instructions_ = value;
-          onChanged();
         } else {
           instructionsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5390,11 +5463,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
               builderForValue) {
         if (instructionsBuilder_ == null) {
           instructions_ = builderForValue.build();
-          onChanged();
         } else {
           instructionsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5411,20 +5484,20 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeInstructions(
           com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions value) {
         if (instructionsBuilder_ == null) {
-          if (instructions_ != null) {
-            instructions_ =
-                com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.newBuilder(
-                        instructions_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000001) != 0)
+              && instructions_ != null
+              && instructions_
+                  != com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions
+                      .getDefaultInstance()) {
+            getInstructionsBuilder().mergeFrom(value);
           } else {
             instructions_ = value;
           }
-          onChanged();
         } else {
           instructionsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -5439,14 +5512,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearInstructions() {
-        if (instructionsBuilder_ == null) {
-          instructions_ = null;
-          onChanged();
-        } else {
-          instructions_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        instructions_ = null;
+        if (instructionsBuilder_ != null) {
+          instructionsBuilder_.dispose();
           instructionsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -5462,7 +5534,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        */
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Instructions.Builder
           getInstructionsBuilder() {
-
+        bitField0_ |= 0x00000001;
         onChanged();
         return getInstructionsFieldBuilder().getBuilder();
       }
@@ -5520,9 +5592,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.LazyStringArrayList.EMPTY;
 
       private void ensureCompliantValuesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           compliantValues_ = new com.google.protobuf.LazyStringArrayList(compliantValues_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -5673,7 +5745,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearCompliantValues() {
         compliantValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -5735,8 +5807,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setRemediationTypeValue(int value) {
-
         remediationType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5756,9 +5828,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType
           getRemediationType() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType result =
-            com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType.valueOf(
+            com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType.forNumber(
                 remediationType_);
         return result == null
             ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.RemediationType
@@ -5784,7 +5855,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000004;
         remediationType_ = value.getNumber();
         onChanged();
         return this;
@@ -5803,7 +5874,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearRemediationType() {
-
+        bitField0_ = (bitField0_ & ~0x00000004);
         remediationType_ = 0;
         onChanged();
         return this;
@@ -5876,7 +5947,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -5933,7 +6006,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -6029,7 +6104,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getBeginTimeOrBuilder() {
-    return getBeginTime();
+    return beginTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : beginTime_;
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
@@ -6078,7 +6153,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
-    return getUpdateTime();
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
   public static final int RESOLVE_TIME_FIELD_NUMBER = 5;
@@ -6130,11 +6205,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getResolveTimeOrBuilder() {
-    return getResolveTime();
+    return resolveTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : resolveTime_;
   }
 
   public static final int CATEGORY_FIELD_NUMBER = 6;
-  private volatile java.lang.Object category_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object category_ = "";
   /**
    *
    *
@@ -6185,7 +6262,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_FIELD_NUMBER = 7;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -6218,16 +6295,17 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1.Violation.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.assuredworkloads.v1.Violation.State result =
-        com.google.cloud.assuredworkloads.v1.Violation.State.valueOf(state_);
+        com.google.cloud.assuredworkloads.v1.Violation.State.forNumber(state_);
     return result == null
         ? com.google.cloud.assuredworkloads.v1.Violation.State.UNRECOGNIZED
         : result;
   }
 
   public static final int ORG_POLICY_CONSTRAINT_FIELD_NUMBER = 8;
-  private volatile java.lang.Object orgPolicyConstraint_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orgPolicyConstraint_ = "";
   /**
    *
    *
@@ -6282,7 +6360,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUDIT_LOG_LINK_FIELD_NUMBER = 11;
-  private volatile java.lang.Object auditLogLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object auditLogLink_ = "";
   /**
    *
    *
@@ -6339,7 +6419,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NON_COMPLIANT_ORG_POLICY_FIELD_NUMBER = 12;
-  private volatile java.lang.Object nonCompliantOrgPolicy_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nonCompliantOrgPolicy_ = "";
   /**
    *
    *
@@ -6453,11 +6535,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.assuredworkloads.v1.Violation.RemediationOrBuilder
       getRemediationOrBuilder() {
-    return getRemediation();
+    return remediation_ == null
+        ? com.google.cloud.assuredworkloads.v1.Violation.Remediation.getDefaultInstance()
+        : remediation_;
   }
 
   public static final int ACKNOWLEDGED_FIELD_NUMBER = 14;
-  private boolean acknowledged_;
+  private boolean acknowledged_ = false;
   /**
    *
    *
@@ -6534,7 +6618,9 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXCEPTION_AUDIT_LOG_LINK_FIELD_NUMBER = 16;
-  private volatile java.lang.Object exceptionAuditLogLink_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object exceptionAuditLogLink_ = "";
   /**
    *
    *
@@ -6934,6 +7020,10 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getBeginTimeFieldBuilder();
+        getUpdateTimeFieldBuilder();
+        getResolveTimeFieldBuilder();
+        getRemediationFieldBuilder();
         getAcknowledgementTimeFieldBuilder();
       }
     }
@@ -6941,54 +7031,41 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       description_ = "";
-
-      if (beginTimeBuilder_ == null) {
-        beginTime_ = null;
-      } else {
-        beginTime_ = null;
+      beginTime_ = null;
+      if (beginTimeBuilder_ != null) {
+        beginTimeBuilder_.dispose();
         beginTimeBuilder_ = null;
       }
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-      } else {
-        updateTime_ = null;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-      if (resolveTimeBuilder_ == null) {
-        resolveTime_ = null;
-      } else {
-        resolveTime_ = null;
+      resolveTime_ = null;
+      if (resolveTimeBuilder_ != null) {
+        resolveTimeBuilder_.dispose();
         resolveTimeBuilder_ = null;
       }
       category_ = "";
-
       state_ = 0;
-
       orgPolicyConstraint_ = "";
-
       auditLogLink_ = "";
-
       nonCompliantOrgPolicy_ = "";
-
-      if (remediationBuilder_ == null) {
-        remediation_ = null;
-      } else {
-        remediation_ = null;
+      remediation_ = null;
+      if (remediationBuilder_ != null) {
+        remediationBuilder_.dispose();
         remediationBuilder_ = null;
       }
       acknowledged_ = false;
-
-      if (acknowledgementTimeBuilder_ == null) {
-        acknowledgementTime_ = null;
-      } else {
-        acknowledgementTimeBuilder_.clear();
+      acknowledgementTime_ = null;
+      if (acknowledgementTimeBuilder_ != null) {
+        acknowledgementTimeBuilder_.dispose();
+        acknowledgementTimeBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       exceptionAuditLogLink_ = "";
-
       return this;
     }
 
@@ -7016,48 +7093,65 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.assuredworkloads.v1.Violation buildPartial() {
       com.google.cloud.assuredworkloads.v1.Violation result =
           new com.google.cloud.assuredworkloads.v1.Violation(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      result.name_ = name_;
-      result.description_ = description_;
-      if (beginTimeBuilder_ == null) {
-        result.beginTime_ = beginTime_;
-      } else {
-        result.beginTime_ = beginTimeBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (updateTimeBuilder_ == null) {
-        result.updateTime_ = updateTime_;
-      } else {
-        result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (resolveTimeBuilder_ == null) {
-        result.resolveTime_ = resolveTime_;
-      } else {
-        result.resolveTime_ = resolveTimeBuilder_.build();
-      }
-      result.category_ = category_;
-      result.state_ = state_;
-      result.orgPolicyConstraint_ = orgPolicyConstraint_;
-      result.auditLogLink_ = auditLogLink_;
-      result.nonCompliantOrgPolicy_ = nonCompliantOrgPolicy_;
-      if (remediationBuilder_ == null) {
-        result.remediation_ = remediation_;
-      } else {
-        result.remediation_ = remediationBuilder_.build();
-      }
-      result.acknowledged_ = acknowledged_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (acknowledgementTimeBuilder_ == null) {
-          result.acknowledgementTime_ = acknowledgementTime_;
-        } else {
-          result.acknowledgementTime_ = acknowledgementTimeBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
-      }
-      result.exceptionAuditLogLink_ = exceptionAuditLogLink_;
-      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.assuredworkloads.v1.Violation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.beginTime_ = beginTimeBuilder_ == null ? beginTime_ : beginTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resolveTime_ =
+            resolveTimeBuilder_ == null ? resolveTime_ : resolveTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.orgPolicyConstraint_ = orgPolicyConstraint_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.auditLogLink_ = auditLogLink_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.nonCompliantOrgPolicy_ = nonCompliantOrgPolicy_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.remediation_ =
+            remediationBuilder_ == null ? remediation_ : remediationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.acknowledged_ = acknowledged_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.acknowledgementTime_ =
+            acknowledgementTimeBuilder_ == null
+                ? acknowledgementTime_
+                : acknowledgementTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.exceptionAuditLogLink_ = exceptionAuditLogLink_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -7107,10 +7201,12 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.assuredworkloads.v1.Violation.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasBeginTime()) {
@@ -7124,6 +7220,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -7131,14 +7228,17 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOrgPolicyConstraint().isEmpty()) {
         orgPolicyConstraint_ = other.orgPolicyConstraint_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getAuditLogLink().isEmpty()) {
         auditLogLink_ = other.auditLogLink_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getNonCompliantOrgPolicy().isEmpty()) {
         nonCompliantOrgPolicy_ = other.nonCompliantOrgPolicy_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasRemediation()) {
@@ -7152,6 +7252,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getExceptionAuditLogLink().isEmpty()) {
         exceptionAuditLogLink_ = other.exceptionAuditLogLink_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -7183,86 +7284,86 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getBeginTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getResolveTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 category_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 56:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 66:
               {
                 orgPolicyConstraint_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 90:
               {
                 auditLogLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
               {
                 nonCompliantOrgPolicy_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getRemediationFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 112:
               {
                 acknowledged_ = input.readBool();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 112
             case 122:
               {
                 input.readMessage(
                     getAcknowledgementTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 122
             case 130:
               {
                 exceptionAuditLogLink_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 130
             default:
@@ -7357,8 +7458,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7378,8 +7479,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -7404,8 +7505,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -7474,8 +7575,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7492,8 +7593,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -7515,8 +7616,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -7540,7 +7641,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the beginTime field is set.
      */
     public boolean hasBeginTime() {
-      return beginTimeBuilder_ != null || beginTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -7577,11 +7678,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         beginTime_ = value;
-        onChanged();
       } else {
         beginTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7597,11 +7698,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder setBeginTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (beginTimeBuilder_ == null) {
         beginTime_ = builderForValue.build();
-        onChanged();
       } else {
         beginTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7616,17 +7717,18 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBeginTime(com.google.protobuf.Timestamp value) {
       if (beginTimeBuilder_ == null) {
-        if (beginTime_ != null) {
-          beginTime_ =
-              com.google.protobuf.Timestamp.newBuilder(beginTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && beginTime_ != null
+            && beginTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBeginTimeBuilder().mergeFrom(value);
         } else {
           beginTime_ = value;
         }
-        onChanged();
       } else {
         beginTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -7640,14 +7742,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBeginTime() {
-      if (beginTimeBuilder_ == null) {
-        beginTime_ = null;
-        onChanged();
-      } else {
-        beginTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      beginTime_ = null;
+      if (beginTimeBuilder_ != null) {
+        beginTimeBuilder_.dispose();
         beginTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7661,7 +7762,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getBeginTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getBeginTimeFieldBuilder().getBuilder();
     }
@@ -7729,7 +7830,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return updateTimeBuilder_ != null || updateTime_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -7770,11 +7871,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         updateTime_ = value;
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7791,11 +7892,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
-        onChanged();
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7811,17 +7912,18 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (updateTime_ != null) {
-          updateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
         } else {
           updateTime_ = value;
         }
-        onChanged();
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -7836,14 +7938,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = null;
-        onChanged();
-      } else {
-        updateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -7858,7 +7959,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -7931,7 +8032,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the resolveTime field is set.
      */
     public boolean hasResolveTime() {
-      return resolveTimeBuilder_ != null || resolveTime_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -7974,11 +8075,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         resolveTime_ = value;
-        onChanged();
       } else {
         resolveTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -7996,11 +8097,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder setResolveTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (resolveTimeBuilder_ == null) {
         resolveTime_ = builderForValue.build();
-        onChanged();
       } else {
         resolveTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -8017,19 +8118,18 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeResolveTime(com.google.protobuf.Timestamp value) {
       if (resolveTimeBuilder_ == null) {
-        if (resolveTime_ != null) {
-          resolveTime_ =
-              com.google.protobuf.Timestamp.newBuilder(resolveTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && resolveTime_ != null
+            && resolveTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getResolveTimeBuilder().mergeFrom(value);
         } else {
           resolveTime_ = value;
         }
-        onChanged();
       } else {
         resolveTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -8045,14 +8145,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearResolveTime() {
-      if (resolveTimeBuilder_ == null) {
-        resolveTime_ = null;
-        onChanged();
-      } else {
-        resolveTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      resolveTime_ = null;
+      if (resolveTimeBuilder_ != null) {
+        resolveTimeBuilder_.dispose();
         resolveTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8068,7 +8167,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getResolveTimeBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getResolveTimeFieldBuilder().getBuilder();
     }
@@ -8186,8 +8285,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       category_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8204,8 +8303,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCategory() {
-
       category_ = getDefaultInstance().getCategory();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -8227,8 +8326,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       category_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -8266,8 +8365,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -8286,9 +8385,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.assuredworkloads.v1.Violation.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.assuredworkloads.v1.Violation.State result =
-          com.google.cloud.assuredworkloads.v1.Violation.State.valueOf(state_);
+          com.google.cloud.assuredworkloads.v1.Violation.State.forNumber(state_);
       return result == null
           ? com.google.cloud.assuredworkloads.v1.Violation.State.UNRECOGNIZED
           : result;
@@ -8311,7 +8409,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -8330,7 +8428,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -8406,8 +8504,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       orgPolicyConstraint_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8426,8 +8524,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOrgPolicyConstraint() {
-
       orgPolicyConstraint_ = getDefaultInstance().getOrgPolicyConstraint();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -8451,8 +8549,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       orgPolicyConstraint_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -8530,8 +8628,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       auditLogLink_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8551,8 +8649,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAuditLogLink() {
-
       auditLogLink_ = getDefaultInstance().getAuditLogLink();
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -8577,8 +8675,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       auditLogLink_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -8665,8 +8763,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       nonCompliantOrgPolicy_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8689,8 +8787,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNonCompliantOrgPolicy() {
-
       nonCompliantOrgPolicy_ = getDefaultInstance().getNonCompliantOrgPolicy();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -8718,8 +8816,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nonCompliantOrgPolicy_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -8744,7 +8842,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the remediation field is set.
      */
     public boolean hasRemediation() {
-      return remediationBuilder_ != null || remediation_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -8786,11 +8884,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         remediation_ = value;
-        onChanged();
       } else {
         remediationBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8808,11 +8906,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.assuredworkloads.v1.Violation.Remediation.Builder builderForValue) {
       if (remediationBuilder_ == null) {
         remediation_ = builderForValue.build();
-        onChanged();
       } else {
         remediationBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8829,19 +8927,20 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRemediation(
         com.google.cloud.assuredworkloads.v1.Violation.Remediation value) {
       if (remediationBuilder_ == null) {
-        if (remediation_ != null) {
-          remediation_ =
-              com.google.cloud.assuredworkloads.v1.Violation.Remediation.newBuilder(remediation_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && remediation_ != null
+            && remediation_
+                != com.google.cloud.assuredworkloads.v1.Violation.Remediation
+                    .getDefaultInstance()) {
+          getRemediationBuilder().mergeFrom(value);
         } else {
           remediation_ = value;
         }
-        onChanged();
       } else {
         remediationBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -8856,14 +8955,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRemediation() {
-      if (remediationBuilder_ == null) {
-        remediation_ = null;
-        onChanged();
-      } else {
-        remediation_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      remediation_ = null;
+      if (remediationBuilder_ != null) {
+        remediationBuilder_.dispose();
         remediationBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -8879,7 +8977,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.assuredworkloads.v1.Violation.Remediation.Builder
         getRemediationBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getRemediationFieldBuilder().getBuilder();
     }
@@ -8963,6 +9061,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder setAcknowledged(boolean value) {
 
       acknowledged_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -8978,7 +9077,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAcknowledged() {
-
+      bitField0_ = (bitField0_ & ~0x00000800);
       acknowledged_ = false;
       onChanged();
       return this;
@@ -9005,7 +9104,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the acknowledgementTime field is set.
      */
     public boolean hasAcknowledgementTime() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -9048,11 +9147,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         acknowledgementTime_ = value;
-        onChanged();
       } else {
         acknowledgementTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -9070,11 +9169,11 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
     public Builder setAcknowledgementTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (acknowledgementTimeBuilder_ == null) {
         acknowledgementTime_ = builderForValue.build();
-        onChanged();
       } else {
         acknowledgementTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -9091,21 +9190,18 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAcknowledgementTime(com.google.protobuf.Timestamp value) {
       if (acknowledgementTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && acknowledgementTime_ != null
             && acknowledgementTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          acknowledgementTime_ =
-              com.google.protobuf.Timestamp.newBuilder(acknowledgementTime_)
-                  .mergeFrom(value)
-                  .buildPartial();
+          getAcknowledgementTimeBuilder().mergeFrom(value);
         } else {
           acknowledgementTime_ = value;
         }
-        onChanged();
       } else {
         acknowledgementTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00001000;
+      onChanged();
       return this;
     }
     /**
@@ -9121,13 +9217,13 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAcknowledgementTime() {
-      if (acknowledgementTimeBuilder_ == null) {
-        acknowledgementTime_ = null;
-        onChanged();
-      } else {
-        acknowledgementTimeBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      acknowledgementTime_ = null;
+      if (acknowledgementTimeBuilder_ != null) {
+        acknowledgementTimeBuilder_.dispose();
+        acknowledgementTimeBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
@@ -9143,7 +9239,7 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getAcknowledgementTimeBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getAcknowledgementTimeFieldBuilder().getBuilder();
     }
@@ -9270,8 +9366,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       exceptionAuditLogLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -9291,8 +9387,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExceptionAuditLogLink() {
-
       exceptionAuditLogLink_ = getDefaultInstance().getExceptionAuditLogLink();
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -9317,8 +9413,8 @@ public final class Violation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       exceptionAuditLogLink_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

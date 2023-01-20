@@ -71,7 +71,9 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -130,6 +132,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
   }
 
   public static final int ACCESS_LEVELS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.identity.accesscontextmanager.v1.AccessLevel> accessLevels_;
   /**
    *
@@ -236,7 +240,9 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
   }
 
   public static final int ETAG_FIELD_NUMBER = 4;
-  private volatile java.lang.Object etag_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
   /**
    *
    *
@@ -517,17 +523,16 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       if (accessLevelsBuilder_ == null) {
         accessLevels_ = java.util.Collections.emptyList();
       } else {
         accessLevels_ = null;
         accessLevelsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = "";
-
       return this;
     }
 
@@ -558,20 +563,36 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
     public com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest buildPartial() {
       com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest result =
           new com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest(this);
-      int from_bitField0_ = bitField0_;
-      result.parent_ = parent_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest result) {
       if (accessLevelsBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           accessLevels_ = java.util.Collections.unmodifiableList(accessLevels_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.accessLevels_ = accessLevels_;
       } else {
         result.accessLevels_ = accessLevelsBuilder_.build();
       }
-      result.etag_ = etag_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(
+        com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.etag_ = etag_;
+      }
     }
 
     @java.lang.Override
@@ -625,13 +646,14 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (accessLevelsBuilder_ == null) {
         if (!other.accessLevels_.isEmpty()) {
           if (accessLevels_.isEmpty()) {
             accessLevels_ = other.accessLevels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAccessLevelsIsMutable();
             accessLevels_.addAll(other.accessLevels_);
@@ -644,7 +666,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
             accessLevelsBuilder_.dispose();
             accessLevelsBuilder_ = null;
             accessLevels_ = other.accessLevels_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             accessLevelsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAccessLevelsFieldBuilder()
@@ -656,6 +678,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -687,7 +710,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -707,7 +730,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
             case 34:
               {
                 etag_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             default:
@@ -805,8 +828,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -827,8 +850,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -854,8 +877,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,11 +887,11 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
         java.util.Collections.emptyList();
 
     private void ensureAccessLevelsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         accessLevels_ =
             new java.util.ArrayList<com.google.identity.accesscontextmanager.v1.AccessLevel>(
                 accessLevels_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -1167,7 +1190,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
     public Builder clearAccessLevels() {
       if (accessLevelsBuilder_ == null) {
         accessLevels_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         accessLevelsBuilder_.clear();
@@ -1344,7 +1367,7 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
                 com.google.identity.accesscontextmanager.v1.AccessLevel,
                 com.google.identity.accesscontextmanager.v1.AccessLevel.Builder,
                 com.google.identity.accesscontextmanager.v1.AccessLevelOrBuilder>(
-                accessLevels_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                accessLevels_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         accessLevels_ = null;
       }
       return accessLevelsBuilder_;
@@ -1429,8 +1452,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1452,8 +1475,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
-
       etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1480,8 +1503,8 @@ public final class ReplaceAccessLevelsRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       etag_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

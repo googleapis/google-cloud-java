@@ -73,6 +73,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int PIVOT_HEADERS_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.PivotHeader> pivotHeaders_;
   /**
    *
@@ -302,6 +304,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int DIMENSION_HEADERS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.DimensionHeader> dimensionHeaders_;
   /**
    *
@@ -378,6 +382,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int METRIC_HEADERS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.MetricHeader> metricHeaders_;
   /**
    *
@@ -453,6 +459,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int ROWS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Row> rows_;
   /**
    *
@@ -522,6 +530,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
   }
 
   public static final int AGGREGATES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.data.v1beta.Row> aggregates_;
   /**
    *
@@ -650,7 +660,9 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.ResponseMetaDataOrBuilder getMetadataOrBuilder() {
-    return getMetadata();
+    return metadata_ == null
+        ? com.google.analytics.data.v1beta.ResponseMetaData.getDefaultInstance()
+        : metadata_;
   }
 
   public static final int PROPERTY_QUOTA_FIELD_NUMBER = 7;
@@ -698,11 +710,15 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.PropertyQuotaOrBuilder getPropertyQuotaOrBuilder() {
-    return getPropertyQuota();
+    return propertyQuota_ == null
+        ? com.google.analytics.data.v1beta.PropertyQuota.getDefaultInstance()
+        : propertyQuota_;
   }
 
   public static final int KIND_FIELD_NUMBER = 8;
-  private volatile java.lang.Object kind_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kind_ = "";
   /**
    *
    *
@@ -1035,6 +1051,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (pivotHeadersBuilder_ == null) {
         pivotHeaders_ = java.util.Collections.emptyList();
       } else {
@@ -1070,20 +1087,17 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         aggregatesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-      } else {
-        metadata_ = null;
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      if (propertyQuotaBuilder_ == null) {
-        propertyQuota_ = null;
-      } else {
-        propertyQuota_ = null;
+      propertyQuota_ = null;
+      if (propertyQuotaBuilder_ != null) {
+        propertyQuotaBuilder_.dispose();
         propertyQuotaBuilder_ = null;
       }
       kind_ = "";
-
       return this;
     }
 
@@ -1111,7 +1125,16 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
     public com.google.analytics.data.v1beta.RunPivotReportResponse buildPartial() {
       com.google.analytics.data.v1beta.RunPivotReportResponse result =
           new com.google.analytics.data.v1beta.RunPivotReportResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.analytics.data.v1beta.RunPivotReportResponse result) {
       if (pivotHeadersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           pivotHeaders_ = java.util.Collections.unmodifiableList(pivotHeaders_);
@@ -1157,19 +1180,20 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       } else {
         result.aggregates_ = aggregatesBuilder_.build();
       }
-      if (metadataBuilder_ == null) {
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.RunPivotReportResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
-      if (propertyQuotaBuilder_ == null) {
-        result.propertyQuota_ = propertyQuota_;
-      } else {
-        result.propertyQuota_ = propertyQuotaBuilder_.build();
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.propertyQuota_ =
+            propertyQuotaBuilder_ == null ? propertyQuota_ : propertyQuotaBuilder_.build();
       }
-      result.kind_ = kind_;
-      onBuilt();
-      return result;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.kind_ = kind_;
+      }
     }
 
     @java.lang.Override
@@ -1361,6 +1385,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       }
       if (!other.getKind().isEmpty()) {
         kind_ = other.kind_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1458,19 +1483,19 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
             case 50:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getPropertyQuotaFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 66:
               {
                 kind_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             default:
@@ -3944,7 +3969,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return metadataBuilder_ != null || metadata_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3981,11 +4006,11 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         metadata_ = value;
-        onChanged();
       } else {
         metadataBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4001,11 +4026,11 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         com.google.analytics.data.v1beta.ResponseMetaData.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
-        onChanged();
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4019,19 +4044,19 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeMetadata(com.google.analytics.data.v1beta.ResponseMetaData value) {
       if (metadataBuilder_ == null) {
-        if (metadata_ != null) {
-          metadata_ =
-              com.google.analytics.data.v1beta.ResponseMetaData.newBuilder(metadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && metadata_ != null
+            && metadata_
+                != com.google.analytics.data.v1beta.ResponseMetaData.getDefaultInstance()) {
+          getMetadataBuilder().mergeFrom(value);
         } else {
           metadata_ = value;
         }
-        onChanged();
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -4044,14 +4069,13 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 6;</code>
      */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = null;
-        onChanged();
-      } else {
-        metadata_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      metadata_ = null;
+      if (metadataBuilder_ != null) {
+        metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4064,7 +4088,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.data.v1beta.ResponseMetaData metadata = 6;</code>
      */
     public com.google.analytics.data.v1beta.ResponseMetaData.Builder getMetadataBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -4130,7 +4154,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * @return Whether the propertyQuota field is set.
      */
     public boolean hasPropertyQuota() {
-      return propertyQuotaBuilder_ != null || propertyQuota_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -4167,11 +4191,11 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         propertyQuota_ = value;
-        onChanged();
       } else {
         propertyQuotaBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4187,11 +4211,11 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         com.google.analytics.data.v1beta.PropertyQuota.Builder builderForValue) {
       if (propertyQuotaBuilder_ == null) {
         propertyQuota_ = builderForValue.build();
-        onChanged();
       } else {
         propertyQuotaBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4205,19 +4229,19 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergePropertyQuota(com.google.analytics.data.v1beta.PropertyQuota value) {
       if (propertyQuotaBuilder_ == null) {
-        if (propertyQuota_ != null) {
-          propertyQuota_ =
-              com.google.analytics.data.v1beta.PropertyQuota.newBuilder(propertyQuota_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000040) != 0)
+            && propertyQuota_ != null
+            && propertyQuota_
+                != com.google.analytics.data.v1beta.PropertyQuota.getDefaultInstance()) {
+          getPropertyQuotaBuilder().mergeFrom(value);
         } else {
           propertyQuota_ = value;
         }
-        onChanged();
       } else {
         propertyQuotaBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -4230,14 +4254,13 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 7;</code>
      */
     public Builder clearPropertyQuota() {
-      if (propertyQuotaBuilder_ == null) {
-        propertyQuota_ = null;
-        onChanged();
-      } else {
-        propertyQuota_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      propertyQuota_ = null;
+      if (propertyQuotaBuilder_ != null) {
+        propertyQuotaBuilder_.dispose();
         propertyQuotaBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4250,7 +4273,7 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * <code>.google.analytics.data.v1beta.PropertyQuota property_quota = 7;</code>
      */
     public com.google.analytics.data.v1beta.PropertyQuota.Builder getPropertyQuotaBuilder() {
-
+      bitField0_ |= 0x00000040;
       onChanged();
       return getPropertyQuotaFieldBuilder().getBuilder();
     }
@@ -4365,8 +4388,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       kind_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4384,8 +4407,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-
       kind_ = getDefaultInstance().getKind();
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4408,8 +4431,8 @@ public final class RunPivotReportResponse extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       kind_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

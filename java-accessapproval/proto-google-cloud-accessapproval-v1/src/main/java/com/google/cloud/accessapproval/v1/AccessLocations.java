@@ -69,7 +69,9 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PRINCIPAL_OFFICE_COUNTRY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object principalOfficeCountry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalOfficeCountry_ = "";
   /**
    *
    *
@@ -142,7 +144,9 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int PRINCIPAL_PHYSICAL_LOCATION_COUNTRY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object principalPhysicalLocationCountry_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principalPhysicalLocationCountry_ = "";
   /**
    *
    *
@@ -424,10 +428,9 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       principalOfficeCountry_ = "";
-
       principalPhysicalLocationCountry_ = "";
-
       return this;
     }
 
@@ -455,10 +458,21 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.accessapproval.v1.AccessLocations buildPartial() {
       com.google.cloud.accessapproval.v1.AccessLocations result =
           new com.google.cloud.accessapproval.v1.AccessLocations(this);
-      result.principalOfficeCountry_ = principalOfficeCountry_;
-      result.principalPhysicalLocationCountry_ = principalPhysicalLocationCountry_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.accessapproval.v1.AccessLocations result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.principalOfficeCountry_ = principalOfficeCountry_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.principalPhysicalLocationCountry_ = principalPhysicalLocationCountry_;
+      }
     }
 
     @java.lang.Override
@@ -509,10 +523,12 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getPrincipalOfficeCountry().isEmpty()) {
         principalOfficeCountry_ = other.principalOfficeCountry_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getPrincipalPhysicalLocationCountry().isEmpty()) {
         principalPhysicalLocationCountry_ = other.principalPhysicalLocationCountry_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -544,13 +560,13 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 principalOfficeCountry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 principalPhysicalLocationCountry_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -569,6 +585,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object principalOfficeCountry_ = "";
     /**
@@ -667,8 +685,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalOfficeCountry_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -696,8 +714,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPrincipalOfficeCountry() {
-
       principalOfficeCountry_ = getDefaultInstance().getPrincipalOfficeCountry();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -730,8 +748,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalOfficeCountry_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -833,8 +851,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
       if (value == null) {
         throw new NullPointerException();
       }
-
       principalPhysicalLocationCountry_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -862,9 +880,9 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPrincipalPhysicalLocationCountry() {
-
       principalPhysicalLocationCountry_ =
           getDefaultInstance().getPrincipalPhysicalLocationCountry();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -897,8 +915,8 @@ public final class AccessLocations extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       principalPhysicalLocationCountry_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

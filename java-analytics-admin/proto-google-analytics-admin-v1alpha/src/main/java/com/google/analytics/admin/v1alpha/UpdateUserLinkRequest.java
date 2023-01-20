@@ -116,7 +116,9 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public com.google.analytics.admin.v1alpha.UserLinkOrBuilder getUserLinkOrBuilder() {
-    return getUserLink();
+    return userLink_ == null
+        ? com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()
+        : userLink_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -322,10 +324,10 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (userLinkBuilder_ == null) {
-        userLink_ = null;
-      } else {
-        userLink_ = null;
+      bitField0_ = 0;
+      userLink_ = null;
+      if (userLinkBuilder_ != null) {
+        userLinkBuilder_.dispose();
         userLinkBuilder_ = null;
       }
       return this;
@@ -355,13 +357,18 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
     public com.google.analytics.admin.v1alpha.UpdateUserLinkRequest buildPartial() {
       com.google.analytics.admin.v1alpha.UpdateUserLinkRequest result =
           new com.google.analytics.admin.v1alpha.UpdateUserLinkRequest(this);
-      if (userLinkBuilder_ == null) {
-        result.userLink_ = userLink_;
-      } else {
-        result.userLink_ = userLinkBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.admin.v1alpha.UpdateUserLinkRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.userLink_ = userLinkBuilder_ == null ? userLink_ : userLinkBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -442,7 +449,7 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
             case 10:
               {
                 input.readMessage(getUserLinkFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -461,6 +468,8 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.analytics.admin.v1alpha.UserLink userLink_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -482,7 +491,7 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the userLink field is set.
      */
     public boolean hasUserLink() {
-      return userLinkBuilder_ != null || userLink_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -523,11 +532,11 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
           throw new NullPointerException();
         }
         userLink_ = value;
-        onChanged();
       } else {
         userLinkBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -545,11 +554,11 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
         com.google.analytics.admin.v1alpha.UserLink.Builder builderForValue) {
       if (userLinkBuilder_ == null) {
         userLink_ = builderForValue.build();
-        onChanged();
       } else {
         userLinkBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -565,19 +574,18 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder mergeUserLink(com.google.analytics.admin.v1alpha.UserLink value) {
       if (userLinkBuilder_ == null) {
-        if (userLink_ != null) {
-          userLink_ =
-              com.google.analytics.admin.v1alpha.UserLink.newBuilder(userLink_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && userLink_ != null
+            && userLink_ != com.google.analytics.admin.v1alpha.UserLink.getDefaultInstance()) {
+          getUserLinkBuilder().mergeFrom(value);
         } else {
           userLink_ = value;
         }
-        onChanged();
       } else {
         userLinkBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -592,14 +600,13 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public Builder clearUserLink() {
-      if (userLinkBuilder_ == null) {
-        userLink_ = null;
-        onChanged();
-      } else {
-        userLink_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      userLink_ = null;
+      if (userLinkBuilder_ != null) {
+        userLinkBuilder_.dispose();
         userLinkBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -614,7 +621,7 @@ public final class UpdateUserLinkRequest extends com.google.protobuf.GeneratedMe
      * </code>
      */
     public com.google.analytics.admin.v1alpha.UserLink.Builder getUserLinkBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getUserLinkFieldBuilder().getBuilder();
     }

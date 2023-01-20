@@ -257,7 +257,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GRANULARITY_FIELD_NUMBER = 1;
-  private int granularity_;
+  private int granularity_ = 0;
   /**
    *
    *
@@ -288,16 +288,15 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.analytics.data.v1beta.CohortsRange.Granularity getGranularity() {
-    @SuppressWarnings("deprecation")
     com.google.analytics.data.v1beta.CohortsRange.Granularity result =
-        com.google.analytics.data.v1beta.CohortsRange.Granularity.valueOf(granularity_);
+        com.google.analytics.data.v1beta.CohortsRange.Granularity.forNumber(granularity_);
     return result == null
         ? com.google.analytics.data.v1beta.CohortsRange.Granularity.UNRECOGNIZED
         : result;
   }
 
   public static final int START_OFFSET_FIELD_NUMBER = 2;
-  private int startOffset_;
+  private int startOffset_ = 0;
   /**
    *
    *
@@ -323,7 +322,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_OFFSET_FIELD_NUMBER = 3;
-  private int endOffset_;
+  private int endOffset_ = 0;
   /**
    *
    *
@@ -569,12 +568,10 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       granularity_ = 0;
-
       startOffset_ = 0;
-
       endOffset_ = 0;
-
       return this;
     }
 
@@ -602,11 +599,24 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public com.google.analytics.data.v1beta.CohortsRange buildPartial() {
       com.google.analytics.data.v1beta.CohortsRange result =
           new com.google.analytics.data.v1beta.CohortsRange(this);
-      result.granularity_ = granularity_;
-      result.startOffset_ = startOffset_;
-      result.endOffset_ = endOffset_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.analytics.data.v1beta.CohortsRange result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.granularity_ = granularity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.startOffset_ = startOffset_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.endOffset_ = endOffset_;
+      }
     }
 
     @java.lang.Override
@@ -692,19 +702,19 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 granularity_ = input.readEnum();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 startOffset_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 endOffset_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -723,6 +733,8 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int granularity_ = 0;
     /**
@@ -755,8 +767,8 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setGranularityValue(int value) {
-
       granularity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -774,9 +786,8 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.analytics.data.v1beta.CohortsRange.Granularity getGranularity() {
-      @SuppressWarnings("deprecation")
       com.google.analytics.data.v1beta.CohortsRange.Granularity result =
-          com.google.analytics.data.v1beta.CohortsRange.Granularity.valueOf(granularity_);
+          com.google.analytics.data.v1beta.CohortsRange.Granularity.forNumber(granularity_);
       return result == null
           ? com.google.analytics.data.v1beta.CohortsRange.Granularity.UNRECOGNIZED
           : result;
@@ -798,7 +809,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000001;
       granularity_ = value.getNumber();
       onChanged();
       return this;
@@ -816,7 +827,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGranularity() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       granularity_ = 0;
       onChanged();
       return this;
@@ -869,6 +880,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setStartOffset(int value) {
 
       startOffset_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -892,7 +904,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStartOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       startOffset_ = 0;
       onChanged();
       return this;
@@ -947,6 +959,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
     public Builder setEndOffset(int value) {
 
       endOffset_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -971,7 +984,7 @@ public final class CohortsRange extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEndOffset() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       endOffset_ = 0;
       onChanged();
       return this;

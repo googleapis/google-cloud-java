@@ -70,7 +70,9 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -125,7 +127,9 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
   }
 
   public static final int APP_CONNECTOR_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object appConnectorId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object appConnectorId_ = "";
   /**
    *
    *
@@ -231,11 +235,15 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
   @java.lang.Override
   public com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorOrBuilder
       getAppConnectorOrBuilder() {
-    return getAppConnector();
+    return appConnector_ == null
+        ? com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.getDefaultInstance()
+        : appConnector_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -304,7 +312,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
   }
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 5;
-  private boolean validateOnly_;
+  private boolean validateOnly_ = false;
   /**
    *
    *
@@ -563,20 +571,16 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
       appConnectorId_ = "";
-
-      if (appConnectorBuilder_ == null) {
-        appConnector_ = null;
-      } else {
-        appConnector_ = null;
+      appConnector_ = null;
+      if (appConnectorBuilder_ != null) {
+        appConnectorBuilder_.dispose();
         appConnectorBuilder_ = null;
       }
       requestId_ = "";
-
       validateOnly_ = false;
-
       return this;
     }
 
@@ -607,17 +611,32 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
     public com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest buildPartial() {
       com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest result =
           new com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest(this);
-      result.parent_ = parent_;
-      result.appConnectorId_ = appConnectorId_;
-      if (appConnectorBuilder_ == null) {
-        result.appConnector_ = appConnector_;
-      } else {
-        result.appConnector_ = appConnectorBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
-      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.appConnectorId_ = appConnectorId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.appConnector_ =
+            appConnectorBuilder_ == null ? appConnector_ : appConnectorBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -671,10 +690,12 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getAppConnectorId().isEmpty()) {
         appConnectorId_ = other.appConnectorId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasAppConnector()) {
@@ -682,6 +703,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getValidateOnly() != false) {
@@ -716,31 +738,31 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 appConnectorId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getAppConnectorFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 40:
               {
                 validateOnly_ = input.readBool();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 40
             default:
@@ -759,6 +781,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -830,8 +854,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -850,8 +874,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -875,8 +899,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -951,8 +975,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       appConnectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -971,8 +995,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearAppConnectorId() {
-
       appConnectorId_ = getDefaultInstance().getAppConnectorId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -996,8 +1020,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       appConnectorId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1022,7 +1046,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * @return Whether the appConnector field is set.
      */
     public boolean hasAppConnector() {
-      return appConnectorBuilder_ != null || appConnector_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1064,11 +1088,11 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         appConnector_ = value;
-        onChanged();
       } else {
         appConnectorBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1086,11 +1110,11 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
         com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.Builder builderForValue) {
       if (appConnectorBuilder_ == null) {
         appConnector_ = builderForValue.build();
-        onChanged();
       } else {
         appConnectorBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1107,19 +1131,19 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
     public Builder mergeAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.AppConnector value) {
       if (appConnectorBuilder_ == null) {
-        if (appConnector_ != null) {
-          appConnector_ =
-              com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.newBuilder(appConnector_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && appConnector_ != null
+            && appConnector_
+                != com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.getDefaultInstance()) {
+          getAppConnectorBuilder().mergeFrom(value);
         } else {
           appConnector_ = value;
         }
-        onChanged();
       } else {
         appConnectorBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1134,14 +1158,13 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearAppConnector() {
-      if (appConnectorBuilder_ == null) {
-        appConnector_ = null;
-        onChanged();
-      } else {
-        appConnector_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      appConnector_ = null;
+      if (appConnectorBuilder_ != null) {
+        appConnectorBuilder_.dispose();
         appConnectorBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1157,7 +1180,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      */
     public com.google.cloud.beyondcorp.appconnectors.v1.AppConnector.Builder
         getAppConnectorBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAppConnectorFieldBuilder().getBuilder();
     }
@@ -1301,8 +1324,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1328,8 +1351,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1360,8 +1383,8 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1399,6 +1422,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1415,7 +1439,7 @@ public final class CreateAppConnectorRequest extends com.google.protobuf.Generat
      * @return This builder for chaining.
      */
     public Builder clearValidateOnly() {
-
+      bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
       onChanged();
       return this;

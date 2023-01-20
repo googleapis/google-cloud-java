@@ -68,7 +68,9 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int VOLUME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object volume_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object volume_ = "";
   /**
    *
    *
@@ -121,7 +123,7 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int SIZE_GIB_FIELD_NUMBER = 2;
-  private long sizeGib_;
+  private long sizeGib_ = 0L;
   /**
    *
    *
@@ -345,10 +347,9 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       volume_ = "";
-
       sizeGib_ = 0L;
-
       return this;
     }
 
@@ -376,10 +377,21 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
     public com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest buildPartial() {
       com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest result =
           new com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest(this);
-      result.volume_ = volume_;
-      result.sizeGib_ = sizeGib_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.volume_ = volume_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sizeGib_ = sizeGib_;
+      }
     }
 
     @java.lang.Override
@@ -430,6 +442,7 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getVolume().isEmpty()) {
         volume_ = other.volume_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSizeGib() != 0L) {
@@ -464,13 +477,13 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 volume_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 sizeGib_ = input.readInt64();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -489,6 +502,8 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object volume_ = "";
     /**
@@ -557,8 +572,8 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       volume_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -576,8 +591,8 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearVolume() {
-
       volume_ = getDefaultInstance().getVolume();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -600,8 +615,8 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       volume_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -637,6 +652,7 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
     public Builder setSizeGib(long value) {
 
       sizeGib_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -652,7 +668,7 @@ public final class ResizeVolumeRequest extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearSizeGib() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       sizeGib_ = 0L;
       onChanged();
       return this;
