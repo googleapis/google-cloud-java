@@ -450,6 +450,7 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (managedClusterBuilder_ != null) {
         managedClusterBuilder_.clear();
       }
@@ -485,23 +486,27 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.WorkflowTemplatePlacement buildPartial() {
       com.google.cloud.dataproc.v1.WorkflowTemplatePlacement result =
           new com.google.cloud.dataproc.v1.WorkflowTemplatePlacement(this);
-      if (placementCase_ == 1) {
-        if (managedClusterBuilder_ == null) {
-          result.placement_ = placement_;
-        } else {
-          result.placement_ = managedClusterBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (placementCase_ == 2) {
-        if (clusterSelectorBuilder_ == null) {
-          result.placement_ = placement_;
-        } else {
-          result.placement_ = clusterSelectorBuilder_.build();
-        }
-      }
-      result.placementCase_ = placementCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.WorkflowTemplatePlacement result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.WorkflowTemplatePlacement result) {
+      result.placementCase_ = placementCase_;
+      result.placement_ = this.placement_;
+      if (placementCase_ == 1 && managedClusterBuilder_ != null) {
+        result.placement_ = managedClusterBuilder_.build();
+      }
+      if (placementCase_ == 2 && clusterSelectorBuilder_ != null) {
+        result.placement_ = clusterSelectorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -634,6 +639,8 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.ManagedCluster,
@@ -841,7 +848,6 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       }
       placementCase_ = 1;
       onChanged();
-      ;
       return managedClusterBuilder_;
     }
 
@@ -1069,7 +1075,6 @@ public final class WorkflowTemplatePlacement extends com.google.protobuf.Generat
       }
       placementCase_ = 2;
       onChanged();
-      ;
       return clusterSelectorBuilder_;
     }
 

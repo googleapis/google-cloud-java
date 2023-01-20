@@ -125,7 +125,6 @@ public interface JobPlacementOrBuilder
    * <code>map&lt;string, string&gt; cluster_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-
   /* nullable */
   java.lang.String getClusterLabelsOrDefault(
       java.lang.String key,

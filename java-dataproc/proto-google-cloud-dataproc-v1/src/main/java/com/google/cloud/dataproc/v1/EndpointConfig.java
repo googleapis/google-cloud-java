@@ -89,6 +89,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> httpPorts_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHttpPorts() {
@@ -152,8 +153,10 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getHttpPortsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getHttpPortsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -184,7 +187,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENABLE_HTTP_PORT_ACCESS_FIELD_NUMBER = 2;
-  private boolean enableHttpPortAccess_;
+  private boolean enableHttpPortAccess_ = false;
   /**
    *
    *
@@ -436,9 +439,9 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableHttpPorts().clear();
       enableHttpPortAccess_ = false;
-
       return this;
     }
 
@@ -466,12 +469,22 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.EndpointConfig buildPartial() {
       com.google.cloud.dataproc.v1.EndpointConfig result =
           new com.google.cloud.dataproc.v1.EndpointConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.httpPorts_ = internalGetHttpPorts();
-      result.httpPorts_.makeImmutable();
-      result.enableHttpPortAccess_ = enableHttpPortAccess_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.EndpointConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.httpPorts_ = internalGetHttpPorts();
+        result.httpPorts_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.enableHttpPortAccess_ = enableHttpPortAccess_;
+      }
     }
 
     @java.lang.Override
@@ -520,6 +533,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dataproc.v1.EndpointConfig other) {
       if (other == com.google.cloud.dataproc.v1.EndpointConfig.getDefaultInstance()) return this;
       internalGetMutableHttpPorts().mergeFrom(other.internalGetHttpPorts());
+      bitField0_ |= 0x00000001;
       if (other.getEnableHttpPortAccess() != false) {
         setEnableHttpPortAccess(other.getEnableHttpPortAccess());
       }
@@ -558,12 +572,13 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableHttpPorts()
                     .getMutableMap()
                     .put(httpPorts__.getKey(), httpPorts__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 enableHttpPortAccess_ = input.readBool();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -597,8 +612,6 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableHttpPorts() {
-      onChanged();
-      ;
       if (httpPorts_ == null) {
         httpPorts_ =
             com.google.protobuf.MapField.newMapField(HttpPortsDefaultEntryHolder.defaultEntry);
@@ -606,6 +619,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       if (!httpPorts_.isMutable()) {
         httpPorts_ = httpPorts_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return httpPorts_;
     }
 
@@ -663,8 +678,10 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getHttpPortsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getHttpPortsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -695,6 +712,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearHttpPorts() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableHttpPorts().getMutableMap().clear();
       return this;
     }
@@ -719,6 +737,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableHttpPorts() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableHttpPorts().getMutableMap();
     }
     /**
@@ -739,8 +758,8 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableHttpPorts().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -756,6 +775,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllHttpPorts(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableHttpPorts().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -792,6 +812,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableHttpPortAccess(boolean value) {
 
       enableHttpPortAccess_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -808,7 +829,7 @@ public final class EndpointConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableHttpPortAccess() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       enableHttpPortAccess_ = false;
       onChanged();
       return this;

@@ -73,7 +73,6 @@ public interface IdentityConfigOrBuilder
    * map&lt;string, string&gt; user_service_account_mapping = 1 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-
   /* nullable */
   java.lang.String getUserServiceAccountMappingOrDefault(
       java.lang.String key,

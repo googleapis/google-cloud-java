@@ -120,6 +120,22 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <code>PREEMPTIBLE = 2;</code>
      */
     PREEMPTIBLE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Instances are [Spot VMs]
+     * (https://cloud.google.com/compute/docs/instances/spot).
+     * This option is allowed only for [secondary worker]
+     * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
+     * groups. Spot VMs are the latest version of [preemptible VMs]
+     * (https://cloud.google.com/compute/docs/instances/preemptible), and
+     * provide additional features.
+     * </pre>
+     *
+     * <code>SPOT = 3;</code>
+     */
+    SPOT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,6 +176,22 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * <code>PREEMPTIBLE = 2;</code>
      */
     public static final int PREEMPTIBLE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Instances are [Spot VMs]
+     * (https://cloud.google.com/compute/docs/instances/spot).
+     * This option is allowed only for [secondary worker]
+     * (https://cloud.google.com/dataproc/docs/concepts/compute/secondary-vms)
+     * groups. Spot VMs are the latest version of [preemptible VMs]
+     * (https://cloud.google.com/compute/docs/instances/preemptible), and
+     * provide additional features.
+     * </pre>
+     *
+     * <code>SPOT = 3;</code>
+     */
+    public static final int SPOT_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,6 +223,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           return NON_PREEMPTIBLE;
         case 2:
           return PREEMPTIBLE;
+        case 3:
+          return SPOT;
         default:
           return null;
       }
@@ -245,7 +279,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
-  private int numInstances_;
+  private int numInstances_ = 0;
   /**
    *
    *
@@ -268,6 +302,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INSTANCE_NAMES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList instanceNames_;
   /**
    *
@@ -333,7 +369,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 3;
-  private volatile java.lang.Object imageUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageUri_ = "";
   /**
    *
    *
@@ -404,7 +442,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MACHINE_TYPE_URI_FIELD_NUMBER = 4;
-  private volatile java.lang.Object machineTypeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineTypeUri_ = "";
   /**
    *
    *
@@ -521,11 +561,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.DiskConfigOrBuilder getDiskConfigOrBuilder() {
-    return getDiskConfig();
+    return diskConfig_ == null
+        ? com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()
+        : diskConfig_;
   }
 
   public static final int IS_PREEMPTIBLE_FIELD_NUMBER = 6;
-  private boolean isPreemptible_;
+  private boolean isPreemptible_ = false;
   /**
    *
    *
@@ -544,7 +586,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PREEMPTIBILITY_FIELD_NUMBER = 10;
-  private int preemptibility_;
+  private int preemptibility_ = 0;
   /**
    *
    *
@@ -585,9 +627,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility getPreemptibility() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility result =
-        com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.valueOf(preemptibility_);
+        com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.forNumber(preemptibility_);
     return result == null
         ? com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.UNRECOGNIZED
         : result;
@@ -650,10 +691,14 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder() {
-    return getManagedGroupConfig();
+    return managedGroupConfig_ == null
+        ? com.google.cloud.dataproc.v1.ManagedGroupConfig.getDefaultInstance()
+        : managedGroupConfig_;
   }
 
   public static final int ACCELERATORS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.AcceleratorConfig> accelerators_;
   /**
    *
@@ -739,7 +784,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
   }
 
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 9;
-  private volatile java.lang.Object minCpuPlatform_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minCpuPlatform_ = "";
   /**
    *
    *
@@ -1095,28 +1142,22 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       numInstances_ = 0;
-
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       imageUri_ = "";
-
       machineTypeUri_ = "";
-
-      if (diskConfigBuilder_ == null) {
-        diskConfig_ = null;
-      } else {
-        diskConfig_ = null;
+      diskConfig_ = null;
+      if (diskConfigBuilder_ != null) {
+        diskConfigBuilder_.dispose();
         diskConfigBuilder_ = null;
       }
       isPreemptible_ = false;
-
       preemptibility_ = 0;
-
-      if (managedGroupConfigBuilder_ == null) {
-        managedGroupConfig_ = null;
-      } else {
-        managedGroupConfig_ = null;
+      managedGroupConfig_ = null;
+      if (managedGroupConfigBuilder_ != null) {
+        managedGroupConfigBuilder_.dispose();
         managedGroupConfigBuilder_ = null;
       }
       if (acceleratorsBuilder_ == null) {
@@ -1125,9 +1166,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         accelerators_ = null;
         acceleratorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000100);
       minCpuPlatform_ = "";
-
       return this;
     }
 
@@ -1155,39 +1195,61 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dataproc.v1.InstanceGroupConfig buildPartial() {
       com.google.cloud.dataproc.v1.InstanceGroupConfig result =
           new com.google.cloud.dataproc.v1.InstanceGroupConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.numInstances_ = numInstances_;
-      if (((bitField0_ & 0x00000001) != 0)) {
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataproc.v1.InstanceGroupConfig result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.instanceNames_ = instanceNames_;
-      result.imageUri_ = imageUri_;
-      result.machineTypeUri_ = machineTypeUri_;
-      if (diskConfigBuilder_ == null) {
-        result.diskConfig_ = diskConfig_;
-      } else {
-        result.diskConfig_ = diskConfigBuilder_.build();
-      }
-      result.isPreemptible_ = isPreemptible_;
-      result.preemptibility_ = preemptibility_;
-      if (managedGroupConfigBuilder_ == null) {
-        result.managedGroupConfig_ = managedGroupConfig_;
-      } else {
-        result.managedGroupConfig_ = managedGroupConfigBuilder_.build();
-      }
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.accelerators_ = accelerators_;
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
-      result.minCpuPlatform_ = minCpuPlatform_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.InstanceGroupConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.numInstances_ = numInstances_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.imageUri_ = imageUri_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.machineTypeUri_ = machineTypeUri_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.diskConfig_ = diskConfigBuilder_ == null ? diskConfig_ : diskConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.isPreemptible_ = isPreemptible_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.preemptibility_ = preemptibility_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.managedGroupConfig_ =
+            managedGroupConfigBuilder_ == null
+                ? managedGroupConfig_
+                : managedGroupConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.minCpuPlatform_ = minCpuPlatform_;
+      }
     }
 
     @java.lang.Override
@@ -1242,7 +1304,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (!other.instanceNames_.isEmpty()) {
         if (instanceNames_.isEmpty()) {
           instanceNames_ = other.instanceNames_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureInstanceNamesIsMutable();
           instanceNames_.addAll(other.instanceNames_);
@@ -1251,10 +1313,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getMachineTypeUri().isEmpty()) {
         machineTypeUri_ = other.machineTypeUri_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDiskConfig()) {
@@ -1273,7 +1337,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -1286,7 +1350,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAcceleratorsFieldBuilder()
@@ -1298,6 +1362,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1329,7 +1394,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             case 8:
               {
                 numInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 18:
@@ -1342,32 +1407,32 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 imageUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 machineTypeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getDiskConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 48:
               {
                 isPreemptible_ = input.readBool();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     getManagedGroupConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
@@ -1386,13 +1451,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             case 74:
               {
                 minCpuPlatform_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 80:
               {
                 preemptibility_ = input.readEnum();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 80
             default:
@@ -1455,6 +1520,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder setNumInstances(int value) {
 
       numInstances_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1475,7 +1541,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearNumInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       numInstances_ = 0;
       onChanged();
       return this;
@@ -1485,9 +1551,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureInstanceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1630,7 +1696,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder clearInstanceNames() {
       instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1752,8 +1818,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1780,8 +1846,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearImageUri() {
-
       imageUri_ = getDefaultInstance().getImageUri();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1813,8 +1879,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageUri_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1907,8 +1973,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       machineTypeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1933,8 +1999,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMachineTypeUri() {
-
       machineTypeUri_ = getDefaultInstance().getMachineTypeUri();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1964,8 +2030,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       machineTypeUri_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1990,7 +2056,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the diskConfig field is set.
      */
     public boolean hasDiskConfig() {
-      return diskConfigBuilder_ != null || diskConfig_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -2031,11 +2097,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         diskConfig_ = value;
-        onChanged();
       } else {
         diskConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2052,11 +2118,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder setDiskConfig(com.google.cloud.dataproc.v1.DiskConfig.Builder builderForValue) {
       if (diskConfigBuilder_ == null) {
         diskConfig_ = builderForValue.build();
-        onChanged();
       } else {
         diskConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2072,19 +2138,18 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDiskConfig(com.google.cloud.dataproc.v1.DiskConfig value) {
       if (diskConfigBuilder_ == null) {
-        if (diskConfig_ != null) {
-          diskConfig_ =
-              com.google.cloud.dataproc.v1.DiskConfig.newBuilder(diskConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && diskConfig_ != null
+            && diskConfig_ != com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()) {
+          getDiskConfigBuilder().mergeFrom(value);
         } else {
           diskConfig_ = value;
         }
-        onChanged();
       } else {
         diskConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -2099,14 +2164,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDiskConfig() {
-      if (diskConfigBuilder_ == null) {
-        diskConfig_ = null;
-        onChanged();
-      } else {
-        diskConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      diskConfig_ = null;
+      if (diskConfigBuilder_ != null) {
+        diskConfigBuilder_.dispose();
         diskConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2121,7 +2185,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dataproc.v1.DiskConfig.Builder getDiskConfigBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDiskConfigFieldBuilder().getBuilder();
     }
@@ -2206,6 +2270,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder setIsPreemptible(boolean value) {
 
       isPreemptible_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2222,7 +2287,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIsPreemptible() {
-
+      bitField0_ = (bitField0_ & ~0x00000020);
       isPreemptible_ = false;
       onChanged();
       return this;
@@ -2269,8 +2334,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder setPreemptibilityValue(int value) {
-
       preemptibility_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2293,9 +2358,9 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility getPreemptibility() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility result =
-          com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.valueOf(preemptibility_);
+          com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.forNumber(
+              preemptibility_);
       return result == null
           ? com.google.cloud.dataproc.v1.InstanceGroupConfig.Preemptibility.UNRECOGNIZED
           : result;
@@ -2323,7 +2388,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000040;
       preemptibility_ = value.getNumber();
       onChanged();
       return this;
@@ -2346,7 +2411,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPreemptibility() {
-
+      bitField0_ = (bitField0_ & ~0x00000040);
       preemptibility_ = 0;
       onChanged();
       return this;
@@ -2374,7 +2439,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the managedGroupConfig field is set.
      */
     public boolean hasManagedGroupConfig() {
-      return managedGroupConfigBuilder_ != null || managedGroupConfig_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2419,11 +2484,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
           throw new NullPointerException();
         }
         managedGroupConfig_ = value;
-        onChanged();
       } else {
         managedGroupConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2443,11 +2508,11 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder builderForValue) {
       if (managedGroupConfigBuilder_ == null) {
         managedGroupConfig_ = builderForValue.build();
-        onChanged();
       } else {
         managedGroupConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2465,19 +2530,19 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeManagedGroupConfig(com.google.cloud.dataproc.v1.ManagedGroupConfig value) {
       if (managedGroupConfigBuilder_ == null) {
-        if (managedGroupConfig_ != null) {
-          managedGroupConfig_ =
-              com.google.cloud.dataproc.v1.ManagedGroupConfig.newBuilder(managedGroupConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && managedGroupConfig_ != null
+            && managedGroupConfig_
+                != com.google.cloud.dataproc.v1.ManagedGroupConfig.getDefaultInstance()) {
+          getManagedGroupConfigBuilder().mergeFrom(value);
         } else {
           managedGroupConfig_ = value;
         }
-        onChanged();
       } else {
         managedGroupConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -2494,14 +2559,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearManagedGroupConfig() {
-      if (managedGroupConfigBuilder_ == null) {
-        managedGroupConfig_ = null;
-        onChanged();
-      } else {
-        managedGroupConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      managedGroupConfig_ = null;
+      if (managedGroupConfigBuilder_ != null) {
+        managedGroupConfigBuilder_.dispose();
         managedGroupConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2518,7 +2582,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder getManagedGroupConfigBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getManagedGroupConfigFieldBuilder().getBuilder();
     }
@@ -2579,10 +2643,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -2833,7 +2897,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -2979,7 +3043,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dataproc.v1.AcceleratorConfig,
                 com.google.cloud.dataproc.v1.AcceleratorConfig.Builder,
                 com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -3052,8 +3116,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3071,8 +3135,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearMinCpuPlatform() {
-
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -3095,8 +3159,8 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       minCpuPlatform_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

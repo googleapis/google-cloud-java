@@ -68,7 +68,9 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GCE_PD_KMS_KEY_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object gcePdKmsKeyName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gcePdKmsKeyName_ = "";
   /**
    *
    *
@@ -315,8 +317,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       gcePdKmsKeyName_ = "";
-
       return this;
     }
 
@@ -344,9 +346,18 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.EncryptionConfig buildPartial() {
       com.google.cloud.dataproc.v1.EncryptionConfig result =
           new com.google.cloud.dataproc.v1.EncryptionConfig(this);
-      result.gcePdKmsKeyName_ = gcePdKmsKeyName_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.EncryptionConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.gcePdKmsKeyName_ = gcePdKmsKeyName_;
+      }
     }
 
     @java.lang.Override
@@ -396,6 +407,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dataproc.v1.EncryptionConfig.getDefaultInstance()) return this;
       if (!other.getGcePdKmsKeyName().isEmpty()) {
         gcePdKmsKeyName_ = other.gcePdKmsKeyName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -427,7 +439,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 gcePdKmsKeyName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -446,6 +458,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object gcePdKmsKeyName_ = "";
     /**
@@ -511,8 +525,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       gcePdKmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -529,8 +543,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearGcePdKmsKeyName() {
-
       gcePdKmsKeyName_ = getDefaultInstance().getGcePdKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -552,8 +566,8 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       gcePdKmsKeyName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

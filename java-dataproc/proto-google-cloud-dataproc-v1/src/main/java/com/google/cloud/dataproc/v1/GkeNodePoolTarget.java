@@ -275,7 +275,9 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int NODE_POOL_FIELD_NUMBER = 1;
-  private volatile java.lang.Object nodePool_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nodePool_ = "";
   /**
    *
    *
@@ -328,7 +330,10 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ROLES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> roles_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role>
       roles_converter_ =
@@ -336,9 +341,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
               java.lang.Integer, com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role>() {
             public com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role convert(
                 java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role result =
-                  com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role.valueOf(from);
+                  com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role.forNumber(from);
               return result == null
                   ? com.google.cloud.dataproc.v1.GkeNodePoolTarget.Role.UNRECOGNIZED
                   : result;
@@ -508,7 +512,9 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.GkeNodePoolConfigOrBuilder getNodePoolConfigOrBuilder() {
-    return getNodePoolConfig();
+    return nodePoolConfig_ == null
+        ? com.google.cloud.dataproc.v1.GkeNodePoolConfig.getDefaultInstance()
+        : nodePoolConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -747,14 +753,13 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       nodePool_ = "";
-
       roles_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (nodePoolConfigBuilder_ == null) {
-        nodePoolConfig_ = null;
-      } else {
-        nodePoolConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      nodePoolConfig_ = null;
+      if (nodePoolConfigBuilder_ != null) {
+        nodePoolConfigBuilder_.dispose();
         nodePoolConfigBuilder_ = null;
       }
       return this;
@@ -784,20 +789,31 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.GkeNodePoolTarget buildPartial() {
       com.google.cloud.dataproc.v1.GkeNodePoolTarget result =
           new com.google.cloud.dataproc.v1.GkeNodePoolTarget(this);
-      int from_bitField0_ = bitField0_;
-      result.nodePool_ = nodePool_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        roles_ = java.util.Collections.unmodifiableList(roles_);
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.roles_ = roles_;
-      if (nodePoolConfigBuilder_ == null) {
-        result.nodePoolConfig_ = nodePoolConfig_;
-      } else {
-        result.nodePoolConfig_ = nodePoolConfigBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.GkeNodePoolTarget result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        roles_ = java.util.Collections.unmodifiableList(roles_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.roles_ = roles_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.GkeNodePoolTarget result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.nodePool_ = nodePool_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodePoolConfig_ =
+            nodePoolConfigBuilder_ == null ? nodePoolConfig_ : nodePoolConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -847,12 +863,13 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataproc.v1.GkeNodePoolTarget.getDefaultInstance()) return this;
       if (!other.getNodePool().isEmpty()) {
         nodePool_ = other.nodePool_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.roles_.isEmpty()) {
         if (roles_.isEmpty()) {
           roles_ = other.roles_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureRolesIsMutable();
           roles_.addAll(other.roles_);
@@ -891,7 +908,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 nodePool_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
@@ -916,7 +933,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
             case 26:
               {
                 input.readMessage(getNodePoolConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -1005,8 +1022,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       nodePool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1024,8 +1041,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearNodePool() {
-
       nodePool_ = getDefaultInstance().getNodePool();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1048,8 +1065,8 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       nodePool_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1057,9 +1074,9 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
     private java.util.List<java.lang.Integer> roles_ = java.util.Collections.emptyList();
 
     private void ensureRolesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         roles_ = new java.util.ArrayList<java.lang.Integer>(roles_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1198,7 +1215,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRoles() {
       roles_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1326,7 +1343,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      * @return Whether the nodePoolConfig field is set.
      */
     public boolean hasNodePoolConfig() {
-      return nodePoolConfigBuilder_ != null || nodePoolConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1381,11 +1398,11 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
           throw new NullPointerException();
         }
         nodePoolConfig_ = value;
-        onChanged();
       } else {
         nodePoolConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1410,11 +1427,11 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
         com.google.cloud.dataproc.v1.GkeNodePoolConfig.Builder builderForValue) {
       if (nodePoolConfigBuilder_ == null) {
         nodePoolConfig_ = builderForValue.build();
-        onChanged();
       } else {
         nodePoolConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1437,19 +1454,19 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeNodePoolConfig(com.google.cloud.dataproc.v1.GkeNodePoolConfig value) {
       if (nodePoolConfigBuilder_ == null) {
-        if (nodePoolConfig_ != null) {
-          nodePoolConfig_ =
-              com.google.cloud.dataproc.v1.GkeNodePoolConfig.newBuilder(nodePoolConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && nodePoolConfig_ != null
+            && nodePoolConfig_
+                != com.google.cloud.dataproc.v1.GkeNodePoolConfig.getDefaultInstance()) {
+          getNodePoolConfigBuilder().mergeFrom(value);
         } else {
           nodePoolConfig_ = value;
         }
-        onChanged();
       } else {
         nodePoolConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1471,14 +1488,13 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearNodePoolConfig() {
-      if (nodePoolConfigBuilder_ == null) {
-        nodePoolConfig_ = null;
-        onChanged();
-      } else {
-        nodePoolConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      nodePoolConfig_ = null;
+      if (nodePoolConfigBuilder_ != null) {
+        nodePoolConfigBuilder_.dispose();
         nodePoolConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1500,7 +1516,7 @@ public final class GkeNodePoolTarget extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.dataproc.v1.GkeNodePoolConfig.Builder getNodePoolConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNodePoolConfigFieldBuilder().getBuilder();
     }

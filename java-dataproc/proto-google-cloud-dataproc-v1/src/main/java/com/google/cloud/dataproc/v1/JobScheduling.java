@@ -66,7 +66,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_FAILURES_PER_HOUR_FIELD_NUMBER = 1;
-  private int maxFailuresPerHour_;
+  private int maxFailuresPerHour_ = 0;
   /**
    *
    *
@@ -92,7 +92,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAX_FAILURES_TOTAL_FIELD_NUMBER = 2;
-  private int maxFailuresTotal_;
+  private int maxFailuresTotal_ = 0;
   /**
    *
    *
@@ -322,10 +322,9 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       maxFailuresPerHour_ = 0;
-
       maxFailuresTotal_ = 0;
-
       return this;
     }
 
@@ -353,10 +352,21 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.JobScheduling buildPartial() {
       com.google.cloud.dataproc.v1.JobScheduling result =
           new com.google.cloud.dataproc.v1.JobScheduling(this);
-      result.maxFailuresPerHour_ = maxFailuresPerHour_;
-      result.maxFailuresTotal_ = maxFailuresTotal_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.JobScheduling result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.maxFailuresPerHour_ = maxFailuresPerHour_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxFailuresTotal_ = maxFailuresTotal_;
+      }
     }
 
     @java.lang.Override
@@ -439,13 +449,13 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
             case 8:
               {
                 maxFailuresPerHour_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxFailuresTotal_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -464,6 +474,8 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int maxFailuresPerHour_;
     /**
@@ -512,6 +524,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxFailuresPerHour(int value) {
 
       maxFailuresPerHour_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -535,7 +548,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxFailuresPerHour() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       maxFailuresPerHour_ = 0;
       onChanged();
       return this;
@@ -586,6 +599,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxFailuresTotal(int value) {
 
       maxFailuresTotal_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -608,7 +622,7 @@ public final class JobScheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxFailuresTotal() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxFailuresTotal_ = 0;
       onChanged();
       return this;

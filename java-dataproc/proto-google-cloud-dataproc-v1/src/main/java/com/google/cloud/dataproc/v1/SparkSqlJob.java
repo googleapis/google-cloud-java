@@ -262,6 +262,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> scriptVariables_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -327,8 +328,10 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getScriptVariablesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -371,6 +374,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
@@ -437,8 +441,10 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getPropertiesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -470,6 +476,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 56;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList jarFileUris_;
   /**
    *
@@ -581,7 +589,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.LoggingConfigOrBuilder getLoggingConfigOrBuilder() {
-    return getLoggingConfig();
+    return loggingConfig_ == null
+        ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -897,17 +907,17 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (queryListBuilder_ != null) {
         queryListBuilder_.clear();
       }
       internalGetMutableScriptVariables().clear();
       internalGetMutableProperties().clear();
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
       queriesCase_ = 0;
@@ -939,34 +949,45 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.SparkSqlJob buildPartial() {
       com.google.cloud.dataproc.v1.SparkSqlJob result =
           new com.google.cloud.dataproc.v1.SparkSqlJob(this);
-      int from_bitField0_ = bitField0_;
-      if (queriesCase_ == 1) {
-        result.queries_ = queries_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (queriesCase_ == 2) {
-        if (queryListBuilder_ == null) {
-          result.queries_ = queries_;
-        } else {
-          result.queries_ = queryListBuilder_.build();
-        }
-      }
-      result.scriptVariables_ = internalGetScriptVariables();
-      result.scriptVariables_.makeImmutable();
-      result.properties_ = internalGetProperties();
-      result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
-        jarFileUris_ = jarFileUris_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.jarFileUris_ = jarFileUris_;
-      if (loggingConfigBuilder_ == null) {
-        result.loggingConfig_ = loggingConfig_;
-      } else {
-        result.loggingConfig_ = loggingConfigBuilder_.build();
-      }
-      result.queriesCase_ = queriesCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.SparkSqlJob result) {
+      if (((bitField0_ & 0x00000010) != 0)) {
+        jarFileUris_ = jarFileUris_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000010);
+      }
+      result.jarFileUris_ = jarFileUris_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.SparkSqlJob result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.scriptVariables_ = internalGetScriptVariables();
+        result.scriptVariables_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.properties_ = internalGetProperties();
+        result.properties_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.loggingConfig_ =
+            loggingConfigBuilder_ == null ? loggingConfig_ : loggingConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.SparkSqlJob result) {
+      result.queriesCase_ = queriesCase_;
+      result.queries_ = this.queries_;
+      if (queriesCase_ == 2 && queryListBuilder_ != null) {
+        result.queries_ = queryListBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1015,11 +1036,13 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dataproc.v1.SparkSqlJob other) {
       if (other == com.google.cloud.dataproc.v1.SparkSqlJob.getDefaultInstance()) return this;
       internalGetMutableScriptVariables().mergeFrom(other.internalGetScriptVariables());
+      bitField0_ |= 0x00000004;
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
+      bitField0_ |= 0x00000008;
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           ensureJarFileUrisIsMutable();
           jarFileUris_.addAll(other.jarFileUris_);
@@ -1095,6 +1118,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableScriptVariables()
                     .getMutableMap()
                     .put(scriptVariables__.getKey(), scriptVariables__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1106,12 +1130,13 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableProperties()
                     .getMutableMap()
                     .put(properties__.getKey(), properties__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 50:
               {
                 input.readMessage(getLoggingConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 450:
@@ -1493,7 +1518,6 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       }
       queriesCase_ = 2;
       onChanged();
-      ;
       return queryListBuilder_;
     }
 
@@ -1510,8 +1534,6 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableScriptVariables() {
-      onChanged();
-      ;
       if (scriptVariables_ == null) {
         scriptVariables_ =
             com.google.protobuf.MapField.newMapField(
@@ -1520,6 +1542,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       if (!scriptVariables_.isMutable()) {
         scriptVariables_ = scriptVariables_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return scriptVariables_;
     }
 
@@ -1580,8 +1604,10 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getScriptVariablesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getScriptVariablesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1613,6 +1639,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearScriptVariables() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableScriptVariables().getMutableMap().clear();
       return this;
     }
@@ -1638,6 +1665,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableScriptVariables() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableScriptVariables().getMutableMap();
     }
     /**
@@ -1659,8 +1687,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableScriptVariables().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1677,6 +1705,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllScriptVariables(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScriptVariables().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1693,8 +1722,6 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableProperties() {
-      onChanged();
-      ;
       if (properties_ == null) {
         properties_ =
             com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
@@ -1702,6 +1729,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return properties_;
     }
 
@@ -1762,8 +1791,10 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getPropertiesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1795,6 +1826,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearProperties() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
@@ -1820,6 +1852,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableProperties().getMutableMap();
     }
     /**
@@ -1841,8 +1874,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1859,6 +1892,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 
@@ -1866,9 +1900,9 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureJarFileUrisIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000010) != 0)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
       }
     }
     /**
@@ -2003,7 +2037,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJarFileUris() {
       jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2050,7 +2084,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the loggingConfig field is set.
      */
     public boolean hasLoggingConfig() {
-      return loggingConfigBuilder_ != null || loggingConfig_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2091,11 +2125,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         loggingConfig_ = value;
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2113,11 +2147,11 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.LoggingConfig.Builder builderForValue) {
       if (loggingConfigBuilder_ == null) {
         loggingConfig_ = builderForValue.build();
-        onChanged();
       } else {
         loggingConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2133,19 +2167,18 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLoggingConfig(com.google.cloud.dataproc.v1.LoggingConfig value) {
       if (loggingConfigBuilder_ == null) {
-        if (loggingConfig_ != null) {
-          loggingConfig_ =
-              com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && loggingConfig_ != null
+            && loggingConfig_ != com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()) {
+          getLoggingConfigBuilder().mergeFrom(value);
         } else {
           loggingConfig_ = value;
         }
-        onChanged();
       } else {
         loggingConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2160,14 +2193,13 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLoggingConfig() {
-      if (loggingConfigBuilder_ == null) {
-        loggingConfig_ = null;
-        onChanged();
-      } else {
-        loggingConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      loggingConfig_ = null;
+      if (loggingConfigBuilder_ != null) {
+        loggingConfigBuilder_.dispose();
         loggingConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2182,7 +2214,7 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }

@@ -114,7 +114,9 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
   }
 
   public static final int STAGING_BUCKET_FIELD_NUMBER = 1;
-  private volatile java.lang.Object stagingBucket_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stagingBucket_ = "";
   /**
    *
    *
@@ -295,7 +297,9 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public com.google.cloud.dataproc.v1.AuxiliaryServicesConfigOrBuilder
       getAuxiliaryServicesConfigOrBuilder() {
-    return getAuxiliaryServicesConfig();
+    return auxiliaryServicesConfig_ == null
+        ? com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.getDefaultInstance()
+        : auxiliaryServicesConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -537,15 +541,14 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       stagingBucket_ = "";
-
       if (kubernetesClusterConfigBuilder_ != null) {
         kubernetesClusterConfigBuilder_.clear();
       }
-      if (auxiliaryServicesConfigBuilder_ == null) {
-        auxiliaryServicesConfig_ = null;
-      } else {
-        auxiliaryServicesConfig_ = null;
+      auxiliaryServicesConfig_ = null;
+      if (auxiliaryServicesConfigBuilder_ != null) {
+        auxiliaryServicesConfigBuilder_.dispose();
         auxiliaryServicesConfigBuilder_ = null;
       }
       infrastructureConfigCase_ = 0;
@@ -577,22 +580,33 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dataproc.v1.VirtualClusterConfig buildPartial() {
       com.google.cloud.dataproc.v1.VirtualClusterConfig result =
           new com.google.cloud.dataproc.v1.VirtualClusterConfig(this);
-      result.stagingBucket_ = stagingBucket_;
-      if (infrastructureConfigCase_ == 6) {
-        if (kubernetesClusterConfigBuilder_ == null) {
-          result.infrastructureConfig_ = infrastructureConfig_;
-        } else {
-          result.infrastructureConfig_ = kubernetesClusterConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (auxiliaryServicesConfigBuilder_ == null) {
-        result.auxiliaryServicesConfig_ = auxiliaryServicesConfig_;
-      } else {
-        result.auxiliaryServicesConfig_ = auxiliaryServicesConfigBuilder_.build();
-      }
-      result.infrastructureConfigCase_ = infrastructureConfigCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.VirtualClusterConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.stagingBucket_ = stagingBucket_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.auxiliaryServicesConfig_ =
+            auxiliaryServicesConfigBuilder_ == null
+                ? auxiliaryServicesConfig_
+                : auxiliaryServicesConfigBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.VirtualClusterConfig result) {
+      result.infrastructureConfigCase_ = infrastructureConfigCase_;
+      result.infrastructureConfig_ = this.infrastructureConfig_;
+      if (infrastructureConfigCase_ == 6 && kubernetesClusterConfigBuilder_ != null) {
+        result.infrastructureConfig_ = kubernetesClusterConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -643,6 +657,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getStagingBucket().isEmpty()) {
         stagingBucket_ = other.stagingBucket_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasAuxiliaryServicesConfig()) {
@@ -688,7 +703,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 stagingBucket_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 50:
@@ -702,7 +717,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     getAuxiliaryServicesConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 58
             default:
@@ -735,6 +750,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object stagingBucket_ = "";
     /**
@@ -827,8 +844,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       stagingBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,8 +871,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearStagingBucket() {
-
       stagingBucket_ = getDefaultInstance().getStagingBucket();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -886,8 +903,8 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stagingBucket_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1131,7 +1148,6 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
       }
       infrastructureConfigCase_ = 6;
       onChanged();
-      ;
       return kubernetesClusterConfigBuilder_;
     }
 
@@ -1155,7 +1171,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      * @return Whether the auxiliaryServicesConfig field is set.
      */
     public boolean hasAuxiliaryServicesConfig() {
-      return auxiliaryServicesConfigBuilder_ != null || auxiliaryServicesConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1197,11 +1213,11 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         auxiliaryServicesConfig_ = value;
-        onChanged();
       } else {
         auxiliaryServicesConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1219,11 +1235,11 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
         com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.Builder builderForValue) {
       if (auxiliaryServicesConfigBuilder_ == null) {
         auxiliaryServicesConfig_ = builderForValue.build();
-        onChanged();
       } else {
         auxiliaryServicesConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1240,20 +1256,19 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
     public Builder mergeAuxiliaryServicesConfig(
         com.google.cloud.dataproc.v1.AuxiliaryServicesConfig value) {
       if (auxiliaryServicesConfigBuilder_ == null) {
-        if (auxiliaryServicesConfig_ != null) {
-          auxiliaryServicesConfig_ =
-              com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.newBuilder(
-                      auxiliaryServicesConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && auxiliaryServicesConfig_ != null
+            && auxiliaryServicesConfig_
+                != com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.getDefaultInstance()) {
+          getAuxiliaryServicesConfigBuilder().mergeFrom(value);
         } else {
           auxiliaryServicesConfig_ = value;
         }
-        onChanged();
       } else {
         auxiliaryServicesConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1268,14 +1283,13 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearAuxiliaryServicesConfig() {
-      if (auxiliaryServicesConfigBuilder_ == null) {
-        auxiliaryServicesConfig_ = null;
-        onChanged();
-      } else {
-        auxiliaryServicesConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      auxiliaryServicesConfig_ = null;
+      if (auxiliaryServicesConfigBuilder_ != null) {
+        auxiliaryServicesConfigBuilder_.dispose();
         auxiliaryServicesConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1291,7 +1305,7 @@ public final class VirtualClusterConfig extends com.google.protobuf.GeneratedMes
      */
     public com.google.cloud.dataproc.v1.AuxiliaryServicesConfig.Builder
         getAuxiliaryServicesConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getAuxiliaryServicesConfigFieldBuilder().getBuilder();
     }

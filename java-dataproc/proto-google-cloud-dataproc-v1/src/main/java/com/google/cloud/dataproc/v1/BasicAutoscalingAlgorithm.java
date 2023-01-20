@@ -220,7 +220,9 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getCooldownPeriodOrBuilder() {
-    return getCooldownPeriod();
+    return cooldownPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : cooldownPeriod_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -450,13 +452,13 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (yarnConfigBuilder_ != null) {
         yarnConfigBuilder_.clear();
       }
-      if (cooldownPeriodBuilder_ == null) {
-        cooldownPeriod_ = null;
-      } else {
-        cooldownPeriod_ = null;
+      cooldownPeriod_ = null;
+      if (cooldownPeriodBuilder_ != null) {
+        cooldownPeriodBuilder_.dispose();
         cooldownPeriodBuilder_ = null;
       }
       configCase_ = 0;
@@ -488,21 +490,28 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm buildPartial() {
       com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm result =
           new com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm(this);
-      if (configCase_ == 1) {
-        if (yarnConfigBuilder_ == null) {
-          result.config_ = config_;
-        } else {
-          result.config_ = yarnConfigBuilder_.build();
-        }
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (cooldownPeriodBuilder_ == null) {
-        result.cooldownPeriod_ = cooldownPeriod_;
-      } else {
-        result.cooldownPeriod_ = cooldownPeriodBuilder_.build();
-      }
-      result.configCase_ = configCase_;
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.cooldownPeriod_ =
+            cooldownPeriodBuilder_ == null ? cooldownPeriod_ : cooldownPeriodBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.BasicAutoscalingAlgorithm result) {
+      result.configCase_ = configCase_;
+      result.config_ = this.config_;
+      if (configCase_ == 1 && yarnConfigBuilder_ != null) {
+        result.config_ = yarnConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -600,7 +609,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
             case 18:
               {
                 input.readMessage(getCooldownPeriodFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -633,6 +642,8 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataproc.v1.BasicYarnAutoscalingConfig,
@@ -860,7 +871,6 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
       }
       configCase_ = 1;
       onChanged();
-      ;
       return yarnConfigBuilder_;
     }
 
@@ -886,7 +896,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * @return Whether the cooldownPeriod field is set.
      */
     public boolean hasCooldownPeriod() {
-      return cooldownPeriodBuilder_ != null || cooldownPeriod_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -931,11 +941,11 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
           throw new NullPointerException();
         }
         cooldownPeriod_ = value;
-        onChanged();
       } else {
         cooldownPeriodBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -954,11 +964,11 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
     public Builder setCooldownPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (cooldownPeriodBuilder_ == null) {
         cooldownPeriod_ = builderForValue.build();
-        onChanged();
       } else {
         cooldownPeriodBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -976,19 +986,18 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      */
     public Builder mergeCooldownPeriod(com.google.protobuf.Duration value) {
       if (cooldownPeriodBuilder_ == null) {
-        if (cooldownPeriod_ != null) {
-          cooldownPeriod_ =
-              com.google.protobuf.Duration.newBuilder(cooldownPeriod_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && cooldownPeriod_ != null
+            && cooldownPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getCooldownPeriodBuilder().mergeFrom(value);
         } else {
           cooldownPeriod_ = value;
         }
-        onChanged();
       } else {
         cooldownPeriodBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -1005,14 +1014,13 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearCooldownPeriod() {
-      if (cooldownPeriodBuilder_ == null) {
-        cooldownPeriod_ = null;
-        onChanged();
-      } else {
-        cooldownPeriod_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cooldownPeriod_ = null;
+      if (cooldownPeriodBuilder_ != null) {
+        cooldownPeriodBuilder_.dispose();
         cooldownPeriodBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1029,7 +1037,7 @@ public final class BasicAutoscalingAlgorithm extends com.google.protobuf.Generat
      * </code>
      */
     public com.google.protobuf.Duration.Builder getCooldownPeriodBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCooldownPeriodFieldBuilder().getBuilder();
     }

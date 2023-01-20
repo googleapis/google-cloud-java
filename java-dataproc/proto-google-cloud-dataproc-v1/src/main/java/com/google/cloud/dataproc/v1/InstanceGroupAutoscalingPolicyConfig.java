@@ -69,7 +69,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
   }
 
   public static final int MIN_INSTANCES_FIELD_NUMBER = 1;
-  private int minInstances_;
+  private int minInstances_ = 0;
   /**
    *
    *
@@ -89,7 +89,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
   }
 
   public static final int MAX_INSTANCES_FIELD_NUMBER = 2;
-  private int maxInstances_;
+  private int maxInstances_ = 0;
   /**
    *
    *
@@ -111,7 +111,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
   }
 
   public static final int WEIGHT_FIELD_NUMBER = 3;
-  private int weight_;
+  private int weight_ = 0;
   /**
    *
    *
@@ -362,12 +362,10 @@ public final class InstanceGroupAutoscalingPolicyConfig
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       minInstances_ = 0;
-
       maxInstances_ = 0;
-
       weight_ = 0;
-
       return this;
     }
 
@@ -396,11 +394,25 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig buildPartial() {
       com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig result =
           new com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig(this);
-      result.minInstances_ = minInstances_;
-      result.maxInstances_ = maxInstances_;
-      result.weight_ = weight_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataproc.v1.InstanceGroupAutoscalingPolicyConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.minInstances_ = minInstances_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxInstances_ = maxInstances_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.weight_ = weight_;
+      }
     }
 
     @java.lang.Override
@@ -489,19 +501,19 @@ public final class InstanceGroupAutoscalingPolicyConfig
             case 8:
               {
                 minInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 maxInstances_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 24:
               {
                 weight_ = input.readInt32();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -520,6 +532,8 @@ public final class InstanceGroupAutoscalingPolicyConfig
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int minInstances_;
     /**
@@ -556,6 +570,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public Builder setMinInstances(int value) {
 
       minInstances_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -573,7 +588,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * @return This builder for chaining.
      */
     public Builder clearMinInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       minInstances_ = 0;
       onChanged();
       return this;
@@ -618,6 +633,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public Builder setMaxInstances(int value) {
 
       maxInstances_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -637,7 +653,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * @return This builder for chaining.
      */
     public Builder clearMaxInstances() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       maxInstances_ = 0;
       onChanged();
       return this;
@@ -704,6 +720,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
     public Builder setWeight(int value) {
 
       weight_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -734,7 +751,7 @@ public final class InstanceGroupAutoscalingPolicyConfig
      * @return This builder for chaining.
      */
     public Builder clearWeight() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       weight_ = 0;
       onChanged();
       return this;

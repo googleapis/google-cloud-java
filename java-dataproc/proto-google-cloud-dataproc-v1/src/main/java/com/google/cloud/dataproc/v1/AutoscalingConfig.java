@@ -68,7 +68,9 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int POLICY_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object policyUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object policyUri_ = "";
   /**
    *
    *
@@ -323,8 +325,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       policyUri_ = "";
-
       return this;
     }
 
@@ -352,9 +354,18 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.AutoscalingConfig buildPartial() {
       com.google.cloud.dataproc.v1.AutoscalingConfig result =
           new com.google.cloud.dataproc.v1.AutoscalingConfig(this);
-      result.policyUri_ = policyUri_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.AutoscalingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policyUri_ = policyUri_;
+      }
     }
 
     @java.lang.Override
@@ -404,6 +415,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataproc.v1.AutoscalingConfig.getDefaultInstance()) return this;
       if (!other.getPolicyUri().isEmpty()) {
         policyUri_ = other.policyUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -435,7 +447,7 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 policyUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             default:
@@ -454,6 +466,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object policyUri_ = "";
     /**
@@ -531,8 +545,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       policyUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -553,8 +567,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPolicyUri() {
-
       policyUri_ = getDefaultInstance().getPolicyUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -580,8 +594,8 @@ public final class AutoscalingConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       policyUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }

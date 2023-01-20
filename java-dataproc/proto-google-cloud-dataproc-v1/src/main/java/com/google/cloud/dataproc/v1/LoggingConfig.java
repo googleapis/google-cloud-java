@@ -380,6 +380,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.LoggingConfig.Level.LEVEL_UNSPECIFIED.getNumber());
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer> driverLogLevels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
@@ -800,6 +801,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableDriverLogLevels().clear();
       return this;
     }
@@ -828,11 +830,19 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.LoggingConfig buildPartial() {
       com.google.cloud.dataproc.v1.LoggingConfig result =
           new com.google.cloud.dataproc.v1.LoggingConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.driverLogLevels_ = internalGetDriverLogLevels();
-      result.driverLogLevels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.LoggingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.driverLogLevels_ = internalGetDriverLogLevels();
+        result.driverLogLevels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -881,6 +891,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dataproc.v1.LoggingConfig other) {
       if (other == com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()) return this;
       internalGetMutableDriverLogLevels().mergeFrom(other.internalGetDriverLogLevels());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -917,6 +928,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDriverLogLevels()
                     .getMutableMap()
                     .put(driverLogLevels__.getKey(), driverLogLevels__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             default:
@@ -951,8 +963,6 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
         internalGetMutableDriverLogLevels() {
-      onChanged();
-      ;
       if (driverLogLevels_ == null) {
         driverLogLevels_ =
             com.google.protobuf.MapField.newMapField(
@@ -961,6 +971,8 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       if (!driverLogLevels_.isMutable()) {
         driverLogLevels_ = driverLogLevels_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return driverLogLevels_;
     }
 
@@ -1138,6 +1150,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDriverLogLevels() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableDriverLogLevels().getMutableMap().clear();
       return this;
     }
@@ -1165,6 +1178,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level>
         getMutableDriverLogLevels() {
+      bitField0_ |= 0x00000001;
       return internalGetAdaptedDriverLogLevelsMap(
           internalGetMutableDriverLogLevels().getMutableMap());
     }
@@ -1190,6 +1204,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDriverLogLevels()
           .getMutableMap()
           .put(key, driverLogLevelsValueConverter.doBackward(value));
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1209,11 +1224,13 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.dataproc.v1.LoggingConfig.Level> values) {
       internalGetAdaptedDriverLogLevelsMap(internalGetMutableDriverLogLevels().getMutableMap())
           .putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableDriverLogLevelsValue() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableDriverLogLevels().getMutableMap();
     }
     /**
@@ -1235,6 +1252,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableDriverLogLevels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1253,6 +1271,7 @@ public final class LoggingConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllDriverLogLevelsValue(
         java.util.Map<java.lang.String, java.lang.Integer> values) {
       internalGetMutableDriverLogLevels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 

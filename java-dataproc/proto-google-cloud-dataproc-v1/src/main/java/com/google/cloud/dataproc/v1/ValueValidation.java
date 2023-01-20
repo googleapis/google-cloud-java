@@ -68,6 +68,8 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList values_;
   /**
    *
@@ -332,6 +334,7 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
@@ -361,14 +364,24 @@ public final class ValueValidation extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.dataproc.v1.ValueValidation buildPartial() {
       com.google.cloud.dataproc.v1.ValueValidation result =
           new com.google.cloud.dataproc.v1.ValueValidation(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.ValueValidation result) {
       if (((bitField0_ & 0x00000001) != 0)) {
         values_ = values_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.values_ = values_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ValueValidation result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

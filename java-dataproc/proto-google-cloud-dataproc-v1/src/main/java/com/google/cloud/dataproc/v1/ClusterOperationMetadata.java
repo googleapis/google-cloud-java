@@ -84,7 +84,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   public static final int CLUSTER_NAME_FIELD_NUMBER = 7;
-  private volatile java.lang.Object clusterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterName_ = "";
   /**
    *
    *
@@ -133,7 +135,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   public static final int CLUSTER_UUID_FIELD_NUMBER = 8;
-  private volatile java.lang.Object clusterUuid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterUuid_ = "";
   /**
    *
    *
@@ -232,10 +236,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder getStatusOrBuilder() {
-    return getStatus();
+    return status_ == null
+        ? com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance()
+        : status_;
   }
 
   public static final int STATUS_HISTORY_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> statusHistory_;
   /**
    *
@@ -317,7 +325,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   public static final int OPERATION_TYPE_FIELD_NUMBER = 11;
-  private volatile java.lang.Object operationType_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationType_ = "";
   /**
    *
    *
@@ -366,7 +376,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 12;
-  private volatile java.lang.Object description_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    *
    *
@@ -427,6 +439,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -487,7 +500,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -517,6 +533,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
   }
 
   public static final int WARNINGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList warnings_;
   /**
    *
@@ -880,14 +898,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clusterName_ = "";
-
       clusterUuid_ = "";
-
-      if (statusBuilder_ == null) {
-        status_ = null;
-      } else {
-        status_ = null;
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
       if (statusHistoryBuilder_ == null) {
@@ -896,14 +912,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         statusHistory_ = null;
         statusHistoryBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000008);
       operationType_ = "";
-
       description_ = "";
-
       internalGetMutableLabels().clear();
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -931,34 +945,53 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public com.google.cloud.dataproc.v1.ClusterOperationMetadata buildPartial() {
       com.google.cloud.dataproc.v1.ClusterOperationMetadata result =
           new com.google.cloud.dataproc.v1.ClusterOperationMetadata(this);
-      int from_bitField0_ = bitField0_;
-      result.clusterName_ = clusterName_;
-      result.clusterUuid_ = clusterUuid_;
-      if (statusBuilder_ == null) {
-        result.status_ = status_;
-      } else {
-        result.status_ = statusBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataproc.v1.ClusterOperationMetadata result) {
       if (statusHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.statusHistory_ = statusHistory_;
       } else {
         result.statusHistory_ = statusHistoryBuilder_.build();
       }
-      result.operationType_ = operationType_;
-      result.description_ = description_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         warnings_ = warnings_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.warnings_ = warnings_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ClusterOperationMetadata result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.clusterName_ = clusterName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterUuid_ = clusterUuid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.operationType_ = operationType_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -1009,10 +1042,12 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         return this;
       if (!other.getClusterName().isEmpty()) {
         clusterName_ = other.clusterName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClusterUuid().isEmpty()) {
         clusterUuid_ = other.clusterUuid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasStatus()) {
@@ -1022,7 +1057,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         if (!other.statusHistory_.isEmpty()) {
           if (statusHistory_.isEmpty()) {
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureStatusHistoryIsMutable();
             statusHistory_.addAll(other.statusHistory_);
@@ -1035,7 +1070,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             statusHistoryBuilder_.dispose();
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
             statusHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStatusHistoryFieldBuilder()
@@ -1047,17 +1082,20 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       }
       if (!other.getOperationType().isEmpty()) {
         operationType_ = other.operationType_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000040;
       if (!other.warnings_.isEmpty()) {
         if (warnings_.isEmpty()) {
           warnings_ = other.warnings_;
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureWarningsIsMutable();
           warnings_.addAll(other.warnings_);
@@ -1093,19 +1131,19 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             case 58:
               {
                 clusterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 58
             case 66:
               {
                 clusterUuid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getStatusFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 74
             case 82:
@@ -1125,13 +1163,13 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
             case 90:
               {
                 operationType_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 90
             case 98:
               {
                 description_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 98
             case 106:
@@ -1143,6 +1181,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000040;
                 break;
               } // case 106
             case 114:
@@ -1232,8 +1271,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1249,8 +1288,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearClusterName() {
-
       clusterName_ = getDefaultInstance().getClusterName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1271,8 +1310,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1338,8 +1377,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1355,8 +1394,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
-
       clusterUuid_ = getDefaultInstance().getClusterUuid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1377,8 +1416,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1403,7 +1442,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return statusBuilder_ != null || status_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1444,11 +1483,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
           throw new NullPointerException();
         }
         status_ = value;
-        onChanged();
       } else {
         statusBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1466,11 +1505,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
-        onChanged();
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1486,19 +1525,19 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      */
     public Builder mergeStatus(com.google.cloud.dataproc.v1.ClusterOperationStatus value) {
       if (statusBuilder_ == null) {
-        if (status_ != null) {
-          status_ =
-              com.google.cloud.dataproc.v1.ClusterOperationStatus.newBuilder(status_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && status_ != null
+            && status_
+                != com.google.cloud.dataproc.v1.ClusterOperationStatus.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
         } else {
           status_ = value;
         }
-        onChanged();
       } else {
         statusBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1513,14 +1552,13 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </code>
      */
     public Builder clearStatus() {
-      if (statusBuilder_ == null) {
-        status_ = null;
-        onChanged();
-      } else {
-        status_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
         statusBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1535,7 +1573,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </code>
      */
     public com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder getStatusBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
@@ -1591,11 +1629,11 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         java.util.Collections.emptyList();
 
     private void ensureStatusHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         statusHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterOperationStatus>(
                 statusHistory_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1836,7 +1874,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     public Builder clearStatusHistory() {
       if (statusHistoryBuilder_ == null) {
         statusHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         statusHistoryBuilder_.clear();
@@ -1977,7 +2015,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
                 com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder,
                 com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder>(
                 statusHistory_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         statusHistory_ = null;
@@ -2046,8 +2084,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2063,8 +2101,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearOperationType() {
-
       operationType_ = getDefaultInstance().getOperationType();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2085,8 +2123,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationType_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2152,8 +2190,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException();
       }
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2169,8 +2207,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2191,8 +2229,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       description_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2208,14 +2246,14 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000040;
+      onChanged();
       return labels_;
     }
 
@@ -2270,8 +2308,10 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -2301,6 +2341,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2324,6 +2365,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -2343,8 +2385,8 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -2359,6 +2401,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
 
@@ -2366,9 +2409,9 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureWarningsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         warnings_ = new com.google.protobuf.LazyStringArrayList(warnings_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -2503,7 +2546,7 @@ public final class ClusterOperationMetadata extends com.google.protobuf.Generate
      */
     public Builder clearWarnings() {
       warnings_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }

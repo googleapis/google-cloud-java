@@ -80,7 +80,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object clusterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterName_ = "";
   /**
    *
    *
@@ -129,7 +131,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_UUID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clusterUuid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterUuid_ = "";
   /**
    *
    *
@@ -192,6 +196,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> clusterLabels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -257,8 +262,10 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getClusterLabelsOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getClusterLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -531,10 +538,9 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       clusterName_ = "";
-
       clusterUuid_ = "";
-
       internalGetMutableClusterLabels().clear();
       return this;
     }
@@ -563,13 +569,25 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.JobPlacement buildPartial() {
       com.google.cloud.dataproc.v1.JobPlacement result =
           new com.google.cloud.dataproc.v1.JobPlacement(this);
-      int from_bitField0_ = bitField0_;
-      result.clusterName_ = clusterName_;
-      result.clusterUuid_ = clusterUuid_;
-      result.clusterLabels_ = internalGetClusterLabels();
-      result.clusterLabels_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.JobPlacement result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.clusterName_ = clusterName_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.clusterUuid_ = clusterUuid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterLabels_ = internalGetClusterLabels();
+        result.clusterLabels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -619,13 +637,16 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.JobPlacement.getDefaultInstance()) return this;
       if (!other.getClusterName().isEmpty()) {
         clusterName_ = other.clusterName_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getClusterUuid().isEmpty()) {
         clusterUuid_ = other.clusterUuid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableClusterLabels().mergeFrom(other.internalGetClusterLabels());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -655,13 +676,13 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 clusterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clusterUuid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -673,6 +694,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableClusterLabels()
                     .getMutableMap()
                     .put(clusterLabels__.getKey(), clusterLabels__.getValue());
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -755,8 +777,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -772,8 +794,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterName() {
-
       clusterName_ = getDefaultInstance().getClusterName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -794,8 +816,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterName_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -864,8 +886,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -882,8 +904,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearClusterUuid() {
-
       clusterUuid_ = getDefaultInstance().getClusterUuid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -905,8 +927,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterUuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -924,8 +946,6 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableClusterLabels() {
-      onChanged();
-      ;
       if (clusterLabels_ == null) {
         clusterLabels_ =
             com.google.protobuf.MapField.newMapField(ClusterLabelsDefaultEntryHolder.defaultEntry);
@@ -933,6 +953,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       if (!clusterLabels_.isMutable()) {
         clusterLabels_ = clusterLabels_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return clusterLabels_;
     }
 
@@ -990,8 +1012,10 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getClusterLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getClusterLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1022,6 +1046,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearClusterLabels() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableClusterLabels().getMutableMap().clear();
       return this;
     }
@@ -1046,6 +1071,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableClusterLabels() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableClusterLabels().getMutableMap();
     }
     /**
@@ -1066,8 +1092,8 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableClusterLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1083,6 +1109,7 @@ public final class JobPlacement extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllClusterLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableClusterLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

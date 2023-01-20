@@ -71,7 +71,9 @@ public final class InstantiateInlineWorkflowTemplateRequest
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parent_ = "";
   /**
    *
    *
@@ -188,11 +190,15 @@ public final class InstantiateInlineWorkflowTemplateRequest
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.WorkflowTemplateOrBuilder getTemplateOrBuilder() {
-    return getTemplate();
+    return template_ == null
+        ? com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()
+        : template_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -475,16 +481,14 @@ public final class InstantiateInlineWorkflowTemplateRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       parent_ = "";
-
-      if (templateBuilder_ == null) {
-        template_ = null;
-      } else {
-        template_ = null;
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -514,15 +518,25 @@ public final class InstantiateInlineWorkflowTemplateRequest
     public com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest buildPartial() {
       com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest result =
           new com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest(this);
-      result.parent_ = parent_;
-      if (templateBuilder_ == null) {
-        result.template_ = template_;
-      } else {
-        result.template_ = templateBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.parent_ = parent_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.template_ = templateBuilder_ == null ? template_ : templateBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -576,6 +590,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
               .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.hasTemplate()) {
@@ -583,6 +598,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -614,19 +630,19 @@ public final class InstantiateInlineWorkflowTemplateRequest
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getTemplateFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -645,6 +661,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
@@ -734,8 +752,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -760,8 +778,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * @return This builder for chaining.
      */
     public Builder clearParent() {
-
       parent_ = getDefaultInstance().getParent();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -791,8 +809,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       parent_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -817,7 +835,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * @return Whether the template field is set.
      */
     public boolean hasTemplate() {
-      return templateBuilder_ != null || template_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -858,11 +876,11 @@ public final class InstantiateInlineWorkflowTemplateRequest
           throw new NullPointerException();
         }
         template_ = value;
-        onChanged();
       } else {
         templateBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -880,11 +898,11 @@ public final class InstantiateInlineWorkflowTemplateRequest
         com.google.cloud.dataproc.v1.WorkflowTemplate.Builder builderForValue) {
       if (templateBuilder_ == null) {
         template_ = builderForValue.build();
-        onChanged();
       } else {
         templateBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -900,19 +918,18 @@ public final class InstantiateInlineWorkflowTemplateRequest
      */
     public Builder mergeTemplate(com.google.cloud.dataproc.v1.WorkflowTemplate value) {
       if (templateBuilder_ == null) {
-        if (template_ != null) {
-          template_ =
-              com.google.cloud.dataproc.v1.WorkflowTemplate.newBuilder(template_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && template_ != null
+            && template_ != com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance()) {
+          getTemplateBuilder().mergeFrom(value);
         } else {
           template_ = value;
         }
-        onChanged();
       } else {
         templateBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -927,14 +944,13 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * </code>
      */
     public Builder clearTemplate() {
-      if (templateBuilder_ == null) {
-        template_ = null;
-        onChanged();
-      } else {
-        template_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      template_ = null;
+      if (templateBuilder_ != null) {
+        templateBuilder_.dispose();
         templateBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -949,7 +965,7 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * </code>
      */
     public com.google.cloud.dataproc.v1.WorkflowTemplate.Builder getTemplateBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTemplateFieldBuilder().getBuilder();
     }
@@ -1080,8 +1096,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1103,8 +1119,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1131,8 +1147,8 @@ public final class InstantiateInlineWorkflowTemplateRequest
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -272,7 +272,6 @@ public interface ClusterOperationMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   java.lang.String getLabelsOrDefault(
       java.lang.String key,

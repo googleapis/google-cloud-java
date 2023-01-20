@@ -70,7 +70,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ACCELERATOR_TYPE_URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object acceleratorTypeUri_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object acceleratorTypeUri_ = "";
   /**
    *
    *
@@ -143,7 +145,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 2;
-  private int acceleratorCount_;
+  private int acceleratorCount_ = 0;
   /**
    *
    *
@@ -368,10 +370,9 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       acceleratorTypeUri_ = "";
-
       acceleratorCount_ = 0;
-
       return this;
     }
 
@@ -399,10 +400,21 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public com.google.cloud.dataproc.v1.AcceleratorConfig buildPartial() {
       com.google.cloud.dataproc.v1.AcceleratorConfig result =
           new com.google.cloud.dataproc.v1.AcceleratorConfig(this);
-      result.acceleratorTypeUri_ = acceleratorTypeUri_;
-      result.acceleratorCount_ = acceleratorCount_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.AcceleratorConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.acceleratorTypeUri_ = acceleratorTypeUri_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.acceleratorCount_ = acceleratorCount_;
+      }
     }
 
     @java.lang.Override
@@ -452,6 +464,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (other == com.google.cloud.dataproc.v1.AcceleratorConfig.getDefaultInstance()) return this;
       if (!other.getAcceleratorTypeUri().isEmpty()) {
         acceleratorTypeUri_ = other.acceleratorTypeUri_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getAcceleratorCount() != 0) {
@@ -486,13 +499,13 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 acceleratorTypeUri_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 acceleratorCount_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -511,6 +524,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object acceleratorTypeUri_ = "";
     /**
@@ -609,8 +624,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-
       acceleratorTypeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -638,8 +653,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorTypeUri() {
-
       acceleratorTypeUri_ = getDefaultInstance().getAcceleratorTypeUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -672,8 +687,8 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       acceleratorTypeUri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -709,6 +724,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
     public Builder setAcceleratorCount(int value) {
 
       acceleratorCount_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -724,7 +740,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAcceleratorCount() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       acceleratorCount_ = 0;
       onChanged();
       return this;

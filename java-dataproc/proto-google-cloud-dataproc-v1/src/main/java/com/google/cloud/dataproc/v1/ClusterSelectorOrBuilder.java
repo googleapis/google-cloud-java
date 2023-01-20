@@ -104,7 +104,6 @@ public interface ClusterSelectorOrBuilder
    * <code>map&lt;string, string&gt; cluster_labels = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
-
   /* nullable */
   java.lang.String getClusterLabelsOrDefault(
       java.lang.String key,

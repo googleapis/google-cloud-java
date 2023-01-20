@@ -69,7 +69,9 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    *
    *
@@ -118,7 +120,9 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
-  private volatile java.lang.Object error_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object error_ = "";
   /**
    *
    *
@@ -167,7 +171,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DONE_FIELD_NUMBER = 3;
-  private boolean done_;
+  private boolean done_ = false;
   /**
    *
    *
@@ -399,12 +403,10 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationId_ = "";
-
       error_ = "";
-
       done_ = false;
-
       return this;
     }
 
@@ -432,11 +434,24 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dataproc.v1.ClusterOperation buildPartial() {
       com.google.cloud.dataproc.v1.ClusterOperation result =
           new com.google.cloud.dataproc.v1.ClusterOperation(this);
-      result.operationId_ = operationId_;
-      result.error_ = error_;
-      result.done_ = done_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ClusterOperation result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationId_ = operationId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.error_ = error_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.done_ = done_;
+      }
     }
 
     @java.lang.Override
@@ -486,10 +501,12 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.dataproc.v1.ClusterOperation.getDefaultInstance()) return this;
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getError().isEmpty()) {
         error_ = other.error_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.getDone() != false) {
@@ -524,19 +541,19 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 operationId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 error_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
               {
                 done_ = input.readBool();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 24
             default:
@@ -555,6 +572,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object operationId_ = "";
     /**
@@ -617,8 +636,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -634,8 +653,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -656,8 +675,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operationId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -723,8 +742,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -740,8 +759,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearError() {
-
       error_ = getDefaultInstance().getError();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -762,8 +781,8 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       error_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -799,6 +818,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
     public Builder setDone(boolean value) {
 
       done_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -814,7 +834,7 @@ public final class ClusterOperation extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDone() {
-
+      bitField0_ = (bitField0_ & ~0x00000004);
       done_ = false;
       onChanged();
       return this;

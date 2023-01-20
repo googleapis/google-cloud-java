@@ -80,7 +80,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IMAGE_VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object imageVersion_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object imageVersion_ = "";
   /**
    *
    *
@@ -153,6 +155,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
@@ -255,8 +258,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    */
   @java.lang.Override
-  public java.lang.String getPropertiesOrDefault(
-      java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getPropertiesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -300,16 +305,18 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int OPTIONAL_COMPONENTS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> optionalComponents_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dataproc.v1.Component>
       optionalComponents_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.dataproc.v1.Component>() {
             public com.google.cloud.dataproc.v1.Component convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dataproc.v1.Component result =
-                  com.google.cloud.dataproc.v1.Component.valueOf(from);
+                  com.google.cloud.dataproc.v1.Component.forNumber(from);
               return result == null ? com.google.cloud.dataproc.v1.Component.UNRECOGNIZED : result;
             }
           };
@@ -665,11 +672,11 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       imageVersion_ = "";
-
       internalGetMutableProperties().clear();
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -697,17 +704,31 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.SoftwareConfig buildPartial() {
       com.google.cloud.dataproc.v1.SoftwareConfig result =
           new com.google.cloud.dataproc.v1.SoftwareConfig(this);
-      int from_bitField0_ = bitField0_;
-      result.imageVersion_ = imageVersion_;
-      result.properties_ = internalGetProperties();
-      result.properties_.makeImmutable();
-      if (((bitField0_ & 0x00000002) != 0)) {
-        optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
-        bitField0_ = (bitField0_ & ~0x00000002);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.optionalComponents_ = optionalComponents_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.SoftwareConfig result) {
+      if (((bitField0_ & 0x00000004) != 0)) {
+        optionalComponents_ = java.util.Collections.unmodifiableList(optionalComponents_);
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.optionalComponents_ = optionalComponents_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.SoftwareConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.imageVersion_ = imageVersion_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.properties_ = internalGetProperties();
+        result.properties_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -757,13 +778,15 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.SoftwareConfig.getDefaultInstance()) return this;
       if (!other.getImageVersion().isEmpty()) {
         imageVersion_ = other.imageVersion_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       internalGetMutableProperties().mergeFrom(other.internalGetProperties());
+      bitField0_ |= 0x00000002;
       if (!other.optionalComponents_.isEmpty()) {
         if (optionalComponents_.isEmpty()) {
           optionalComponents_ = other.optionalComponents_;
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           ensureOptionalComponentsIsMutable();
           optionalComponents_.addAll(other.optionalComponents_);
@@ -799,7 +822,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 imageVersion_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -811,6 +834,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableProperties()
                     .getMutableMap()
                     .put(properties__.getKey(), properties__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 24:
@@ -930,8 +954,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -953,8 +977,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearImageVersion() {
-
       imageVersion_ = getDefaultInstance().getImageVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -981,8 +1005,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       imageVersion_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1000,8 +1024,6 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableProperties() {
-      onChanged();
-      ;
       if (properties_ == null) {
         properties_ =
             com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
@@ -1009,6 +1031,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return properties_;
     }
 
@@ -1105,8 +1129,10 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     @java.lang.Override
-    public java.lang.String getPropertiesOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getPropertiesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1150,6 +1176,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearProperties() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
@@ -1187,6 +1214,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableProperties().getMutableMap();
     }
     /**
@@ -1220,8 +1248,8 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableProperties().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -1250,6 +1278,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableProperties().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -1257,9 +1286,9 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureOptionalComponentsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         optionalComponents_ = new java.util.ArrayList<java.lang.Integer>(optionalComponents_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
     /**
@@ -1398,7 +1427,7 @@ public final class SoftwareConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOptionalComponents() {
       optionalComponents_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }

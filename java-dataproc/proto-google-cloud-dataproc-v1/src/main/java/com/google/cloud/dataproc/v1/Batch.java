@@ -480,7 +480,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STATE_FIELD_NUMBER = 1;
-    private int state_;
+    private int state_ = 0;
     /**
      *
      *
@@ -513,14 +513,15 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.Batch.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.Batch.State result =
-          com.google.cloud.dataproc.v1.Batch.State.valueOf(state_);
+          com.google.cloud.dataproc.v1.Batch.State.forNumber(state_);
       return result == null ? com.google.cloud.dataproc.v1.Batch.State.UNRECOGNIZED : result;
     }
 
     public static final int STATE_MESSAGE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object stateMessage_;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object stateMessage_ = "";
     /**
      *
      *
@@ -619,7 +620,9 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder() {
-      return getStateStartTime();
+      return stateStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : stateStartTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -844,14 +847,12 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         stateMessage_ = "";
-
-        if (stateStartTimeBuilder_ == null) {
-          stateStartTime_ = null;
-        } else {
-          stateStartTime_ = null;
+        stateStartTime_ = null;
+        if (stateStartTimeBuilder_ != null) {
+          stateStartTimeBuilder_.dispose();
           stateStartTimeBuilder_ = null;
         }
         return this;
@@ -881,15 +882,25 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.dataproc.v1.Batch.StateHistory buildPartial() {
         com.google.cloud.dataproc.v1.Batch.StateHistory result =
             new com.google.cloud.dataproc.v1.Batch.StateHistory(this);
-        result.state_ = state_;
-        result.stateMessage_ = stateMessage_;
-        if (stateStartTimeBuilder_ == null) {
-          result.stateStartTime_ = stateStartTime_;
-        } else {
-          result.stateStartTime_ = stateStartTimeBuilder_.build();
+        if (bitField0_ != 0) {
+          buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.dataproc.v1.Batch.StateHistory result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stateMessage_ = stateMessage_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stateStartTime_ =
+              stateStartTimeBuilder_ == null ? stateStartTime_ : stateStartTimeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -945,6 +956,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         }
         if (!other.getStateMessage().isEmpty()) {
           stateMessage_ = other.stateMessage_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.hasStateStartTime()) {
@@ -979,20 +991,20 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
               case 8:
                 {
                   state_ = input.readEnum();
-
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 8
               case 18:
                 {
                   stateMessage_ = input.readStringRequireUtf8();
-
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 18
               case 26:
                 {
                   input.readMessage(
                       getStateStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
               default:
@@ -1011,6 +1023,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         } // finally
         return this;
       }
+
+      private int bitField0_;
 
       private int state_ = 0;
       /**
@@ -1045,8 +1059,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1065,9 +1079,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Override
       public com.google.cloud.dataproc.v1.Batch.State getState() {
-        @SuppressWarnings("deprecation")
         com.google.cloud.dataproc.v1.Batch.State result =
-            com.google.cloud.dataproc.v1.Batch.State.valueOf(state_);
+            com.google.cloud.dataproc.v1.Batch.State.forNumber(state_);
         return result == null ? com.google.cloud.dataproc.v1.Batch.State.UNRECOGNIZED : result;
       }
       /**
@@ -1088,7 +1101,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -1107,7 +1120,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearState() {
-
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -1174,8 +1187,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-
         stateMessage_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1191,8 +1204,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearStateMessage() {
-
         stateMessage_ = getDefaultInstance().getStateMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1213,8 +1226,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         checkByteStringIsUtf8(value);
-
         stateMessage_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1239,7 +1252,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the stateStartTime field is set.
        */
       public boolean hasStateStartTime() {
-        return stateStartTimeBuilder_ != null || stateStartTime_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        *
@@ -1280,11 +1293,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           stateStartTime_ = value;
-          onChanged();
         } else {
           stateStartTimeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1301,11 +1314,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (stateStartTimeBuilder_ == null) {
           stateStartTime_ = builderForValue.build();
-          onChanged();
         } else {
           stateStartTimeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1321,19 +1334,18 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder mergeStateStartTime(com.google.protobuf.Timestamp value) {
         if (stateStartTimeBuilder_ == null) {
-          if (stateStartTime_ != null) {
-            stateStartTime_ =
-                com.google.protobuf.Timestamp.newBuilder(stateStartTime_)
-                    .mergeFrom(value)
-                    .buildPartial();
+          if (((bitField0_ & 0x00000004) != 0)
+              && stateStartTime_ != null
+              && stateStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStateStartTimeBuilder().mergeFrom(value);
           } else {
             stateStartTime_ = value;
           }
-          onChanged();
         } else {
           stateStartTimeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1348,14 +1360,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public Builder clearStateStartTime() {
-        if (stateStartTimeBuilder_ == null) {
-          stateStartTime_ = null;
-          onChanged();
-        } else {
-          stateStartTime_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        stateStartTime_ = null;
+        if (stateStartTimeBuilder_ != null) {
+          stateStartTimeBuilder_.dispose();
           stateStartTimeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
@@ -1370,7 +1381,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
        * </code>
        */
       public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
-
+        bitField0_ |= 0x00000004;
         onChanged();
         return getStateStartTimeFieldBuilder().getBuilder();
       }
@@ -1540,7 +1551,9 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -1589,7 +1602,9 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UUID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object uuid_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uuid_ = "";
   /**
    *
    *
@@ -1685,7 +1700,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
-    return getCreateTime();
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int PYSPARK_BATCH_FIELD_NUMBER = 4;
@@ -1967,11 +1982,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.RuntimeInfoOrBuilder getRuntimeInfoOrBuilder() {
-    return getRuntimeInfo();
+    return runtimeInfo_ == null
+        ? com.google.cloud.dataproc.v1.RuntimeInfo.getDefaultInstance()
+        : runtimeInfo_;
   }
 
   public static final int STATE_FIELD_NUMBER = 9;
-  private int state_;
+  private int state_ = 0;
   /**
    *
    *
@@ -2004,14 +2021,15 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.Batch.State getState() {
-    @SuppressWarnings("deprecation")
     com.google.cloud.dataproc.v1.Batch.State result =
-        com.google.cloud.dataproc.v1.Batch.State.valueOf(state_);
+        com.google.cloud.dataproc.v1.Batch.State.forNumber(state_);
     return result == null ? com.google.cloud.dataproc.v1.Batch.State.UNRECOGNIZED : result;
   }
 
   public static final int STATE_MESSAGE_FIELD_NUMBER = 10;
-  private volatile java.lang.Object stateMessage_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateMessage_ = "";
   /**
    *
    *
@@ -2107,11 +2125,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getStateTimeOrBuilder() {
-    return getStateTime();
+    return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
   }
 
   public static final int CREATOR_FIELD_NUMBER = 12;
-  private volatile java.lang.Object creator_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creator_ = "";
   /**
    *
    *
@@ -2172,6 +2192,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2247,7 +2268,10 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -2332,7 +2356,9 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.RuntimeConfigOrBuilder getRuntimeConfigOrBuilder() {
-    return getRuntimeConfig();
+    return runtimeConfig_ == null
+        ? com.google.cloud.dataproc.v1.RuntimeConfig.getDefaultInstance()
+        : runtimeConfig_;
   }
 
   public static final int ENVIRONMENT_CONFIG_FIELD_NUMBER = 15;
@@ -2386,11 +2412,15 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.EnvironmentConfigOrBuilder getEnvironmentConfigOrBuilder() {
-    return getEnvironmentConfig();
+    return environmentConfig_ == null
+        ? com.google.cloud.dataproc.v1.EnvironmentConfig.getDefaultInstance()
+        : environmentConfig_;
   }
 
   public static final int OPERATION_FIELD_NUMBER = 16;
-  private volatile java.lang.Object operation_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operation_ = "";
   /**
    *
    *
@@ -2439,6 +2469,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STATE_HISTORY_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.Batch.StateHistory> stateHistory_;
   /**
    *
@@ -2945,14 +2977,12 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       uuid_ = "";
-
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-      } else {
-        createTime_ = null;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
       if (pysparkBatchBuilder_ != null) {
@@ -2967,46 +2997,38 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (sparkSqlBatchBuilder_ != null) {
         sparkSqlBatchBuilder_.clear();
       }
-      if (runtimeInfoBuilder_ == null) {
-        runtimeInfo_ = null;
-      } else {
-        runtimeInfo_ = null;
+      runtimeInfo_ = null;
+      if (runtimeInfoBuilder_ != null) {
+        runtimeInfoBuilder_.dispose();
         runtimeInfoBuilder_ = null;
       }
       state_ = 0;
-
       stateMessage_ = "";
-
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-      } else {
-        stateTime_ = null;
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
       creator_ = "";
-
       internalGetMutableLabels().clear();
-      if (runtimeConfigBuilder_ == null) {
-        runtimeConfig_ = null;
-      } else {
-        runtimeConfig_ = null;
+      runtimeConfig_ = null;
+      if (runtimeConfigBuilder_ != null) {
+        runtimeConfigBuilder_.dispose();
         runtimeConfigBuilder_ = null;
       }
-      if (environmentConfigBuilder_ == null) {
-        environmentConfig_ = null;
-      } else {
-        environmentConfig_ = null;
+      environmentConfig_ = null;
+      if (environmentConfigBuilder_ != null) {
+        environmentConfigBuilder_.dispose();
         environmentConfigBuilder_ = null;
       }
       operation_ = "";
-
       if (stateHistoryBuilder_ == null) {
         stateHistory_ = java.util.Collections.emptyList();
       } else {
         stateHistory_ = null;
         stateHistoryBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00010000);
       batchConfigCase_ = 0;
       batchConfig_ = null;
       return this;
@@ -3035,80 +3057,88 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.dataproc.v1.Batch buildPartial() {
       com.google.cloud.dataproc.v1.Batch result = new com.google.cloud.dataproc.v1.Batch(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      result.uuid_ = uuid_;
-      if (createTimeBuilder_ == null) {
-        result.createTime_ = createTime_;
-      } else {
-        result.createTime_ = createTimeBuilder_.build();
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (batchConfigCase_ == 4) {
-        if (pysparkBatchBuilder_ == null) {
-          result.batchConfig_ = batchConfig_;
-        } else {
-          result.batchConfig_ = pysparkBatchBuilder_.build();
-        }
-      }
-      if (batchConfigCase_ == 5) {
-        if (sparkBatchBuilder_ == null) {
-          result.batchConfig_ = batchConfig_;
-        } else {
-          result.batchConfig_ = sparkBatchBuilder_.build();
-        }
-      }
-      if (batchConfigCase_ == 6) {
-        if (sparkRBatchBuilder_ == null) {
-          result.batchConfig_ = batchConfig_;
-        } else {
-          result.batchConfig_ = sparkRBatchBuilder_.build();
-        }
-      }
-      if (batchConfigCase_ == 7) {
-        if (sparkSqlBatchBuilder_ == null) {
-          result.batchConfig_ = batchConfig_;
-        } else {
-          result.batchConfig_ = sparkSqlBatchBuilder_.build();
-        }
-      }
-      if (runtimeInfoBuilder_ == null) {
-        result.runtimeInfo_ = runtimeInfo_;
-      } else {
-        result.runtimeInfo_ = runtimeInfoBuilder_.build();
-      }
-      result.state_ = state_;
-      result.stateMessage_ = stateMessage_;
-      if (stateTimeBuilder_ == null) {
-        result.stateTime_ = stateTime_;
-      } else {
-        result.stateTime_ = stateTimeBuilder_.build();
-      }
-      result.creator_ = creator_;
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
-      if (runtimeConfigBuilder_ == null) {
-        result.runtimeConfig_ = runtimeConfig_;
-      } else {
-        result.runtimeConfig_ = runtimeConfigBuilder_.build();
-      }
-      if (environmentConfigBuilder_ == null) {
-        result.environmentConfig_ = environmentConfig_;
-      } else {
-        result.environmentConfig_ = environmentConfigBuilder_.build();
-      }
-      result.operation_ = operation_;
+      buildPartialOneofs(result);
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.Batch result) {
       if (stateHistoryBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           stateHistory_ = java.util.Collections.unmodifiableList(stateHistory_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.stateHistory_ = stateHistory_;
       } else {
         result.stateHistory_ = stateHistoryBuilder_.build();
       }
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.Batch result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.uuid_ = uuid_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.runtimeInfo_ =
+            runtimeInfoBuilder_ == null ? runtimeInfo_ : runtimeInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stateMessage_ = stateMessage_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.stateTime_ = stateTimeBuilder_ == null ? stateTime_ : stateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.creator_ = creator_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.runtimeConfig_ =
+            runtimeConfigBuilder_ == null ? runtimeConfig_ : runtimeConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.environmentConfig_ =
+            environmentConfigBuilder_ == null
+                ? environmentConfig_
+                : environmentConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.operation_ = operation_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.Batch result) {
       result.batchConfigCase_ = batchConfigCase_;
-      onBuilt();
-      return result;
+      result.batchConfig_ = this.batchConfig_;
+      if (batchConfigCase_ == 4 && pysparkBatchBuilder_ != null) {
+        result.batchConfig_ = pysparkBatchBuilder_.build();
+      }
+      if (batchConfigCase_ == 5 && sparkBatchBuilder_ != null) {
+        result.batchConfig_ = sparkBatchBuilder_.build();
+      }
+      if (batchConfigCase_ == 6 && sparkRBatchBuilder_ != null) {
+        result.batchConfig_ = sparkRBatchBuilder_.build();
+      }
+      if (batchConfigCase_ == 7 && sparkSqlBatchBuilder_ != null) {
+        result.batchConfig_ = sparkSqlBatchBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3158,10 +3188,12 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.Batch.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getUuid().isEmpty()) {
         uuid_ = other.uuid_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -3175,6 +3207,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getStateMessage().isEmpty()) {
         stateMessage_ = other.stateMessage_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasStateTime()) {
@@ -3182,9 +3215,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCreator().isEmpty()) {
         creator_ = other.creator_;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00001000;
       if (other.hasRuntimeConfig()) {
         mergeRuntimeConfig(other.getRuntimeConfig());
       }
@@ -3193,13 +3228,14 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getOperation().isEmpty()) {
         operation_ = other.operation_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (stateHistoryBuilder_ == null) {
         if (!other.stateHistory_.isEmpty()) {
           if (stateHistory_.isEmpty()) {
             stateHistory_ = other.stateHistory_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureStateHistoryIsMutable();
             stateHistory_.addAll(other.stateHistory_);
@@ -3212,7 +3248,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
             stateHistoryBuilder_.dispose();
             stateHistoryBuilder_ = null;
             stateHistory_ = other.stateHistory_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00010000);
             stateHistoryBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStateHistoryFieldBuilder()
@@ -3277,19 +3313,19 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 uuid_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -3319,31 +3355,31 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getRuntimeInfoFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
             case 72:
               {
                 state_ = input.readEnum();
-
+                bitField0_ |= 0x00000100;
                 break;
               } // case 72
             case 82:
               {
                 stateMessage_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 98:
               {
                 creator_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
@@ -3355,25 +3391,26 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getRuntimeConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     getEnvironmentConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 130:
               {
                 operation_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00008000;
                 break;
               } // case 130
             case 138:
@@ -3484,8 +3521,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3501,8 +3538,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -3523,8 +3560,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3593,8 +3630,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       uuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3611,8 +3648,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearUuid() {
-
       uuid_ = getDefaultInstance().getUuid();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -3634,8 +3671,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       uuid_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3660,7 +3697,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return createTimeBuilder_ != null || createTime_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -3701,11 +3738,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         createTime_ = value;
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3722,11 +3759,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
-        onChanged();
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3742,17 +3779,18 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (createTime_ != null) {
-          createTime_ =
-              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
         } else {
           createTime_ = value;
         }
-        onChanged();
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -3767,14 +3805,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      if (createTimeBuilder_ == null) {
-        createTime_ = null;
-        onChanged();
-      } else {
-        createTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -3789,7 +3826,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4065,7 +4102,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       batchConfigCase_ = 4;
       onChanged();
-      ;
       return pysparkBatchBuilder_;
     }
 
@@ -4292,7 +4328,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       batchConfigCase_ = 5;
       onChanged();
-      ;
       return sparkBatchBuilder_;
     }
 
@@ -4520,7 +4555,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       batchConfigCase_ = 6;
       onChanged();
-      ;
       return sparkRBatchBuilder_;
     }
 
@@ -4748,7 +4782,6 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       }
       batchConfigCase_ = 7;
       onChanged();
-      ;
       return sparkSqlBatchBuilder_;
     }
 
@@ -4772,7 +4805,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the runtimeInfo field is set.
      */
     public boolean hasRuntimeInfo() {
-      return runtimeInfoBuilder_ != null || runtimeInfo_ != null;
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -4813,11 +4846,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         runtimeInfo_ = value;
-        onChanged();
       } else {
         runtimeInfoBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4835,11 +4868,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.RuntimeInfo.Builder builderForValue) {
       if (runtimeInfoBuilder_ == null) {
         runtimeInfo_ = builderForValue.build();
-        onChanged();
       } else {
         runtimeInfoBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4855,19 +4888,18 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRuntimeInfo(com.google.cloud.dataproc.v1.RuntimeInfo value) {
       if (runtimeInfoBuilder_ == null) {
-        if (runtimeInfo_ != null) {
-          runtimeInfo_ =
-              com.google.cloud.dataproc.v1.RuntimeInfo.newBuilder(runtimeInfo_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000080) != 0)
+            && runtimeInfo_ != null
+            && runtimeInfo_ != com.google.cloud.dataproc.v1.RuntimeInfo.getDefaultInstance()) {
+          getRuntimeInfoBuilder().mergeFrom(value);
         } else {
           runtimeInfo_ = value;
         }
-        onChanged();
       } else {
         runtimeInfoBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000080;
+      onChanged();
       return this;
     }
     /**
@@ -4882,14 +4914,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRuntimeInfo() {
-      if (runtimeInfoBuilder_ == null) {
-        runtimeInfo_ = null;
-        onChanged();
-      } else {
-        runtimeInfo_ = null;
+      bitField0_ = (bitField0_ & ~0x00000080);
+      runtimeInfo_ = null;
+      if (runtimeInfoBuilder_ != null) {
+        runtimeInfoBuilder_.dispose();
         runtimeInfoBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -4904,7 +4935,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.RuntimeInfo.Builder getRuntimeInfoBuilder() {
-
+      bitField0_ |= 0x00000080;
       onChanged();
       return getRuntimeInfoFieldBuilder().getBuilder();
     }
@@ -4989,8 +5020,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-
       state_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5009,9 +5040,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public com.google.cloud.dataproc.v1.Batch.State getState() {
-      @SuppressWarnings("deprecation")
       com.google.cloud.dataproc.v1.Batch.State result =
-          com.google.cloud.dataproc.v1.Batch.State.valueOf(state_);
+          com.google.cloud.dataproc.v1.Batch.State.forNumber(state_);
       return result == null ? com.google.cloud.dataproc.v1.Batch.State.UNRECOGNIZED : result;
     }
     /**
@@ -5032,7 +5062,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
+      bitField0_ |= 0x00000100;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5051,7 +5081,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-
+      bitField0_ = (bitField0_ & ~0x00000100);
       state_ = 0;
       onChanged();
       return this;
@@ -5121,8 +5151,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5139,8 +5169,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStateMessage() {
-
       stateMessage_ = getDefaultInstance().getStateMessage();
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5162,8 +5192,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       stateMessage_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5188,7 +5218,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateTime field is set.
      */
     public boolean hasStateTime() {
-      return stateTimeBuilder_ != null || stateTime_ != null;
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -5227,11 +5257,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         stateTime_ = value;
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5248,11 +5278,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     public Builder setStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateTimeBuilder_ == null) {
         stateTime_ = builderForValue.build();
-        onChanged();
       } else {
         stateTimeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5268,17 +5298,18 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateTime(com.google.protobuf.Timestamp value) {
       if (stateTimeBuilder_ == null) {
-        if (stateTime_ != null) {
-          stateTime_ =
-              com.google.protobuf.Timestamp.newBuilder(stateTime_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000400) != 0)
+            && stateTime_ != null
+            && stateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStateTimeBuilder().mergeFrom(value);
         } else {
           stateTime_ = value;
         }
-        onChanged();
       } else {
         stateTimeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000400;
+      onChanged();
       return this;
     }
     /**
@@ -5293,14 +5324,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateTime() {
-      if (stateTimeBuilder_ == null) {
-        stateTime_ = null;
-        onChanged();
-      } else {
-        stateTime_ = null;
+      bitField0_ = (bitField0_ & ~0x00000400);
+      stateTime_ = null;
+      if (stateTimeBuilder_ != null) {
+        stateTimeBuilder_.dispose();
         stateTimeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5315,7 +5345,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateTimeBuilder() {
-
+      bitField0_ |= 0x00000400;
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
@@ -5426,8 +5456,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       creator_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5443,8 +5473,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreator() {
-
       creator_ = getDefaultInstance().getCreator();
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5465,8 +5495,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       creator_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5482,14 +5512,14 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00001000;
+      onChanged();
       return labels_;
     }
 
@@ -5559,8 +5589,10 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -5595,6 +5627,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5623,6 +5656,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -5647,8 +5681,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00001000;
       return this;
     }
     /**
@@ -5668,6 +5702,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00001000;
       return this;
     }
 
@@ -5691,7 +5726,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the runtimeConfig field is set.
      */
     public boolean hasRuntimeConfig() {
-      return runtimeConfigBuilder_ != null || runtimeConfig_ != null;
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -5732,11 +5767,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         runtimeConfig_ = value;
-        onChanged();
       } else {
         runtimeConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5754,11 +5789,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.RuntimeConfig.Builder builderForValue) {
       if (runtimeConfigBuilder_ == null) {
         runtimeConfig_ = builderForValue.build();
-        onChanged();
       } else {
         runtimeConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5774,19 +5809,18 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRuntimeConfig(com.google.cloud.dataproc.v1.RuntimeConfig value) {
       if (runtimeConfigBuilder_ == null) {
-        if (runtimeConfig_ != null) {
-          runtimeConfig_ =
-              com.google.cloud.dataproc.v1.RuntimeConfig.newBuilder(runtimeConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00002000) != 0)
+            && runtimeConfig_ != null
+            && runtimeConfig_ != com.google.cloud.dataproc.v1.RuntimeConfig.getDefaultInstance()) {
+          getRuntimeConfigBuilder().mergeFrom(value);
         } else {
           runtimeConfig_ = value;
         }
-        onChanged();
       } else {
         runtimeConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00002000;
+      onChanged();
       return this;
     }
     /**
@@ -5801,14 +5835,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRuntimeConfig() {
-      if (runtimeConfigBuilder_ == null) {
-        runtimeConfig_ = null;
-        onChanged();
-      } else {
-        runtimeConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00002000);
+      runtimeConfig_ = null;
+      if (runtimeConfigBuilder_ != null) {
+        runtimeConfigBuilder_.dispose();
         runtimeConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -5823,7 +5856,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.RuntimeConfig.Builder getRuntimeConfigBuilder() {
-
+      bitField0_ |= 0x00002000;
       onChanged();
       return getRuntimeConfigFieldBuilder().getBuilder();
     }
@@ -5895,7 +5928,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the environmentConfig field is set.
      */
     public boolean hasEnvironmentConfig() {
-      return environmentConfigBuilder_ != null || environmentConfig_ != null;
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -5936,11 +5969,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         environmentConfig_ = value;
-        onChanged();
       } else {
         environmentConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5958,11 +5991,11 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.EnvironmentConfig.Builder builderForValue) {
       if (environmentConfigBuilder_ == null) {
         environmentConfig_ = builderForValue.build();
-        onChanged();
       } else {
         environmentConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -5978,19 +6011,19 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvironmentConfig(com.google.cloud.dataproc.v1.EnvironmentConfig value) {
       if (environmentConfigBuilder_ == null) {
-        if (environmentConfig_ != null) {
-          environmentConfig_ =
-              com.google.cloud.dataproc.v1.EnvironmentConfig.newBuilder(environmentConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00004000) != 0)
+            && environmentConfig_ != null
+            && environmentConfig_
+                != com.google.cloud.dataproc.v1.EnvironmentConfig.getDefaultInstance()) {
+          getEnvironmentConfigBuilder().mergeFrom(value);
         } else {
           environmentConfig_ = value;
         }
-        onChanged();
       } else {
         environmentConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00004000;
+      onChanged();
       return this;
     }
     /**
@@ -6005,14 +6038,13 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEnvironmentConfig() {
-      if (environmentConfigBuilder_ == null) {
-        environmentConfig_ = null;
-        onChanged();
-      } else {
-        environmentConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00004000);
+      environmentConfig_ = null;
+      if (environmentConfigBuilder_ != null) {
+        environmentConfigBuilder_.dispose();
         environmentConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -6027,7 +6059,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.EnvironmentConfig.Builder getEnvironmentConfigBuilder() {
-
+      bitField0_ |= 0x00004000;
       onChanged();
       return getEnvironmentConfigFieldBuilder().getBuilder();
     }
@@ -6140,8 +6172,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       operation_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6157,8 +6189,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearOperation() {
-
       operation_ = getDefaultInstance().getOperation();
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6179,8 +6211,8 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       operation_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6189,10 +6221,10 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStateHistoryIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         stateHistory_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.Batch.StateHistory>(stateHistory_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -6432,7 +6464,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStateHistory() {
       if (stateHistoryBuilder_ == null) {
         stateHistory_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         stateHistoryBuilder_.clear();
@@ -6571,7 +6603,7 @@ public final class Batch extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.dataproc.v1.Batch.StateHistory,
                 com.google.cloud.dataproc.v1.Batch.StateHistory.Builder,
                 com.google.cloud.dataproc.v1.Batch.StateHistoryOrBuilder>(
-                stateHistory_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                stateHistory_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         stateHistory_ = null;
       }
       return stateHistoryBuilder_;

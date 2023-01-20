@@ -218,7 +218,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -267,16 +269,18 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ROLES_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
   private java.util.List<java.lang.Integer> roles_;
+
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
           java.lang.Integer, com.google.cloud.dataproc.v1.NodeGroup.Role>
       roles_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.dataproc.v1.NodeGroup.Role>() {
             public com.google.cloud.dataproc.v1.NodeGroup.Role convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
               com.google.cloud.dataproc.v1.NodeGroup.Role result =
-                  com.google.cloud.dataproc.v1.NodeGroup.Role.valueOf(from);
+                  com.google.cloud.dataproc.v1.NodeGroup.Role.forNumber(from);
               return result == null
                   ? com.google.cloud.dataproc.v1.NodeGroup.Role.UNRECOGNIZED
                   : result;
@@ -424,7 +428,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.InstanceGroupConfigOrBuilder getNodeGroupConfigOrBuilder() {
-    return getNodeGroupConfig();
+    return nodeGroupConfig_ == null
+        ? com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance()
+        : nodeGroupConfig_;
   }
 
   public static final int LABELS_FIELD_NUMBER = 4;
@@ -440,6 +446,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             "");
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -515,7 +522,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
-  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
     if (key == null) {
       throw new NullPointerException("map key");
     }
@@ -824,14 +834,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       roles_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      if (nodeGroupConfigBuilder_ == null) {
-        nodeGroupConfig_ = null;
-      } else {
-        nodeGroupConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      nodeGroupConfig_ = null;
+      if (nodeGroupConfigBuilder_ != null) {
+        nodeGroupConfigBuilder_.dispose();
         nodeGroupConfigBuilder_ = null;
       }
       internalGetMutableLabels().clear();
@@ -862,22 +871,35 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.NodeGroup buildPartial() {
       com.google.cloud.dataproc.v1.NodeGroup result =
           new com.google.cloud.dataproc.v1.NodeGroup(this);
-      int from_bitField0_ = bitField0_;
-      result.name_ = name_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        roles_ = java.util.Collections.unmodifiableList(roles_);
-        bitField0_ = (bitField0_ & ~0x00000001);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      result.roles_ = roles_;
-      if (nodeGroupConfigBuilder_ == null) {
-        result.nodeGroupConfig_ = nodeGroupConfig_;
-      } else {
-        result.nodeGroupConfig_ = nodeGroupConfigBuilder_.build();
-      }
-      result.labels_ = internalGetLabels();
-      result.labels_.makeImmutable();
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dataproc.v1.NodeGroup result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        roles_ = java.util.Collections.unmodifiableList(roles_);
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.roles_ = roles_;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.NodeGroup result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.nodeGroupConfig_ =
+            nodeGroupConfigBuilder_ == null ? nodeGroupConfig_ : nodeGroupConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -927,12 +949,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.dataproc.v1.NodeGroup.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.roles_.isEmpty()) {
         if (roles_.isEmpty()) {
           roles_ = other.roles_;
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           ensureRolesIsMutable();
           roles_.addAll(other.roles_);
@@ -943,6 +966,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         mergeNodeGroupConfig(other.getNodeGroupConfig());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000008;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -972,7 +996,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
@@ -997,7 +1021,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getNodeGroupConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
@@ -1009,6 +1033,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -1091,8 +1116,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1108,8 +1133,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1130,8 +1155,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1139,9 +1164,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> roles_ = java.util.Collections.emptyList();
 
     private void ensureRolesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         roles_ = new java.util.ArrayList<java.lang.Integer>(roles_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
     /**
@@ -1279,7 +1304,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRoles() {
       roles_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1400,7 +1425,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nodeGroupConfig field is set.
      */
     public boolean hasNodeGroupConfig() {
-      return nodeGroupConfigBuilder_ != null || nodeGroupConfig_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1441,11 +1466,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         nodeGroupConfig_ = value;
-        onChanged();
       } else {
         nodeGroupConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1463,11 +1488,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder builderForValue) {
       if (nodeGroupConfigBuilder_ == null) {
         nodeGroupConfig_ = builderForValue.build();
-        onChanged();
       } else {
         nodeGroupConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1483,19 +1508,19 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNodeGroupConfig(com.google.cloud.dataproc.v1.InstanceGroupConfig value) {
       if (nodeGroupConfigBuilder_ == null) {
-        if (nodeGroupConfig_ != null) {
-          nodeGroupConfig_ =
-              com.google.cloud.dataproc.v1.InstanceGroupConfig.newBuilder(nodeGroupConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000004) != 0)
+            && nodeGroupConfig_ != null
+            && nodeGroupConfig_
+                != com.google.cloud.dataproc.v1.InstanceGroupConfig.getDefaultInstance()) {
+          getNodeGroupConfigBuilder().mergeFrom(value);
         } else {
           nodeGroupConfig_ = value;
         }
-        onChanged();
       } else {
         nodeGroupConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -1510,14 +1535,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNodeGroupConfig() {
-      if (nodeGroupConfigBuilder_ == null) {
-        nodeGroupConfig_ = null;
-        onChanged();
-      } else {
-        nodeGroupConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      nodeGroupConfig_ = null;
+      if (nodeGroupConfigBuilder_ != null) {
+        nodeGroupConfigBuilder_.dispose();
         nodeGroupConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1532,7 +1556,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder getNodeGroupConfigBuilder() {
-
+      bitField0_ |= 0x00000004;
       onChanged();
       return getNodeGroupConfigFieldBuilder().getBuilder();
     }
@@ -1595,14 +1619,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
         internalGetMutableLabels() {
-      onChanged();
-      ;
       if (labels_ == null) {
         labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
+      bitField0_ |= 0x00000008;
+      onChanged();
       return labels_;
     }
 
@@ -1672,8 +1696,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
-    public java.lang.String getLabelsOrDefault(
-        java.lang.String key, java.lang.String defaultValue) {
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
       if (key == null) {
         throw new NullPointerException("map key");
       }
@@ -1708,6 +1734,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -1736,6 +1763,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -1760,8 +1788,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException("map value");
       }
-
       internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000008;
       return this;
     }
     /**
@@ -1781,6 +1809,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000008;
       return this;
     }
 

@@ -73,7 +73,6 @@ public interface EndpointConfigOrBuilder
    * <code>map&lt;string, string&gt; http_ports = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
-
   /* nullable */
   java.lang.String getHttpPortsOrDefault(
       java.lang.String key,

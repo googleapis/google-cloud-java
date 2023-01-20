@@ -93,6 +93,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
             0L);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> hdfsMetrics_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetHdfsMetrics() {
@@ -191,6 +192,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
             0L);
   }
 
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> yarnMetrics_;
 
   private com.google.protobuf.MapField<java.lang.String, java.lang.Long> internalGetYarnMetrics() {
@@ -524,6 +526,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       internalGetMutableHdfsMetrics().clear();
       internalGetMutableYarnMetrics().clear();
       return this;
@@ -553,13 +556,23 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.ClusterMetrics buildPartial() {
       com.google.cloud.dataproc.v1.ClusterMetrics result =
           new com.google.cloud.dataproc.v1.ClusterMetrics(this);
-      int from_bitField0_ = bitField0_;
-      result.hdfsMetrics_ = internalGetHdfsMetrics();
-      result.hdfsMetrics_.makeImmutable();
-      result.yarnMetrics_ = internalGetYarnMetrics();
-      result.yarnMetrics_.makeImmutable();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ClusterMetrics result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.hdfsMetrics_ = internalGetHdfsMetrics();
+        result.hdfsMetrics_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.yarnMetrics_ = internalGetYarnMetrics();
+        result.yarnMetrics_.makeImmutable();
+      }
     }
 
     @java.lang.Override
@@ -608,7 +621,9 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFrom(com.google.cloud.dataproc.v1.ClusterMetrics other) {
       if (other == com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance()) return this;
       internalGetMutableHdfsMetrics().mergeFrom(other.internalGetHdfsMetrics());
+      bitField0_ |= 0x00000001;
       internalGetMutableYarnMetrics().mergeFrom(other.internalGetYarnMetrics());
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -644,6 +659,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableHdfsMetrics()
                     .getMutableMap()
                     .put(hdfsMetrics__.getKey(), hdfsMetrics__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
@@ -655,6 +671,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableYarnMetrics()
                     .getMutableMap()
                     .put(yarnMetrics__.getKey(), yarnMetrics__.getValue());
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -689,8 +706,6 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
         internalGetMutableHdfsMetrics() {
-      onChanged();
-      ;
       if (hdfsMetrics_ == null) {
         hdfsMetrics_ =
             com.google.protobuf.MapField.newMapField(HdfsMetricsDefaultEntryHolder.defaultEntry);
@@ -698,6 +713,8 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       if (!hdfsMetrics_.isMutable()) {
         hdfsMetrics_ = hdfsMetrics_.copy();
       }
+      bitField0_ |= 0x00000001;
+      onChanged();
       return hdfsMetrics_;
     }
 
@@ -778,6 +795,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearHdfsMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000001);
       internalGetMutableHdfsMetrics().getMutableMap().clear();
       return this;
     }
@@ -800,6 +818,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableHdfsMetrics() {
+      bitField0_ |= 0x00000001;
       return internalGetMutableHdfsMetrics().getMutableMap();
     }
     /**
@@ -817,6 +836,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableHdfsMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -830,6 +850,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllHdfsMetrics(java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableHdfsMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000001;
       return this;
     }
 
@@ -846,8 +867,6 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
         internalGetMutableYarnMetrics() {
-      onChanged();
-      ;
       if (yarnMetrics_ == null) {
         yarnMetrics_ =
             com.google.protobuf.MapField.newMapField(YarnMetricsDefaultEntryHolder.defaultEntry);
@@ -855,6 +874,8 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       if (!yarnMetrics_.isMutable()) {
         yarnMetrics_ = yarnMetrics_.copy();
       }
+      bitField0_ |= 0x00000002;
+      onChanged();
       return yarnMetrics_;
     }
 
@@ -935,6 +956,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearYarnMetrics() {
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableYarnMetrics().getMutableMap().clear();
       return this;
     }
@@ -957,6 +979,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Long> getMutableYarnMetrics() {
+      bitField0_ |= 0x00000002;
       return internalGetMutableYarnMetrics().getMutableMap();
     }
     /**
@@ -974,6 +997,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
       }
 
       internalGetMutableYarnMetrics().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
       return this;
     }
     /**
@@ -987,6 +1011,7 @@ public final class ClusterMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllYarnMetrics(java.util.Map<java.lang.String, java.lang.Long> values) {
       internalGetMutableYarnMetrics().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
       return this;
     }
 

@@ -71,7 +71,9 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object projectId_ = "";
   /**
    *
    *
@@ -122,7 +124,9 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int REGION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object region_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object region_ = "";
   /**
    *
    *
@@ -171,7 +175,9 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int CLUSTER_NAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object clusterName_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clusterName_ = "";
   /**
    *
    *
@@ -265,7 +271,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.ClusterOrBuilder getClusterOrBuilder() {
-    return getCluster();
+    return cluster_ == null ? com.google.cloud.dataproc.v1.Cluster.getDefaultInstance() : cluster_;
   }
 
   public static final int GRACEFUL_DECOMMISSION_TIMEOUT_FIELD_NUMBER = 6;
@@ -340,7 +346,9 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
-    return getGracefulDecommissionTimeout();
+    return gracefulDecommissionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : gracefulDecommissionTimeout_;
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
@@ -530,11 +538,13 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
-    return getUpdateMask();
+    return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 7;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -869,32 +879,26 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       projectId_ = "";
-
       region_ = "";
-
       clusterName_ = "";
-
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-      } else {
-        cluster_ = null;
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-      } else {
-        updateMask_ = null;
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
       requestId_ = "";
-
       return this;
     }
 
@@ -922,27 +926,39 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.dataproc.v1.UpdateClusterRequest buildPartial() {
       com.google.cloud.dataproc.v1.UpdateClusterRequest result =
           new com.google.cloud.dataproc.v1.UpdateClusterRequest(this);
-      result.projectId_ = projectId_;
-      result.region_ = region_;
-      result.clusterName_ = clusterName_;
-      if (clusterBuilder_ == null) {
-        result.cluster_ = cluster_;
-      } else {
-        result.cluster_ = clusterBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeout_;
-      } else {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeoutBuilder_.build();
-      }
-      if (updateMaskBuilder_ == null) {
-        result.updateMask_ = updateMask_;
-      } else {
-        result.updateMask_ = updateMaskBuilder_.build();
-      }
-      result.requestId_ = requestId_;
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.UpdateClusterRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.projectId_ = projectId_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clusterName_ = clusterName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cluster_ = clusterBuilder_ == null ? cluster_ : clusterBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.gracefulDecommissionTimeout_ =
+            gracefulDecommissionTimeoutBuilder_ == null
+                ? gracefulDecommissionTimeout_
+                : gracefulDecommissionTimeoutBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -993,14 +1009,17 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClusterName().isEmpty()) {
         clusterName_ = other.clusterName_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasCluster()) {
@@ -1014,6 +1033,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1045,44 +1065,44 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 projectId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 clusterName_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getClusterFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getUpdateMaskFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 region_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     getGracefulDecommissionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1101,6 +1121,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
@@ -1166,8 +1188,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1184,8 +1206,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearProjectId() {
-
       projectId_ = getDefaultInstance().getProjectId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -1207,8 +1229,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       projectId_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1274,8 +1296,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1291,8 +1313,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-
       region_ = getDefaultInstance().getRegion();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1313,8 +1335,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       region_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1380,8 +1402,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       clusterName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1397,8 +1419,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearClusterName() {
-
       clusterName_ = getDefaultInstance().getClusterName();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1419,8 +1441,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       clusterName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1445,7 +1467,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return clusterBuilder_ != null || cluster_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1486,11 +1508,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         cluster_ = value;
-        onChanged();
       } else {
         clusterBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1507,11 +1529,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     public Builder setCluster(com.google.cloud.dataproc.v1.Cluster.Builder builderForValue) {
       if (clusterBuilder_ == null) {
         cluster_ = builderForValue.build();
-        onChanged();
       } else {
         clusterBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1527,19 +1549,18 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeCluster(com.google.cloud.dataproc.v1.Cluster value) {
       if (clusterBuilder_ == null) {
-        if (cluster_ != null) {
-          cluster_ =
-              com.google.cloud.dataproc.v1.Cluster.newBuilder(cluster_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && cluster_ != null
+            && cluster_ != com.google.cloud.dataproc.v1.Cluster.getDefaultInstance()) {
+          getClusterBuilder().mergeFrom(value);
         } else {
           cluster_ = value;
         }
-        onChanged();
       } else {
         clusterBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1554,14 +1575,13 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearCluster() {
-      if (clusterBuilder_ == null) {
-        cluster_ = null;
-        onChanged();
-      } else {
-        cluster_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      cluster_ = null;
+      if (clusterBuilder_ != null) {
+        clusterBuilder_.dispose();
         clusterBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1576,7 +1596,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.cloud.dataproc.v1.Cluster.Builder getClusterBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
@@ -1655,7 +1675,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the gracefulDecommissionTimeout field is set.
      */
     public boolean hasGracefulDecommissionTimeout() {
-      return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1710,11 +1730,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         gracefulDecommissionTimeout_ = value;
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1739,11 +1759,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         com.google.protobuf.Duration.Builder builderForValue) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
         gracefulDecommissionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1766,19 +1786,18 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeGracefulDecommissionTimeout(com.google.protobuf.Duration value) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
-        if (gracefulDecommissionTimeout_ != null) {
-          gracefulDecommissionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000010) != 0)
+            && gracefulDecommissionTimeout_ != null
+            && gracefulDecommissionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getGracefulDecommissionTimeoutBuilder().mergeFrom(value);
         } else {
           gracefulDecommissionTimeout_ = value;
         }
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1800,14 +1819,13 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearGracefulDecommissionTimeout() {
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-        onChanged();
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1829,7 +1847,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.Duration.Builder getGracefulDecommissionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000010;
       onChanged();
       return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
     }
@@ -1961,7 +1979,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
-      return updateMaskBuilder_ != null || updateMask_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2094,11 +2112,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
           throw new NullPointerException();
         }
         updateMask_ = value;
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2161,11 +2179,11 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
-        onChanged();
       } else {
         updateMaskBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2227,17 +2245,18 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
-        if (updateMask_ != null) {
-          updateMask_ =
-              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateMask_ != null
+            && updateMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
+          getUpdateMaskBuilder().mergeFrom(value);
         } else {
           updateMask_ = value;
         }
-        onChanged();
       } else {
         updateMaskBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -2298,14 +2317,13 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public Builder clearUpdateMask() {
-      if (updateMaskBuilder_ == null) {
-        updateMask_ = null;
-        onChanged();
-      } else {
-        updateMask_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateMask_ = null;
+      if (updateMaskBuilder_ != null) {
+        updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -2366,7 +2384,7 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-
+      bitField0_ |= 0x00000020;
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
@@ -2598,8 +2616,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2624,8 +2642,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2655,8 +2673,8 @@ public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

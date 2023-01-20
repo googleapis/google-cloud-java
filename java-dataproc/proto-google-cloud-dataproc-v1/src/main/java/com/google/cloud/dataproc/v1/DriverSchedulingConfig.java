@@ -66,7 +66,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int MEMORY_MB_FIELD_NUMBER = 1;
-  private int memoryMb_;
+  private int memoryMb_ = 0;
   /**
    *
    *
@@ -84,7 +84,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
   }
 
   public static final int VCORES_FIELD_NUMBER = 2;
-  private int vcores_;
+  private int vcores_ = 0;
   /**
    *
    *
@@ -307,10 +307,9 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       memoryMb_ = 0;
-
       vcores_ = 0;
-
       return this;
     }
 
@@ -338,10 +337,21 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     public com.google.cloud.dataproc.v1.DriverSchedulingConfig buildPartial() {
       com.google.cloud.dataproc.v1.DriverSchedulingConfig result =
           new com.google.cloud.dataproc.v1.DriverSchedulingConfig(this);
-      result.memoryMb_ = memoryMb_;
-      result.vcores_ = vcores_;
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.DriverSchedulingConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.memoryMb_ = memoryMb_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.vcores_ = vcores_;
+      }
     }
 
     @java.lang.Override
@@ -425,13 +435,13 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 memoryMb_ = input.readInt32();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 8
             case 16:
               {
                 vcores_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             default:
@@ -450,6 +460,8 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private int memoryMb_;
     /**
@@ -482,6 +494,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     public Builder setMemoryMb(int value) {
 
       memoryMb_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -497,7 +510,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMemoryMb() {
-
+      bitField0_ = (bitField0_ & ~0x00000001);
       memoryMb_ = 0;
       onChanged();
       return this;
@@ -534,6 +547,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
     public Builder setVcores(int value) {
 
       vcores_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -549,7 +563,7 @@ public final class DriverSchedulingConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVcores() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       vcores_ = 0;
       onChanged();
       return this;

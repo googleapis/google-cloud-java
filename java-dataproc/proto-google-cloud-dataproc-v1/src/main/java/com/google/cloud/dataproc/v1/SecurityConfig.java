@@ -116,7 +116,9 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder() {
-    return getKerberosConfig();
+    return kerberosConfig_ == null
+        ? com.google.cloud.dataproc.v1.KerberosConfig.getDefaultInstance()
+        : kerberosConfig_;
   }
 
   public static final int IDENTITY_CONFIG_FIELD_NUMBER = 2;
@@ -173,7 +175,9 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public com.google.cloud.dataproc.v1.IdentityConfigOrBuilder getIdentityConfigOrBuilder() {
-    return getIdentityConfig();
+    return identityConfig_ == null
+        ? com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()
+        : identityConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -392,16 +396,15 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (kerberosConfigBuilder_ == null) {
-        kerberosConfig_ = null;
-      } else {
-        kerberosConfig_ = null;
+      bitField0_ = 0;
+      kerberosConfig_ = null;
+      if (kerberosConfigBuilder_ != null) {
+        kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
-      if (identityConfigBuilder_ == null) {
-        identityConfig_ = null;
-      } else {
-        identityConfig_ = null;
+      identityConfig_ = null;
+      if (identityConfigBuilder_ != null) {
+        identityConfigBuilder_.dispose();
         identityConfigBuilder_ = null;
       }
       return this;
@@ -431,18 +434,23 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dataproc.v1.SecurityConfig buildPartial() {
       com.google.cloud.dataproc.v1.SecurityConfig result =
           new com.google.cloud.dataproc.v1.SecurityConfig(this);
-      if (kerberosConfigBuilder_ == null) {
-        result.kerberosConfig_ = kerberosConfig_;
-      } else {
-        result.kerberosConfig_ = kerberosConfigBuilder_.build();
-      }
-      if (identityConfigBuilder_ == null) {
-        result.identityConfig_ = identityConfig_;
-      } else {
-        result.identityConfig_ = identityConfigBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.SecurityConfig result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.kerberosConfig_ =
+            kerberosConfigBuilder_ == null ? kerberosConfig_ : kerberosConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.identityConfig_ =
+            identityConfigBuilder_ == null ? identityConfig_ : identityConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -525,13 +533,13 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getKerberosConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getIdentityConfigFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             default:
@@ -550,6 +558,8 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.cloud.dataproc.v1.KerberosConfig kerberosConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +581,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kerberosConfig field is set.
      */
     public boolean hasKerberosConfig() {
-      return kerberosConfigBuilder_ != null || kerberosConfig_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -612,11 +622,11 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         kerberosConfig_ = value;
-        onChanged();
       } else {
         kerberosConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -634,11 +644,11 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.KerberosConfig.Builder builderForValue) {
       if (kerberosConfigBuilder_ == null) {
         kerberosConfig_ = builderForValue.build();
-        onChanged();
       } else {
         kerberosConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -654,19 +664,19 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKerberosConfig(com.google.cloud.dataproc.v1.KerberosConfig value) {
       if (kerberosConfigBuilder_ == null) {
-        if (kerberosConfig_ != null) {
-          kerberosConfig_ =
-              com.google.cloud.dataproc.v1.KerberosConfig.newBuilder(kerberosConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000001) != 0)
+            && kerberosConfig_ != null
+            && kerberosConfig_
+                != com.google.cloud.dataproc.v1.KerberosConfig.getDefaultInstance()) {
+          getKerberosConfigBuilder().mergeFrom(value);
         } else {
           kerberosConfig_ = value;
         }
-        onChanged();
       } else {
         kerberosConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -681,14 +691,13 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearKerberosConfig() {
-      if (kerberosConfigBuilder_ == null) {
-        kerberosConfig_ = null;
-        onChanged();
-      } else {
-        kerberosConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      kerberosConfig_ = null;
+      if (kerberosConfigBuilder_ != null) {
+        kerberosConfigBuilder_.dispose();
         kerberosConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -703,7 +712,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.KerberosConfig.Builder getKerberosConfigBuilder() {
-
+      bitField0_ |= 0x00000001;
       onChanged();
       return getKerberosConfigFieldBuilder().getBuilder();
     }
@@ -776,7 +785,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the identityConfig field is set.
      */
     public boolean hasIdentityConfig() {
-      return identityConfigBuilder_ != null || identityConfig_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -819,11 +828,11 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         identityConfig_ = value;
-        onChanged();
       } else {
         identityConfigBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -842,11 +851,11 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         com.google.cloud.dataproc.v1.IdentityConfig.Builder builderForValue) {
       if (identityConfigBuilder_ == null) {
         identityConfig_ = builderForValue.build();
-        onChanged();
       } else {
         identityConfigBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -863,19 +872,19 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIdentityConfig(com.google.cloud.dataproc.v1.IdentityConfig value) {
       if (identityConfigBuilder_ == null) {
-        if (identityConfig_ != null) {
-          identityConfig_ =
-              com.google.cloud.dataproc.v1.IdentityConfig.newBuilder(identityConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000002) != 0)
+            && identityConfig_ != null
+            && identityConfig_
+                != com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()) {
+          getIdentityConfigBuilder().mergeFrom(value);
         } else {
           identityConfig_ = value;
         }
-        onChanged();
       } else {
         identityConfigBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -891,14 +900,13 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearIdentityConfig() {
-      if (identityConfigBuilder_ == null) {
-        identityConfig_ = null;
-        onChanged();
-      } else {
-        identityConfig_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      identityConfig_ = null;
+      if (identityConfigBuilder_ != null) {
+        identityConfigBuilder_.dispose();
         identityConfigBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -914,7 +922,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataproc.v1.IdentityConfig.Builder getIdentityConfigBuilder() {
-
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIdentityConfigFieldBuilder().getBuilder();
     }

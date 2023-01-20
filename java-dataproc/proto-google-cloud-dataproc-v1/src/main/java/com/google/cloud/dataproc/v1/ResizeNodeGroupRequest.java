@@ -69,7 +69,9 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    *
    *
@@ -122,7 +124,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SIZE_FIELD_NUMBER = 2;
-  private int size_;
+  private int size_ = 0;
   /**
    *
    *
@@ -142,7 +144,9 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object requestId_;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
   /**
    *
    *
@@ -289,7 +293,9 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
-    return getGracefulDecommissionTimeout();
+    return gracefulDecommissionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : gracefulDecommissionTimeout_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -524,16 +530,13 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       size_ = 0;
-
       requestId_ = "";
-
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
       return this;
@@ -563,16 +566,30 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
     public com.google.cloud.dataproc.v1.ResizeNodeGroupRequest buildPartial() {
       com.google.cloud.dataproc.v1.ResizeNodeGroupRequest result =
           new com.google.cloud.dataproc.v1.ResizeNodeGroupRequest(this);
-      result.name_ = name_;
-      result.size_ = size_;
-      result.requestId_ = requestId_;
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeout_;
-      } else {
-        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeoutBuilder_.build();
+      if (bitField0_ != 0) {
+        buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.dataproc.v1.ResizeNodeGroupRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.size_ = size_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.gracefulDecommissionTimeout_ =
+            gracefulDecommissionTimeoutBuilder_ == null
+                ? gracefulDecommissionTimeout_
+                : gracefulDecommissionTimeoutBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -623,6 +640,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (other.getSize() != 0) {
@@ -630,6 +648,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
       }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasGracefulDecommissionTimeout()) {
@@ -664,26 +683,26 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
             case 16:
               {
                 size_ = input.readInt32();
-
+                bitField0_ |= 0x00000002;
                 break;
               } // case 16
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getGracefulDecommissionTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -702,6 +721,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
       } // finally
       return this;
     }
+
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -770,8 +791,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -789,8 +810,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearName() {
-
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -813,8 +834,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -854,6 +875,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
     public Builder setSize(int value) {
 
       size_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -871,7 +893,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSize() {
-
+      bitField0_ = (bitField0_ & ~0x00000002);
       size_ = 0;
       onChanged();
       return this;
@@ -965,8 +987,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -991,8 +1013,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearRequestId() {
-
       requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1022,8 +1044,8 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
       requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1058,7 +1080,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * @return Whether the gracefulDecommissionTimeout field is set.
      */
     public boolean hasGracefulDecommissionTimeout() {
-      return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1119,11 +1141,11 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
           throw new NullPointerException();
         }
         gracefulDecommissionTimeout_ = value;
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1151,11 +1173,11 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
         com.google.protobuf.Duration.Builder builderForValue) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
         gracefulDecommissionTimeout_ = builderForValue.build();
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1181,19 +1203,18 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      */
     public Builder mergeGracefulDecommissionTimeout(com.google.protobuf.Duration value) {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
-        if (gracefulDecommissionTimeout_ != null) {
-          gracefulDecommissionTimeout_ =
-              com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_)
-                  .mergeFrom(value)
-                  .buildPartial();
+        if (((bitField0_ & 0x00000008) != 0)
+            && gracefulDecommissionTimeout_ != null
+            && gracefulDecommissionTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getGracefulDecommissionTimeoutBuilder().mergeFrom(value);
         } else {
           gracefulDecommissionTimeout_ = value;
         }
-        onChanged();
       } else {
         gracefulDecommissionTimeoutBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1218,14 +1239,13 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearGracefulDecommissionTimeout() {
-      if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeout_ = null;
-        onChanged();
-      } else {
-        gracefulDecommissionTimeout_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      gracefulDecommissionTimeout_ = null;
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        gracefulDecommissionTimeoutBuilder_.dispose();
         gracefulDecommissionTimeoutBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1250,7 +1270,7 @@ public final class ResizeNodeGroupRequest extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Duration.Builder getGracefulDecommissionTimeoutBuilder() {
-
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
     }
